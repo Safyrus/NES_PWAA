@@ -1,0 +1,6 @@
+# VS Code
+.vscode/
+
+# Other
+ignore/
+bin/
