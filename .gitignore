@@ -1,6 +1,9 @@
 # VS Code
 .vscode/
 
+# Python
+__pycache__
+
 # Other
 ignore/
 bin/
