@@ -1,4 +1,4 @@
-from rmEqualTile import *
+from rm_equal_tile import *
 
 RLEINC_CMD_LIT = 0x00
 RLEINC_CMD_END = 0x40

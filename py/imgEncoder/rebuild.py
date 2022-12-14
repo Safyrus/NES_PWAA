@@ -1,8 +1,8 @@
-from img2tiles import TILE_SIZE
+from img_2_tiles import TILE_SIZE
 from PIL import Image
 
 
-def drawTile(tile, img, idx):
+def draw_tile(tile, img, idx):
     offsetX = (idx % (img.width // TILE_SIZE)) * TILE_SIZE
     offsetY = (idx // (img.width // TILE_SIZE)) * TILE_SIZE
     pixels = img.load()
@@ -14,7 +14,7 @@ def drawTile(tile, img, idx):
     return img
 
 
-def rebuildBkgImg(tileList, tileBank, nb_color=4):
+def rebuild_bkg_img(tileList, tileBank, nb_color=4):
     if nb_color == 4:
         pal = (0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255)
     else:
@@ -24,6 +24,6 @@ def rebuildBkgImg(tileList, tileBank, nb_color=4):
     img.putpalette(pal)
     for i in range(len(tileList)):
         t = tileList[i]
-        img = drawTile(tileBank[t], img, i)
+        img = draw_tile(tileBank[t], img, i)
     return img
 

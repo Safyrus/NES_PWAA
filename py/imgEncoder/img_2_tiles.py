@@ -1,11 +1,15 @@
-from imgPalReduce import *
+from img_col_reduce import *
 import numpy as np
 import sys
 
 TILE_SIZE = 8
 
 
-def bkgImg2tile(img):
+def img_2_tile(img):
+    return bkg_img_2_tile(img)
+
+
+def bkg_img_2_tile(img):
     arr = np.array(img)
     w, h = arr.shape[0], arr.shape[1]
     tiles = [arr[x:x+TILE_SIZE, y:y+TILE_SIZE]
@@ -14,7 +18,7 @@ def bkgImg2tile(img):
     return tiles, list
 
 
-def tile2chr(tile):
+def tile_2_chr(tile):
     chr = []
     #
     for y in range(TILE_SIZE):
@@ -31,7 +35,7 @@ def tile2chr(tile):
     return bytes(chr)
 
 
-def chr2tile(data):
+def chr_2_tile(data):
     tile = []
     for y in range(TILE_SIZE):
         row = []
@@ -43,22 +47,22 @@ def chr2tile(data):
     return tile
 
 
-def writeTileSet2CHR(filename, tiles):
+def write_tile_set_2_CHR(filename, tiles):
     with open(filename, "wb") as chr:
         for t in tiles:
-            chr.write(tile2chr(t))
+            chr.write(tile_2_chr(t))
 
 
-def writeTileList2Bin(filename, tileList):
+def write_tile_list_2_bin(filename, tile_list):
     with open(filename, "wb") as chr:
-        for t in tileList:
+        for t in tile_list:
             chr.write((t % 256).to_bytes(1, "big"))
-        for t in tileList:
+        for t in tile_list:
             chr.write((t//256).to_bytes(1, "big"))
 
 
 if __name__ == "__main__":
     imgfile = sys.argv[1]
-    tiles, list = bkgImg2tile(bkgPalReduce(imgfile))
-    writeTileSet2CHR("out.chr", tiles)
-    writeTileList2Bin("out.bin", list)
+    tiles, list = bkg_img_2_tile(bkg_col_reduce(imgfile))
+    write_tile_set_2_CHR("out.chr", tiles)
+    write_tile_list_2_bin("out.bin", list)

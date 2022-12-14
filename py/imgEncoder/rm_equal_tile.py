@@ -1,9 +1,9 @@
-from img2tiles import *
+from img_2_tiles import *
 from rebuild import *
 
-MAX_PIXEL_DIFF = 2
+MAX_PIXEL_DIFF = 0
 
-def tileClosePresent(tile, bank):
+def tile_close_present(tile, bank):
     a1 = np.array(tile)
     for i in range(len(bank)):
         a2 = np.array(bank[i])
@@ -14,7 +14,7 @@ def tileClosePresent(tile, bank):
     return -1
 
 
-def tilePresent(tile, bank):
+def tile_present(tile, bank):
     a1 = np.array(tile)
     for i in range(len(bank)):
         a2 = np.array(bank[i])
@@ -23,10 +23,10 @@ def tilePresent(tile, bank):
     return -1
 
 
-def rmExactTiles(tileSet, tileList, tileBank):
+def rm_exact_tiles(tileSet, tileList, tileBank):
     for i in range(len(tileSet)):
         tile = tileSet[i]
-        idx = tilePresent(tile, tileBank)
+        idx = tile_present(tile, tileBank)
         if idx < 0:
             tileBank.append(tile)
             idx = len(tileBank)-1
@@ -34,10 +34,10 @@ def rmExactTiles(tileSet, tileList, tileBank):
     return tileSet, tileList, tileBank
 
 
-def rmClosestTiles(tileSet, tileList, tileBank):
+def rm_closest_tiles(tileSet, tileList, tileBank):
     for i in range(len(tileSet)):
         tile = tileSet[i]
-        idx = tileClosePresent(tile, tileBank)
+        idx = tile_close_present(tile, tileBank)
         if idx < 0:
             tileBank.append(tile)
             idx = len(tileBank)-1
@@ -47,11 +47,11 @@ def rmClosestTiles(tileSet, tileList, tileBank):
 
 if __name__ == "__main__":
     imgfile = sys.argv[1]
-    img = bkgPalReduce(imgfile)
+    img = bkg_col_reduce(imgfile)
     img.save("out_pal.png")
-    tileSet, tileList = bkgImg2tile(img)
-    tileSet, tileList, tileBank = rmClosestTiles(tileSet, tileList, [])
+    tileSet, tileList = bkg_img_2_tile(img)
+    tileSet, tileList, tileBank = rm_closest_tiles(tileSet, tileList, [])
     print(tileList)
-    writeTileSet2CHR("out.chr", tileBank)
-    writeTileList2Bin("out.bin", tileList)
-    rebuildBkgImg(tileList, tileBank).save("out.png")
+    write_tile_set_2_CHR("out.chr", tileBank)
+    write_tile_list_2_bin("out.bin", tileList)
+    rebuild_bkg_img(tileList, tileBank).save("out.png")

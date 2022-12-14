@@ -1,12 +1,13 @@
 import sys
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, GifImagePlugin
+import numpy as np
 
 MAX_COLOR_BKG = 4
-MAX_COLOR_CHR = 7
+MAX_COLOR_CHR = 7+1
 CONTRAST_BKG = 2
 
 
-def bkgPalReduceDither(imgfile):
+def bkg_col_reduce_dither(imgfile):
     with Image.open(imgfile) as img:
         img = img.convert("RGB")
     enhancer = ImageEnhance.Contrast(img)
@@ -16,21 +17,27 @@ def bkgPalReduceDither(imgfile):
     return img
 
 
-def bkgPalReduce(imgfile):
+def bkg_col_reduce(imgfile):
     with Image.open(imgfile) as img:
         img = img.convert("RGB")
     img = img.quantize(MAX_COLOR_BKG, method=Image.MEDIANCUT, kmeans=1)
-    pal = img.getpalette()
     return img
 
 
-def charPalReduce(imgfile):
+def bkg_col_reduce_2(imgfile):
     with Image.open(imgfile) as img:
         img = img.convert("RGB")
-    img = img.quantize(MAX_COLOR_CHR, method=Image.MAXCOVERAGE, kmeans=1)
-    return img
+    img = img.quantize(MAX_COLOR_BKG, method=Image.MEDIANCUT, kmeans=1)
+    return img.convert("L")
+
+
+def char_col_reduce(imgfile):
+    with Image.open(imgfile) as img:
+        img = img.convert("L")
+    img = img.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
+    return img.convert("L")
 
 
 if __name__ == "__main__":
     imgfile = sys.argv[1]
-    bkgPalReduce(imgfile).save("out.bmp")
+    bkg_col_reduce(imgfile).save("out.bmp")
