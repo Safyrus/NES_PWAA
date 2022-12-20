@@ -1,7 +1,11 @@
 from img_2_tiles import *
 from rebuild import *
 
-MAX_PIXEL_DIFF = 0
+MAX_PIXEL_DIFF = 2
+MAX_PIXEL_DIFF_SPR = 2
+SPR_BANK_PAGE_SIZE = 256
+SPR_SIZE_W = 8
+SPR_SIZE_H = 16
 
 def tile_close_present(tile, bank):
     a1 = np.array(tile)
@@ -19,6 +23,20 @@ def tile_present(tile, bank):
     for i in range(len(bank)):
         a2 = np.array(bank[i])
         if np.array_equal(a1, a2):
+            return i
+    return -1
+
+
+def spr_tile_close_present(tile, bank):
+    a1 = np.array(tile)
+    page = len(bank) // SPR_BANK_PAGE_SIZE
+    start = page * SPR_BANK_PAGE_SIZE
+    end = min(len(bank), start + SPR_BANK_PAGE_SIZE)
+    for i in range(start, end):
+        a2 = np.array(bank[(page*SPR_BANK_PAGE_SIZE)+i])
+        comp = a1 == a2
+        nbPx = np.count_nonzero(comp)
+        if SPR_SIZE_W*SPR_SIZE_H - nbPx <= MAX_PIXEL_DIFF_SPR :
             return i
     return -1
 
@@ -42,6 +60,43 @@ def rm_closest_tiles(tileSet, tileList, tileBank):
             tileBank.append(tile)
             idx = len(tileBank)-1
         tileList[i] = idx
+    return tileSet, tileList, tileBank
+
+
+def rm_closest_spr_tiles(tileSet, tileList, tileBank):
+    # remove same tiles by supposing enought space in page
+    tmpBank = tileBank.copy()
+    for i in range(len(tileSet)):
+        tile = tileSet[i]
+        idx = spr_tile_close_present(tile, tmpBank)
+        if idx < 0:
+            tmpBank.append(tile)
+            idx = len(tmpBank)-1 % SPR_BANK_PAGE_SIZE
+        tileList[i] = idx
+
+    # vars
+    page_bnk_before = len(tileBank) // SPR_BANK_PAGE_SIZE
+    page_bnk_after = len(tmpBank) // SPR_BANK_PAGE_SIZE
+    page_size_remain = SPR_BANK_PAGE_SIZE - len(tileBank) % SPR_BANK_PAGE_SIZE
+
+    # return if new tile are in same page
+    if page_bnk_after == page_bnk_before:
+        return tileSet, tileList, tmpBank
+
+    # Pad with empty tiles
+    empty_tile = np.zeros(tileSet[0].shape)
+    for _ in range(page_size_remain):
+        tileBank.append(empty_tile)
+
+    # redo removing tiles with new alignement
+    for i in range(len(tileSet)):
+        tile = tileSet[i]
+        idx = spr_tile_close_present(tile, tileBank)
+        if idx < 0:
+            tileBank.append(tile)
+            idx = len(tileBank)-1 % SPR_BANK_PAGE_SIZE
+        tileList[i] = idx
+
     return tileSet, tileList, tileBank
 
 
