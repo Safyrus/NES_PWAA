@@ -8,6 +8,10 @@ jobs:
       - name: Install CC65
         run: sudo apt install cc65
 
+        # Needed to access the repository files
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
       - name: Build NES file
         run: make
 
