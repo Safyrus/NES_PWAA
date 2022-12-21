@@ -26,15 +26,25 @@ $(GAME_NAME).nes:
 
 # clean object files
 clean:
-	rmdir -p "$(BIN)"
+ifeq ($(OS), Windows_NT)
+	@-if exist "$(BIN)" ( rmdir /Q /S "$(BIN)" )
+else
+	rm -rf "$(BIN)"
+endif
 
 
 # clean all generated files
 clean_all:
 	make clean
+ifeq ($(OS), Windows_NT)
 	del $(GAME_NAME).nes
 	del $(GAME_NAME).DBG
 	del dump_$(GAME_NAME).txt
+else
+	rm $(GAME_NAME).nes
+	rm $(GAME_NAME).DBG
+	rm dump_$(GAME_NAME).txt
+endif
 
 
 # run the nes game generated with assembler sources
