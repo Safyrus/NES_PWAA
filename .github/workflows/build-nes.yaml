@@ -1,0 +1,18 @@
+name: NES ROM builder
+on: [push]
+jobs:
+  build_nes_rom:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install CC65
+        run: sudo apt install cc65
+
+      - name: Build NES file
+        run: make
+
+      - name: Upload NES file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PWAA
+          path: PWAA.nes
