@@ -1,38 +1,12 @@
-# - - - - - - - - - - - - - #
-#    Variables to change    #
-# - - - - - - - - - - - - - #
 
-# CC65 executable locations
-CC65 = ../../cc65/bin/cc65.exe
+# All configuration vairables are located in the config file
 
-# CA65 executable locations
-CA65 = ../../cc65/bin/ca65.exe
-
-# LD65 executable locations
-LD65 = ../../cc65/bin/ld65.exe
-
-# Emulator executable location
-EMULATOR = ../../emu/Mesen/Mesen.exe
-
-# Hexdump executable location
-HEXDUMP = ..\..\hexdump.exe
-
-# Game name
-GAME_NAME = PWAA
-
-# Bin folder for binary output
-BIN = bin
-
-# Folder with assembler sources files
-ASM = asm
-
-# Change this to 0 if you don't want FamiStudio
-FAMISTUDIO = 0
-
+CONFIG = cfg/make_default.cfg
 
 # ! - - - - - - - - - - - - - - - - ! #
 #  DO NOT CHANGE ANYTHING AFTER THIS  #
 # ! - - - - - - - - - - - - - - - - ! #
+include ${CONFIG}
 
 
 # make the nes game from assembler files
