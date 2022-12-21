@@ -17,7 +17,7 @@ all: $(GAME_NAME).nes
 # create the nes file from assembler sources
 $(GAME_NAME).nes:
 # create folder if it does not exist
-	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
+	mkdir -p "$(BIN)"
 # assemble main file
 	$(CA65) asm/crt0.asm -o $(BIN)/$(GAME_NAME).o --debug-info -DFAMISTUDIO=$(FAMISTUDIO) -DMMC5=1
 # link files
@@ -26,7 +26,7 @@ $(GAME_NAME).nes:
 
 # clean object files
 clean:
-	@-if exist "$(BIN)" ( rmdir /Q /S "$(BIN)" )
+	rmdir -p "$(BIN)"
 
 
 # clean all generated files
