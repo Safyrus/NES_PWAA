@@ -7,3 +7,6 @@ __pycache__
 # Other
 ignore/
 bin/
+dump_*.txt
+*.nes
+*.dbg
