@@ -1,0 +1,2 @@
+This is a test to see<b> if we can decode text.<p>
+And this is (hopefully)<b> another dialog box text<p>
