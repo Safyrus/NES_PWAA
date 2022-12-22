@@ -10,51 +10,81 @@ RST:
     LDX #$FF    ; Initialized stack
     TXS
 
-    INX         ; X=0
-    STX PPU_CTRL ; Disable NMI
-    STX PPU_MASK ; Disable Rendering
+    INX              ; X=0
+    STX PPU_CTRL     ; Disable NMI
+    STX PPU_MASK     ; Disable Rendering
     STX APU_DMC_FREQ ; Disable DMC IRQ
 
-    ; Wait for the PPU to initialized
-    BIT PPU_STATUS       ; Clear the VBL flag if it was set at reset time
-@vwait1:
-    BIT PPU_STATUS
-    BPL @vwait1      ; At this point, about 27384 cycles have passed
+    ; Wait 1 frame (for the PPU to initialized)
+    BIT PPU_STATUS   ; Clear the VBL flag if it was set at reset time
+    @vwait1:
+        BIT PPU_STATUS
+        BPL @vwait1  ; At this point, about 27384 cycles have passed
 
-@clrmem:
-    LDA #$00
-    STA $0000, x
-    STA $0100, x
-    STA $0200, x
-    STA $0300, x
-    STA $0400, x
-    STA $0500, x
-    STA $0600, x
-    STA $0700, x
-    INX
-    BNE @clrmem
+    ; Clear NES RAM
+    @clrmem:
+        LDA #$00
+        STA $0000, x
+        STA $0100, x
+        STA $0200, x
+        STA $0300, x
+        STA $0400, x
+        STA $0500, x
+        STA $0600, x
+        STA $0700, x
+        INX
+        BNE @clrmem
 
-@vwait2:
-    BIT PPU_STATUS
-    BPL @vwait2      ; At this point, about 57165 cycles have passed
+    ; Wait 1 frame (for the PPU to initialized)
+    @vwait2:
+        BIT PPU_STATUS
+        BPL @vwait2  ; At this point, about 57165 cycles have passed
 
-    LDA #%10010000      ; Enable NMI + set background table to $1000
+    ; Enable NMI + set background table to $1000
+    LDA #%10010000
     STA PPU_CTRL
     STA ppu_ctrl_val
 
     ; - - - - - - -
     ; setup MMC5
     ; - - - - - - -
-    ; set $8000-9FFF to BNK 0
-    LDA #$80
-    STA MMC5_PRG_BNK0
-    ; set $A000-BFFF to BNK 1
-    LDA #$81
-    STA MMC5_PRG_BNK1
-    ; set $C000-DFFF to BNK 2
-    LDA #$82
-    STA MMC5_PRG_BNK2
+    ; disable ram protection
+    LDA #$02
+    STA MMC5_RAM_PRO1
+    LDA #$01
+    STA MMC5_RAM_PRO2
+    ; clean prg ram
+    LDA #$00
+    STA tmp+2
+    @clean_prgram:
+        LDA tmp+2
+        STA MMC5_RAM_BNK
+        LDX #$00
+        @clean_prgram_bank:
+            ;
+            TXA
+            CLC
+            ADC #$60
+            STA tmp+1
+            LDA #$00
+            STA tmp
+            ;
+            LDY #$00
+            @clean_prgram_page:
+                STA (tmp), Y
+                INY
+                BNE @clean_prgram_page
+            ;
+            INX
+            CPX #$20
+            BNE @clean_prgram_bank
+        LDX tmp+2
+        INX
+        STX tmp+2
+        DEX
+        CPX #RAM_MAX_BNK
+        BNE @clean_prgram
 
-    CLI
+    CLI ; Enable back interrupt
 
-    JMP MAIN
+    JMP MAIN ; jump to main function

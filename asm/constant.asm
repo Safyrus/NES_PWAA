@@ -97,12 +97,60 @@ NMI_BKG  = %00000001
 ;----------
 ; MMC5
 ;----------
-.ifdef MMC5
-MMC5_PRG_MODE := $5100
-MMC5_CHR_MODE := $5101
-MMC5_RAM_BNK  := $5113
-MMC5_PRG_BNK0 := $5114
-MMC5_PRG_BNK1 := $5115
-MMC5_PRG_BNK2 := $5116
-MMC5_PRG_BNK3 := $5117
-.endif
+; PRG Mode
+MMC5_PRG_MODE  := $5100
+; CHR Mode
+MMC5_CHR_MODE  := $5101
+; RAM protection
+MMC5_RAM_PRO1  := $5102
+MMC5_RAM_PRO2  := $5103
+; Extended RAM mode
+MMC5_EXT_RAM   := $5104
+; Nametable mapping
+MMC5_NAMETABLE := $5105
+; Fill nametable
+MMC5_FILL_TILE := $5106
+MMC5_FILL_COL  := $5107
+; RAM Bank
+MMC5_RAM_BNK   := $5113
+; PRG Banks
+MMC5_PRG_BNK0  := $5114
+MMC5_PRG_BNK1  := $5115
+MMC5_PRG_BNK2  := $5116
+MMC5_PRG_BNK3  := $5117
+; CHR Banks
+MMC5_CHR_BNK0  := $5120
+MMC5_CHR_BNK1  := $5121
+MMC5_CHR_BNK2  := $5122
+MMC5_CHR_BNK3  := $5123
+MMC5_CHR_BNK4  := $5124
+MMC5_CHR_BNK5  := $5125
+MMC5_CHR_BNK6  := $5126
+MMC5_CHR_BNK7  := $5127
+MMC5_CHR_BNK8  := $5128
+MMC5_CHR_BNK9  := $5129
+MMC5_CHR_BNKA  := $512A
+MMC5_CHR_BNKB  := $512B
+MMC5_CHR_UPPER := $5130
+; Vertical Split
+MMC5_SPLT_MODE := $5200
+MMC5_SPLT_SCRL := $5201
+MMC5_SPLT_BNK  := $5202
+; IRQ Scanline counter
+MMC5_SCNL_VAL  := $5203
+MMC5_SCNL_STAT := $5204
+; Unsigned 8x8 to 16 Multiplier
+MMC5_MUL_A     := $5205
+MMC5_MUL_B     := $5206
+; Expansion RAM
+MMC5_EXP_RAM   := $5C00
+; RAM
+MMC5_RAM       := $6000
+
+
+;----------
+; Game
+;----------
+TEXT_BUF_BNK = $00
+DIALOG_BNK   = $80
+RAM_MAX_BNK  = 0
