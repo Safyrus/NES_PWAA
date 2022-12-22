@@ -44,11 +44,12 @@ def lz_encode(text, outputfile="", do_print = True):
         # put the current character by default
         seq = format(ord(text[i]), "08b")
         foundLen = 1
-        foundJmp = -1
 
         # for each sequence of size l from the current character
         for l in range(2, LEN_SIZE+2):
             str2match = text[i:i+l]
+            if len(str2match) < 2:
+                continue
             # look in the window
             j = window.find(str2match)
             maxJmp = max(0,len(window))
@@ -58,7 +59,6 @@ def lz_encode(text, outputfile="", do_print = True):
                 # then output special code
                 seq = "1" + format(l-2, "0"+str(LEN_BITS)+"b") + format(jmp, "0"+str(JUMP_BITS)+"b")
                 foundLen = l
-                foundJmp = jmp
 
         # increment to the next position in the text
         i += foundLen

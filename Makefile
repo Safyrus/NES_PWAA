@@ -10,14 +10,19 @@ include ${CONFIG}
 
 
 # make the nes game from assembler files
-all: $(GAME_NAME).nes
-	make clean
+all:
+	make clean_all
+	make $(GAME_NAME).nes
 
 
 # create the nes file from assembler sources
 $(GAME_NAME).nes:
 # create folder if it does not exist
+ifeq ($(OS), Windows_NT)
+	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
+else
 	mkdir -p "$(BIN)"
+endif
 # assemble main file
 	$(CA65) asm/crt0.asm -o $(BIN)/$(GAME_NAME).o --debug-info -DFAMISTUDIO=$(FAMISTUDIO) -DMMC5=1
 # link files
@@ -41,9 +46,9 @@ ifeq ($(OS), Windows_NT)
 	del $(GAME_NAME).DBG
 	del dump_$(GAME_NAME).txt
 else
-	rm $(GAME_NAME).nes
-	rm $(GAME_NAME).DBG
-	rm dump_$(GAME_NAME).txt
+	rm -f $(GAME_NAME).nes
+	rm -f $(GAME_NAME).DBG
+	rm -f dump_$(GAME_NAME).txt
 endif
 
 
