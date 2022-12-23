@@ -17,8 +17,32 @@ print_char:
 ; description:
 ;   print a line break
 print_lb:
+    ; flush any characters
     JSR print_flush
-    ; TODO
+
+    PHA
+
+    ; change ppu pointer to next line
+    LDA print_ppu_ptr+0
+    AND #%11100000
+    CLC
+    ADC #$42
+    STA print_ppu_ptr+0
+    BCC @add_ppu_end
+        INC print_ppu_ptr+1
+    @add_ppu_end:
+
+    ; change ext ram pointer to next line
+    LDA print_ext_ptr+0
+    AND #%11100000
+    CLC
+    ADC #$42
+    STA print_ext_ptr+0
+    BCC @add_ext_end
+        INC print_ext_ptr+1
+    @add_ext_end:
+
+    PLA
     RTS
 
 ; description:

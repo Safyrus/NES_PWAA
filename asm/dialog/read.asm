@@ -1,8 +1,26 @@
+
+read_next_dailog:
+    PHA
+
+    ; init ptr to ext ram
+    LDA #<(MMC5_EXP_RAM+282)
+    STA print_ext_ptr+0
+    LDA #>(MMC5_EXP_RAM+282)
+    STA print_ext_ptr+1
+    ; init ptr to ppu
+    LDA #<(PPU_NAMETABLE_0+$282)
+    STA print_ppu_ptr+0
+    LDA #>(PPU_NAMETABLE_0+$282)
+    STA print_ppu_ptr+1
+
+    PLA
+    RTS
+
 ; description:
 ;   Read text from memory and "execute" it.
 ; param:
 ; - txt_rd_ptr: pointer to current text
-; use: tmp[0..3]
+; use: tmp[0..1]
 ; /!\ assume to be in bank 0
 ; /!\ change ram bank
 read_text:
@@ -18,11 +36,35 @@ read_text:
     LDA txt_rd_ptr+1
     STA tmp+1
 
-    ; guard condition (delay, animation, etc.)
-    ; TODO
-
     ; while not print 1 character
     @loop:
+        ; - - - - - - - -
+        ; guard condition (delay, animation, etc.)
+        ; - - - - - - - -
+        ; if wait flag
+        LDA txt_flags
+        AND #TXT_FLAG_WAIT
+        BEQ @no_wait_flag
+            ; then check if user press any input or that force flag is set
+            LDA txt_flags
+            AND #(TXT_FLAG_INPUT + TXT_FLAG_FORCE)
+            BNE @wait_input
+                ; if not, then stop
+                JMP @end
+            @wait_input:
+                ; else, clear flags (wait, input, force)
+                LDA txt_flags
+                AND #($FF - TXT_FLAG_WAIT - TXT_FLAG_INPUT - TXT_FLAG_FORCE)
+                STA txt_flags
+                ; and clear dialog box
+                JSR draw_dialog_box
+                JSR read_next_dailog
+        @no_wait_flag:
+
+        ; - - - - - - - -
+        ; main part
+        ; - - - - - - - -
+
         ; load ptr
         LDA txt_rd_ptr+0
         STA tmp+0
@@ -51,12 +93,17 @@ read_text:
             ; switch (c)
             PLA
             TAX
-            LDA @switch_lo, X
-            STA tmp+2
             LDA @switch_hi, X
-            STA tmp+3
-            JMP (tmp+2)
+            PHA
+            LDA @switch_lo, X
+            PHA
+            RTS
 
+            ; case END
+            @END_char:
+                ; should not occure, so jump forever
+                JSR print_flush
+                JMP @END_char
             ; case LB
             @LB:
                 ; go to next line
@@ -64,13 +111,19 @@ read_text:
                 JMP @loop
             ; case DB
             @DB:
-                ; DEBUG: wait at eternam
-                JSR print_flush
-                JMP @DB
                 ; set flag to wait for user input to continue
+                LDA txt_flags
+                ORA #TXT_FLAG_WAIT
+                STA txt_flags
+                JMP @loop
             ; case FDB
+            @FDB:
                 ; set flag to wait for user input to continue
-                ; and set flag that user has presse input
+                ; and set force flag to ignore player input
+                LDA txt_flags
+                ORA #(TXT_FLAG_WAIT + TXT_FLAG_FORCE)
+                STA txt_flags
+                JMP @loop
             ; case TD
                 ; toggle flag to display dialog box
             ; case SCR
@@ -147,71 +200,71 @@ read_text:
                 ; unknow control char
                 JMP @loop
     @switch_lo:
-        .byte <@default
-        .byte <@LB
-        .byte <@DB
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
-        .byte <@default
+        .byte <(@END_char-1)
+        .byte <(@LB-1)
+        .byte <(@DB-1)
+        .byte <(@FDB-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
+        .byte <(@default-1)
     @switch_hi:
-        .byte >@default
-        .byte >@LB
-        .byte >@DB
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
-        .byte >@default
+        .byte >(@END_char-1)
+        .byte >(@LB-1)
+        .byte >(@DB-1)
+        .byte >(@FDB-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
+        .byte >(@default-1)
 
     @end:
     ; pull registers

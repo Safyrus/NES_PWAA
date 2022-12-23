@@ -10,12 +10,10 @@
     STA PPU_MASK
 
     ; set palette
-    LDA #$10
-    STA palettes+1
-    LDA #$20
-    STA palettes+2
+    LDA #$0F
+    STA palettes+0
     LDA #$30
-    STA palettes+3
+    STA palettes+1
 
     ; load first dialog block
     LDA #DIALOG_BNK
@@ -41,16 +39,11 @@
     STA print_ext_val
     ; print_counter = 0
     STA print_counter
-    ; init ptr to ext ram
-    LDA #<MMC5_EXP_RAM
-    STA print_ext_ptr+0
-    LDA #>MMC5_EXP_RAM
-    STA print_ext_ptr+1
-    ; init ptr to ppu
-    LDA #<PPU_NAMETABLE_0
-    STA print_ppu_ptr+0
-    LDA #>PPU_NAMETABLE_0
-    STA print_ppu_ptr+1
+    ;
+    JSR read_next_dailog
+
+    ; draw dialog box
+    JSR draw_dialog_box
 
 .endmacro
 
@@ -71,6 +64,22 @@ MAIN:
     ; reset zp background index
     LDA #$00
     STA background_index
+
+    ; update player inputs
+    JSR readjoy
+
+    ; update text flags
+    LDA buttons_1
+    BEQ @no_input
+        LDA txt_flags
+        ORA #TXT_FLAG_INPUT
+        STA txt_flags
+        JMP @input_end
+    @no_input:
+        LDA txt_flags
+        AND #($FF - TXT_FLAG_INPUT)
+        STA txt_flags
+    @input_end:
 
     ; read text
     JSR read_text
