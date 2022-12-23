@@ -4,13 +4,14 @@
 ; param:
 ; - lz_in: pointer to text block
 ; - lz_in_bnk: bank of the text block
-; use: X, Y, tmp[0..5]
+; use: tmp[0..5]
 ; /!\ assume to be in bank 0
 ; /!\ change bank 1 + ram bank
 lz_decode:
+    pushregs
 
     ; set output bank
-    LDA TEXT_BUF_BNK
+    LDA #TEXT_BUF_BNK
     STA MMC5_RAM_BNK
 
     ; set input bank
@@ -73,7 +74,7 @@ lz_decode:
             ; get the jump size (low)
             LDA tmp+0
             CMP tmp+4
-            BCS @dec_end_1
+            BPL @dec_end_1
                 DEC tmp+5
             @dec_end_1:
             SBC tmp+4
@@ -108,5 +109,7 @@ lz_decode:
                 BNE @copy
             ;
             JMP @while
+
     @end:
+    pullregs
     RTS

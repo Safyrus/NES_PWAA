@@ -2,7 +2,7 @@
 ; Macros
 ;**********
 
-.macro pushreg
+.macro pushregs
     PHA
     TXA
     PHA
@@ -11,7 +11,7 @@
 .endmacro
 
 
-.macro pullreg
+.macro pullregs
     PLA
     TAY
     PLA

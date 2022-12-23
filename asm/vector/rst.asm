@@ -53,6 +53,37 @@ RST:
     STA MMC5_RAM_PRO1
     LDA #$01
     STA MMC5_RAM_PRO2
+
+    ; Set the Extented RAM as work RAM to clean it
+    LDA #$02
+    STA MMC5_EXT_RAM
+    ; Reset Extended RAM content
+    LDA #$00
+    LDX #$00
+    @rst_exp_ram:
+        STA MMC5_EXP_RAM, X
+        STA MMC5_EXP_RAM+$100, X
+        STA MMC5_EXP_RAM+$200, X
+        STA MMC5_EXP_RAM+$300, X
+        ; loop
+        INX
+        BNE @rst_exp_ram
+
+    ; Set the Extented RAM as extended attribute data
+    LDA #$01
+    STA MMC5_EXT_RAM
+
+    ; set fill tile
+    LDA #$00
+    STA MMC5_FILL_TILE
+    STA MMC5_FILL_COL
+
+    ; Disable Vertical split
+    LDA #$00
+    STA MMC5_SPLT_MODE
+    STA MMC5_SPLT_BNK
+    STA MMC5_SPLT_SCRL
+
     ; clean prg ram
     LDA #$00
     STA tmp+2

@@ -1,6 +1,10 @@
 ;**********
 ; Memory
 ;**********
+
+;****************
+; ZEROPAGE SEGMENT
+;****************
 .segment "ZEROPAGE"
     ; NMI Flags to activate graphical update
     ; Note: You cannot activate all updates.
@@ -59,7 +63,7 @@
     ; Background data to send to PPU during VBLANK
     ; Packet structure:
     ; byte 0   = v.ssssss (v= vertical draw, s= size)
-    ; byte 1-2 = ppu adress
+    ; byte 1-2 = ppu adress (most significant byte, least significant byte)
     ; byte 3-s = tile data
     ; packet of size 0 means there is no more data to draw
     background: .res 63
@@ -79,5 +83,33 @@ OAM:
 ;****************
 .segment "BSS"
 
+    ; - - - - - - - -
+    ; Vairables for LZ decoding
+    ; - - - - - - - -
+    ; pointer to input data
     lz_in: .res 2
+    ; bank to use for input data
     lz_in_bnk: .res 1
+
+    ; - - - - - - - -
+    ; Vairables for text reading
+    ; - - - - - - - -
+    ; pointer to current text to read
+    txt_rd_ptr: .res 2
+
+    ; - - - - - - - -
+    ; Variable for text printing
+    ; - - - - - - - -
+    ; Value to print in ext ram
+    ; Represent the font to use
+    print_ext_val: .res 1
+    ; pointer to current printed text in ext ram
+    print_ext_ptr: .res 2
+    ; pointer to current printed text in ppu
+    print_ppu_ptr: .res 2
+    ; number of character to print
+    print_counter: .res 1
+    ; buffer containing text to print to ppu
+    print_ppu_buf: .res 16
+    ; buffer containing text to print to ext ram
+    print_ext_buf: .res 16

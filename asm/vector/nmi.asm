@@ -18,7 +18,7 @@
 
 NMI:
     ; save registers
-    pushreg
+    pushregs
 
     ; do we need to do stuff ? (E flag)
     BIT nmi_flags
@@ -212,6 +212,6 @@ NMI:
 
     @end:
     ; restore registers
-    pullreg
+    pullregs
     ; return
     RTI
