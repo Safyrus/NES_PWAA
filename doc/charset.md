@@ -11,34 +11,34 @@
 | **01** | LB  | Line Break                                                         |
 | **02** | DB  | Dialog Break                                                       |
 | **03** | FDB | Force Dialog Break                                                 |
-| **04** | TGB | ToGgle dialog Box display                                          |
+| **04** | TD  | Toggle Dialog Box display                                          |
 | **05** | SCR | SCRoll to the other side of the scene                              |
 | **06** |     |                                                                    |
 | **07** |     |                                                                    |
-| **08** | SPD | SPeeD                                                              | arg_1: speed
-| **09** | DLY | DeLaY                                                              | arg_1: delay
-| **0A** | NAM | change NAMe of dialog box                                          | arg_1: idx
-| **0B** | FLH | FLasH                                                              | arg_1: color
-| **0C** | FDI | FaDe In ()                                                         | arg_1: color
-| **0D** | FDO | De Out                                                             | arg_1: color
-| **0E** | COL | change text COLor                                                  | arg_1: color
-| **0F** | BKD | change BacKground color of the Dialog box                          | arg_1: color
-| **10** | BIP | change dialog BIP effect                                           | arg_1: color
-| **11** | MUS | MUSic                                                              | arg_1: color
-| **12** | SND | SouND effect                                                        | arg_1: color
-| **13** | PHT | show PHoto                                                         | arg_1: idx (0=remove)
-| **14** | CSH | Character SHow                                                     | arg_1: idx (0=remove)
-| **15** | CAN | Character ANimation                                                | arg_1: color
-| **16** | BKG | change BacKGround                                                  | arg_1: color
-| **17** | FNT | Change FoNT to use                                                 | arg_1: color
-| **18** | JMP | JuMP to another dialog                                             | arg_1: idx_hi, arg_2: idx_lo
-| **19** | CHC | CHoiCe, jump to the dialog + offset depending on the player choice | arg_1: idx_hi, arg_2: idx_lo, arg_3: nb_choice
-| **1A** | BPL | Background PaLette                                                 | arg_1 to 4: palette
-| **1B** | SPL | Sprite PaLette                                                     | arg_1 to 4: palette
+| **08** | SPD | SPeeD                                                              | 1: speed
+| **09** | DL  | DeLay                                                              | 1: delay
+| **0A** | NAM | change NAMe of dialog box                                          | 1: name
+| **0B** | FLH | FLasH                                                              | 1: color
+| **0C** | FI  | Fade In                                                            | 1: color
+| **0D** | FO  | Fade Out                                                           | 1: color
+| **0E** | COL | change text COLor                                                  | 1: color
+| **0F** | BC  | change Background Color                                            | 1: color
+| **10** | BIP | change dialog BIP effect                                           | 1: bip
+| **11** | MUS | MUSic                                                              | 1: music
+| **12** | SND | SouND effect                                                       | 1: sound
+| **13** | PHT | show PHoto                                                         | 1: photo (0=remove)
+| **14** | CHR | CHaRacter to show                                                  | 1: character (0=remove)
+| **15** | ANI | character ANImation                                                | 1: animation
+| **16** | BKG | change BacKGround                                                  | 1: background
+| **17** | FNT | Change FoNT to use                                                 | 1: font
+| **18** | JMP | JuMP to another dialog                                             | 3: adress\[0..6\], adress\[7..13\], adress\[14..20\]
+| **19** | ACT | jump to the dialog + offset depending on the player ACTion         | 4: adress\[0..6\], adress\[7..13\], adress\[14..20\], nb_choice
+| **1A** | BP  | Background Palette                                                 | 4: palettes (pal 0 first)
+| **1B** | SP  | Sprite Palette                                                     | 4: palettes (pal 0 first)
 | **1C** | RES | Reserved                                                           |
 | **1D** | RES | Reserved                                                           |
-| **1E** | EVT | EVenT                                                              | arg_1: fct_idx
-| **1F** | EXT | EXTension command                                                  | arg_1: ext command
+| **1E** | EVT | EVenT                                                              | 1: function
+| **1F** | EXT | EXTension command                                                  | 1: ext command
 
 ## Display char
 

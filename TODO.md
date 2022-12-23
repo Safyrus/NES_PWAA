@@ -4,8 +4,10 @@
   - [X] RLE INC encode (python)
   - [X] RLE INC decoding
   - [ ] Dialog box drawing
-  - [ ] Text drawing
-  - [ ] Special text "execution"
+  - [/] Text drawing
+  - [/] text "execution"
+    - [X] normal text
+    - [ ] special text (1/32)
 - [ ] Make the Project core functionality
   - [ ] Main process loop
   - [ ] Dialog box
