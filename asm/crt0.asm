@@ -115,6 +115,7 @@
     ; main file
     .include "main.asm"
     .include "math.asm"
+    .include "joypad.asm"
 
 .if FAMISTUDIO=1
     ; FamiStudio Sound Engine

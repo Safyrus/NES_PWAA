@@ -62,11 +62,11 @@
 
     ; Background data to send to PPU during VBLANK
     ; Packet structure:
-    ; byte 0   = v.ssssss (v= vertical draw, s= size)
+    ; byte 0   = vsssssss (v= vertical draw, s= size)
     ; byte 1-2 = ppu adress (most significant byte, least significant byte)
     ; byte 3-s = tile data
     ; packet of size 0 means there is no more data to draw
-    background: .res 63
+    background: .res 127
 
     ; temporary variables
     tmp:
@@ -83,6 +83,10 @@ OAM:
 ;****************
 .segment "BSS"
 
+    ; player input
+    buttons_1: .res 1
+    buttons_1_timer: .res 1
+
     ; - - - - - - - -
     ; Vairables for LZ decoding
     ; - - - - - - - -
@@ -96,6 +100,12 @@ OAM:
     ; - - - - - - - -
     ; pointer to current text to read
     txt_rd_ptr: .res 2
+    ; first byte of flags
+    ; .... .FIW
+    ;       ||+-- Wait for user input to continue
+    ;       |+--- Player input
+    ;       +---- Force action (ignore player inputs)
+    txt_flags: .res 1
 
     ; - - - - - - - -
     ; Variable for text printing

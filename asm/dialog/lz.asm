@@ -74,7 +74,7 @@ lz_decode:
             ; get the jump size (low)
             LDA tmp+0
             CMP tmp+4
-            BPL @dec_end_1
+            BCS @dec_end_1
                 DEC tmp+5
             @dec_end_1:
             SBC tmp+4

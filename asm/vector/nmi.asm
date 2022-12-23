@@ -45,7 +45,7 @@ NMI:
             BEQ @background_loop_end
 
             ; save size to Y
-            AND #$3F
+            AND #$7F
             TAY
             ; is vertical flag off ?
             LDA background, X
