@@ -4,14 +4,16 @@ print("start")
 
 # const
 MAX_STATS_PRINT = 32
-JUMP_SIZE = 256
+JUMP_SIZE = 256*16
 LEN_SIZE = 8
 JUMP_BITS = (JUMP_SIZE-1).bit_length()
 LEN_BITS = (LEN_SIZE-1).bit_length()
 BITS_SIZE = JUMP_BITS+LEN_BITS
+MIN_LEN = ((JUMP_BITS+LEN_BITS+1)//8)+1
 print("jump size:", JUMP_SIZE)
 print("len size:", LEN_SIZE)
 print("bits size:", BITS_SIZE)
+print("min len:", MIN_LEN)
 
 # arg
 inputfile = sys.argv[1]
@@ -35,14 +37,14 @@ while i < len(slz_text):
     first_bit = slz_text[i]
     i += 1
     if first_bit == "1":
-        l = int(slz_text[i:i+LEN_BITS], 2) + 2
+        l = int(slz_text[i:i+LEN_BITS], 2) + MIN_LEN
         j = int(slz_text[i+LEN_BITS:i+LEN_BITS+JUMP_BITS], 2)
         s = text[-j-1:-j-1+l]
         if len(s) != l:
-            print("ERROR", l, j, len(text))
+            print("ERROR", l, j, len(s), len(text))
         i += BITS_SIZE
         # stats
-        stats_l[l-2] += 1
+        stats_l[l-MIN_LEN] += 1
         stats_j[j] += 1
     else:
         s = chr(int(slz_text[i:i+7], 2))

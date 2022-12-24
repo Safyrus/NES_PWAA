@@ -7,6 +7,7 @@ LEN_SIZE = 8
 JUMP_BITS = (JUMP_SIZE-1).bit_length()
 LEN_BITS = (LEN_SIZE-1).bit_length()
 BITS_SIZE = JUMP_BITS+LEN_BITS
+MIN_LEN = ((JUMP_BITS+LEN_BITS+1)//8)+1
 
 def write_bit_stream(text, filename):
     with open(filename, "wb") as f:
@@ -46,9 +47,9 @@ def lz_encode(text, outputfile="", do_print = True):
         foundLen = 1
 
         # for each sequence of size l from the current character
-        for l in range(2, LEN_SIZE+2):
+        for l in range(MIN_LEN, LEN_SIZE+MIN_LEN):
             str2match = text[i:i+l]
-            if len(str2match) < 2:
+            if len(str2match) < MIN_LEN:
                 continue
             # look in the window
             j = window.find(str2match)
@@ -57,7 +58,7 @@ def lz_encode(text, outputfile="", do_print = True):
             # if it is present
             if j >= 0 and jmp >= l:
                 # then output special code
-                seq = "1" + format(l-2, "0"+str(LEN_BITS)+"b") + format(jmp, "0"+str(JUMP_BITS)+"b")
+                seq = "1" + format(l-MIN_LEN, "0"+str(LEN_BITS)+"b") + format(jmp, "0"+str(JUMP_BITS)+"b")
                 foundLen = l
 
         # increment to the next position in the text
@@ -87,6 +88,7 @@ if __name__ == "__main__":
 
     print("jump size:", JUMP_SIZE)
     print("len size:", LEN_SIZE)
+    print("min len size:", MIN_LEN)
 
     # read text from file
     print("read file...")

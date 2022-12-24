@@ -89,25 +89,16 @@ while i < len(text):
             textbin.append(FDB)
         elif name == "speed":
             textbin.append(SPD)
-            textbin.append(int(args[0])//2)
+            textbin.append(min(127, int(args[0])))
         elif name == "wait":
             textbin.append(DL)
-            textbin.append(int(args[0])//2)
+            textbin.append(min(127, int(args[0])))
         elif name == "name":
             textbin.append(NAM)
             textbin.append((int(args[0])//256) & 0x7F)
         elif name == "color":
             textbin.append(COL)
-            if args[0] == "0":
-                textbin.append(0x30)
-            elif args[0] == "1":
-                textbin.append(0x26)
-            elif args[0] == "2":
-                textbin.append(0x21)
-            elif args[0] == "3":
-                textbin.append(0x2A)
-            else:
-                textbin.append(int(args[0]) & 0x7F)
+            textbin.append((int(args[0])+1) & 0x7F)
 
         # update index
         i = tag_end+1
@@ -117,6 +108,15 @@ while i < len(text):
             textbin.append(CHAR_MAP.index(c))
         # update index
         i += 1
+
+# check if all char are encoded with 7 bits
+m = max(textbin)
+if m > 127:
+    print("ERROR: some character(s) use more than 7 bits")
+    print("       largest char found:", m)
+if 0 in textbin:
+    print("WARNING: A 0 value has been detected. It may be interpreted has 'END'")
+
 
 # outputing results
 print(f"writing new file...")
