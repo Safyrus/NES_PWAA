@@ -111,6 +111,7 @@
     .include "vector/rst.asm"
     .include "vector/nmi.asm"
     .include "vector/irq.asm"
+    .include "vector/scanline.asm"
 
     ; main file
     .include "main.asm"

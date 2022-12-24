@@ -86,7 +86,12 @@ OAM:
     ; player input
     buttons_1: .res 1
     buttons_1_timer: .res 1
-
+    ; scanline state
+    ; WFSS SSSS
+    ; ||++-++++-- scanline IRQ state
+    ; |+--------- 1 = in frame, 0 = in vblank
+    ; |---------- wait for scanline, cleare when scanline IRQ occured
+    scanline: .res 1
     ; - - - - - - - -
     ; Vairables for LZ decoding
     ; - - - - - - - -
@@ -106,6 +111,12 @@ OAM:
     ;       |+--- Player input
     ;       +---- Force action (ignore player inputs)
     txt_flags: .res 1
+    ; speed of text
+    txt_speed: .res 1
+    ; speed counter
+    txt_speed_count: .res 1
+    ; delay to wait
+    txt_delay: .res 1
 
     ; - - - - - - - -
     ; Variable for text printing

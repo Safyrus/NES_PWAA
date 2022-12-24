@@ -6,7 +6,7 @@
 ; - lz_in_bnk: bank of the text block
 ; use: tmp[0..5]
 ; /!\ assume to be in bank 0
-; /!\ change bank 1 + ram bank
+; /!\ change bank 1, 2 and ram bank
 lz_decode:
     pushregs
 
@@ -15,8 +15,10 @@ lz_decode:
     STA MMC5_RAM_BNK
 
     ; set input bank
-    LDA lz_in_bnk
-    STA MMC5_PRG_BNK1
+    LDX lz_in_bnk
+    STX MMC5_PRG_BNK1
+    INX
+    STX MMC5_PRG_BNK2
 
     ; init out pointer
     LDA #<MMC5_RAM   ; low adr
@@ -59,6 +61,10 @@ lz_decode:
 
         ; else this is a pointer
         @pointer:
+            ; get second byte from input
+            LDA (tmp+2), Y
+            STA tmp+4
+            inc_16 tmp+2
             ; get the jump size (high)
             TXA
             AND #$0F
@@ -67,16 +73,13 @@ lz_decode:
             SEC
             SBC tmp+5
             STA tmp+5
-            ; get second byte from input
-            LDA (tmp+2), Y
-            STA tmp+4
-            inc_16 tmp+2
             ; get the jump size (low)
             LDA tmp+0
             CMP tmp+4
             BCS @dec_end_1
                 DEC tmp+5
             @dec_end_1:
+            SEC
             SBC tmp+4
             STA tmp+4
             BNE @dec_end_2
@@ -92,7 +95,7 @@ lz_decode:
             LSR
             LSR
             CLC
-            ADC #$02
+            ADC #$03
             TAX
             ; recover the string and output it
             @copy:

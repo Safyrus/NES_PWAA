@@ -1,11 +1,23 @@
 
+; return in A the char read
+read_next_char:
+    LDA txt_rd_ptr+0
+    STA tmp+0
+    LDA txt_rd_ptr+1
+    STA tmp+1
+    LDY #$00
+    LDA (tmp), Y
+    inc_16 txt_rd_ptr
+    RTS
+
+
 read_next_dailog:
     PHA
 
     ; init ptr to ext ram
-    LDA #<(MMC5_EXP_RAM+282)
+    LDA #<(MMC5_EXP_RAM+$282)
     STA print_ext_ptr+0
-    LDA #>(MMC5_EXP_RAM+282)
+    LDA #>(MMC5_EXP_RAM+$282)
     STA print_ext_ptr+1
     ; init ptr to ppu
     LDA #<(PPU_NAMETABLE_0+$282)
@@ -41,6 +53,7 @@ read_text:
         ; - - - - - - - -
         ; guard condition (delay, animation, etc.)
         ; - - - - - - - -
+
         ; if wait flag
         LDA txt_flags
         AND #TXT_FLAG_WAIT
@@ -61,19 +74,33 @@ read_text:
                 JSR read_next_dailog
         @no_wait_flag:
 
+        ; if delay > 0
+        LDA txt_delay
+        BEQ @delay_end
+        @delay_not_0:
+            ; then delay -= 1
+            DEC txt_delay
+            ; and stop
+            JMP @end
+        @delay_end:
+
+        ; if speed != 0
+        LDA txt_speed_count
+        BEQ @speed_is_0
+        @speed_not_0:
+            DEC txt_speed_count
+            JMP @end
+        @speed_is_0:
+            LDA txt_speed
+            STA txt_speed_count
+        @speed_end:
+
         ; - - - - - - - -
         ; main part
         ; - - - - - - - -
 
-        ; load ptr
-        LDA txt_rd_ptr+0
-        STA tmp+0
-        LDA txt_rd_ptr+1
-        STA tmp+1
         ; c = next_char()
-        LDY #$00
-        LDA (tmp), Y
-        inc_16 txt_rd_ptr
+        JSR read_next_char
 
         ; if c is graphic char:
         CMP #$20
@@ -129,9 +156,20 @@ read_text:
             ; case SCR
                 ; set scroll flag
             ; case SPD
+            @SPD:
                 ; spd = next_char()
+                JSR read_next_char
+                SEC
+                SBC #$01
+                STA txt_speed
+                JMP @loop
             ; case DL
-                ; delay = next_char()
+            @DL:
+                ; delay = next_char()*2
+                JSR read_next_char
+                ASL
+                STA txt_delay
+                JMP @loop
             ; case NAM
                 ; name = next_char()
             ; case FLH
@@ -144,7 +182,25 @@ read_text:
                 ; set fade out flag
                 ; fade_color = next_char()
             ; case COL
-                ; txt_color = next_char()
+            @COL:
+                ; print_ext_val & 0x3F
+                LDA print_ext_val
+                AND #$3F
+                STA print_ext_val
+                ; col = next_char()
+                JSR read_next_char
+                ; (col-1) << 6
+                SEC
+                SBC #$01
+                AND #$03
+                CLC
+                ROR
+                ROR
+                ROR
+                ; print_ext_val | col
+                ORA print_ext_val
+                STA print_ext_val
+                JMP @loop
             ; case BC
                 ; txt_bck_color = next_char()
             ; case BIP
@@ -208,13 +264,13 @@ read_text:
         .byte <(@default-1)
         .byte <(@default-1)
         .byte <(@default-1)
+        .byte <(@SPD-1)
+        .byte <(@DL-1)
         .byte <(@default-1)
         .byte <(@default-1)
         .byte <(@default-1)
         .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
+        .byte <(@COL-1)
         .byte <(@default-1)
         .byte <(@default-1)
         .byte <(@default-1)
@@ -241,13 +297,13 @@ read_text:
         .byte >(@default-1)
         .byte >(@default-1)
         .byte >(@default-1)
+        .byte >(@SPD-1)
+        .byte >(@DL-1)
         .byte >(@default-1)
         .byte >(@default-1)
         .byte >(@default-1)
         .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
+        .byte >(@COL-1)
         .byte >(@default-1)
         .byte >(@default-1)
         .byte >(@default-1)

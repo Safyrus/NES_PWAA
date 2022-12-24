@@ -73,10 +73,18 @@ RST:
     LDA #$01
     STA MMC5_EXT_RAM
 
-    ; set fill tile
+    ; Set fill tile
     LDA #$00
     STA MMC5_FILL_TILE
     STA MMC5_FILL_COL
+
+    ; Enable scanline irq
+    LDA #$80
+    STA MMC5_SCNL_STAT
+    LDA #239
+    STA MMC5_SCNL_VAL
+    LDA #SCANLINE_TOP
+    STA scanline
 
     ; Disable Vertical split
     LDA #$00
@@ -84,7 +92,7 @@ RST:
     STA MMC5_SPLT_BNK
     STA MMC5_SPLT_SCRL
 
-    ; clean prg ram
+    ; Clean PRG RAM
     LDA #$00
     STA tmp+2
     @clean_prgram:

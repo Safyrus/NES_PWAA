@@ -17,17 +17,17 @@
 | **07** |     |                                                                    |
 | **08** | SPD | SPeeD                                                              | 1: speed
 | **09** | DL  | DeLay                                                              | 1: delay
-| **0A** | NAM | change NAMe of dialog box                                          | 1: name
+| **0A** | NAM | change NAMe of dialog box                                          | 1: name (255=remove)
 | **0B** | FLH | FLasH                                                              | 1: color
 | **0C** | FI  | Fade In                                                            | 1: color
 | **0D** | FO  | Fade Out                                                           | 1: color
 | **0E** | COL | change text COLor                                                  | 1: color
 | **0F** | BC  | change Background Color                                            | 1: color
-| **10** | BIP | change dialog BIP effect                                           | 1: bip
-| **11** | MUS | MUSic                                                              | 1: music
-| **12** | SND | SouND effect                                                       | 1: sound
-| **13** | PHT | show PHoto                                                         | 1: photo (0=remove)
-| **14** | CHR | CHaRacter to show                                                  | 1: character (0=remove)
+| **10** | BIP | change dialog BIP effect                                           | 1: bip (255=remove)
+| **11** | MUS | MUSic                                                              | 1: music (255=remove)
+| **12** | SND | SouND effect                                                       | 1: sound (255=remove)
+| **13** | PHT | show PHoto                                                         | 1: photo (255=remove)
+| **14** | CHR | CHaRacter to show                                                  | 1: character (255=remove)
 | **15** | ANI | character ANImation                                                | 1: animation
 | **16** | BKG | change BacKGround                                                  | 1: background
 | **17** | FNT | Change FoNT to use                                                 | 1: font

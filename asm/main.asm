@@ -13,7 +13,13 @@
     LDA #$0F
     STA palettes+0
     LDA #$30
-    STA palettes+1
+    STA palettes+3
+    LDA #$26
+    STA palettes+6
+    LDA #$21
+    STA palettes+9
+    LDA #$29
+    STA palettes+12
 
     ; load first dialog block
     LDA #DIALOG_BNK

@@ -67,6 +67,10 @@ print_flush:
     ; Y = counter
     LDY print_counter
     DEY
+    ; wait to be in frame
+    @wait_inframe:
+        BIT scanline
+        BVC @wait_inframe
     ; for y to 0 (included)
     @cp_ext:
         ; copy

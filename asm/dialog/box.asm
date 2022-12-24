@@ -58,6 +58,11 @@ _draw_dialog_box_line:
 draw_dialog_box:
     pushregs
 
+    ; acknowledge nmi, in case we start just after a frame
+    LDA nmi_flags
+    AND #($FF-NMI_DONE)
+    STA nmi_flags
+
     ; - - - - - - - -
     ; frame 1 (top line)
     ; - - - - - - - -
@@ -91,9 +96,9 @@ draw_dialog_box:
     STA tmp+2
     @loop_frames:
         ; wait next frame
-        @wait_1:
+        @wait:
             BIT nmi_flags
-            BPL @wait_1
+            BPL @wait
         ; acknowledge nmi
         LDA nmi_flags
         AND #($FF-NMI_DONE)
@@ -118,6 +123,25 @@ draw_dialog_box:
         ; next
         DEC tmp+2
         BNE @loop_frames
+
+    ; wait to be in frame
+    @wait_inframe:
+        BIT scanline
+        BVC @wait_inframe
+    ; set ptr to ext ram
+    LDA #<(MMC5_EXP_RAM+$260)
+    STA tmp+0
+    LDA #>(MMC5_EXP_RAM+$260)
+    STA tmp+1
+    ; set ext ram
+    LDA #$00
+    LDY #$00
+    @loop_ext:
+        STA (tmp), Y
+        ; next
+        INY
+        BNE @loop_ext
+
 
     @end:
     pullregs
