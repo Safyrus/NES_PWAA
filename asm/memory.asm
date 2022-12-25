@@ -83,17 +83,56 @@ OAM:
 ;****************
 .segment "BSS"
 
-    ; player input
+    ; - - - - - - - -
+    ; Player input variables
+    ; - - - - - - - -
+    ; player 1 inputs
     buttons_1: .res 1
+    ; timer before processing any input of player 1
     buttons_1_timer: .res 1
-    ; scanline state
+
+    ; - - - - - - - -
+    ; Scanline state
+    ; - - - - - - - -
     ; WFSS SSSS
     ; ||++-++++-- scanline IRQ state
     ; |+--------- 1 = in frame, 0 = in vblank
     ; |---------- wait for scanline, cleare when scanline IRQ occured
     scanline: .res 1
+
     ; - - - - - - - -
-    ; Vairables for LZ decoding
+    ; Music and sound variables
+    ; - - - - - - - -
+    ; music to play
+    music: .res 1
+    ; sound effect to play
+    sound: .res 1
+    ; bip sound to play when text is draw
+    bip: .res 1
+
+    ; - - - - - - - -
+    ; Visual effect variables
+    ; - - - - - - - -
+    ; .... .HSF
+    ;       ||+-- Fade in (1) or out (0)
+    ;       |+--- Scroll position (0=left, 1=right)
+    ;       +---- Hide dialog box
+    effect_flags: .res 1
+    ;
+    scroll_timer: .res 1
+    ;
+    fade_timer: .res 1
+    ;
+    fade_color: .res 1
+    ;
+    flash_timer: .res 1
+    ;
+    flash_color: .res 1
+    ;
+    shake_timer: .res 1
+
+    ; - - - - - - - -
+    ; Variables for LZ decoding
     ; - - - - - - - -
     ; pointer to input data
     lz_in: .res 2
@@ -101,7 +140,7 @@ OAM:
     lz_in_bnk: .res 1
 
     ; - - - - - - - -
-    ; Vairables for text reading
+    ; Variables for text reading
     ; - - - - - - - -
     ; pointer to current text to read
     txt_rd_ptr: .res 2
@@ -117,12 +156,18 @@ OAM:
     txt_speed_count: .res 1
     ; delay to wait
     txt_delay: .res 1
+    ;
+    txt_name: .res 1
+    ;
+    txt_font: .res 1
+    ;
+    txt_bck_color: .res 1
 
     ; - - - - - - - -
-    ; Variable for text printing
+    ; Variables for text printing
     ; - - - - - - - -
     ; Value to print in ext ram
-    ; Represent the font to use
+    ; value to send to MMC5 expansion RAM
     print_ext_val: .res 1
     ; pointer to current printed text in ext ram
     print_ext_ptr: .res 2
@@ -134,3 +179,36 @@ OAM:
     print_ppu_buf: .res 16
     ; buffer containing text to print to ext ram
     print_ext_buf: .res 16
+
+    ; - - - - - - - -
+    ; Image Variables
+    ; - - - - - - - -
+    ; photo/evidence toshow
+    img_photo: .res 1
+    ;
+    img_background: .res 1
+    ;
+    img_character: .res 1
+    ;
+    img_animation: .res 1
+
+    ; - - - - - - - -
+    ; Palette Variables
+    ; - - - - - - - -
+    ;
+    img_bkg_color: .res 1
+    img_bkg_palette_0: .res 3
+    img_bkg_palette_1: .res 3
+    img_bkg_palette_2: .res 3
+    img_bkg_palette_3: .res 3
+    ;
+    img_spr_palette_0: .res 3
+    img_spr_palette_1: .res 3
+    img_spr_palette_2: .res 3
+    img_spr_palette_3: .res 3
+    ;
+    txt_bkg_color: .res 1
+    txt_bkg_palette_0: .res 3
+    txt_bkg_palette_1: .res 3
+    txt_bkg_palette_2: .res 3
+    txt_bkg_palette_3: .res 3

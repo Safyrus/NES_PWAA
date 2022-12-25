@@ -117,13 +117,23 @@ read_text:
             ; debug print
             JSR print_char
 
+            ; - - - - - - - -
             ; switch (c)
+            ; - - - - - - - -
+            ; get switch index
             PLA
             TAX
+            ; push return adr
+            LDA #>(@loop-1)
+            PHA
+            LDA #<(@loop-1)
+            PHA
+            ; push jump adr
             LDA @switch_hi, X
             PHA
             LDA @switch_lo, X
             PHA
+            ; jump
             RTS
 
             ; case END
@@ -131,18 +141,19 @@ read_text:
                 ; should not occure, so jump forever
                 JSR print_flush
                 JMP @END_char
+                RTS
             ; case LB
             @LB:
                 ; go to next line
                 JSR print_lb
-                JMP @loop
+                RTS
             ; case DB
             @DB:
                 ; set flag to wait for user input to continue
                 LDA txt_flags
                 ORA #TXT_FLAG_WAIT
                 STA txt_flags
-                JMP @loop
+                RTS
             ; case FDB
             @FDB:
                 ; set flag to wait for user input to continue
@@ -150,37 +161,84 @@ read_text:
                 LDA txt_flags
                 ORA #(TXT_FLAG_WAIT + TXT_FLAG_FORCE)
                 STA txt_flags
-                JMP @loop
+                RTS
             ; case TD
+            @TD:
                 ; toggle flag to display dialog box
+                LDA effect_flags
+                EOR #EFFECT_FLAG_HIDE
+                STA effect_flags
+                RTS
             ; case SCR
-                ; set scroll flag
+            @SCR:
+                ; toggle scroll flag
+                LDA effect_flags
+                EOR #EFFECT_FLAG_SCROLL
+                STA effect_flags
+                ; set scroll timer
+                LDA #$FF
+                STA scroll_timer
+                RTS
+            ; case SAK
+            @SAK:
+                ; set shake timer
+                LDA #$FF
+                STA shake_timer
+                RTS
             ; case SPD
             @SPD:
-                ; spd = next_char()
+                ; spd = next_char() - 1
                 JSR read_next_char
                 SEC
                 SBC #$01
                 STA txt_speed
-                JMP @loop
+                RTS
             ; case DL
             @DL:
                 ; delay = next_char()*2
                 JSR read_next_char
                 ASL
                 STA txt_delay
-                JMP @loop
+                RTS
             ; case NAM
+            @NAM:
                 ; name = next_char()
+                JSR print_char
+                STA txt_name
+                RTS
             ; case FLH
-                ; set flash flag
+            @FLH:
                 ; flash_color = next_char()
+                JSR print_char
+                STA flash_color
+                ; set flash timer
+                LDA #$FF
+                STA scroll_timer
+                RTS
             ; case FI
+            @FI:
+                ; fade_color = next_char()
+                JSR print_char
+                STA fade_color
+                ; set fade timer
+                LDA #$FF
+                STA fade_timer
                 ; set fade in flag
-                ; fade_color = next_char()
+                LDA effect_flags
+                ORA #EFFECT_FLAG_FADE
+                RTS
             ; case FO
-                ; set fade out flag
+            @FO:
                 ; fade_color = next_char()
+                JSR print_char
+                STA fade_color
+                ; set fade timer
+                LDA #$FF
+                STA fade_timer
+                ; set fade out flag
+                LDA effect_flags
+                AND #($FF - EFFECT_FLAG_FADE)
+                RTS
             ; case COL
             @COL:
                 ; print_ext_val & 0x3F
@@ -200,127 +258,201 @@ read_text:
                 ; print_ext_val | col
                 ORA print_ext_val
                 STA print_ext_val
-                JMP @loop
+                RTS
             ; case BC
+            @BC:
                 ; txt_bck_color = next_char()
+                JSR read_next_char
+                STA txt_bck_color
+                RTS
             ; case BIP
+            @BIP:
                 ; txt_bip = next_char()
+                JSR read_next_char
+                STA bip
+                RTS
             ; case MUS
+            @MUS:
                 ; m = next_char()
+                JSR read_next_char
+                STA music
                 ; play_music(m)
+                ; TODO
+                RTS
             ; case SND
+            @SND:
                 ; s = next_char()
+                JSR read_next_char
+                STA sound
                 ; play_sound(s)
+                ; TODO
+                RTS
             ; case PHT
+            @PHT:
                 ; photo = next_char()
-                ; show_photo flag = photo != 0
+                JSR read_next_char
+                STA img_photo
+                RTS
             ; case CHR
+            @CHR:
                 ; character = next_char()
+                JSR read_next_char
+                STA img_character
+                RTS
             ; case ANI
+            @ANI:
                 ; character_animation = next_char()
-            ; case BCK
+                JSR read_next_char
+                STA img_animation
+                RTS
+            ; case BKG
+            @BKG:
                 ; background = next_char()
+                JSR read_next_char
+                STA img_background
+                RTS
             ; case FNT
-                ; font_adr = font_base_adr + next_char() * 96
+            @FNT:
+                ; font = next_char()
+                JSR read_next_char
+                STA txt_font
+                RTS
             ; case JMP
+            @JMP_char: ; TODO
                 ; j1 = next_char()
+                JSR read_next_char
                 ; j2 = next_char()
+                JSR read_next_char
                 ; j3 = next_char()
+                JSR read_next_char
                 ; txt_rd_ptr = j1[0..6] + (j2[0..5] << 7)
                 ; block = (j3[0..6] << 1) + j2[6]
                 ; if block != current_block:
                     ; lz_in, lz_in_bnk = block_table[block]
                     ; lz_decode()
+                RTS
             ; case ACT
+            @ACT: ; TODO
                 ; j1 = next_char()
+                JSR read_next_char
                 ; j2 = next_char()
+                JSR read_next_char
                 ; j3 = next_char()
+                JSR read_next_char
                 ; n = next_char()
+                JSR read_next_char
                 ; TODO
+                RTS
             ; case BP
+            @BP:
                 ; for i from 0 to 4
+                LDX #$00
+                @bp_loop:
                     ; p = next_char()
+                    JSR read_next_char
                     ; palette[i] = palette_table[p]
+                    JSR set_img_bck_palette
+                    ; continue
+                    INX
+                    CPX #$04
+                    BNE @bp_loop
+                RTS
             ; case SP
-                ; for i from 4 to 8
+            @SP:
+                ; for i from 0 to 4
+                LDX #$00
+                @sp_loop:
                     ; p = next_char()
+                    JSR read_next_char
                     ; palette[i] = palette_table[p]
+                    JSR set_img_spr_palette
+                    ; continue
+                    INX
+                    CPX #$04
+                    BNE @sp_loop
+                RTS
             ; case EVT
+            @EVT:
                 ; e = next_char()
+                JSR read_next_char
                 ; jsr event_table[e]
+                JMP exec_evt
             ; case EXT
+            @EXT:
                 ; e = next_char()
+                JSR read_next_char
                 ; extension_char(e)
+                JMP exec_ext
             ; default
             @default:
                 ; unknow control char
-                JMP @loop
+                RTS
     @switch_lo:
         .byte <(@END_char-1)
         .byte <(@LB-1)
         .byte <(@DB-1)
         .byte <(@FDB-1)
+        .byte <(@TD-1)
+        .byte <(@SCR-1)
         .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
+        .byte <(@SAK-1)
         .byte <(@SPD-1)
         .byte <(@DL-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
+        .byte <(@NAM-1)
+        .byte <(@FLH-1)
+        .byte <(@FI-1)
+        .byte <(@FO-1)
         .byte <(@COL-1)
+        .byte <(@BC-1)
+        .byte <(@BIP-1)
+        .byte <(@MUS-1)
+        .byte <(@SND-1)
+        .byte <(@PHT-1)
+        .byte <(@CHR-1)
+        .byte <(@ANI-1)
+        .byte <(@BKG-1)
+        .byte <(@FNT-1)
+        .byte <(@JMP_char-1)
+        .byte <(@ACT-1)
+        .byte <(@BP-1)
+        .byte <(@SP-1)
         .byte <(@default-1)
         .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
+        .byte <(@EVT-1)
+        .byte <(@EXT-1)
     @switch_hi:
         .byte >(@END_char-1)
         .byte >(@LB-1)
         .byte >(@DB-1)
         .byte >(@FDB-1)
+        .byte >(@TD-1)
+        .byte >(@SCR-1)
         .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
+        .byte >(@SAK-1)
         .byte >(@SPD-1)
         .byte >(@DL-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
+        .byte >(@NAM-1)
+        .byte >(@FLH-1)
+        .byte >(@FI-1)
+        .byte >(@FO-1)
         .byte >(@COL-1)
+        .byte >(@BC-1)
+        .byte >(@BIP-1)
+        .byte >(@MUS-1)
+        .byte >(@SND-1)
+        .byte >(@PHT-1)
+        .byte >(@CHR-1)
+        .byte >(@ANI-1)
+        .byte >(@BKG-1)
+        .byte >(@FNT-1)
+        .byte >(@JMP_char-1)
+        .byte >(@ACT-1)
+        .byte >(@BP-1)
+        .byte >(@SP-1)
         .byte >(@default-1)
         .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
+        .byte >(@EVT-1)
+        .byte >(@EXT-1)
 
     @end:
     ; pull registers

@@ -14,7 +14,7 @@
 | **04** | TD  | Toggle Dialog Box display                                          |
 | **05** | SCR | SCRoll to the other side of the scene                              |
 | **06** |     |                                                                    |
-| **07** |     |                                                                    |
+| **07** | SAK | ShAKe                                                              |
 | **08** | SPD | SPeeD                                                              | 1: speed
 | **09** | DL  | DeLay                                                              | 1: delay
 | **0A** | NAM | change NAMe of dialog box                                          | 1: name (255=remove)

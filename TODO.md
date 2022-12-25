@@ -3,19 +3,32 @@
 - [/] Dialog box
   - [X] RLE INC encode (python)
   - [X] RLE INC decoding
-  - [/] Dialog box drawing
-  - [/] Text drawing
+  - [X] Dialog box drawing
+  - [X] Text drawing
   - [/] text "execution"
     - [X] normal text
-    - [/] special text (11/32)
+    - [/] special text (7/28 tested)
+- [ ] Image drawing
+  - [ ] Scanline IRQ to separate screen into "nothing, image, text, nothing"
+  - [ ] RLE INC decoding
+  - [ ] Frame decoding
+  - [ ] Frame background drawing
+  - [ ] Frame sprites drawing
+- [ ] Visual effects
+  - [ ] Scrolling
+  - [ ] Flash
+  - [ ] Shake
+  - [ ] Fade
+  - [ ] UI Movement
 - [ ] Make the Project core functionality
   - [ ] Main process loop
   - [ ] Dialog box
   - [ ] Image drawing
   - [ ] Image Animation
-  - [ ] Scrolling
+  - [ ] Visual effects
   - [ ] Saving
   - [ ] FamiStudio import
+  - [ ] Interactive screen
 - [ ] Make missing game resources:
   - [ ] not there yet.
 - [ ] Refine game resources:
