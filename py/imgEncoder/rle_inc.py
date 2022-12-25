@@ -122,6 +122,7 @@ def rleinc_decode(data):
 
 if __name__ == "__main__":
     filename = sys.argv[1]
+    outfile  = sys.argv[2]
 
     print("reading...")
     with open(filename, "rb") as f:
@@ -131,20 +132,20 @@ if __name__ == "__main__":
         data.append(int(d))
     print("data size:", len(data))
 
-    print("data before:")
-    print(data)
+    # print("data before:")
+    # print(data)
 
     print("encoding...")
     encode = rleinc_encode(data)
     print("encode size:", len(encode))
-    print("encode data:")
-    print(encode)
+    # print("encode data:")
+    # print(encode)
 
     print("decoding...")
     decode = rleinc_decode(encode)
 
-    print("data after:")
-    print(decode)
+    # print("data after:")
+    # print(decode)
 
     if len(data) != len(decode):
         print("ERROR: decoded data is of different size from source data:",
@@ -157,3 +158,6 @@ if __name__ == "__main__":
                 err = True
         if not err:
             print("OK. decoded data match source data")
+
+    with open(outfile, "wb") as f:
+        f.write(bytes(encode))

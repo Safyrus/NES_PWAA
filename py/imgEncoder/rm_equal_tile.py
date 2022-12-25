@@ -1,8 +1,8 @@
 from img_2_tiles import *
 from rebuild import *
 
-MAX_PIXEL_DIFF = 2
-MAX_PIXEL_DIFF_SPR = 2
+MAX_PIXEL_DIFF = 0
+MAX_PIXEL_DIFF_SPR = 0
 SPR_BANK_PAGE_SIZE = 256
 SPR_SIZE_W = 8
 SPR_SIZE_H = 16

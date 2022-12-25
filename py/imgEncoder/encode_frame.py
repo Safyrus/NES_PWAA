@@ -16,13 +16,13 @@ def find_palettes(_, character_img):
     palettes.append([0, 1, 2, 3])
     palettes.append([  # character primary palette
         0,
-        idxs.index(colors[0])+2,
-        idxs.index(colors[1])+2,
-        idxs.index(colors[2])+2
+        idxs.index(colors[0])+2 if len(colors) > 0 else 4,
+        idxs.index(colors[1])+2 if len(colors) > 1 else 4,
+        idxs.index(colors[2])+2 if len(colors) > 2 else 4,
     ])
     palettes.append([  # character/background palette
         0,
-        idxs.index(colors[0])+2,
+        idxs.index(colors[0])+2 if len(colors) > 0 else 4,
         2,
         3
     ])
@@ -30,9 +30,9 @@ def find_palettes(_, character_img):
 
     palettes.append([  # character secondary palette
         0,
-        idxs.index(colors[3])+2,
-        idxs.index(colors[4])+2,
-        idxs.index(colors[5])+2
+        idxs.index(colors[3])+2 if len(colors) > 3 else 4,
+        idxs.index(colors[4])+2 if len(colors) > 4 else 4,
+        idxs.index(colors[5])+2 if len(colors) > 5 else 4,
     ])
     palettes.append([0, 0, 0, 0])  # unused
     palettes.append([0, 0, 0, 0])  # unused
@@ -109,8 +109,8 @@ def find_img_box(img):
 
     # init variables
     max_x, max_y = 0, 0,
-    min_x = w
-    min_y = h
+    min_x = w-1
+    min_y = h-1
 
     # loop
     for y in range(h):
@@ -133,8 +133,8 @@ def find_img_box(img):
     return {
         "x": min_y,
         "y": min_x,
-        "w": max_y - min_y,
-        "h": max_x - min_x
+        "w": max(0, max_y - min_y),
+        "h": max(0, max_x - min_x)
     }
 
 
@@ -186,7 +186,6 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
 
     # merge background and character into 1 image
     frame = merge_image(background_img, character_img)
-    Image.fromarray(frame).save("test.png")
 
     # remove sprite colors from background
     frame_nospr = frame
