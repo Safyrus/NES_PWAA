@@ -127,6 +127,9 @@
 .segment "DLG_BNK"
     .include "dialog/main.asm"
 
+.segment "IMG_BNK"
+    .include "img/main.asm"
+
 ; 6502 vectors
 .segment "VECTORS"
     ; 6502 vectors

@@ -157,9 +157,11 @@ MMC5_RAM       := $6000
 ;----------
 ; Game
 ;----------
-TEXT_BUF_BNK = $00
 DIALOG_BNK   = $80
-RAM_MAX_BNK  = 0
+IMAGE_BNK   = $81
+TEXT_BUF_BNK = $00
+IMG_BUF_BNK = $01
+RAM_MAX_BNK  = 1
 
 BTN_TIMER = 15
 

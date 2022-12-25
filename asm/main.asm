@@ -21,8 +21,24 @@
     LDA #$29
     STA palettes+12
 
+    ; rleinc decode
+    LDA #IMAGE_BNK
+    STA MMC5_PRG_BNK0
+    LDA #IMG_BUF_BNK
+    STA MMC5_RAM_BNK
+    LDA #<img_data
+    STA tmp+0
+    LDA #>img_data
+    STA tmp+1
+    LDA #<MMC5_RAM
+    STA tmp+2
+    LDA #>MMC5_RAM
+    STA tmp+3
+    JSR rleinc
+
     ; load first dialog block
     LDA #DIALOG_BNK
+    STA MMC5_PRG_BNK0
     STA lz_in_bnk
     STA MMC5_PRG_BNK0
     LDA #<TEXT_PTR

@@ -1,5 +1,6 @@
 
-; return in A the char read
+; return in A the char read and increase the ptr
+; change Y to 0
 read_next_char:
     LDA txt_rd_ptr+0
     STA tmp+0

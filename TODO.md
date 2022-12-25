@@ -1,16 +1,17 @@
 ## To-do
 
 - [/] Dialog box
-  - [X] RLE INC encode (python)
-  - [X] RLE INC decoding
+  - [X] LZ encode (python)
+  - [X] LZ decoding
   - [X] Dialog box drawing
   - [X] Text drawing
   - [/] text "execution"
     - [X] normal text
     - [/] special text (7/28 tested)
 - [ ] Image drawing
+  - [X] RLEINC encode (python)
+  - [X] RLEINC decoding
   - [ ] Scanline IRQ to separate screen into "nothing, image, text, nothing"
-  - [ ] RLE INC decoding
   - [ ] Frame decoding
   - [ ] Frame background drawing
   - [ ] Frame sprites drawing

@@ -8,7 +8,7 @@ RLE INC Table from [NesDev wiki](https://www.nesdev.org/wiki/Tile_compression#RL
 
 |Value |                                    Meaning                                                          |
 |------|-----------------------------------------------------------------------------------------------------|
-|00–3F |LIT: Copy (n+1) bytes from input to output backwards                                                 |
+|00–3F |LIT: Copy (n+1) bytes from input to output                                                           |
 |40    |END: End of stream                                                                                   |
 |41–7F |SEQ: Read next byte b. Put b, (n−0x3F) times; add 1 to b after each iteration                        |
 |80–9F |DBL: Read next byte b1, and next byte b2. Put b1, (n−0x7D) times; swap b2 and b1 after each iteration|
