@@ -40,43 +40,66 @@ def rleinc_dblsize(data, i):
     return dbl_size
 
 
+def rleinc_allsize(data, i):
+    d1 = data[i]
+    d2 = -1
+    if i+1 < len(data):
+        d2 = data[i+1]
+    run_size = rleinc_runsize(data, i)
+    seq_size = rleinc_seqsize(data, i)
+    dbl_size = 0
+    if d2 >= 0:
+        dbl_size = rleinc_dblsize(data, i)
+    # print(run_size, seq_size, dbl_size)
+    return run_size, seq_size, dbl_size, d1, d2
+
+
 def rleinc_encode(data):
     out = []
     i = 0
     while i < len(data):
-        d1 = data[i]
-        d2 = -1
-        if i+1 < len(data):
-            d2 = data[i+1]
-        run_size = rleinc_runsize(data, i)
-        seq_size = rleinc_seqsize(data, i)
-        dbl_size = 0
-        if d2 >= 0:
-            dbl_size = rleinc_dblsize(data, i)
-
-        # print(run_size, seq_size, dbl_size)
-
-        if run_size < 2 and seq_size < 2 and dbl_size < 3:
-            # print("LIT")
-            out.append(0x00)
-            out.append(d1)
+        # 
+        lit_data = []
+        run_size, seq_size, dbl_size, d1, d2 = rleinc_allsize(data, i)
+        while (run_size < 2 and seq_size < 2 and dbl_size < 3) and len(lit_data) < 0x40:
+            lit_data.append(data[i])
             i += 1
-        elif run_size >= seq_size and run_size >= dbl_size:
-            # print("RUN", run_size)
+            if i >= len(data):
+                break
+            run_size, seq_size, dbl_size, d1, d2 = rleinc_allsize(data, i)
+        if i >= len(data):
+            break
+
+        #
+        if len(lit_data) > 0:
+            # print("LIT", lit_data)
+            out.append(len(lit_data)-1)
+            for d in lit_data:
+                out.append(d)
+        #
+        if len(lit_data) == 0x40:
+            continue
+
+        #
+        if run_size >= seq_size and run_size >= dbl_size:
+            # print("RUN", 0x101 - run_size, d1)
             out.append(0x101 - run_size)
             out.append(d1)
             i += run_size
+        #
         elif seq_size >= run_size and seq_size >= dbl_size:
-            # print("SEQ", seq_size)
+            # print("SEQ", seq_size + 0x3F, d1)
             out.append(seq_size + 0x3F)
             out.append(d1)
             i += seq_size
+        #
         elif dbl_size >= run_size and dbl_size >= seq_size:
-            # print("DBL", dbl_size)
+            # print("DBL", dbl_size + 0x7D, d1, d2)
             out.append(dbl_size + 0x7D)
             out.append(d1)
             out.append(d2)
             i += dbl_size
+        #
         else:
             print("ERROR")
 

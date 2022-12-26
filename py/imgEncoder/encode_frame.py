@@ -223,14 +223,16 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
         data.append(t % 256)
     for t in tile_map:
         data.append(t//256)
+    # put pal map into tile map
+    for i in range(len(pal_map)):
+        data[i+len(pal_map)] += (pal_map[i] << 6)
     # encode with RLE_INC data
     tile_map = rleinc_encode(data)
-    pal_map = rleinc_encode(pal_map)
     spr_map = rleinc_encode(spr_map)
     spr_data = [spr_info["w"], spr_info["b"], spr_info["x"], spr_info["y"]]
     spr_data.extend(spr_map)
 
-    return tile_map, pal_map, tile_bank, spr_info, spr_data, spr_bank
+    return tile_map, tile_bank, spr_info, spr_data, spr_bank
 
 
 if __name__ == "__main__":
@@ -250,16 +252,12 @@ if __name__ == "__main__":
         np.full((SPR_SIZE_H, SPR_SIZE_W), 3),
     ]
 
-    tile_map, pal_map, tile_bank, spr_info, spr_map, spr_bank = encode_frame(
+    tile_map, tile_bank, spr_info, spr_map, spr_bank = encode_frame(
         background_img_path, character_anim_path, tile_bank, spr_bank)
 
     # write tilemap to file
     with open("test_tile.bin", "wb") as chr:
         for t in tile_map:
-            chr.write(t.to_bytes(1, "big"))
-    # write palette map to file
-    with open("test_pal.bin", "wb") as chr:
-        for t in pal_map:
             chr.write(t.to_bytes(1, "big"))
     # write sprite map to file
     with open("test_spr.bin", "wb") as chr:
@@ -269,4 +267,4 @@ if __name__ == "__main__":
     # write CHR files
     write_tile_set_2_CHR("bank.chr", tile_bank)
     write_spr_tile_set_2_CHR("bank_spr.chr", spr_bank)
-    rebuild_frame_img(tile_map, pal_map, spr_map, tile_bank, spr_bank).save("out.png")
+    rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank).save("out.png")

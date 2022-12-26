@@ -1,3 +1,3 @@
 .include "rleinc.asm"
 img_data:
-.incbin "data/img_bck.bin"
+.incbin "data/img_bkg.bin"

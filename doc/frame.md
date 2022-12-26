@@ -18,21 +18,21 @@ RLE INC Table from [NesDev wiki](https://www.nesdev.org/wiki/Tile_compression#RL
 
 - Byte 0: flags.
 
-        FPTS ....
-        ||||
+        FPTS ..BB
+        ||||   ++-- CHR bits for the MMC5 upper CHR Bank bits
         |||+------- is Sprite map present ?
-        ||+-------- is Tile map, with palette map, present ?
-        |+--------- is Palette indexes present ?
+        ||+-------- is Tile map present ?
+        |+--------- is Palette present ?
         +---------- 1 = Full frame
                     0 = partial frame
 
-- Byte 1-2: palette 0 indices. (background color)
-- Byte 3-4: palette 1 indices. (character primary color)
-- Byte 5-6: palette 2 indices. (character contour color)
-- Byte 7-8: palette 4 indices. (character secondary color)
-- Tile map (RLE INC)
-- Palette map (RLE INC)
-- Sprite map (RLE INC)
+- If palette present:
+  - Byte 1-2: palette 0 indices. (background color)
+  - Byte 3-4: palette 1 indices. (character primary color)
+  - Byte 5-6: palette 2 indices. (character contour color)
+  - Byte 7-8: palette 4 indices. (character secondary color)
+- Tile map. (RLE INC)
+- Sprite map. (RLE INC)
 
 #### Full frame vs Partial frame
 
@@ -50,11 +50,7 @@ The tile map is a structure describing the background tiles to draw from the top
 Each tile is a 16-bits number corresponding to a tile in CHR ROM.
 The tile map is split into 2 list of 8-bits number (for compression reason).
 The first correspond to the lower part of the 16-bit numbers, and the second list to the higher part.
-
-### Palette map
-
-The palette map is used in parallel of the tile map and describe what palette to use for each tile.
-It is a list of bytes (from 0 to 3) representing the palette to use.
+The higher bytes contain the palette to use for the tile (bits 6 and 7).
 
 ### Sprite map
 

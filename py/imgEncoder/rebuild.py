@@ -42,18 +42,18 @@ def rebuild_bkg_img(tileList, tileBank, nb_color=4):
     return img
 
 
-def rebuild_frame_img(tile_map, pal_map, spr_map, tile_bank, spr_bank, nb_color=13):
+def rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank, nb_color=13):
     # decode sprite map
     spr_info = spr_map[:4]
     spr_map = rle_inc.rleinc_decode(spr_map[4:])
-    # decode palette map
-    pal_map = rle_inc.rleinc_decode(pal_map)
-    # decode tile map
+    # decode tile map and palette map
     decode = rle_inc.rleinc_decode(tile_map)
+    pal_map = []
     tile_map = []
     l = len(decode) // 2
     for i in range(0, l):
-        idx = decode[i] + (decode[i+l] * 256)
+        idx = decode[i] + ((decode[i+l] & 0x3F) * 256)
+        pal_map.append(decode[i+l] >> 6)
         tile_map.append(idx)
 
     # create image
