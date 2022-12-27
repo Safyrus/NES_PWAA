@@ -17,8 +17,8 @@ scanline_irq_handler:
     RTS
 
     @scanline_irq_top:
-        ; set next interrupt to scanline 24
-        LDA #24
+        ; set next interrupt to scanline 23
+        LDA #23
         STA MMC5_SCNL_VAL
         ; nametable mapping change done at the end of NMI
         ; (because we are too late at scanline 1 and we can't interrupt before without eating NMI time)

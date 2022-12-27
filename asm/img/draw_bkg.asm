@@ -34,7 +34,12 @@ img_bkg_draw_2lines:
     pullregs
     RTS
 
+; description:
+;   draw the background part of the image
+; use tmp[0..5]
 img_bkg_draw:
+    pushregs
+
     ; set bank
     LDA #IMG_BUF_BNK
     STA MMC5_RAM_BNK
@@ -97,4 +102,5 @@ img_bkg_draw:
         DEX
         BNE @loop
 
+    pullregs
     RTS

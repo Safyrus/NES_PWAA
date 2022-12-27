@@ -193,6 +193,22 @@ OAM:
     img_animation: .res 1
 
     ; - - - - - - - -
+    ; Sprites Variables
+    ; - - - - - - - -
+    ;
+    ; img_spr_header:
+    ;
+    img_spr_w: .res 1
+    ;
+    img_spr_b: .res 1
+    ;
+    img_spr_x: .res 1
+    ;
+    img_spr_y: .res 1
+    ;
+    img_spr_count: .res 1
+
+    ; - - - - - - - -
     ; Palette Variables
     ; - - - - - - - -
     ;

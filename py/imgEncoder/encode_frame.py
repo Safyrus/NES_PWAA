@@ -270,4 +270,7 @@ if __name__ == "__main__":
     # write CHR files
     write_tile_set_2_CHR("bank.chr", tile_bank)
     write_spr_tile_set_2_CHR("bank_spr.chr", spr_bank)
-    rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank).save("out.png")
+    if tile_offset_hi == 0:
+        rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank).save("out.png")
+    else:
+        print("TODO: rebuild image with offset")

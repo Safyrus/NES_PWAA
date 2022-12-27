@@ -20,20 +20,19 @@ loop:
     rts
 
 
-update_btn_timer:
-    @timer:
-    LDA buttons_1_timer   ; decrease buttons_1_timer if it is not 0
-    BEQ @timer_reset
-    SEC
-    SBC #$01
-    STA buttons_1_timer
-    JMP @end
+; update_btn_timer:
+;     @timer:
+;     LDA buttons_1_timer   ; decrease buttons_1_timer if it is not 0
+;     BEQ @timer_reset
+;     SEC
+;     SBC #$01
+;     JMP @end
 
-    @timer_reset:
-    LDA buttons_1        ; set buttons_1_timer if any button was pressed
-    BEQ @end
-    LDA #BTN_TIMER
-    STA buttons_1_timer
+;     @timer_reset:
+;     LDA buttons_1        ; set buttons_1_timer if any button was pressed
+;     BEQ @end
+;     LDA #BTN_TIMER
 
-    @end:
-    RTS
+;     @end:
+;     STA buttons_1_timer
+;     RTS

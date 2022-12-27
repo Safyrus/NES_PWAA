@@ -92,6 +92,9 @@ RST:
     STA MMC5_SPLT_BNK
     STA MMC5_SPLT_SCRL
 
+    ; Set CHR banking mode
+    STA MMC5_CHR_MODE
+
     ; Clean PRG RAM
     LDA #$00
     STA tmp+2

@@ -4,15 +4,26 @@
 
 .macro MAIN_INIT
     ; render background + palette
-    LDA #(NMI_BKG + NMI_SCRL + NMI_PLT)
+    LDA #(NMI_BKG + NMI_SCRL + NMI_PLT + NMI_SPR)
     STA nmi_flags
-    LDA #(PPU_MASK_BKG + PPU_MASK_BKG8)
+    LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
     STA PPU_MASK
+    LDA ppu_ctrl_val
+    ORA #PPU_CTRL_SPR_SIZE
+    STA ppu_ctrl_val
+    STA PPU_CTRL
 
     ; set palette
+    LDX #$00
+    @pal_loop:
+        TXA
+        STA palettes, X
+        INX
+        CPX #25
+        BNE @pal_loop
     LDA #$0F
     STA palettes+0
-    LDA #$10
+    LDA #$11
     STA palettes+2
     LDA #$30
     STA palettes+3
@@ -22,25 +33,17 @@
     STA palettes+9
     LDA #$29
     STA palettes+12
+    LDA #$31
+    STA palettes+13
+    LDA #$32
+    STA palettes+14
+    LDA #$33
+    STA palettes+15
 
-    ; rleinc decode
+    ; load and draw image
     LDA #IMAGE_BNK
     STA MMC5_PRG_BNK0
-    LDA #IMG_BUF_BNK
-    STA MMC5_RAM_BNK
-    LDA #<img_data
-    STA tmp+0
-    LDA #>img_data
-    STA tmp+1
-    LDA #<MMC5_RAM
-    STA tmp+2
-    LDA #>MMC5_RAM
-    STA tmp+3
-    JSR rleinc
-
-    JSR img_bkg_draw
-
-    JSR wait_next_frame
+    JSR frame_decode
 
     ; load first dialog block
     LDA #DIALOG_BNK

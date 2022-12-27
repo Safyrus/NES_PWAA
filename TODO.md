@@ -12,9 +12,13 @@
   - [X] RLEINC encode (python)
   - [X] RLEINC decoding
   - [X] Scanline IRQ to separate screen into "nothing, image, text, nothing"
-  - [ ] Frame decoding
+  - [X] Frame decoding
   - [X] Frame background drawing
-  - [ ] Frame sprites drawing
+  - [X] Frame sprites drawing
+  - [ ] Palette update
+  - [ ] Palette 'split'
+  - [ ] Partial frame
+  - [ ] Fix visual 'error'
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
