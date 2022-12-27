@@ -165,7 +165,7 @@ def img_2_spr(img):
     return spr_tile, spr_map, info
 
 
-def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[]):
+def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[], tile_offset_hi=0):
 
     # reduce color count to 4 for background and 7 (+1 for transparent) for character
     background_img = bkg_col_reduce_2(background_img_path)
@@ -222,7 +222,7 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     for t in tile_map:
         data.append(t % 256)
     for t in tile_map:
-        data.append(t//256)
+        data.append(((t//256) + tile_offset_hi) % 64)
     # put pal map into tile map
     for i in range(len(pal_map)):
         data[i+len(pal_map)] += (pal_map[i] << 6)
@@ -238,6 +238,9 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
 if __name__ == "__main__":
     background_img_path = sys.argv[1]
     character_anim_path = sys.argv[2]
+    tile_offset_hi = 0
+    if len(sys.argv) > 3:
+        tile_offset_hi = int(sys.argv[3])
 
     tile_bank = [
         np.full((TILE_SIZE, TILE_SIZE), 0),
@@ -253,7 +256,7 @@ if __name__ == "__main__":
     ]
 
     tile_map, tile_bank, spr_info, spr_map, spr_bank = encode_frame(
-        background_img_path, character_anim_path, tile_bank, spr_bank)
+        background_img_path, character_anim_path, tile_bank, spr_bank, tile_offset_hi)
 
     # write tilemap to file
     with open("test_tile.bin", "wb") as chr:
