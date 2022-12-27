@@ -14,31 +14,31 @@
     STA PPU_CTRL
 
     ; set palette
-    LDX #$00
-    @pal_loop:
-        TXA
-        STA palettes, X
-        INX
-        CPX #25
-        BNE @pal_loop
-    LDA #$0F
-    STA palettes+0
-    LDA #$11
-    STA palettes+2
-    LDA #$30
-    STA palettes+3
-    LDA #$26
-    STA palettes+6
-    LDA #$21
-    STA palettes+9
-    LDA #$29
-    STA palettes+12
-    LDA #$31
-    STA palettes+13
-    LDA #$32
-    STA palettes+14
-    LDA #$33
-    STA palettes+15
+    ; LDX #$00
+    ; @pal_loop:
+    ;     TXA
+    ;     STA palettes, X
+    ;     INX
+    ;     CPX #25
+    ;     BNE @pal_loop
+    ; LDA #$0F
+    ; STA palettes+0
+    ; LDA #$11
+    ; STA palettes+2
+    ; LDA #$30
+    ; STA palettes+3
+    ; LDA #$26
+    ; STA palettes+6
+    ; LDA #$21
+    ; STA palettes+9
+    ; LDA #$29
+    ; STA palettes+12
+    ; LDA #$31
+    ; STA palettes+13
+    ; LDA #$32
+    ; STA palettes+14
+    ; LDA #$33
+    ; STA palettes+15
 
     ; load and draw image
     LDA #IMAGE_BNK

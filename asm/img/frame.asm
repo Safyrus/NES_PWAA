@@ -38,8 +38,41 @@ frame_decode:
     @palette:
         ; save header byte
         PHA
-        ; TODO
-        LDA #$08
+        ; loop
+        @palette_loop:
+            ; ignore high byte for now
+            INY
+            ; get low byte
+            LDA (tmp), Y
+            TAX
+            ;
+            INY
+            TYA
+            PHA
+            ASL
+            SEC
+            SBC #$04
+            TAY
+            ;
+            LDA palette_table_0, X
+            STA img_palettes, Y
+            INY
+            LDA palette_table_1, X
+            STA img_palettes, Y
+            INY
+            LDA palette_table_2, X
+            STA img_palettes, Y
+            INY
+            LDA palette_table_3, X
+            STA img_palettes, Y
+            PLA
+            TAY
+            ;
+            CPY #$08
+            BNE @palette_loop
+        ; update pointer
+        TYA
+        LDY #$00
         add_A2ptr tmp
         ; restore header byte
         PLA
@@ -113,6 +146,43 @@ frame_decode:
     PLA
     ASL
     ASL
+    BCC @draw_palettes_end
+    @draw_palettes:
+        ;
+        PHA
+        ; update palette 0
+        LDA img_palette_0+0
+        STA palettes+0
+        LDA img_palette_0+1
+        STA palettes+1
+        LDA img_palette_0+2
+        STA palettes+2
+        LDA img_palette_0+3
+        STA palettes+3
+        ; update palette 1
+        LDA img_palette_1+1
+        STA palettes+4
+        LDA img_palette_1+2
+        STA palettes+5
+        LDA img_palette_1+3
+        STA palettes+6
+        ; update palette 2
+        LDA img_palette_2+1
+        STA palettes+7
+        LDA img_palette_2+2
+        STA palettes+8
+        LDA img_palette_2+3
+        STA palettes+9
+        ; update palette 3
+        LDA img_palette_3+1
+        STA palettes+13
+        LDA img_palette_3+2
+        STA palettes+14
+        LDA img_palette_3+3
+        STA palettes+15
+        ;
+        PLA
+    @draw_palettes_end:
     ; tiles
     ASL
     BCC @draw_tiles_end

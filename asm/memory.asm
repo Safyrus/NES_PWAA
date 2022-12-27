@@ -212,19 +212,8 @@ OAM:
     ; Palette Variables
     ; - - - - - - - -
     ;
-    img_bkg_color: .res 1
-    img_bkg_palette_0: .res 3
-    img_bkg_palette_1: .res 3
-    img_bkg_palette_2: .res 3
-    img_bkg_palette_3: .res 3
-    ;
-    img_spr_palette_0: .res 3
-    img_spr_palette_1: .res 3
-    img_spr_palette_2: .res 3
-    img_spr_palette_3: .res 3
-    ;
-    txt_bkg_color: .res 1
-    txt_bkg_palette_0: .res 3
-    txt_bkg_palette_1: .res 3
-    txt_bkg_palette_2: .res 3
-    txt_bkg_palette_3: .res 3
+    img_palettes:
+    img_palette_0: .res 4
+    img_palette_1: .res 4
+    img_palette_2: .res 4
+    img_palette_3: .res 4

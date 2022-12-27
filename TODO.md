@@ -15,7 +15,7 @@
   - [X] Frame decoding
   - [X] Frame background drawing
   - [X] Frame sprites drawing
-  - [ ] Palette update
+  - [X] Palette update
   - [ ] Palette 'split'
   - [ ] Partial frame
   - [ ] Fix visual 'error'
