@@ -12,6 +12,8 @@
     ; set palette
     LDA #$0F
     STA palettes+0
+    LDA #$10
+    STA palettes+2
     LDA #$30
     STA palettes+3
     LDA #$26
@@ -36,11 +38,14 @@
     STA tmp+3
     JSR rleinc
 
+    JSR img_bkg_draw
+
+    JSR wait_next_frame
+
     ; load first dialog block
     LDA #DIALOG_BNK
     STA MMC5_PRG_BNK0
     STA lz_in_bnk
-    STA MMC5_PRG_BNK0
     LDA #<TEXT_PTR
     STA lz_in+0
     LDA #>TEXT_PTR
@@ -69,10 +74,8 @@
 
 .endmacro
 
-MAIN:
-
-    MAIN_INIT
-
+; use: A
+wait_next_frame:
     ; wait for next frame to start
     @wait_vblank:
         BIT nmi_flags
@@ -86,6 +89,16 @@ MAIN:
     ; reset zp background index
     LDA #$00
     STA background_index
+
+    RTS
+
+
+MAIN:
+
+    MAIN_INIT
+
+    @main_loop:
+    JSR wait_next_frame
 
     ; update player inputs
     JSR readjoy
@@ -107,4 +120,4 @@ MAIN:
     JSR read_text
 
     ; loop back to start of main
-    JMP @wait_vblank
+    JMP @main_loop

@@ -211,6 +211,11 @@ NMI:
     STA nmi_flags
 
     @end:
+
+    ; set nametable mapping to default
+    LDA #DEFAULT_NT_MAPPING
+    STA MMC5_NAMETABLE
+
     ; restore registers
     pullregs
     ; return

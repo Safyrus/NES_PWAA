@@ -95,17 +95,7 @@ draw_dialog_box:
     LDA #$03
     STA tmp+2
     @loop_frames:
-        ; wait next frame
-        @wait:
-            BIT nmi_flags
-            BPL @wait
-        ; acknowledge nmi
-        LDA nmi_flags
-        AND #($FF-NMI_DONE)
-        STA nmi_flags
-        ; reset zp background index
-        LDA #$00
-        STA background_index
+        JSR wait_next_frame
 
         ; draw one line
         LDA #BOX_TILE_L

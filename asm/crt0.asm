@@ -108,8 +108,8 @@
 
 .segment "LAST_BNK"
     ; 6502 vectors subrountines
-    .include "vector/rst.asm"
     .include "vector/nmi.asm"
+    .include "vector/rst.asm"
     .include "vector/irq.asm"
     .include "vector/scanline.asm"
 

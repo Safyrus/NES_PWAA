@@ -11,9 +11,9 @@
 - [ ] Image drawing
   - [X] RLEINC encode (python)
   - [X] RLEINC decoding
-  - [ ] Scanline IRQ to separate screen into "nothing, image, text, nothing"
+  - [X] Scanline IRQ to separate screen into "nothing, image, text, nothing"
   - [ ] Frame decoding
-  - [ ] Frame background drawing
+  - [X] Frame background drawing
   - [ ] Frame sprites drawing
 - [ ] Visual effects
   - [ ] Scrolling
