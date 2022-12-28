@@ -83,7 +83,7 @@ RST:
     STA MMC5_SCNL_STAT
     LDA #239
     STA MMC5_SCNL_VAL
-    LDA #SCANLINE_TOP
+    LDA #SCANLINE_BOT_IMG
     STA scanline
 
     ; Disable Vertical split

@@ -16,7 +16,7 @@
   - [X] Frame background drawing
   - [X] Frame sprites drawing
   - [X] Palette update
-  - [ ] Palette 'split'
+  - [X] Palette 'split'
   - [ ] Partial frame
   - [ ] Fix visual 'error'
 - [ ] Visual effects
