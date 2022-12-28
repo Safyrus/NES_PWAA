@@ -98,7 +98,10 @@ while i < len(text):
             textbin.append((int(args[0])//256) & 0x7F)
         elif name == "color":
             textbin.append(COL)
-            textbin.append((int(args[0])+1) & 0x7F)
+            col = int(args[0])
+            if col == 0 or col > 4:
+                col = 4
+            textbin.append(col)
 
         # update index
         i = tag_end+1

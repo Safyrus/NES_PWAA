@@ -52,9 +52,10 @@ def rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank, nb_color=13):
     tile_map = []
     l = len(decode) // 2
     for i in range(0, l):
-        idx = decode[i] + ((decode[i+l] & 0x3F) * 256)
+        lo = decode[i]
+        hi = (decode[i+l] & 0x3F) << 8
+        tile_map.append(lo | hi)
         pal_map.append(decode[i+l] >> 6)
-        tile_map.append(idx)
 
     # create image
     pal = [i//3 for i in range(nb_color*3)]

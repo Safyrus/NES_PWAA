@@ -54,7 +54,7 @@ def rleinc_allsize(data, i):
     return run_size, seq_size, dbl_size, d1, d2
 
 
-def rleinc_encode(data):
+def rleinc_encode(data, doprint=False):
     out = []
     i = 0
     while i < len(data):
@@ -68,11 +68,18 @@ def rleinc_encode(data):
                 break
             run_size, seq_size, dbl_size, d1, d2 = rleinc_allsize(data, i)
         if i >= len(data):
+            if len(lit_data) > 0:
+                if doprint:
+                    print("[ENCODE]: LIT", len(lit_data)-1, i)
+                out.append(len(lit_data)-1)
+                for d in lit_data:
+                    out.append(d)
             break
 
         #
         if len(lit_data) > 0:
-            # print("LIT", lit_data)
+            if doprint:
+                print("[ENCODE]: LIT", len(lit_data)-1, i)
             out.append(len(lit_data)-1)
             for d in lit_data:
                 out.append(d)
@@ -82,19 +89,22 @@ def rleinc_encode(data):
 
         #
         if run_size >= seq_size and run_size >= dbl_size:
-            # print("RUN", 0x101 - run_size, d1)
+            if doprint:
+                print("[ENCODE]: RUN", 0x101 - run_size, d1, i)
             out.append(0x101 - run_size)
             out.append(d1)
             i += run_size
         #
         elif seq_size >= run_size and seq_size >= dbl_size:
-            # print("SEQ", seq_size + 0x3F, d1)
+            if doprint:
+                print("[ENCODE]: SEQ", seq_size + 0x3F, d1, i)
             out.append(seq_size + 0x3F)
             out.append(d1)
             i += seq_size
         #
         elif dbl_size >= run_size and dbl_size >= seq_size:
-            # print("DBL", dbl_size + 0x7D, d1, d2)
+            if doprint:
+                print("[ENCODE]: DBL", dbl_size + 0x7D, d1, d2, i)
             out.append(dbl_size + 0x7D)
             out.append(d1)
             out.append(d2)
@@ -103,40 +113,46 @@ def rleinc_encode(data):
         else:
             print("ERROR")
 
-    # print("END")
+    if doprint:
+        print("[ENCODE]: END", i)
     out.append(RLEINC_CMD_END)
     return out
 
 
-def rleinc_decode(data):
+def rleinc_decode(data, doprint=False):
     out = []
     idx = 0
     while True:
         n, idx = rleinc_next(data, idx)
         if n == RLEINC_CMD_END:
-            # print("[DECODE]: END")
+            if doprint:
+                print("[DECODE]: END", len(out))
             return out
         elif n < RLEINC_CMD_SEQ:
-            # print("[DECODE]: LIT", n+1)
+            if doprint:
+                print("[DECODE]: LIT", n, len(out))
             for _ in range(n+1):
                 b, idx = rleinc_next(data, idx)
                 out.append(b)
         elif n < RLEINC_CMD_DBL:
             b, idx = rleinc_next(data, idx)
-            # print("[DECODE]: SEQ", n-0x3F, b)
+            if doprint:
+                print("[DECODE]: SEQ", n, b, len(out))
             for _ in range(n-0x3F):
                 out.append(b)
                 b += 1
         elif n < RLEINC_CMD_RUN:
             b1, idx = rleinc_next(data, idx)
             b2, idx = rleinc_next(data, idx)
-            # print("[DECODE]: DBL", n-0x7D, b1, b2)
+            if doprint:
+                print("[DECODE]: DBL", n, b1, b2, len(out))
             for _ in range(n-0x7D):
                 out.append(b1)
                 b1, b2 = b2, b1
         elif n < 0x100:
             b, idx = rleinc_next(data, idx)
-            # print("[DECODE]: RUN", 0x101-n, b)
+            if doprint:
+                print("[DECODE]: RUN", n, b, len(out))
             for _ in range(0x101-n):
                 out.append(b)
         else:

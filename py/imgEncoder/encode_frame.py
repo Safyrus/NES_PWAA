@@ -1,6 +1,12 @@
 from rle_inc import *
-from collections import Counter
 from rebuild import *
+
+
+def grayscale_max(img):
+    arr = np.array(img)
+    arr *= 255//arr.max()
+    return Image.fromarray(arr)
+
 
 def find_palettes(_, character_img):
     palettes = []
@@ -26,7 +32,6 @@ def find_palettes(_, character_img):
         2,
         3
     ])
-    palettes.append([0, 0, 0, 0])  # unused
 
     palettes.append([  # character secondary palette
         0,
@@ -34,9 +39,6 @@ def find_palettes(_, character_img):
         idxs.index(colors[4])+2 if len(colors) > 4 else 4,
         idxs.index(colors[5])+2 if len(colors) > 5 else 4,
     ])
-    palettes.append([0, 0, 0, 0])  # unused
-    palettes.append([0, 0, 0, 0])  # unused
-    palettes.append([0, 0, 0, 0])  # unused
 
     return palettes
 
@@ -56,40 +58,31 @@ def apply_palette(tile_set, palettes):
         # find color by count
         hist = []
         for j in range(0, 10):
-            hist.append(np.count_nonzero(np.any(tile_set[i] == j)))
-        histpair = []
-        # sort by max
-        for j in range(len(hist)):
-            idx = j if hist[j] > 0 else 0
-            histpair.append((hist[j], idx))
-        histpair = sorted(histpair, key=lambda tup: tup[0], reverse=True)[:4]
-        hist_idx = [x for _, x in histpair]
-
-        # remove excess colors
-        for y in range(len(tile_set[i])):
-            for x in range(len(tile_set[i][y])):
-                p = tile_set[i][y][x]
-                if p not in hist_idx:
-                    tile_set[i][y][x] = 0
+            count = np.count_nonzero(np.where(tile_set[i] == j, 1, 0))
+            hist.append(count)
 
         # find best palette
         best_idx = 0
         best_count = 0
-        t = tile_set[i].flatten()
-        for j in range(4):
-            count = []
+        for j in range(3):
+            count = 0
             for k in range(4):
-                if palettes[j][k] in t and palettes[j][k] not in count:
-                    count.append(palettes[j][k])
-            count = len(count)
+                p = palettes[j][k]
+                count += hist[p]
             if count > best_count:
                 best_idx = j
                 best_count = count
+        #
         pal_map.append(best_idx)
+        pal = palettes[best_idx]
+
+        # remove eccess colors
+        isin_res = np.isin(tile_set[i], pal)
+        tile_set[i] = np.where(isin_res, tile_set[i], 0)
 
         # replace color with palette
-        for j in range(len(palettes[best_idx])):
-            p = palettes[best_idx][j]
+        for j in range(len(pal)):
+            p = pal[j]
             tile_set[i] = np.where(tile_set[i] == p, j, tile_set[i])
 
     return tile_set, pal_map
@@ -174,8 +167,8 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     background_img = img_2_idx(background_img)
     character_img = img_2_idx(character_img)
 
-    background_img.save("bck.png")
-    character_img.save("chr.png")
+    grayscale_max(background_img).save("bck.png")
+    grayscale_max(character_img).save("chr.png")
 
     # find the NES palette
     # bp0 = background  sp0 = char sec
@@ -190,7 +183,8 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     # remove sprite colors from background
     frame_nospr = frame
     for i in range(1, 4):
-        frame_nospr = np.where(frame_nospr == palettes[4][i], 0, frame_nospr)
+        frame_nospr = np.where(frame_nospr == palettes[3][i], 0, frame_nospr)
+    grayscale_max(Image.fromarray(frame_nospr)).save("bckchr.png")
     # get sprite layer
     frame_spr = frame
     for i in range(0, 4):
@@ -199,8 +193,8 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
         frame_spr = np.where(frame_spr == palettes[2][i], 0, frame_spr)
     # convert it to range 0-3
     for i in range(1, 4):
-        frame_spr = np.where(frame_spr == palettes[4][i], i, frame_spr)
-    Image.fromarray(frame_spr).save("spr.png")
+        frame_spr = np.where(frame_spr == palettes[3][i], i, frame_spr)
+    grayscale_max(Image.fromarray(frame_spr)).save("spr.png")
 
     # convert frame to tiles
     tile_set, tile_map = img_2_tile(frame_nospr)
@@ -271,6 +265,7 @@ if __name__ == "__main__":
     write_tile_set_2_CHR("bank.chr", tile_bank)
     write_spr_tile_set_2_CHR("bank_spr.chr", spr_bank)
     if tile_offset_hi == 0:
-        rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank).save("out.png")
+        final_img = rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank)
+        grayscale_max(final_img).save("out.png")
     else:
         print("TODO: rebuild image with offset")
