@@ -124,7 +124,7 @@ draw_dialog_box:
     LDA #>(MMC5_EXP_RAM+$260)
     STA tmp+1
     ; set ext ram
-    LDA #$00
+    LDA #$C0
     LDY #$00
     @loop_ext:
         STA (tmp), Y

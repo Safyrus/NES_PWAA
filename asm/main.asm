@@ -14,6 +14,14 @@
     STA ppu_ctrl_val
     STA PPU_CTRL
 
+    ; set dialog box palette
+    LDA #$00
+    STA palettes+10
+    LDA #$10
+    STA palettes+11
+    LDA #$30
+    STA palettes+12
+
     ; load and draw image
     LDA #IMAGE_BNK
     STA MMC5_PRG_BNK0
@@ -38,10 +46,11 @@
     ; - - - - - - - -
     ; init print variables
     ; - - - - - - - -
-    ; ext value = 0
-    LDA #$00
+    ; ext value = $C0
+    LDA #$C0
     STA print_ext_val
     ; print_counter = 0
+    LDA #$00
     STA print_counter
     ;
     JSR read_next_dailog

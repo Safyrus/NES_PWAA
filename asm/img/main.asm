@@ -2,27 +2,7 @@
 .include "draw_bkg.asm"
 .include "draw_spr.asm"
 .include "frame.asm"
-
-palette_table_0:
-.byte $0F
-.byte $0F
-.byte $0F
-.byte $0F
-palette_table_1:
-.byte $00
-.byte $01
-.byte $14
-.byte $26
-palette_table_2:
-.byte $10
-.byte $11
-.byte $2A
-.byte $37
-palette_table_3:
-.byte $30
-.byte $21
-.byte $21
-.byte $30
+.include "pal.asm"
 
 img_data:
 ; flags

@@ -46,8 +46,8 @@ scanline_irq_handler:
         ; wait
         NOP
         NOP
-        NOP
-        NOP
+        LDX #$16
+        LDY #$26
         ; set high byte of address
         LDA #$3F
         STA PPU_ADDR
@@ -58,12 +58,10 @@ scanline_irq_handler:
         LDA #$01
         STA PPU_ADDR
         ; send 3 byte
-        LDA #$00
+        LDA #$06
         STA PPU_DATA
-        LDA #$10
-        STA PPU_DATA
-        LDA #$30
-        STA PPU_DATA
+        STX PPU_DATA
+        STY PPU_DATA
         ; wait
         LDX #$11
         @dialog_wait_1:
@@ -73,15 +71,15 @@ scanline_irq_handler:
         ; - - - - - - - -
         ; second scanline (153)
         ; - - - - - - - -
+        LDX #$12
+        LDY #$22
         ; send 4 byte
         LDA #$0F
         STA PPU_DATA
-        LDA #$06
+        LDA #$02
         STA PPU_DATA
-        LDA #$16
-        STA PPU_DATA
-        LDA #$26
-        STA PPU_DATA
+        STX PPU_DATA
+        STY PPU_DATA
         ; wait
         LDX #$12
         @dialog_wait_2:
@@ -91,15 +89,15 @@ scanline_irq_handler:
         ; - - - - - - - -
         ; third scanline (154)
         ; - - - - - - - -
+        LDX #$1A
+        LDY #$2A
         ; send 4 byte
         LDA #$0F
         STA PPU_DATA
-        LDA #$02
+        LDA #$0A
         STA PPU_DATA
-        LDA #$12
-        STA PPU_DATA
-        LDA #$22
-        STA PPU_DATA
+        STX PPU_DATA
+        STY PPU_DATA
         ; wait
         LDX #$12
         @dialog_wait_3:
@@ -109,15 +107,15 @@ scanline_irq_handler:
         ; - - - - - - - -
         ; fourth scanline (155)
         ; - - - - - - - -
+        LDX #$10
+        LDY #$30
         ; send 4 byte
         LDA #$0F
         STA PPU_DATA
-        LDA #$0A
+        LDA #$00
         STA PPU_DATA
-        LDA #$1A
-        STA PPU_DATA
-        LDA #$2A
-        STA PPU_DATA
+        STX PPU_DATA
+        STY PPU_DATA
         ; wait
         LDX #$11
         @dialog_wait_4:
@@ -154,7 +152,8 @@ scanline_irq_handler:
         ; sixth scanline (157)
         ; - - - - - - - -
         ; re-enable rendering with sprites
-        LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
+        ; LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
+        LDA #(PPU_MASK_BKG + PPU_MASK_BKG8)
         STA PPU_MASK
         ; set next scanline.
         ; Because we have disabled rendering,
@@ -171,6 +170,9 @@ scanline_irq_handler:
         ; Therefore, scanline 82 mean scanline when enable (156) + 82 = 238
         LDA #82
         STA MMC5_SCNL_VAL
+        ;
+        LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
+        STA PPU_MASK
         ; change nametable mapping
         LDA #NT_MAPPING_EMPTY
         STA MMC5_NAMETABLE

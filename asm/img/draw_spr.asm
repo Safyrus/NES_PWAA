@@ -19,8 +19,7 @@ img_spr_draw:
 
     ; set sprite bank
     LDA img_spr_b
-    LSR
-    STA MMC5_CHR_BNK7
+    STA MMC5_CHR_BNK3
 
     ; draw sprites
     LDA #$00
@@ -31,6 +30,9 @@ img_spr_draw:
         LDA #$00
         STA tmp+1 ; counter_x
         @loop_x:
+            ; if it is a sprite
+            LDA (tmp+2), Y
+            BEQ @continue
             ; set y position
             LDA tmp+0
             ASL
@@ -60,17 +62,18 @@ img_spr_draw:
             ADC img_spr_x
             STA OAM, X
             INX
+            ; continue
+            @continue:
             ; counter_size += 1
             INY
-            ; continue
             INC tmp+1 ; counter_x
             LDA tmp+1
             CMP img_spr_w
             BNE @loop_x
         ; continue
         INC tmp+0 ; counter_y
-        CMP img_spr_count
-        BNE @loop_y
+        CPY img_spr_count
+        BCC @loop_y
     
     @end:
     pullregs
