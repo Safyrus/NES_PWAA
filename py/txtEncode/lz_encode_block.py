@@ -14,7 +14,7 @@ print("len size:", LEN_SIZE)
 
 # read text from file
 print("read file...")
-with open(inputfile, "r") as f:
+with open(inputfile, "rb") as f:
     text = f.read()
 
 # cut text into blocks

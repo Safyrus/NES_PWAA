@@ -43,7 +43,7 @@ def lz_encode(text, outputfile="", do_print = True):
         window = text[max(0, i-JUMP_SIZE):i]
 
         # put the current character by default
-        seq = format(ord(text[i]), "08b")
+        seq = format(text[i], "08b")
         foundLen = 1
 
         # for each sequence of size l from the current character
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
     # read text from file
     print("read file...")
-    with open(inputfile, "r") as f:
+    with open(inputfile, "rb") as f:
         text = f.read()
 
     # call

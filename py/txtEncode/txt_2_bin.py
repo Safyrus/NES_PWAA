@@ -18,6 +18,7 @@ DB  = 0x02 # Dialog Break                                              |
 FDB = 0x03 # Force Dialog Break                                        |
 TD  = 0x04 # Toggle Dialog Box display                                 |
 SCR = 0x05 # SCRoll to the other side of the scene                     |
+SAK = 0x07 #                                                           |
 SPD = 0x08 # SPeeD                                                     | 1: speed
 DL  = 0x09 # DeLay                                                     | 1: delay
 NAM = 0x0A # change NAMe of dialog box                                 | 1: name
@@ -102,6 +103,14 @@ while i < len(text):
             if col == 0 or col > 4:
                 col = 4
             textbin.append(col)
+        elif name == "hidetextbox":
+            textbin.append(TD)
+        elif name == "shake":
+            textbin.append(SAK)
+        elif name == "fade_out":
+            textbin.append(FO)
+        elif name == "fade_in":
+            textbin.append(FI)
 
         # update index
         i = tag_end+1
