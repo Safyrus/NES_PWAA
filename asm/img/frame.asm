@@ -1,3 +1,25 @@
+; params:
+; X
+frame_set_pal:
+    pushregs
+
+    STX MMC5_MUL_A
+    LDX #$03
+    STX MMC5_MUL_B
+    LDX MMC5_MUL_A
+    
+    LDY #$01
+    @loop:
+        LDA (tmp+2), Y
+        STA img_palette_0, X
+        INX
+        INY
+        CPY #$04
+        BNE @loop
+
+    pullregs
+    RTS
+
 
 ; params:
 frame_decode:
@@ -22,7 +44,7 @@ frame_decode:
     ; - - - - - - - -
     LDY #$00
     LDA (tmp), Y
-    PHA
+    STA img_header
     ; increase pointer
     inc_16 tmp
     ; TODO: partial frame
@@ -38,38 +60,42 @@ frame_decode:
     @palette:
         ; save header byte
         PHA
-        ; loop
+
+        INY
+        LDA (tmp), Y
+        ASL
+        ASL
+        TAX
+        LDA palette_table, X
+        STA img_palette_bkg
+        DEY
+
+        LDX #$00
         @palette_loop:
-            ; ignore high byte for now
+            ;
+            LDA #<palette_table
+            STA tmp+2
+            LDA #>palette_table
+            STA tmp+3
+            ;
             INY
-            ; get low byte
             LDA (tmp), Y
-            TAX
+            ASL
+            ASL
+            add_A2ptr tmp+2
             ;
             INY
             TYA
             PHA
-            ASL
-            SEC
-            SBC #$04
-            TAY
-            ;
-            LDA palette_table_0, X
-            STA img_palettes, Y
-            INY
-            LDA palette_table_1, X
-            STA img_palettes, Y
-            INY
-            LDA palette_table_2, X
-            STA img_palettes, Y
-            INY
-            LDA palette_table_3, X
-            STA img_palettes, Y
+
+            JSR frame_set_pal
+
             PLA
             TAY
-            ;
-            CPY #$08
+            INX
+            CPX #$04
             BNE @palette_loop
+        
         ; update pointer
         TYA
         LDY #$00
@@ -143,7 +169,7 @@ frame_decode:
     ; - - - - - - - -
     ; draw
     ; - - - - - - - -
-    PLA
+    LDA img_header
     ASL
     ASL
     BCC @draw_palettes_end
@@ -151,34 +177,34 @@ frame_decode:
         ;
         PHA
         ; update palette 0
-        LDA img_palette_0+0
+        LDA img_palette_bkg
         STA palettes+0
-        LDA img_palette_0+1
+        LDA img_palette_0+0
         STA palettes+1
-        LDA img_palette_0+2
+        LDA img_palette_0+1
         STA palettes+2
-        LDA img_palette_0+3
+        LDA img_palette_0+2
         STA palettes+3
         ; update palette 1
-        LDA img_palette_1+1
+        LDA img_palette_1+0
         STA palettes+4
-        LDA img_palette_1+2
+        LDA img_palette_1+1
         STA palettes+5
-        LDA img_palette_1+3
+        LDA img_palette_1+2
         STA palettes+6
         ; update palette 2
-        LDA img_palette_2+1
+        LDA img_palette_2+0
         STA palettes+7
-        LDA img_palette_2+2
+        LDA img_palette_2+1
         STA palettes+8
-        LDA img_palette_2+3
+        LDA img_palette_2+2
         STA palettes+9
         ; update palette 3
-        LDA img_palette_3+1
+        LDA img_palette_3+0
         STA palettes+13
-        LDA img_palette_3+2
+        LDA img_palette_3+1
         STA palettes+14
-        LDA img_palette_3+3
+        LDA img_palette_3+2
         STA palettes+15
         ;
         PLA
@@ -189,8 +215,16 @@ frame_decode:
     @draw_tiles:
         ;
         PHA
+        ; do we draw all the tiles or just some ?
+        BIT img_header
+        BVS @draw_tiles_full
         ; draw tiles
-        JSR img_bkg_draw
+        @draw_tiles_part:
+            JSR img_bkg_draw_partial
+            JMP @draw_tiles_wait
+        @draw_tiles_full:
+            JSR img_bkg_draw
+        @draw_tiles_wait:
         ; wait one frame to clear the nmi background buffer
         JSR wait_next_frame
         ;
@@ -206,4 +240,8 @@ frame_decode:
 
     @end:
     pullregs
+    RTS
+
+
+img_bkg_draw_partial:
     RTS
