@@ -55,6 +55,12 @@ read_text:
         ; guard condition (delay, animation, etc.)
         ; - - - - - - - -
 
+        ; fade guard
+        LDA fade_timer
+        BEQ @fade_end
+            JMP @end
+        @fade_end:
+
         ; if wait flag
         LDA txt_flags
         AND #TXT_FLAG_WAIT
@@ -70,8 +76,11 @@ read_text:
                 LDA txt_flags
                 AND #($FF - TXT_FLAG_WAIT - TXT_FLAG_INPUT - TXT_FLAG_FORCE)
                 STA txt_flags
-                ; and clear dialog box
-                JSR draw_dialog_box
+                ; and clear dialog box (if dialog box not hidden)
+                BIT effect_flags
+                BMI @wait_input_boxhidden
+                    JSR draw_dialog_box
+                @wait_input_boxhidden:
                 JSR read_next_dailog
         @no_wait_flag:
 
@@ -169,7 +178,18 @@ read_text:
                 LDA effect_flags
                 EOR #EFFECT_FLAG_HIDE
                 STA effect_flags
-                RTS
+                ;
+                AND #EFFECT_FLAG_HIDE
+                BEQ @td_on
+                @td_off:
+                    JSR frame_decode
+                    ; set text bank
+                    LDA #TEXT_BUF_BNK
+                    STA MMC5_RAM_BNK
+                    RTS
+                @td_on:
+                    JSR draw_dialog_box
+                    RTS
             ; case SCR
             @SCR:
                 ; toggle scroll flag
@@ -183,7 +203,7 @@ read_text:
             ; case SAK
             @SAK:
                 ; set shake timer
-                LDA #$FF
+                LDA #$1E
                 STA shake_timer
                 RTS
             ; case SPD
@@ -204,14 +224,14 @@ read_text:
             ; case NAM
             @NAM:
                 ; name = next_char()
-                JSR print_char
+                JSR read_next_char
                 STA txt_name
                 RTS
             ; case FLH
             @FLH:
                 ; flash_color = next_char()
-                JSR print_char
-                STA flash_color
+                ; JSR read_next_char
+                ; STA flash_color
                 ; set flash timer
                 LDA #$FF
                 STA scroll_timer
@@ -219,26 +239,28 @@ read_text:
             ; case FI
             @FI:
                 ; fade_color = next_char()
-                JSR print_char
-                STA fade_color
+                ; JSR read_next_char
+                ; STA fade_color
                 ; set fade timer
-                LDA #$FF
+                LDA #FADE_TIME
                 STA fade_timer
                 ; set fade in flag
                 LDA effect_flags
                 ORA #EFFECT_FLAG_FADE
+                STA effect_flags
                 RTS
             ; case FO
             @FO:
                 ; fade_color = next_char()
-                JSR print_char
-                STA fade_color
+                ; JSR read_next_char
+                ; STA fade_color
                 ; set fade timer
-                LDA #$FF
+                LDA #FADE_TIME
                 STA fade_timer
                 ; set fade out flag
                 LDA effect_flags
                 AND #($FF - EFFECT_FLAG_FADE)
+                STA effect_flags
                 RTS
             ; case COL
             @COL:

@@ -113,10 +113,10 @@ OAM:
     ; - - - - - - - -
     ; Visual effect variables
     ; - - - - - - - -
-    ; .... .HSF
-    ;       ||+-- Fade in (1) or out (0)
-    ;       |+--- Scroll position (0=left, 1=right)
-    ;       +---- Hide dialog box
+    ; H... ..SF
+    ; |      |+-- Fade in (1) or out (0)
+    ; |      +--- Scroll position (0=left, 1=right)
+    ; +---------- Hide dialog box (1=Hidden)
     effect_flags: .res 1
     ;
     scroll_timer: .res 1
@@ -198,6 +198,8 @@ OAM:
     ;
     ; img_spr_header:
     ;
+    img_header: .res 1
+    ;
     img_spr_w: .res 1
     ;
     img_spr_b: .res 1
@@ -213,7 +215,8 @@ OAM:
     ; - - - - - - - -
     ;
     img_palettes:
-    img_palette_0: .res 4
-    img_palette_1: .res 4
-    img_palette_2: .res 4
-    img_palette_3: .res 4
+    img_palette_bkg: .res 1
+    img_palette_0: .res 3
+    img_palette_1: .res 3
+    img_palette_2: .res 3
+    img_palette_3: .res 3

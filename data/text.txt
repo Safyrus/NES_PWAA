@@ -8,3 +8,10 @@ Is the speed good ?<speed:1><p>
 Now we will test<b>delay text<p>
 Wait i'm thinking...<wait:40><b>OK I'm done<b><wait:10>Wait!<wait:100>Nothing :)<p>
 Colors!<wait:8>We have<b><color:1>RED<color:0>,<color:2>BLUE<color:0>,and <color:3>GREEN<color:0>!<p>
+Whatch out!<b>The dialog box will dissapear<b>In 3<wait:30> 2<wait:30> 1<wait:30><hidetextbox><wait:60><nextpage_nobutton>
+This text will not be draw.<nextpage_nobutton>
+<hidetextbox>Don't worry.<wait:8><b>I'm still here.<p>
+<shake>Ouch!!!<wait:8><b>What a shake effect!<p>
+Fade out<fade_out><p>
+Fade in<fade_in><p>
+This is the end of<b>the dialog data<b>bugs incoming<p>

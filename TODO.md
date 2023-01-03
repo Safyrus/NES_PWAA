@@ -7,7 +7,7 @@
   - [X] Text drawing
   - [/] text "execution"
     - [X] normal text
-    - [/] special text (7/28 tested)
+    - [/] special text (11/29 tested)
 - [ ] Image drawing
   - [X] RLEINC encode (python)
   - [X] RLEINC decoding

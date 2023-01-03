@@ -43,9 +43,14 @@ scanline_irq_handler:
         ; - - - - - - - -
         ; first scanline (152)
         ; - - - - - - - -
-        ; wait
-        NOP
-        NOP
+        ; test if we need to change palette
+        BIT effect_flags
+        BPL @palette_change_start
+            LDA #216
+            STA MMC5_SCNL_VAL
+            JMP @end
+        @palette_change_start:
+        ; setup registers
         LDX #$16
         LDY #$26
         ; set high byte of address
@@ -164,12 +169,19 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_bot_img:
+        BIT effect_flags
+        BPL @botimg_palette_change
+            LDA #238
+            STA MMC5_SCNL_VAL
+            JMP @botimg_next
+        @botimg_palette_change:
         ; set next scanline.
         ; Because we have disabled rendering,
         ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,
         ; Therefore, scanline 82 mean scanline when enable (156) + 82 = 238
         LDA #82
         STA MMC5_SCNL_VAL
+        @botimg_next:
         ;
         LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
         STA PPU_MASK

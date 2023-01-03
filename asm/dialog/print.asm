@@ -55,6 +55,9 @@ print_flush:
     LDA print_counter
         ; then exit (we din't have any character to flush)
         BEQ @end
+    ; if text box hidden, then just update pointers
+    BIT effect_flags
+    BMI @update_ptrs
 
     ; - - - - - - - -
     ; copy ext_buf to ext ram
@@ -123,6 +126,7 @@ print_flush:
     ; - - - - - - - -
     ; update pointers
     ; - - - - - - - -
+    @update_ptrs:
     ; print_ext_buf += print_counter
     LDA print_counter
     add_A2ptr print_ext_ptr

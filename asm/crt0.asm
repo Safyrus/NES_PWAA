@@ -124,10 +124,8 @@
     .include "audio/famistudio_ca65.s"
 .endif
 
-.segment "DLG_BNK"
+.segment "CODE_BNK"
     .include "dialog/main.asm"
-
-.segment "IMG_BNK"
     .include "img/main.asm"
 
 ; 6502 vectors
