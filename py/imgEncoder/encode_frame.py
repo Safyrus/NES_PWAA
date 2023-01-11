@@ -158,7 +158,7 @@ def img_2_spr(img):
     return spr_tile, spr_map, info
 
 
-def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[], tile_offset_hi=0):
+def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[], tile_offset_hi=0, do_rleinc=True, save_imgs=True):
 
     # reduce color count to 4 for background and 7 (+1 for transparent) for character
     background_img = bkg_col_reduce_2(background_img_path)
@@ -167,8 +167,9 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     background_img = img_2_idx(background_img)
     character_img = img_2_idx(character_img)
 
-    grayscale_max(background_img).save("bck.png")
-    grayscale_max(character_img).save("chr.png")
+    if save_imgs:
+        grayscale_max(background_img).save("bck.png")
+        grayscale_max(character_img).save("chr.png")
 
     # find the NES palette
     # bp0 = background  sp0 = char sec
@@ -184,7 +185,8 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     frame_nospr = frame
     for i in range(1, 4):
         frame_nospr = np.where(frame_nospr == palettes[3][i], 0, frame_nospr)
-    grayscale_max(Image.fromarray(frame_nospr)).save("bckchr.png")
+    if save_imgs:
+        grayscale_max(Image.fromarray(frame_nospr)).save("bckchr.png")
     # get sprite layer
     frame_spr = frame
     for i in range(0, 4):
@@ -194,7 +196,8 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     # convert it to range 0-3
     for i in range(1, 4):
         frame_spr = np.where(frame_spr == palettes[3][i], i, frame_spr)
-    grayscale_max(Image.fromarray(frame_spr)).save("spr.png")
+    if save_imgs:
+        grayscale_max(Image.fromarray(frame_spr)).save("spr.png")
 
     # convert frame to tiles
     tile_set, tile_map = img_2_tile(frame_nospr)
@@ -211,22 +214,23 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
         spr_tile, spr_map, spr_bank)
     spr_info["b"] = len(spr_bank) // SPR_BANK_PAGE_SIZE
 
-    # convert tilemap to more compressable data (all low bytes, then all high bytes)
-    data = []
-    for t in tile_map:
-        data.append(t % 256)
-    for t in tile_map:
-        data.append(((t//256) + tile_offset_hi) % 64)
-    # put pal map into tile map
-    for i in range(len(pal_map)):
-        data[i+len(pal_map)] += (pal_map[i] << 6)
-    # encode with RLE_INC data
-    tile_map = rleinc_encode(data)
-    spr_map = rleinc_encode(spr_map)
+    if do_rleinc:
+        # convert tilemap to more compressable data (all low bytes, then all high bytes)
+        data = []
+        for t in tile_map:
+            data.append(t % 256)
+        for t in tile_map:
+            data.append(((t//256) + tile_offset_hi) % 64)
+        # put pal map into tile map
+        for i in range(len(pal_map)):
+            data[i+len(pal_map)] += (pal_map[i] << 6)
+        # encode with RLE_INC data
+        tile_map = rleinc_encode(data)
+        spr_map = rleinc_encode(spr_map)
     spr_data = [spr_info["w"], spr_info["b"], spr_info["x"], spr_info["y"]]
     spr_data.extend(spr_map)
 
-    return tile_map, tile_bank, spr_info, spr_data, spr_bank
+    return tile_map, tile_bank, spr_info, spr_data, spr_bank, pal_map
 
 
 if __name__ == "__main__":
@@ -249,7 +253,7 @@ if __name__ == "__main__":
         np.full((SPR_SIZE_H, SPR_SIZE_W), 3),
     ]
 
-    tile_map, tile_bank, spr_info, spr_map, spr_bank = encode_frame(
+    tile_map, tile_bank, spr_info, spr_map, spr_bank, _ = encode_frame(
         background_img_path, character_anim_path, tile_bank, spr_bank, tile_offset_hi)
 
     # write tilemap to file

@@ -17,13 +17,15 @@
   - [X] Frame sprites drawing
   - [X] Palette update
   - [X] Palette 'split'
-  - [ ] Partial frame
+  - [X] encode images scripts (python)
+  - [X] encode frames scripts (python)
+  - [ ] Partial frame decoding
   - [ ] Fix visual 'error'
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
-  - [ ] Shake
-  - [ ] Fade
+  - [/] Shake
+  - [/] Fade
   - [ ] UI Movement
 - [ ] Make the Project core functionality
   - [ ] Main process loop
