@@ -152,6 +152,13 @@ def img_2_spr(img):
     h, w = arr.shape[0], arr.shape[1]
     spr_tile = [arr[y:y+SPR_SIZE_H, x:x+SPR_SIZE_W]
                 for y in range(0, h, SPR_SIZE_H) for x in range(0, w, SPR_SIZE_W)]
+    
+    # pad if needed
+    shape = np.shape(spr_tile[-1])
+    pad_spr = np.zeros((SPR_SIZE_H, SPR_SIZE_W), dtype=int)
+    pad_spr[:shape[0],:shape[1]] = spr_tile[-1]
+    spr_tile[-1] = pad_spr
+
     # get map
     spr_map = [i for i in range(len(spr_tile))]
 
@@ -207,11 +214,13 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     tile_set, tile_map, tile_bank = rm_closest_tiles(
         tile_set, tile_map, tile_bank)
 
-    # convert sprite fraqme to tiles
+    # convert sprite frame to tiles
     spr_tile, spr_map, spr_info = img_2_spr(frame_spr)
     # copy tile to bank and remove duplicate
     spr_tile, spr_map, spr_bank = rm_closest_spr_tiles(
         spr_tile, spr_map, spr_bank)
+    for i in range(len(spr_map)):
+        spr_map[i] %= 256
     spr_info["b"] = len(spr_bank) // SPR_BANK_PAGE_SIZE
 
     if do_rleinc:

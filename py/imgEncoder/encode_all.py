@@ -4,8 +4,8 @@ import os
 
 from encode_frame import *
 
-CHR_START_BANK = 0
-PRG_START_BANK = 0x80
+CHR_START_BANK = 1
+PRG_START_BANK = 0x82
 EMPTY_IMG = "../../data/empty.png"
 
 warning_chr_size = False
@@ -18,6 +18,10 @@ warning_prg_size = False
 #     "character": [
 #       "img_path",
 #       "...",
+#     ],
+#     "time": [
+#         16
+#         ...,
 #     ]
 #   },
 #   {
@@ -26,15 +30,17 @@ warning_prg_size = False
 #   ...
 # ]
 
+
 def warning_CHR_size(tile_bank, spr_bank):
     global warning_chr_size
     if (len(tile_bank) + len(spr_bank)) >= 65536 and not warning_chr_size:
         print("WARNING: CHR size is bigger than 1 MB !")
         warning_chr_size = True
 
+
 def warning_PRG_size(PRG_size):
     global warning_prg_size
-    if len(PRG_size) >= 1024*1024 and not warning_prg_size:
+    if PRG_size >= 1024*1024 and not warning_prg_size:
         print("WARNING: PRG size is bigger than 1 MB !")
         warning_prg_size = True
 
@@ -44,29 +50,25 @@ def encode_all(json):
     frames = []
     frames_name = []
     frame_ischr = []
+    anims = []
     tile_bank = [
         np.full((TILE_SIZE, TILE_SIZE), 0),
         np.full((TILE_SIZE, TILE_SIZE), 1),
         np.full((TILE_SIZE, TILE_SIZE), 2),
         np.full((TILE_SIZE, TILE_SIZE), 3),
     ]
-    spr_bank = [
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 0),
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 1),
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 2),
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 3),
-    ]
+    spr_bank = []
 
     # check if all file exists
     print("check files")
     for anim in json:
         if not os.path.exists(anim["background"]):
             print("ERROR: file", anim["background"], "does not exist")
-            return
+            return "", frames, bytes()
         for c in anim["character"]:
             if not os.path.exists(c):
                 print("ERROR: file", c, "does not exist")
-                return
+                return "", frames, bytes()
 
     # for all animations:
     print("background encoding")
@@ -88,15 +90,17 @@ def encode_all(json):
         warning_CHR_size(tile_bank, spr_bank)
         # for all characters:
         chars = anim["character"]
+        times = anim["time"]
         bck = anim["background"]
+        anim_frame = []
         for i in range(len(chars)):
             # if not already encoded
             if chars[i] not in frames_name:
                 # get last character frame or an empty image
-                last_char = EMPTY_IMG
+                last_char = bck
                 if i > 0:
                     last_char = chars[i-1]
-                # encode character as partial image
+                # encode character frame as partial image
                 print("encode character", chars[i])
                 frame, tile_bank, spr_bank = encode_frame_partial(
                     bck, chars[i], last_char, tile_bank, spr_bank)
@@ -104,24 +108,28 @@ def encode_all(json):
                 frames.append(frame)
                 frame_ischr.append(True)
                 frames_name.append(chars[i])
+            anim_frame.append((chars[i], times[i] % 128))
+        if anim_frame:
+            anims.append(anim_frame)
 
     # make ca65 file
     print("ca65 file")
-    ca65_inc = ""
+    ca65_inc = ".segment \"IMGS_BNK\"\n"
     ca65_bkg = "img_bkg_table:\n"
     ca65_bkg_bnk = "img_bkg_table_bank:\n"
-    ca65_chr = "img_chr_table:\n"
-    ca65_chr_bnk = "img_chr_table_bank:\n"
+    ca65_anim = "img_anim_table:\n"
+    chr_anims = {}
     PRG_size = 0
-    for i in range(len(frames)):
+    for i in range(len(frames)): 
         bank = (PRG_size // 8192) + PRG_START_BANK
         # include frames
         ca65_inc += "img_" + str(i) + ":\n.incbin \"imgs/img_" + \
             str(i) + ".bin\" ;" + frames_name[i] + "\n"
         if frame_ischr[i]:
-            # character index table
-            ca65_chr += ".word img_" + str(i) + " ; " + frames_name[i] + "\n"
-            ca65_chr_bnk += ".byte $" + hex(bank)[2:] + "\n"
+            # save character adr and bnk
+            chr_adr = ".word img_" + str(i) + " ; " + frames_name[i] + "\n"
+            chr_bnk = ".byte $" + hex(bank)[2:] + " ; bank\n"
+            chr_anims[frames_name[i]] = chr_adr + chr_bnk
         else:
             # background index table
             ca65_bkg += ".word img_" + str(i) + " ; " + frames_name[i] + "\n"
@@ -130,8 +138,14 @@ def encode_all(json):
         frames[i] = bytes(frames[i])
         PRG_size += len(frames[i])
         warning_PRG_size(PRG_size)
-    ca65 = "; todo a description\n\n" + ca65_inc + "\n"
-    ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_chr + ca65_chr_bnk + "\n"
+    i = 0
+    for anim in anims:
+        ca65_anim += "img_anim_" + str(i) + ":\n.byte $" + "%0.2X" %(len(anim) << 2) + " ; size\n"
+        for a in anim:
+            ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
+        i += 1
+    ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
+    ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n"
 
     # tile_bank to ROM
     print("CHR ROM file")
@@ -149,6 +163,8 @@ def encode_all(json):
 
     # return
     print("done")
+    print("frames:", len(frames), "("+str(PRG_size)+" bytes)",
+          " tiles:", len(CHR_rom)//16, "("+str(len(CHR_rom))+" bytes)")
     return ca65, frames, CHR_rom
 
 
@@ -213,7 +229,7 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
     # get the full image of the previous and current frame
     tile_map1, tile_bank, _, spr_data1, spr_bank, _ = encode_frame(
         background, last_character, tile_bank, spr_bank, CHR_START_BANK, False, False)
-    tile_map2, tile_bank, spr_info, spr_data2, spr_bank, pal_map = encode_frame(
+    tile_map2, tile_bank, _, spr_data2, spr_bank, pal_map = encode_frame(
         background, character, tile_bank, spr_bank, CHR_START_BANK, False, False)
 
     # remove same tiles between frames
@@ -246,6 +262,9 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
             data[i+len(pal_map)] += (pal_map[i] << 6)
     # encode data with RLE_INC
     tile_map = rleinc_encode(data)
+    for i in range(len(spr_map)):
+        if spr_map[i] > 255:
+            print("ERROR: ", i, spr_map[i])
     spr_map = rleinc_encode(spr_map)
 
     # add tilemap to frame
@@ -257,21 +276,13 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
     return frame, tile_bank, spr_bank
 
 
-if __name__ == "__main__":
-    # args
-    json_file = "anim.json"
-    if len(sys.argv) > 1:
-        json_file = sys.argv[1]
-
-    # read json
-    with open(json_file) as f:
-        jsonAnim = json.load(f)
-
-    # encode all
-    ca65, frames, CHR_rom = encode_all(jsonAnim)
-
-    # write files
+def write_files(ca65, frames, CHR_rom, basechr_file):
+    CHRbase = bytes()
+    if basechr_file:
+        with open(basechr_file, "rb") as f:
+            CHRbase = f.read(CHR_START_BANK*4096)
     with open("CHR.chr", "wb") as f:
+        f.write(CHRbase)
         f.write(CHR_rom)
     with open("imgs.asm", "w") as f:
         f.write(ca65)
@@ -280,3 +291,39 @@ if __name__ == "__main__":
     for i in range(len(frames)):
         with open("imgs/img_"+str(i)+".bin", "wb") as f:
             f.write(frames[i])
+
+
+def main():
+    global MAX_PIXEL_DIFF
+    # args
+    json_file = "anim.json"
+    if len(sys.argv) > 1:
+        json_file = sys.argv[1]
+    basechr_file = ""
+    if len(sys.argv) > 2:
+        basechr_file = sys.argv[2]
+    find_best_pixel_dif = False
+
+    # read json
+    with open(json_file) as f:
+        jsonAnim = json.load(f)
+
+    # encode all
+    ca65, frames, CHR_rom = "", [], bytes()
+    if find_best_pixel_dif:
+        dif = 17
+        while not warning_chr_size and not warning_prg_size and dif > 0:
+            dif -= 1
+            set_pixel_diff(dif)
+            print()
+            print("*"*40)
+            print("Try with pixel difference of", dif)
+            print("*"*40)
+            ca65, frames, CHR_rom = encode_all(jsonAnim)
+    else:
+        ca65, frames, CHR_rom = encode_all(jsonAnim)
+    write_files(ca65, frames, CHR_rom, basechr_file)
+
+
+if __name__ == "__main__":
+    main()
