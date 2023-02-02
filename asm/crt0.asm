@@ -128,6 +128,9 @@
     .include "dialog/main.asm"
     .include "img/main.asm"
 
+.segment "IMGS_BNK"
+    .include "data/imgs.asm"
+
 ; 6502 vectors
 .segment "VECTORS"
     ; 6502 vectors
