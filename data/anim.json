@@ -1,0 +1,18 @@
+[
+    { "background": "../../data/space.png","character": [],"time": [] },
+    {
+        "background": "../../data/space.png",
+        "character": [
+            "../../data/sprite1.png",
+            "../../data/sprite2.png",
+            "../../data/sprite3.png",
+            "../../data/sprite4.png"
+        ],
+        "time": [
+            16,
+            16,
+            16,
+            16
+        ]
+    }
+]
