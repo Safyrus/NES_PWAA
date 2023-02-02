@@ -12,16 +12,17 @@
     ;       < ~2273 cycles (2000 to be sure)
     ; 7  bit  0
     ; ---- ----
-    ; E..R PASB
-    ; |  | ||||
-    ; |  | |||+- Background tiles update
-    ; |  | |||   Execution time depend on data
-    ; |  | |||   (cycles ~= 16 + 38*p + for i:p do (14*p[i].n))
-    ; |  | |||   (p=packet number, p[i].n = packet data size)
-    ; |  | ||+-- Sprites update (513+ cycles)
-    ; |  | |+--- Nametables attributes update (821 cycles)
-    ; |  | +---- Palettes update (356 cycles)
-    ; |  +------ Scroll update (31 cycles)
+    ; EF.R PASB
+    ; || | ||||
+    ; || | |||+- Background tiles update
+    ; || | |||   Execution time depend on data
+    ; || | |||   (cycles ~= 16 + 38*p + for i:p do (14*p[i].n))
+    ; || | |||   (p=packet number, p[i].n = packet data size)
+    ; || | ||+-- Sprites update (513+ cycles)
+    ; || | |+--- Nametables attributes update (821 cycles)
+    ; || | +---- Palettes update (356 cycles)
+    ; || +------ Scroll update (31 cycles)
+    ; |+-------- Force NMI acknowledge
     ; +--------- 1 when NMI has ended, should be set to 0 after reading.
     ;            If let to 1, it means the NMI is disable
     nmi_flags: .res 1
@@ -188,9 +189,29 @@ OAM:
     ;
     img_background: .res 1
     ;
+    img_anim:
+    ;
     img_character: .res 1
     ;
     img_animation: .res 1
+    ;
+    img_partial_buf_len: .res 1
+    ;
+    img_partial_buf: .res IMG_PARTIAL_MAX_BUF_LEN
+
+    ; - - - - - - - -
+    ; Animation Variables
+    ; - - - - - - - -
+    ;
+    anim_base_adr: .res 2
+    ;
+    anim_adr: .res 2
+    ;
+    anim_img_count: .res 1
+    ;
+    anim_img_counter: .res 1
+    ;
+    anim_frame_counter: .res 1
 
     ; - - - - - - - -
     ; Sprites Variables

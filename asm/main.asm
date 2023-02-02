@@ -25,6 +25,7 @@
     ; load and draw image
     LDA #IMAGE_BNK
     STA MMC5_PRG_BNK0
+    JSR find_anim
     JSR frame_decode
 
     ; load first dialog block
@@ -72,10 +73,6 @@ wait_next_frame:
     AND #($FF-NMI_DONE)
     STA nmi_flags
 
-    ; reset zp background index
-    LDA #$00
-    STA background_index
-
     RTS
 
 
@@ -88,6 +85,8 @@ MAIN:
 
     ; update player inputs
     JSR readjoy
+
+    JSR frame_decode
 
     ; update text flags
     LDA buttons_1

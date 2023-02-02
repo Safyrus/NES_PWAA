@@ -21,23 +21,84 @@ frame_set_pal:
     RTS
 
 
-; params:
 frame_decode:
     pushregs
 
+    LDA anim_adr+0
+    STA tmp+2
+    LDA anim_adr+1
+    STA tmp+3
+
+    LDA anim_frame_counter
+    BEQ :+
+        DEC anim_frame_counter
+        JMP @end
+    :
+    LDA anim_img_counter
+    BEQ @load_bck
+    @load_chr:
+        ;
+        LDY #$00
+        LDA (tmp+2), Y
+        STA anim_frame_counter
+        ;
+        INY
+        LDA (tmp+2), Y
+        STA tmp+0
+        INY
+        LDA (tmp+2), Y
+        STA tmp+1
+        ;
+        INY
+        LDA (tmp+2), Y
+        STA MMC5_PRG_BNK1
+        ;
+        DEC anim_img_counter
+        ;
+        INY
+        TYA
+        add_A2ptr anim_adr
+        JMP @start
+    @load_bck:
+        ;
+        LDA anim_base_adr+0
+        STA anim_adr+0
+        STA tmp+2
+        LDA anim_base_adr+1
+        STA anim_adr+1
+        STA tmp+3
+        ;
+        LDY #$00
+        LDA (tmp+2), Y
+        LSR
+        LSR
+        STA anim_img_counter
+        ;
+        inc_16 anim_adr
+
+        ; set image bank
+        LDX img_background
+        LDA img_bkg_table_bank, X
+        STA MMC5_PRG_BNK1
+
+        ; Set pointer to image.
+        ;  We only need to set it 1 time,
+        ;  because the rleinc decode subroutine
+        ;  will increase the pointer to the
+        ;  end of the rleinc block.
+        TXA
+        ASL
+        TAX
+        LDA img_bkg_table, X
+        STA tmp+0
+        INX
+        LDA img_bkg_table, X
+        STA tmp+1
+
+    @start:
     ; set ram bank
     LDA #IMG_BUF_BNK
     STA MMC5_RAM_BNK
-
-    ; Set pointer to image.
-    ;  We only need to set it 1 time,
-    ;  because the rleinc decode subroutine
-    ;  will increase the pointer to the
-    ;  end of the rleinc block.
-    LDA #<img_data
-    STA tmp+0
-    LDA #>img_data
-    STA tmp+1
 
     ; - - - - - - - -
     ; read header byte
@@ -47,9 +108,8 @@ frame_decode:
     STA img_header
     ; increase pointer
     inc_16 tmp
-    ; TODO: partial frame
+    ; skip partial frame flag
     ASL
-    ; TODO: CHR upper bits
 
     ; - - - - - - - -
     ; read palettes
@@ -217,7 +277,7 @@ frame_decode:
         PHA
         ; do we draw all the tiles or just some ?
         BIT img_header
-        BVS @draw_tiles_full
+        BMI @draw_tiles_full
         ; draw tiles
         @draw_tiles_part:
             JSR img_bkg_draw_partial
@@ -240,8 +300,4 @@ frame_decode:
 
     @end:
     pullregs
-    RTS
-
-
-img_bkg_draw_partial:
     RTS

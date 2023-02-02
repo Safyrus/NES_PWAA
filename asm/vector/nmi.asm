@@ -205,9 +205,20 @@ NMI:
     @scroll_end:
 
     @done:
+    ; reset zp background index
+    LDA #$00
+    STA background_index
+
     ; tell that we are done
-    LDA #NMI_DONE
-    ORA nmi_flags
+    BIT nmi_flags
+    BVS :+
+        LDA #NMI_DONE
+        ORA nmi_flags
+        JMP :++
+    :
+        LDA #($FF-NMI_DONE)
+        AND nmi_flags
+    :
     STA nmi_flags
 
     @end:

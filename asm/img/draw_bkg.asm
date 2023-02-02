@@ -60,7 +60,13 @@ img_bkg_draw:
     ; - - - - - - - -
     ; copy buffer to screen
     ; - - - - - - - -
-    LDX #12
+    BIT effect_flags
+    BMI @dialog_box_off
+    @dialog_box_on:
+        LDX #8
+        JMP @loop
+    @dialog_box_off:
+        LDX #12
     @loop:
         ; wait for the next frame
         JSR wait_next_frame

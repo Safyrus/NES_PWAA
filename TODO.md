@@ -19,7 +19,8 @@
   - [X] Palette 'split'
   - [X] encode images scripts (python)
   - [X] encode frames scripts (python)
-  - [ ] Partial frame decoding
+  - [/] Partial frame decoding
+  - [/] Character Animation
   - [ ] Fix visual 'error'
 - [ ] Visual effects
   - [ ] Scrolling

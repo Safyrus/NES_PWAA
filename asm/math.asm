@@ -6,6 +6,15 @@
     @end:
 .endmacro
 
+.macro dec_16 adr
+    .local @end
+    CMP adr+0
+    BNE @end
+        DEC adr+1
+    @end:
+    DEC adr+0
+.endmacro
+
 ; /!\ Change A
 .macro add_A2ptr ptr
     .local @end

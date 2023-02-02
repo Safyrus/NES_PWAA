@@ -24,6 +24,10 @@ rleinc_next:
 rleinc:
     pushregs
 
+    LDA nmi_flags
+    ORA #NMI_FORCE
+    STA nmi_flags
+
     ; while true
     LDY #$00
     @while:
@@ -72,6 +76,7 @@ rleinc:
             JMP @while
         @dbl_or_run:
             ASL
+            BCS @RUN
             BMI @RUN
         @DBL:
             ; n = b−0x7D
@@ -123,5 +128,10 @@ rleinc:
             JMP @while
 
     @END:
+
+    LDA nmi_flags
+    AND #($FF-NMI_FORCE)
+    STA nmi_flags
+
     pullregs
     RTS
