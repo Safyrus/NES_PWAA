@@ -4,7 +4,7 @@
 ; param:
 ; - lz_in: pointer to text block
 ; - lz_in_bnk: bank of the text block
-; use: tmp[0..5]
+; use: tmp[0..7]
 ; /!\ assume to be in bank 0
 ; /!\ change bank 1, 2 and ram bank
 lz_decode:
@@ -34,18 +34,33 @@ lz_decode:
     ORA #$A0
     STA tmp+3
 
-    ; while true:
+    ; read block size
     LDY #$00
+    LDA (tmp+2), Y
+    STA tmp+6
+    INY
+    LDA (tmp+2), Y
+    STA tmp+7
+    DEY
+    LDA #$02
+    add_A2ptr tmp+2
+
+    ; while not end_of_block:
     @while:
+        LDA #$00
+        CMP tmp+6
+        BNE @do
+        CMP tmp+7
+        BEQ @end
+
+        @do:
+        ; decrease block size
+        dec_16 tmp+6
         ; read next byte from input
         LDA (tmp+2), Y
         TAX
         ; increment input pointer
         inc_16 tmp+2
-
-        ; if byte = 0, then end of block
-        TXA
-        BEQ @end
 
         ; if bit 7 is clear
         ASL

@@ -29,7 +29,6 @@ find_anim:
         LDA (tmp), Y
         add_A2ptr tmp
 
-        @next:
         dec_16 tmp+2
         JMP @loop
     @find:

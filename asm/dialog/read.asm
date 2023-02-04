@@ -43,12 +43,6 @@ read_text:
     LDA #TEXT_BUF_BNK
     STA MMC5_RAM_BNK
 
-    ; set ptr
-    LDA txt_rd_ptr+0
-    STA tmp+0
-    LDA txt_rd_ptr+1
-    STA tmp+1
-
     ; while not print 1 character
     @loop:
         ; - - - - - - - -
@@ -190,16 +184,24 @@ read_text:
                 @td_on:
                     JSR draw_dialog_box
                     RTS
+            ; case SET
+            @SET:
+                JSR read_next_char
+                JMP set_dialog_flag
+            ; case CLR
+            @CLR:
+                JSR read_next_char
+                JMP clear_dialog_flag
             ; case SCR
-            @SCR:
-                ; toggle scroll flag
-                LDA effect_flags
-                EOR #EFFECT_FLAG_SCROLL
-                STA effect_flags
-                ; set scroll timer
-                LDA #$FF
-                STA scroll_timer
-                RTS
+            ; @SCR:
+            ;     ; toggle scroll flag
+            ;     LDA effect_flags
+            ;     EOR #EFFECT_FLAG_SCROLL
+            ;     STA effect_flags
+            ;     ; set scroll timer
+            ;     LDA #$FF
+            ;     STA scroll_timer
+            ;     RTS
             ; case SAK
             @SAK:
                 ; set shake timer
@@ -360,30 +362,65 @@ read_text:
                 RTS
             ; case JMP
             @JMP_char: ; TODO
-                ; j1 = next_char()
+                ; c = next_char()
                 JSR read_next_char
-                ; j2 = next_char()
+                STA txt_jump_buf+1
+                ; adr_lo = (c << 7) & 0xFF
+                ROR
+                ROR
+                AND #$80
+                STA txt_jump_buf+0
+                ; adr_hi = ((next_char() >> 1) & 0x1F) | 0x60
+                LDA txt_jump_buf+1
+                LSR
+                AND #$1F
+                ORA #$60
+                STA txt_jump_buf+1
+                ; adr_lo += next_char()
                 JSR read_next_char
-                ; j3 = next_char()
+                ORA txt_jump_buf+0
+                STA txt_jump_buf+0
+                ; block = next_char()
                 JSR read_next_char
-                ; txt_rd_ptr = j1[0..6] + (j2[0..5] << 7)
-                ; block = (j3[0..6] << 1) + j2[6]
+                STA txt_jump_buf+2
+                ; c = block & 0x40
+                AND #$40
+                ; if c:
+                BEQ @JMP_char_cond_end
+                    ; c_idx = next_char()
+                    JSR read_next_char
+                    ; flag = dialog_flag[c_idx]
+                    JSR get_dialog_flag
+                    ; if flag clear then break
+                    BEQ @JMP_char_end
+                @JMP_char_cond_end:
+                ; block = lz_bnk_table[block]
+                LDA txt_jump_buf+2
+                AND #$3F
+                TAX
+                LDA lz_bnk_table, X
+                STA txt_jump_buf+2
+                ; txt_rd_ptr = adr_lo, adr_hi
+                LDA txt_jump_buf+0
+                STA txt_rd_ptr+0
+                LDA txt_jump_buf+1
+                STA txt_rd_ptr+1
                 ; if block != current_block:
-                    ; lz_in, lz_in_bnk = block_table[block]
+                LDA txt_jump_buf+2
+                CMP lz_in_bnk
+                BEQ @JMP_char_end
+                    ; lz_in_bnk = block
+                    STA lz_in_bnk
                     ; lz_decode()
+                    JSR lz_decode
+                    ; set text bank
+                    LDA #TEXT_BUF_BNK
+                    STA MMC5_RAM_BNK
+                @JMP_char_end:
                 RTS
             ; case ACT
             @ACT: ; TODO
-                ; j1 = next_char()
-                JSR read_next_char
-                ; j2 = next_char()
-                JSR read_next_char
-                ; j3 = next_char()
-                JSR read_next_char
-                ; n = next_char()
-                JSR read_next_char
-                ; TODO
-                RTS
+                JMP @ACT
             ; case BP
             @BP:
                 ; for i from 0 to 4
@@ -434,8 +471,8 @@ read_text:
         .byte <(@DB-1)
         .byte <(@FDB-1)
         .byte <(@TD-1)
-        .byte <(@SCR-1)
-        .byte <(@default-1)
+        .byte <(@SET-1)
+        .byte <(@CLR-1)
         .byte <(@SAK-1)
         .byte <(@SPD-1)
         .byte <(@DL-1)
@@ -467,8 +504,8 @@ read_text:
         .byte >(@DB-1)
         .byte >(@FDB-1)
         .byte >(@TD-1)
-        .byte >(@SCR-1)
-        .byte >(@default-1)
+        .byte >(@SET-1)
+        .byte >(@CLR-1)
         .byte >(@SAK-1)
         .byte >(@SPD-1)
         .byte >(@DL-1)

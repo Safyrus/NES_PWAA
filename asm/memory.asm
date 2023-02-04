@@ -163,6 +163,8 @@ OAM:
     txt_font: .res 1
     ;
     txt_bck_color: .res 1
+    ;
+    txt_jump_buf: .res 3
 
     ; - - - - - - - -
     ; Variables for text printing
@@ -241,3 +243,8 @@ OAM:
     img_palette_1: .res 3
     img_palette_2: .res 3
     img_palette_3: .res 3
+
+    ; - - - - - - - -
+    ; Other variables
+    ; - - - - - - - -
+    dialog_flag: .res 32

@@ -1,3 +1,4 @@
+.segment "CODE_BNK"
 .include "lz.asm"
 .include "read.asm"
 .include "print.asm"
@@ -5,7 +6,4 @@
 .include "evt.asm"
 .include "ext.asm"
 .include "pal.asm"
-
-TEXT_PTR:
-.incbin "../data/text.bin"
-.byte 0
+.include "flag.asm"

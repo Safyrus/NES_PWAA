@@ -6,8 +6,10 @@
     @end:
 .endmacro
 
+; /!\ Change A to 0
 .macro dec_16 adr
     .local @end
+    LDA #$00
     CMP adr+0
     BNE @end
         DEC adr+1

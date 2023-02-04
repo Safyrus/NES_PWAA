@@ -131,6 +131,9 @@
 .segment "IMGS_BNK"
     .include "data/imgs.asm"
 
+.segment "TXT_BNK"
+    .include "data/txt_data.asm"
+
 ; 6502 vectors
 .segment "VECTORS"
     ; 6502 vectors

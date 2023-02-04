@@ -31,10 +31,11 @@
     ; load first dialog block
     LDA #DIALOG_BNK
     STA MMC5_PRG_BNK0
+    LDA #TXT_BNK
     STA lz_in_bnk
-    LDA #<TEXT_PTR
+    LDA #$00
     STA lz_in+0
-    LDA #>TEXT_PTR
+    LDA #$A0
     STA lz_in+1
     JSR lz_decode
 
