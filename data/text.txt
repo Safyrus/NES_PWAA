@@ -14,4 +14,9 @@ This text will not be draw.<nextpage_nobutton>
 <shake>Ouch!!!<wait:8><b>What a shake effect!<p>
 Fade out<fade_out><p>
 Fade in<fade_in><p>
-This is the end of<b>the dialog data<b>bugs incoming<p>
+<label:test_flag>Checking if dialog flag<b>is set...<p><jump:test_flag_set,0><jump:test_flag_clear>
+<label:test_flag_clear>The flag is cleared!<wait:8><b>Let me change that.<p>
+<set:0>There!<wait:8>Now we will jump<b>back and try again.<p><jump:test_flag>
+<label:test_flag_set>The flag is now set!<wait:8><b>We can continue.<p>
+<label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
+<label:bug>oh no !<b>Bug Incoming !<p>
