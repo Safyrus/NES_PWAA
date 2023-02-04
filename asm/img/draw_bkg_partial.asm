@@ -60,11 +60,11 @@ img_bkg_draw_partial:
     ; copy high bytes to exp ram
     LDY #$00
     @while_ext:
-        BIT scanline
-        BVC @while_ext
         LDA (tmp), Y
         BEQ @continue_ext
-            STA (tmp+2), Y
+            BIT scanline
+            BVC @while_ext
+                STA (tmp+2), Y
         @continue_ext:
         inc_16 tmp
         inc_16 tmp+2

@@ -130,4 +130,8 @@ RST:
 
     CLI ; Enable back interrupt
 
+    ; set fade in flag (image does not refresh when fade in is clear)
+    LDA #$01
+    STA effect_flags
+
     JMP MAIN ; jump to main function

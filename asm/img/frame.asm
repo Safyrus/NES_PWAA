@@ -24,13 +24,30 @@ frame_set_pal:
 frame_decode:
     pushregs
 
+    ; tmp+2 = anim_adr
     LDA anim_adr+0
     STA tmp+2
     LDA anim_adr+1
     STA tmp+3
 
+    ; is a fade effect active ?
+    LDA fade_timer
+    BEQ :+
+        ; then do nothing
+        JMP @end
+    :
+    ; is a fade out effect active ?
+    LDA effect_flags
+    AND #(EFFECT_FLAG_FADE)
+    BNE :+
+        ; then do nothing
+        JMP @end
+    :
+
+    ; is the animation frame counter > 0 ?
     LDA anim_frame_counter
     BEQ :+
+        ; then decrement it and jump to the end
         DEC anim_frame_counter
         JMP @end
     :

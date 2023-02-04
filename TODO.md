@@ -8,7 +8,7 @@
   - [/] text "execution"
     - [X] normal text
     - [/] special text (11/29 tested)
-- [ ] Image drawing
+- [/] Image drawing
   - [X] RLEINC encode (python)
   - [X] RLEINC decoding
   - [X] Scanline IRQ to separate screen into "nothing, image, text, nothing"
@@ -21,7 +21,7 @@
   - [X] encode frames scripts (python)
   - [/] Partial frame decoding
   - [/] Character Animation
-  - [ ] Fix visual 'error'
+  - [/] Fix visual 'error'
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash

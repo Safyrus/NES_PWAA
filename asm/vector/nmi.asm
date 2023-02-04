@@ -214,12 +214,8 @@ NMI:
     BVS :+
         LDA #NMI_DONE
         ORA nmi_flags
-        JMP :++
+        STA nmi_flags
     :
-        LDA #($FF-NMI_DONE)
-        AND nmi_flags
-    :
-    STA nmi_flags
 
     @end:
 

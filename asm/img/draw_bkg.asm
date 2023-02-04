@@ -85,6 +85,8 @@ img_bkg_draw:
         @loop_exp:
             ; copy
             LDA (tmp+2), Y
+            BIT scanline
+            BVC @loop_exp
             STA (tmp+4), Y
             ; continue
             DEY
