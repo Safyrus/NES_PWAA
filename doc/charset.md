@@ -5,40 +5,65 @@
 
 ## Control chars
 
-|  Code  | Mne | Description                                                        | argument
-|:------:|:---:|:-------------------------------------------------------------------|:--------
-| **00** | END | END of dialog                                                      |
-| **01** | LB  | Line Break                                                         |
-| **02** | DB  | Dialog Break                                                       |
-| **03** | FDB | Force Dialog Break                                                 |
-| **04** | TD  | Toggle Dialog Box display                                          |
-| **05** | SCR | SCRoll to the other side of the scene                              |
-| **06** |     |                                                                    |
-| **07** | SAK | ShAKe                                                              |
-| **08** | SPD | SPeeD                                                              | 1: speed
-| **09** | DL  | DeLay                                                              | 1: delay
-| **0A** | NAM | change NAMe of dialog box                                          | 1: name (255=remove)
-| **0B** | FLH | FLasH                                                              |
-| **0C** | FI  | Fade In                                                            |
-| **0D** | FO  | Fade Out                                                           |
-| **0E** | COL | change text COLor                                                  | 1: color
-| **0F** | BC  | change Background Color                                            | 1: color
-| **10** | BIP | change dialog BIP effect                                           | 1: bip (255=remove)
-| **11** | MUS | MUSic                                                              | 1: music (255=remove)
-| **12** | SND | SouND effect                                                       | 1: sound (255=remove)
-| **13** | PHT | show PHoto                                                         | 1: photo (255=remove)
-| **14** | CHR | CHaRacter to show                                                  | 1: character (255=remove)
-| **15** | ANI | character ANImation                                                | 1: animation
-| **16** | BKG | change BacKGround                                                  | 1: background
-| **17** | FNT | Change FoNT to use                                                 | 1: font
-| **18** | JMP | JuMP to another dialog                                             | 3: adress\[0..6\], adress\[7..13\], adress\[14..20\]
-| **19** | ACT | jump to the dialog + offset depending on the player ACTion         | 4: adress\[0..6\], adress\[7..13\], adress\[14..20\], nb_choice
-| **1A** | BP  | Background Palette                                                 | 4: palettes (pal 0 first)
-| **1B** | SP  | Sprite Palette                                                     | 4: palettes (pal 0 first)
-| **1C** | RES | Reserved                                                           |
-| **1D** | RES | Reserved                                                           |
-| **1E** | EVT | EVenT                                                              | 1: function
-| **1F** | EXT | EXTension command                                                  | 1: ext command
+|TODO|  Code  | Mne | Description                                                        | argument
+|:--:|:------:|:---:|:-------------------------------------------------------------------|:--------
+|    | **00** | END | END of dialog                                                      |
+|    | **01** | LB  | Line Break                                                         |
+|    | **02** | DB  | Dialog Break                                                       |
+|    | **03** | FDB | Force Dialog Break                                                 |
+|    | **04** | TD  | Toggle Dialog Box display                                          |
+|    | **05** | SET | Set flag                                                           | 1: index
+|    | **06** | CLR | Clear flag                                                         | 1: index
+|    | **07** | SAK | ShAKe                                                              |
+|    | **08** | SPD | SPeeD                                                              | 1: speed
+|    | **09** | DL  | DeLay                                                              | 1: delay
+|  X | **0A** | NAM | change NAMe of dialog box                                          | 1: name (255=remove)
+|  X | **0B** | FLH | FLasH                                                              |
+|    | **0C** | FI  | Fade In                                                            |
+|    | **0D** | FO  | Fade Out                                                           |
+|    | **0E** | COL | change text COLor                                                  | 1: color
+|  X | **0F** | BC  | change Background Color                                            | 1: color
+|  X | **10** | BIP | change dialog BIP effect                                           | 1: bip (255=remove)
+|  X | **11** | MUS | MUSic                                                              | 1: music (255=remove)
+|  X | **12** | SND | SouND effect                                                       | 1: sound (255=remove)
+|  X | **13** | PHT | show PHoto                                                         | 1: photo (255=remove)
+|  X | **14** | CHR | CHaRacter to show                                                  | 1: character (255=remove)
+|  X | **15** | ANI | character ANImation                                                | 1: animation
+|  X | **16** | BKG | change BacKGround                                                  | 1: background
+|  X | **17** | FNT | Change FoNT to use                                                 | 1: font
+|  X | **18** | JMP | JuMP to another dialog                                             | jmp_adr, \[condition\]
+|  X | **19** | ACT | jump to the selected choice (depending on the player ACTion)       | (jmp_adr, \[condition\], text line)*nb_choice
+|  X | **1A** | BP  | Background Palette                                                 | 4: palettes (pal 0 first)
+|  X | **1B** | SP  | Sprite Palette                                                     | 4: palettes (pal 0 first)
+|    | **1C** | RES | Reserved                                                           |
+|    | **1D** | RES | Reserved                                                           |
+|    | **1E** | EVT | EVenT                                                              | 1: function
+|    | **1F** | EXT | EXTension command                                                  | 1: ext command
+
+### Events
+
+| Name |code|description
+|:----:|:--:|:----------
+|Scroll| 01 | SCRoll to the other side of the scene
+
+### Jump addresses format
+
+    Format:
+    <JUMP_ADR> [CONDITION] [other_data] [JUMP_ADR (if next flag set)]
+
+    JUMP_ADR:
+    20    14   13    7    6     0
+    cbbbbbb    ppppppp    nPPPPPP
+    |||||||    |||||||    |++++++-- High part of pointer (12:7)
+    |||||||    |||||||    +-------- Next flag (only used with the ACT control char)
+    |||||||    +++++++------------- Low part of pointer (6:0)
+    |++++++------------------------ Bank index
+    +------------------------------ Condition flag
+
+    CONDITION:
+    27    21
+    ccccccc
+    +++++++-- Index of flag to check if condition flag is set
 
 ## Display char
 

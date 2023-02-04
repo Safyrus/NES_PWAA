@@ -12,38 +12,44 @@ CHAR_MAP = [
     "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", ",", "}", "~", " "
 ]
 
-END = 0x00 # END of dialog                                             |
-LB  = 0x01 # Line Break                                                |
-DB  = 0x02 # Dialog Break                                              |
-FDB = 0x03 # Force Dialog Break                                        |
-TD  = 0x04 # Toggle Dialog Box display                                 |
-SCR = 0x05 # SCRoll to the other side of the scene                     |
-SAK = 0x07 #                                                           |
-SPD = 0x08 # SPeeD                                                     | 1: speed
-DL  = 0x09 # DeLay                                                     | 1: delay
-NAM = 0x0A # change NAMe of dialog box                                 | 1: name
-FLH = 0x0B # FLasH                                                     | 1: color
-FI  = 0x0C # Fade In                                                   | 1: color
-FO  = 0x0D # Fade Out                                                  | 1: color
-COL = 0x0E # change text COLor                                         | 1: color
-BC  = 0x0F # change Background Color                                   | 1: color
-BIP = 0x10 # change dialog BIP effect                                  | 1: bip
-MUS = 0x11 # MUSic                                                     | 1: music
-SND = 0x12 # SouND effect                                              | 1: sound
-PHT = 0x13 # show PHoto                                                | 1: photo (0=remove)
-CHR = 0x14 # CHaRacter to show                                         | 1: character (0=remove)
-ANI = 0x15 # character ANImation                                       | 1: animation
-BKG = 0x16 # change BacKGround                                         | 1: background
-FNT = 0x17 # Change FoNT to use                                        | 1: font
-JMP = 0x18 # JuMP to another dialog                                    | 3: adress\[0..6\], adress\[7..13\], adress\[14..20\]
-ACT = 0x19 # jump to the dialog + offset depending on the player ACTion| 4: adress\[0..6\], adress\[7..13\], adress\[14..20\], nb_choice
-BP  = 0x1A # Background Palette                                        | 4: palettes (pal 0 first)
-SP  = 0x1B # Sprite Palette                                            | 4: palettes (pal 0 first)
-RES = 0x1C # Reserved                                                  |
-RES = 0x1D # Reserved                                                  |
-EVT = 0x1E # EVenT                                                     | 1: function
-EXT = 0x1F # EXTension command                                         | 1: ext command                                        
-
+END = 0x00  # END of dialog                                             |
+LB = 0x01  # Line Break                                                |
+DB = 0x02  # Dialog Break                                              |
+FDB = 0x03  # Force Dialog Break                                        |
+TD = 0x04  # Toggle Dialog Box display                                 |
+SET = 0x05  # Set flag                                                  | 1: index
+CLR = 0x06  # Clear flag                                                | 1: index
+SAK = 0x07  # |
+SPD = 0x08  # SPeeD                                                     | 1: speed
+DL = 0x09  # DeLay                                                     | 1: delay
+NAM = 0x0A  # change NAMe of dialog box                                 | 1: name
+FLH = 0x0B  # FLasH                                                     | 1: color
+FI = 0x0C  # Fade In                                                   | 1: color
+FO = 0x0D  # Fade Out                                                  | 1: color
+COL = 0x0E  # change text COLor                                         | 1: color
+BC = 0x0F  # change Background Color                                   | 1: color
+BIP = 0x10  # change dialog BIP effect                                  | 1: bip
+MUS = 0x11  # MUSic                                                     | 1: music
+SND = 0x12  # SouND effect                                              | 1: sound
+# show PHoto                                                | 1: photo (0=remove)
+PHT = 0x13
+# CHaRacter to show                                         | 1: character (0=remove)
+CHR = 0x14
+ANI = 0x15  # character ANImation                                       | 1: animation
+BKG = 0x16  # change BacKGround                                         | 1: background
+FNT = 0x17  # Change FoNT to use                                        | 1: font
+# JuMP to another dialog                                    | jmp_adr, [condition]
+JMP = 0x18
+# jump to the selected choice (depend on the player ACTion) | (jmp_adr, [condition], text line)*nb_choice
+ACT = 0x19
+# Background Palette                                        | 4: palettes (pal 0 first)
+BP = 0x1A
+# Sprite Palette                                            | 4: palettes (pal 0 first)
+SP = 0x1B
+RES = 0x1C  # Reserved                                                  |
+RES = 0x1D  # Reserved                                                  |
+EVT = 0x1E  # EVenT                                                     | 1: function
+EXT = 0x1F  # EXTension command                                         | 1: ext command
 
 ########
 # MAIN #
@@ -58,15 +64,59 @@ print(f"reading file...")
 with open(txtfile, "r") as f:
     text = f.read()
 
-textbin = bytearray()
-
-# parsing file
+# filtering file
 print(f"filtering...")
 # remove control character and char not in CHAR_MAP
 text = re.sub(r"[^\x20-\x7E]", "", text)
 # remove unknow/unused metadata
 text = re.sub(r"\[[0-9]+\]", r"", text)
-print(f"parsing...")
+
+# find labels
+print(f"parsing... (labels)")
+textbin = bytearray()
+i = 0
+labels = {}
+while i < len(text):
+    c = text[i]
+    if c == "<":
+        # get tag
+        tag_end = text.find(">", i)
+        tag = text[i+1:tag_end]
+        # find tag name and args
+        if ":" in tag:
+            name, args = tag.split(":")
+            args = args.split(",")
+        else:
+            name, args = tag, []
+
+        # transform tag to code
+        if name == "label":
+            labels[args[0]] = len(textbin)
+            print(f"label: '{args[0]}' at {hex(labels[args[0]])}")
+        elif name == "jump":
+            # add dummy character to keep the length correct
+            for _ in range(4):
+                textbin.append(0)
+            for _ in range(len(args)-1):
+                textbin.append(0)
+        else:
+            # add dummy character to keep the length correct
+            textbin.append(0)
+            for _ in range(len(args)):
+                textbin.append(0)
+
+        # update index
+        i = tag_end+1
+    else:
+        # add char
+        if c in CHAR_MAP:
+            textbin.append(CHAR_MAP.index(c))
+        # update index
+        i += 1
+
+# parsing file
+print(f"parsing... (all)")
+textbin = bytearray()
 i = 0
 while i < len(text):
     c = text[i]
@@ -111,6 +161,36 @@ while i < len(text):
             textbin.append(FO)
         elif name == "fade_in":
             textbin.append(FI)
+        elif name == "background":
+            textbin.append(BKG)
+            textbin.append(int(args[0]))
+        elif name == "character":
+            textbin.append(CHR)
+            textbin.append(int(args[0]))
+        elif name == "animation":
+            textbin.append(ANI)
+            textbin.append(int(args[0]))
+        elif name == "set":
+            textbin.append(SET)
+            textbin.append(int(args[0]))
+        elif name == "clear":
+            textbin.append(CLR)
+            textbin.append(int(args[0]))
+        elif name == "label":
+            pass
+        elif name == "jump":
+            textbin.append(JMP)
+            adr = labels[args[0]]
+            c = 0
+            if len(args) >= 2:
+                c = 1 << 6
+            textbin.append((adr & 0x1F80) >> 7)
+            textbin.append(adr & 0x7F)
+            textbin.append((adr >> 14) + c)
+            if c != 0:
+                textbin.append(int(args[1]))
+        else:
+            print(f"Unknow tag '{name}' at {i}")
 
         # update index
         i = tag_end+1

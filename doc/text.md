@@ -9,6 +9,8 @@ All character are encoded with 7 bits with a specific [charset](charset.md). The
 
 To read a dialog, you need to decode the block from the start to the position of your string.
 
+The first 2 bytes indicate the size of the block. (low byte then high byte)
+
 ## Pseudo decoding algorithm
 
     # for the entire block of input data
