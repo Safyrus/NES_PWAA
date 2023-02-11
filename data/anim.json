@@ -1,4 +1,5 @@
 [
+    { "background": "../../data/empty.png","character": [],"time": [] },
     { "background": "../../data/space.png","character": [],"time": [] },
     {
         "background": "../../data/space.png",

@@ -1,3 +1,5 @@
+<background:1>Change background !<p>
+<animation:1>Change animation !<p>
 This is a test to see<b>if we can decode text.<p>
 And this is (hopefully)<b>another dialog box.<p>
 Read quick! This dialog box<b> will dissapeare at the end<b> of this sentence.<nextpage_nobutton>
