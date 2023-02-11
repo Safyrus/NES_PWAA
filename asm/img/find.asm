@@ -6,9 +6,9 @@ find_anim:
 
     ;
     LDA img_anim+0
-    STA tmp+2
-    LDA img_anim+1
     STA tmp+3
+    LDA img_anim+1
+    STA tmp+2
     ;
     LDA #<img_anim_table
     STA tmp+0
@@ -22,10 +22,11 @@ find_anim:
     @loop:
         LDA #$00
         CMP tmp+3
-        BNE @loop
+        BNE @next
         CMP tmp+2
         BEQ @find
 
+        @next:
         LDA (tmp), Y
         add_A2ptr tmp
 

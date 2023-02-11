@@ -1,28 +1,12 @@
 ## To-do
 
-- [/] Dialog box
-  - [X] LZ encode (python)
-  - [X] LZ decoding
-  - [X] Dialog box drawing
-  - [X] Text drawing
-  - [/] text "execution"
-    - [X] normal text
-    - [/] special text (17/32)
-    - [ ] event functions (0/1)
-- [/] Image drawing
-  - [X] RLEINC encode (python)
-  - [X] RLEINC decoding
-  - [X] Scanline IRQ to separate screen into "nothing, image, text, nothing"
-  - [X] Frame decoding
-  - [X] Frame background drawing
-  - [X] Frame sprites drawing
-  - [X] Palette update
-  - [X] Palette 'split'
-  - [X] encode images scripts (python)
-  - [X] encode frames scripts (python)
-  - [/] Partial frame decoding
-  - [/] Character Animation
-  - [/] Fix visual 'error'
+- [ ] Fix bugs
+  - [X] Fix partial images: wrong tile (because of timing when writing to ext RAM during NMI)
+  - [X] Fix partial images: missing sprites (because we cleared sprites each time a partial image was draw)
+  - [X] Fix partial images: wrong sprites bank (It was not the wrong bank, but too many sprites that was outside the bank)
+  - [X] Fix partial images: wrong background tiles corruption (background packet not closed in partial frame subroutine)
+  - [X] Fix garbage tiles. (writing to wrong nametable, because MMC5 register was not correctly set)
+  - [ ] Read text every frame (and not be slowed by image drawing for example)
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
@@ -46,6 +30,31 @@
   - [ ] Character sprites.
   - [ ] Musics + SFX.
 - [ ] Python script documentation.
+
+## Almost done
+
+- [/] Image drawing
+  - [X] RLEINC encode (python)
+  - [X] RLEINC decoding
+  - [X] Scanline IRQ to separate screen into "nothing, image, text, nothing"
+  - [X] Frame decoding
+  - [X] Frame background drawing
+  - [X] Frame sprites drawing
+  - [X] Palette update
+  - [X] Palette 'split'
+  - [X] encode images scripts (python)
+  - [X] encode frames scripts (python)
+  - [/] Partial frame decoding
+  - [/] Character Animation
+- [/] Dialog box
+  - [X] LZ encode (python)
+  - [X] LZ decoding
+  - [X] Dialog box drawing
+  - [X] Text drawing
+  - [/] text "execution"
+    - [X] normal text
+    - [/] special text (20/32)
+    - [ ] event functions (0/1)
 
 ## Done
 

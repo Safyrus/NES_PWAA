@@ -12,16 +12,17 @@
     ;       < ~2273 cycles (2000 to be sure)
     ; 7  bit  0
     ; ---- ----
-    ; EF.R PASB
-    ; || | ||||
-    ; || | |||+- Background tiles update
-    ; || | |||   Execution time depend on data
-    ; || | |||   (cycles ~= 16 + 38*p + for i:p do (14*p[i].n))
-    ; || | |||   (p=packet number, p[i].n = packet data size)
-    ; || | ||+-- Sprites update (513+ cycles)
-    ; || | |+--- Nametables attributes update (821 cycles)
-    ; || | +---- Palettes update (356 cycles)
-    ; || +------ Scroll update (31 cycles)
+    ; EFJR PASB
+    ; |||| ||||
+    ; |||| |||+- Background tiles update
+    ; |||| |||   Execution time depend on data
+    ; |||| |||   (cycles ~= 16 + 38*p + for i:p do (14*p[i].n))
+    ; |||| |||   (p=packet number, p[i].n = packet data size)
+    ; |||| ||+-- Sprites update (513+ cycles)
+    ; |||| |+--- Nametables attributes update (821 cycles)
+    ; |||| +---- Palettes update (356 cycles)
+    ; |||+------ Scroll update (31 cycles)
+    ; ||+------- Jump to specific subroutine
     ; |+-------- Force NMI acknowledge
     ; +--------- 1 when NMI has ended, should be set to 0 after reading.
     ;            If let to 1, it means the NMI is disable
@@ -59,6 +60,10 @@
     attributes: .res 64
 
     ; Index for the background data
+    ; FIII IIII
+    ; |+++-++++-- Index
+    ; +---------- A flag to tell that you are currently writing to the background buffer.
+    ;             If it is already set, you must wait for it to be cleared.
     background_index: .res 1
 
     ; Background data to send to PPU during VBLANK
@@ -146,10 +151,11 @@ OAM:
     ; pointer to current text to read
     txt_rd_ptr: .res 2
     ; first byte of flags
-    ; .... .FIW
-    ;       ||+-- Wait for user input to continue
-    ;       |+--- Player input
-    ;       +---- Force action (ignore player inputs)
+    ; D... .FIW
+    ; |     ||+-- Wait for user input to continue
+    ; |     |+--- Player input
+    ; |     +---- Force action (ignore player inputs)
+    ; +---------- Disable
     txt_flags: .res 1
     ; speed of text
     txt_speed: .res 1
@@ -247,4 +253,9 @@ OAM:
     ; - - - - - - - -
     ; Other variables
     ; - - - - - - - -
-    dialog_flag: .res 32
+    dialog_flag: .res 16
+    ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
+    mmc5_banks: .res 4
+    ; tmp variables to restore
+    tmp_restore: .res 8
+

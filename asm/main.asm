@@ -8,11 +8,16 @@
     STA nmi_flags
     LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
     STA PPU_MASK
-    ; 
+    ; enable 8*16 sprites
     LDA ppu_ctrl_val
     ORA #PPU_CTRL_SPR_SIZE
     STA ppu_ctrl_val
     STA PPU_CTRL
+
+    ; set code bank
+    LDA #CODE_BNK
+    STA MMC5_PRG_BNK0
+    STA mmc5_banks+1
 
     ; set dialog box palette
     LDA #$00
@@ -23,14 +28,10 @@
     STA palettes+12
 
     ; load and draw image
-    LDA #IMAGE_BNK
-    STA MMC5_PRG_BNK0
     JSR find_anim
     JSR frame_decode
 
     ; load first dialog block
-    LDA #DIALOG_BNK
-    STA MMC5_PRG_BNK0
     LDA #TXT_BNK
     STA lz_in_bnk
     LDA #$00
@@ -38,12 +39,6 @@
     LDA #$A0
     STA lz_in+1
     JSR lz_decode
-
-    ; init text read pointer
-    LDA #<MMC5_RAM
-    STA txt_rd_ptr+0
-    LDA #>MMC5_RAM
-    STA txt_rd_ptr+1
 
     ; - - - - - - - -
     ; init print variables
@@ -59,6 +54,12 @@
 
     ; draw dialog box
     JSR draw_dialog_box
+
+    ; init text read pointer
+    LDA #<MMC5_RAM
+    STA txt_rd_ptr+0
+    LDA #>MMC5_RAM
+    STA txt_rd_ptr+1
 
 .endmacro
 

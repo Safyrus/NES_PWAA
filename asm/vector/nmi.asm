@@ -26,9 +26,11 @@ NMI:
     JMP @end
 
     @start:
+    LDA #NT_MAPPING_NT1
+    STA MMC5_NAMETABLE
+
     ; load NMI flags
     LDA nmi_flags
-
 
     ; is the background flag on ? (B flag)
     LSR

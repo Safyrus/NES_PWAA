@@ -40,6 +40,7 @@ img_bkg_draw_2lines:
 img_bkg_draw:
     pushregs
 
+    JSR img_spr_clear
     ; set bank
     LDA #IMG_BUF_BNK
     STA MMC5_RAM_BNK

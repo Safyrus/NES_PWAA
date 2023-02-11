@@ -28,10 +28,10 @@
 |  X | **12** | SND | SouND effect                                                       | 1: sound (255=remove)
 |  X | **13** | PHT | show PHoto                                                         | 1: photo (255=remove)
 |  X | **14** | CHR | CHaRacter to show                                                  | 1: character (255=remove)
-|  X | **15** | ANI | character ANImation                                                | 1: animation
-|  X | **16** | BKG | change BacKGround                                                  | 1: background
+|    | **15** | ANI | character ANImation                                                | 1: animation
+|    | **16** | BKG | change BacKGround                                                  | 1: background
 |  X | **17** | FNT | Change FoNT to use                                                 | 1: font
-|  X | **18** | JMP | JuMP to another dialog                                             | jmp_adr, \[condition\]
+|    | **18** | JMP | JuMP to another dialog                                             | jmp_adr, \[condition\]
 |  X | **19** | ACT | jump to the selected choice (depending on the player ACTion)       | (jmp_adr, \[condition\], text line)*nb_choice
 |  X | **1A** | BP  | Background Palette                                                 | 4: palettes (pal 0 first)
 |  X | **1B** | SP  | Sprite Palette                                                     | 4: palettes (pal 0 first)

@@ -1,6 +1,7 @@
-
-img_spr_draw:
-    pushregs
+img_spr_clear:
+    PHA
+    TXA
+    PHA
 
     ; clear sprites
     LDA #$FF
@@ -11,6 +12,16 @@ img_spr_draw:
         INX
         BNE @clear
 
+    PLA
+    TAX
+    PLA
+    RTS
+
+
+img_spr_draw:
+    pushregs
+
+    JSR img_spr_clear
     ; set pointer to sprite data    
     LDA #<(MMC5_RAM+$600)
     STA tmp+2

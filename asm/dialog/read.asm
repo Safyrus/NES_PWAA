@@ -328,7 +328,6 @@ read_text:
                 ; set text bank
                 LDA #TEXT_BUF_BNK
                 STA MMC5_RAM_BNK
-                JSR draw_dialog_box
                 RTS
             ; case ANI
             @ANI:
@@ -340,7 +339,6 @@ read_text:
                 ; set text bank
                 LDA #TEXT_BUF_BNK
                 STA MMC5_RAM_BNK
-                JSR draw_dialog_box
                 RTS
             ; case BKG
             @BKG:
@@ -352,7 +350,6 @@ read_text:
                 ; set text bank
                 LDA #TEXT_BUF_BNK
                 STA MMC5_RAM_BNK
-                JSR draw_dialog_box
                 RTS
             ; case FNT
             @FNT:

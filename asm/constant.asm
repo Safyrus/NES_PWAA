@@ -158,8 +158,7 @@ MMC5_RAM       := $6000
 ;----------
 ; Game
 ;----------
-DIALOG_BNK   = $80
-IMAGE_BNK    = $80
+CODE_BNK     = $80
 TXT_BNK      = $81
 TEXT_BUF_BNK = $00
 IMG_BUF_BNK  = $01

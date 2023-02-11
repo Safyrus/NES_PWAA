@@ -137,6 +137,9 @@ img_partial_buf_flush:
             BNE @wait_vblank_loop
         PLA
     @init:
+    @wait_inframe:
+        BIT scanline
+        BVC @wait_inframe
     ; send buffer size
     LDX background_index
     LDA img_partial_buf_len
