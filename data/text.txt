@@ -1,5 +1,4 @@
-<background:1>Change background !<p>
-<animation:1>Change animation !<p>
+<background:1><animation:1>Change background<b>and animation !<p>
 This is a test to see<b>if we can decode text.<p>
 And this is (hopefully)<b>another dialog box.<p>
 Read quick! This dialog box<b> will dissapeare at the end<b> of this sentence.<nextpage_nobutton>
@@ -16,9 +15,13 @@ This text will not be draw.<nextpage_nobutton>
 <shake>Ouch!!!<wait:8><b>What a shake effect!<p>
 Fade out<fade_out><p>
 Fade in<fade_in><p>
-<label:test_flag>Checking if dialog flag<b>is set...<p><jump:test_flag_set,0><jump:test_flag_clear>
+<label:test_flag>Checking if dialog flag<b>is set...<p><jump:test_flag_set,1,0,0><jump:test_flag_clear>
 <label:test_flag_clear>The flag is cleared!<wait:8><b>Let me change that.<p>
 <set:0>There!<wait:8>Now we will jump<b>back and try again.<p><jump:test_flag>
 <label:test_flag_set>The flag is now set!<wait:8><b>We can continue.<p>
+Make a choice<b><act><jump:choice_1,0,1>Choice 1<b><jump:choice_2,0,0>Choice 2<b>
+<label:choice_1>You choose choice 1<p><jump:choice_end>
+<label:choice_2>You choose choice 2<p><jump:choice_end>
+<label:choice_end>
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>
