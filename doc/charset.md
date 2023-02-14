@@ -49,7 +49,7 @@
 ### Jump addresses format
 
     Format:
-    <JUMP_ADR> [CONDITION] [other_data] [JUMP_ADR (if next flag set)]
+    <JUMP_ADR> [CONDITION] [other_data] [<LB> <JUMP_ADR> (if next flag set)]
 
     JUMP_ADR:
     20    14   13    7    6     0

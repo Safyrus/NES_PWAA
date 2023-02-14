@@ -1,12 +1,7 @@
 ## To-do
 
 - [ ] Fix bugs
-  - [X] Fix partial images: wrong tile (because of timing when writing to ext RAM during NMI)
-  - [X] Fix partial images: missing sprites (because we cleared sprites each time a partial image was draw)
-  - [X] Fix partial images: wrong sprites bank (It was not the wrong bank, but too many sprites that was outside the bank)
-  - [X] Fix partial images: wrong background tiles corruption (background packet not closed in partial frame subroutine)
-  - [X] Fix garbage tiles. (writing to wrong nametable, because MMC5 register was not correctly set)
-  - [ ] Read text every frame (and not be slowed by image drawing for example)
+  - [ ] Read dialog every frame (and not be slowed by image drawing for example)
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
@@ -15,13 +10,14 @@
   - [ ] UI Movement
 - [ ] Make the Project core functionality
   - [ ] Main process loop
-  - [ ] Dialog box
-  - [ ] Image drawing
-  - [ ] Image Animation
+  - [/] Dialog box
+  - [/] Image drawing
+  - [/] Image Animation
   - [ ] Visual effects
   - [ ] Saving
   - [ ] FamiStudio import
-  - [ ] Interactive screen
+  - [ ] Investigation scene
+  - [ ] Court record
 - [ ] Make missing game resources:
   - [ ] not there yet.
 - [ ] Refine game resources:
@@ -30,10 +26,25 @@
   - [ ] Character sprites.
   - [ ] Musics + SFX.
 - [ ] Python script documentation.
+- [ ] Assembly documentation.
+- [ ] Data structure documentation.
 
 ## Almost done
 
-- [/] Image drawing
+- [/] Dialog box
+  - [/] text "execution"
+    - [/] special text (20/32)
+    - [ ] event functions (0/1)
+
+## Done
+
+- [X] Fix partial images: wrong tile (because of timing when writing to ext RAM during NMI)
+- [X] Fix partial images: missing sprites (because we cleared sprites each time a partial image was draw)
+- [X] Fix partial images: wrong sprites bank (It was not the wrong bank, but too many sprites that was outside the bank)
+- [X] Fix partial images: wrong background tiles corruption (background packet not closed in partial frame subroutine)
+- [X] Fix garbage tiles. (writing to wrong nametable, because MMC5 register was not correctly set)
+
+- [X] Image drawing
   - [X] RLEINC encode (python)
   - [X] RLEINC decoding
   - [X] Scanline IRQ to separate screen into "nothing, image, text, nothing"
@@ -44,19 +55,13 @@
   - [X] Palette 'split'
   - [X] encode images scripts (python)
   - [X] encode frames scripts (python)
-  - [/] Partial frame decoding
-  - [/] Character Animation
+  - [X] Partial frame decoding
+  - [X] Character Animation
 - [/] Dialog box
   - [X] LZ encode (python)
   - [X] LZ decoding
   - [X] Dialog box drawing
   - [X] Text drawing
-  - [/] text "execution"
-    - [X] normal text
-    - [/] special text (20/32)
-    - [ ] event functions (0/1)
-
-## Done
 
 - [X] Detail feasibility study. Estimate with real data the size (to the KB) of:
 
