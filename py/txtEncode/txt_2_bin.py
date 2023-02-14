@@ -95,9 +95,11 @@ while i < len(text):
             print(f"label: '{args[0]}' at {hex(labels[args[0]])}")
         elif name == "jump":
             # add dummy character to keep the length correct
-            for _ in range(4):
+            if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
                 textbin.append(0)
-            for _ in range(len(args)-1):
+            if len(args) >= 4:
+                textbin.append(0)
+            for _ in range(3):
                 textbin.append(0)
         else:
             # add dummy character to keep the length correct
@@ -179,16 +181,26 @@ while i < len(text):
         elif name == "label":
             pass
         elif name == "jump":
-            textbin.append(JMP)
             adr = labels[args[0]]
             c = 0
-            if len(args) >= 2:
+            n = 0
+
+            if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
+                textbin.append(JMP)
+
+            if len(args) >= 3 and args[2] == "1":
+                n = 1 << 6
+
+            if len(args) >= 4:
                 c = 1 << 6
-            textbin.append((adr & 0x1F80) >> 7)
+
+            textbin.append(((adr & 0x1F80) >> 7) + n)
             textbin.append(adr & 0x7F)
-            textbin.append((adr >> 14) + c)
+            textbin.append((adr >> 13) + c)
             if c != 0:
                 textbin.append(int(args[1]))
+        elif name == "act":
+            textbin.append(ACT)
         else:
             print(f"Unknow tag '{name}' at {i}")
 
