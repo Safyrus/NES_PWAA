@@ -171,6 +171,8 @@ OAM:
     txt_bck_color: .res 1
     ;
     txt_jump_buf: .res 3
+    ;
+    txt_jump_flag_buf: .res 1
 
     ; - - - - - - - -
     ; Variables for text printing
@@ -249,6 +251,16 @@ OAM:
     img_palette_1: .res 3
     img_palette_2: .res 3
     img_palette_3: .res 3
+
+    ; - - - - - - - -
+    ; Action/choice variables
+    ; - - - - - - - -
+    ;
+    choice: .res 1
+    ;
+    max_choice: .res 1
+    ;
+    choice_jmp_table: .res 3*4
 
     ; - - - - - - - -
     ; Other variables

@@ -1,4 +1,3 @@
-
 ; return in A the char read and increase the ptr
 ; change Y to 0
 read_next_char:
@@ -29,6 +28,64 @@ read_next_dailog:
     PLA
     RTS
 
+read_next_jmp:
+    ; c = next_char()
+    JSR read_next_char
+    STA txt_jump_buf+1
+    STA txt_jump_flag_buf
+    ; adr_lo = (c << 7) & 0xFF
+    ROR
+    ROR
+    AND #$80
+    STA txt_jump_buf+0
+    ; adr_hi = ((next_char() >> 1) & 0x1F) | 0x60
+    LDA txt_jump_buf+1
+    LSR
+    AND #$1F
+    ORA #$60
+    STA txt_jump_buf+1
+    ; adr_lo += next_char()
+    JSR read_next_char
+    ORA txt_jump_buf+0
+    STA txt_jump_buf+0
+    ; block = next_char()
+    LDA txt_jump_flag_buf
+    ASL
+    AND #$80
+    STA txt_jump_flag_buf
+    JSR read_next_char
+    STA txt_jump_buf+2
+    ORA txt_jump_flag_buf
+    STA txt_jump_flag_buf
+    RTS
+
+read_jump:
+    ; block = lz_bnk_table[block]
+    LDA txt_jump_buf+2
+    AND #$3F
+    TAX
+    LDA lz_bnk_table, X
+    STA txt_jump_buf+2
+    ; txt_rd_ptr = adr_lo, adr_hi
+    LDA txt_jump_buf+0
+    STA txt_rd_ptr+0
+    LDA txt_jump_buf+1
+    STA txt_rd_ptr+1
+    ; if block != current_block:
+    LDA txt_jump_buf+2
+    CMP lz_in_bnk
+    BEQ @JMP_char_end
+        ; lz_in_bnk = block
+        STA lz_in_bnk
+        ; lz_decode()
+        JSR lz_decode
+        ; set text bank
+        LDA #TEXT_BUF_BNK
+        STA MMC5_RAM_BNK
+    @JMP_char_end:
+    RTS
+
+
 ; description:
 ;   Read text from memory and "execute" it.
 ; param:
@@ -54,6 +111,12 @@ read_text:
         BEQ @fade_end
             JMP @end
         @fade_end:
+
+        ; choice guard
+        LDA max_choice
+        BEQ @choice_end
+            JMP @end
+        @choice_end:
 
         ; if wait flag
         LDA txt_flags
@@ -140,328 +203,38 @@ read_text:
             ; jump
             RTS
 
-            ; case END
-            @END_char:
-                ; should not occure, so jump forever
-                JSR print_flush
-                JMP @END_char
-                RTS
-            ; case LB
-            @LB:
-                ; go to next line
-                JSR print_lb
-                RTS
-            ; case DB
-            @DB:
-                ; set flag to wait for user input to continue
-                LDA txt_flags
-                ORA #TXT_FLAG_WAIT
-                STA txt_flags
-                RTS
-            ; case FDB
-            @FDB:
-                ; set flag to wait for user input to continue
-                ; and set force flag to ignore player input
-                LDA txt_flags
-                ORA #(TXT_FLAG_WAIT + TXT_FLAG_FORCE)
-                STA txt_flags
-                RTS
-            ; case TD
-            @TD:
-                ; toggle flag to display dialog box
-                LDA effect_flags
-                EOR #EFFECT_FLAG_HIDE
-                STA effect_flags
-                ;
-                AND #EFFECT_FLAG_HIDE
-                BEQ @td_on
-                @td_off:
-                    JSR frame_decode
-                    ; set text bank
-                    LDA #TEXT_BUF_BNK
-                    STA MMC5_RAM_BNK
-                    RTS
-                @td_on:
-                    JSR draw_dialog_box
-                    RTS
-            ; case SET
-            @SET:
-                JSR read_next_char
-                JMP set_dialog_flag
-            ; case CLR
-            @CLR:
-                JSR read_next_char
-                JMP clear_dialog_flag
-            ; case SCR
-            ; @SCR:
-            ;     ; toggle scroll flag
-            ;     LDA effect_flags
-            ;     EOR #EFFECT_FLAG_SCROLL
-            ;     STA effect_flags
-            ;     ; set scroll timer
-            ;     LDA #$FF
-            ;     STA scroll_timer
-            ;     RTS
-            ; case SAK
-            @SAK:
-                ; set shake timer
-                LDA #$1E
-                STA shake_timer
-                RTS
-            ; case SPD
-            @SPD:
-                ; spd = next_char() - 1
-                JSR read_next_char
-                SEC
-                SBC #$01
-                STA txt_speed
-                RTS
-            ; case DL
-            @DL:
-                ; delay = next_char()*2
-                JSR read_next_char
-                ASL
-                STA txt_delay
-                RTS
-            ; case NAM
-            @NAM:
-                ; name = next_char()
-                JSR read_next_char
-                STA txt_name
-                RTS
-            ; case FLH
-            @FLH:
-                ; flash_color = next_char()
-                ; JSR read_next_char
-                ; STA flash_color
-                ; set flash timer
-                LDA #$FF
-                STA scroll_timer
-                RTS
-            ; case FI
-            @FI:
-                ; fade_color = next_char()
-                ; JSR read_next_char
-                ; STA fade_color
-                ; set fade timer
-                LDA #FADE_TIME
-                STA fade_timer
-                ; set fade in flag
-                LDA effect_flags
-                ORA #EFFECT_FLAG_FADE
-                STA effect_flags
-                RTS
-            ; case FO
-            @FO:
-                ; fade_color = next_char()
-                ; JSR read_next_char
-                ; STA fade_color
-                ; set fade timer
-                LDA #FADE_TIME
-                STA fade_timer
-                ; set fade out flag
-                LDA effect_flags
-                AND #($FF - EFFECT_FLAG_FADE)
-                STA effect_flags
-                RTS
-            ; case COL
-            @COL:
-                ; print_ext_val & 0x3F
-                LDA print_ext_val
-                AND #$3F
-                STA print_ext_val
-                ; col = next_char()
-                JSR read_next_char
-                ; (col-1) << 6
-                SEC
-                SBC #$01
-                AND #$03
-                CLC
-                ROR
-                ROR
-                ROR
-                ; print_ext_val | col
-                ORA print_ext_val
-                STA print_ext_val
-                RTS
-            ; case BC
-            @BC:
-                ; txt_bck_color = next_char()
-                JSR read_next_char
-                STA txt_bck_color
-                RTS
-            ; case BIP
-            @BIP:
-                ; txt_bip = next_char()
-                JSR read_next_char
-                STA bip
-                RTS
-            ; case MUS
-            @MUS:
-                ; m = next_char()
-                JSR read_next_char
-                STA music
-                ; play_music(m)
-                ; TODO
-                RTS
-            ; case SND
-            @SND:
-                ; s = next_char()
-                JSR read_next_char
-                STA sound
-                ; play_sound(s)
-                ; TODO
-                RTS
-            ; case PHT
-            @PHT:
-                ; photo = next_char()
-                JSR read_next_char
-                STA img_photo
-                RTS
-            ; case CHR
-            @CHR:
-                ; character = next_char()
-                JSR read_next_char
-                STA img_character
-                ;
-                JSR find_anim
-                ; set text bank
-                LDA #TEXT_BUF_BNK
-                STA MMC5_RAM_BNK
-                RTS
-            ; case ANI
-            @ANI:
-                ; character_animation = next_char()
-                JSR read_next_char
-                STA img_animation
-                ;
-                JSR find_anim
-                ; set text bank
-                LDA #TEXT_BUF_BNK
-                STA MMC5_RAM_BNK
-                RTS
-            ; case BKG
-            @BKG:
-                ; background = next_char()
-                JSR read_next_char
-                STA img_background
-                ;
-                JSR find_anim
-                ; set text bank
-                LDA #TEXT_BUF_BNK
-                STA MMC5_RAM_BNK
-                RTS
-            ; case FNT
-            @FNT:
-                ; font = next_char()
-                JSR read_next_char
-                STA txt_font
-                RTS
-            ; case JMP
-            @JMP_char: ; TODO
-                ; c = next_char()
-                JSR read_next_char
-                STA txt_jump_buf+1
-                ; adr_lo = (c << 7) & 0xFF
-                ROR
-                ROR
-                AND #$80
-                STA txt_jump_buf+0
-                ; adr_hi = ((next_char() >> 1) & 0x1F) | 0x60
-                LDA txt_jump_buf+1
-                LSR
-                AND #$1F
-                ORA #$60
-                STA txt_jump_buf+1
-                ; adr_lo += next_char()
-                JSR read_next_char
-                ORA txt_jump_buf+0
-                STA txt_jump_buf+0
-                ; block = next_char()
-                JSR read_next_char
-                STA txt_jump_buf+2
-                ; c = block & 0x40
-                AND #$40
-                ; if c:
-                BEQ @JMP_char_cond_end
-                    ; c_idx = next_char()
-                    JSR read_next_char
-                    ; flag = dialog_flag[c_idx]
-                    JSR get_dialog_flag
-                    ; if flag clear then break
-                    BEQ @JMP_char_end
-                @JMP_char_cond_end:
-                ; block = lz_bnk_table[block]
-                LDA txt_jump_buf+2
-                AND #$3F
-                TAX
-                LDA lz_bnk_table, X
-                STA txt_jump_buf+2
-                ; txt_rd_ptr = adr_lo, adr_hi
-                LDA txt_jump_buf+0
-                STA txt_rd_ptr+0
-                LDA txt_jump_buf+1
-                STA txt_rd_ptr+1
-                ; if block != current_block:
-                LDA txt_jump_buf+2
-                CMP lz_in_bnk
-                BEQ @JMP_char_end
-                    ; lz_in_bnk = block
-                    STA lz_in_bnk
-                    ; lz_decode()
-                    JSR lz_decode
-                    ; set text bank
-                    LDA #TEXT_BUF_BNK
-                    STA MMC5_RAM_BNK
-                @JMP_char_end:
-                RTS
-            ; case ACT
-            @ACT: ; TODO
-                JMP @ACT
-            ; case BP
-            @BP:
-                ; for i from 0 to 4
-                LDX #$00
-                @bp_loop:
-                    ; p = next_char()
-                    JSR read_next_char
-                    ; palette[i] = palette_table[p]
-                    JSR set_img_bck_palette
-                    ; continue
-                    INX
-                    CPX #$04
-                    BNE @bp_loop
-                RTS
-            ; case SP
-            @SP:
-                ; for i from 0 to 4
-                LDX #$00
-                @sp_loop:
-                    ; p = next_char()
-                    JSR read_next_char
-                    ; palette[i] = palette_table[p]
-                    JSR set_img_spr_palette
-                    ; continue
-                    INX
-                    CPX #$04
-                    BNE @sp_loop
-                RTS
-            ; case EVT
-            @EVT:
-                ; e = next_char()
-                JSR read_next_char
-                ; jsr event_table[e]
-                JMP exec_evt
-            ; case EXT
-            @EXT:
-                ; e = next_char()
-                JSR read_next_char
-                ; extension_char(e)
-                JMP exec_ext
-            ; default
-            @default:
-                ; unknow control char
-                RTS
+            .include "spe_chr/ACT.asm"
+            .include "spe_chr/ANI.asm"
+            .include "spe_chr/BC.asm"
+            .include "spe_chr/BIP.asm"
+            .include "spe_chr/BKG.asm"
+            .include "spe_chr/BP.asm"
+            .include "spe_chr/CHR.asm"
+            .include "spe_chr/CLR.asm"
+            .include "spe_chr/COL.asm"
+            .include "spe_chr/DB.asm"
+            .include "spe_chr/DL.asm"
+            .include "spe_chr/END.asm"
+            .include "spe_chr/EVT.asm"
+            .include "spe_chr/EXT.asm"
+            .include "spe_chr/FDB.asm"
+            .include "spe_chr/FI.asm"
+            .include "spe_chr/FLH.asm"
+            .include "spe_chr/FNT.asm"
+            .include "spe_chr/FO.asm"
+            .include "spe_chr/JMP.asm"
+            .include "spe_chr/LB.asm"
+            .include "spe_chr/MUS.asm"
+            .include "spe_chr/NAM.asm"
+            .include "spe_chr/PHT.asm"
+            .include "spe_chr/SAK.asm"
+            .include "spe_chr/SET.asm"
+            .include "spe_chr/SND.asm"
+            .include "spe_chr/SP.asm"
+            .include "spe_chr/SPD.asm"
+            .include "spe_chr/TD.asm"
+            .include "spe_chr/default.asm"
+
     @switch_lo:
         .byte <(@END_char-1)
         .byte <(@LB-1)
