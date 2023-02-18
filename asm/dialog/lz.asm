@@ -13,12 +13,15 @@ lz_decode:
     ; set output bank
     LDA #TEXT_BUF_BNK
     STA MMC5_RAM_BNK
+    STA mmc5_banks+0
 
     ; set input bank
     LDX lz_in_bnk
     STX MMC5_PRG_BNK1
+    STX mmc5_banks+2
     INX
     STX MMC5_PRG_BNK2
+    STX mmc5_banks+3
 
     ; init out pointer
     LDA #<MMC5_RAM   ; low adr

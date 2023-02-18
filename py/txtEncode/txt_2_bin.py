@@ -201,7 +201,7 @@ while i < len(text):
             textbin.append(adr & 0x7F)
             textbin.append((adr >> 13) + c)
             if c != 0:
-                textbin.append(int(args[1]))
+                textbin.append(int(args[3]))
         elif name == "act":
             textbin.append(ACT)
         else:

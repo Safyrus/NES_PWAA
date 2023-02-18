@@ -37,6 +37,9 @@
 
 ## Done
 
+- [X] Fix jump using the wrong flag (wrong argument used in the python script)
+- [X] Fix wrong bank when decoding text (not saved in var 'mmc5_bank')
+
 - [X] Import FamiStudio
 
 - [X] Fix partial images: wrong tile (because of timing when writing to ext RAM during NMI)
