@@ -15,7 +15,6 @@
   - [/] Image Animation
   - [ ] Visual effects
   - [ ] Saving
-  - [ ] FamiStudio import
   - [ ] Investigation scene
   - [ ] Court record
 - [ ] Make missing game resources:
@@ -33,10 +32,12 @@
 
 - [/] Dialog box
   - [/] text "execution"
-    - [/] special text (20/32)
+    - [/] special text (21/32)
     - [ ] event functions (0/1)
 
 ## Done
+
+- [X] Import FamiStudio
 
 - [X] Fix partial images: wrong tile (because of timing when writing to ext RAM during NMI)
 - [X] Fix partial images: missing sprites (because we cleared sprites each time a partial image was draw)
@@ -57,6 +58,7 @@
   - [X] encode frames scripts (python)
   - [X] Partial frame decoding
   - [X] Character Animation
+
 - [/] Dialog box
   - [X] LZ encode (python)
   - [X] LZ decoding

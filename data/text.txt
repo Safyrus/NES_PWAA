@@ -23,5 +23,8 @@ Make a choice<b><act><jump:choice_1,0,1>Choice 1<b><jump:choice_2,0,0>Choice 2<b
 <label:choice_1>You choose choice 1<p><jump:choice_end>
 <label:choice_2>You choose choice 2<p><jump:choice_end>
 <label:choice_end>
+<music:1>Play first music<p>
+<music:2>Play second music<p>
+<music:0>Stop music<p>
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>

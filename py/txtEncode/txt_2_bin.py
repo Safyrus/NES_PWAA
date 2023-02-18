@@ -172,6 +172,9 @@ while i < len(text):
         elif name == "animation":
             textbin.append(ANI)
             textbin.append(int(args[0]))
+        elif name == "music":
+            textbin.append(MUS)
+            textbin.append(int(args[0]))
         elif name == "set":
             textbin.append(SET)
             textbin.append(int(args[0]))
