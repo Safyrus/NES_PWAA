@@ -4,4 +4,5 @@ This is an attempt at remaking the first "Phoenix Wright: Ace attorney" (PWAA) g
 
 ## Resource use
 
+- The [FamiStudio](https://famistudio.org) sound engine
 - Font based on the [Igiari font](https://www.dafont.com/igiari.font) by [Caveras](https://caveras.net/). Change the font to be 8 pixels tall instead of 16. (only ASCII characters)
