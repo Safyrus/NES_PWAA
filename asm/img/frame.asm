@@ -68,6 +68,7 @@ frame_decode:
         ;
         INY
         LDA (tmp+2), Y
+        STA mmc5_banks+2
         STA MMC5_PRG_BNK1
         ;
         DEC anim_img_counter
@@ -96,6 +97,7 @@ frame_decode:
         ; set image bank
         LDX img_background
         LDA img_bkg_table_bank, X
+        STA mmc5_banks+2
         STA MMC5_PRG_BNK1
 
         ; Set pointer to image.

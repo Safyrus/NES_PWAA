@@ -160,6 +160,7 @@ MMC5_RAM       := $6000
 ;----------
 CODE_BNK     = $80
 TXT_BNK      = $81
+MUS_BNK      = $83
 TEXT_BUF_BNK = $00
 IMG_BUF_BNK  = $01
 RAM_MAX_BNK  = 1

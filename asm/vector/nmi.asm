@@ -225,6 +225,14 @@ NMI:
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
 
+    ; update famistudio
+    CLI
+    LDA #MUS_BNK
+    STA MMC5_PRG_BNK1
+    JSR famistudio_update
+    LDA mmc5_banks+2
+    STA MMC5_PRG_BNK1
+
     ; restore registers
     pullregs
     ; return

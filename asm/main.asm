@@ -14,6 +14,13 @@
     STA ppu_ctrl_val
     STA PPU_CTRL
 
+    ; init famistudio
+    LDX #<music_data
+    LDY #>music_data
+    LDA #MUS_BNK
+    STA MMC5_PRG_BNK1
+    JSR famistudio_init
+
     ; set code bank
     LDA #CODE_BNK
     STA MMC5_PRG_BNK0

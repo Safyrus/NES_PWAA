@@ -118,11 +118,10 @@
     .include "math.asm"
     .include "joypad.asm"
 
-.if FAMISTUDIO=1
     ; FamiStudio Sound Engine
-    .include "audio/famistudio_config.asm"
     .include "audio/famistudio_ca65.s"
-.endif
+    ; musics
+    .include "audio/data.asm"
 
 .segment "CODE_BNK"
     .include "dialog/main.asm"

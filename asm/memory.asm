@@ -75,7 +75,7 @@
     background: .res 127
 
     ; temporary variables
-    tmp:
+    tmp: .res 8
 
 ;****************
 ; OAM SEGMENT
