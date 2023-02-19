@@ -32,7 +32,7 @@
 
 - [/] Dialog box
   - [/] text "execution"
-    - [/] special text (21/32)
+    - [/] special text (22/32)
     - [ ] event functions (0/1)
 
 ## Done

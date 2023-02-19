@@ -47,7 +47,7 @@ for b in blocks:
     i += 1
 
 # write results
-outputfile = os.path.splitext(os.path.basename(inputfile))[0] + "_blocks.bin"
+outputfile = os.path.splitext(os.path.basename(inputfile))[0] + ".bin"
 write_bit_stream(text, outputfile)
 with open(asmfile, "w") as f:
     f.write("; TODO description\n")

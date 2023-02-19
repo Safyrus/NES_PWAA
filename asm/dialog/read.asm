@@ -86,6 +86,32 @@ read_jump:
     RTS
 
 
+read_bip:
+    ; if bip = 0 then break
+    LDA bip
+    BEQ @end
+    ; if bip already play then break
+    LDX #FAMISTUDIO_SFX_CH0
+    LDA famistudio_sfx_ptr_hi, X
+    BNE @end
+    ;
+    LDA mmc5_banks+2
+    PHA
+    LDA #MUS_BNK
+    STA mmc5_banks+2
+    STA MMC5_PRG_BNK1
+    ;
+    LDA bip
+    SEC
+    SBC #$01
+    JSR famistudio_sfx_play
+    ;
+    PLA
+    STA mmc5_banks+2
+    STA MMC5_PRG_BNK1
+    @end:
+    RTS
+
 ; description:
 ;   Read text from memory and "execute" it.
 ; param:

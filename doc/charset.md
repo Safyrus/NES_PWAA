@@ -23,7 +23,7 @@
 |    | **0D** | FO  | Fade Out                                                           |
 |    | **0E** | COL | change text COLor                                                  | 1: color
 |  X | **0F** | BC  | change Background Color                                            | 1: color
-|  X | **10** | BIP | change dialog BIP effect                                           | 1: bip (255=remove)
+|    | **10** | BIP | change dialog BIP effect                                           | 1: bip (255=remove)
 |    | **11** | MUS | MUSic                                                              | 1: music (255=remove)
 |  X | **12** | SND | SouND effect                                                       | 1: sound (255=remove)
 |  X | **13** | PHT | show PHoto                                                         | 1: photo (255=remove)

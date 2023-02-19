@@ -123,6 +123,9 @@ print_flush:
     STA background, X
     STX background_index
 
+    ; make bip sound
+    JSR read_bip
+
     ; - - - - - - - -
     ; update pointers
     ; - - - - - - - -
