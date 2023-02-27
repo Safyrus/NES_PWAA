@@ -205,8 +205,6 @@ read_text:
             JMP @end
         ; else
         @special_char:
-            ; save char
-            PHA
             ; debug print
             JSR print_char
 
@@ -214,7 +212,6 @@ read_text:
             ; switch (c)
             ; - - - - - - - -
             ; get switch index
-            PLA
             TAX
             ; push return adr
             LDA #>(@loop-1)

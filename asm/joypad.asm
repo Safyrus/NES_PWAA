@@ -20,19 +20,27 @@ loop:
     rts
 
 
-; update_btn_timer:
-;     @timer:
-;     LDA buttons_1_timer   ; decrease buttons_1_timer if it is not 0
-;     BEQ @timer_reset
-;     SEC
-;     SBC #$01
-;     JMP @end
-
-;     @timer_reset:
-;     LDA buttons_1        ; set buttons_1_timer if any button was pressed
-;     BEQ @end
-;     LDA #BTN_TIMER
-
-;     @end:
-;     STA buttons_1_timer
-;     RTS
+update_input:
+    ; if buttons_1_timer > 0
+    LDA buttons_1_timer
+    BEQ @timer_reset
+    ; then
+        ; buttons_1_timer--
+        DEC buttons_1_timer
+        ; input = 0
+        LDA #$00
+        STA buttons_1
+        ; end
+        JMP @end
+    ; else
+    @timer_reset:
+        ; read input
+        JSR readjoy
+        ; if input != 0
+        LDA buttons_1
+        BEQ @end
+            ; buttons_1_timer = BTN_TIMER
+            LDA #BTN_TIMER
+            STA buttons_1_timer
+    @end:
+    RTS

@@ -114,8 +114,8 @@
     .include "vector/scanline.asm"
 
     ; main file
-    .include "main.asm"
     .include "math.asm"
+    .include "main.asm"
     .include "joypad.asm"
 
     ; FamiStudio Sound Engine

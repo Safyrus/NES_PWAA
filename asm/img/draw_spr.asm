@@ -34,9 +34,9 @@ img_spr_draw:
 
     ; draw sprites
     LDA #$00
-    TAY ; STA counter_size
-    TAX ; OAM ptrx
     STA tmp+0 ; counter_y
+    TAY ; STA counter_size
+    LDX #(RES_SPR*4) ; OAM ptrx
     @loop_y:
         LDA #$00
         STA tmp+1 ; counter_x

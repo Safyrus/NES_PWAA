@@ -156,20 +156,12 @@ NMI:
         ; set PPU address
         LDA #$3F
         STA PPU_ADDR
-        LDA #$00
+        LDA #$01
         STA PPU_ADDR
  
         ; send data to PPU
-        LDX #$00
-        ; send transparent color
-        LDA palettes, X
-        TAY
-        INX
-
+        LDX #$01
         @palette_loop:
-            ; send background
-            TYA
-            STA PPU_DATA
             ; send 3 colors
             LDA palettes, X
             STA PPU_DATA
@@ -180,9 +172,20 @@ NMI:
             LDA palettes, X
             STA PPU_DATA
             INX
+            ; send dummy background color
+            LDA #$0F
+            STA PPU_DATA
             ; loop
             CPX #25
             BNE @palette_loop
+
+        ; send transparent color
+        LDA #$3F
+        STA PPU_ADDR
+        LDA #$00
+        STA PPU_ADDR
+        LDA palettes
+        STA PPU_DATA
 
         ; restore flags
         PLA

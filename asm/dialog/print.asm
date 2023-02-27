@@ -5,13 +5,17 @@
 ; use:
 ; - A and X
 ; - print_ppu_buf, print_ext_buf, print_counter
-; /!\ does not save registers
+; /!\ does not save the X register
 print_char:
+    PHA
+
     LDX print_counter
     STA print_ppu_buf, X
     LDA print_ext_val
     STA print_ext_buf, X
     INC print_counter
+
+    PLA
     RTS
 
 ; description:

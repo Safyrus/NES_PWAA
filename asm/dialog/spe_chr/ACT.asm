@@ -36,15 +36,37 @@
         ; read choice text
         @ACT_while_read:
             JSR read_next_char
-            ; todo print
+            JSR print_char
             CMP #$01
             BNE @ACT_while_read
-
+        JSR print_lb
         ; while end
         @ACT_while_next:
         BIT txt_jump_flag_buf
         BMI @ACT_while
-
-    ; display choice
-    ; TODO
+    
+    JSR wait_next_frame
+    LDX background_index
+    LDA max_choice
+    ASL
+    TAY
+    ORA #$80
+    STA background, X
+    INX
+    LDA #>($2281)
+    STA background, X
+    INX
+    LDA #<($2281)
+    STA background, X
+    INX
+    LDA #$3E
+    @ACT_draw:
+        STA background, X
+        EOR #$80
+        INX
+        DEY
+        BNE @ACT_draw
+    LDA #$00
+    STA background, X
+    STX background_index
     RTS

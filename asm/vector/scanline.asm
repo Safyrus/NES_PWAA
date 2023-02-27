@@ -1,10 +1,10 @@
 scanline_irq_handler:
-    ; push x
-    TXA
-    PHA
-    ; push y
-    TYA
-    PHA
+    pushregs
+
+    ; priority to palette change
+    LDA scanline
+    CMP #SCANLINE_TOP_IMG
+    BEQ @scanline_irq_dialog
 
     ; prepare the jump
     LDA scanline
@@ -40,6 +40,10 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_dialog:
+        AND #$3F
+        TAX
+        LDA @next_state, X
+        STA scanline
         ; - - - - - - - -
         ; first scanline (152)
         ; - - - - - - - -
@@ -50,6 +54,9 @@ scanline_irq_handler:
             STA MMC5_SCNL_VAL
             JMP @end
         @palette_change_start:
+        ; skipping 10 cpu cycles
+        ROL 0
+        ROR 0
         ; setup registers
         LDX #$16
         LDY #$26
@@ -60,8 +67,10 @@ scanline_irq_handler:
         LDA #$00
         STA PPU_MASK
         ; set low byte of address
-        LDA #$01
         STA PPU_ADDR
+        ; send background color
+        LDA #$0F
+        STA PPU_DATA
         ; send 3 byte
         LDA #$06
         STA PPU_DATA
@@ -201,14 +210,7 @@ scanline_irq_handler:
         JMP @end
 
     @end:
-    ; pull y
-    PLA
-    TAY
-    ; pull x
-    PLA
-    TAX
-    ; pull A
-    PLA
+    pullregs
     ; return
     RTI
 

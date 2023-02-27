@@ -4,9 +4,6 @@
 
 
 IRQ:
-    ; save register
-    PHA
-
     ; clear scanline IRQ
     BIT MMC5_SCNL_STAT
     BPL @scanline_irq_end
@@ -20,7 +17,5 @@ IRQ:
     @apu_irq_end:
 
     @end:
-    ; restore register
-    PLA
     ; return
     RTI

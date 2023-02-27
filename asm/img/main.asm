@@ -3,5 +3,4 @@
 .include "draw_bkg_partial.asm"
 .include "draw_spr.asm"
 .include "frame.asm"
-.include "pal.asm"
 .include "find.asm"
