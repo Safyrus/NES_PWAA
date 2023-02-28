@@ -19,8 +19,8 @@ img_bkg_table:
 .word (img_0 & $FFFF) ; ../../data/empty.png
 .word (img_1 & $FFFF) ; ../../data/space.png
 img_bkg_table_bank:
-.byte $82
-.byte $82
+.byte $c0
+.byte $c0
 
 img_anim_table:
 default:
@@ -29,23 +29,23 @@ img_anim_0:
 .byte $11 ; size
 .byte $10 ; time
 .word (img_2 & $FFFF) ; ../../data/empty.png;../../data/sprite1.png
-.byte $82 ; bank
+.byte $c0 ; bank
 .byte $10 ; time
 .word (img_3 & $FFFF) ; ../../data/sprite1.png;../../data/sprite2.png
-.byte $82 ; bank
+.byte $c0 ; bank
 .byte $10 ; time
 .word (img_4 & $FFFF) ; ../../data/sprite2.png;../../data/sprite3.png
-.byte $82 ; bank
+.byte $c0 ; bank
 .byte $10 ; time
 .word (img_5 & $FFFF) ; ../../data/sprite3.png;../../data/sprite4.png
-.byte $82 ; bank
+.byte $c0 ; bank
 
 palette_table:
 .byte $0F, $0F, $0F, $0F ; [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]
-.byte $22, $0C, $0F, $0F ; [81, 130, 255], [48, 81, 130], [0, 0, 0], [0, 0, 0]
-.byte $00, $0B, $3D, $20 ; [121, 121, 121], [48, 97, 65], [162, 162, 162], [235, 235, 235]
-.byte $00, $0B, $0F, $0F ; [121, 121, 121], [48, 97, 65], [0, 0, 0], [0, 0, 0]
-.byte $00, $0B, $0F, $00 ; [121, 121, 121], [48, 97, 65], [0, 0, 0], [121, 121, 121]
-.byte $00, $30, $3D, $0B ; [121, 121, 121], [255, 255, 255], [162, 162, 162], [48, 97, 65]
-.byte $00, $30, $0F, $0F ; [121, 121, 121], [255, 255, 255], [0, 0, 0], [0, 0, 0]
+.byte $21, $11, $01, $0F ; [105, 158, 252], [30, 74, 157], [1, 26, 81], [0, 0, 0]
+.byte $21, $02, $0F, $12 ; [105, 158, 252], [15, 15, 101], [0, 0, 0], [56, 55, 188]
+.byte $21, $02, $01, $0F ; [105, 158, 252], [15, 15, 101], [1, 26, 81], [0, 0, 0]
+.byte $21, $15, $1A, $24 ; [105, 158, 252], [132, 35, 92], [26, 107, 5], [206, 109, 241]
+.byte $21, $02, $0F, $10 ; [105, 158, 252], [15, 15, 101], [0, 0, 0], [254, 255, 255]
+.byte $21, $12, $15, $24 ; [105, 158, 252], [56, 55, 188], [132, 35, 92], [206, 109, 241]
 

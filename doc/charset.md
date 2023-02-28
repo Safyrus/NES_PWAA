@@ -32,7 +32,7 @@
 |    | **16** | BKG | change BacKGround                                                  | 1: background
 |  X | **17** | FNT | Change FoNT to use                                                 | 1: font
 |    | **18** | JMP | JuMP to another dialog                                             | jmp_adr, \[condition\]
-|  / | **19** | ACT | jump to the selected choice (depending on the player ACTion)       | (jmp_adr, \[condition\], text line)*nb_choice
+|    | **19** | ACT | jump to the selected choice (depending on the player ACTion)       | (jmp_adr, \[condition\], text line)*nb_choice
 |  X | **1A** | BP  | Background Palette                                                 | 4: palettes (pal 0 first)
 |  X | **1B** | SP  | Sprite Palette                                                     | 4: palettes (pal 0 first)
 |    | **1C** | RES | Reserved                                                           |

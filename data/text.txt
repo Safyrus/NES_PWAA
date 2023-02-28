@@ -20,9 +20,9 @@ Fade in<fade_in><p>
 <label:test_flag_clear>The flag is cleared!<wait:8><b>Let me change that.<p>
 <set:0>There!<wait:8>Now we will jump<b>back and try again.<p><jump:test_flag>
 <label:test_flag_set>The flag is now set!<wait:8><b>We can continue.<p>
-Make a choice<b><act><jump:choice_1,0,1>Choice 1<b><jump:choice_2,0,0>Choice 2<b>
-<label:choice_1>You choose choice 1<p><jump:choice_end>
-<label:choice_2>You choose choice 2<p><jump:choice_end>
+Make a choice<p><act><jump:choice_1,0,1>Choice 1<b><jump:choice_2,0,0>Choice 2<b>
+<label:choice_1><nextpage_nobutton>You choose choice 1<p><jump:choice_end>
+<label:choice_2><nextpage_nobutton>You choose choice 2<p><jump:choice_end>
 <label:choice_end>
 <music:1>Play first music<p>
 <music:2>Play second music<p>

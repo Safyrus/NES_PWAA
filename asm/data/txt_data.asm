@@ -5,4 +5,4 @@
 
 .segment "CODE_BNK"
 lz_bnk_table:
-.byte $81
+.byte $88

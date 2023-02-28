@@ -2,6 +2,10 @@
 
 - [ ] Fix bugs
   - [ ] Read dialog every frame (and not be slowed by image drawing for example)
+  - [ ] Images having too many sprites
+  - [ ] Encode ACCURATE palette with images
+  - [ ] Background drawing every frame when no animation is selected
+  - [ ] Shake effect not moving sprites
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
@@ -32,11 +36,13 @@
 
 - [/] Dialog box
   - [/] text "execution"
-    - [/] special text (22/32)
+    - [/] special text (23/32)
     - [ ] event functions (0/1)
 
 ## Done
 
+- [X] Add delay before another input
+- [X] Fix palette switch background color applying everywhere
 - [X] Fix jump using the wrong flag (wrong argument used in the python script)
 - [X] Fix wrong bank when decoding text (not saved in var 'mmc5_bank')
 
