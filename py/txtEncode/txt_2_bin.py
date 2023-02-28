@@ -69,13 +69,16 @@ print(f"filtering...")
 # remove control character and char not in CHAR_MAP
 text = re.sub(r"[^\x20-\x7E]", "", text)
 # remove unknow/unused metadata
-text = re.sub(r"\[[0-9]+\]", r"", text)
+text = re.sub(r"\[[0-9]+\]", "", text)
+# remove comments
+text = re.sub(r"<!--(.*?)-->", "", text)
 
 # find labels
 print(f"parsing... (labels)")
 textbin = bytearray()
 i = 0
 labels = {}
+consts = {}
 while i < len(text):
     c = text[i]
     if c == "<":
@@ -101,6 +104,11 @@ while i < len(text):
                 textbin.append(0)
             for _ in range(3):
                 textbin.append(0)
+        elif name == "const":
+            consts[args[0]] = args[1]
+            print(f"const: '{args[0]}' with value '{args[1]}'")
+        elif name == "flash": # for now to skip arguments
+            textbin.append(0)
         else:
             # add dummy character to keep the length correct
             textbin.append(0)
@@ -130,6 +138,10 @@ while i < len(text):
         if ":" in tag:
             name, args = tag.split(":")
             args = args.split(",")
+            # replace constants by values
+            for j in range(len(args)):
+                if args[j] in consts:
+                    args[j] = consts[args[j]]
         else:
             name, args = tag, []
 
@@ -159,6 +171,8 @@ while i < len(text):
             textbin.append(TD)
         elif name == "shake":
             textbin.append(SAK)
+        elif name == "flash":
+            textbin.append(FLH)
         elif name == "fade_out":
             textbin.append(FO)
         elif name == "fade_in":
@@ -175,6 +189,9 @@ while i < len(text):
         elif name == "music":
             textbin.append(MUS)
             textbin.append(int(args[0]))
+        elif name == "sound":
+            textbin.append(SND)
+            textbin.append(int(args[0]))
         elif name == "bip":
             textbin.append(BIP)
             textbin.append(int(args[0]))
@@ -185,6 +202,8 @@ while i < len(text):
             textbin.append(CLR)
             textbin.append(int(args[0]))
         elif name == "label":
+            pass
+        elif name == "const":
             pass
         elif name == "jump":
             adr = labels[args[0]]
