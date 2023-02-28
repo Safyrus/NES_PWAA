@@ -33,7 +33,7 @@ def tile_present(tile, bank):
 
 
 def spr_tile_close_present(tile, bank):
-    global MAX_PIXEL_DIFF
+    global MAX_PIXEL_DIFF_SPR
     a1 = np.array(tile)
     page = len(bank) // SPR_BANK_PAGE_SIZE
     start = page * SPR_BANK_PAGE_SIZE
@@ -93,6 +93,7 @@ def rm_closest_spr_tiles(tileSet, tileList, tileBank):
     empty_tile = np.zeros(tileSet[0].shape, dtype=int)
     for _ in range(page_size_remain):
         tileBank.append(empty_tile)
+    tileBank.append(empty_tile)
 
     # redo removing tiles with new alignement
     for i in range(len(tileSet)):

@@ -4,10 +4,13 @@ import os.path
 # const
 BLOCK_SIZE = 8192
 BANK_SIZE = 8192
-STARTING_BANK = 1
+STARTING_BANK = 8
 
 # args
 inputfile = sys.argv[1]
+outputfile = os.path.splitext(os.path.basename(inputfile))[0] + "_blocks.bin"
+if len(sys.argv) > 2 :
+    outputfile = sys.argv[2]
 asmfile = "txt_data.asm"
 
 #
@@ -21,6 +24,7 @@ with open(inputfile, "rb") as f:
     text = f.read()
 
 # cut text into blocks
+print("cut text in blocks...")
 blocks = []
 while len(text) > BLOCK_SIZE:
     blocks.append(text[:BLOCK_SIZE])
@@ -30,24 +34,32 @@ blocks.append(text)
 print("number of blocks:", len(blocks))
 
 # encode blocks
+print("compress blocks...")
 i = 0
 text = ""
 block_bnk = []
 for b in blocks:
     print("encode block", i)
-    block_bnk.append((len(text) // BANK_SIZE) + 0x80 + STARTING_BANK)
+
+    lt = len(text) // 8
+    bnk_idx = (lt // BANK_SIZE) + 0x80 + STARTING_BANK
+    block_bnk.append(bnk_idx)
     encode_block = lz_encode(b, outputfile="", do_print=False)
+
     l = len(encode_block) // 8
     print(f"block {i} size: {hex(l)}")
     if l > (BLOCK_SIZE - 2):
         print(f"ERROR: block {i} too large !")
+
     text += format(l % 256, "08b")
     text += format(l // 256, "08b")
     text += encode_block
     i += 1
 
+print("number of banks:", (len(text) // 8) // BANK_SIZE)
+print("total size:", len(text) // 8, "bytes")
+
 # write results
-outputfile = os.path.splitext(os.path.basename(inputfile))[0] + ".bin"
 write_bit_stream(text, outputfile)
 with open(asmfile, "w") as f:
     f.write("; TODO description\n")

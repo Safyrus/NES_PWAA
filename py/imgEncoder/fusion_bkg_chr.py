@@ -1,3 +1,4 @@
+import os
 import sys
 import glob
 from PIL import Image
@@ -22,6 +23,7 @@ if len(sys.argv) > 6:
 
 # find all character images
 files = glob.glob(character_folder + '/**/*.png', recursive=True)
+print("number of images found:",len(files))
 
 background = Image.open(background_img)
 
@@ -38,5 +40,8 @@ for fn in files:
         x = (w - char.size[0])//2
     y = h - char.size[1] - offset_y
     tmp.paste(char, (x, y), char)
-    tmp.save(output_folder + str(i) + ".png")
+    out_fn = os.path.splitext(os.path.basename(fn))[0]
+    tmp.save(output_folder + out_fn + ".png")
     i += 1
+
+print("done")
