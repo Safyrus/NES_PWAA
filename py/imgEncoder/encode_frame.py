@@ -168,8 +168,9 @@ def img_2_spr(img):
 def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[], tile_offset_hi=0, do_rleinc=True, save_imgs=True):
 
     # reduce color count to 4 for background and 7 (+1 for transparent) for character
-    background_img = bkg_col_reduce_2(background_img_path)
-    character_img = char_col_reduce(character_img_path)
+    background_img, pal = bkg_col_reduce_2(background_img_path)
+    character_img, pal_chr = char_col_reduce(character_img_path)
+    pal_chr.sort()
 
     background_img = img_2_idx(background_img)
     character_img = img_2_idx(character_img)
@@ -219,6 +220,9 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     # copy tile to bank and remove duplicate
     spr_tile, spr_map, spr_bank = rm_closest_spr_tiles(
         spr_tile, spr_map, spr_bank)
+    nb_spr = sum([1 if s else 0 for s in spr_map])
+    if nb_spr > 64:
+        print(f"WARNING: too many sprite ({nb_spr})")
     for i in range(len(spr_map)):
         spr_map[i] %= 256
     spr_info["b"] = len(spr_bank) // SPR_BANK_PAGE_SIZE
@@ -239,7 +243,7 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     spr_data = [spr_info["w"], spr_info["b"], spr_info["x"], spr_info["y"]]
     spr_data.extend(spr_map)
 
-    return tile_map, tile_bank, spr_info, spr_data, spr_bank, pal_map
+    return tile_map, tile_bank, spr_info, spr_data, spr_bank, pal_map, pal, pal_chr
 
 
 if __name__ == "__main__":
@@ -262,7 +266,7 @@ if __name__ == "__main__":
         np.full((SPR_SIZE_H, SPR_SIZE_W), 3),
     ]
 
-    tile_map, tile_bank, spr_info, spr_map, spr_bank, _ = encode_frame(
+    tile_map, tile_bank, spr_info, spr_map, spr_bank, _, _, _ = encode_frame(
         background_img_path, character_anim_path, tile_bank, spr_bank, tile_offset_hi)
 
     # write tilemap to file
