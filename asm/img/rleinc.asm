@@ -24,9 +24,8 @@ rleinc_next:
 rleinc:
     pushregs
 
-    LDA nmi_flags
-    ORA #NMI_FORCE
-    STA nmi_flags
+    ; enable NMI_FORCE flag
+    ora_adr nmi_flags, #NMI_FORCE
 
     ; while true
     LDY #$00
@@ -68,8 +67,7 @@ rleinc:
                 STA (tmp+2), Y
                 inc_16 tmp+2
                 ; inc
-                CLC
-                ADC #$01
+                add #$01
                 ; continue
                 DEX
                 BPL @seq_loop
@@ -129,9 +127,8 @@ rleinc:
 
     @END:
 
-    LDA nmi_flags
-    AND #($FF-NMI_FORCE)
-    STA nmi_flags
+    ; disable NMI_FORCE flag
+    and_adr nmi_flags, #($FF-NMI_FORCE)
 
     pullregs
     RTS

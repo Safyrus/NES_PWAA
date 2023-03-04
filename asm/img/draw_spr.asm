@@ -1,7 +1,5 @@
 img_spr_clear:
-    PHA
-    TXA
-    PHA
+    push_ax
 
     ; clear sprites
     LDA #$FF
@@ -10,11 +8,9 @@ img_spr_clear:
         STA OAM, X
         ; continue
         INX
-        BNE @clear
+        bnz @clear
 
-    PLA
-    TAX
-    PLA
+    pull_ax
     RTS
 
 
@@ -23,18 +19,13 @@ img_spr_draw:
 
     JSR img_spr_clear
     ; set pointer to sprite data    
-    LDA #<(MMC5_RAM+$600)
-    STA tmp+2
-    LDA #>(MMC5_RAM+$600)
-    STA tmp+3
+    sta_ptr tmp+2, (MMC5_RAM+$600)
 
     ; set sprite bank
-    LDA img_spr_b
-    STA MMC5_CHR_BNK3
+    mov MMC5_CHR_BNK3, img_spr_b
 
     ; draw sprites
-    LDA #$00
-    STA tmp+0 ; counter_y
+    mov tmp+0, #0 ; counter_y
     TAY ; STA counter_size
     LDX #(RES_SPR*4) ; OAM ptrx
     @loop_y:
@@ -43,15 +34,11 @@ img_spr_draw:
         @loop_x:
             ; if it is a sprite
             LDA (tmp+2), Y
-            BEQ @continue
+            bze @continue
             ; set y position
             LDA tmp+0
-            ASL
-            ASL
-            ASL
-            ASL
-            CLC
-            ADC img_spr_y
+            shift ASL, 4
+            add img_spr_y
             SBC #$00
             STA OAM, X
             INX
@@ -66,11 +53,8 @@ img_spr_draw:
             INX
             ; set x position
             LDA tmp+1
-            ASL
-            ASL
-            ASL
-            CLC
-            ADC img_spr_x
+            shift ASL, 3
+            add img_spr_x
             STA OAM, X
             INX
             ; continue
@@ -84,7 +68,7 @@ img_spr_draw:
         ; continue
         INC tmp+0 ; counter_y
         CPY img_spr_count
-        BCC @loop_y
+        blt @loop_y
     
     @end:
     pullregs

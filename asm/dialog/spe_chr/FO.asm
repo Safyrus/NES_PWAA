@@ -4,10 +4,7 @@
     ; JSR read_next_char
     ; STA fade_color
     ; set fade timer
-    LDA #FADE_TIME
-    STA fade_timer
+    mov fade_timer, #FADE_TIME
     ; set fade out flag
-    LDA effect_flags
-    AND #($FF - EFFECT_FLAG_FADE)
-    STA effect_flags
+    and_adr effect_flags, #($FF - EFFECT_FLAG_FADE)
     RTS

@@ -1,19 +1,12 @@
 ; use tmp 0:3
 find_anim:
-    PHA
-    TYA
-    PHA
+    push_ay
 
     ;
-    LDA img_anim+0
-    STA tmp+3
-    LDA img_anim+1
-    STA tmp+2
+    mov tmp+3, img_anim+0
+    mov tmp+2, img_anim+1
     ;
-    LDA #<img_anim_table
-    STA tmp+0
-    LDA #>img_anim_table
-    STA tmp+1
+    sta_ptr tmp, img_anim_table
     ;
     LDY #$00
     STY anim_img_counter
@@ -34,12 +27,7 @@ find_anim:
         JMP @loop
     @find:
     ;
-    LDA tmp+0
-    STA anim_base_adr+0
-    LDA tmp+1
-    STA anim_base_adr+1
+    mov_ptr anim_base_adr, tmp+0
 
-    PLA
-    TAY
-    PLA
+    pull_ay
     RTS

@@ -2,19 +2,10 @@
 ; Macros
 ;**********
 
-.macro pushregs
-    PHA
-    TXA
-    PHA
-    TYA
-    PHA
-.endmacro
+.macpack generic
 
-
-.macro pullregs
-    PLA
-    TAY
-    PLA
-    TAX
-    PLA
-.endmacro
+.include "macro/bool.asm"
+.include "macro/loop.asm"
+.include "macro/math.asm"
+.include "macro/mov.asm"
+.include "macro/stack.asm"

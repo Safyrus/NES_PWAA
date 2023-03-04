@@ -1,21 +1,19 @@
 ; params:
-; X
+; X, tmp+2
 frame_set_pal:
     pushregs
 
+    ; multiply X by 3
     STX MMC5_MUL_A
-    LDX #$03
-    STX MMC5_MUL_B
+    mvx MMC5_MUL_B, #$03
     LDX MMC5_MUL_A
     
-    LDY #$01
-    @loop:
+    ; move palette
+    for_y @loop, #1
         LDA (tmp+2), Y
         STA img_palette_0, X
         INX
-        INY
-        CPY #$04
-        BNE @loop
+        to_y_inc @loop, #4
 
     pullregs
     RTS
@@ -25,34 +23,31 @@ frame_decode:
     pushregs
 
     ; tmp+2 = anim_adr
-    LDA anim_adr+0
-    STA tmp+2
-    LDA anim_adr+1
-    STA tmp+3
+    mov_ptr tmp+2, anim_adr
 
     ; is a fade effect active ?
     LDA fade_timer
-    BEQ :+
+    bze :+
         ; then do nothing
         JMP @end
     :
     ; is a fade out effect active ?
     LDA effect_flags
     AND #(EFFECT_FLAG_FADE)
-    BNE :+
+    bnz :+
         ; then do nothing
         JMP @end
     :
 
     ; is the animation frame counter > 0 ?
     LDA anim_frame_counter
-    BEQ :+
+    bze :+
         ; then decrement it and jump to the end
         DEC anim_frame_counter
         JMP @end
     :
     LDA anim_img_counter
-    BEQ @load_bck
+    bze @load_bck
     @load_chr:
         ;
         LDY #$00
@@ -116,8 +111,7 @@ frame_decode:
 
     @start:
     ; set ram bank
-    LDA #IMG_BUF_BNK
-    STA MMC5_RAM_BNK
+    mov MMC5_RAM_BNK, #IMG_BUF_BNK
 
     ; - - - - - - - -
     ; read header byte
@@ -152,10 +146,7 @@ frame_decode:
         LDX #$00
         @palette_loop:
             ;
-            LDA #<palette_table
-            STA tmp+2
-            LDA #>palette_table
-            STA tmp+3
+            sta_ptr tmp+2, palette_table
             ;
             INY
             LDA (tmp), Y
@@ -193,10 +184,7 @@ frame_decode:
         ; save header byte
         PHA
         ; set pointer to tiles background buffer
-        LDA #<MMC5_RAM
-        STA tmp+2
-        LDA #>MMC5_RAM
-        STA tmp+3
+        sta_ptr tmp+2, MMC5_RAM
         ; decode tiles
         JSR rleinc
         ; restore header byte
@@ -223,24 +211,25 @@ frame_decode:
         STA img_spr_x
         INY
         LDA (tmp), Y
-        CLC
-        ADC #24
+        add #24
         STA img_spr_y
         INY
         ; update pointer
         TYA
-        LDY #$00
         add_A2ptr tmp
         ; set pointer to sprites background buffer
-        LDA #<(MMC5_RAM+$600)
-        STA tmp+2
-        LDA #>(MMC5_RAM+$600)
-        STA tmp+3
+        sta_ptr tmp+2, (MMC5_RAM+$600)
+        ;
+        LDY #$00
+        TYA
+        @sprites_empty_rlebuf:
+            STA (tmp+2), Y
+            DEY
+            bnz @sprites_empty_rlebuf
         ; decode sprites
         JSR rleinc
         ; update number of sprites
-        LDA tmp+2
-        STA img_spr_count
+        mov img_spr_count, tmp+2
         ; restore header byte
         PLA
     @sprites_end:
@@ -256,35 +245,22 @@ frame_decode:
         ;
         PHA
         ; update palette 0
-        LDA img_palette_bkg
-        STA palettes+0
-        LDA img_palette_0+0
-        STA palettes+1
-        LDA img_palette_0+1
-        STA palettes+2
-        LDA img_palette_0+2
-        STA palettes+3
+        mov palettes+0, img_palette_bkg
+        mov palettes+1, img_palette_0+0
+        mov palettes+2, img_palette_0+1
+        mov palettes+3, img_palette_0+2
         ; update palette 1
-        LDA img_palette_1+0
-        STA palettes+4
-        LDA img_palette_1+1
-        STA palettes+5
-        LDA img_palette_1+2
-        STA palettes+6
+        mov palettes+4, img_palette_1+0
+        mov palettes+5, img_palette_1+1
+        mov palettes+6, img_palette_1+2
         ; update palette 2
-        LDA img_palette_2+0
-        STA palettes+7
-        LDA img_palette_2+1
-        STA palettes+8
-        LDA img_palette_2+2
-        STA palettes+9
+        mov palettes+7, img_palette_2+0
+        mov palettes+8, img_palette_2+1
+        mov palettes+9, img_palette_2+2
         ; update palette 3
-        LDA img_palette_3+0
-        STA palettes+13
-        LDA img_palette_3+1
-        STA palettes+14
-        LDA img_palette_3+2
-        STA palettes+15
+        mov palettes+13, img_palette_3+0
+        mov palettes+14, img_palette_3+1
+        mov palettes+15, img_palette_3+2
         ;
         PLA
     @draw_palettes_end:

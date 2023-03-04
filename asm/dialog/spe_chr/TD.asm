@@ -1,18 +1,14 @@
 ; case TD
 @TD:
     ; toggle flag to display dialog box
-    LDA effect_flags
-    EOR #EFFECT_FLAG_HIDE
-    STA effect_flags
+    eor_adr effect_flags, #EFFECT_FLAG_HIDE
     ;
     AND #EFFECT_FLAG_HIDE
-    BEQ @td_on
+    bze @td_on
     @td_off:
         JSR frame_decode
         ; set text bank
-        LDA #TEXT_BUF_BNK
-        STA MMC5_RAM_BNK
+        mov MMC5_RAM_BNK, #TEXT_BUF_BNK
         RTS
     @td_on:
-        JSR draw_dialog_box
-        RTS
+        JMP draw_dialog_box

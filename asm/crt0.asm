@@ -114,7 +114,6 @@
     .include "vector/scanline.asm"
 
     ; main file
-    .include "math.asm"
     .include "main.asm"
     .include "joypad.asm"
 

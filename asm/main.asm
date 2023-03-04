@@ -4,10 +4,8 @@
 
 .macro MAIN_INIT
     ; render background + scroll + palette + sprites
-    LDA #(NMI_BKG + NMI_SCRL + NMI_PLT + NMI_SPR)
-    STA nmi_flags
-    LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
-    STA PPU_MASK
+    mov nmi_flags, #(NMI_BKG + NMI_SCRL + NMI_PLT + NMI_SPR)
+    mov PPU_MASK, #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
     ; enable 8*16 sprites
     LDA ppu_ctrl_val
     ORA #PPU_CTRL_SPR_SIZE
@@ -17,8 +15,7 @@
     ; init famistudio music
     LDX #<music_data
     LDY #>music_data
-    LDA #MUS_BNK
-    STA MMC5_PRG_BNK1
+    mov MMC5_PRG_BNK1, #MUS_BNK
     JSR famistudio_init
     ; init famistudio sfx
     LDX #<sfx_data
@@ -31,35 +28,26 @@
     STA mmc5_banks+1
 
     ; set dialog box palette
-    LDA #$00
-    STA palettes+10
-    LDA #$10
-    STA palettes+11
-    LDA #$30
-    STA palettes+12
+    mov palettes+10, #$00
+    mov palettes+11, #$10
+    mov palettes+12, #$30
 
     ; load and draw image
     JSR find_anim
     JSR frame_decode
 
     ; load first dialog block
-    LDA #TXT_BNK
-    STA lz_in_bnk
-    LDA #$00
-    STA lz_in+0
-    LDA #$A0
-    STA lz_in+1
+    mov lz_in_bnk, #TXT_BNK
+    sta_ptr lz_in, $A000
     JSR lz_decode
 
     ; - - - - - - - -
     ; init print variables
     ; - - - - - - - -
     ; ext value = $C0
-    LDA #$C0
-    STA print_ext_val
+    mov print_ext_val, #$C0
     ; print_counter = 0
-    LDA #$00
-    STA print_counter
+    mov print_counter, #$00
     ;
     JSR read_next_dailog
 
@@ -67,10 +55,7 @@
     JSR draw_dialog_box
 
     ; init text read pointer
-    LDA #<MMC5_RAM
-    STA txt_rd_ptr+0
-    LDA #>MMC5_RAM
-    STA txt_rd_ptr+1
+    sta_ptr txt_rd_ptr, MMC5_RAM
 
 .endmacro
 
@@ -82,9 +67,7 @@ wait_next_frame:
         BPL @wait_vblank
 
     ; acknowledge nmi
-    LDA nmi_flags
-    AND #($FF-NMI_DONE)
-    STA nmi_flags
+    and_adr nmi_flags, #($FF-NMI_DONE)
 
     RTS
 
@@ -101,23 +84,29 @@ MAIN:
 
     ; update choice index
     LDA max_choice
-    BEQ @no_choice
+    bze @no_choice
     @a_choice:
+        ; is button A-B pressed ?
         LDA buttons_1
+        TAX
         AND #$C0
-        BNE @choice_validate
-        LDA buttons_1
+        bnz @choice_validate
+        ; is button R-D pressed ?
+        TXA
         AND #$05
-        BNE @choice_plus
-        LDA buttons_1
+        bnz @choice_plus
+        ; is button L-U pressed ?
+        TXA
         AND #$0A
-        BNE @choice_minus
+        bnz @choice_minus
+        ; no button pressed
         JMP @flags_end
+
         @choice_plus:
             LDX choice
             INX
             CPX max_choice
-            BCC @choice_plus_update
+            blt @choice_plus_update
                 LDX #$00
             @choice_plus_update:
             STX choice
@@ -133,10 +122,8 @@ MAIN:
             JMP @flags_end
         @choice_validate:
             ; get choice_jmp_table index
-            LDA choice
-            STA MMC5_MUL_A
-            LDA #$03
-            STA MMC5_MUL_B
+            mov MMC5_MUL_A, choice
+            mov MMC5_MUL_B, #$03
             LDX MMC5_MUL_A
             ; copy choice_jmp_table to jump buf
             LDA choice_jmp_table, X
@@ -157,7 +144,7 @@ MAIN:
     @no_choice:
         LDA buttons_1
         AND #$C0
-        BEQ @txt_input_no
+        bze @txt_input_no
             LDA txt_flags
             ORA #TXT_FLAG_INPUT
             STA txt_flags
@@ -171,7 +158,7 @@ MAIN:
 
     ; shake
     LDA shake_timer
-    BEQ @no_shake
+    bze @no_shake
         ; shake on the x axis
         LSR
         AND #$03
@@ -187,7 +174,7 @@ MAIN:
 
     ; fade
     LDA fade_timer
-    BEQ @fade_end
+    bze @fade_end
         ; find color offset
         LSR
         AND #$F0
@@ -196,10 +183,9 @@ MAIN:
         ; reverse fade counter if fade out flag set
         LDA effect_flags
         AND #EFFECT_FLAG_FADE
-        BNE @fade_flag_end
+        bnz @fade_flag_end
             LDA #(FADE_TIME >> 1)
-            SEC
-            SBC tmp
+            sub tmp
             AND #$F0
             STA tmp
         @fade_flag_end:
@@ -209,8 +195,7 @@ MAIN:
         @fade_loop_tiles:
             ; color - offset
             LDA img_palettes, X
-            SEC
-            SBC tmp
+            sub tmp
             BCS @fade_tiles_set
             ; set color
             @fade_tiles_black:
@@ -226,8 +211,7 @@ MAIN:
         @fade_loop_spr:
             ; color - offset
             LDA img_palette_3, X
-            SEC
-            SBC tmp
+            sub tmp
             BCS @fade_spr_set
             ; set color
             @fade_spr_black:
@@ -244,16 +228,13 @@ MAIN:
 
     ; choice highlight
     LDA max_choice
-    BEQ @choice_highlight_end
+    bze @choice_highlight_end
         ; wait to be in frame
         @choice_highlight_inframe:
             BIT scanline
             BVC @choice_highlight_inframe
         ; tmp = EXP_RAM + $281
-        LDA #<(MMC5_EXP_RAM+$281)
-        STA tmp+0
-        LDA #>(MMC5_EXP_RAM+$281)
-        STA tmp+1
+        sta_ptr tmp, (MMC5_EXP_RAM+$281)
 
         ;
         LDX #$00
@@ -271,8 +252,7 @@ MAIN:
             @choice_highlight_set:
             STA (tmp), Y
             ; tmp += $40
-            LDA #$40
-            add_A2ptr tmp
+            add_A2ptr tmp, #$40
             ; next
             INX
             CPX max_choice

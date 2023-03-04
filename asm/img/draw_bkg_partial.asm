@@ -2,18 +2,13 @@ img_bkg_draw_partial:
     pushregs
 
     ; set bank
-    LDA #IMG_BUF_BNK
-    STA MMC5_RAM_BNK
+    mov MMC5_RAM_BNK, #IMG_BUF_BNK
 
     ; init data pointer
-    LDA #<MMC5_RAM
-    STA tmp+0
-    LDA #>MMC5_RAM
-    STA tmp+1
+    sta_ptr tmp, MMC5_RAM
 
-    LDA nmi_flags
-    ORA #NMI_FORCE
-    STA nmi_flags
+    ; enable NMI_FORCE flag
+    ora_adr nmi_flags, #NMI_FORCE
 
     ;
     JSR img_partial_ppuadr
@@ -47,21 +42,15 @@ img_bkg_draw_partial:
     JSR img_partial_buf_flush
 
     ;
-    LDA #<(MMC5_RAM+$300)
-    STA tmp+0
-    LDA #>(MMC5_RAM+$300)
-    STA tmp+1
+    sta_ptr tmp, (MMC5_RAM+$300)
     ; init pointer to exp ram
-    LDA #<(MMC5_EXP_RAM+$60)
-    STA tmp+2
-    LDA #>(MMC5_EXP_RAM+$60)
-    STA tmp+3
+    sta_ptr tmp+2, (MMC5_EXP_RAM+$60)
 
     ; copy high bytes to exp ram
     LDY #$00
     @while_ext:
         LDA (tmp), Y
-        BEQ @continue_ext
+        bze @continue_ext
             BIT scanline
             BVC @while_ext
                 STA (tmp+2), Y
@@ -81,9 +70,8 @@ img_bkg_draw_partial:
         BNE @while_ext
     @while_ext_end:
 
-    LDA nmi_flags
-    AND #($FF-NMI_FORCE)
-    STA nmi_flags
+    ; disable NMI_FORCE flag
+    and_adr nmi_flags, #($FF-NMI_FORCE)
 
     pullregs
     RTS
@@ -99,8 +87,7 @@ img_partial_ppuadr:
     ORA #$20
     STA tmp+3
     ; offset of 24 pixels
-    LDA #$60
-    add_A2ptr tmp+2
+    add_A2ptr tmp+2, #$60
 
     PLA
     RTS
@@ -110,7 +97,7 @@ img_partial_ppuadr:
 img_partial_buf_draw:
     LDX img_partial_buf_len
     CPX #IMG_PARTIAL_MAX_BUF_LEN
-    BCC @do
+    blt @do
         JSR img_partial_buf_flush
         LDX img_partial_buf_len
     @do:
@@ -124,17 +111,16 @@ img_partial_buf_flush:
 
     ; if buffer empty, then end
     LDA img_partial_buf_len
-    BEQ @end
+    bze @end
     ; wait for nmi tile buffer to empty out if it is too big
-    CLC
-    ADC background_index
+    add background_index
     CMP #$40
-    BCC @init
+    blt @init
     @wait_vblank:
         PHA
         @wait_vblank_loop:
             LDA background_index
-            BNE @wait_vblank_loop
+            bnz @wait_vblank_loop
         PLA
     @init:
     @wait_inframe:

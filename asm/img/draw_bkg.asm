@@ -17,15 +17,11 @@ img_bkg_draw_2lines:
     STA background, X
     INX
     ; fill packet
-    LDY #$00
-    @loop:
+    for_y @loop, #0
         LDA (tmp+2), Y
         STA background, X
         INX
-        ; continue
-        INY
-        CPY #$40
-        BNE @loop
+    to_y_inc @loop, #$40
     ; close packet
     LDA #$00
     STA background, X
@@ -42,21 +38,11 @@ img_bkg_draw:
 
     JSR img_spr_clear
     ; set bank
-    LDA #IMG_BUF_BNK
-    STA MMC5_RAM_BNK
+    mov MMC5_RAM_BNK, #IMG_BUF_BNK
     ; init pointers
-    LDA #<(PPU_NAMETABLE_0+$60)
-    STA tmp+0
-    LDA #>(PPU_NAMETABLE_0+$60)
-    STA tmp+1
-    LDA #<MMC5_RAM
-    STA tmp+2
-    LDA #>MMC5_RAM
-    STA tmp+3
-    LDA #<(MMC5_EXP_RAM+$60)
-    STA tmp+4
-    LDA #>(MMC5_EXP_RAM+$60)
-    STA tmp+5
+    sta_ptr tmp, (PPU_NAMETABLE_0+$60)
+    sta_ptr tmp+2, MMC5_RAM
+    sta_ptr tmp+4, (MMC5_EXP_RAM+$60)
 
     ; - - - - - - - -
     ; copy buffer to screen
@@ -77,8 +63,7 @@ img_bkg_draw:
 
         ; change data pointer to high bytes
         LDA tmp+3
-        CLC
-        ADC #03
+        add #03
         STA tmp+3
 
         ; draw 2 lines on the expansion ram
@@ -95,21 +80,17 @@ img_bkg_draw:
 
         ; change data pointer to low bytes
         LDA tmp+3
-        SEC
-        SBC #03
+        sub #03
         STA tmp+3
 
         ; update pointers
-        LDA #$40
-        add_A2ptr tmp
-        LDA #$40
-        add_A2ptr tmp+2
-        LDA #$40
-        add_A2ptr tmp+4
+        add_A2ptr tmp, #$40
+        add_A2ptr tmp+2, #$40
+        add_A2ptr tmp+4, #$40
 
         ; continue
         DEX
-        BNE @loop
+        bnz @loop
 
     pullregs
     RTS

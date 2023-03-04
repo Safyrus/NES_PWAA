@@ -6,6 +6,5 @@
     ;
     JSR find_anim
     ; set text bank
-    LDA #TEXT_BUF_BNK
-    STA MMC5_RAM_BNK
+    mov MMC5_RAM_BNK, #TEXT_BUF_BNK
     RTS

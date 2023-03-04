@@ -4,6 +4,5 @@
     ; JSR read_next_char
     ; STA flash_color
     ; set flash timer
-    LDA #$FF
-    STA scroll_timer
+    mov scroll_timer, #$FF
     RTS

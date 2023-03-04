@@ -2,6 +2,7 @@
 
 - [ ] Fix bugs
   - [ ] Read dialog every frame (and not be slowed by image drawing for example)
+        Note: make read text function execution < 1 frame + don't change var use elsewhere
   - [ ] Images having too many sprites
   - [ ] Encode ACCURATE palette with images
   - [ ] Background drawing every frame when no animation is selected
@@ -41,6 +42,7 @@
 
 ## Done
 
+- [X] Add macro to write less and maybe make the code more readable
 - [X] Add delay before another input
 - [X] Fix palette switch background color applying everywhere
 - [X] Fix jump using the wrong flag (wrong argument used in the python script)

@@ -11,10 +11,9 @@
     STA MMC5_PRG_BNK1
     ; play_music(m)
     LDA music
-    BEQ @MUS_stop_mus
+    bze @MUS_stop_mus
     @MUS_play_mus:
-        SEC
-        SBC #$01
+        sub #$01
         JSR famistudio_music_play
         JMP @MUS_end
     @MUS_stop_mus:

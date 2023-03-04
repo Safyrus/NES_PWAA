@@ -16,10 +16,8 @@
         @ACT_cond_end:
 
         ; get choice_jmp_table index
-        LDA max_choice
-        STA MMC5_MUL_A
-        LDA #$03
-        STA MMC5_MUL_B
+        mov MMC5_MUL_A, max_choice
+        mov MMC5_MUL_B, #$03
         LDX MMC5_MUL_A
         ; copy jump adr to choice_jmp_table
         LDA txt_jump_buf+0
@@ -65,7 +63,7 @@
         EOR #$80
         INX
         DEY
-        BNE @ACT_draw
+        bnz @ACT_draw
     LDA #$00
     STA background, X
     STX background_index

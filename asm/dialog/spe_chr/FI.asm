@@ -4,10 +4,7 @@
     ; JSR read_next_char
     ; STA fade_color
     ; set fade timer
-    LDA #FADE_TIME
-    STA fade_timer
+    mov fade_timer, #FADE_TIME
     ; set fade in flag
-    LDA effect_flags
-    ORA #EFFECT_FLAG_FADE
-    STA effect_flags
+    ora_adr effect_flags, #EFFECT_FLAG_FADE
     RTS

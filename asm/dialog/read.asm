@@ -15,15 +15,9 @@ read_next_dailog:
     PHA
 
     ; init ptr to ext ram
-    LDA #<(MMC5_EXP_RAM+$282)
-    STA print_ext_ptr+0
-    LDA #>(MMC5_EXP_RAM+$282)
-    STA print_ext_ptr+1
+    sta_ptr print_ext_ptr, (MMC5_EXP_RAM+$282)
     ; init ptr to ppu
-    LDA #<(PPU_NAMETABLE_0+$282)
-    STA print_ppu_ptr+0
-    LDA #>(PPU_NAMETABLE_0+$282)
-    STA print_ppu_ptr+1
+    sta_ptr print_ppu_ptr, (PPU_NAMETABLE_0+$282)
 
     PLA
     RTS
@@ -89,11 +83,11 @@ read_jump:
 read_bip:
     ; if bip = 0 then break
     LDA bip
-    BEQ @end
+    bze @end
     ; if bip already play then break
     LDX #FAMISTUDIO_SFX_CH0
     LDA famistudio_sfx_ptr_hi, X
-    BNE @end
+    bnz @end
     ;
     LDA mmc5_banks+2
     PHA
@@ -134,24 +128,24 @@ read_text:
 
         ; fade guard
         LDA fade_timer
-        BEQ @fade_end
+        bze @fade_end
             JMP @end
         @fade_end:
 
         ; choice guard
         LDA max_choice
-        BEQ @choice_end
+        bze @choice_end
             JMP @end
         @choice_end:
 
         ; if wait flag
         LDA txt_flags
         AND #TXT_FLAG_WAIT
-        BEQ @no_wait_flag
+        bze @no_wait_flag
             ; then check if user press any input or that force flag is set
             LDA txt_flags
             AND #(TXT_FLAG_INPUT + TXT_FLAG_FORCE)
-            BNE @wait_input
+            bnz @wait_input
                 ; if not, then stop
                 JMP @end
             @wait_input:
@@ -169,7 +163,7 @@ read_text:
 
         ; if delay > 0
         LDA txt_delay
-        BEQ @delay_end
+        bze @delay_end
         @delay_not_0:
             ; then delay -= 1
             DEC txt_delay
@@ -179,7 +173,7 @@ read_text:
 
         ; if speed != 0
         LDA txt_speed_count
-        BEQ @speed_is_0
+        bze @speed_is_0
         @speed_not_0:
             DEC txt_speed_count
             JMP @end
@@ -197,7 +191,7 @@ read_text:
 
         ; if c is graphic char:
         CMP #$20
-        BCC @special_char
+        blt @special_char
         @normal_char:
             ; print(c)
             JSR print_char

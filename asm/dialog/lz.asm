@@ -24,10 +24,7 @@ lz_decode:
     STX mmc5_banks+3
 
     ; init out pointer
-    LDA #<MMC5_RAM   ; low adr
-    STA tmp+0
-    LDA #>MMC5_RAM   ; high adr
-    STA tmp+1
+    sta_ptr tmp, MMC5_RAM
 
     ; init in pointer
     LDA lz_in+0
@@ -45,8 +42,7 @@ lz_decode:
     LDA (tmp+2), Y
     STA tmp+7
     DEY
-    LDA #$02
-    add_A2ptr tmp+2
+    add_A2ptr tmp+2, #$02
 
     ; while not end_of_block:
     @while:
@@ -88,32 +84,25 @@ lz_decode:
             AND #$0F
             STA tmp+5
             LDA tmp+1
-            SEC
-            SBC tmp+5
+            sub tmp+5
             STA tmp+5
             ; get the jump size (low)
             LDA tmp+0
             CMP tmp+4
-            BCS @dec_end_1
+            bge @dec_end_1
                 DEC tmp+5
             @dec_end_1:
-            SEC
-            SBC tmp+4
+            sub tmp+4
             STA tmp+4
-            BNE @dec_end_2
+            bnz @dec_end_2
                 DEC tmp+5
             @dec_end_2:
             DEC tmp+4
             ; get the string length
             TXA
             ASL
-            LSR
-            LSR
-            LSR
-            LSR
-            LSR
-            CLC
-            ADC #$03
+            shift LSR, 5
+            add #$03
             TAX
             ; recover the string and output it
             @copy:
@@ -127,7 +116,7 @@ lz_decode:
                 inc_16 tmp
                 ; next
                 DEX
-                BNE @copy
+                bnz @copy
             ;
             JMP @while
 

@@ -1,9 +1,7 @@
 _dialog_flag_start:
     ;
     PHA
-    LSR
-    LSR
-    LSR
+    shift LSR, 3
     TAX
     LDA dialog_flag, X
     STA tmp
@@ -43,9 +41,7 @@ clear_dialog_flag:
 ; return: set Z flag of the 6502
 get_dialog_flag:
     PHA
-    LSR
-    LSR
-    LSR
+    shift LSR, 3
     TAX
     PLA
     AND #$07

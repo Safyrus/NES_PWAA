@@ -23,13 +23,12 @@ loop:
 update_input:
     ; if buttons_1_timer > 0
     LDA buttons_1_timer
-    BEQ @timer_reset
+    bze @timer_reset
     ; then
         ; buttons_1_timer--
         DEC buttons_1_timer
         ; input = 0
-        LDA #$00
-        STA buttons_1
+        mov buttons_1, $00
         ; end
         JMP @end
     ; else
@@ -38,9 +37,8 @@ update_input:
         JSR readjoy
         ; if input != 0
         LDA buttons_1
-        BEQ @end
+        bze @end
             ; buttons_1_timer = BTN_TIMER
-            LDA #BTN_TIMER
-            STA buttons_1_timer
+            mov buttons_1_timer, #BTN_TIMER
     @end:
     RTS

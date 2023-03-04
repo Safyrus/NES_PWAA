@@ -33,17 +33,15 @@ _draw_dialog_box_line:
     INX
     ; fill packet
     LDY #$1E
-    CLC
-    ADC #$01
+    add #$01
     @loop_top:
         STA background, X
         INX
         ; next
         DEY
-        BNE @loop_top
+        bnz @loop_top
     ; last tile
-    CLC
-    ADC #$01
+    add #$01
     STA background, X
     INX
     ; close packet
@@ -59,27 +57,19 @@ draw_dialog_box:
     pushregs
 
     ; acknowledge nmi, in case we start just after a frame
-    LDA nmi_flags
-    AND #($FF-NMI_DONE)
-    STA nmi_flags
+    and_adr nmi_flags, #($FF-NMI_DONE)
 
     ; - - - - - - - -
     ; frame 1 (top line)
     ; - - - - - - - -
-    LDA #<(PPU_NAMETABLE_0+$260)
-    STA tmp+0
-    LDA #>(PPU_NAMETABLE_0+$260)
-    STA tmp+1
+    sta_ptr tmp, (PPU_NAMETABLE_0+$260)
     LDA #BOX_TILE_TL
     JSR _draw_dialog_box_line
 
     ; - - - - - - - -
     ; frame 1 (bot line)
     ; - - - - - - - -
-    LDA #<(PPU_NAMETABLE_0+$340)
-    STA tmp+0
-    LDA #>(PPU_NAMETABLE_0+$340)
-    STA tmp+1
+    sta_ptr tmp, (PPU_NAMETABLE_0+$340)
     LDA #BOX_TILE_BL
     JSR _draw_dialog_box_line
 
@@ -87,13 +77,9 @@ draw_dialog_box:
     ; frame 2, to 7
     ; - - - - - - - -
     ; tmp = ppu adr
-    LDA #<(PPU_NAMETABLE_0 + $280)
-    STA tmp+0
-    LDA #>(PPU_NAMETABLE_0 + $280)
-    STA tmp+1
+    sta_ptr tmp, (PPU_NAMETABLE_0 + $280)
     ; draw each line
-    LDA #$03
-    STA tmp+2
+    mov tmp+2, #$03
     @loop_frames:
         JSR wait_next_frame
 
@@ -101,37 +87,28 @@ draw_dialog_box:
         LDA #BOX_TILE_L
         JSR _draw_dialog_box_line
         ; tmp += $20
-        LDA #$20
-        add_A2ptr tmp
+        add_A2ptr tmp, #$20
         ; draw another line
         LDA #BOX_TILE_L
         JSR _draw_dialog_box_line
         ; tmp += $20
-        LDA #$20
-        add_A2ptr tmp
+        add_A2ptr tmp, #$20
 
         ; next
         DEC tmp+2
-        BNE @loop_frames
+        bnz @loop_frames
 
     ; wait to be in frame
     @wait_inframe:
         BIT scanline
         BVC @wait_inframe
     ; set ptr to ext ram
-    LDA #<(MMC5_EXP_RAM+$260)
-    STA tmp+0
-    LDA #>(MMC5_EXP_RAM+$260)
-    STA tmp+1
+    sta_ptr tmp, (MMC5_EXP_RAM+$260)
     ; set ext ram
     LDA #$C0
-    LDY #$00
-    @loop_ext:
+    for_y @loop_ext, #0
         STA (tmp), Y
-        ; next
-        INY
-        BNE @loop_ext
-
+    to_y_inc @loop_ext, #0
 
     @end:
     pullregs

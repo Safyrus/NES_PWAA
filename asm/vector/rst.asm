@@ -33,7 +33,7 @@ RST:
         STA $0600, x
         STA $0700, x
         INX
-        BNE @clrmem
+        bnz @clrmem
 
     ; Wait 1 frame (for the PPU to initialized)
     @vwait2:
@@ -49,29 +49,22 @@ RST:
     ; setup MMC5
     ; - - - - - - -
     ; disable ram protection
-    LDA #$02
-    STA MMC5_RAM_PRO1
-    LDA #$01
-    STA MMC5_RAM_PRO2
+    mov MMC5_RAM_PRO1, #$02
+    mov MMC5_RAM_PRO2, #$01
 
     ; Set the Extented RAM as work RAM to clean it
-    LDA #$02
-    STA MMC5_EXT_RAM
+    mov MMC5_EXT_RAM, #$02
     ; Reset Extended RAM content
     LDA #$00
-    LDX #$00
-    @rst_exp_ram:
+    for_x @rst_exp_ram, 0
         STA MMC5_EXP_RAM, X
         STA MMC5_EXP_RAM+$100, X
         STA MMC5_EXP_RAM+$200, X
         STA MMC5_EXP_RAM+$300, X
-        ; loop
-        INX
-        BNE @rst_exp_ram
+    to_x_dec @rst_exp_ram, 0
 
     ; Set the Extented RAM as extended attribute data
-    LDA #$01
-    STA MMC5_EXT_RAM
+    mov MMC5_EXT_RAM, #$01
 
     ; Set fill tile
     LDA #$20
@@ -79,12 +72,9 @@ RST:
     STA MMC5_FILL_COL
 
     ; Enable scanline irq
-    LDA #$80
-    STA MMC5_SCNL_STAT
-    LDA #239
-    STA MMC5_SCNL_VAL
-    LDA #SCANLINE_BOT_IMG
-    STA scanline
+    mov MMC5_SCNL_STAT, #$80
+    mov MMC5_SCNL_VAL, #239
+    mov scanline, #SCANLINE_BOT_IMG
 
     ; Disable Vertical split
     LDA #$00
@@ -93,45 +83,34 @@ RST:
     STA MMC5_SPLT_SCRL
 
     ; Set CHR banking mode
-    LDA #$01
-    STA MMC5_CHR_MODE
+    mov MMC5_CHR_MODE, #$01
 
     ; Clean PRG RAM
-    LDA #$00
-    STA tmp+2
+    mov tmp+2, #$00 ; loop counter
     @clean_prgram:
-        LDA tmp+2
-        STA MMC5_RAM_BNK
-        LDX #$00
-        @clean_prgram_bank:
-            ;
+        ; set bank
+        mov MMC5_RAM_BNK, tmp+2
+        for_x @clean_prgram_bank, #0
+            ; set page address
             TXA
-            CLC
-            ADC #$60
+            add #$60
             STA tmp+1
-            LDA #$00
-            STA tmp
-            ;
-            LDY #$00
-            @clean_prgram_page:
+            mov tmp, #$00
+            ; clear page
+            for_y @clean_prgram_page, #0
                 STA (tmp), Y
-                INY
-                BNE @clean_prgram_page
-            ;
-            INX
-            CPX #$20
-            BNE @clean_prgram_bank
+            to_y_inc @clean_prgram_page, #0
+        to_x_inc @clean_prgram_bank, #$20
+        ; increase loop counter
         LDX tmp+2
         INX
         STX tmp+2
-        DEX
-        CPX #RAM_MAX_BNK
-        BNE @clean_prgram
+    to_x_dec @clean_prgram, #RAM_MAX_BNK
 
     CLI ; Enable back interrupt
 
     ; set fade in flag (image does not refresh when fade in is clear)
-    LDA #$01
-    STA effect_flags
+    mov effect_flags, #$01
 
+    CLI ; Enable back interrupt
     JMP MAIN ; jump to main function

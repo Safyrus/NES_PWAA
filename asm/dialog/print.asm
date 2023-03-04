@@ -29,8 +29,7 @@ print_lb:
     ; change ppu pointer to next line
     LDA print_ppu_ptr+0
     AND #%11100000
-    CLC
-    ADC #$42
+    add #$42
     STA print_ppu_ptr+0
     BCC @add_ppu_end
         INC print_ppu_ptr+1
@@ -39,8 +38,7 @@ print_lb:
     ; change ext ram pointer to next line
     LDA print_ext_ptr+0
     AND #%11100000
-    CLC
-    ADC #$42
+    add #$42
     STA print_ext_ptr+0
     BCC @add_ext_end
         INC print_ext_ptr+1
@@ -58,7 +56,7 @@ print_flush:
     ; if print_counter == 0
     LDA print_counter
         ; then exit (we din't have any character to flush)
-        BEQ @end
+        bze @end
     ; if text box hidden, then just update pointers
     BIT effect_flags
     BMI @update_ptrs
@@ -118,7 +116,7 @@ print_flush:
         ; next
         INY
         CPY print_counter
-        BCC @cp_ppu
+        blt @cp_ppu
 
     ; - - - - - - - -
     ; close ppu packet

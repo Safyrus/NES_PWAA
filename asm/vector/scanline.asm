@@ -80,7 +80,7 @@ scanline_irq_handler:
         LDX #$11
         @dialog_wait_1:
             DEX
-            BNE @dialog_wait_1
+            bnz @dialog_wait_1
 
         ; - - - - - - - -
         ; second scanline (153)
@@ -98,7 +98,7 @@ scanline_irq_handler:
         LDX #$12
         @dialog_wait_2:
             DEX
-            BNE @dialog_wait_2
+            bnz @dialog_wait_2
 
         ; - - - - - - - -
         ; third scanline (154)
@@ -116,7 +116,7 @@ scanline_irq_handler:
         LDX #$12
         @dialog_wait_3:
             DEX
-            BNE @dialog_wait_3
+            bnz @dialog_wait_3
 
         ; - - - - - - - -
         ; fourth scanline (155)
@@ -134,7 +134,7 @@ scanline_irq_handler:
         LDX #$11
         @dialog_wait_4:
             DEX
-            BNE @dialog_wait_4
+            bnz @dialog_wait_4
 
         ; - - - - - - - -
         ; fifth scanline (156)
@@ -160,7 +160,7 @@ scanline_irq_handler:
         LDX #$14
         @dialog_wait_5:
             DEX
-            BNE @dialog_wait_5
+            bnz @dialog_wait_5
 
         ; - - - - - - - -
         ; sixth scanline (157)
