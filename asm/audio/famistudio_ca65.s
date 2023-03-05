@@ -131,7 +131,7 @@ FAMISTUDIO_CFG_NTSC_SUPPORT  = 1
 
 ; Support for sound effects playback + number of SFX that can play at once.
 FAMISTUDIO_CFG_SFX_SUPPORT   = 1 
-FAMISTUDIO_CFG_SFX_STREAMS   = 2
+FAMISTUDIO_CFG_SFX_STREAMS   = 1
 
 ; Blaarg's smooth vibrato technique. Eliminates phase resets ("pops") on square channels. 
 FAMISTUDIO_CFG_SMOOTH_VIBRATO = 1 

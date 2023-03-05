@@ -43,7 +43,6 @@
         BIT txt_jump_flag_buf
         BMI @ACT_while
     
-    JSR wait_next_frame
     LDX background_index
     LDA max_choice
     ASL

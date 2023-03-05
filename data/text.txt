@@ -1,12 +1,12 @@
 <background:1><animation:1>Change background<b>and animation !<p>
-<speed:5><bip:2>Normal bip sound<b><bip:1>High bip sound<b><bip:3>Low bip sound<p><bip:2><speed:1>
+<speed:5><bip:2>Normal bip sound<b><bip:1>High bip sound<b><bip:3>Low bip sound<p><bip:2><speed:2>
 This is a test to see<b>if we can decode text.<p>
 And this is (hopefully)<b>another dialog box.<p>
 Read quick! This dialog box<b> will dissapeare at the end<b> of this sentence.<nextpage_nobutton>
 Did you read all the text ?<p>
-<speed:4>This text is slower<b><speed:10>This one even more<b><speed:1>Back to normal<p>
+<speed:4>This text is slower<b><speed:10>This one even more<b><speed:2>Back to normal<p>
 The next text should be read<b>at<speed:10> this speed<p>
-Is the speed good ?<speed:1><p>
+Is the speed good ?<speed:2><p>
 Now we will test<b>delay text<p>
 Wait i'm thinking...<wait:40><b>OK I'm done<b><wait:10>Wait!<wait:100>Nothing :)<p>
 Colors!<wait:8>We have<b><color:1>RED<color:0>,<color:2>BLUE<color:0>,and <color:3>GREEN<color:0>!<p>

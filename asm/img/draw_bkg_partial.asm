@@ -3,6 +3,7 @@ img_bkg_draw_partial:
 
     ; set bank
     mov MMC5_RAM_BNK, #IMG_BUF_BNK
+    STA mmc5_banks+0
 
     ; init data pointer
     sta_ptr tmp, MMC5_RAM

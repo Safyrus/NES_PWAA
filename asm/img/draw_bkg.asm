@@ -39,6 +39,7 @@ img_bkg_draw:
     JSR img_spr_clear
     ; set bank
     mov MMC5_RAM_BNK, #IMG_BUF_BNK
+    STA mmc5_banks+0
     ; init pointers
     sta_ptr tmp, (PPU_NAMETABLE_0+$60)
     sta_ptr tmp+2, MMC5_RAM

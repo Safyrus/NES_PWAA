@@ -57,7 +57,7 @@
     palettes: .res 25
 
     ; Attributes data to send to PPU during VBLANK
-    attributes: .res 64
+    ; attributes: .res 0
 
     ; Index for the background data
     ; FIII IIII
@@ -72,7 +72,10 @@
     ; byte 1-2 = ppu adress (most significant byte, least significant byte)
     ; byte 3-s = tile data
     ; packet of size 0 means there is no more data to draw
-    background: .res 127
+    background: .res $60-1
+
+    ; pointer to current text to read
+    txt_rd_ptr: .res 2
 
     ; temporary variables
     tmp: .res 8
@@ -148,14 +151,15 @@ OAM:
     ; - - - - - - - -
     ; Variables for text reading
     ; - - - - - - - -
-    ; pointer to current text to read
-    txt_rd_ptr: .res 2
     ; first byte of flags
-    ; D... .FIW
-    ; |     ||+-- Wait for user input to continue
-    ; |     |+--- Player input
-    ; |     +---- Force action (ignore player inputs)
-    ; +---------- Disable
+    ; R.PZ BFIW
+    ; | || |||+-- Wait for user input to continue
+    ; | || ||+--- Player input
+    ; | || |+---- Force action (ignore player inputs)
+    ; | || +----- Wait for dialog box drawing
+    ; | |+------- Wait for LZ decoding
+    ; | +-------- Wait for print
+    ; +---------- Ready (set to 1 to enable read subroutines)
     txt_flags: .res 1
     ; speed of text
     txt_speed: .res 1
@@ -268,6 +272,3 @@ OAM:
     dialog_flag: .res 16
     ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
     mmc5_banks: .res 4
-    ; tmp variables to restore
-    tmp_restore: .res 8
-

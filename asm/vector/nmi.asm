@@ -110,38 +110,39 @@ NMI:
 
 
     ; is the attribute flag on ? (A flag)
+    ; /!\ skip this flag because we will never use it
     LSR
-    BCC @attribute_end
-    @attribute:
-        ; save flags
-        PHA
+    ; BCC @attribute_end
+    ; @attribute:
+    ;     ; save flags
+    ;     PHA
 
-        ; reset latch
-        BIT PPU_STATUS
-        ; set PPU address
-        LDA atr_nametable
-        STA PPU_ADDR
-        LDA #$C0
-        STA PPU_ADDR
+    ;     ; reset latch
+    ;     BIT PPU_STATUS
+    ;     ; set PPU address
+    ;     LDA atr_nametable
+    ;     STA PPU_ADDR
+    ;     LDA #$C0
+    ;     STA PPU_ADDR
  
-        ; send data to PPU
-        LDX #$00
-        @attribute_loop:
-            ; send 1 byte
-            LDA attributes, X
-            STA PPU_DATA
-            INX
-            ; send another byte
-            LDA attributes, X
-            STA PPU_DATA
-            INX
-            ; loop
-            CPX #$40
-            BNE @attribute_loop
+    ;     ; send data to PPU
+    ;     LDX #$00
+    ;     @attribute_loop:
+    ;         ; send 1 byte
+    ;         LDA attributes, X
+    ;         STA PPU_DATA
+    ;         INX
+    ;         ; send another byte
+    ;         LDA attributes, X
+    ;         STA PPU_DATA
+    ;         INX
+    ;         ; loop
+    ;         CPX #$40
+    ;         BNE @attribute_loop
  
-        ; restore flags
-        PLA
-    @attribute_end:
+    ;     ; restore flags
+    ;     PLA
+    ; @attribute_end:
 
 
     ; is the palette flag on ? (P flag)
@@ -214,27 +215,38 @@ NMI:
     LDA #$00
     STA background_index
 
+    @end:
+
     ; tell that we are done
     BIT nmi_flags
     BVS :+
         LDA #NMI_DONE
         ORA nmi_flags
         STA nmi_flags
+        JMP :++
     :
-
-    @end:
+        LDA #($FF-NMI_DONE)
+        AND nmi_flags
+        STA nmi_flags
+    :
 
     ; set nametable mapping to default
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
 
-    ; update famistudio
     CLI
+    ; update famistudio
     LDA #MUS_BNK
     STA MMC5_PRG_BNK1
     JSR famistudio_update
     LDA mmc5_banks+2
     STA MMC5_PRG_BNK1
+
+    ; read text
+    JSR read_text
+    ; restore ram bank
+    LDA mmc5_banks+0
+    STA MMC5_RAM_BNK
 
     ; restore registers
     pullregs

@@ -112,6 +112,7 @@ frame_decode:
     @start:
     ; set ram bank
     mov MMC5_RAM_BNK, #IMG_BUF_BNK
+    STA mmc5_banks+0
 
     ; - - - - - - - -
     ; read header byte

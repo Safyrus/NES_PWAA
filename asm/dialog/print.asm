@@ -53,6 +53,11 @@ print_lb:
 print_flush:
     pushregs
 
+    LDA tmp+0
+    PHA
+    LDA tmp+1
+    PHA
+
     ; if print_counter == 0
     LDA print_counter
         ; then exit (we din't have any character to flush)
@@ -143,5 +148,10 @@ print_flush:
     STA print_counter
 
     @end:
+    PLA
+    STA tmp+1
+    PLA
+    STA tmp+0
+
     pullregs
     RTS

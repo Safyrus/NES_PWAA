@@ -6,9 +6,9 @@
     AND #EFFECT_FLAG_HIDE
     bze @td_on
     @td_off:
-        JSR frame_decode
-        ; set text bank
-        mov MMC5_RAM_BNK, #TEXT_BUF_BNK
+        ; main normally refresh image every frame
+        ; so we don't need to do it
         RTS
     @td_on:
-        JMP draw_dialog_box
+        ora_adr txt_flags, #TXT_FLAG_BOX
+        RTS

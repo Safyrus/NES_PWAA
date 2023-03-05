@@ -4,6 +4,10 @@
 
 
 RST:
+    ; - - - - - - -
+    ; setup NES
+    ; - - - - - - -
+
     SEI         ; Disable interrupt
     CLD         ; Clear/disable decimal
 
@@ -14,12 +18,6 @@ RST:
     STX PPU_CTRL     ; Disable NMI
     STX PPU_MASK     ; Disable Rendering
     STX APU_DMC_FREQ ; Disable DMC IRQ
-
-    ; Wait 1 frame (for the PPU to initialized)
-    BIT PPU_STATUS   ; Clear the VBL flag if it was set at reset time
-    @vwait1:
-        BIT PPU_STATUS
-        BPL @vwait1  ; At this point, about 27384 cycles have passed
 
     ; Clear NES RAM
     @clrmem:
@@ -35,19 +33,10 @@ RST:
         INX
         bnz @clrmem
 
-    ; Wait 1 frame (for the PPU to initialized)
-    @vwait2:
-        BIT PPU_STATUS
-        BPL @vwait2  ; At this point, about 57165 cycles have passed
-
-    ; Enable NMI + set background table to $1000
-    LDA #%10010000
-    STA PPU_CTRL
-    STA ppu_ctrl_val
-
     ; - - - - - - -
     ; setup MMC5
     ; - - - - - - -
+
     ; disable ram protection
     mov MMC5_RAM_PRO1, #$02
     mov MMC5_RAM_PRO2, #$01
@@ -107,10 +96,23 @@ RST:
         STX tmp+2
     to_x_dec @clean_prgram, #RAM_MAX_BNK
 
-    CLI ; Enable back interrupt
+    ; - - - - - - -
+    ; setup code
+    ; - - - - - - -
+
+    ; set code bank
+    LDA #CODE_BNK
+    STA MMC5_PRG_BNK0
+    STA mmc5_banks+1
 
     ; set fade in flag (image does not refresh when fade in is clear)
     mov effect_flags, #$01
+
+    ; Enable NMI + set background table to $1000
+    ; by this time, it is sure that the PPU is initialize
+    LDA #%10010000
+    STA PPU_CTRL
+    STA ppu_ctrl_val
 
     CLI ; Enable back interrupt
     JMP MAIN ; jump to main function

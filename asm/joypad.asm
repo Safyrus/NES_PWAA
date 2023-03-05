@@ -28,7 +28,7 @@ update_input:
         ; buttons_1_timer--
         DEC buttons_1_timer
         ; input = 0
-        mov buttons_1, $00
+        mov buttons_1, #$00
         ; end
         JMP @end
     ; else
