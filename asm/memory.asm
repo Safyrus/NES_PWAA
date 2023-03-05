@@ -272,3 +272,5 @@ OAM:
     dialog_flag: .res 16
     ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
     mmc5_banks: .res 4
+    ;
+    spr_x_buf: .res 64

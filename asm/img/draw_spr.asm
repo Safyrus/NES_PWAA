@@ -3,12 +3,14 @@ img_spr_clear:
 
     ; clear sprites
     LDA #$FF
-    LDX #$00
-    @clear:
+    for_x @clear, #0
         STA OAM, X
-        ; continue
-        INX
-        bnz @clear
+    to_x_inc @clear, #0
+
+    TXA
+    for_x @clear_buf, #0
+        STA spr_x_buf, X
+    to_x_inc @clear_buf, #64
 
     pull_ax
     RTS
@@ -56,6 +58,17 @@ img_spr_draw:
             shift ASL, 3
             add img_spr_x
             STA OAM, X
+            STA tmp+4
+            ;
+            TXA
+            PHA
+            LSR
+            LSR
+            TAX
+            LDA tmp+4
+            STA spr_x_buf, X
+            PLA
+            TAX
             INX
             ; continue
             @continue:
