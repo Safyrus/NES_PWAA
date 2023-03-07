@@ -1,6 +1,7 @@
 from rle_inc import *
 from rebuild import *
 
+MAX_SPRITE_COUNT = 63
 
 def grayscale_max(img):
     arr = np.array(img)
@@ -13,7 +14,7 @@ def find_palettes(_, character_img):
 
     colors = character_img.getcolors()  # get character colors
     idxs = [v for _, v in colors]  # keep color order befor sorting
-    colors = colors[2:]  # remove transparent and background color
+    colors = colors[1:]  # remove background color
     # sort by color count
     colors = sorted(colors, key=lambda tup: tup[0], reverse=True)
     colors = [v for _, v in colors]  # remove color count from list
@@ -22,22 +23,22 @@ def find_palettes(_, character_img):
     palettes.append([0, 1, 2, 3])
     palettes.append([  # character primary palette
         0,
-        idxs.index(colors[0])+2 if len(colors) > 0 else 4,
-        idxs.index(colors[1])+2 if len(colors) > 1 else 4,
-        idxs.index(colors[2])+2 if len(colors) > 2 else 4,
+        idxs.index(colors[0])+3 if len(colors) > 0 else 4,
+        idxs.index(colors[1])+3 if len(colors) > 1 else 4,
+        idxs.index(colors[2])+3 if len(colors) > 2 else 4,
     ])
     palettes.append([  # character/background palette
         0,
-        idxs.index(colors[0])+2 if len(colors) > 0 else 4,
+        idxs.index(colors[0])+3 if len(colors) > 0 else 4,
         2,
         3
     ])
 
     palettes.append([  # character secondary palette
         0,
-        idxs.index(colors[3])+2 if len(colors) > 3 else 4,
-        idxs.index(colors[4])+2 if len(colors) > 4 else 4,
-        idxs.index(colors[5])+2 if len(colors) > 5 else 4,
+        idxs.index(colors[3])+3 if len(colors) > 3 else 4,
+        idxs.index(colors[4])+3 if len(colors) > 4 else 4,
+        idxs.index(colors[5])+3 if len(colors) > 5 else 4,
     ])
 
     return palettes
@@ -154,10 +155,12 @@ def img_2_spr(img):
                 for y in range(0, h, SPR_SIZE_H) for x in range(0, w, SPR_SIZE_W)]
     
     # pad if needed
-    shape = np.shape(spr_tile[-1])
-    pad_spr = np.zeros((SPR_SIZE_H, SPR_SIZE_W), dtype=int)
-    pad_spr[:shape[0],:shape[1]] = spr_tile[-1]
-    spr_tile[-1] = pad_spr
+    for i in range(len(spr_tile)):
+        if spr_tile[i].shape != (SPR_SIZE_H, SPR_SIZE_W):
+            shape = np.shape(spr_tile[i])
+            pad_spr = np.zeros((SPR_SIZE_H, SPR_SIZE_W), dtype=int)
+            pad_spr[:shape[0],:shape[1]] = spr_tile[i]
+            spr_tile[i] = pad_spr
 
     # get map
     spr_map = [i for i in range(len(spr_tile))]
@@ -215,16 +218,31 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     tile_set, tile_map, tile_bank = rm_closest_tiles(
         tile_set, tile_map, tile_bank)
 
-    # convert sprite frame to tiles
-    spr_tile, spr_map, spr_info = img_2_spr(frame_spr)
-    # copy tile to bank and remove duplicate
-    spr_tile, spr_map, spr_bank = rm_closest_spr_tiles(
-        spr_tile, spr_map, spr_bank)
-    nb_spr = sum([1 if s else 0 for s in spr_map])
-    if nb_spr > 64:
+    nb_spr = -1
+    base_spr_dif = MAX_PIXEL_DIFF_SPR
+    while ((nb_spr < 0 or nb_spr > MAX_SPRITE_COUNT) and base_spr_dif <= (SPR_SIZE_W*SPR_SIZE_H)):
+        set_spr_pixel_diff(base_spr_dif)
+        tmp_spr_bank = spr_bank.copy()
+        # convert sprite frame to tiles
+        spr_tile, spr_map, spr_info = img_2_spr(frame_spr)
+        # copy tile to bank and remove duplicate
+        spr_tile, spr_map, tmp_spr_bank = rm_closest_spr_tiles(
+            spr_tile, spr_map, tmp_spr_bank)
+
+        base_spr_idx = (len(tmp_spr_bank) // SPR_BANK_PAGE_SIZE)*SPR_BANK_PAGE_SIZE
+        nb_spr = sum([1 if s != base_spr_idx else 0 for s in spr_map])
+        # print("nb_spr:", nb_spr, " total_spr:", len(tmp_spr_bank), " dif:", base_spr_dif)
+        if nb_spr > MAX_SPRITE_COUNT:
+            base_spr_dif += 1
+
+    if base_spr_dif != MAX_PIXEL_DIFF_SPR:
+        print(f"WARNING: reducing sprite precision (too many sprites)")
+    if nb_spr > MAX_SPRITE_COUNT:
         print(f"WARNING: too many sprite ({nb_spr})")
+
+    spr_bank = tmp_spr_bank
     for i in range(len(spr_map)):
-        spr_map[i] %= 256
+        spr_map[i] %= SPR_BANK_PAGE_SIZE
     spr_info["b"] = len(spr_bank) // SPR_BANK_PAGE_SIZE
 
     if do_rleinc:

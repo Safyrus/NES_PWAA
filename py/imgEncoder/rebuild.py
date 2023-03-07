@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import rle_inc
 
-SPR_BANK_PAGE_SIZE = 256
+SPR_BANK_PAGE_SIZE = 128
 
 def draw_tile(tile, img, idx):
     offsetX = (idx % (img.width // TILE_SIZE)) * TILE_SIZE

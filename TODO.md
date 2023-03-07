@@ -1,7 +1,6 @@
 ## To-do
 
 - [ ] Fix bugs
-  - [ ] Images having too many sprites
   - [ ] Encode ACCURATE palette with images
   - [ ] Background drawing every frame when no animation is selected
 - [ ] Visual effects
@@ -30,15 +29,10 @@
 - [ ] Assembly documentation.
 - [ ] Data structure documentation.
 
-## Almost done
-
-- [/] Dialog box
-  - [/] text "execution"
-    - [/] special text (23/32)
-    - [ ] event functions (0/1)
-
 ## Done
 
+- [X] Encode garbadge sprite tiles for every character (because of wrong sprite dimension)
+- [X] Fix Images having too many sprites
 - [X] Fix Shake effect not moving sprites
 - [X] Read dialog every frame (and not be slowed by image drawing for example)
 - [X] Add macro to write less and maybe make the code more readable
@@ -74,6 +68,39 @@
   - [X] LZ decoding
   - [X] Dialog box drawing
   - [X] Text drawing
+  - [X] Special characters
+    - [X] END
+    - [X] LB 
+    - [X] DB 
+    - [X] FDB
+    - [X] TD 
+    - [X] SET
+    - [X] CLR
+    - [X] SAK
+    - [X] SPD
+    - [X] DL 
+    - [ ] NAM
+    - [ ] FLH
+    - [X] FI 
+    - [X] FO 
+    - [X] COL
+    - [ ] BC 
+    - [X] BIP
+    - [X] MUS
+    - [ ] SND
+    - [ ] PHT
+    - [ ] CHR
+    - [X] ANI
+    - [X] BKG
+    - [ ] FNT
+    - [X] JMP
+    - [X] ACT
+    - [ ] BP 
+    - [ ] SP 
+    - [X] RES
+    - [X] RES
+    - [X] EVT
+    - [X] EXT
 
 - [X] Detail feasibility study. Estimate with real data the size (to the KB) of:
 

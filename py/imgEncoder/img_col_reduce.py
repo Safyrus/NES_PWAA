@@ -3,8 +3,9 @@ from PIL import Image, ImageEnhance
 import numpy as np
 
 MAX_COLOR_BKG = 4
-MAX_COLOR_CHR = 7+1
+MAX_COLOR_CHR = 6+1
 CONTRAST_BKG = 2
+SATURATION_CHR = 2
 
 NES_PAL = [
     [82,  82,  82],
@@ -24,7 +25,7 @@ NES_PAL = [
     [-1,  -1,  -1],
     [0,   0,   0],
 
-    [254, 255, 255],
+    [160, 160, 160],
     [30,  74, 157],
     [56,  55, 188],
     [88,  40, 184],
@@ -41,7 +42,7 @@ NES_PAL = [
     [-1,  -1,  -1],
     [-1,  -1,  -1],
 
-    [254, 255, 255],
+    [-1,  -1,  -1],
     [105, 158, 252],
     [137, 135, 255],
     [174, 118, 255],
@@ -58,7 +59,7 @@ NES_PAL = [
     [-1,  -1,  -1],
     [-1,  -1,  -1],
 
-    [160, 160, 160],
+    [254, 255, 255],
     [190, 214, 253],
     [204, 204, 255],
     [221, 196, 255],
@@ -77,6 +78,76 @@ NES_PAL = [
 
 ]
 
+NES_PAL_NAM = [
+    "DARK GRAY",
+    "DARKEST BLUE",
+    "DARKEST SLATEBLUE",
+    "DARKEST MAGENTA",
+    "DARKEST PINK",
+    "DARKEST SALMON",
+    "DARKEST RED",
+    "DARKEST ORANGE",
+    "DARKEST YELLOW",
+    "DARKEST OLIVE",
+    "DARKEST GREEN",
+    "DARKEST CYAN",
+    "DARKEST LIGHT BLUE",
+    "BLACKER THAN BLACK",
+    "BLACK",
+    "BLACK",
+
+    "GRAY",
+    "DARK BLUE",
+    "DARK SLATEBLUE",
+    "DARK MAGENTA",
+    "DARK PINK",
+    "DARK SALMON",
+    "DARK RED",
+    "DARK ORANGE",
+    "DARK YELLOW",
+    "DARK OLIVE",
+    "DARK GREEN",
+    "DARK CYAN",
+    "DARK LIGHT BLUE",
+    "BLACK",
+    "BLACK",
+    "BLACK",
+
+    "WHITE",
+    "BLUE",
+    "SLATEBLUE",
+    "MAGENTA",
+    "PINK",
+    "SALMON",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "OLIVE",
+    "GREEN",
+    "CYAN",
+    "LIGHT BLUE",
+    "DARKEST GRAY",
+    "BLACK",
+    "BLACK",
+
+    "WHITE",
+    "LIGHT BLUE",
+    "LIGHT SLATEBLUE",
+    "LIGHT MAGENTA",
+    "LIGHT PINK",
+    "LIGHT SALMON",
+    "LIGHT RED",
+    "LIGHT ORANGE",
+    "LIGHT YELLOW",
+    "LIGHT OLIVE",
+    "LIGHT GREEN",
+    "LIGHT CYAN",
+    "LIGHT LIGHT BLUE",
+    "LIGHT GRAY",
+    "BLACK",
+    "BLACK",
+]
+
 
 def closest_color(pal, color):
     pal = np.array(pal)
@@ -89,14 +160,29 @@ def closest_color(pal, color):
 
 
 def closest_nes_pal(img, size):
+    img_pal_idx = img.getcolors()
+    img_pal_idx = sorted(img_pal_idx, key=lambda tup: tup[0], reverse=True)
+    img_pal_idx = [v for _, v in img_pal_idx]  # remove color count from list
+
     img_pal = img.getpalette()
     pal = []
-    size = min(size*3, len(img_pal))
-    for i in range(0, size, 3):
+    for i in img_pal_idx:
+        i *= 3
         col = closest_color(NES_PAL, img_pal[i:i+3])
         pal.append(col)
+    pad = max(0, size-len(pal))
+    pal.extend([15 for _ in range(pad)])
     return pal
 
+def sort_nes_pal(pal):
+    pal.sort()
+    if 0x0F in pal:
+        i = pal.index(0x0F)
+        pal[0], pal[i] = pal[i], pal[0]
+    if 0x2D in pal:
+        i = pal.index(0x2D)
+        pal[0], pal[i] = pal[i], pal[0]
+    return pal
 
 def bkg_col_reduce_dither(imgfile):
     with Image.open(imgfile) as img:
@@ -120,6 +206,7 @@ def bkg_col_reduce_2(imgfile):
         img = img.convert("RGB")
     img = img.quantize(MAX_COLOR_BKG, method=Image.MEDIANCUT, kmeans=1)
     pal = closest_nes_pal(img, MAX_COLOR_BKG)
+    pal = sort_nes_pal(pal)
     return img.convert("L"), pal
 
 
@@ -127,7 +214,7 @@ def char_col_reduce(imgfile):
     with Image.open(imgfile) as img:
         img_1 = img.convert("RGB")
         img_2 = img.convert("L")
-    img_1 = ImageEnhance.Color(img_1).enhance(2)
+    img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
     img_1 = img_1.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
     pal = closest_nes_pal(img_1, MAX_COLOR_CHR)
     img_2 = img_2.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
@@ -143,20 +230,18 @@ if __name__ == "__main__":
     img_1.save("img_1_0.png")
     img_2.save("img_2_0.png")
 
-    img_1 = ImageEnhance.Color(img_1).enhance(2)
+    img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
     img_1.save("img_1_1.png")
     img_1 = img_1.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
     img_1.save("img_1_2.png")
 
     pal = closest_nes_pal(img_1, MAX_COLOR_CHR)
     print(pal)
-    # pal.sort()
-    # if 15 in pal:
-    #     i = pal.index(15)
-    #     pal[i], pal[0] = pal[0], pal[i]
     pal_rgb = []
     for i in pal:
         pal_rgb.extend(NES_PAL[i])
+        print(NES_PAL_NAM[i], end=", ")
+    print()
 
     img_2 = img_2.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
     img_2.save("img_2_1.png")

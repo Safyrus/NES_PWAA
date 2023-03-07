@@ -3,7 +3,6 @@ from rebuild import *
 
 MAX_PIXEL_DIFF = 0
 MAX_PIXEL_DIFF_SPR = 0
-SPR_BANK_PAGE_SIZE = 256
 SPR_SIZE_W = 8
 SPR_SIZE_H = 16
 
@@ -22,6 +21,10 @@ def tile_close_present(tile, bank):
 def set_pixel_diff(val):
     global MAX_PIXEL_DIFF
     MAX_PIXEL_DIFF = val
+
+def set_spr_pixel_diff(val):
+    global MAX_PIXEL_DIFF_SPR
+    MAX_PIXEL_DIFF_SPR = val
 
 def tile_present(tile, bank):
     a1 = np.array(tile)
