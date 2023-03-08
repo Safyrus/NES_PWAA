@@ -106,7 +106,7 @@ RST:
     STA mmc5_banks+1
 
     ; set fade in flag (image does not refresh when fade in is clear)
-    mov effect_flags, #$01
+    mov effect_flags, #(EFFECT_FLAG_FADE)
 
     ; Enable NMI + set background table to $1000
     ; by this time, it is sure that the PPU is initialize

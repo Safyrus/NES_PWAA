@@ -214,6 +214,7 @@ NMI:
     ; reset zp background index
     LDA #$00
     STA background_index
+    STA background
 
     @end:
 
@@ -247,6 +248,14 @@ NMI:
     ; restore ram bank
     LDA mmc5_banks+0
     STA MMC5_RAM_BNK
+
+    ; print_flush if needed
+    LDA txt_flags
+    AND #TXT_FLAG_PRINT
+    BEQ @print_end
+        JSR print_flush
+        and_adr txt_flags, #($FF-TXT_FLAG_PRINT)
+    @print_end:
 
     ; restore registers
     pullregs

@@ -48,13 +48,5 @@ MAIN:
         and_adr txt_flags, #($FF-TXT_FLAG_BOX)
     @box_end:
 
-    ; print_flush if needed
-    LDA txt_flags
-    AND #TXT_FLAG_PRINT
-    BEQ @print_end
-        JSR print_flush
-        and_adr txt_flags, #($FF-TXT_FLAG_PRINT)
-    @print_end:
-
     ; loop back to start of main
     JMP @main_loop

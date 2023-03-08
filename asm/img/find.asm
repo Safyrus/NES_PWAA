@@ -20,6 +20,7 @@ find_anim:
     LDY #$00
     STY anim_img_counter
     STY anim_frame_counter
+    ora_adr effect_flags, #EFFECT_FLAG_BKG
 
     @loop:
         LDA #$00
@@ -36,7 +37,12 @@ find_anim:
         JMP @loop
     @find:
     ;
-    mov_ptr anim_base_adr, tmp+0
+    LDA tmp+0
+    STA anim_base_adr+0
+    STA anim_adr+0
+    LDA tmp+1
+    STA anim_base_adr+1
+    STA anim_adr+1
 
     PLA
     STA tmp+3

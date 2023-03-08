@@ -46,55 +46,86 @@ frame_decode:
         DEC anim_frame_counter
         JMP @end
     :
+
+    ; do we need to draw the background ?
+    LDA effect_flags
+    AND #EFFECT_FLAG_BKG
+    bnz @load_bck
+
+    ; does the animation have any frames ?
+    LDA anim_base_adr+0
+    CMP tmp+2
+    beq :+
+        JMP :+++
+    :
+    LDA anim_base_adr+1
+    CMP tmp+3
+    beq :+
+        JMP :++
+    :
+    LDY #$00
+    LDA (tmp+2), Y
+    LSR
+    LSR
+    bnz :+
+        JMP @end
+    :
+
+    ; do we need to reset the naimation to the start ?
     LDA anim_img_counter
-    bze @load_bck
-    @load_chr:
-        ;
-        LDY #$00
-        LDA (tmp+2), Y
-        STA anim_frame_counter
-        ;
-        INY
-        LDA (tmp+2), Y
-        STA tmp+0
-        INY
-        LDA (tmp+2), Y
-        STA tmp+1
-        ;
-        INY
-        LDA (tmp+2), Y
-        STA mmc5_banks+2
-        STA MMC5_PRG_BNK1
-        ;
-        DEC anim_img_counter
-        ;
-        INY
-        TYA
-        add_A2ptr anim_adr
-        JMP @start
-    @load_bck:
-        ;
+    bnz @load_chr
+        ; anim_adr, tmp+2 = anim_base_adr
         LDA anim_base_adr+0
         STA anim_adr+0
         STA tmp+2
         LDA anim_base_adr+1
         STA anim_adr+1
         STA tmp+3
-        ;
+        ; anim_img_counter = (*anim_adr) >> 2
         LDY #$00
         LDA (tmp+2), Y
         LSR
         LSR
         STA anim_img_counter
-        ;
+        ; anim_adr++
         inc_16 anim_adr
+        inc_16 tmp+2
 
+    ; draw the next animation frame
+    @load_chr:
+        ; anim_frame_counter = anim_adr[0]
+        LDY #$00
+        LDA (tmp+2), Y
+        STA anim_frame_counter
+        ; tmp+0 = anim_adr[1:2]
+        INY
+        LDA (tmp+2), Y
+        STA tmp+0
+        INY
+        LDA (tmp+2), Y
+        STA tmp+1
+        ; MMC5_PRG_BNK1 = anim_adr[3]
+        INY
+        LDA (tmp+2), Y
+        STA mmc5_banks+2
+        STA MMC5_PRG_BNK1
+        ; anim_img_counter--
+        DEC anim_img_counter
+        ; update anim_adr
+        INY
+        TYA
+        add_A2ptr anim_adr
+        ;
+        JMP @start
+
+    @load_bck:
+        ; clear flag
+        and_adr effect_flags, #($FF-EFFECT_FLAG_BKG)
         ; set image bank
         LDX img_background
         LDA img_bkg_table_bank, X
         STA mmc5_banks+2
         STA MMC5_PRG_BNK1
-
         ; Set pointer to image.
         ;  We only need to set it 1 time,
         ;  because the rleinc decode subroutine

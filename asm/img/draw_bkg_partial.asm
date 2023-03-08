@@ -114,16 +114,12 @@ img_partial_buf_flush:
     LDA img_partial_buf_len
     bze @end
     ; wait for nmi tile buffer to empty out if it is too big
-    add background_index
-    CMP #$40
-    blt @init
     @wait_vblank:
-        PHA
-        @wait_vblank_loop:
-            LDA background_index
-            bnz @wait_vblank_loop
-        PLA
-    @init:
+        LDA img_partial_buf_len
+        add background_index
+        CMP #$41
+        bge @wait_vblank
+    ; don't draw at the end of a frame (no time to close the packet)
     @wait_inframe:
         BIT scanline
         BVC @wait_inframe

@@ -2,7 +2,8 @@
 
 - [ ] Fix bugs
   - [ ] Encode ACCURATE palette with images
-  - [ ] Background drawing every frame when no animation is selected
+  - [ ] temporary wrong CHR bank when switching animation
+  - [ ] Character sprites being all redrawn for every animation frame
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
@@ -31,7 +32,9 @@
 
 ## Done
 
-- [X] Encode garbadge sprite tiles for every character (because of wrong sprite dimension)
+- [X] First character frame being redrawn entirely
+- [X] Fix background drawing every frame when no animation is selected
+- [X] Encode garbage sprite tiles for every character (because of wrong sprite dimension)
 - [X] Fix Images having too many sprites
 - [X] Fix Shake effect not moving sprites
 - [X] Read dialog every frame (and not be slowed by image drawing for example)
@@ -108,7 +111,7 @@
         Results: 795 KB for now (not every ctrl chars) uncompressed, 521 KB with Huffman
         (Not below the 512 KB limit but close enough, so it's OK).
 
-      **UPDATE**: With basic LZ compression (3 bits len, 12 bit jmp), can go to ~403 KB.
+      **UPDATE**: With basic LZ compression (3 bits length, 12 bit jump), can go to ~403 KB.
       Will need to cut text into block to skip decoding all data to read one line (442 KB with same parameters and block size of 8 KB).
       So: Huffman=local decode + medium compress; LZ=block decode + high compress
 
@@ -117,7 +120,7 @@
                  1 or more Fonts, depend on language (96 chars each). UI < 512 tiles.
 
   - [X] Image data (tiles map + palette).
-        Results: 102 Backgrounds (50 Cutscene, 28 Location, 8 Courtroom, 16 Start Cutscene) (~0.9 KB each).
+        Results: 102 Backgrounds (50 Cutscenes, 28 Locations, 8 Courtroom scenes, 16 Start cutscenes) (~0.9 KB each).
         23 Characters (really depends on the character, but maybe ~5 KB each in average).
         42+24 evidences. 12 standing characters sprites and 10 smaller character sprites.
         "Hold it !", "Objection !", "Take That !", title screen and action line backgrounds.

@@ -122,9 +122,10 @@ OAM:
     ; - - - - - - - -
     ; Visual effect variables
     ; - - - - - - - -
-    ; H... ..SF
-    ; |      |+-- Fade in (1) or out (0)
-    ; |      +--- Scroll position (0=left, 1=right)
+    ; H... .BSF
+    ; |     ||+-- Fade in (1) or out (0)
+    ; |     |+--- Scroll position (0=left, 1=right)
+    ; |     +---- redraw Background
     ; +---------- Hide dialog box (1=Hidden)
     effect_flags: .res 1
     ;
@@ -200,14 +201,14 @@ OAM:
     ; - - - - - - - -
     ; photo/evidence toshow
     img_photo: .res 1
-    ;
+    ; background image to display
     img_background: .res 1
-    ;
+    ; character animation index
     img_anim:
-    ;
-    img_character: .res 1
-    ;
-    img_animation: .res 1
+        ; character image to display
+        img_character: .res 1
+        ; character animation image to display
+        img_animation: .res 1
     ;
     img_partial_buf_len: .res 1
     ;
@@ -216,15 +217,13 @@ OAM:
     ; - - - - - - - -
     ; Animation Variables
     ; - - - - - - - -
-    ;
+    ; pointer to the base of the current animation data
     anim_base_adr: .res 2
-    ;
+    ; pointer to the current animation data
     anim_adr: .res 2
-    ;
-    anim_img_count: .res 1
-    ;
+    ; current animation frame index
     anim_img_counter: .res 1
-    ;
+    ; remaining game frame before the next animation frame
     anim_frame_counter: .res 1
 
     ; - - - - - - - -
