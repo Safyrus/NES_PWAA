@@ -174,6 +174,7 @@ def closest_nes_pal(img, size):
     pal.extend([15 for _ in range(pad)])
     return pal
 
+
 def sort_nes_pal(pal):
     pal.sort()
     if 0x0F in pal:
@@ -183,6 +184,7 @@ def sort_nes_pal(pal):
         i = pal.index(0x2D)
         pal[0], pal[i] = pal[i], pal[0]
     return pal
+
 
 def bkg_col_reduce_dither(imgfile):
     with Image.open(imgfile) as img:
@@ -215,9 +217,9 @@ def char_col_reduce(imgfile):
         img_1 = img.convert("RGB")
         img_2 = img.convert("L")
     img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
-    img_1 = img_1.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
-    pal = closest_nes_pal(img_1, MAX_COLOR_CHR)
-    img_2 = img_2.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
+    img_1 = img_1.quantize(MAX_COLOR_CHR+1, method=Image.FASTOCTREE)
+    pal = closest_nes_pal(img_1, MAX_COLOR_CHR+1)
+    img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=Image.FASTOCTREE)
     return img_2.convert("L"), pal
 
 

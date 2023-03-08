@@ -88,7 +88,8 @@ def encode_all(json):
             pal_set = None
             if "palettes" in anim:
                 pal_set = anim["palettes"]
-            frame, tile_bank = encode_frame_bkg(anim["background"], tile_bank, pal_bank, pal_set)
+            frame, tile_bank = encode_frame_bkg(
+                anim["background"], tile_bank, pal_bank, pal_set)
             # frames += frame
             frames.append(frame)
             frame_ischr.append(False)
@@ -99,15 +100,18 @@ def encode_all(json):
     spr_bnk_to_fix = {}
     for anim in json:
         warning_CHR_size(tile_bank, spr_bank)
-        # for all characters:
+        # get animation info
         chars = anim["character"]
         times = anim["time"]
         bck = anim["background"]
-        pal_set = None
-        if "palettes" in anim:
-            pal_set = anim["palettes"]
+        # skip if not a character
+        if not chars:
+            continue
+        # init variables
+        pal_set = anim["palettes"] if "palettes" in anim else None
         anim_frame = []
         last_char = EMPTY_IMG
+        # for all characters:
         for i in range(len(chars)):
             # get last character frame
             if i > 0:
@@ -124,13 +128,28 @@ def encode_all(json):
                 frames.append(frame)
                 frame_ischr.append(True)
                 frames_name.append(anim_name)
+            #
             anim_frame.append((anim_name, times[i] % 128))
-        if anim_frame:
-            anims.append(anim_frame)
+        #
+        anim_name = chars[-1] + ";" + chars[0]
+        # if not already encoded
+        if anim_name not in frames_name:
+            # encode character frame as partial image
+            print("encode character", anim_name)
+            frame, tile_bank, spr_bank, spr_data_bnk_idx = encode_frame_partial(
+                bck, chars[i], last_char, tile_bank, spr_bank, pal_bank, pal_set)
+            spr_bnk_to_fix[anim_name] = spr_data_bnk_idx
+            # frames += frame
+            frames.append(frame)
+            frame_ischr.append(True)
+            frames_name.append(anim_name)
+        anim_frame.append((anim_name, 0))
+        #
+        anims.append(anim_frame)
 
     print("fixing some bytes")
     offset = (len(tile_bank) // 256) + 1 + CHR_START_BANK
-    for k,v in spr_bnk_to_fix.items():
+    for k, v in spr_bnk_to_fix.items():
         for i in range(len(frames)):
             if frames_name[i] == k:
                 frames[i][v] += offset
@@ -143,19 +162,21 @@ def encode_all(json):
     ca65_anim = "img_anim_table:\ndefault:\n.byte $01 ; size\n"
     chr_anims = {}
     PRG_size = 0
-    for i in range(len(frames)): 
+    for i in range(len(frames)):
         bank = (PRG_size // 8192) + PRG_START_BANK
         # include frames
         ca65_inc += "img_" + str(i) + ":\n.incbin \"imgs/img_" + \
             str(i) + ".bin\" ;" + frames_name[i] + "\n"
         if frame_ischr[i]:
             # save character adr and bnk
-            chr_adr = ".word (img_" + str(i) + " & $FFFF) ; " + frames_name[i] + "\n"
+            chr_adr = ".word (img_" + str(i) + " & $FFFF) ; " + \
+                frames_name[i] + "\n"
             chr_bnk = ".byte $" + hex(bank)[2:] + " ; bank\n"
             chr_anims[frames_name[i]] = chr_adr + chr_bnk
         else:
             # background index table
-            ca65_bkg += ".word (img_" + str(i) + " & $FFFF) ; " + frames_name[i] + "\n"
+            ca65_bkg += ".word (img_" + str(i) + \
+                " & $FFFF) ; " + frames_name[i] + "\n"
             ca65_bkg_bnk += ".byte $" + hex(bank)[2:] + "\n"
         #
         frames[i] = bytes(frames[i])
@@ -163,9 +184,11 @@ def encode_all(json):
         warning_PRG_size(PRG_size)
     i = 0
     for anim in anims:
-        ca65_anim += "img_anim_" + str(i) + ":\n.byte $" + "%0.2X" %((len(anim) << 2)+1) + " ; size\n"
+        ca65_anim += "img_anim_" + \
+            str(i) + ":\n.byte $" + "%0.2X" % ((len(anim) << 2)+1) + " ; size\n"
         for a in anim:
-            ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
+            ca65_anim += ".byte $" + \
+                "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
         i += 1
     ca65_pal = "palette_table:\n"
     for p in pal_bank:
@@ -190,9 +213,9 @@ def encode_all(json):
         t1 = np.full((8, 8), 0)
         t2 = np.full((8, 8), 0)
         shape = np.shape(t[:8, :])
-        t1[:shape[0],:shape[1]] = t[:8, :]
+        t1[:shape[0], :shape[1]] = t[:8, :]
         shape = np.shape(t[8:16, :])
-        t2[:shape[0],:shape[1]] = t[8:16, :]
+        t2[:shape[0], :shape[1]] = t[8:16, :]
         CHR_rom.extend(tile_2_chr(t1))
         CHR_rom.extend(tile_2_chr(t2))
     CHR_rom = bytes(CHR_rom)
@@ -242,7 +265,7 @@ def encode_frame_bkg(background, tile_bank, pal_bank, pal_set):
 
     # palette bytes
     frame.append(pal//256)
-    frame.append(pal%256)
+    frame.append(pal % 256)
     for _ in range(6):
         frame.append(0)
 
@@ -281,9 +304,9 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
     pal_bkg_idx = pal_bank.index(pal_bkg)
     #
     pal_chr = [
-        [pal_bkg[0],pal_chr[0],pal_chr[1],pal_chr[2]],
-        [pal_bkg[0],pal_chr[0], pal_bkg[2], pal_bkg[3]],
-        [pal_bkg[0],pal_chr[3],pal_chr[4],pal_chr[5]]
+        [pal_bkg[0], pal_chr[0], pal_chr[1], pal_chr[2]],
+        [pal_bkg[0], pal_chr[0], pal_bkg[2], pal_bkg[3]],
+        [pal_bkg[0], pal_chr[3], pal_chr[4], pal_chr[5]]
     ]
     for i in range(len(pal_chr)):
         if pal_chr[i] not in pal_bank:
@@ -291,10 +314,10 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
         pal_chr[i] = pal_bank.index(pal_chr[i])
     # palette bytes
     frame.append(pal_bkg_idx//256)
-    frame.append(pal_bkg_idx%256)
+    frame.append(pal_bkg_idx % 256)
     for p in pal_chr:
         frame.append(p//256)
-        frame.append(p%256)
+        frame.append(p % 256)
 
     # remove same tiles between frames
     tile_map = []
