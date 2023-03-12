@@ -30,19 +30,19 @@ default:
 img_anim_0:
 .byte $15 ; size
 .byte $10 ; time
-.word (img_2 & $FFFF) ; ../../data/empty.png;../../data/sprite1.png
+.word ((img_2 & $1FFF) + SEGMENT_IMGS_START_ADR) ; ../../data/empty.png;../../data/sprite1.png
 .byte $c0 ; bank
 .byte $10 ; time
-.word (img_3 & $FFFF) ; ../../data/sprite1.png;../../data/sprite2.png
+.word ((img_3 & $1FFF) + SEGMENT_IMGS_START_ADR) ; ../../data/sprite1.png;../../data/sprite2.png
 .byte $c0 ; bank
 .byte $10 ; time
-.word (img_4 & $FFFF) ; ../../data/sprite2.png;../../data/sprite3.png
+.word ((img_4 & $1FFF) + SEGMENT_IMGS_START_ADR) ; ../../data/sprite2.png;../../data/sprite3.png
 .byte $c0 ; bank
 .byte $10 ; time
-.word (img_5 & $FFFF) ; ../../data/sprite3.png;../../data/sprite4.png
+.word ((img_5 & $1FFF) + SEGMENT_IMGS_START_ADR) ; ../../data/sprite3.png;../../data/sprite4.png
 .byte $c0 ; bank
 .byte $00 ; time
-.word (img_6 & $FFFF) ; ../../data/sprite4.png;../../data/sprite1.png
+.word ((img_6 & $1FFF) + SEGMENT_IMGS_START_ADR) ; ../../data/sprite4.png;../../data/sprite1.png
 .byte $c0 ; bank
 
 palette_table:

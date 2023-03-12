@@ -2,25 +2,26 @@
 
 
 .if FAMISTUDIO_CFG_C_BINDINGS
-.export _sfx_data=sfx_data
+.export _sounds=sounds
 .endif
 
-sfx_data:
+sounds:
 	.word @ntsc
 	.word @ntsc
 @ntsc:
-	.word @sfx_ntsc_bip_high
 	.word @sfx_ntsc_bip
+	.word @sfx_ntsc_bip_high
 	.word @sfx_ntsc_bip_low
+	.word @sfx_ntsc_typewritter
 
-@sfx_ntsc_bip_high:
-	.byte $87,$0f,$88,$00,$86,$8f,$89,$f0,$01,$87,$1f,$01,$87,$3f,$01,$87
-	.byte $31,$01,$00
 @sfx_ntsc_bip:
-	.byte $87,$1f,$88,$00,$86,$8f,$89,$f0,$01,$87,$3f,$01,$87,$7e,$01,$87
-	.byte $64,$01,$00
+	.byte $82,$00,$81,$8e,$80,$bf,$89,$f0,$01,$81,$23,$01,$81,$29,$01,$00
+@sfx_ntsc_bip_high:
+	.byte $82,$00,$81,$7e,$80,$bf,$89,$f0,$01,$81,$1f,$01,$81,$25,$01,$00
 @sfx_ntsc_bip_low:
-	.byte $87,$3f,$88,$00,$86,$8f,$89,$f0,$01,$87,$7e,$01,$87,$fd,$01,$87
-	.byte $c9,$01,$00
+	.byte $82,$00,$81,$9f,$80,$bf,$89,$f0,$01,$81,$27,$01,$81,$2f,$01,$00
+@sfx_ntsc_typewritter:
+	.byte $8a,$89,$89,$3f,$01,$8a,$8b,$89,$38,$01,$8a,$89,$89,$34,$01,$8a
+	.byte $87,$89,$3f,$01,$00
 
-.export sfx_data
+.export sounds
