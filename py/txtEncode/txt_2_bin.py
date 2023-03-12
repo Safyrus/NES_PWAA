@@ -150,7 +150,7 @@ while i < len(text):
             textbin.append(LB)
         elif name == "p":
             textbin.append(DB)
-        elif name == "nextpage_nobutton":
+        elif name == "fp":
             textbin.append(FDB)
         elif name == "speed":
             textbin.append(SPD)

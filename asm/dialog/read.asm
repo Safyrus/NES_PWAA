@@ -1,9 +1,27 @@
 ; return in A the char read and increase the ptr
 ; change Y to 0
 read_next_char:
+    ; get char at txt_rd_ptr
     LDY #$00
     LDA (txt_rd_ptr), Y
+    ; txt_rd_ptr += 1
     inc_16 txt_rd_ptr
+    ; save char
+    PHA
+    ; if txt_rd_ptr is out of the text block
+    LDA txt_rd_ptr+1
+    BPL @end
+        ; lz_idx += 1
+        INC lz_idx
+        ; reset lz decoding
+        JSR lz_init
+        ;
+        sta_ptr txt_rd_ptr, MMC5_RAM
+        ; async lz_decode()
+        ora_adr txt_flags, #TXT_FLAG_LZ
+    @end:
+    ; retreive char
+    PLA
     RTS
 
 
@@ -51,8 +69,7 @@ read_jump:
     ; block = lz_bnk_table[block]
     LDA txt_jump_buf+2
     AND #$3F
-    TAX
-    LDA lz_bnk_table, X
+    STA lz_idx
     STA txt_jump_buf+2
     ; txt_rd_ptr = adr_lo, adr_hi
     mov_ptr txt_rd_ptr, txt_jump_buf
@@ -60,8 +77,8 @@ read_jump:
     LDA txt_jump_buf+2
     CMP lz_in_bnk
     BEQ @JMP_char_end
-        ; lz_in_bnk = block
-        STA lz_in_bnk
+        ; reset lz decoding
+        JSR lz_init
         ; async lz_decode()
         ora_adr txt_flags, #TXT_FLAG_LZ
     @JMP_char_end:
@@ -190,7 +207,7 @@ read_text:
         ; else
         @special_char:
             ; debug print
-            JSR print_char
+            ; JSR print_char
 
             ; - - - - - - - -
             ; switch (c)

@@ -1,7 +1,6 @@
 ; case DL
 @DL:
-    ; delay = next_char()*2
+    ; delay = next_char()
     JSR read_next_char
-    ASL
     STA txt_delay
     RTS

@@ -8,13 +8,13 @@
     STA PPU_CTRL
 
     ; init famistudio music
-    LDX #<music_data
-    LDY #>music_data
+    LDX #<music_data_test_music
+    LDY #>music_data_test_music
     mov MMC5_PRG_BNK1, #MUS_BNK
     JSR famistudio_init
     ; init famistudio sfx
-    LDX #<sfx_data
-    LDY #>sfx_data
+    LDX #<sounds
+    LDY #>sounds
     JSR famistudio_sfx_init
 
     ; set dialog box palette
@@ -45,6 +45,8 @@
     JSR draw_dialog_box
 
     ; init text read pointer
+    mov lz_idx, #$00
+    JSR lz_init
     sta_ptr txt_rd_ptr, MMC5_RAM
     ; enable READY flag
     ora_adr txt_flags, #TXT_FLAG_READY

@@ -148,6 +148,8 @@ OAM:
     lz_in: .res 2
     ; bank to use for input data
     lz_in_bnk: .res 1
+    ; index to use for fetching data in lz tables
+    lz_idx: .res 1
 
     ; - - - - - - - -
     ; Variables for text reading

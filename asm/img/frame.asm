@@ -47,6 +47,9 @@ frame_decode:
         JMP @end
     :
 
+    ; LDY here instead of down there before branch because we are 1 byte off
+    LDY #$00
+
     ; do we need to draw the background ?
     LDA effect_flags
     AND #EFFECT_FLAG_BKG
@@ -63,7 +66,7 @@ frame_decode:
     beq :+
         JMP :++
     :
-    LDY #$00
+    ; there is a LDY here, it is located up there
     LDA (tmp+2), Y
     LSR
     LSR
@@ -107,8 +110,12 @@ frame_decode:
         ; MMC5_PRG_BNK1 = anim_adr[3]
         INY
         LDA (tmp+2), Y
-        STA mmc5_banks+2
-        STA MMC5_PRG_BNK1
+        TAX
+        STX mmc5_banks+2
+        STX MMC5_PRG_BNK1
+        INX
+        STX mmc5_banks+3
+        STX MMC5_PRG_BNK2
         ; anim_img_counter--
         DEC anim_img_counter
         ; update anim_adr

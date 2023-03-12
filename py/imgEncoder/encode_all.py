@@ -169,7 +169,7 @@ def encode_all(json):
             str(i) + ".bin\" ;" + frames_name[i] + "\n"
         if frame_ischr[i]:
             # save character adr and bnk
-            chr_adr = ".word (img_" + str(i) + " & $FFFF) ; " + \
+            chr_adr = ".word ((img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR) ; " + \
                 frames_name[i] + "\n"
             chr_bnk = ".byte $" + hex(bank)[2:] + " ; bank\n"
             chr_anims[frames_name[i]] = chr_adr + chr_bnk
