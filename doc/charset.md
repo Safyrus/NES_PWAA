@@ -18,7 +18,7 @@
 |    | **08** | SPD | SPeeD                                                              | 1: speed
 |    | **09** | DL  | DeLay                                                              | 1: delay
 |  X | **0A** | NAM | change NAMe of dialog box                                          | 1: name (255=remove)
-|  X | **0B** | FLH | FLasH                                                              |
+|    | **0B** | FLH | FLasH                                                              |
 |    | **0C** | FI  | Fade In                                                            |
 |    | **0D** | FO  | Fade Out                                                           |
 |    | **0E** | COL | change text COLor                                                  | 1: color

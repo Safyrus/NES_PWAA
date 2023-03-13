@@ -10,10 +10,11 @@ Is the speed good ?<speed:2><p>
 Now we will test<b>delay text<p>
 Wait i'm thinking...<wait:40><b>OK I'm done<b><wait:10>Wait!<wait:100>Nothing :)<p>
 Colors!<wait:8>We have<b><color:1>RED<color:0>,<color:2>BLUE<color:0>,and <color:3>GREEN<color:0>!<p>
-Whatch out!<b>The dialog box will dissapear<b>In 3<wait:30> 2<wait:30> 1<wait:30><hidetextbox><wait:60><fp>
+Whatch out!<b>The dialog box will dissapear<b>In 3<wait:60> 2<wait:60> 1<wait:60><hidetextbox><wait:60><fp>
 This text will not be draw.<fp>
 <hidetextbox>Don't worry.<wait:8><b>I'm still here.<p>
 <shake>Ouch!!!<wait:8><b>What a shake effect!<p>
+Smile for the camera<wait:20><flash><wait:10><b>:)<p>
 Fade out<fade_out><p>
 Fade in<fade_in><p>
 <label:test_flag>Checking if dialog flag<b>is set...<p><jump:test_flag_set,1,0,0><jump:test_flag_clear>

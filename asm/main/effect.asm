@@ -21,6 +21,31 @@
         to_x_inc @shake_spr, #64
     @shake_end:
 
+    ; flash
+    LDA flash_timer
+    BEQ @flash_end
+        DEC flash_timer
+        BEQ @flash_stop
+
+        @flash_white:
+        LDA #$30
+        for_x @flash_loop_white, #$24
+            STA palettes, X
+        to_x_dec @flash_loop_white, #-1
+        JMP @flash_end
+
+        @flash_stop:
+        ; update palette 0-2 and background color
+        for_x @flash_loop_stop, #9
+            LDA img_palettes, X
+            STA palettes, X
+        to_x_dec @flash_loop_stop, #-1
+        ; update palette 3
+        mov palettes+13, img_palette_3+0
+        mov palettes+14, img_palette_3+1
+        mov palettes+15, img_palette_3+2
+    @flash_end:
+
     ; fade
     LDA fade_timer
     bze @fade_end

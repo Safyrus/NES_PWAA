@@ -283,6 +283,8 @@ frame_decode:
     @draw_palettes:
         ;
         PHA
+        LDA flash_timer
+        BNE @draw_palettes_stop
         ; update palette 0
         mov palettes+0, img_palette_bkg
         mov palettes+1, img_palette_0+0
@@ -301,6 +303,7 @@ frame_decode:
         mov palettes+14, img_palette_3+1
         mov palettes+15, img_palette_3+2
         ;
+        @draw_palettes_stop:
         PLA
     @draw_palettes_end:
     ; tiles
