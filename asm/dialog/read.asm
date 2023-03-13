@@ -132,6 +132,13 @@ read_text:
         AND #TXT_FLAG_READY
         BEQ @end
 
+        ; if we need to wait for time consomming task to end
+        ; (draw dialog box, lz decoding and printing characters)
+        LDA txt_flags
+        AND #(TXT_FLAG_LZ + TXT_FLAG_BOX + TXT_FLAG_PRINT)
+        bnz @end
+        @fps_label:
+
         ; fade guard
         LDA fade_timer
         bnz @end
@@ -161,12 +168,6 @@ read_text:
                 @input_boxhidden:
                 JSR read_next_dailog
         @no_wait_flag:
-
-        ; if we need to wait for time consomming task to end
-        ; (draw dialog box, lz decoding and printing characters)
-        LDA txt_flags
-        AND #(TXT_FLAG_LZ + TXT_FLAG_BOX + TXT_FLAG_PRINT)
-        bnz @end
 
         ; if delay > 0
         LDA txt_delay
