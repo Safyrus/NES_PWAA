@@ -196,7 +196,11 @@ def encode_all(json):
         pal_cmt = " ;"
         for c in p:
             pal += f" $" + "%0.2X" % c + ","
-            pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
+            if c > 64:
+                print(f"ERROR: wrong palette ({c})")
+                pal_cmt += f" ERROR,"
+            else:
+                pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
         ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
     ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
     ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n" + ca65_pal + "\n"

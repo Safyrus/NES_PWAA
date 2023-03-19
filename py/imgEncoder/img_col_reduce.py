@@ -4,8 +4,10 @@ import numpy as np
 
 MAX_COLOR_BKG = 4
 MAX_COLOR_CHR = 6+1
-CONTRAST_BKG = 2
-SATURATION_CHR = 2
+CONTRAST_BKG = 1
+SATURATION_CHR = 1
+CHR_METHOD = Image.MEDIANCUT
+BKG_METHOD = Image.MEDIANCUT
 
 NES_PAL = [
     [82,  82,  82],
@@ -21,9 +23,9 @@ NES_PAL = [
     [0,  47,   0],
     [0,  46,  10],
     [0,  38,  45],
-    [-1,  -1,  -1],
-    [-1,  -1,  -1],
-    [0,   0,   0],
+    [-255, -255, 255],
+    [-255, -255, 255],
+    [1,   1,   1],
 
     [160, 160, 160],
     [30,  74, 157],
@@ -38,9 +40,9 @@ NES_PAL = [
     [26, 107,   5],
     [14, 105,  46],
     [16,  92, 104],
-    [-1,  -1,  -1],
-    [-1,  -1,  -1],
-    [-1,  -1,  -1],
+    [-255, -255, 255],
+    [-255, -255, 255],
+    [-255, -255, 255],
 
     [-1,  -1,  -1],
     [105, 158, 252],
@@ -56,8 +58,8 @@ NES_PAL = [
     [84, 193, 125],
     [86, 179, 192],
     [60,  60,  60],
-    [-1,  -1,  -1],
-    [-1,  -1,  -1],
+    [-255, -255, 255],
+    [-255, -255, 255],
 
     [254, 255, 255],
     [190, 214, 253],
@@ -73,8 +75,8 @@ NES_PAL = [
     [180, 229, 199],
     [181, 223, 228],
     [169, 169, 169],
-    [-1,  -1,  -1],
-    [-1,  -1,  -1],
+    [-255, -255, 255],
+    [-255, -255, 255],
 
 ]
 
@@ -199,14 +201,14 @@ def bkg_col_reduce_dither(imgfile):
 def bkg_col_reduce(imgfile):
     with Image.open(imgfile) as img:
         img = img.convert("RGB")
-    img = img.quantize(MAX_COLOR_BKG, method=Image.MEDIANCUT, kmeans=1)
+    img = img.quantize(MAX_COLOR_BKG, method=BKG_METHOD, kmeans=1)
     return img
 
 
 def bkg_col_reduce_2(imgfile):
     with Image.open(imgfile) as img:
         img = img.convert("RGB")
-    img = img.quantize(MAX_COLOR_BKG, method=Image.MEDIANCUT, kmeans=1)
+    img = img.quantize(MAX_COLOR_BKG, method=BKG_METHOD, kmeans=1)
     pal = closest_nes_pal(img, MAX_COLOR_BKG)
     pal = sort_nes_pal(pal)
     return img.convert("L"), pal
@@ -215,11 +217,11 @@ def bkg_col_reduce_2(imgfile):
 def char_col_reduce(imgfile):
     with Image.open(imgfile) as img:
         img_1 = img.convert("RGB")
-        img_2 = img.convert("L")
+        img_2 = img.convert("RGB")
     img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
-    img_1 = img_1.quantize(MAX_COLOR_CHR+1, method=Image.FASTOCTREE)
+    img_1 = img_1.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
     pal = closest_nes_pal(img_1, MAX_COLOR_CHR+1)
-    img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=Image.FASTOCTREE)
+    img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
     return img_2.convert("L"), pal
 
 
@@ -227,26 +229,28 @@ if __name__ == "__main__":
     imgfile = sys.argv[1]
     with Image.open(imgfile) as img:
         img_1 = img.convert("RGB")
-        img_2 = img.convert("L")
+        img_2 = img.convert("RGB")
 
     img_1.save("img_1_0.png")
     img_2.save("img_2_0.png")
 
     img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
     img_1.save("img_1_1.png")
-    img_1 = img_1.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
+    img_1 = img_1.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
     img_1.save("img_1_2.png")
 
-    pal = closest_nes_pal(img_1, MAX_COLOR_CHR)
+    pal = closest_nes_pal(img_1, MAX_COLOR_CHR+1)
     print(pal)
     pal_rgb = []
     for i in pal:
         pal_rgb.extend(NES_PAL[i])
         print(NES_PAL_NAM[i], end=", ")
     print()
+    pal_rgb.reverse()
 
-    img_2 = img_2.quantize(MAX_COLOR_CHR, method=Image.FASTOCTREE)
+    img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
     img_2.save("img_2_1.png")
+    img_2.convert("L").save("out_gray.png")
     print(img_2.getpalette()[:8*3])
     img_2.putpalette(pal_rgb)
     img_2.save("out.png")

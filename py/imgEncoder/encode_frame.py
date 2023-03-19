@@ -47,7 +47,8 @@ def find_palettes(_, character_img):
 def merge_image(background_img, character_img):
     b = np.array(background_img)
     c = np.array(character_img)
-    c = np.where(c <= 1, c-1, c+2)
+    c = np.where(c == 0, c-1, c+2)
+    c = np.where(c == 3, 0, c)
     frame = np.where(c == 255, b, c)
     return frame
 
@@ -173,7 +174,6 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     # reduce color count to 4 for background and 7 (+1 for transparent) for character
     background_img, pal = bkg_col_reduce_2(background_img_path)
     character_img, pal_chr = char_col_reduce(character_img_path)
-    pal_chr.sort()
 
     background_img = img_2_idx(background_img)
     character_img = img_2_idx(character_img)
@@ -218,6 +218,7 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     tile_set, tile_map, tile_bank = rm_closest_tiles(
         tile_set, tile_map, tile_bank)
 
+    # loop until the number of sprite is correct
     nb_spr = -1
     base_spr_dif = MAX_PIXEL_DIFF_SPR
     while ((nb_spr < 0 or nb_spr > MAX_SPRITE_COUNT) and base_spr_dif <= (SPR_SIZE_W*SPR_SIZE_H)):
@@ -235,6 +236,7 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
         if nb_spr > MAX_SPRITE_COUNT:
             base_spr_dif += 1
 
+    # print warnings
     if base_spr_dif != MAX_PIXEL_DIFF_SPR:
         print(f"WARNING: reducing sprite precision (too many sprites)")
     if nb_spr > MAX_SPRITE_COUNT:

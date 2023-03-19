@@ -41,6 +41,10 @@ def spr_tile_close_present(tile, bank):
     page = len(bank) // SPR_BANK_PAGE_SIZE
     start = page * SPR_BANK_PAGE_SIZE
     end = min(len(bank), start + SPR_BANK_PAGE_SIZE)
+    #
+    if np.count_nonzero(a1) < MAX_PIXEL_DIFF_SPR:
+        return start
+    #
     for i in range(start, end):
         a2 = np.array(bank[i])
         comp = a1 == a2
