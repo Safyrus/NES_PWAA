@@ -23,18 +23,16 @@
 
     ; flash
     LDA flash_timer
-    BEQ @flash_end
+    BNE @flash_stop
         DEC flash_timer
-        BEQ @flash_stop
 
-        @flash_white:
         LDA #$30
         for_x @flash_loop_white, #$24
             STA palettes, X
         to_x_dec @flash_loop_white, #-1
         JMP @flash_end
 
-        @flash_stop:
+    @flash_stop:
         ; update palette 0-2 and background color
         for_x @flash_loop_stop, #9
             LDA img_palettes, X
@@ -132,3 +130,53 @@
             CPX max_choice
             BNE @choice_highlight_loop
     @choice_highlight_end:
+
+
+
+    LDA shake_timer
+    bnz @sprite_fliker_end
+    LDX #(RES_SPR*4)
+    LDY #$FC
+    @sprite_fliker_loop:
+        ; byte 0
+        LDA OAM, Y
+        PHA
+        LDA OAM, X
+        STA OAM, Y
+        PLA
+        STA OAM, X
+        INX
+        INY
+        ; byte 1
+        LDA OAM, Y
+        PHA
+        LDA OAM, X
+        STA OAM, Y
+        PLA
+        STA OAM, X
+        INX
+        INY
+        ; byte 2
+        LDA OAM, Y
+        PHA
+        LDA OAM, X
+        STA OAM, Y
+        PLA
+        STA OAM, X
+        INX
+        INY
+        ; byte 3
+        LDA OAM, Y
+        PHA
+        LDA OAM, X
+        STA OAM, Y
+        PLA
+        STA OAM, X
+        INX
+        TYA
+        sub #3+4
+        TAY
+        ; next
+        CPX #$80 - (RES_SPR*2)
+        blt @sprite_fliker_loop
+    @sprite_fliker_end:
