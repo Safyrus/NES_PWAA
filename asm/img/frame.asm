@@ -182,8 +182,7 @@ frame_decode:
         STA img_palette_bkg
         DEY
 
-        LDX #$00
-        @palette_loop:
+        for_x @palette_loop, #0
             ;
             sta_ptr tmp+2, palette_table
             ;
@@ -201,12 +200,15 @@ frame_decode:
 
             PLA
             TAY
-            INX
-            CPX #$04
-            BNE @palette_loop
+            ; break if the img is a background image
+            ; (we don't want to change the character palettes)
+            LDA img_header
+            BMI @palette_loop_end
+        to_x_inc @palette_loop, #4
+        @palette_loop_end:
         
         ; update pointer
-        TYA
+        LDA #8
         LDY #$00
         add_A2ptr tmp
         ; restore header byte
@@ -258,17 +260,18 @@ frame_decode:
         add_A2ptr tmp
         ; set pointer to sprites background buffer
         sta_ptr tmp+2, (MMC5_RAM+$600)
-        ;
-        LDY #$00
-        TYA
-        @sprites_empty_rlebuf:
-            STA (tmp+2), Y
-            DEY
-            bnz @sprites_empty_rlebuf
         ; decode sprites
         JSR rleinc
         ; update number of sprites
         mov img_spr_count, tmp+2
+        ;
+        TAY
+        LDA #$00
+        STA tmp+2
+        @sprites_empty_rlebuf:
+            STA (tmp+2), Y
+            INY
+            BNE @sprites_empty_rlebuf
         ; restore header byte
         PLA
     @sprites_end:
@@ -278,34 +281,7 @@ frame_decode:
     ; - - - - - - - -
     LDA img_header
     ASL
-    ASL
-    BCC @draw_palettes_end
-    @draw_palettes:
-        ;
-        PHA
-        LDA flash_timer
-        BNE @draw_palettes_stop
-        ; update palette 0
-        mov palettes+0, img_palette_bkg
-        mov palettes+1, img_palette_0+0
-        mov palettes+2, img_palette_0+1
-        mov palettes+3, img_palette_0+2
-        ; update palette 1
-        mov palettes+4, img_palette_1+0
-        mov palettes+5, img_palette_1+1
-        mov palettes+6, img_palette_1+2
-        ; update palette 2
-        mov palettes+7, img_palette_2+0
-        mov palettes+8, img_palette_2+1
-        mov palettes+9, img_palette_2+2
-        ; update palette 3
-        mov palettes+13, img_palette_3+0
-        mov palettes+14, img_palette_3+1
-        mov palettes+15, img_palette_3+2
-        ;
-        @draw_palettes_stop:
-        PLA
-    @draw_palettes_end:
+    ASL ; dont draw palette here, done in main
     ; tiles
     ASL
     BCC @draw_tiles_end
