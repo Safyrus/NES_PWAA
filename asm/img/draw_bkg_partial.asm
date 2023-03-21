@@ -87,7 +87,12 @@ img_partial_ppuadr:
     AND #$03
     ORA #$20
     STA tmp+3
-    ; offset of 24 pixels
+    ; offset by 1 nametable if needed
+    LDA effect_flags
+    AND #EFFECT_FLAG_NT
+    ORA tmp+3
+    STA tmp+3
+    ; offset of 24 scanlines
     add_A2ptr tmp+2, #$60
 
     PLA

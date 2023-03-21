@@ -122,10 +122,12 @@ OAM:
     ; - - - - - - - -
     ; Visual effect variables
     ; - - - - - - - -
-    ; H... .BSF
-    ; |     ||+-- Fade in (1) or out (0)
-    ; |     |+--- Scroll position (0=left, 1=right)
-    ; |     +---- redraw Background
+    ; H..D BNSF
+    ; |  | |||+-- Fade in (1) or out (0)
+    ; |  | ||+--- Scroll position (0=left, 1=right)
+    ; |  | |+---- current Nametable (0=left, 1=right)
+    ; |  | +----- redraw Background
+    ; |  +------- currently Drawing the background
     ; +---------- Hide dialog box (1=Hidden)
     effect_flags: .res 1
     ;
@@ -251,11 +253,11 @@ OAM:
     ; - - - - - - - -
     ;
     img_palettes:
-    img_palette_bkg: .res 1
-    img_palette_0: .res 3
-    img_palette_1: .res 3
-    img_palette_2: .res 3
-    img_palette_3: .res 3
+        img_palette_bkg: .res 1
+        img_palette_0: .res 3
+        img_palette_1: .res 3
+        img_palette_2: .res 3
+        img_palette_3: .res 3
 
     ; - - - - - - - -
     ; Action/choice variables

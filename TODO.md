@@ -3,10 +3,9 @@
 - [ ] Fix bugs
   - [ ] Encode ACCURATE palette with images
   - [ ] temporary wrong CHR bank when switching animation
+  - [ ] temporary wrong scrolling position (when starting the animation apparently)
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] No palette update for the 0th tile (full color 0) when drawing a character
-  - [ ] Do sprite flickering to kind of "draw more sprites"
-  - [ ] PPU Background buffer (enable "instant" background update)
 - [ ] Visual effects
   - [ ] Scrolling
   - [ ] Flash
@@ -35,6 +34,10 @@
 
 ## Done
 
+- [X] Do sprite flickering to kind of "draw more sprites"
+- [X] PPU Background buffer (enable "instant" background update)
+- [X] Fix sprites not disappearing when removing the character
+- [X] Fix temporary wrong palette
 - [X] Fix image encoding not using the background color for the character
 - [X] First character frame being redrawn entirely
 - [X] Fix background drawing every frame when no animation is selected

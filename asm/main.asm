@@ -14,6 +14,20 @@ wait_next_frame:
 
     RTS
 
+update_screen_scroll:
+    PHA
+    ; update high scroll
+    and_adr ppu_ctrl_val, #$FE
+    LDA effect_flags
+    AND #EFFECT_FLAG_NT
+    LSR
+    LSR
+    ORA ppu_ctrl_val
+    STA ppu_ctrl_val
+    STA PPU_CTRL
+    PLA
+    RTS
+
 
 MAIN:
 
@@ -25,6 +39,12 @@ MAIN:
     .include "main/input.asm"
     .include "main/effect.asm"
 
+    ; if we are not drawing the background
+    LDA effect_flags
+    AND #EFFECT_FLAG_DRAW
+    bnz :+
+        JSR update_screen_scroll
+    :
     ; update graphics
     LDA txt_flags
     AND #(TXT_FLAG_BOX + TXT_FLAG_LZ + TXT_FLAG_PRINT)
