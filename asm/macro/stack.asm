@@ -47,3 +47,15 @@
     TAY
     PLA
 .endmacro
+
+.macro push adr
+    ; push val
+    LDA adr
+    PHA
+.endmacro
+
+.macro pull adr
+    ; pull val
+    PLA
+    STA adr
+.endmacro

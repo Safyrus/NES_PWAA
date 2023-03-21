@@ -2,14 +2,10 @@
 find_anim:
     push_ay
 
-    LDA tmp+0
-    PHA
-    LDA tmp+1
-    PHA
-    LDA tmp+2
-    PHA
-    LDA tmp+3
-    PHA
+    push tmp+0
+    push tmp+1
+    push tmp+2
+    push tmp+3
 
     ;
     mov tmp+3, img_anim+0
@@ -44,14 +40,10 @@ find_anim:
     STA anim_base_adr+1
     STA anim_adr+1
 
-    PLA
-    STA tmp+3
-    PLA
-    STA tmp+2
-    PLA
-    STA tmp+1
-    PLA
-    STA tmp+0
+    pull tmp+3
+    pull tmp+2
+    pull tmp+1
+    pull tmp+0
 
     pull_ay
     RTS
