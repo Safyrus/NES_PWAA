@@ -42,13 +42,19 @@ img_bkg_draw:
     ; init pointers
     sta_ptr tmp, (PPU_NAMETABLE_0+$60)
     sta_ptr tmp+2, MMC5_RAM
-    ; flip the nametable to use and set the EFFECT_FLAG_DRAW flag
+    ;
     LDA effect_flags
-    EOR #EFFECT_FLAG_NT
-    ORA #EFFECT_FLAG_DRAW
-    STA effect_flags
-    AND #EFFECT_FLAG_NT
+    AND #EFFECT_FLAG_DRAW
+    BNE @flip_nt_end
+        ; flip the nametable to use and set the EFFECT_FLAG_DRAW flag
+        LDA effect_flags
+        EOR #EFFECT_FLAG_NT
+        ORA #EFFECT_FLAG_DRAW
+        STA effect_flags
+    @flip_nt_end:
     ; and offset the ppu pointer if needed
+    LDA effect_flags
+    AND #EFFECT_FLAG_NT
     ORA tmp+1
     STA tmp+1
 
@@ -80,37 +86,22 @@ img_bkg_draw:
         bnz @loop
 
 
-    ; - - - - - - - -
-    ; copy exp buffer to expansion ram
-    ; - - - - - - - -
-    ; init pointers
-    sta_ptr tmp, (MMC5_EXP_RAM+$60)
-    sta_ptr tmp+2, (MMC5_RAM+$300)
-    ; find how many loop we need to do
-    LDX #3
-    BIT effect_flags
-    BMI @exp_dialog_box_off
-        ; X = 2
-        DEX
-    @exp_dialog_box_off:
-        ; X = 3
-    ; start the loop
-    @loop_exp:
-        ; no need to check if we are still in frame
-        ; because we now that we are at the top of the frame
-        for_y @loop_exp_page, #0
-            ; load and store the next byte
-            LDA (tmp+2), Y
-            STA (tmp), Y
-        to_y_inc @loop_exp_page, #0
-        ; update pointers
-        INC tmp+1
-        INC tmp+3
-    to_x_dec @loop_exp, #0
+    ; skip MMC5 update if any character is currently drawn
+    ora_adr effect_flags, #EFFECT_FLAG_BKG_MMC5 ; pre-enable flag
+    LDA img_character
+    BNE @end
+    LDA img_animation
+    BNE @end
+        ;
+        sta_ptr tmp, (MMC5_RAM+$900)
+        JSR cp_2_mmc5_exp
+        ;
+        and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5) ; reset the flag
+        ; clear the EFFECT_FLAG_DRAW flag
+        and_adr effect_flags, #($FF - EFFECT_FLAG_DRAW)
+        ;
+        JSR update_screen_scroll
 
-    ; clear the EFFECT_FLAG_DRAW flag
-    and_adr effect_flags, #($FF - EFFECT_FLAG_DRAW)
-    JSR update_screen_scroll
-
+    @end:
     pullregs
     RTS

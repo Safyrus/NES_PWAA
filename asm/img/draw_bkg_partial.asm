@@ -42,37 +42,32 @@ img_bkg_draw_partial:
     @while_ppu_end:
     JSR img_partial_buf_flush
 
-    ;
-    sta_ptr tmp, (MMC5_RAM+$300)
-    ; init pointer to exp ram
-    sta_ptr tmp+2, (MMC5_EXP_RAM+$60)
 
-    ; copy high bytes to exp ram
-    LDY #$00
-    @while_ext:
-        LDA (tmp), Y
-        bze @continue_ext
-            BIT scanline
-            BVC @while_ext
-                STA (tmp+2), Y
-        @continue_ext:
-        inc_16 tmp
-        inc_16 tmp+2
-        ;
-        LDA tmp+1
-        BIT effect_flags
-        BMI @ext_dialog_off
-        @ext_dialog_on:
-        CMP #$65
-        BNE @while_ext
-        JMP @while_ext_end
-        @ext_dialog_off:
-        CMP #$66
-        BNE @while_ext
-    @while_ext_end:
+    ;
+    @wait_next_frame:
+        LDA scanline
+        CMP #SCANLINE_TOP
+        BNE @wait_next_frame
 
     ; disable NMI_FORCE flag
     and_adr nmi_flags, #($FF-NMI_FORCE)
+    ; clear the EFFECT_FLAG_DRAW flag
+    and_adr effect_flags, #($FF - EFFECT_FLAG_DRAW)
+
+    ;
+    LDA effect_flags
+    AND #EFFECT_FLAG_BKG_MMC5
+    BEQ @bkg_mmc5_update_end
+        ;
+        sta_ptr tmp, (MMC5_RAM+$900)
+        JSR cp_2_mmc5_exp
+        ;
+        and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5)
+    @bkg_mmc5_update_end:
+
+    ;
+    sta_ptr tmp, (MMC5_RAM+$300)
+    JSR cp_non0_2_mmc5_exp
 
     pullregs
     RTS

@@ -122,12 +122,13 @@ OAM:
     ; - - - - - - - -
     ; Visual effect variables
     ; - - - - - - - -
-    ; H..D BNSF
-    ; |  | |||+-- Fade in (1) or out (0)
-    ; |  | ||+--- Scroll position (0=left, 1=right)
-    ; |  | |+---- current Nametable (0=left, 1=right)
-    ; |  | +----- redraw Background
-    ; |  +------- currently Drawing the background
+    ; H.PD BNSF
+    ; | || |||+-- Fade in (1) or out (0)
+    ; | || ||+--- Scroll position (0=left, 1=right)
+    ; | || |+---- current Nametable (0=left, 1=right)
+    ; | || +----- redraw Background
+    ; | |+------- currently Drawing the background
+    ; | +-------- update background upper tiles when drawing a Partial frame
     ; +---------- Hide dialog box (1=Hidden)
     effect_flags: .res 1
     ;

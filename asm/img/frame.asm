@@ -228,6 +228,20 @@ frame_decode:
         sta_ptr tmp+2, MMC5_RAM
         ; decode tiles
         JSR rleinc
+        ;
+        LDA img_header
+        AND #IMG_HEADER_FULL
+        BEQ @tile_cp_end
+            LDX #>(MMC5_RAM+$300)
+            LDY #>(MMC5_RAM+$900)
+            JSR cp_page
+            INX
+            INY
+            JSR cp_page
+            INX
+            INY
+            JSR cp_page
+        @tile_cp_end:
         ; restore header byte
         PLA
     @tiles_end:
