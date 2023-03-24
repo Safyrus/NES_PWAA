@@ -29,6 +29,35 @@ update_screen_scroll:
     RTS
 
 
+; X = input page
+; Y = output page
+cp_page:
+    push_ay
+    push tmp+0
+    push tmp+1
+    push tmp+2
+    push tmp+3
+
+    @in = tmp+0
+    @out = tmp+2
+
+    STX @in+1
+    STY @out+1
+    LDY #$00
+    STY @in+0
+    STY @out+0
+    @loop:
+        LDA (@in), Y
+        STA (@out), Y
+    to_y_inc @loop, #0
+
+    pull tmp+3
+    pull tmp+2
+    pull tmp+1
+    pull tmp+0
+    pull_ay
+    RTS
+
 MAIN:
 
     .include "main/init.asm"
