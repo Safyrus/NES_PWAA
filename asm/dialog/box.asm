@@ -56,8 +56,12 @@ _draw_dialog_box_line:
 draw_dialog_box:
     pushregs
 
-    ; acknowledge nmi, in case we start just after a frame
-    and_adr nmi_flags, #($FF-NMI_DONE)
+    ; wait for the start of the frame
+    @wait_start:
+        BIT scanline
+        BVC @wait_start
+    ; and acknowledge NMI
+    JSR wait_next_frame
 
     ; - - - - - - - -
     ; frame 1 (top line)

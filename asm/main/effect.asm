@@ -33,6 +33,10 @@
         JMP @flash_end
 
     @flash_stop:
+        ; skip if palette are changed by a fade
+        LDA effect_flags
+        AND #EFFECT_FLAG_FADE
+        BEQ @flash_end
         ; update palette 0-2 and background color
         for_x @flash_loop_stop, #9
             LDA img_palettes, X
