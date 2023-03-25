@@ -7,7 +7,6 @@
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] No palette update for the 0th tile (full color 0) when drawing a character
   - [ ] Sprite being drawn during shaking, making the position incorrect
-  - [ ] Dialog box top row (use PPU background color to fix)
   - [ ] MMC5 nametable updated 1 frame too late/soon when switching animation
 - [ ] Visual effects
   - [ ] Scrolling
@@ -37,10 +36,11 @@
 
 ## Done
 
-- [X] Fix Background tiles overflow when drawing the dialog box
+- [X] Fix dialog box top row using PPU backdrop color
+- [X] Fix background tiles overflow when drawing the dialog box
 - [X] Fix temporary wrong CHR bank when switching animation
 - [X] Do sprite flickering to kind of "draw more sprites"
-- [X] PPU Background buffer (enable "instant" background update)
+- [X] PPU background buffer (enable "instant" background update)
 - [X] Fix sprites not disappearing when removing the character
 - [X] Fix temporary wrong palette
 - [X] Fix image encoding not using the background color for the character

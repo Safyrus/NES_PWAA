@@ -157,11 +157,11 @@ NMI:
         ; set PPU address
         LDA #$3F
         STA PPU_ADDR
-        LDA #$01
-        STA PPU_ADDR
+        LDX #$01
+        STX PPU_ADDR
+        LDY #$00
  
         ; send data to PPU
-        LDX #$01
         @palette_loop:
             ; send 3 colors
             LDA palettes, X
@@ -174,8 +174,9 @@ NMI:
             STA PPU_DATA
             INX
             ; send dummy background color
-            LDA #$0F
+            LDA dummy_pal, Y
             STA PPU_DATA
+            INY
             ; loop
             CPX #25
             BNE @palette_loop
@@ -261,3 +262,11 @@ NMI:
     pullregs
     ; return
     RTI
+
+
+; pal 1-7
+; double because tile background color = sprite background color
+; first background color = [palettes+0]
+dummy_pal:
+.byte      $30, $0F, $0F
+.byte $0F, $30, $0F, $0F

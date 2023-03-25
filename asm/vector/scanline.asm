@@ -32,7 +32,7 @@ scanline_irq_handler:
         JMP @end
     @scanline_irq_top_img:
         ; set next scanline
-        LDA #152
+        LDA #151
         STA MMC5_SCNL_VAL
         ; change nametable mapping
         LDA #NT_MAPPING_NT1
@@ -45,7 +45,7 @@ scanline_irq_handler:
         LDA @next_state, X
         STA scanline
         ; - - - - - - - -
-        ; first scanline (152)
+        ; first scanline (151)
         ; - - - - - - - -
         ; test if we need to change palette
         BIT effect_flags
@@ -83,7 +83,7 @@ scanline_irq_handler:
             bnz @dialog_wait_1
 
         ; - - - - - - - -
-        ; second scanline (153)
+        ; second scanline (152)
         ; - - - - - - - -
         LDX #$12
         LDY #$22
@@ -101,7 +101,7 @@ scanline_irq_handler:
             bnz @dialog_wait_2
 
         ; - - - - - - - -
-        ; third scanline (154)
+        ; third scanline (153)
         ; - - - - - - - -
         LDX #$1A
         LDY #$2A
@@ -119,7 +119,7 @@ scanline_irq_handler:
             bnz @dialog_wait_3
 
         ; - - - - - - - -
-        ; fourth scanline (155)
+        ; fourth scanline (154)
         ; - - - - - - - -
         LDX #$10
         LDY #$30
@@ -137,7 +137,7 @@ scanline_irq_handler:
             bnz @dialog_wait_4
 
         ; - - - - - - - -
-        ; fifth scanline (156)
+        ; fifth scanline (155)
         ; - - - - - - - -
         ; setup registers (scroll position)
         ; see NesDev wiki for explaination (https://www.nesdev.org/wiki/PPU_scrolling)
@@ -163,7 +163,7 @@ scanline_irq_handler:
             bnz @dialog_wait_5
 
         ; - - - - - - - -
-        ; sixth scanline (157)
+        ; sixth scanline (156)
         ; - - - - - - - -
         ; re-enable rendering with sprites
         ; LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
@@ -172,8 +172,8 @@ scanline_irq_handler:
         ; set next scanline.
         ; Because we have disabled rendering,
         ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,
-        ; Therefore, scanline 60 mean scanline when enable (156) + 60 = 216
-        LDA #60
+        ; Therefore, scanline 60 mean scanline when enable (155) + 61 = 216
+        LDA #61
         STA MMC5_SCNL_VAL
         ; return
         JMP @end
@@ -187,8 +187,8 @@ scanline_irq_handler:
         ; set next scanline.
         ; Because we have disabled rendering,
         ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,
-        ; Therefore, scanline 82 mean scanline when enable (156) + 82 = 238
-        LDA #82
+        ; Therefore, scanline 82 mean scanline when enable (155) + 83 = 238
+        LDA #83
         STA MMC5_SCNL_VAL
         @botimg_next:
         ;
