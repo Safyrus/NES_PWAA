@@ -3,7 +3,6 @@
 - [ ] Fix bugs
   - [ ] Encode ACCURATE palette with images
   - [ ] Encode ACCURATE sprites with images
-  - [ ] temporary wrong scrolling position (when starting the animation apparently)
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] No palette update for the 0th tile (full color 0) when drawing a character
   - [ ] Sprite being drawn during shaking, making the position incorrect
@@ -36,6 +35,7 @@
 
 ## Done
 
+- [X] Fix temporary wrong scrolling position when starting the animation because of NMI not acknowledge during the draw animation phase
 - [X] Fix dialog box top row using PPU backdrop color
 - [X] Fix background tiles overflow when drawing the dialog box
 - [X] Fix temporary wrong CHR bank when switching animation
