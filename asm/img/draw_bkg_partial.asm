@@ -49,6 +49,7 @@ img_bkg_draw_partial:
         CMP #SCANLINE_TOP
         BNE @wait_next_frame
 
+    JSR update_screen_scroll
     ; disable NMI_FORCE flag
     and_adr nmi_flags, #($FF-NMI_FORCE)
     ; clear the EFFECT_FLAG_DRAW flag
@@ -60,15 +61,17 @@ img_bkg_draw_partial:
     BEQ @bkg_mmc5_update_end
         ;
         sta_ptr tmp, (MMC5_RAM+$900)
-        JSR cp_2_mmc5_exp
+        JSR cp_bkgchr_2_mmc5_exp
         ;
         and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5)
+        JMP @end
     @bkg_mmc5_update_end:
 
     ;
     sta_ptr tmp, (MMC5_RAM+$300)
     JSR cp_non0_2_mmc5_exp
 
+    @end:
     pullregs
     RTS
 

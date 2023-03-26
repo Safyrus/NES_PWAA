@@ -6,7 +6,7 @@
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] No palette update for the 0th tile (full color 0) when drawing a character
   - [ ] Sprite being drawn during shaking, making the position incorrect
-  - [ ] MMC5 nametable updated 1 frame too late/soon when switching animation
+  - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time.
 - [ ] Visual effects
   - [ ] Scrolling
   - [/] Flash
@@ -35,6 +35,7 @@
 
 ## Done
 
+- [X] Fix MMC5 nametable updated 1 frame too late/soon when switching animation
 - [X] Fix temporary wrong scrolling position when starting the animation because of NMI not acknowledge during the draw animation phase
 - [X] Fix dialog box top row using PPU backdrop color
 - [X] Fix background tiles overflow when drawing the dialog box

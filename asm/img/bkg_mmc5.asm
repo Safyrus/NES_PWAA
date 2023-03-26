@@ -61,3 +61,43 @@ cp_non0_2_mmc5_exp:
     to_x_dec @loop_exp, #0
 
     RTS
+
+
+cp_bkgchr_2_mmc5_exp:
+    ; - - - - - - - -
+    ; copy exp buffer to expansion ram
+    ; - - - - - - - -
+    ; init pointers
+    sta_ptr tmp, (MMC5_RAM+$300)
+    sta_ptr tmp+2, (MMC5_EXP_RAM+$60)
+    sta_ptr tmp+4, (MMC5_RAM+$900)
+    ; find how many loop we need to do
+    LDX #3
+    BIT effect_flags
+    BMI @exp_dialog_box_off
+        ; X = 2
+        DEX
+    @exp_dialog_box_off:
+        ; X = 3
+    ; start the loop
+    @loop_exp:
+        ; no need to check if we are still in frame
+        ; because we now that we are at the top of the frame
+        for_y @loop_exp_page, #0
+            ; load and store the next byte
+            LDA (tmp), Y
+            BNE @chr
+            @bkg:
+                LDA (tmp+4), Y
+            @chr:
+                STA (tmp+2), Y
+            @next:
+        to_y_inc @loop_exp_page, #0
+        ; update pointers
+        INC tmp+1
+        INC tmp+3
+        INC tmp+5
+    to_x_dec @loop_exp, #0
+
+    RTS
+    
