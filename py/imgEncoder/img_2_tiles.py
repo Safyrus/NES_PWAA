@@ -67,10 +67,3 @@ def write_spr_tile_set_2_CHR(filename, tiles):
             t1, t2 = t[0:8, :], t[8:16, :]
             chr.write(tile_2_chr(t1))
             chr.write(tile_2_chr(t2))
-
-
-if __name__ == "__main__":
-    imgfile = sys.argv[1]
-    tiles, list = bkg_img_2_tile(bkg_col_reduce(imgfile))
-    write_tile_set_2_CHR("out.chr", tiles)
-    write_tile_list_2_bin("out.bin", list)

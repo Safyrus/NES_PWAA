@@ -223,34 +223,3 @@ def char_col_reduce(imgfile):
     pal = closest_nes_pal(img_1, MAX_COLOR_CHR+1)
     img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
     return img_2.convert("L"), pal
-
-
-if __name__ == "__main__":
-    imgfile = sys.argv[1]
-    with Image.open(imgfile) as img:
-        img_1 = img.convert("RGB")
-        img_2 = img.convert("RGB")
-
-    img_1.save("img_1_0.png")
-    img_2.save("img_2_0.png")
-
-    img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
-    img_1.save("img_1_1.png")
-    img_1 = img_1.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
-    img_1.save("img_1_2.png")
-
-    pal = closest_nes_pal(img_1, MAX_COLOR_CHR+1)
-    print(pal)
-    pal_rgb = []
-    for i in pal:
-        pal_rgb.extend(NES_PAL[i])
-        print(NES_PAL_NAM[i], end=", ")
-    print()
-    pal_rgb.reverse()
-
-    img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
-    img_2.save("img_2_1.png")
-    img_2.convert("L").save("out_gray.png")
-    print(img_2.getpalette()[:8*3])
-    img_2.putpalette(pal_rgb)
-    img_2.save("out.png")

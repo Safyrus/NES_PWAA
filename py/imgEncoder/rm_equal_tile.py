@@ -5,15 +5,23 @@ MAX_PIXEL_DIFF = 0
 MAX_PIXEL_DIFF_SPR = 0
 SPR_SIZE_W = 8
 SPR_SIZE_H = 16
+MAX_SPRITE_COUNT = 63
 
 def tile_close_present(tile, bank):
     global MAX_PIXEL_DIFF
-    a1 = np.array(tile)
+    # a1 = np.array(tile)
     for i in range(len(bank)):
-        a2 = np.array(bank[i])
-        comp = a1 == a2
-        nbPx = np.count_nonzero(comp)
-        if TILE_SIZE*TILE_SIZE - nbPx <= MAX_PIXEL_DIFF :
+        s = 0
+        for y in range(TILE_SIZE):
+            for x in range(TILE_SIZE):
+                if tile[y][x] != bank[i][y][x]:
+                    s += 1
+                    if s > MAX_PIXEL_DIFF:
+                        break
+            else:
+                continue
+            break
+        if s <= MAX_PIXEL_DIFF :
             return i
     return -1
 
@@ -77,6 +85,37 @@ def rm_closest_tiles(tileSet, tileList, tileBank):
 
 
 def rm_closest_spr_tiles(tileSet, tileList, tileBank):
+
+    # if len(tileSet) > MAX_SPRITE_COUNT:
+    #     tile2keep = []
+    #     i = 0
+    #     c = []
+    #     for t in tileSet:
+    #         c.append(np.count_nonzero(t))
+    #     while len(tile2keep) < MAX_SPRITE_COUNT and i < len(tileSet):
+    #         idx = np.argmax(c)
+    #         tile2keep.append(idx)
+    #         c[idx] = 0
+    #         i += 1
+    #     for i in range(len(tileSet)):
+    #         if i not in tile2keep:
+    #             tileSet[i] = tileBank[0].copy()
+
+    if len(tileSet) > MAX_SPRITE_COUNT:
+        print(f"WARNING: removing sprites (sprites > {MAX_SPRITE_COUNT})")
+        tile2keep = []
+        i = 0
+        tmp = []
+        for t in tileList:
+            tmp.append(t)
+        while len(tile2keep) < MAX_SPRITE_COUNT and i < len(tileSet):
+            if np.sum(tileSet[i]) > MAX_PIXEL_DIFF_SPR:
+                tile2keep.append(tmp[i])
+            i += 1
+        for i in range(len(tileSet)):
+            if i not in tile2keep:
+                tileSet[i] = tileBank[0].copy()
+
     # remove same tiles by supposing enought space in page
     tmpBank = tileBank.copy()
     for i in range(len(tileSet)):
@@ -112,15 +151,3 @@ def rm_closest_spr_tiles(tileSet, tileList, tileBank):
         tileList[i] = idx
 
     return tileSet, tileList, tileBank
-
-
-if __name__ == "__main__":
-    imgfile = sys.argv[1]
-    img = bkg_col_reduce(imgfile)
-    img.save("out_pal.png")
-    tileSet, tileList = bkg_img_2_tile(img)
-    tileSet, tileList, tileBank = rm_closest_tiles(tileSet, tileList, [])
-    print(tileList)
-    write_tile_set_2_CHR("out.chr", tileBank)
-    write_tile_list_2_bin("out.bin", tileList)
-    rebuild_bkg_img(tileList, tileBank).save("out.png")

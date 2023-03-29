@@ -1,8 +1,6 @@
 from rle_inc import *
 from rebuild import *
 
-MAX_SPRITE_COUNT = 63
-
 def grayscale_max(img):
     arr = np.array(img)
     arr *= 255//arr.max()
@@ -218,27 +216,15 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     tile_set, tile_map, tile_bank = rm_closest_tiles(
         tile_set, tile_map, tile_bank)
 
-    # loop until the number of sprite is correct
-    nb_spr = -1
-    base_spr_dif = MAX_PIXEL_DIFF_SPR
-    while ((nb_spr < 0 or nb_spr > MAX_SPRITE_COUNT) and base_spr_dif <= (SPR_SIZE_W*SPR_SIZE_H)):
-        set_spr_pixel_diff(base_spr_dif)
-        tmp_spr_bank = spr_bank.copy()
-        # convert sprite frame to tiles
-        spr_tile, spr_map, spr_info = img_2_spr(frame_spr)
-        # copy tile to bank and remove duplicate
-        spr_tile, spr_map, tmp_spr_bank = rm_closest_spr_tiles(
-            spr_tile, spr_map, tmp_spr_bank)
+    tmp_spr_bank = spr_bank.copy()
+    # convert sprite frame to tiles
+    spr_tile, spr_map, spr_info = img_2_spr(frame_spr)
+    # copy tile to bank and remove duplicate
+    spr_tile, spr_map, tmp_spr_bank = rm_closest_spr_tiles(spr_tile, spr_map, tmp_spr_bank)
 
-        base_spr_idx = (len(tmp_spr_bank) // SPR_BANK_PAGE_SIZE)*SPR_BANK_PAGE_SIZE
-        nb_spr = sum([1 if s != base_spr_idx else 0 for s in spr_map])
-        # print("nb_spr:", nb_spr, " total_spr:", len(tmp_spr_bank), " dif:", base_spr_dif)
-        if nb_spr > MAX_SPRITE_COUNT:
-            base_spr_dif += 1
+    base_spr_idx = (len(tmp_spr_bank) // SPR_BANK_PAGE_SIZE)*SPR_BANK_PAGE_SIZE
+    nb_spr = sum([1 if s != base_spr_idx else 0 for s in spr_map])
 
-    # print warnings
-    if base_spr_dif != MAX_PIXEL_DIFF_SPR:
-        print(f"WARNING: reducing sprite precision (too many sprites)")
     if nb_spr > MAX_SPRITE_COUNT:
         print(f"WARNING: too many sprite ({nb_spr})")
 
@@ -264,45 +250,3 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     spr_data.extend(spr_map)
 
     return tile_map, tile_bank, spr_info, spr_data, spr_bank, pal_map, pal, pal_chr
-
-
-if __name__ == "__main__":
-    background_img_path = sys.argv[1]
-    character_anim_path = sys.argv[2]
-    tile_offset_hi = 0
-    if len(sys.argv) > 3:
-        tile_offset_hi = int(sys.argv[3])
-
-    tile_bank = [
-        np.full((TILE_SIZE, TILE_SIZE), 0),
-        np.full((TILE_SIZE, TILE_SIZE), 1),
-        np.full((TILE_SIZE, TILE_SIZE), 2),
-        np.full((TILE_SIZE, TILE_SIZE), 3),
-    ]
-    spr_bank = [
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 0),
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 1),
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 2),
-        np.full((SPR_SIZE_H, SPR_SIZE_W), 3),
-    ]
-
-    tile_map, tile_bank, spr_info, spr_map, spr_bank, _, _, _ = encode_frame(
-        background_img_path, character_anim_path, tile_bank, spr_bank, tile_offset_hi)
-
-    # write tilemap to file
-    with open("test_tile.bin", "wb") as chr:
-        for t in tile_map:
-            chr.write(t.to_bytes(1, "big"))
-    # write sprite map to file
-    with open("test_spr.bin", "wb") as chr:
-        for t in spr_map:
-            chr.write(t.to_bytes(1, "big"))
-
-    # write CHR files
-    write_tile_set_2_CHR("bank.chr", tile_bank)
-    write_spr_tile_set_2_CHR("bank_spr.chr", spr_bank)
-    if tile_offset_hi == 0:
-        final_img = rebuild_frame_img(tile_map, spr_map, tile_bank, spr_bank)
-        grayscale_max(final_img).save("out.png")
-    else:
-        print("TODO: rebuild image with offset")
