@@ -2,11 +2,12 @@
 
 - [ ] Fix bugs
   - [ ] Encode ACCURATE palette with images
-  - [ ] Encode ACCURATE sprites with images
+  - [ ] Encoding not converting images to tiles with the maximum colors
   - [ ] Character sprites being all redrawn for every animation frame
-  - [ ] No palette update for the 0th tile (full color 0) when drawing a character
+  - [ ] No update for the 0th tile (full color 0) when drawing a character
   - [ ] Sprite being drawn during shaking, making the position incorrect
-  - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time.
+  - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
+  - [ ] Entire screen glitching when loading the next text data block
 - [ ] Visual effects
   - [ ] Scrolling
   - [/] Flash
@@ -32,9 +33,13 @@
 - [ ] Python script documentation.
 - [ ] Assembly documentation.
 - [ ] Data structure documentation.
+- [ ] Fix cross emulators bugs
+  - [ ] MMC5 Scanline not behaving correctly ?
 
 ## Done
 
+- [X] Add fast-forward dialog button
+- [X] Encode ACCURATE sprites with images (Choose to maximize top sprites and cut bottom ones if too many)
 - [X] Fix MMC5 nametable updated 1 frame too late/soon when switching animation
 - [X] Fix temporary wrong scrolling position when starting the animation because of NMI not acknowledge during the draw animation phase
 - [X] Fix dialog box top row using PPU backdrop color

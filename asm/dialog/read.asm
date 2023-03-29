@@ -169,6 +169,12 @@ read_text:
                 JSR read_next_dailog
         @no_wait_flag:
 
+        ; if TXT_FLAG_SKIP
+        LDA txt_flags
+        AND #TXT_FLAG_SKIP
+            ; then read next char immediatly
+            bnz @start
+
         ; if delay > 0
         LDA txt_delay
         bze @delay_end
@@ -193,7 +199,7 @@ read_text:
         ; - - - - - - - -
         ; main part
         ; - - - - - - - -
-
+        @start:
         ; c = next_char()
         JSR read_next_char
 

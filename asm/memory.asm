@@ -158,13 +158,14 @@ OAM:
     ; Variables for text reading
     ; - - - - - - - -
     ; first byte of flags
-    ; R.PZ BFIW
-    ; | || |||+-- Wait for user input to continue
-    ; | || ||+--- Player input
-    ; | || |+---- Force action (ignore player inputs)
-    ; | || +----- Wait for dialog box drawing
-    ; | |+------- Wait for LZ decoding
-    ; | +-------- Wait for print
+    ; RSPZ BFIW
+    ; |||| |||+-- Wait for user input to continue
+    ; |||| ||+--- Player input
+    ; |||| |+---- Force action (ignore player inputs)
+    ; |||| +----- Wait for dialog box drawing
+    ; |||+------- Wait for LZ decoding
+    ; ||+-------- Wait for print
+    ; |+--------- Skip to end of dialog
     ; +---------- Ready (set to 1 to enable read subroutines)
     txt_flags: .res 1
     ; speed of text

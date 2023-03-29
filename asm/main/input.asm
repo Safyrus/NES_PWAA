@@ -61,16 +61,17 @@
             STA choice
             JMP @flags_end
     @no_choice:
+        and_adr txt_flags, #($FF - TXT_FLAG_INPUT)
+        ; is button A or B pressed ?
         LDA buttons_1
         AND #$C0
-        bze @txt_input_no
-            LDA txt_flags
-            ORA #TXT_FLAG_INPUT
-            STA txt_flags
-            JMP @txt_input_end
-        @txt_input_no:
-            LDA txt_flags
-            AND #($FF - TXT_FLAG_INPUT)
-            STA txt_flags
-        @txt_input_end:
+        BEQ @txt_input_next_end
+            ora_adr txt_flags, #TXT_FLAG_INPUT
+        @txt_input_next_end:
+        ; is button B pressed ?
+        LDA buttons_1
+        AND #$40
+        BEQ @txt_input_skip_end
+            ora_adr txt_flags, #TXT_FLAG_SKIP
+        @txt_input_skip_end:
     @flags_end:
