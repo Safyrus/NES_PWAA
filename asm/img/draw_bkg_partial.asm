@@ -7,6 +7,7 @@ img_bkg_draw_partial:
 
     ; init data pointer
     sta_ptr tmp, MMC5_RAM
+    sta_ptr tmp+4, (MMC5_RAM+$300)
 
     ; enable NMI_FORCE flag
     ora_adr nmi_flags, #NMI_FORCE
@@ -17,28 +18,34 @@ img_bkg_draw_partial:
     ; while not end of buffer
     @while_ppu:
         ; get next byte
-        LDA (tmp), Y
-        inc_16 tmp
+        LDA (tmp+4), Y
         ; if byte = 0, then flush buffer
-        CMP #$00
-        BEQ @flush
-        @draw:
-            JSR img_partial_buf_draw
-            JMP @continue
+        BNE @draw
         @flush:
+            inc_16 tmp
+            ; then flush buffer (and skip the low tile)
             JSR img_partial_buf_flush
             JSR img_partial_ppuadr
+            JMP @continue
+        @draw:
+            LDA (tmp), Y
+            inc_16 tmp
+            ; else draw the low tile
+            JSR img_partial_buf_draw
         @continue:
+        inc_16 tmp+4
+        ; wild code to check if the loop is finished
+        ; depending on if the dialog box is active or not
         LDA tmp+1
         BIT effect_flags
         BMI @ppu_dialog_off
         @ppu_dialog_on:
-        CMP #$62
-        BNE @while_ppu
-        JMP @while_ppu_end
+            CMP #$62
+            BNE @while_ppu
+            JMP @while_ppu_end
         @ppu_dialog_off:
-        CMP #$63
-        BNE @while_ppu
+            CMP #$63
+            BNE @while_ppu
     @while_ppu_end:
     JSR img_partial_buf_flush
 

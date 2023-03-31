@@ -135,10 +135,7 @@
             BNE @choice_highlight_loop
     @choice_highlight_end:
 
-
-
-    LDA shake_timer
-    bnz @sprite_fliker_end
+    ; sprite flickering effect
     LDX #(RES_SPR*4)
     LDY #$FC
     @sprite_fliker_loop:
@@ -183,4 +180,16 @@
         ; next
         CPX #$80 - (RES_SPR*2)
         blt @sprite_fliker_loop
+
+    LDY #$3F
+    for_x @sprite_fliker_buf, #RES_SPR
+        LDA spr_x_buf, X
+        STA tmp
+        LDA spr_x_buf, Y
+        STA spr_x_buf, X
+        LDA tmp
+        STA spr_x_buf, Y
+        ; next
+        DEY
+    to_x_inc @sprite_fliker_buf, #32
     @sprite_fliker_end:
