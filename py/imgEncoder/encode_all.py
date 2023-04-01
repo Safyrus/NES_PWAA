@@ -38,14 +38,18 @@ warning_prg_size = False
 def warning_CHR_size(tile_bank, spr_bank):
     global warning_chr_size
     if (len(tile_bank) + len(spr_bank)) >= 65536 and not warning_chr_size:
+        print("#"*48)
         print("WARNING: CHR size is bigger than 1 MB !")
+        print("#"*48)
         warning_chr_size = True
 
 
 def warning_PRG_size(PRG_size):
     global warning_prg_size
     if PRG_size >= 1024*1024 and not warning_prg_size:
+        print("#"*48)
         print("WARNING: PRG size is bigger than 1 MB !")
+        print("#"*48)
         warning_prg_size = True
 
 
@@ -234,7 +238,6 @@ def encode_all(json):
 def encode_frame_bkg(background, tile_bank, pal_bank, pal_set):
     frame = []
 
-    # Byte 0: flags.
     # FPTS ..BB
     # ||||   ++-- CHR bits for the MMC5 upper CHR Bank bits
     # |||+------- is Sprite map present ?
@@ -243,10 +246,9 @@ def encode_frame_bkg(background, tile_bank, pal_bank, pal_set):
     # +---------- 1 = Full frame
     #             0 = partial frame
     flags = 0b11100000
-    frame.append(flags)
 
     # read and convert image to index
-    background_img, pal = bkg_col_reduce_2(background)
+    background_img, pal = bkg_col_reduce(background)
     background_img = img_2_idx(background_img)
     if pal_set:
         pal = pal_set[0]
@@ -266,6 +268,9 @@ def encode_frame_bkg(background, tile_bank, pal_bank, pal_set):
         data.append(((t//256) + CHR_START_BANK) % 64)
     # encode tilemap
     tile_map = rleinc_encode(data)
+
+    # Byte 0: flags.
+    frame.append(flags | len(tile_bank)//(256*64))
 
     # palette bytes
     frame.append(pal//256)
@@ -329,10 +334,7 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
     for i in range(len(tile_map2)):
         change = tile_map1[i] != tile_map2[i]
         change_map.append(change)
-        if change:
-            tile_map.append(tile_map2[i])
-        else:
-            tile_map.append(0)
+        tile_map.append(tile_map2[i] if change else 0)
 
     # add sprites
     spr_map = []
@@ -346,11 +348,8 @@ def encode_frame_partial(background, character, last_character, tile_bank, spr_b
         data.append(t % 256)
     for i in range(len(tile_map)):
         t = (tile_map[i] // 256) + CHR_START_BANK
-        p = (pal_map[i] << 6)
-        if change_map[i]:
-            data.append((t % 64) + p)
-        else:
-            data.append(0)
+        p = pal_map[i] << 6
+        data.append((t % 64) + p if change_map[i] else 0)
     # encode data with RLE_INC
     tile_map = rleinc_encode(data)
     for i in range(len(spr_map)):
@@ -395,6 +394,8 @@ def main():
     if len(sys.argv) > 2:
         basechr_file = sys.argv[2]
     find_best_pixel_dif = False
+    if len(sys.argv) > 3:
+        set_pixel_diff(int(sys.argv[3]))
 
     # read json
     with open(json_file) as f:

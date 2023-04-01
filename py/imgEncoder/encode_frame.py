@@ -170,7 +170,7 @@ def img_2_spr(img):
 def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[], tile_offset_hi=0, do_rleinc=True, save_imgs=True):
 
     # reduce color count to 4 for background and 7 (+1 for transparent) for character
-    background_img, pal = bkg_col_reduce_2(background_img_path)
+    background_img, pal = bkg_col_reduce(background_img_path)
     character_img, pal_chr = char_col_reduce(character_img_path)
 
     background_img = img_2_idx(background_img)

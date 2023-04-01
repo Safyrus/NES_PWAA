@@ -34,14 +34,6 @@ def set_spr_pixel_diff(val):
     global MAX_PIXEL_DIFF_SPR
     MAX_PIXEL_DIFF_SPR = val
 
-def tile_present(tile, bank):
-    a1 = np.array(tile)
-    for i in range(len(bank)):
-        a2 = np.array(bank[i])
-        if np.array_equal(a1, a2):
-            return i
-    return -1
-
 
 def spr_tile_close_present(tile, bank):
     global MAX_PIXEL_DIFF_SPR
@@ -62,17 +54,6 @@ def spr_tile_close_present(tile, bank):
     return -1
 
 
-def rm_exact_tiles(tileSet, tileList, tileBank):
-    for i in range(len(tileSet)):
-        tile = tileSet[i]
-        idx = tile_present(tile, tileBank)
-        if idx < 0:
-            tileBank.append(tile)
-            idx = len(tileBank)-1
-        tileList[i] = idx
-    return tileSet, tileList, tileBank
-
-
 def rm_closest_tiles(tileSet, tileList, tileBank):
     for i in range(len(tileSet)):
         tile = tileSet[i]
@@ -85,21 +66,6 @@ def rm_closest_tiles(tileSet, tileList, tileBank):
 
 
 def rm_closest_spr_tiles(tileSet, tileList, tileBank):
-
-    # if len(tileSet) > MAX_SPRITE_COUNT:
-    #     tile2keep = []
-    #     i = 0
-    #     c = []
-    #     for t in tileSet:
-    #         c.append(np.count_nonzero(t))
-    #     while len(tile2keep) < MAX_SPRITE_COUNT and i < len(tileSet):
-    #         idx = np.argmax(c)
-    #         tile2keep.append(idx)
-    #         c[idx] = 0
-    #         i += 1
-    #     for i in range(len(tileSet)):
-    #         if i not in tile2keep:
-    #             tileSet[i] = tileBank[0].copy()
 
     if len(tileSet) > MAX_SPRITE_COUNT:
         print(f"WARNING: removing sprites (sprites > {MAX_SPRITE_COUNT})")

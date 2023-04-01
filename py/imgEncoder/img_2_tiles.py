@@ -6,10 +6,6 @@ TILE_SIZE = 8
 
 
 def img_2_tile(img):
-    return bkg_img_2_tile(img)
-
-
-def bkg_img_2_tile(img):
     arr = np.array(img)
     w, h = arr.shape[0], arr.shape[1]
     tiles = [arr[x:x+TILE_SIZE, y:y+TILE_SIZE]
