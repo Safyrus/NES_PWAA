@@ -4,6 +4,10 @@
 # Python
 __pycache__
 
+# C
+c/imgs
+c/maps
+
 # Other
 ignore/
 bin/
