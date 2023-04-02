@@ -82,7 +82,7 @@ def img2bin(args):
             img = img_2_idx(img)
             # convert image to tiles
             tile_set, _ = img_2_tile(img)
-            pal_maps.append(None)
+            pal_maps.append([0]*len(tile_set))
         # save image
         with open(filename, "wb") as f:
             for t in tile_set:

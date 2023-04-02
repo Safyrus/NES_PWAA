@@ -181,9 +181,6 @@ def encode_frame(background_img_path, character_img_path, spr_bank=[]):
     frame = merge_image(background_img, character_img)
 
     # remove sprite colors from background
-    frame_nospr = frame
-    for i in range(1, 4):
-        frame_nospr = np.where(frame_nospr == palettes[3][i], 0, frame_nospr)
     # get sprite layer
     frame_spr = frame
     for i in range(0, 4):

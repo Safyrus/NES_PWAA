@@ -115,8 +115,9 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names):
                 tile_map2_idx = map_names.index(chars[i])
                 tile_map1 = tile_maps[tile_map1_idx]
                 tile_map2 = tile_maps[tile_map2_idx]
-                pal_map = pal_maps[tile_map2_idx]
-                frame, spr_bank, spr_data_bnk_idx = encode_frame_partial(bck, chars[i], spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map)
+                pal_map1 = pal_maps[tile_map1_idx]
+                pal_map2 = pal_maps[tile_map2_idx]
+                frame, spr_bank, spr_data_bnk_idx = encode_frame_partial(bck, chars[i], spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2)
                 spr_bnk_to_fix[anim_name] = spr_data_bnk_idx
                 # frames += frame
                 frames.append(frame)
@@ -246,7 +247,7 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set):
     return frame
 
 
-def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map):
+def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2):
     frame = []
 
     # Byte 0: flags.
@@ -291,7 +292,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     tile_map = []
     change_map = []
     for i in range(len(tile_map2)):
-        change = tile_map1[i] != tile_map2[i]
+        change = tile_map1[i] != tile_map2[i] or pal_map1[i] != pal_map2[i]
         change_map.append(change)
         tile_map.append(tile_map2[i] if change else 0)
 
@@ -307,7 +308,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
         data.append(t % 256)
     for i in range(len(tile_map)):
         t = (tile_map[i] // 256) + CHR_START_BANK
-        p = pal_map[i] << 6 if pal_map else 0
+        p = pal_map2[i] << 6
         data.append((t % 64) + p if change_map[i] else 0)
     # encode data with RLE_INC
     tile_map = rleinc_encode(data)
