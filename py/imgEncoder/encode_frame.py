@@ -1,13 +1,7 @@
 from rle_inc import *
-from rebuild import *
-
-def grayscale_max(img):
-    arr = np.array(img)
-    arr *= 255//arr.max()
-    return Image.fromarray(arr)
 
 
-def find_palettes(_, character_img):
+def find_palettes(character_img):
     palettes = []
 
     colors = character_img.getcolors()  # get character colors
@@ -45,7 +39,7 @@ def find_palettes(_, character_img):
 def merge_image(background_img, character_img):
     b = np.array(background_img)
     c = np.array(character_img)
-    c = np.where(c == 0, c-1, c+2)
+    c = np.where(c == 0, c-1, c+3)
     c = np.where(c == 3, 0, c)
     frame = np.where(c == 255, b, c)
     return frame
@@ -167,7 +161,7 @@ def img_2_spr(img):
     return spr_tile, spr_map, info
 
 
-def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank=[], tile_offset_hi=0, do_rleinc=True, save_imgs=True):
+def encode_frame(background_img_path, character_img_path, spr_bank=[]):
 
     # reduce color count to 4 for background and 7 (+1 for transparent) for character
     background_img, pal = bkg_col_reduce(background_img_path)
@@ -176,16 +170,12 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     background_img = img_2_idx(background_img)
     character_img = img_2_idx(character_img)
 
-    if save_imgs:
-        grayscale_max(background_img).save("bck.png")
-        grayscale_max(character_img).save("chr.png")
-
     # find the NES palette
     # bp0 = background  sp0 = char sec
     # bp1 = char prim   sp1 = ...
     # bp2 = contour     sp2 = ...
     # bp3 = ...         sp3 = ...
-    palettes = find_palettes(background_img, character_img)
+    palettes = find_palettes(character_img)
 
     # merge background and character into 1 image
     frame = merge_image(background_img, character_img)
@@ -194,8 +184,6 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     frame_nospr = frame
     for i in range(1, 4):
         frame_nospr = np.where(frame_nospr == palettes[3][i], 0, frame_nospr)
-    if save_imgs:
-        grayscale_max(Image.fromarray(frame_nospr)).save("bckchr.png")
     # get sprite layer
     frame_spr = frame
     for i in range(0, 4):
@@ -205,16 +193,6 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
     # convert it to range 0-3
     for i in range(1, 4):
         frame_spr = np.where(frame_spr == palettes[3][i], i, frame_spr)
-    if save_imgs:
-        grayscale_max(Image.fromarray(frame_spr)).save("spr.png")
-
-    # convert frame to tiles
-    tile_set, tile_map = img_2_tile(frame_nospr)
-    # apply the palettes to the tiles
-    tile_set, pal_map = apply_palette(tile_set, palettes)
-    # remove similar tiles
-    tile_set, tile_map, tile_bank = rm_closest_tiles(
-        tile_set, tile_map, tile_bank)
 
     tmp_spr_bank = spr_bank.copy()
     # convert sprite frame to tiles
@@ -233,20 +211,7 @@ def encode_frame(background_img_path, character_img_path, tile_bank=[], spr_bank
         spr_map[i] %= SPR_BANK_PAGE_SIZE
     spr_info["b"] = len(spr_bank) // SPR_BANK_PAGE_SIZE
 
-    if do_rleinc:
-        # convert tilemap to more compressable data (all low bytes, then all high bytes)
-        data = []
-        for t in tile_map:
-            data.append(t % 256)
-        for t in tile_map:
-            data.append(((t//256) + tile_offset_hi) % 64)
-        # put pal map into tile map
-        for i in range(len(pal_map)):
-            data[i+len(pal_map)] += (pal_map[i] << 6)
-        # encode with RLE_INC data
-        tile_map = rleinc_encode(data)
-        spr_map = rleinc_encode(spr_map)
     spr_data = [spr_info["w"], spr_info["b"], spr_info["x"], spr_info["y"]]
     spr_data.extend(spr_map)
 
-    return tile_map, tile_bank, spr_info, spr_data, spr_bank, pal_map, pal, pal_chr
+    return spr_data, spr_bank, pal, pal_chr

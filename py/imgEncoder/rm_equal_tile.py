@@ -1,15 +1,15 @@
 from img_2_tiles import *
-from rebuild import *
 
+SPR_BANK_PAGE_SIZE = 128
 MAX_PIXEL_DIFF = 0
 MAX_PIXEL_DIFF_SPR = 0
 SPR_SIZE_W = 8
 SPR_SIZE_H = 16
 MAX_SPRITE_COUNT = 63
 
+
 def tile_close_present(tile, bank):
     global MAX_PIXEL_DIFF
-    # a1 = np.array(tile)
     for i in range(len(bank)):
         s = 0
         for y in range(TILE_SIZE):
@@ -21,7 +21,7 @@ def tile_close_present(tile, bank):
             else:
                 continue
             break
-        if s <= MAX_PIXEL_DIFF :
+        if s <= MAX_PIXEL_DIFF:
             return i
     return -1
 
@@ -29,6 +29,7 @@ def tile_close_present(tile, bank):
 def set_pixel_diff(val):
     global MAX_PIXEL_DIFF
     MAX_PIXEL_DIFF = val
+
 
 def set_spr_pixel_diff(val):
     global MAX_PIXEL_DIFF_SPR
@@ -49,7 +50,7 @@ def spr_tile_close_present(tile, bank):
         a2 = np.array(bank[i])
         comp = a1 == a2
         nbPx = np.count_nonzero(comp)
-        if SPR_SIZE_W*SPR_SIZE_H - nbPx <= MAX_PIXEL_DIFF_SPR :
+        if SPR_SIZE_W*SPR_SIZE_H - nbPx <= MAX_PIXEL_DIFF_SPR:
             return i
     return -1
 
@@ -68,7 +69,6 @@ def rm_closest_tiles(tileSet, tileList, tileBank):
 def rm_closest_spr_tiles(tileSet, tileList, tileBank):
 
     if len(tileSet) > MAX_SPRITE_COUNT:
-        print(f"WARNING: removing sprites (sprites > {MAX_SPRITE_COUNT})")
         tile2keep = []
         i = 0
         tmp = []

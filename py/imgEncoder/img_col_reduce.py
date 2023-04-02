@@ -163,7 +163,6 @@ def closest_color(pal, color):
 
 def closest_nes_pal(img, size):
     img_pal_idx = img.getcolors()
-    img_pal_idx = sorted(img_pal_idx, key=lambda tup: tup[0], reverse=True)
     img_pal_idx = [v for _, v in img_pal_idx]  # remove color count from list
 
     img_pal = img.getpalette()
@@ -179,12 +178,22 @@ def closest_nes_pal(img, size):
 
 def sort_nes_pal(pal):
     pal.sort()
+    lo_idx = 0
+    hi_idx = len(pal)
     if 0x0F in pal:
         i = pal.index(0x0F)
-        pal[0], pal[i] = pal[i], pal[0]
+        pal[lo_idx], pal[i] = pal[i], pal[lo_idx]
+        lo_idx += 1
     if 0x2D in pal:
         i = pal.index(0x2D)
-        pal[0], pal[i] = pal[i], pal[0]
+        pal[lo_idx], pal[i] = pal[i], pal[lo_idx]
+        lo_idx += 1
+    if 0x30 in pal:
+        i = pal.index(0x30)
+        hi_idx -= 1
+        pal[hi_idx], pal[i] = pal[i], pal[hi_idx]
+    if lo_idx or hi_idx != len(pal):
+        pal[lo_idx:hi_idx].sort()
     return pal
 
 
@@ -199,10 +208,8 @@ def bkg_col_reduce(imgfile):
 
 def char_col_reduce(imgfile):
     with Image.open(imgfile) as img:
-        img_1 = img.convert("RGB")
-        img_2 = img.convert("RGB")
-    img_1 = ImageEnhance.Color(img_1).enhance(SATURATION_CHR)
-    img_1 = img_1.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
-    pal = closest_nes_pal(img_1, MAX_COLOR_CHR+1)
-    img_2 = img_2.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
-    return img_2.convert("L"), pal
+        img = img.convert("RGB")
+    img = ImageEnhance.Color(img).enhance(SATURATION_CHR)
+    img = img.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)
+    pal = closest_nes_pal(img, MAX_COLOR_CHR+1)
+    return img.convert('L'), pal
