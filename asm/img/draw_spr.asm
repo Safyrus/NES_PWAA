@@ -21,7 +21,7 @@ img_spr_draw:
 
     JSR img_spr_clear
     ; set pointer to sprite data    
-    sta_ptr tmp+2, (MMC5_RAM+$600)
+    sta_ptr tmp+2, IMG_CHR_BUF_SPR
 
     ; set sprite bank
     mov MMC5_CHR_BNK3, img_spr_b

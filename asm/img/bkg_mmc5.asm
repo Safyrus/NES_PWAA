@@ -68,9 +68,9 @@ cp_bkgchr_2_mmc5_exp:
     ; copy exp buffer to expansion ram
     ; - - - - - - - -
     ; init pointers
-    sta_ptr tmp, (MMC5_RAM+$300)
+    sta_ptr tmp, IMG_CHR_BUF_HI
     sta_ptr tmp+2, (MMC5_EXP_RAM+$60)
-    sta_ptr tmp+4, (MMC5_RAM+$900)
+    sta_ptr tmp+4, IMG_BKG_BUF_HI
     ; find how many loop we need to do
     LDX #3
     BIT effect_flags

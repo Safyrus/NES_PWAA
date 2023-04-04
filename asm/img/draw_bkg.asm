@@ -41,7 +41,7 @@ img_bkg_draw:
     STA mmc5_banks+0
     ; init pointers
     sta_ptr tmp, (PPU_NAMETABLE_0+$60)
-    sta_ptr tmp+2, MMC5_RAM
+    sta_ptr tmp+2, IMG_BKG_BUF_LO
     ;
     LDA effect_flags
     AND #EFFECT_FLAG_DRAW
@@ -93,7 +93,7 @@ img_bkg_draw:
     LDA img_animation
     BNE @end
         ;
-        sta_ptr tmp, (MMC5_RAM+$900)
+        sta_ptr tmp, IMG_BKG_BUF_HI
         JSR cp_2_mmc5_exp
         ;
         and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5) ; reset the flag

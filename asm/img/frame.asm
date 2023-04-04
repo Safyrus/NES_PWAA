@@ -224,24 +224,20 @@ frame_decode:
     @tiles:
         ; save header byte
         PHA
-        ; set pointer to tiles background buffer
-        sta_ptr tmp+2, MMC5_RAM
-        ; decode tiles
-        JSR rleinc
         ;
         LDA img_header
         AND #IMG_HEADER_FULL
-        BEQ @tile_cp_end
-            LDX #>(MMC5_RAM+$300)
-            LDY #>(MMC5_RAM+$900)
-            JSR cp_page
-            INX
-            INY
-            JSR cp_page
-            INX
-            INY
-            JSR cp_page
-        @tile_cp_end:
+        BEQ @tiles_partial
+        @tiles_full:
+            ; set pointer to tiles background buffer
+            sta_ptr tmp+2, IMG_BKG_BUF_LO
+            JMP @tile_type_end
+        @tiles_partial:
+            ; set pointer to tiles character buffer
+            sta_ptr tmp+2, IMG_CHR_BUF_LO
+        @tile_type_end:
+        ; decode tiles
+        JSR rleinc
         ; restore header byte
         PLA
     @tiles_end:
@@ -273,7 +269,7 @@ frame_decode:
         TYA
         add_A2ptr tmp
         ; set pointer to sprites background buffer
-        sta_ptr tmp+2, (MMC5_RAM+$600)
+        sta_ptr tmp+2, IMG_CHR_BUF_SPR
         ; decode sprites
         JSR rleinc
         ; update number of sprites

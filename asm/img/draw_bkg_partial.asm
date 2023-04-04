@@ -6,8 +6,8 @@ img_bkg_draw_partial:
     STA mmc5_banks+0
 
     ; init data pointer
-    sta_ptr tmp, MMC5_RAM
-    sta_ptr tmp+4, (MMC5_RAM+$300)
+    sta_ptr tmp, IMG_CHR_BUF_LO
+    sta_ptr tmp+4, IMG_CHR_BUF_HI
 
     ; enable NMI_FORCE flag
     ora_adr nmi_flags, #NMI_FORCE
@@ -67,7 +67,6 @@ img_bkg_draw_partial:
     AND #EFFECT_FLAG_BKG_MMC5
     BEQ @bkg_mmc5_update_end
         ;
-        sta_ptr tmp, (MMC5_RAM+$900)
         JSR cp_bkgchr_2_mmc5_exp
         ;
         and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5)
@@ -75,7 +74,7 @@ img_bkg_draw_partial:
     @bkg_mmc5_update_end:
 
     ;
-    sta_ptr tmp, (MMC5_RAM+$300)
+    sta_ptr tmp, IMG_CHR_BUF_HI
     JSR cp_non0_2_mmc5_exp
 
     @end:
