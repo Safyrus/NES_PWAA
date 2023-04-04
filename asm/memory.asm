@@ -44,8 +44,8 @@
     ; value of the PPU_MASK (need to be refresh manually)
     ppu_ctrl_val: .res 1
 
-    ; padding
-    .res 2
+    ; pointer to current text to read
+    txt_rd_ptr: .res 2
 
     ; Palettes data to send to PPU during VBLANK
     ;   byte 0   = transparente color
@@ -74,11 +74,8 @@
     ; packet of size 0 means there is no more data to draw
     background: .res $60-1
 
-    ; pointer to current text to read
-    txt_rd_ptr: .res 2
-
     ; temporary variables
-    tmp: .res 8
+    tmp: .res 12
 
 ;****************
 ; OAM SEGMENT
@@ -274,6 +271,9 @@ OAM:
     ; - - - - - - - -
     ; Other variables
     ; - - - - - - - -
+    ;
+    mmc5_upper_chr: .res 1
+    ;
     dialog_flag: .res 16
     ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
     mmc5_banks: .res 4

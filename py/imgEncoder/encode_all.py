@@ -6,48 +6,67 @@ import subprocess
 from encode_frame import *
 from img2bin import img2bin
 
-CHR_START_BANK = 1
-PRG_START_BANK = 0xC0
 EMPTY_IMG = "../../data/empty.png"
 IMG_NB_TILE = 256*3
 
 warning_chr_size = False
 warning_prg_size = False
 
-# json structure
-# [
-#   {
-#     "background": "img_path"
-#     "character": [
-#       "img_path",
-#       "...",
-#     ],
-#     "time": [
-#         16
-#         ...,
-#     ],
-#     "palettes": [
-#         [0, 0, 0, 0],
-#         [0, 0, 0, 0, 0, 0]
-#     ]
-#   },
-#   {
-#     ...
-#   },
-#   ...
-# ]
+
+def ca65_file(frames, frames_ischr, frames_name, anims, pal_bank, prg_start_bank=0):
+    print("ca65 file")
+    ca65_inc = ".segment \"IMGS_BNK\"\n"
+    ca65_bkg = "img_bkg_table:\n"
+    ca65_bkg_bnk = "img_bkg_table_bank:\n"
+    ca65_anim = "img_anim_table:\ndefault:\n.byte $01 ; size\n"
+    chr_anims = {}
+    PRG_size = 0
+    for i in range(len(frames)):
+        bank = (PRG_size // 8192) + prg_start_bank
+        # include frames
+        ca65_inc += "img_" + str(i) + ":\n.incbin \"imgs/img_" + str(i) + ".bin\" ;" + frames_name[i] + "\n"
+        if frames_ischr[i]:
+            # save character adr and bnk
+            chr_adr = ".word (img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR ; " + frames_name[i] + "\n"
+            chr_bnk = ".byte $" + hex(bank)[2:] + " ; bank\n"
+            chr_anims[frames_name[i]] = chr_adr + chr_bnk
+        else:
+            # background index table
+            ca65_bkg += ".word (img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR ; " + frames_name[i] + "\n"
+            ca65_bkg_bnk += ".byte $" + hex(bank)[2:] + "\n"
+        #
+        frames[i] = bytes(frames[i])
+        PRG_size += len(frames[i])
+    for i, anim in enumerate(anims):
+        ca65_anim += "img_anim_" + str(i) + ":\n.byte $" + "%0.2X" % ((len(anim) << 2)+1) + " ; size\n"
+        for a in anim:
+            ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
+    ca65_pal = "palette_table:\n"
+    for p in pal_bank:
+        pal = ".byte"
+        pal_cmt = " ;"
+        for c in p:
+            pal += f" $" + "%0.2X" % c + ","
+            if c > 64:
+                print(f"ERROR: wrong palette ({c})")
+                pal_cmt += f" ERROR,"
+            else:
+                pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
+        ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
+    ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
+    ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n" + ca65_pal + "\n"
+    return ca65
 
 
-def encode_all(json, tile_bank, tile_maps, pal_maps, map_names):
+def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr_start_bank=0):
     # prepare data
     frames = []
     frames_name = []
-    frame_ischr = []
+    frames_ischr = []
     anims = []
     spr_bank = [
         np.full((SPR_SIZE_H, SPR_SIZE_W), 0)
     ]
-    pal_bank = []
 
     # get all file and check if there all exist
     print("check files")
@@ -77,10 +96,10 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names):
             if "palettes" in anim:
                 pal_set = anim["palettes"]
             tile_map = tile_maps[map_names.index(anim["background"])]
-            frame = encode_frame_bkg(anim["background"], tile_map, pal_bank, pal_set)
+            frame = encode_frame_bkg(anim["background"], tile_map, pal_bank, pal_set, chr_start_bank=chr_start_bank)
             # frames += frame
             frames.append(frame)
-            frame_ischr.append(False)
+            frames_ischr.append(False)
             frames_name.append(anim["background"])
     print("\033[A\033[2K\rencoded all background")
 
@@ -117,11 +136,11 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names):
                 tile_map2 = tile_maps[tile_map2_idx]
                 pal_map1 = pal_maps[tile_map1_idx]
                 pal_map2 = pal_maps[tile_map2_idx]
-                frame, spr_bank, spr_data_bnk_idx = encode_frame_partial(bck, chars[i], spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2)
+                frame, spr_bank, spr_data_bnk_idx = encode_frame_partial(bck, chars[i], spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2, chr_start_bank=chr_start_bank)
                 spr_bnk_to_fix[anim_name] = spr_data_bnk_idx
                 # frames += frame
                 frames.append(frame)
-                frame_ischr.append(True)
+                frames_ischr.append(True)
                 frames_name.append(anim_name)
             #
             anim_frame.append((anim_name, times[i] % 128))
@@ -130,54 +149,19 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names):
     print("\033[A\033[2K\rencoded all character")
 
     print("fixing some bytes")
-    offset = (len(tile_bank) // 16 // 256) + CHR_START_BANK
+    offset = (len(tile_bank) // 16 // 256) + chr_start_bank
     for k, v in spr_bnk_to_fix.items():
         for i in range(len(frames)):
             if frames_name[i] == k:
                 frames[i][v] += offset
 
-    # make ca65 file
-    print("ca65 file")
-    ca65_inc = ".segment \"IMGS_BNK\"\n"
-    ca65_bkg = "img_bkg_table:\n"
-    ca65_bkg_bnk = "img_bkg_table_bank:\n"
-    ca65_anim = "img_anim_table:\ndefault:\n.byte $01 ; size\n"
-    chr_anims = {}
-    PRG_size = 0
-    for i in range(len(frames)):
-        bank = (PRG_size // 8192) + PRG_START_BANK
-        # include frames
-        ca65_inc += "img_" + str(i) + ":\n.incbin \"imgs/img_" + str(i) + ".bin\" ;" + frames_name[i] + "\n"
-        if frame_ischr[i]:
-            # save character adr and bnk
-            chr_adr = ".word (img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR ; " + frames_name[i] + "\n"
-            chr_bnk = ".byte $" + hex(bank)[2:] + " ; bank\n"
-            chr_anims[frames_name[i]] = chr_adr + chr_bnk
-        else:
-            # background index table
-            ca65_bkg += ".word (img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR ; " + frames_name[i] + "\n"
-            ca65_bkg_bnk += ".byte $" + hex(bank)[2:] + "\n"
-        #
-        frames[i] = bytes(frames[i])
-        PRG_size += len(frames[i])
-    for i, anim in enumerate(anims):
-        ca65_anim += "img_anim_" + str(i) + ":\n.byte $" + "%0.2X" % ((len(anim) << 2)+1) + " ; size\n"
-        for a in anim:
-            ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
-    ca65_pal = "palette_table:\n"
-    for p in pal_bank:
-        pal = ".byte"
-        pal_cmt = " ;"
-        for c in p:
-            pal += f" $" + "%0.2X" % c + ","
-            if c > 64:
-                print(f"ERROR: wrong palette ({c})")
-                pal_cmt += f" ERROR,"
-            else:
-                pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
-        ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
-    ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
-    ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n" + ca65_pal + "\n"
+    # pack ca65 info
+    ca65_info = {
+        "ischr": frames_ischr,
+        "names": frames_name,
+        "anims": anims,
+        "pal_bank": pal_bank
+    }
 
     # tile_bank to ROM
     print("CHR ROM file")
@@ -198,12 +182,13 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names):
     CHR_rom = bytes(CHR_rom)
 
     # return
+    PRG_size = sum([len(f) for f in frames])
     print("done")
     print("frames:", len(frames), "("+str(PRG_size)+" bytes)", " tiles:", len(CHR_rom)//16, "("+str(len(CHR_rom))+" bytes)")
-    return ca65, frames, CHR_rom, PRG_size
+    return ca65_info, frames, CHR_rom
 
 
-def encode_frame_bkg(background, tile_map, pal_bank, pal_set):
+def encode_frame_bkg(background, tile_map, pal_bank, pal_set, chr_start_bank=0):
     frame = []
 
     # FPTS ..BB
@@ -228,7 +213,7 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set):
     for t in tile_map:
         data.append(t % 256)
     for t in tile_map:
-        data.append(((t//256) + CHR_START_BANK) % 64)
+        data.append(((t//256) + chr_start_bank) % 64)
     # encode tilemap
     tile_map = rleinc_encode(data)
 
@@ -247,7 +232,7 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set):
     return frame
 
 
-def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2):
+def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2, chr_start_bank=0):
     frame = []
 
     # Byte 0: flags.
@@ -307,7 +292,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     for t in tile_map:
         data.append(t % 256)
     for i in range(len(tile_map)):
-        t = (tile_map[i] // 256) + CHR_START_BANK
+        t = (tile_map[i] // 256) + chr_start_bank
         p = pal_map2[i] << 6
         data.append((t % 64) + p if change_map[i] else 0)
     # encode data with RLE_INC
@@ -327,74 +312,55 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     return frame, spr_bank, spr_data_bnk_idx
 
 
-def write_files(ca65, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr"):
+def write_files(ca65_info, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr", asmfile="imgs.asm", imgfolder="imgs", prg_start_bank=0):
+    #
     CHRbase = bytes()
     if basechr_file:
         with open(basechr_file, "rb") as f:
-            CHRbase = f.read(CHR_START_BANK*4096)
+            CHRbase = f.read()
+        if len(CHRbase) % 4096 != 0:
+            CHRbase += bytes(4096 - (len(CHRbase) % 4096))
+    #
     with open(chr_name, "wb") as f:
         f.write(CHRbase)
         f.write(CHR_rom)
-    with open("imgs.asm", "w") as f:
+    #
+    with open(asmfile, "w") as f:
+        ca65 = ca65_file(frames, ca65_info["ischr"], ca65_info["names"], ca65_info["anims"], ca65_info["pal_bank"], prg_start_bank=prg_start_bank)
         f.write(ca65)
-    if not os.path.exists("imgs"):
-        os.mkdir("imgs")
+    #
+    if not os.path.exists(imgfolder):
+        os.mkdir(imgfolder)
     for i in range(len(frames)):
-        with open("imgs/img_"+str(i)+".bin", "wb") as f:
+        with open(imgfolder + "/img_"+str(i)+".bin", "wb") as f:
             f.write(frames[i])
 
 
-def main():
-    global MAX_PIXEL_DIFF
-
-    # argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-j", "--json", dest="json", type=str, required=False, default="anim.json")
-    parser.add_argument("-bc", "--base-chr", dest="basechr", type=str, required=False, default=None)
-    parser.add_argument("-b", "--best", dest="best", type=bool, required=False, default=True)
-    parser.add_argument("-cp", "--c-path", dest="cpath", type=str, required=False, default="c/")
-    parser.add_argument("-exe", "--c-program-name", dest="exe", type=str, required=False, default="a.exe")
-    parser.add_argument("-oc", "--output-char", dest="out_chr", type=str, required=False, default="CHR.chr")
-    args = parser.parse_args()
-
-    tile_chr_path = os.path.join(args.cpath, "CHR.chr")
-    tile_maps_folder = os.path.join(args.cpath, "maps/")
-    args.out = os.path.join(args.cpath, "imgs/")
-    c_program = os.path.join(args.cpath, args.exe)
-
-    max_chr_size = 1024*1024
-    max_prg_size = 1024*512
-
-    # read json
-    with open(args.json) as f:
-        jsonAnim = json.load(f)
-
-    ca65, frames, CHR_rom = "", [], bytes()
-
+def encode_all_constrain(args, json_anim, pal_bank=[]):
     # transform all images to binary
     img_names, pal_maps = img2bin(args)
     img_names = [n for n, _ in img_names]
 
-    dif = 0
+    dif = args.start_dif
     while True:
         set_pixel_diff(dif)
         set_spr_pixel_diff(dif)
 
         # execute C program to convert binary images to CHR
-        if not os.path.exists(tile_maps_folder):
-            os.mkdir(tile_maps_folder)
-        proc_info = subprocess.run([c_program, str(len(img_names)), "CHR.chr", str(dif)], cwd=args.cpath)
+        if not os.path.exists(args.tile_maps_folder):
+            os.mkdir(args.tile_maps_folder)
+        proc_info = subprocess.run([args.c_program, str(len(img_names)), "CHR.chr", str(dif)], cwd=args.cpath)
         if proc_info.returncode:
             exit(proc_info.returncode)
 
         # read tile bank file
-        with open(tile_chr_path, "rb") as f:
+        with open(args.tile_chr_path, "rb") as f:
             tile_bank = f.read()
         # read tile maps files
-        nb_maps = len(os.listdir(tile_maps_folder))
+        nb_maps = len(os.listdir(args.tile_maps_folder))
         tile_maps = []
         for i in range(nb_maps):
-            name = os.path.join(tile_maps_folder, str(i) + ".bin")
+            name = os.path.join(args.tile_maps_folder, str(i) + ".bin")
             # read one tile map files
             tile_map = []
             with open(name, "rb") as f:
@@ -404,10 +370,16 @@ def main():
             tile_maps.append(tile_map)
 
         # encode all
-        ca65, frames, CHR_rom, PRG_size = encode_all(jsonAnim, tile_bank, tile_maps, pal_maps, img_names)
+        ca65_info, frames, CHR_rom = encode_all(json_anim, tile_bank, tile_maps, pal_maps, img_names, pal_bank=pal_bank, chr_start_bank=args.chr_start)
 
-        if not args.best or (PRG_size <= max_prg_size and len(CHR_rom) <= max_chr_size):
-            break
+        PRG_size = sum([len(f) for f in frames])
+        if PRG_size <= args.max_prg_size and len(CHR_rom) <= args.max_chr_size:
+            return ca65_info, frames, CHR_rom
+        if dif >= 64:
+            print("/!\\ "*6)
+            print(" Impossible. Abording")
+            print("/!\\ "*6)
+            return ca65_info, frames, CHR_rom
 
         dif += 1
         set_pixel_diff(dif)
@@ -416,8 +388,36 @@ def main():
         print("Final data too large. Try with pixel difference of", dif)
         print("*"*52)
 
+
+def main():
+    global MAX_PIXEL_DIFF
+
+    # argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-j", "--json", dest="json", type=str, required=False, default="anim.json")
+    parser.add_argument("-bc", "--base-chr", dest="basechr", type=str, required=False, default=None)
+    parser.add_argument("-cp", "--c-path", dest="cpath", type=str, required=False, default="c/")
+    parser.add_argument("-exe", "--c-program-name", dest="exe", type=str, required=False, default="a.exe")
+    parser.add_argument("-oc", "--output-char", dest="out_chr", type=str, required=False, default="CHR.chr")
+    parser.add_argument("-mc", "--max-chr-size", dest="max_chr_size", type=int, required=False, default=1024*1024)
+    parser.add_argument("-mp", "--max-prg-size", dest="max_prg_size", type=int, required=False, default=1024*512)
+    parser.add_argument("-bsc", "--bank-start-chr", dest="chr_start", type=int, required=False, default=1)
+    parser.add_argument("-bsp", "--bank-start-prg", dest="prg_start", type=int, required=False, default=0xC0)
+    args = parser.parse_args()
+
+    args.tile_chr_path = os.path.join(args.cpath, "CHR.chr")
+    args.tile_maps_folder = os.path.join(args.cpath, "maps/")
+    args.out = os.path.join(args.cpath, "imgs/")
+    args.c_program = os.path.join(args.cpath, args.exe)
+
+    # read json
+    with open(args.json) as f:
+        json_anim = json.load(f)
+
+    ca65_info, frames, CHR_rom = encode_all_constrain(args, json_anim)
+
     # write results
-    write_files(ca65, frames, CHR_rom, args.basechr, args.out_chr)
+    write_files(ca65_info, frames, CHR_rom, basechr_file=args.basechr, chr_name=args.out_chr, prg_start_bank=args.prg_start)
 
 
 if __name__ == "__main__":

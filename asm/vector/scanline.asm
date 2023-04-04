@@ -31,6 +31,9 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_top_img:
+        ;
+        LDA mmc5_upper_chr
+        STA MMC5_CHR_UPPER
         ; set next scanline
         LDA #151
         STA MMC5_SCNL_VAL
@@ -76,8 +79,12 @@ scanline_irq_handler:
         STA PPU_DATA
         STX PPU_DATA
         STY PPU_DATA
+        ;
+        LDA #$00
+        STA MMC5_CHR_UPPER
         ; wait
-        LDX #$11
+        NOP
+        LDX #$0F
         @dialog_wait_1:
             DEX
             bnz @dialog_wait_1
@@ -178,6 +185,10 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_bot_img:
+        ;
+        LDA #$00
+        STA MMC5_CHR_UPPER
+        ;
         BIT effect_flags
         BPL @botimg_palette_change
             LDA #238

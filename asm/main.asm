@@ -25,6 +25,11 @@ update_screen_scroll:
     ORA ppu_ctrl_val
     STA ppu_ctrl_val
     STA PPU_CTRL
+    ; update mmmc5 high upper chr bits
+    LDA img_header
+    AND #$03
+    STA mmc5_upper_chr
+    ; return
     PLA
     RTS
 

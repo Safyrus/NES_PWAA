@@ -2,7 +2,6 @@
 
 - [ ] Fix bugs
   - [ ] Encode ACCURATE palette with images
-  - [ ] Encoding not converting images to tiles with the maximum colors
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
   - [ ] Entire screen glitching when loading the next text data block
@@ -36,8 +35,11 @@
 
 ## Done
 
+- [X] Fix images encoding and display not considering MMC5 CHR 'region' (256K block)
+- [X] Re-fix no palette update when drawing partial frame for similar tiles with different palettes
+- [X] (Kind of fix during refactor) encoding not converting images to tiles with the maximum number of colors
+- [X] Refactor image encoding scripts to be more performant (the closest tiles are now calculated with a C program)
 - [X] Fix Sprite x position being incorrect, because spr_x buffer was not reverse after sprite flickering.
-- [/] Fix No update for the 0th tile (full color 0) when drawing a character
 - [X] Add fast-forward dialog button
 - [X] Encode ACCURATE sprites with images (Choose to maximize top sprites and cut bottom ones if too many)
 - [X] Fix MMC5 nametable updated 1 frame too late/soon when switching animation
