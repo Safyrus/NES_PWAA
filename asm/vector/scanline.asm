@@ -52,7 +52,7 @@ scanline_irq_handler:
         ; - - - - - - - -
         ; test if we need to change palette
         BIT effect_flags
-        BPL @palette_change_start
+        BMI @palette_change_start
             LDA #216
             STA MMC5_SCNL_VAL
             JMP @end
@@ -190,7 +190,7 @@ scanline_irq_handler:
         STA MMC5_CHR_UPPER
         ;
         BIT effect_flags
-        BPL @botimg_palette_change
+        BMI @botimg_palette_change
             LDA #238
             STA MMC5_SCNL_VAL
             JMP @botimg_next

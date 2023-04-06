@@ -5,6 +5,8 @@
 img_bkg_draw_2lines:
     pushregs
 
+    ; wait for the next frame
+    JSR wait_next_frame
     ; init packet
     LDX background_index
     LDA #$40
@@ -62,7 +64,7 @@ img_bkg_draw:
     ; copy buffer to screen
     ; - - - - - - - -
     ; find how many loop we need to do
-    BIT effect_flags
+    BIT box_flags
     BMI @dialog_box_off
     @dialog_box_on:
         LDX #8
@@ -71,9 +73,6 @@ img_bkg_draw:
         LDX #12
     ; start the loop
     @loop:
-        ; wait for the next frame
-        JSR wait_next_frame
-
         ; draw 2 lines on the PPU nametable
         JSR img_bkg_draw_2lines
 
@@ -104,4 +103,49 @@ img_bkg_draw:
 
     @end:
     pullregs
+    RTS
+
+; A = nametable high address
+img_draw_bot_lo:
+    PHA
+
+    ; set ppu pointer
+    STA tmp+1
+    mov tmp+0, #$60
+    ; set data pointer
+    sta_ptr tmp+2, (IMG_BKG_BUF_LO+$200)
+    ; draw 2 lines
+    JSR img_bkg_draw_2lines
+    ; draw another 2 lines
+    add_A2ptr tmp+0, #$40
+    add_A2ptr tmp+2, #$40
+    JSR img_bkg_draw_2lines
+    ; draw another 2 lines
+    add_A2ptr tmp+0, #$40
+    add_A2ptr tmp+2, #$40
+    JSR img_bkg_draw_2lines
+    ; draw last 2 lines
+    add_A2ptr tmp+0, #$40
+    add_A2ptr tmp+2, #$40
+    JSR img_bkg_draw_2lines
+
+    PLA
+    RTS
+
+; /!\ need to be in-frame
+img_draw_bot_hi:
+    PHA
+
+    ; set exp pointer
+    sta_ptr tmp+0, (MMC5_EXP_RAM+$260)
+    ; set upper tiles pointer
+    sta_ptr tmp+2, (IMG_BKG_BUF_HI+$200)
+
+    ; copy upper tiles
+    for_y @loop, #0
+        LDA (tmp+2), Y
+        STA (tmp+0), Y
+    to_y_inc @loop, #0    
+
+    PLA
     RTS

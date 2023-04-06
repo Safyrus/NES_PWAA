@@ -103,7 +103,7 @@ OAM:
     ; WFSS SSSS
     ; ||++-++++-- scanline IRQ state
     ; |+--------- 1 = in frame, 0 = in vblank
-    ; |---------- wait for scanline, cleare when scanline IRQ occured
+    ; +---------- wait for scanline, cleare when scanline IRQ occured
     scanline: .res 1
 
     ; - - - - - - - -
@@ -119,27 +119,24 @@ OAM:
     ; - - - - - - - -
     ; Visual effect variables
     ; - - - - - - - -
-    ; H.PD BNSF
-    ; | || |||+-- Fade in (1) or out (0)
-    ; | || ||+--- Scroll position (0=left, 1=right)
+    ; P.UD BN.F
+    ; | || || +-- Fade in (1) or out (0)
     ; | || |+---- current Nametable (0=left, 1=right)
     ; | || +----- redraw Background
     ; | |+------- currently Drawing the background
-    ; | +-------- update background upper tiles when drawing a Partial frame
-    ; +---------- Hide dialog box (1=Hidden)
+    ; | +-------- update background Upper tiles when drawing a partial frame
+    ; +---------- mid frame Pallette switch for the dialog box (1=active)
     effect_flags: .res 1
-    ;
-    scroll_timer: .res 1
     ;
     fade_timer: .res 1
     ;
-    fade_color: .res 1
-    ;
     flash_timer: .res 1
     ;
-    flash_color: .res 1
-    ;
     shake_timer: .res 1
+    ; D... ...R
+    ; |       +-- Refresh box (1=refresh, 0=redraw)
+    ; +---------- Display box (0=show, 1=hidden)
+    box_flags: .res 1
 
     ; - - - - - - - -
     ; Variables for LZ decoding

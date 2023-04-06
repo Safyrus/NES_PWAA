@@ -7,7 +7,7 @@ cp_2_mmc5_exp:
     sta_ptr tmp+2, (MMC5_EXP_RAM+$60)
     ; find how many loop we need to do
     LDX #3
-    BIT effect_flags
+    BIT box_flags
     BMI @exp_dialog_box_off
         ; X = 2
         DEX
@@ -38,7 +38,7 @@ cp_non0_2_mmc5_exp:
     sta_ptr tmp+2, (MMC5_EXP_RAM+$60)
     ; find how many loop we need to do
     LDX #3
-    BIT effect_flags
+    BIT box_flags
     BMI @exp_dialog_box_off
         ; X = 2
         DEX
@@ -73,7 +73,7 @@ cp_bkgchr_2_mmc5_exp:
     sta_ptr tmp+4, IMG_BKG_BUF_HI
     ; find how many loop we need to do
     LDX #3
-    BIT effect_flags
+    BIT box_flags
     BMI @exp_dialog_box_off
         ; X = 2
         DEX

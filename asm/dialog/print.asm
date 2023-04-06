@@ -63,7 +63,7 @@ print_flush:
         ; then exit (we din't have any character to flush)
         bze @end
     ; if text box hidden, then just update pointers
-    BIT effect_flags
+    BIT box_flags
     BMI @update_ptrs
 
     ; - - - - - - - -

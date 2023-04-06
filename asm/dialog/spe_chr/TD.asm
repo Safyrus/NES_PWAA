@@ -1,12 +1,12 @@
 ; case TD
 @TD:
-    ; toggle flag to display dialog box
-    eor_adr effect_flags, #EFFECT_FLAG_HIDE
+    ; flip display dialog box flag
+    LDA box_flags
+    EOR #BOX_FLAG_HIDE
+    ; tell to redraw the dialog box entierly
+    AND #($FF-BOX_FLAG_REFRESH)
+    STA box_flags
+    ; async redraw_dialog_box()
+    ora_adr txt_flags, #TXT_FLAG_BOX
     ;
-    AND #EFFECT_FLAG_HIDE
-    bze @td_on
-    @td_off:
-        JMP find_anim
-    @td_on:
-        ora_adr txt_flags, #TXT_FLAG_BOX
-        RTS
+    RTS

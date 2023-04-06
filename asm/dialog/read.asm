@@ -161,9 +161,10 @@ read_text:
                 ; else, clear flags (wait, input, force)
                 and_adr txt_flags, #($FF - TXT_FLAG_WAIT - TXT_FLAG_INPUT - TXT_FLAG_FORCE)
                 ; and clear dialog box (if dialog box not hidden)
-                BIT effect_flags
+                BIT box_flags
                 BMI @input_boxhidden
-                    ; async draw_dialog_box()
+                    ; async refresh_dialog_box()
+                    ora_adr box_flags, #BOX_FLAG_REFRESH
                     ora_adr txt_flags, #TXT_FLAG_BOX
                 @input_boxhidden:
                 JSR read_next_dailog

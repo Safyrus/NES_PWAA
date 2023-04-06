@@ -12,7 +12,7 @@
   - [/] Fade
   - [ ] UI Movement
 - [ ] Make the Project core functionality
-  - [ ] Main process loop
+  - [/] Main process loop
   - [/] Dialog box
   - [/] Image drawing
   - [/] Image Animation
@@ -35,6 +35,7 @@
 
 ## Done
 
+- [X] Fix dialog box having graphical glitches when appearing/disappearing (at least it seems)
 - [X] Fix images encoding and display not considering MMC5 CHR 'region' (256K block)
 - [X] Re-fix no palette update when drawing partial frame for similar tiles with different palettes
 - [X] (Kind of fix during refactor) encoding not converting images to tiles with the maximum number of colors

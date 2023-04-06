@@ -94,11 +94,58 @@ MAIN:
         and_adr txt_flags, #($FF-TXT_FLAG_LZ)
     @lz_end:
 
-    ; draw dialog box if needed
+    ; draw/refresh dialog box if needed
     LDA txt_flags
     AND #TXT_FLAG_BOX
     BEQ @box_end
-        JSR draw_dialog_box
+        ; if BOX_FLAG_REFRESH
+        LDA box_flags
+        AND #BOX_FLAG_REFRESH
+        BEQ @box_redraw
+        @box_refresh:
+            ; then refresh dialog box
+            JSR draw_dialog_box
+            ; break
+            JMP @box_done
+        @box_redraw:
+            ; else redraw dialog box by:
+            ; - redrawing the bottom image in nametable 1
+            LDA #>(PPU_NAMETABLE_1+$200)
+            JSR img_draw_bot_lo
+            JSR img_draw_bot_hi
+            ; - push the midframe split & nametable flags
+            push effect_flags
+            ; clear the midframe split flag
+            AND #($FF-EFFECT_FLAG_PAL_SPLIT)
+            ; - set nametable 1 to be displayed
+            ORA #EFFECT_FLAG_NT
+            STA effect_flags
+            ; - if dialog box is switching to on
+            LDA box_flags
+            AND #BOX_FLAG_HIDE
+            BNE @box_redraw_hide
+            @box_redraw_display:
+                ; - then draw it
+                JSR draw_dialog_box
+                ; break
+                JMP @box_redraw_end
+            @box_redraw_hide:
+                ; - else undraw it (by drawing the bottom image on top)
+                LDA #>(PPU_NAMETABLE_0+$200)
+                JSR img_draw_bot_lo
+                JSR img_draw_bot_hi
+            @box_redraw_end:
+            ; - clear the midframe split & nametable flags
+            and_adr effect_flags, #($FF-EFFECT_FLAG_PAL_SPLIT-EFFECT_FLAG_NT)
+            ; - pull the midframe split & nametable flags
+            PLA
+            AND #(EFFECT_FLAG_PAL_SPLIT+EFFECT_FLAG_NT)
+            ; flip the midframe split flag
+            EOR #EFFECT_FLAG_PAL_SPLIT
+            ORA effect_flags
+            STA effect_flags
+        @box_done:
+        ; clear TXT_FLAG_BOX
         and_adr txt_flags, #($FF-TXT_FLAG_BOX)
     @box_end:
 

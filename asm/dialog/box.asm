@@ -102,6 +102,7 @@ draw_dialog_box:
         DEC tmp+2
         bnz @loop_frames
 
+    JSR wait_next_frame
     ; wait to be in frame
     @wait_inframe:
         BIT scanline

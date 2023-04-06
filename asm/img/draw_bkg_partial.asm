@@ -37,7 +37,7 @@ img_bkg_draw_partial:
         ; wild code to check if the loop is finished
         ; depending on if the dialog box is active or not
         LDA tmp+1
-        BIT effect_flags
+        BIT box_flags
         BMI @ppu_dialog_off
         @ppu_dialog_on:
             CMP #$62
