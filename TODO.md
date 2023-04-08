@@ -35,6 +35,7 @@
 
 ## Done
 
+- [X] Temporary fix music crashing the game by loading 16K of music bank instead of 8K
 - [X] Fix dialog box having graphical glitches when appearing/disappearing (at least it seems)
 - [X] Fix images encoding and display not considering MMC5 CHR 'region' (256K block)
 - [X] Re-fix no palette update when drawing partial frame for similar tiles with different palettes

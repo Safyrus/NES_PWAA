@@ -236,13 +236,16 @@ NMI:
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
 
+    ; enable interrupt
     CLI
+    ; load music banks
+    mov MMC5_PRG_BNK1, #MUS_BNK
+    mov MMC5_PRG_BNK2, #MUS_BNK+1
     ; update famistudio
-    LDA #MUS_BNK
-    STA MMC5_PRG_BNK1
     JSR famistudio_update
-    LDA mmc5_banks+2
-    STA MMC5_PRG_BNK1
+    ; restore banks
+    mov MMC5_PRG_BNK1, mmc5_banks+2
+    mov MMC5_PRG_BNK2, mmc5_banks+3
 
     ; read text
     JSR read_text
