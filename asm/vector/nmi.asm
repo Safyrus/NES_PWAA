@@ -261,6 +261,32 @@ NMI:
         and_adr txt_flags, #($FF-TXT_FLAG_PRINT)
     @print_end:
 
+    ; flash
+    LDA flash_timer
+    BEQ @flash_stop
+        DEC flash_timer
+
+        LDA #$30
+        for_x @flash_loop_white, #$15
+            STA palettes, X
+        to_x_dec @flash_loop_white, #-1
+        JMP @flash_end
+    @flash_stop:
+        ; skip if palette are changed by a fade
+        LDA effect_flags
+        AND #EFFECT_FLAG_FADE
+        BEQ @flash_end
+        ; update palette 0-2 and background color
+        for_x @flash_loop_stop, #9
+            LDA img_palettes, X
+            STA palettes, X
+        to_x_dec @flash_loop_stop, #-1
+        ; update palette 3
+        mov palettes+13, img_palette_3+0
+        mov palettes+14, img_palette_3+1
+        mov palettes+15, img_palette_3+2
+    @flash_end:
+
     ; restore registers
     pullregs
     ; return

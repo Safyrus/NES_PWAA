@@ -26,11 +26,12 @@ frame_decode:
     mov_ptr tmp+2, anim_adr
 
     ; is a fade effect active ?
-    LDA fade_timer
-    bze :+
-        ; then do nothing
-        JMP @end
-    :
+    ; LDA fade_timer
+    ; bze :+
+    ;     ; then do nothing
+    ;     JMP @end
+    ; :
+
     ; is a fade out effect active ?
     LDA effect_flags
     AND #(EFFECT_FLAG_FADE)
