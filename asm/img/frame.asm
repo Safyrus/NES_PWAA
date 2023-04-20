@@ -32,13 +32,13 @@ frame_decode:
     ;     JMP @end
     ; :
 
-    ; is a fade out effect active ?
-    LDA effect_flags
-    AND #(EFFECT_FLAG_FADE)
-    bnz :+
-        ; then do nothing
-        JMP @end
-    :
+    ; ; is a fade out effect active ?
+    ; LDA effect_flags
+    ; AND #(EFFECT_FLAG_FADE)
+    ; bnz :+
+    ;     ; then do nothing
+    ;     JMP @end
+    ; :
 
     ; is the animation frame counter > 0 ?
     LDA anim_frame_counter
@@ -75,7 +75,7 @@ frame_decode:
         JMP @end
     :
 
-    ; do we need to reset the naimation to the start ?
+    ; do we need to reset the animation to the start ?
     LDA anim_img_counter
     bnz @load_chr
         ; anim_adr, tmp+2 = anim_base_adr

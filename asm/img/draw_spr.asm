@@ -16,6 +16,18 @@ img_spr_clear:
     RTS
 
 
+img_spr_clear_buf:
+    LDA #IMG_BUF_BNK
+    STA MMC5_RAM_BNK
+    ; clear sprites buffer
+    LDA #$00
+    for_x @page, #0
+        STA IMG_CHR_BUF_SPR, X
+        STA IMG_CHR_BUF_SPR+$100, X
+        STA IMG_CHR_BUF_SPR+$200, X
+    to_x_inc @page, #0
+    RTS
+
 img_spr_draw:
     pushregs
 

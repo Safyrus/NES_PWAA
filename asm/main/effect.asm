@@ -24,20 +24,26 @@
     ; fade
     LDA fade_timer
     bze @fade_end
-        ; find color offset
-        LSR
-        AND #$F0
-        STA tmp
-
-        ; reverse fade counter if fade out flag set
+        ; offset = fade_timer / (FADE_TIME/5)
+        LDX #(FADE_TIME/5)
+        STX tmp
+        JSR div
+        ; 
+        ; if fade out
         LDA effect_flags
         AND #EFFECT_FLAG_FADE
         bnz @fade_flag_end
-            LDA #(FADE_TIME >> 1)
+            ; then offset = 5 - offset
+            STX tmp
+            LDA #$05
             sub tmp
-            AND #$F0
-            STA tmp
+            TAX
         @fade_flag_end:
+        ;
+        TXA
+        ; offset *= 16
+        shift ASL, 4
+        STA tmp
 
         ; change tiles colors
         LDX #$09

@@ -262,20 +262,26 @@ NMI:
     @print_end:
 
     ; flash
+    LDA fade_timer
+    BNE @flash_end
     LDA flash_timer
-    BEQ @flash_stop
-        DEC flash_timer
-
+    BEQ @no_flash
         LDA #$30
         for_x @flash_loop_white, #$15
             STA palettes, X
         to_x_dec @flash_loop_white, #-1
+
+        DEC flash_timer
+        BEQ @flash_stop
+
         JMP @flash_end
-    @flash_stop:
+    @no_flash:
         ; skip if palette are changed by a fade
         LDA effect_flags
-        AND #EFFECT_FLAG_FADE
-        BEQ @flash_end
+        AND #(EFFECT_FLAG_FADE+EFFECT_FLAG_DRAW)
+        EOR #EFFECT_FLAG_FADE
+        BNE @flash_end
+        @flash_stop:
         ; update palette 0-2 and background color
         for_x @flash_loop_stop, #9
             LDA img_palettes, X

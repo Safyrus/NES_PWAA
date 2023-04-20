@@ -63,6 +63,23 @@ cp_page:
     pull_ay
     RTS
 
+
+; A / tmp
+; X = result
+; A = remainder
+div:
+    LDX #$FF
+    @loop:
+        sub tmp
+        INX
+        BCS @loop
+    BNE @end
+        INX
+    @end:
+    ADC tmp
+    RTS
+
+
 MAIN:
 
     .include "main/init.asm"
