@@ -53,7 +53,7 @@ scanline_irq_handler:
         ; test if we need to change palette
         BIT effect_flags
         BMI @palette_change_start
-            LDA #216
+            LDA #215
             STA MMC5_SCNL_VAL
             JMP @end
         @palette_change_start:
@@ -179,8 +179,8 @@ scanline_irq_handler:
         ; set next scanline.
         ; Because we have disabled rendering,
         ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,
-        ; Therefore, scanline 60 mean scanline when enable (155) + 61 = 216
-        LDA #61
+        ; Therefore, scanline 60 mean scanline when enable (155) + 60 = 215
+        LDA #60
         STA MMC5_SCNL_VAL
         ; return
         JMP @end

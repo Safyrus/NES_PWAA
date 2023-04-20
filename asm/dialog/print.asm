@@ -9,12 +9,17 @@
 print_char:
     PHA
 
+    ;
+    CMP #$20
+    blt @end
+    ;
     LDX print_counter
     STA print_ppu_buf, X
     LDA print_ext_val
     STA print_ext_buf, X
     INC print_counter
 
+    @end:
     PLA
     RTS
 
