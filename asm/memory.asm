@@ -192,9 +192,9 @@ OAM:
     ; number of character to print
     print_counter: .res 1
     ; buffer containing text to print to ppu
-    print_ppu_buf: .res 16
+    print_ppu_buf: .res 24
     ; buffer containing text to print to ext ram
-    print_ext_buf: .res 16
+    print_ext_buf: .res 24
 
     ; - - - - - - - -
     ; Image Variables
@@ -229,19 +229,25 @@ OAM:
     ; - - - - - - - -
     ; Sprites Variables
     ; - - - - - - - -
-    ;
+
     ; img_spr_header:
-    ;
+    ; FPTS ..BB
+    ; ||||   ++-- CHR bits for the MMC5 upper CHR Bank bits
+    ; |||+------- is Sprite map present ?
+    ; ||+-------- is Tile map present ?
+    ; |+--------- is Palette present ?
+    ; +---------- 1 = Full frame
+    ;             0 = partial frame
     img_header: .res 1
-    ;
+    ; width in tiles of the mega sprite
     img_spr_w: .res 1
-    ;
+    ; bank index of the mega sprite
     img_spr_b: .res 1
-    ;
+    ; image mega sprite position offset x
     img_spr_x: .res 1
-    ;
+    ; image mega sprite position offset y
     img_spr_y: .res 1
-    ;
+    ; image number of sprites
     img_spr_count: .res 1
 
     ; - - - - - - - -
