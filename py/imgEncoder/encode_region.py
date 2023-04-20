@@ -28,12 +28,8 @@ def main():
     args.c_program = os.path.join(args.cpath, args.exe)
 
     ca65_info_all = {
-        "ischr": [],
-        "names": [],
-        "anims": [],
         "pal_bank": []
     }
-    pal_maps = None
     all_frames = []
     CHR_roms = bytearray()
     basechr_size = 0
@@ -55,7 +51,7 @@ def main():
         args.chr_start = l // 4096 + (1 if l % 4096 != 0 else 0)
         args.max_prg_size = 1024*128
         args.max_chr_size = 1024*256
-        args.start_dif = 11
+        args.start_dif = 0
         if region_bits == 0:
             args.max_chr_size -= basechr_size
         # encode all animations of the json file
@@ -72,7 +68,9 @@ def main():
         if l:
             CHR_roms.extend(bytes(REGION_SIZE - l))
         # add ca65 info
-        for k in ca65_info_all.keys():
+        for k in ca65_info.keys():
+            if k not in ca65_info_all:
+                ca65_info_all[k] = []
             ca65_info_all[k].extend(ca65_info[k])
 
     # write results

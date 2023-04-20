@@ -8,12 +8,52 @@ from img2bin import img2bin
 
 EMPTY_IMG = "../../data/empty.png"
 IMG_NB_TILE = 256*3
+MAX_FRAME_IDX = 1000000
 
 warning_chr_size = False
 warning_prg_size = False
 
 
-def ca65_file(frames, frames_ischr, frames_name, anims, pal_bank, prg_start_bank=0):
+def ca65_file(frames, ca65_info, prg_start_bank=0):
+    # get all data
+    backgrounds_idx = ca65_info["frames_bkg_idx"]
+    backgrounds_name = ca65_info["frames_bkg_name"]
+    frames_ischr = ca65_info["ischr"]
+    frames_name = ca65_info["names"]
+    anims = ca65_info["anims"]
+    anims_name = ca65_info["anims_name"]
+    anims_idx = ca65_info["anims_idx"]
+    pal_bank = ca65_info["pal_bank"]
+
+    # sort backgrounds
+    for i in range(len(frames)):
+        # find min idx
+        min_idx = i
+        min_val = backgrounds_idx[i]
+        for j in range(i+1, len(frames)):
+            if backgrounds_idx[j] < min_val:
+                min_idx, min_val = j, backgrounds_idx[j]
+        # swap
+        frames[i], frames[min_idx] = frames[min_idx], frames[i]
+        frames_ischr[i], frames_ischr[min_idx] = frames_ischr[min_idx], frames_ischr[i]
+        frames_name[i], frames_name[min_idx] = frames_name[min_idx], frames_name[i]
+        backgrounds_idx[i], backgrounds_idx[min_idx] = backgrounds_idx[min_idx], backgrounds_idx[i]
+        backgrounds_name[i], backgrounds_name[min_idx] = backgrounds_name[min_idx], backgrounds_name[i]
+
+    # sort animations
+    for i in range(len(anims)):
+        # find min idx
+        min_idx = i
+        min_val = anims_idx[i]
+        for j in range(i+1, len(anims)):
+            if anims_idx[j] < min_val:
+                min_idx, min_val = j, anims_idx[j]
+        # swap
+        anims[i], anims[min_idx] = anims[min_idx], anims[i]
+        anims_idx[i], anims_idx[min_idx] = anims_idx[min_idx], anims_idx[i]
+        anims_name[i], anims_name[min_idx] = anims_name[min_idx], anims_name[i]
+
+    # init variables
     print("ca65 file")
     ca65_inc = ".segment \"IMGS_BNK\"\n"
     ca65_bkg = "img_bkg_table:\n"
@@ -21,6 +61,8 @@ def ca65_file(frames, frames_ischr, frames_name, anims, pal_bank, prg_start_bank
     ca65_anim = "img_anim_table:\ndefault:\n.byte $01 ; size\n"
     chr_anims = {}
     PRG_size = 0
+
+    # write frames and tables
     for i in range(len(frames)):
         bank = (PRG_size // 8192) + prg_start_bank
         # include frames
@@ -37,10 +79,14 @@ def ca65_file(frames, frames_ischr, frames_name, anims, pal_bank, prg_start_bank
         #
         frames[i] = bytes(frames[i])
         PRG_size += len(frames[i])
+    
+    # write animations table
     for i, anim in enumerate(anims):
         ca65_anim += "img_anim_" + str(i) + ":\n.byte $" + "%0.2X" % ((len(anim) << 2)+1) + " ; size\n"
         for a in anim:
             ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
+
+    # write palettes table
     ca65_pal = "palette_table:\n"
     for p in pal_bank:
         pal = ".byte"
@@ -53,6 +99,8 @@ def ca65_file(frames, frames_ischr, frames_name, anims, pal_bank, prg_start_bank
             else:
                 pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
         ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
+
+    # final touch
     ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
     ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n" + ca65_pal + "\n"
     return ca65
@@ -63,7 +111,11 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
     frames = []
     frames_name = []
     frames_ischr = []
+    frames_bkg_idx = []
+    frames_bkg_name = []
     anims = []
+    anims_name = []
+    anims_idx = []
     spr_bank = [
         np.full((SPR_SIZE_H, SPR_SIZE_W), 0)
     ]
@@ -101,6 +153,8 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
             frames.append(frame)
             frames_ischr.append(False)
             frames_name.append(anim["background"])
+            frames_bkg_name.append(anim["name"] if "name" in anim else f"BKG_{len(frames_bkg_name)}")
+            frames_bkg_idx.append(anim["idx"] if "idx" in anim else MAX_FRAME_IDX)
     print("\033[A\033[2K\rencoded all background")
 
     # for all animations:
@@ -142,10 +196,14 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
                 frames.append(frame)
                 frames_ischr.append(True)
                 frames_name.append(anim_name)
+                frames_bkg_name.append("NONE")
+                frames_bkg_idx.append(MAX_FRAME_IDX)
             #
             anim_frame.append((anim_name, times[i] % 128))
         #
         anims.append(anim_frame)
+        anims_name.append(anim["name"] if "name" in anim else f"CHR_{len(anims_name)}")
+        anims_idx.append(anim["idx"] if "idx" in anim else MAX_FRAME_IDX)
     print("\033[A\033[2K\rencoded all character")
 
     print("fixing some bytes")
@@ -157,9 +215,13 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
 
     # pack ca65 info
     ca65_info = {
+        "frames_bkg_idx": frames_bkg_idx,
+        "frames_bkg_name": frames_bkg_name,
         "ischr": frames_ischr,
         "names": frames_name,
         "anims": anims,
+        "anims_name": anims_name,
+        "anims_idx": anims_idx,
         "pal_bank": pal_bank
     }
 
@@ -326,7 +388,7 @@ def write_files(ca65_info, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr
         f.write(CHR_rom)
     #
     with open(asmfile, "w") as f:
-        ca65 = ca65_file(frames, ca65_info["ischr"], ca65_info["names"], ca65_info["anims"], ca65_info["pal_bank"], prg_start_bank=prg_start_bank)
+        ca65 = ca65_file(frames, ca65_info, prg_start_bank=prg_start_bank)
         f.write(ca65)
     #
     if not os.path.exists(imgfolder):
@@ -334,6 +396,27 @@ def write_files(ca65_info, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr
     for i in range(len(frames)):
         with open(imgfolder + "/img_"+str(i)+".bin", "wb") as f:
             f.write(frames[i])
+    #
+    with open("const_info.txt", "w") as f:
+        f.write("\n<!--Background constants:-->\n")
+        count = 0
+        for i in range(len(ca65_info["frames_bkg_name"])):
+            name, idx = ca65_info["frames_bkg_name"][i], ca65_info["frames_bkg_idx"][i]
+            if idx == MAX_FRAME_IDX:
+                idx = count
+            if name != "NONE":
+                f.write(f"<const:{name}:{idx}>\n")
+                count += 1
+        #
+        f.write("\n<!--Animation constants:-->\n")
+        count = 0
+        for i in range(len(ca65_info["anims_name"])):
+            name, idx = ca65_info["anims_name"][i], ca65_info["anims_idx"][i]
+            if idx == MAX_FRAME_IDX:
+                idx = count
+            if name != "NONE":
+                f.write(f"<const:{name}:{idx%256}>\n")
+                count += 1
 
 
 def encode_all_constrain(args, json_anim, pal_bank=[]):

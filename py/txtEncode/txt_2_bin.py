@@ -1,6 +1,13 @@
 import sys
 import re
 
+def append_byte(textbin, val, name, i):
+    if val > 255:
+        print(f"WARNING: {name} is > 255 (val={val}) at {i}. Replacing by 0")
+        val = 0
+    textbin.append(val)
+    return textbin
+
 CHAR_MAP = [
     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -177,30 +184,33 @@ while i < len(text):
             textbin.append(FO)
         elif name == "fade_in":
             textbin.append(FI)
+        elif name == "photo":
+            textbin.append(PHT)
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "background":
             textbin.append(BKG)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "character":
             textbin.append(CHR)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "animation":
             textbin.append(ANI)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "music":
             textbin.append(MUS)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "sound":
             textbin.append(SND)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "bip":
             textbin.append(BIP)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "set":
             textbin.append(SET)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "clear":
             textbin.append(CLR)
-            textbin.append(int(args[0]))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "label":
             pass
         elif name == "const":
@@ -226,6 +236,10 @@ while i < len(text):
                 textbin.append(int(args[3]))
         elif name == "act":
             textbin.append(ACT)
+        elif name == "event":
+            textbin.append(EVT)
+            for a in args:
+                textbin = append_byte(textbin, int(a), name, i)
         else:
             print(f"Unknow tag '{name}' at {i}")
 
