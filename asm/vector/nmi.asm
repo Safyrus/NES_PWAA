@@ -23,7 +23,7 @@ NMI:
     ; do we need to do stuff ? (E flag)
     BIT nmi_flags
     BPL @start
-    JMP @end
+    JMP @nmi_end
 
     @start:
     LDA #NT_MAPPING_NT1
@@ -217,7 +217,7 @@ NMI:
     STA background_index
     STA background
 
-    @end:
+    @nmi_end:
 
     ; tell that we are done
     BIT nmi_flags
@@ -295,6 +295,7 @@ NMI:
 
     ; restore registers
     pullregs
+    @nmi_ret:
     ; return
     RTI
 

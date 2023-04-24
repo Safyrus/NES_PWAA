@@ -3,7 +3,7 @@ scanline_irq_handler:
 
     ; priority to palette change
     LDA scanline
-    CMP #SCANLINE_TOP_IMG
+    CMP #SCANLINE_DIALOG-1
     BEQ @scanline_irq_dialog
 
     ; prepare the jump
@@ -35,11 +35,17 @@ scanline_irq_handler:
         LDA mmc5_upper_chr
         STA MMC5_CHR_UPPER
         ; set next scanline
-        LDA #151
+        LDA #96
         STA MMC5_SCNL_VAL
         ; change nametable mapping
         LDA #NT_MAPPING_NT1
         STA MMC5_NAMETABLE
+        ; return
+        JMP @end
+    @scanline_irq_mid_img:
+        ; set next scanline
+        LDA #151
+        STA MMC5_SCNL_VAL
         ; return
         JMP @end
     @scanline_irq_dialog:
@@ -227,18 +233,21 @@ scanline_irq_handler:
 
     @jump_lo:
         .byte <(@scanline_irq_top_img-1)
+        .byte <(@scanline_irq_mid_img-1)
         .byte <(@scanline_irq_dialog-1)
         .byte <(@scanline_irq_bot_img-1)
         .byte <(@scanline_irq_bot-1)
         .byte <(@scanline_irq_top-1)
     @jump_hi:
         .byte >(@scanline_irq_top_img-1)
+        .byte >(@scanline_irq_mid_img-1)
         .byte >(@scanline_irq_dialog-1)
         .byte >(@scanline_irq_bot_img-1)
         .byte >(@scanline_irq_bot-1)
         .byte >(@scanline_irq_top-1)
     @next_state:
         .byte SCANLINE_TOP_IMG
+        .byte SCANLINE_MID_IMG
         .byte SCANLINE_DIALOG
         .byte SCANLINE_BOT_IMG
         .byte SCANLINE_BOT

@@ -53,7 +53,7 @@ img_bkg_draw_partial:
     ;
     @wait_next_frame:
         LDA scanline
-        CMP #SCANLINE_TOP
+        CMP #SCANLINE_TOP_IMG
         BNE @wait_next_frame
 
     JSR update_screen_scroll
