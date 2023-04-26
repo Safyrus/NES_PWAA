@@ -8,8 +8,8 @@
     STA PPU_CTRL
 
     ; init famistudio music
-    LDX #<music_data_test_music
-    LDY #>music_data_test_music
+    LDX #<music_data_pwaa_ost
+    LDY #>music_data_pwaa_ost
     mov MMC5_PRG_BNK1, #MUS_BNK
     JSR famistudio_init
     ; init famistudio sfx
