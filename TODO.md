@@ -12,16 +12,21 @@
   - [/] Fade
   - [ ] UI Movement
 - [ ] Make the Project core functionality
-  - [/] Main process loop
-  - [/] Dialog box
-  - [/] Image drawing
-  - [/] Image Animation
-  - [ ] Visual effects
+  - [X] Main process loop
+  - [X] Dialog box
+  - [X] Image drawing
+  - [X] Image Animation
+  - [/] Visual effects
   - [ ] Saving
   - [ ] Investigation scene
   - [ ] Court record
-- [ ] Make missing game resources:
-  - [ ] not there yet.
+- [/] Game resources:
+  - [X] Dialogs/scripts.
+  - [X] Background scenes.
+  - [X] Character sprites.
+  - [ ] Photo sprites.
+  - [X] Musics.
+  - [ ] SFX.
 - [ ] Refine game resources:
   - [ ] Dialogs/scripts.
   - [ ] Background scenes.
@@ -35,6 +40,23 @@
 
 ## Done
 
+- [X] Update Makefile
+- [X] other text data to test animations, musics and backgrounds.
+- [X] PWAA cartridge concept art.
+- [X] Change music, SFX, text and images for the PWAA data.
+- [X] Encode necessary PWAA musics in FamiStudio.
+- [X] Refactor palettes encoding.
+- [X] The JSON animations files (will still need some rework)
+- [X] Cut all needed sprites and convert then to a NES palette.
+- [X] A LOT of fixes on PWAA dialogs.
+- [X] Script to convert PWAA original dialog to the text format used.
+- [X] Basic game resources for the prologue:
+  - [X] Dialogs/scripts.
+  - [X] Background scenes.
+  - [X] Character sprites.
+  - [X] Musics.
+- [X] Credits for tools and resources.
+- [X] A useless script to convert file into images.
 - [X] Temporary fix music crashing the game by loading 16K of music bank instead of 8K
 - [X] Fix dialog box having graphical glitches when appearing/disappearing (at least it seems)
 - [X] Fix images encoding and display not considering MMC5 CHR 'region' (256K block)
