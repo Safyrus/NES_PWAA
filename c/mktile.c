@@ -132,7 +132,6 @@ int main(int argc, char const *argv[])
     srand(time(NULL));
 
     int bank_len = 4;
-    int rom_len = 0;
     int nb_img = atoi(argv[1]);
     char chr_path[64];
     strcpy(chr_path, "out.chr");

@@ -60,3 +60,25 @@ run:
 # dump the nes files binary into hexa text
 hex:
 	$(HEXDUMP) $(GAME_NAME).nes > dump_$(GAME_NAME).txt
+
+
+text:
+ifeq ($(OS), Windows_NT)
+	@-if not exist "asm/data" ( mkdir "asm/data" )
+else
+	mkdir -p "asm/data"
+endif
+	cd asm/data && $(PYTHON) ../../py/txtEncode/txt_2_bin.py ../../data/text/pwaa_nes_dialog_prologue.txt ./text.bin
+	cd asm/data && $(PYTHON) ../../py/txtEncode/lz_encode_block.py ./text.bin ./text.bin
+
+img:
+ifeq ($(OS), Windows_NT)
+	@-if not exist "asm/data" ( mkdir "asm/data" )
+else
+	mkdir -p "asm/data"
+endif
+	cd c && make
+	cd asm/data && $(PYTHON) ../../py/imgEncoder/encode_region.py \
+	-i ../../data/anim/pwaa_anim_v3_reg0.json ../../data/anim/pwaa_anim_v3_reg1.json ../../data/anim/pwaa_anim_v3_reg2.json \
+	-bc ../../data/FONT.chr -cp ../../c/ -oc ../../PWAA.chr -bsp 193
+
