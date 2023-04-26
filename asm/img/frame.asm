@@ -1,24 +1,3 @@
-; params:
-; X, tmp+2
-frame_set_pal:
-    pushregs
-
-    ; multiply X by 3
-    STX MMC5_MUL_A
-    mvx MMC5_MUL_B, #$03
-    LDX MMC5_MUL_A
-    
-    ; move palette
-    for_y @loop, #1
-        LDA (tmp+2), Y
-        STA img_palette_0, X
-        INX
-        to_y_inc @loop, #4
-
-    pullregs
-    RTS
-
-
 frame_decode:
     pushregs
 
@@ -174,42 +153,21 @@ frame_decode:
         ; save header byte
         PHA
 
-        INY
-        LDA (tmp), Y
-        ASL
-        ASL
-        TAX
-        LDA palette_table, X
-        STA img_palette_bkg
-        DEY
-
-        for_x @palette_loop, #0
-            ;
-            sta_ptr tmp+2, palette_table
-            ;
-            INY
+        ; for y in 12..0
+        for_y @palette_loop, #12
+            ; get color
             LDA (tmp), Y
-            ASL
-            ASL
-            add_A2ptr tmp+2
-            ;
-            INY
-            TYA
-            PHA
-
-            JSR frame_set_pal
-
-            PLA
-            TAY
-            ; break if the img is a background image
-            ; (we don't want to change the character palettes)
-            LDA img_header
-            BMI @palette_loop_end
-        to_x_inc @palette_loop, #4
-        @palette_loop_end:
+            ; if valid color
+            CMP #$40
+            bge :+
+                ; then set color
+                STA img_palettes, Y
+            ; next
+            :
+        to_y_dec @palette_loop, #-1
         
         ; update pointer
-        LDA #8
+        LDA #13
         LDY #$00
         add_A2ptr tmp
         ; restore header byte

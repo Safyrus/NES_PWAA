@@ -88,17 +88,17 @@ def ca65_file(frames, ca65_info, prg_start_bank=0):
 
     # write palettes table
     ca65_pal = "palette_table:\n"
-    for p in pal_bank:
-        pal = ".byte"
-        pal_cmt = " ;"
-        for c in p:
-            pal += f" $" + "%0.2X" % c + ","
-            if c > 64:
-                print(f"ERROR: wrong palette ({c})")
-                pal_cmt += f" ERROR,"
-            else:
-                pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
-        ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
+    # for p in pal_bank:
+    #     pal = ".byte"
+    #     pal_cmt = " ;"
+    #     for c in p:
+    #         pal += f" $" + "%0.2X" % c + ","
+    #         if c > 64:
+    #             print(f"ERROR: wrong palette ({c})")
+    #             pal_cmt += f" ERROR,"
+    #         else:
+    #             pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
+    #     ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
 
     # final touch
     ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
@@ -176,6 +176,12 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
         last_char = bck
         # for all characters:
         for i in range(len(chars)):
+            #
+            if "palettes_each" in anim:
+                if i < len(anim["palettes_each"]):
+                    pal_set = anim["palettes_each"][i]
+                else:
+                    pal_set = anim["palettes_each"][0]
             # get last character frame
             if i > 0:
                 last_char = chars[i-1]
@@ -269,7 +275,6 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set, chr_start_bank=0):
     # get image palette
     if pal not in pal_bank:
         pal_bank.append(pal)
-    pal = pal_bank.index(pal)
     # convert tilemap to more compressable data (all low bytes, then all high bytes)
     data = []
     for t in tile_map:
@@ -283,10 +288,12 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set, chr_start_bank=0):
     frame.append(flags)
 
     # palette bytes
-    frame.append(pal//256)
-    frame.append(pal % 256)
-    for _ in range(6):
-        frame.append(0)
+    frame.extend(pal)
+    frame.extend([0xFF]*3)
+    frame.append(0xFF)
+    frame.append(pal[2])
+    frame.append(pal[3])
+    frame.extend([0xFF]*3)
 
     # add tilemap to frame
     frame.extend(tile_map)
@@ -317,7 +324,6 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
         pal_chr = pal_set[1]
     if pal_bkg not in pal_bank:
         pal_bank.append(pal_bkg)
-    pal_bkg_idx = pal_bank.index(pal_bkg)
     #
     pal_chr = [
         [pal_bkg[0], pal_chr[0], pal_chr[1], pal_chr[2]],
@@ -327,13 +333,12 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     for i in range(len(pal_chr)):
         if pal_chr[i] not in pal_bank:
             pal_bank.append(pal_chr[i])
-        pal_chr[i] = pal_bank.index(pal_chr[i])
     # palette bytes
-    frame.append(pal_bkg_idx//256)
-    frame.append(pal_bkg_idx % 256)
-    for p in pal_chr:
-        frame.append(p//256)
-        frame.append(p % 256)
+    frame.extend([0xFF]*4)
+    frame.extend(pal_chr[0][1:])
+    frame.append(pal_chr[1][1])
+    frame.extend([0xFF]*2)
+    frame.extend(pal_chr[2][1:])
 
     # remove same tiles between frames
     tile_map = []
