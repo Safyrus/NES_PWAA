@@ -1,0 +1,28 @@
+Test 15 musics.<b>
+Each dialog play a music.<b>
+Starting next dialog.<p>
+
+<music:1>Music 1<p>
+<music:0>Stop<b>
+(Test music_stop)<p>
+
+<label:loop>
+<music:1>Music 1<p>
+<music:2>Music 2<p>
+<music:3>Music 3<p>
+<music:4>Music 4<p>
+<music:5>Music 5<p>
+<music:6>Music 6<p>
+<music:7>Music 7<p>
+<music:8>Music 8<p>
+<music:9>Music 9<p>
+<music:10>Music 10<p>
+<music:11>Music 11<p>
+<music:12>Music 12<p>
+<music:13>Music 13<p>
+<music:14>Music 14<p>
+<music:15>Music 15<p>
+<music:0>Stop<b>
+Now looping<p>
+<jump:loop>
+

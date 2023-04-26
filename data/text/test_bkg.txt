@@ -1,0 +1,122 @@
+   [Background image Test]<b>
+Each dialog change to a<b>
+new background.<p>
+
+This script test 99 bkg.<b>
+The game may crash if you<b>
+don't have that many bkg.<p>
+
+<label:loop>
+<background:0>Background 0<p>
+<background:1>Background 1<p>
+<background:2>Background 2<p>
+<background:3>Background 3<p>
+<background:4>Background 4<p>
+<background:5>Background 5<p>
+<background:6>Background 6<p>
+<background:7>Background 7<p>
+<background:8>Background 8<p>
+<background:9>Background 9<p>
+
+<background:10>Background 10<p>
+<background:11>Background 11<p>
+<background:12>Background 12<p>
+<background:13>Background 13<p>
+<background:14>Background 14<p>
+<background:15>Background 15<p>
+<background:16>Background 16<p>
+<background:17>Background 17<p>
+<background:18>Background 18<p>
+<background:19>Background 19<p>
+
+<background:20>Background 20<p>
+<background:21>Background 21<p>
+<background:22>Background 22<p>
+<background:23>Background 23<p>
+<background:24>Background 24<p>
+<background:25>Background 25<p>
+<background:26>Background 26<p>
+<background:27>Background 27<p>
+<background:28>Background 28<p>
+<background:29>Background 29<p>
+
+<background:30>Background 30<p>
+<background:31>Background 31<p>
+<background:32>Background 32<p>
+<background:33>Background 33<p>
+<background:34>Background 34<p>
+<background:35>Background 35<p>
+<background:36>Background 36<p>
+<background:37>Background 37<p>
+<background:38>Background 38<p>
+<background:39>Background 39<p>
+
+<background:40>Background 40<p>
+<background:41>Background 41<p>
+<background:42>Background 42<p>
+<background:43>Background 43<p>
+<background:44>Background 44<p>
+<background:45>Background 45<p>
+<background:46>Background 46<p>
+<background:47>Background 47<p>
+<background:48>Background 48<p>
+<background:49>Background 49<p>
+
+<background:50>Background 50<p>
+<background:51>Background 51<p>
+<background:52>Background 52<p>
+<background:53>Background 53<p>
+<background:54>Background 54<p>
+<background:55>Background 55<p>
+<background:56>Background 56<p>
+<background:57>Background 57<p>
+<background:58>Background 58<p>
+<background:59>Background 59<p>
+
+<background:60>Background 60<p>
+<background:61>Background 61<p>
+<background:62>Background 62<p>
+<background:63>Background 63<p>
+<background:64>Background 64<p>
+<background:65>Background 65<p>
+<background:66>Background 66<p>
+<background:67>Background 67<p>
+<background:68>Background 68<p>
+<background:69>Background 69<p>
+
+<background:70>Background 70<p>
+<background:71>Background 71<p>
+<background:72>Background 72<p>
+<background:73>Background 73<p>
+<background:74>Background 74<p>
+<background:75>Background 75<p>
+<background:76>Background 76<p>
+<background:77>Background 77<p>
+<background:78>Background 78<p>
+<background:79>Background 79<p>
+
+<background:80>Background 80<p>
+<background:81>Background 81<p>
+<background:82>Background 82<p>
+<background:83>Background 83<p>
+<background:84>Background 84<p>
+<background:85>Background 85<p>
+<background:86>Background 86<p>
+<background:87>Background 87<p>
+<background:88>Background 88<p>
+<background:89>Background 89<p>
+
+<background:90>Background 90<p>
+<background:91>Background 91<p>
+<background:92>Background 92<p>
+<background:93>Background 93<p>
+<background:94>Background 94<p>
+<background:95>Background 95<p>
+<background:96>Background 96<p>
+<background:97>Background 97<p>
+<background:98>Background 98<p>
+<background:99>Background 99<p>
+
+Now looping<p>
+<jump:loop>
+
