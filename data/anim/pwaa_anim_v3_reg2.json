@@ -1,0 +1,7 @@
+[
+    {"background": "../../data/backgrounds/cutscene_70.png","character": [],"time": [], "idx": 16, "name": "BKG_TINKER_BLOOD"},
+    {"background": "../../data/backgrounds/cutscene_51a.png","character": [],"time": [], "idx": 18, "name": "BKG_SAHWIT_MURDERER_1"},
+    {"background": "../../data/backgrounds/cutscene_52.png","character": [],"time": [], "idx": 19, "name": "BKG_SAHWIT_MURDERER_2"},
+    {"background": "../../data/backgrounds/cutscene_53.png","character": [],"time": [], "idx": 20, "name": "BKG_SAHWIT_MURDERER_3"},
+    {"background": "../../data/backgrounds/cutscene_54.png","character": [],"time": [], "idx": 21, "name": "BKG_SAHWIT_MURDERER_4"}
+]
