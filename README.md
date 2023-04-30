@@ -52,8 +52,8 @@ You can still test the game on emulator that is considered accurate
 
 ```
 Phoenix Wright: Ace Attorney And All Respective Names are Trademark and property of Capcom.
-We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with Capcom,
-or any of its subsidiaries or its affiliates.
+We are not affiliated, associated, authorized, endorsed by,
+or in any way officially connected with Capcom,or any of its subsidiaries or its affiliates.
 ```
 
 ### PWAA
