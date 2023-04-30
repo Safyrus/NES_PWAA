@@ -31,7 +31,7 @@ text = re.sub(r"<fullscreen_text>", "", text)
 text = re.sub(r"<bganim:98,357>", "", text) # choice anim
 text = re.sub(r"<5D:([^>]*)>", "", text) # 5D = center_text
 text = re.sub(r"<6B:([^>]*)>", "", text) # something with choice and gavel but can't find use
-text = re.sub(r"<26:([^>]*)>", "", text) # unknow boolean, can't find use
+text = re.sub(r"<26:([^>]*)>", "", text) # unknown boolean, can't find use
 # removing args
 text = re.sub(r"<shake:[^>]*>", "<shake>", text)
 text = re.sub(r"<hidetextbox:.>", "<hidetextbox>", text)
@@ -81,13 +81,13 @@ text = re.sub(r"<finger_choice_2args_jmp:[^>]*>", "<act><jump:label_unknow>TODO1
 text = re.sub(r"<finger_choice_3args_jmp:[^>]*>", "<act><jump:label_unknow>TODO1<b><jump:label_unknow>TODO2<b><jump:label_unknow>TODO3<b>", text)
 text = re.sub(r"<swoosh:[^>]*>", "<event:0,0>", text) # swoosh (0), (screen pos)
 text = re.sub(r"<bganim:98,273>", "<event:1>", text) # gavel slam anim
-text = re.sub(r"<bganim:98,579>", "<event:2>", text) # other gavel slam anim
-text = re.sub(r"<lifebar:[^>]*>", "<event:3>", text) # toggle lifebar display
+text = re.sub(r"<bganim:98,579>", "<event:2>", text) # another gavel slam anim
+text = re.sub(r"<lifebar:[^>]*>", "<event:3>", text) # toggle life-bar display
 text = re.sub(r"<newevidence:[^>]*>", "<event:4,0>", text) # new evidence (4), evidence idx
 text = re.sub(r"<littlesprite:[^>]*>", "<event:5,0>", text) # littlesprite/point_on_map (5), which point where
 text = re.sub(r"<testimony_animation:1>", "<event:6>", text) # testimony scrolling animation (6) + testimony top text
 text = re.sub(r"<testimony_animation:0>", "<event:7>", text) # remove testimony top text (7)
-text = re.sub(r"<testimony_box:[^>]*>", "<event:8>", text) # cross examination top text (8)
+text = re.sub(r"<testimony_box:[^>]*>", "<event:8>", text) # cross-examination top text (8)
 text = re.sub(r"<2B>", "<event:9>", text) # lifehit_effect
 # moving
 for _ in range(MAX_REGEX_LOOP):
@@ -227,7 +227,7 @@ footer = """
 
 text = header + text + footer
 
-# outputing results
+# outputting results
 print(f"writing file...")
 with open(outfile, "w") as f:
     f.write(text)

@@ -57,7 +57,7 @@ run:
 	$(EMULATOR) $(GAME_NAME).nes
 
 
-# dump the nes files binary into hexa text
+# dump the nes files binary into hex text
 hex:
 	$(HEXDUMP) $(GAME_NAME).nes > dump_$(GAME_NAME).txt
 

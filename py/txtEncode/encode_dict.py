@@ -55,13 +55,13 @@ if len(words_txt) > DICT_MAX:
     words_cnt = words_cnt[:LDICT_MAX+DICT_MAX]
 print("number of words remaining:", len(words_txt))
 
-print("writting dict...")
+print("writing dict...")
 with open(dictile, "wb") as f:
     for w in words_txt:
         f.write(len(w).to_bytes(1, "big"))
         f.write(w)
 
-print("encoding & writting data...")
+print("encoding & writing data...")
 with open(outputfile, "wb") as f:
     for w in text_split:
         if w in words_txt:
