@@ -9,7 +9,7 @@ def find_palettes(character_img):
     colors = colors[1:]  # remove background color
     # sort by color count
     colors = sorted(colors, key=lambda tup: tup[0], reverse=True)
-    colors = [v for _, v in colors]  # remove color count from a list
+    colors = [v for _, v in colors]  # remove color count from the list
 
     # background image in a gray scale, palette already sorted
     palettes.append([0, 1, 2, 3])
@@ -163,7 +163,7 @@ def img_2_spr(img):
 
 def encode_frame(background_img_path, character_img_path, spr_bank=[]):
 
-    # reduce color count to 4 for a background and 7 (+1 for transparent) for character
+    # reduce color count to 4 for the background and 7 (+1 for transparent) for the character
     background_img, pal = bkg_col_reduce(background_img_path)
     character_img, pal_chr = char_col_reduce(character_img_path)
 

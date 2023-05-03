@@ -3,7 +3,7 @@
 - [ ] Fix bugs
   - [ ] Encode ACCURATE palette with images
   - [ ] Character sprites being all redrawn for every animation frame
-  - [ ] If it is possible in 1 frame, update MMC5 name-table and sprite at the same time
+  - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
   - [ ] Entire screen glitching when loading the next text data block
 - [ ] Visual effects
   - [ ] Scrolling
@@ -66,7 +66,7 @@
 - [X] Fix Sprite x position being incorrect, because spr_x buffer wasn't reversed after sprite flickering.
 - [X] Add fast-forward dialog button
 - [X] Encode ACCURATE sprites with images (Choose to maximize top sprites and cut bottom ones if too many)
-- [X] Fix MMC5 name-table updated 1 frame too late/soon when switching animation
+- [X] Fix MMC5 nametable updated 1 frame too late/soon when switching animation
 - [X] Fix temporary wrong scrolling position when starting the animation because of NMI not acknowledged during the draw animation phase
 - [X] Fix dialog box top row using PPU backdrop color
 - [X] Fix background tiles overflow when drawing the dialog box
@@ -76,9 +76,9 @@
 - [X] Fix sprites not disappearing when removing the character
 - [X] Fix temporary wrong palette
 - [X] Fix image encoding not using the background color for the character
-- [X] The First character frame being redrawn entirely
+- [X] Fix the first character frame being redrawn entirely
 - [X] Fix background drawing every frame when no animation is selected
-- [X] Encode garbage sprite tiles for every character (because of the wrong sprite dimension)
+- [X] Fix encoding garbage sprite tiles for every character (because of the wrong sprite dimension)
 - [X] Fix Images having too many sprites
 - [X] Fix Shake effect not moving sprites
 - [X] Read dialog every frame (and not be slowed by image drawing, for example)
@@ -86,7 +86,7 @@
 - [X] Add delay before another input
 - [X] Fix palette switch background color applying everywhere
 - [X] Fix jump using the wrong flag (wrong argument used in the python script)
-- [X] Fix the wrong bank when decoding text (not saved in var 'mmc5_bank')
+- [X] Fix using the wrong bank when decoding text (not saved in var 'mmc5_bank')
 
 - [X] Import FamiStudio
 
@@ -94,7 +94,7 @@
 - [X] Fix partial images: missing sprites (because we cleared sprites each time a partial image was draw)
 - [X] Fix partial images: wrong sprites bank (It wasn't the wrong bank, but too many sprites that were outside the bank)
 - [X] Fix partial images: wrong background tiles corruption (background packet not closed in partial frame subroutine)
-- [X] Fix garbage tiles. (writing to wrong name-table, because MMC5 register wasn't correctly set)
+- [X] Fix garbage tiles. (writing to wrong nametable, because MMC5 register wasn't correctly set)
 
 - [X] Image drawing
   - [X] RLEINC encode (python)

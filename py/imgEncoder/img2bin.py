@@ -69,7 +69,7 @@ def img2bin(args):
             palettes = find_palettes(chr)
             # merge background and character into 1 image
             chr = merge_image(bkg, chr)
-            # remove sprite colors from a background
+            # remove sprite colors from the background
             for i in range(1, 4):
                 chr = np.where(chr == palettes[3][i], 0, chr)
             # convert image to tiles

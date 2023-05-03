@@ -354,7 +354,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
         spr_map.append(spr_data2[i])
 
     # convert tilemap to more compressible data (all low bytes, then all high bytes)
-    # and put a pal map into a tile map
+    # and put the pal map into the tile map
     data = []
     for t in tile_map:
         data.append(t % 256)
