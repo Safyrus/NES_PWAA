@@ -2,7 +2,7 @@
 <speed:5><bip:1>Normal bip sound<b><bip:2>High bip sound<b><bip:3>Low bip sound<p><bip:1><speed:2>
 This is a test to see<b>if we can decode text.<p>
 And this is (hopefully)<b>another dialog box.<p>
-Read quick! This dialog box<b> will dissapeare at the end<b> of this sentence.<fp>
+Read quick! This dialog box<b> will disappear at the end<b> of this sentence.<fp>
 Did you read all the text ?<p>
 <speed:4>This text is slower<b><speed:10>This one even more<b><speed:2>Back to normal<p>
 The next text should be read<b>at<speed:10> this speed<p>
@@ -10,7 +10,7 @@ Is the speed good ?<speed:2><p>
 Now we will test<b>delay text<p>
 Wait i'm thinking...<wait:40><b>OK I'm done<b><wait:10>Wait!<wait:100>Nothing :)<p>
 Colors!<wait:8>We have<b><color:1>RED<color:0>,<color:2>BLUE<color:0>,and <color:3>GREEN<color:0>!<p>
-Whatch out!<b>The dialog box will dissapear<b>In 3<wait:60> 2<wait:60> 1<wait:60><hidetextbox><wait:60><fp>
+Watch out!<b>The dialog box will disappear<b>In 3<wait:60> 2<wait:60> 1<wait:60><hidetextbox><wait:60><fp>
 This text will not be draw.<fp>
 <hidetextbox>Don't worry.<wait:8><b>I'm still here.<p>
 <shake>Ouch!!!<wait:8><b>What a shake effect!<p>
