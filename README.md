@@ -1,8 +1,10 @@
-# README
+# Phoenix Wright: Ace attorney - NES Demake
 
-![cartridge](data/cartridge/cover_front.png)
+<div style="text-align: center">
+  <img src="data/cartridge/cover_front.png" alt="Phoenix Wright: Ace attorney Demake cartridge">
+</div>
 
-This is an attempt at remaking the first "Phoenix Wright: Ace attorney" (PWAA) game for the NES.
+This is an attempt to create a Demake of the first "Phoenix Wright: Ace attorney" (PWAA) game for the NES.
 
 This project is also starting to look like a NES engine for visual novels, apparently.
 
@@ -11,9 +13,9 @@ This project is also starting to look like a NES engine for visual novels, appar
 ### Prerequisite
 
 - Make
-- CC65 (https://github.com/cc65/cc65)
-- GCC
-- Python with all the necessary package:
+- [CC65](https://github.com/cc65/cc65): An 6502 C compiler uses to create the binary file used by the NES and the Emulator
+- GCC: GNU Compiler Collection used to compile C language
+- Python with all the necessary packages:
   - argparse
   - Pillow
   - numpy
@@ -22,13 +24,12 @@ This project is also starting to look like a NES engine for visual novels, appar
 
 Note: You may need to change some configs in the "cfg" folder to be able to run commands.
 
-Compile the game: `make`
-
-Compile the dialogs: `make text`
-
-Compile the images: `make img`
-
-Run the game: `make run`
+| Commands    | Description         |
+|-------------|---------------------|
+| `make`      | Compile the game    |
+| `make text` | Compile the dialogs |
+| `make img`  | Compile the images  |
+| `make run`  | Run the game        |
 
 ## Emulators
 
@@ -36,28 +37,37 @@ Because of the use of the MMC5 mapper and a lot of technical "tricks",
 a lot of emulators may not be able to run the game.
 Plus, the game is also buggy.
 
-I recommend playing it on the Mesen emulator (https://www.mesen.ca/) because it's the emulator that I use to test & debug the game on, so it should work fine.
-It is also the most accurate emulator that I know (and I can't think of developing on the NES without all of these debugging features).
+I recommend
+playing it on the [Mesen](https://www.mesen.ca/) emulator
+because it's the emulator that I use to test & debug the game on,
+so it should work fine.
+It is also the most accurate emulator that I know
+(I can't think of developing on the NES without all of these debugging features).
 
 I will add a list of emulators that are capable of running the game here later.
-You can still test the game on emulator that are considered accurate (https://emulation.gametechwiki.com/index.php/Nintendo_Entertainment_System_emulators). 
+You can still test the game on emulator that is considered accurate
+([List of existing Emulator](https://emulation.gametechwiki.com/index.php/Nintendo_Entertainment_System_emulators)). 
 
-## Credits
+## Credits / Disclaimer
+
+```
+Phoenix Wright: Ace Attorney And All Respective Names are Trademark and property of Capcom.
+We are not affiliated, associated, authorized, endorsed by,
+or in any way officially connected with Capcom,or any of its subsidiaries or its affiliates.
+```
 
 ### PWAA
 
-Capcom for the original game.
-Note: `Phoenix Wright: Ace Attorney And All Respective Names are Trademark & © of Capcom.
-This project is not associated with Capcom.`
+Capcom for making the original game.
 
 ### NES
 
 - [NesDev](https://www.nesdev.org/wiki/Nesdev_Wiki) of course.
-- Nintendo for the NES I suppose.
+- Nintendo for the NES, I suppose.
 
 ### Sound
 
-- The [FamiStudio](https://famistudio.org) sound engine by BleuBleu.
+- [FamiStudio](https://famistudio.org) sound engine by BleuBleu.
 - [Nitro Studio 2](https://gota7.github.io/NitroStudio2/) by Gota7. Used for the "midi2sseq.exe".
 - [SDATxtract](https://github.com/Oreo639/sdatxtract) by oreo639.
 

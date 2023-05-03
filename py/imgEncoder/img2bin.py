@@ -19,7 +19,7 @@ def add_unique(value, list):
 def img2bin(args):
     # variables
     error = False
-    img_names = []  # list of pair (path, is_background)
+    img_names = []  # list of pairs (path, is_background)
     pal_maps = []
 
     # open json file
@@ -27,7 +27,7 @@ def img2bin(args):
     with open(args.json) as f:
         json_data = json.load(f)
 
-    # get all file and check if there all exist
+    # get all files and check if their all exist
     print("check files")
     for anim in json_data:
         # if background image does not exist
@@ -44,7 +44,7 @@ def img2bin(args):
             # add it to the list
             img_names = add_unique((c, anim["background"]), img_names)
 
-    # if a file does not exist then stop here
+    # if a file does not exist, then stop here
     if error:
         exit(1)
 
@@ -69,7 +69,7 @@ def img2bin(args):
             palettes = find_palettes(chr)
             # merge background and character into 1 image
             chr = merge_image(bkg, chr)
-            # remove sprite colors from background
+            # remove sprite colors from the background
             for i in range(1, 4):
                 chr = np.where(chr == palettes[3][i], 0, chr)
             # convert image to tiles

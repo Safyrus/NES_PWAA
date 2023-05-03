@@ -4,17 +4,16 @@ jobs:
   build_nes_rom:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Install CC65
-        run: sudo apt install cc65
-
-        # Needed to access the repository files
+      # Pull project files
       - name: Checkout repo
         uses: actions/checkout@v3
-
+      # Install compiler
+      - name: Install CC65
+        run: sudo apt install cc65
+      # Build project
       - name: Build NES file
         run: make
-
+      # Upload binary file
       - name: Upload NES file
         uses: actions/upload-artifact@v3
         with:

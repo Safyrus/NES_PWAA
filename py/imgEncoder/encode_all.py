@@ -120,7 +120,7 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
         np.full((SPR_SIZE_H, SPR_SIZE_W), 0)
     ]
 
-    # get all file and check if there all exist
+    # get all files and check if their all exist
     print("check files")
     error = False
     for anim in json:
@@ -133,14 +133,14 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
             if not os.path.exists(c):
                 print("ERROR: file", c, "does not exist")
                 error = True
-    # if a file does not exist then stop here
+    # if a file does not exist, then stop here
     if error:
         exit(1)
 
     # for all animations:
     print("background encoding")
     for anim in json:
-        # if background not already encoded
+        # if background isn't already encoded
         if anim["background"] not in frames_name:
             # encode background as full image
             print("\033[A\033[2K\rencode background", anim["background"])
@@ -275,7 +275,7 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set, chr_start_bank=0):
     # get image palette
     if pal not in pal_bank:
         pal_bank.append(pal)
-    # convert tilemap to more compressable data (all low bytes, then all high bytes)
+    # convert tilemap to more compressible data (all low bytes, then all high bytes)
     data = []
     for t in tile_map:
         data.append(t % 256)
@@ -353,8 +353,8 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     for i in range(4, len(spr_data2)):
         spr_map.append(spr_data2[i])
 
-    # convert tilemap to more compressable data (all low bytes, then all high bytes)
-    # and put pal map into tile map
+    # convert tilemap to more compressible data (all low bytes, then all high bytes)
+    # and put the pal map into the tile map
     data = []
     for t in tile_map:
         data.append(t % 256)
