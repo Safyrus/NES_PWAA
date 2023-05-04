@@ -133,8 +133,9 @@ OAM:
     flash_timer: .res 1
     ;
     shake_timer: .res 1
-    ; D... ...R
-    ; |       +-- Refresh box (1=refresh, 0=redraw)
+    ; D... ..NR
+    ; |      |+-- Refresh box (1=refresh, 0=redraw)
+    ; |      +--- refresh box Name
     ; +---------- Display box (0=show, 1=hidden)
     box_flags: .res 1
 
@@ -178,6 +179,14 @@ OAM:
     txt_jump_buf: .res 3
     ;
     txt_jump_flag_buf: .res 1
+
+    ; - - - - - - - -
+    ; Variables for name displaying
+    ; - - - - - - - -
+    ; low address for name CHR data
+    name_adr: .res 1
+    ; size in CHR tiles of the name
+    name_size: .res 1
 
     ; - - - - - - - -
     ; Variables for text printing

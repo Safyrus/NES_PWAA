@@ -1,13 +1,3 @@
-BOX_TILE_TL = $0080
-BOX_TILE_T  = $0081
-BOX_TILE_TR = $0082
-BOX_TILE_L  = $0090
-BOX_TILE_M  = $0091
-BOX_TILE_R  = $0092
-BOX_TILE_BL = $00A0
-BOX_TILE_B  = $00A1
-BOX_TILE_BR = $00A2
-
 ; params:
 ; - A: tile
 ; - tmp: ppu ptr
@@ -114,6 +104,8 @@ draw_dialog_box:
     for_y @loop_ext, #0
         STA (tmp), Y
     to_y_inc @loop_ext, #0
+
+    JSR draw_name
 
     @end:
     pullregs

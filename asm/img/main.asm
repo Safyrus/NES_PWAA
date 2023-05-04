@@ -5,3 +5,4 @@
 .include "draw_spr.asm"
 .include "frame.asm"
 .include "find.asm"
+.include "draw_name.asm"

@@ -263,12 +263,10 @@ frame_decode:
         ; draw tiles
         @draw_tiles_part:
             JSR img_bkg_draw_partial
-            JMP @draw_tiles_wait
+            JMP @draw_tiles_done
         @draw_tiles_full:
             JSR img_bkg_draw
-        @draw_tiles_wait:
-        ; wait one frame to clear the nmi background buffer
-        JSR wait_next_frame
+        @draw_tiles_done:
         ;
         PLA
     @draw_tiles_end:

@@ -46,7 +46,6 @@
     LDX background_index
     LDA max_choice
     ASL
-    TAY
     ORA #$80
     STA background, X
     INX
@@ -56,10 +55,13 @@
     LDA #<($2281)
     STA background, X
     INX
-    LDA #$3E
+    LDY max_choice
     @ACT_draw:
+        LDA #$3E
         STA background, X
-        EOR #$80
+        INX
+        LDA #BOX_TILE_M
+        STA background, X
         INX
         DEY
         bnz @ACT_draw

@@ -103,6 +103,15 @@ MAIN:
         JSR frame_decode
     :
 
+    ; refresh dialog box name if needed
+    LDA box_flags
+    AND #BOX_FLAG_NAME
+    BEQ @name_refresh_end
+    @name_refresh:
+        and_adr box_flags, #($FF-BOX_FLAG_NAME)
+        JSR draw_name
+    @name_refresh_end:
+
     ; lz decode if needed
     LDA txt_flags
     AND #TXT_FLAG_LZ

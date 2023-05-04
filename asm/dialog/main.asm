@@ -8,3 +8,4 @@
 .include "ext.asm"
 .include "pal.asm"
 .include "flag.asm"
+.include "name.asm"

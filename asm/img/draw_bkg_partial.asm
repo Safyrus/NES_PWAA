@@ -128,7 +128,7 @@ img_partial_buf_flush:
         add background_index
         CMP #$41
         bge @wait_vblank
-    and_adr nmi_flags, #($FF-NMI_DONE) ; fix nmi not doing anything because we wait toom any frames
+    and_adr nmi_flags, #($FF-NMI_DONE) ; fix nmi not doing anything because we wait too many frames
     ; don't draw at the end of a frame (no time to close the packet)
     @wait_inframe:
         BIT scanline
