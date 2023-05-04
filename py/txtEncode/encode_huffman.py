@@ -31,7 +31,7 @@ huff_txt_str = ""
 for c in text:
     huff_txt_str += huff_tree[c]
 
-# outputing results
+# outputting results
 print(f"writing new file...")
 with open(outputfile, "wb") as f:
     for i in range(0, len(huff_txt_str), 8):

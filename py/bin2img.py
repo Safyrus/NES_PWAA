@@ -108,7 +108,7 @@ elif mode == "L":
 elif mode == "NES":
     img = nes(w)
 else:
-    print("unknow mode")
+    print("unknown mode")
     exit(1)
 #
 img.save(outputfile)

@@ -5,13 +5,13 @@ def find_palettes(character_img):
     palettes = []
 
     colors = character_img.getcolors()  # get character colors
-    idxs = [v for _, v in colors]  # keep color order befor sorting
+    idxs = [v for _, v in colors]  # keep color order before sorting
     colors = colors[1:]  # remove background color
     # sort by color count
     colors = sorted(colors, key=lambda tup: tup[0], reverse=True)
-    colors = [v for _, v in colors]  # remove color count from list
+    colors = [v for _, v in colors]  # remove color count from the list
 
-    # background image in gray scale, palette already sorted
+    # background image in a gray scale, palette already sorted
     palettes.append([0, 1, 2, 3])
     palettes.append([  # character primary palette
         0,
@@ -163,7 +163,7 @@ def img_2_spr(img):
 
 def encode_frame(background_img_path, character_img_path, spr_bank=[]):
 
-    # reduce color count to 4 for background and 7 (+1 for transparent) for character
+    # reduce color count to 4 for the background and 7 (+1 for transparent) for the character
     background_img, pal = bkg_col_reduce(background_img_path)
     character_img, pal_chr = char_col_reduce(character_img_path)
 
@@ -171,10 +171,10 @@ def encode_frame(background_img_path, character_img_path, spr_bank=[]):
     character_img = img_2_idx(character_img)
 
     # find the NES palette
-    # bp0 = background  sp0 = char sec
-    # bp1 = char prim   sp1 = ...
-    # bp2 = contour     sp2 = ...
-    # bp3 = ...         sp3 = ...
+    # bp0 = background sp0 = char sec
+    # bp1 = char prim  sp1 = ...
+    # bp2 = contour    sp2 = ...
+    # bp3 = ...        sp3 = ...
     palettes = find_palettes(character_img)
 
     # merge background and character into 1 image

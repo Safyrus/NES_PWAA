@@ -19,32 +19,32 @@ CHAR_MAP = [
     "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", ",", "}", "~", " "
 ]
 
-END = 0x00  # END of dialog                                             |
+END = 0x00  # END of dialog                                            |
 LB = 0x01  # Line Break                                                |
 DB = 0x02  # Dialog Break                                              |
-FDB = 0x03  # Force Dialog Break                                        |
+FDB = 0x03  # Force Dialog Break                                       |
 TD = 0x04  # Toggle Dialog Box display                                 |
-SET = 0x05  # Set flag                                                  | 1: index
-CLR = 0x06  # Clear flag                                                | 1: index
+SET = 0x05  # Set flag                                                 | 1: index
+CLR = 0x06  # Clear flag                                               | 1: index
 SAK = 0x07  # |
-SPD = 0x08  # SPeeD                                                     | 1: speed
+SPD = 0x08  # SPeeD                                                    | 1: speed
 DL = 0x09  # DeLay                                                     | 1: delay
-NAM = 0x0A  # change NAMe of dialog box                                 | 1: name
-FLH = 0x0B  # FLasH                                                     | 1: color
+NAM = 0x0A  # change NAMe of dialog box                                | 1: name
+FLH = 0x0B  # FLasH                                                    | 1: color
 FI = 0x0C  # Fade In                                                   | 1: color
 FO = 0x0D  # Fade Out                                                  | 1: color
-COL = 0x0E  # change text COLor                                         | 1: color
+COL = 0x0E  # change text COLor                                        | 1: color
 BC = 0x0F  # change Background Color                                   | 1: color
-BIP = 0x10  # change dialog BIP effect                                  | 1: bip
-MUS = 0x11  # MUSic                                                     | 1: music
-SND = 0x12  # SouND effect                                              | 1: sound
+BIP = 0x10  # change dialog BIP effect                                 | 1: bip
+MUS = 0x11  # MUSic                                                    | 1: music
+SND = 0x12  # SouND effect                                             | 1: sound
 # show PHoto                                                | 1: photo (0=remove)
 PHT = 0x13
 # CHaRacter to show                                         | 1: character (0=remove)
 CHR = 0x14
-ANI = 0x15  # character ANImation                                       | 1: animation
-BKG = 0x16  # change BacKGround                                         | 1: background
-FNT = 0x17  # Change FoNT to use                                        | 1: font
+ANI = 0x15  # character ANImation                                      | 1: animation
+BKG = 0x16  # change BacKGround                                        | 1: background
+FNT = 0x17  # Change FoNT to use                                       | 1: font
 # JuMP to another dialog                                    | jmp_adr, [condition]
 JMP = 0x18
 # jump to the selected choice (depend on the player ACTion) | (jmp_adr, [condition], text line)*nb_choice
@@ -75,7 +75,7 @@ with open(txtfile, "r") as f:
 print(f"filtering...")
 # remove control character and char not in CHAR_MAP
 text = re.sub(r"[^\x20-\x7E]", "", text)
-# remove unknow/unused metadata
+# remove unknown/unused metadata
 text = re.sub(r"\[[0-9]+\]", "", text)
 # remove comments
 text = re.sub(r"<!--(.*?)-->", "", text)
@@ -241,7 +241,7 @@ while i < len(text):
             for a in args:
                 textbin = append_byte(textbin, int(a), name, i)
         else:
-            print(f"Unknow tag '{name}' at {i}")
+            print(f"Unknown tag '{name}' at {i}")
 
         # update index
         i = tag_end+1
@@ -261,7 +261,7 @@ if 0 in textbin:
     print("WARNING: A 0 value has been detected. It may be interpreted has 'END'")
 
 
-# outputing results
+# outputting results
 print(f"writing new file...")
 with open(outputfile, "wb") as f:
     f.write(textbin)
