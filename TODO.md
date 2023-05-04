@@ -40,6 +40,8 @@
 
 ## Done
 
+- [X] Add a markdown file describing the dialog script 'language'.
+- [X] Add names to display with the dialog box.
 - [X] Update Makefile
 - [X] other text data to test animations, music and backgrounds.
 - [X] PWAA cartridge concept art.
@@ -126,12 +128,11 @@
     - [X] SAK
     - [X] SPD
     - [X] DL 
-    - [ ] NAM
+    - [X] NAM
     - [X] FLH
     - [X] FI 
     - [X] FO 
     - [X] COL
-    - [ ] BC 
     - [X] BIP
     - [X] MUS
     - [ ] SND

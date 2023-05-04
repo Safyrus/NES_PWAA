@@ -17,17 +17,17 @@
 |      | **07** | SAK | ShAKe                                                        |                                               |
 |      | **08** | SPD | SPeeD                                                        | 1: speed                                      |
 |      | **09** | DL  | DeLay                                                        | 1: delay                                      |
-|  X   | **0A** | NAM | change NAMe of dialog box                                    | 1: name (255=remove)                          |
+|      | **0A** | NAM | change NAMe of dialog box                                    | 1: name (0=remove)                            |
 |      | **0B** | FLH | FLasH                                                        |                                               |
 |      | **0C** | FI  | Fade In                                                      |                                               |
 |      | **0D** | FO  | Fade Out                                                     |                                               |
 |      | **0E** | COL | change text COLor                                            | 1: color                                      |
-|  X   | **0F** | BC  | change Background Color                                      | 1: color                                      |
-|      | **10** | BIP | change dialog BIP effect                                     | 1: bip (255=remove)                           |
-|      | **11** | MUS | MUSic                                                        | 1: music (255=remove)                         |
-|  X   | **12** | SND | SouND effect                                                 | 1: sound (255=remove)                         |
-|  X   | **13** | PHT | show PHoto                                                   | 1: photo (255=remove)                         |
-|  X   | **14** | CHR | CHaRacter to show                                            | 1: character (255=remove)                     |
+|      | **0F** |     |                                                              |                                               |
+|      | **10** | BIP | change dialog BIP effect                                     | 1: bip (0=remove)                             |
+|      | **11** | MUS | MUSic                                                        | 1: music (0=remove)                           |
+|  X   | **12** | SND | SouND effect                                                 | 1: sound (0=remove)                           |
+|  X   | **13** | PHT | show PHoto                                                   | 1: photo (0=remove)                           |
+|  /   | **14** | CHR | CHaRacter to show                                            | 1: character (0=remove)                       |
 |      | **15** | ANI | character ANImation                                          | 1: animation                                  |
 |      | **16** | BKG | change BacKGround                                            | 1: background                                 |
 |  X   | **17** | FNT | Change FoNT to use                                           | 1: font                                       |
@@ -44,7 +44,14 @@
 
 |  Name  | code | description                           |
 |:------:|:----:|:--------------------------------------|
-| Scroll |  01  | SCRoll to the other side of the scene |
+| swoosh |  ??  | Scroll to the other side of the scene |
+| scroll |  ??  | Scroll to the other background        |
+| hp-bar |  ??  | Toggle life-bar display               |
+| hp-hit |  ??  | Life-bar hit effect                   |
+| ce-txt |  ??  | Cross-examination top text            |
+| t-txt  |  ??  | Testimony top text                    |
+| t-SCR  |  ??  | Testimony scroll text effect          |
+| clue   |  ??  | New evidence scroll effect            |
 
 ### Jump addresses format
 

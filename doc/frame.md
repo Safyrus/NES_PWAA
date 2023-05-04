@@ -1,6 +1,6 @@
 # Frame format
 
-Note: Each frame is 256\*192 pixels (or 32\*24 tiles) and not 256\*240 (NES resolution)
+Note: Each frame is 256\*192 pixels (or 32\*24 tiles) and not 256\*240 pixels (NES resolution)
 
 ## RLE INC
 
@@ -27,13 +27,9 @@ RLE INC Table from [NesDev wiki](https://www.nesdev.org/wiki/Tile_compression#RL
               0 = partial frame
   ```
 
-- If palette present:
-  - Byte 1-2: palette 0 indices. (background color)
-  - Byte 3-4: palette 1 indices. (character primary color)
-  - Byte 5-6: palette 2 indices. (character contour color)
-  - Byte 7-8: palette 4 indices. (character secondary color)
-- Tile map. (RLE INC)
-- Sprite map. (RLE INC)
+- If palette flag: palettes data.
+- If tile map flag: tile map (RLE INC).
+- If sprite map flag: sprite map (RLE INC).
 
 #### Full frame vs Partial frame
 
@@ -42,8 +38,18 @@ A **full frame** contain all the data to draw the frame to the screen.
 A **partial frame** contains only the change to apply to the last draw frame.
 
 The 2 types of frame are encoded the same way.
-The only difference is that when drawing a tile equal to 0, the partial frame will not draw it and use the previous draw data.
-For palette map, it must be equal to 3 to be ignored and use the last data.
+The only difference is that when drawing a tile equal to 0 (low part or high part), the partial frame will not draw it and use the previous draw data.
+
+### Palettes
+
+Each byte correspond to a NES color.
+A color equal to $FF mean this color will not be changed.
+
+- Byte 1: background color
+- Byte 2-4: background palette
+- Byte 5-7: character primary/background palette
+- Byte 8-10: character contour palette
+- Byte 11-13: character secondary/sprites palette
 
 ### Tile map
 
@@ -57,7 +63,7 @@ The higher bytes contain the palette to use for the tile (bits 6 and 7).
 
 The sprite map is used to draw sprites (in 8*16 mode).
 The structure contains a 4-bytes header follow by a list of bytes corresponding to the sprite index in CHR.
-Sprites are drawn as a block with a defined width and height.
+Sprites are drawn as a "mega-sprite", a block of sprites with a defined width and height, at a defined (x,y) offset.
 A sprite with index of 0 is not drawn.
 
 #### Header
@@ -73,6 +79,36 @@ A sprite with index of 0 is not drawn.
 - Byte 2: x offset of the sprite block.
 - Byte 3: y offset of the sprite block.
 
-#### List
+#### Example
 
-TODO
+This data:
+
+```
+      header    list of sprite index
+data: [w,p,x,y] [1,2,3,4,5,6,7,8,9,10,11,12]
+```
+
+Will give this on the screen:
+
+```
+           y
+ +------------------------------------------------+
+ |         |                                      |
+ |                                                |
+ |         |                                      |
+ |                 w                              |
+ |         |<------------->                       |
+x|- - - - -################ ^                     |
+ |         # 1  # 2  # 3  # |                     |
+ |         ################ |                     |
+ |         # 4  # 5  # 6  # |                     |
+ |         ################ | h (list size / w)   |
+ |         # 7  # 8  # 9  # |                     |
+ |         ################ |                     |
+ |         # 10 # 11 # 12 # |                     |
+ |         ################ v                     |
+ |                                                |
+ |                                                |
+ |                                                |
+ +------------------------------------------------+
+```
