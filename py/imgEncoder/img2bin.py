@@ -5,7 +5,6 @@ import numpy as np
 from img_col_reduce import bkg_col_reduce, char_col_reduce
 from encode_frame import img_2_idx, find_palettes, merge_image, apply_palette
 from img_2_tiles import img_2_tile
-from PIL import Image
 
 EMPTY_IMG = "../../data/empty.png"
 

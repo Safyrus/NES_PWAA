@@ -167,7 +167,7 @@ while i < len(text):
             textbin.append(min(127, int(args[0])))
         elif name == "name":
             textbin.append(NAM)
-            textbin.append((int(args[0])//256) & 0x7F)
+            textbin.append(min(127, int(args[0])))
         elif name == "color":
             textbin.append(COL)
             col = int(args[0])
