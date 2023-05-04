@@ -176,15 +176,15 @@ Thanks :)<wait:120><fp>
 <!-- Names constants -->
 <const:NAM_NONE,0>
 <const:NAM_MISSINGNO,0>
-<const:NAM_UNKNOW,0>
-<const:NAM_PHOENIX,0>
+<const:NAM_UNKNOW,1>
+<const:NAM_PHOENIX,2>
 <const:NAM_POLICE,0>
 <const:NAM_MAYA,0>
-<const:NAM_ALARMCLOCK,0>
-<const:NAM_MIA,0>
-<const:NAM_JUDGE,0>
+<const:NAM_ALARMCLOCK,8>
+<const:NAM_MIA,3>
+<const:NAM_JUDGE,5>
 <const:NAM_EDGEWORTH,0>
-<const:NAM_PAYNE,0>
+<const:NAM_PAYNE,6>
 <const:NAM_INTERPHONE,0>
 <const:NAM_GROSSBERG,0>
 <const:NAM_CELLULAR,0>
@@ -198,8 +198,8 @@ Thanks :)<wait:120><fp>
 <const:NAM_APRIL,0>
 <const:NAM_BELLBOY,0>
 <const:NAM_VASQUEZ,0>
-<const:NAM_BUTZ,0>
-<const:NAM_SAHWIT,0>
+<const:NAM_BUTZ,4>
+<const:NAM_SAHWIT,7>
 <const:NAM_WILL,0>
 <const:NAM_CODY,0>
 <const:NAM_LOTTA,0>
