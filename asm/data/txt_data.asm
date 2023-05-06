@@ -5,13 +5,13 @@
 
 .segment "CODE_BNK"
 lz_bnk_table:
-.byte $83
-.byte $83
-.byte $84
-.byte $84
-.byte $85
-.byte $85
-.byte $86
+.byte TXT_BNK + $00
+.byte TXT_BNK + $00
+.byte TXT_BNK + $01
+.byte TXT_BNK + $01
+.byte TXT_BNK + $02
+.byte TXT_BNK + $02
+.byte TXT_BNK + $03
 
 lz_adr_table_lo:
 .byte $00

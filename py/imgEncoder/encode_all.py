@@ -14,7 +14,7 @@ warning_chr_size = False
 warning_prg_size = False
 
 
-def ca65_file(frames, ca65_info, prg_start_bank=0):
+def ca65_file(frames, ca65_info):
     # get all data
     backgrounds_idx = ca65_info["frames_bkg_idx"]
     backgrounds_name = ca65_info["frames_bkg_name"]
@@ -64,18 +64,18 @@ def ca65_file(frames, ca65_info, prg_start_bank=0):
 
     # write frames and tables
     for i in range(len(frames)):
-        bank = (PRG_size // 8192) + prg_start_bank
+        bank = (PRG_size // 8192)
         # include frames
         ca65_inc += "img_" + str(i) + ":\n.incbin \"imgs/img_" + str(i) + ".bin\" ;" + frames_name[i] + "\n"
         if frames_ischr[i]:
             # save character adr and bnk
             chr_adr = ".word (img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR ; " + frames_name[i] + "\n"
-            chr_bnk = ".byte $" + hex(bank)[2:] + " ; bank\n"
+            chr_bnk = ".byte IMG_BNK + $" + hex(bank)[2:] + " ; bank\n"
             chr_anims[frames_name[i]] = chr_adr + chr_bnk
         else:
             # background index table
             ca65_bkg += ".word (img_" + str(i) + " & $1FFF) + SEGMENT_IMGS_START_ADR ; " + frames_name[i] + "\n"
-            ca65_bkg_bnk += ".byte $" + hex(bank)[2:] + "\n"
+            ca65_bkg_bnk += ".byte IMG_BNK + $" + hex(bank)[2:] + "\n"
         #
         frames[i] = bytes(frames[i])
         PRG_size += len(frames[i])
@@ -379,7 +379,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     return frame, spr_bank, spr_data_bnk_idx
 
 
-def write_files(ca65_info, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr", asmfile="imgs.asm", imgfolder="imgs", prg_start_bank=0):
+def write_files(ca65_info, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr", asmfile="imgs.asm", imgfolder="imgs"):
     #
     CHRbase = bytes()
     if basechr_file:
@@ -393,7 +393,7 @@ def write_files(ca65_info, frames, CHR_rom, basechr_file=None, chr_name="CHR.chr
         f.write(CHR_rom)
     #
     with open(asmfile, "w") as f:
-        ca65 = ca65_file(frames, ca65_info, prg_start_bank=prg_start_bank)
+        ca65 = ca65_file(frames, ca65_info)
         f.write(ca65)
     #
     if not os.path.exists(imgfolder):
@@ -490,7 +490,6 @@ def main():
     parser.add_argument("-mc", "--max-chr-size", dest="max_chr_size", type=int, required=False, default=1024*1024)
     parser.add_argument("-mp", "--max-prg-size", dest="max_prg_size", type=int, required=False, default=1024*512)
     parser.add_argument("-bsc", "--bank-start-chr", dest="chr_start", type=int, required=False, default=1)
-    parser.add_argument("-bsp", "--bank-start-prg", dest="prg_start", type=int, required=False, default=0xC0)
     args = parser.parse_args()
 
     args.tile_chr_path = os.path.join(args.cpath, "CHR.chr")
@@ -505,7 +504,7 @@ def main():
     ca65_info, frames, CHR_rom = encode_all_constrain(args, json_anim)
 
     # write results
-    write_files(ca65_info, frames, CHR_rom, basechr_file=args.basechr, chr_name=args.out_chr, prg_start_bank=args.prg_start)
+    write_files(ca65_info, frames, CHR_rom, basechr_file=args.basechr, chr_name=args.out_chr)
 
 
 if __name__ == "__main__":

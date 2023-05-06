@@ -970,29 +970,29 @@ img_bkg_table:
 .word (img_21 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/cutscene_54.png
 .word (img_22 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/cutscene_1.png
 img_bkg_table_bank:
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c1
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
-.byte $c2
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $0
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
+.byte IMG_BNK + $1
 
 img_anim_table:
 default:
@@ -1001,1894 +1001,1894 @@ img_anim_0:
 .byte $21 ; size
 .byte $3C ; time
 .word (img_216 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_225 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 2.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_228 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 2.png;../../data/chars/Mia/mia-Slice 3.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_224 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 3.png;../../data/chars/Mia/mia-Slice 2.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_217 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 2.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_218 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_218 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_218 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 img_anim_1:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_216 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_219 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 4.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_220 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 4.png;../../data/chars/Mia/mia-Slice 5.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_221 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 5.png;../../data/chars/Mia/mia-Slice 4.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_222 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 4.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_218 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_218 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_218 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 1.png;../../data/chars/Mia/mia-Slice 1.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 img_anim_2:
 .byte $21 ; size
 .byte $3C ; time
 .word (img_223 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_466 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 7.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $0A ; time
 .word (img_226 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 7.png;../../data/chars/Mia/mia-Slice 8.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_467 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 8.png;../../data/chars/Mia/mia-Slice 7.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $00 ; time
 .word (img_468 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 7.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $00 ; time
 .word (img_469 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $00 ; time
 .word (img_469 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $00 ; time
 .word (img_469 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 img_anim_3:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_223 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_470 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 9.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $0A ; time
 .word (img_227 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 9.png;../../data/chars/Mia/mia-Slice 10.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_23 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 10.png;../../data/chars/Mia/mia-Slice 9.png
-.byte $c2 ; bank
+.byte IMG_BNK + $1 ; bank
 .byte $00 ; time
 .word (img_24 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 9.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $c2 ; bank
+.byte IMG_BNK + $1 ; bank
 .byte $00 ; time
 .word (img_469 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $00 ; time
 .word (img_469 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 .byte $00 ; time
 .word (img_469 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 6.png
-.byte $ce ; bank
+.byte IMG_BNK + $d ; bank
 img_anim_4:
 .byte $21 ; size
 .byte $3C ; time
 .word (img_25 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c2 ; bank
+.byte IMG_BNK + $1 ; bank
 .byte $0A ; time
 .word (img_26 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 12.png
-.byte $c2 ; bank
+.byte IMG_BNK + $1 ; bank
 .byte $0A ; time
 .word (img_27 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 12.png;../../data/chars/Mia/mia-Slice 13.png
-.byte $c2 ; bank
+.byte IMG_BNK + $1 ; bank
 .byte $0A ; time
 .word (img_28 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 13.png;../../data/chars/Mia/mia-Slice 12.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_29 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 12.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_30 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_30 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_30 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_5:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_25 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c2 ; bank
+.byte IMG_BNK + $1 ; bank
 .byte $0A ; time
 .word (img_31 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_32 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 14.png;../../data/chars/Mia/mia-Slice 15.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_33 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 15.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_34 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 14.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_30 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_30 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_30 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_6:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_35 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_36 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 14.png;../../data/chars/Mia/mia-Slice 16.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $7F ; time
 .word (img_37 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 16.png;../../data/chars/Mia/mia-Slice 17.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $7F ; time
 .word (img_38 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 17.png;../../data/chars/Mia/mia-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_31 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_39 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 14.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_39 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 14.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_39 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 14.png;../../data/chars/Mia/mia-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_7:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_360 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 18.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_361 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 18.png;../../data/chars/Mia/mia-Slice 19.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_362 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 19.png;../../data/chars/Mia/mia-Slice 20.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_363 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 20.png;../../data/chars/Mia/mia-Slice 19.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_364 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 19.png;../../data/chars/Mia/mia-Slice 18.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_8:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_360 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 18.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_365 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 18.png;../../data/chars/Mia/mia-Slice 21.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_366 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 21.png;../../data/chars/Mia/mia-Slice 22.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_367 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 22.png;../../data/chars/Mia/mia-Slice 21.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_368 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 21.png;../../data/chars/Mia/mia-Slice 18.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_9:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_369 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 23.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_370 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 23.png;../../data/chars/Mia/mia-Slice 24.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_371 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 24.png;../../data/chars/Mia/mia-Slice 25.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_372 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 25.png;../../data/chars/Mia/mia-Slice 23.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_373 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 23.png;../../data/chars/Mia/mia-Slice 23.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_10:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_369 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 23.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_374 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 23.png;../../data/chars/Mia/mia-Slice 26.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_375 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 26.png;../../data/chars/Mia/mia-Slice 27.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_376 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 27.png;../../data/chars/Mia/mia-Slice 26.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_377 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 26.png;../../data/chars/Mia/mia-Slice 23.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_11:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 28.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 28.png;../../data/chars/Mia/mia-Slice 29.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_380 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 29.png;../../data/chars/Mia/mia-Slice 30.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_381 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 30.png;../../data/chars/Mia/mia-Slice 29.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_382 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 29.png;../../data/chars/Mia/mia-Slice 28.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_12:
 .byte $11 ; size
 .byte $0A ; time
 .word (img_378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 28.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_383 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 28.png;../../data/chars/Mia/mia-Slice 31.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_384 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 31.png;../../data/chars/Mia/mia-Slice 32.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_385 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 32.png;../../data/chars/Mia/mia-Slice 28.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_13:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_386 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 33.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 33.png;../../data/chars/Mia/mia-Slice 34.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_388 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 34.png;../../data/chars/Mia/mia-Slice 35.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_389 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 35.png;../../data/chars/Mia/mia-Slice 34.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_390 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 34.png;../../data/chars/Mia/mia-Slice 33.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_14:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_386 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_5.png;../../data/chars/Mia/mia-Slice 33.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_391 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 33.png;../../data/chars/Mia/mia-Slice 36.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 36.png;../../data/chars/Mia/mia-Slice 37.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 37.png;../../data/chars/Mia/mia-Slice 36.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_394 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 36.png;../../data/chars/Mia/mia-Slice 33.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_15:
 .byte $21 ; size
 .byte $3C ; time
 .word (img_40 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_41 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 2.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_42 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 2.png;../../data/chars/Larry/larry-Slice 3.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_43 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 3.png;../../data/chars/Larry/larry-Slice 2.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_44 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 2.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_45 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_45 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_45 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_16:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_40 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_46 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 4.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_47 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 4.png;../../data/chars/Larry/larry-Slice 5.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_48 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 5.png;../../data/chars/Larry/larry-Slice 4.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_49 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 4.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_45 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_45 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_45 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 1.png;../../data/chars/Larry/larry-Slice 1.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_17:
 .byte $29 ; size
 .byte $0A ; time
 .word (img_50 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 6.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_51 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 6.png;../../data/chars/Larry/larry-Slice 7.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_52 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 7.png;../../data/chars/Larry/larry-Slice 6.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_53 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 6.png;../../data/chars/Larry/larry-Slice 8.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_54 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 8.png;../../data/chars/Larry/larry-Slice 9.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_55 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 9.png;../../data/chars/Larry/larry-Slice 8.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_56 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 8.png;../../data/chars/Larry/larry-Slice 6.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_57 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 6.png;../../data/chars/Larry/larry-Slice 6.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_57 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 6.png;../../data/chars/Larry/larry-Slice 6.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_57 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 6.png;../../data/chars/Larry/larry-Slice 6.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_18:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_58 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 10.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_59 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 10.png;../../data/chars/Larry/larry-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_60 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 11.png;../../data/chars/Larry/larry-Slice 12.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_61 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 12.png;../../data/chars/Larry/larry-Slice 11.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_62 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 11.png;../../data/chars/Larry/larry-Slice 10.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_63 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 10.png;../../data/chars/Larry/larry-Slice 10.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_63 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 10.png;../../data/chars/Larry/larry-Slice 10.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_63 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 10.png;../../data/chars/Larry/larry-Slice 10.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_19:
 .byte $29 ; size
 .byte $0A ; time
 .word (img_64 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 13.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_65 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 13.png;../../data/chars/Larry/larry-Slice 14.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_66 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 14.png;../../data/chars/Larry/larry-Slice 15.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_67 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 15.png;../../data/chars/Larry/larry-Slice 16.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_68 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 16.png;../../data/chars/Larry/larry-Slice 17.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $0A ; time
 .word (img_69 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 17.png;../../data/chars/Larry/larry-Slice 18.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_70 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 18.png;../../data/chars/Larry/larry-Slice 13.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_71 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 13.png;../../data/chars/Larry/larry-Slice 13.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_71 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 13.png;../../data/chars/Larry/larry-Slice 13.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 .byte $00 ; time
 .word (img_71 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 13.png;../../data/chars/Larry/larry-Slice 13.png
-.byte $c3 ; bank
+.byte IMG_BNK + $2 ; bank
 img_anim_20:
 .byte $29 ; size
 .byte $0A ; time
 .word (img_72 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 19.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_73 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 19.png;../../data/chars/Larry/larry-Slice 20.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_74 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 20.png;../../data/chars/Larry/larry-Slice 21.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_75 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 21.png;../../data/chars/Larry/larry-Slice 22.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_76 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 22.png;../../data/chars/Larry/larry-Slice 23.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_77 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 23.png;../../data/chars/Larry/larry-Slice 24.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_78 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 24.png;../../data/chars/Larry/larry-Slice 19.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_79 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 19.png;../../data/chars/Larry/larry-Slice 19.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_79 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 19.png;../../data/chars/Larry/larry-Slice 19.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_79 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 19.png;../../data/chars/Larry/larry-Slice 19.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 img_anim_21:
 .byte $1D ; size
 .byte $0A ; time
 .word (img_80 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 25.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_81 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 25.png;../../data/chars/Larry/larry-Slice 26.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_82 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 26.png;../../data/chars/Larry/larry-Slice 27.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_83 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 27.png;../../data/chars/Larry/larry-Slice 25.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_84 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 25.png;../../data/chars/Larry/larry-Slice 25.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_84 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 25.png;../../data/chars/Larry/larry-Slice 25.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_84 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 25.png;../../data/chars/Larry/larry-Slice 25.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 img_anim_22:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_85 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 28.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_86 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 28.png;../../data/chars/Larry/larry-Slice 29.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_87 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 29.png;../../data/chars/Larry/larry-Slice 28.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_88 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 28.png;../../data/chars/Larry/larry-Slice 30.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_89 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 30.png;../../data/chars/Larry/larry-Slice 28.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_90 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 28.png;../../data/chars/Larry/larry-Slice 28.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_90 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 28.png;../../data/chars/Larry/larry-Slice 28.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_90 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 28.png;../../data/chars/Larry/larry-Slice 28.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 img_anim_23:
 .byte $2D ; size
 .byte $0A ; time
 .word (img_91 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 31.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_92 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 31.png;../../data/chars/Larry/larry-Slice 32.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_93 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 32.png;../../data/chars/Larry/larry-Slice 33.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_94 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 33.png;../../data/chars/Larry/larry-Slice 34.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $05 ; time
 .word (img_95 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 34.png;../../data/chars/Larry/larry-Slice 35.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $05 ; time
 .word (img_96 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 35.png;../../data/chars/Larry/larry-Slice 36.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $05 ; time
 .word (img_97 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 36.png;../../data/chars/Larry/larry-Slice 35.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_98 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 35.png;../../data/chars/Larry/larry-Slice 31.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_99 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 31.png;../../data/chars/Larry/larry-Slice 31.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_99 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 31.png;../../data/chars/Larry/larry-Slice 31.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_99 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 31.png;../../data/chars/Larry/larry-Slice 31.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 img_anim_24:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_100 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 37.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_101 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 37.png;../../data/chars/Larry/larry-Slice 38.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_102 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 38.png;../../data/chars/Larry/larry-Slice 39.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $0A ; time
 .word (img_103 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 39.png;../../data/chars/Larry/larry-Slice 40.png
-.byte $c4 ; bank
+.byte IMG_BNK + $3 ; bank
 .byte $00 ; time
 .word (img_104 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 40.png;../../data/chars/Larry/larry-Slice 37.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_105 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 37.png;../../data/chars/Larry/larry-Slice 37.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_105 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 37.png;../../data/chars/Larry/larry-Slice 37.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_105 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 37.png;../../data/chars/Larry/larry-Slice 37.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 img_anim_25:
 .byte $31 ; size
 .byte $0A ; time
 .word (img_106 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 41.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_107 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 41.png;../../data/chars/Larry/larry-Slice 42.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_108 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 42.png;../../data/chars/Larry/larry-Slice 43.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_109 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 43.png;../../data/chars/Larry/larry-Slice 42.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_110 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 42.png;../../data/chars/Larry/larry-Slice 41.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_111 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 41.png;../../data/chars/Larry/larry-Slice 44.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_112 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 44.png;../../data/chars/Larry/larry-Slice 45.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_113 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 45.png;../../data/chars/Larry/larry-Slice 44.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_114 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 44.png;../../data/chars/Larry/larry-Slice 41.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_115 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 41.png;../../data/chars/Larry/larry-Slice 41.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_115 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 41.png;../../data/chars/Larry/larry-Slice 41.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_115 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 41.png;../../data/chars/Larry/larry-Slice 41.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 img_anim_26:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_116 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 46.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_117 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 46.png;../../data/chars/Larry/larry-Slice 47.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_118 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 47.png;../../data/chars/Larry/larry-Slice 48.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_119 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 48.png;../../data/chars/Larry/larry-Slice 47.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_120 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 47.png;../../data/chars/Larry/larry-Slice 46.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_121 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 46.png;../../data/chars/Larry/larry-Slice 46.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_121 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 46.png;../../data/chars/Larry/larry-Slice 46.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_121 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 46.png;../../data/chars/Larry/larry-Slice 46.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 img_anim_27:
 .byte $19 ; size
 .byte $0A ; time
 .word (img_122 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 49.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_123 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 49.png;../../data/chars/Larry/larry-Slice 50.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_124 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 50.png;../../data/chars/Larry/larry-Slice 49.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_125 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 49.png;../../data/chars/Larry/larry-Slice 49.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_125 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 49.png;../../data/chars/Larry/larry-Slice 49.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_125 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 49.png;../../data/chars/Larry/larry-Slice 49.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 img_anim_28:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_126 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 51.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_127 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 51.png;../../data/chars/Larry/larry-Slice 52.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_128 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 52.png;../../data/chars/Larry/larry-Slice 53.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_129 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 53.png;../../data/chars/Larry/larry-Slice 52.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_130 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 52.png;../../data/chars/Larry/larry-Slice 51.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_131 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 51.png;../../data/chars/Larry/larry-Slice 51.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_131 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 51.png;../../data/chars/Larry/larry-Slice 51.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $00 ; time
 .word (img_131 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 51.png;../../data/chars/Larry/larry-Slice 51.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 img_anim_29:
 .byte $21 ; size
 .byte $3C ; time
 .word (img_132 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 54.png
-.byte $c5 ; bank
+.byte IMG_BNK + $4 ; bank
 .byte $0A ; time
 .word (img_133 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 54.png;../../data/chars/Larry/larry-Slice 55.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_134 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 55.png;../../data/chars/Larry/larry-Slice 56.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_135 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 56.png;../../data/chars/Larry/larry-Slice 55.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_136 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 55.png;../../data/chars/Larry/larry-Slice 54.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_137 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 54.png;../../data/chars/Larry/larry-Slice 54.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_137 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 54.png;../../data/chars/Larry/larry-Slice 54.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_137 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 54.png;../../data/chars/Larry/larry-Slice 54.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 img_anim_30:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_138 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_8.png;../../data/chars/Larry/larry-Slice 57.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_139 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 57.png;../../data/chars/Larry/larry-Slice 58.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_140 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 58.png;../../data/chars/Larry/larry-Slice 59.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_141 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 59.png;../../data/chars/Larry/larry-Slice 58.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_142 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 58.png;../../data/chars/Larry/larry-Slice 57.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_143 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 57.png;../../data/chars/Larry/larry-Slice 57.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_143 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 57.png;../../data/chars/Larry/larry-Slice 57.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_143 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Larry/larry-Slice 57.png;../../data/chars/Larry/larry-Slice 57.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 img_anim_31:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_229 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_230 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 1.png;../../data/chars/Phoenix/phoenix-Slice 2.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_231 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 2.png;../../data/chars/Phoenix/phoenix-Slice 3.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_232 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 3.png;../../data/chars/Phoenix/phoenix-Slice 2.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_233 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 2.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_32:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_229 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_234 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 1.png;../../data/chars/Phoenix/phoenix-Slice 4.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_235 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 4.png;../../data/chars/Phoenix/phoenix-Slice 5.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_236 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 5.png;../../data/chars/Phoenix/phoenix-Slice 4.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_237 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 4.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_33:
 .byte $45 ; size
 .byte $0A ; time
 .word (img_238 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 6.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_239 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 6.png;../../data/chars/Phoenix/phoenix-Slice 7.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_240 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 7.png;../../data/chars/Phoenix/phoenix-Slice 8.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_241 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 8.png;../../data/chars/Phoenix/phoenix-Slice 9.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_242 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 9.png;../../data/chars/Phoenix/phoenix-Slice 6.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_243 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 6.png;../../data/chars/Phoenix/phoenix-Slice 10.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_244 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 10.png;../../data/chars/Phoenix/phoenix-Slice 11.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_245 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 11.png;../../data/chars/Phoenix/phoenix-Slice 12.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_246 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 12.png;../../data/chars/Phoenix/phoenix-Slice 6.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_239 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 6.png;../../data/chars/Phoenix/phoenix-Slice 7.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_240 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 7.png;../../data/chars/Phoenix/phoenix-Slice 8.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_241 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 8.png;../../data/chars/Phoenix/phoenix-Slice 9.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_242 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 9.png;../../data/chars/Phoenix/phoenix-Slice 6.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_239 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 6.png;../../data/chars/Phoenix/phoenix-Slice 7.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_240 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 7.png;../../data/chars/Phoenix/phoenix-Slice 8.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_241 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 8.png;../../data/chars/Phoenix/phoenix-Slice 9.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_242 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 9.png;../../data/chars/Phoenix/phoenix-Slice 6.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_34:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_247 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 13.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_248 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 13.png;../../data/chars/Phoenix/phoenix-Slice 14.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_249 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 14.png;../../data/chars/Phoenix/phoenix-Slice 15.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_250 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 15.png;../../data/chars/Phoenix/phoenix-Slice 16.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_251 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 16.png;../../data/chars/Phoenix/phoenix-Slice 13.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_35:
 .byte $4D ; size
 .byte $0A ; time
 .word (img_252 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_253 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 17.png;../../data/chars/Phoenix/phoenix-Slice 18.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_254 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 18.png;../../data/chars/Phoenix/phoenix-Slice 19.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_255 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 19.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_253 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 17.png;../../data/chars/Phoenix/phoenix-Slice 18.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_254 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 18.png;../../data/chars/Phoenix/phoenix-Slice 19.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_255 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 19.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_253 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 17.png;../../data/chars/Phoenix/phoenix-Slice 18.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_254 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 18.png;../../data/chars/Phoenix/phoenix-Slice 19.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_256 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 19.png;../../data/chars/Phoenix/phoenix-Slice 19.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_255 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 19.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_257 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 17.png;../../data/chars/Phoenix/phoenix-Slice 19.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_255 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 19.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_258 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 17.png;../../data/chars/Phoenix/phoenix-Slice 20.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_259 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 20.png;../../data/chars/Phoenix/phoenix-Slice 21.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_260 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 21.png;../../data/chars/Phoenix/phoenix-Slice 20.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_261 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 20.png;../../data/chars/Phoenix/phoenix-Slice 22.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_262 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 22.png;../../data/chars/Phoenix/phoenix-Slice 23.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_263 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 23.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_36:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_252 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_264 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 17.png;../../data/chars/Phoenix/phoenix-Slice 24.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_265 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 24.png;../../data/chars/Phoenix/phoenix-Slice 25.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_266 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 25.png;../../data/chars/Phoenix/phoenix-Slice 24.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_267 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 24.png;../../data/chars/Phoenix/phoenix-Slice 17.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_37:
 .byte $19 ; size
 .byte $0A ; time
 .word (img_229 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_268 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 1.png;../../data/chars/Phoenix/phoenix-Slice 26.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_269 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 26.png;../../data/chars/Phoenix/phoenix-Slice 27.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_270 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 27.png;../../data/chars/Phoenix/phoenix-Slice 26.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $7F ; time
 .word (img_271 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 26.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_272 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 1.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_38:
 .byte $29 ; size
 .byte $05 ; time
 .word (img_273 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 28.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_274 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 28.png;../../data/chars/Phoenix/phoenix-Slice 29.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_275 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 29.png;../../data/chars/Phoenix/phoenix-Slice 30.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_276 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 30.png;../../data/chars/Phoenix/phoenix-Slice 31.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_277 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 31.png;../../data/chars/Phoenix/phoenix-Slice 32.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_278 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 32.png;../../data/chars/Phoenix/phoenix-Slice 28.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_279 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 28.png;../../data/chars/Phoenix/phoenix-Slice 33.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $05 ; time
 .word (img_280 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 33.png;../../data/chars/Phoenix/phoenix-Slice 32.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $7F ; time
 .word (img_281 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 32.png;../../data/chars/Phoenix/phoenix-Slice 34.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_282 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 34.png;../../data/chars/Phoenix/phoenix-Slice 28.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_39:
 .byte $0D ; size
 .byte $0A ; time
 .word (img_283 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 35.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $7F ; time
 .word (img_284 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 35.png;../../data/chars/Phoenix/phoenix-Slice 36.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_285 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 36.png;../../data/chars/Phoenix/phoenix-Slice 35.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_40:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_286 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 38.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_287 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 38.png;../../data/chars/Phoenix/phoenix-Slice 37.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_288 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 37.png;../../data/chars/Phoenix/phoenix-Slice 36.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_289 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 36.png;../../data/chars/Phoenix/phoenix-Slice 37.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_290 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 37.png;../../data/chars/Phoenix/phoenix-Slice 38.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_41:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_286 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 38.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_291 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 38.png;../../data/chars/Phoenix/phoenix-Slice 39.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_292 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 39.png;../../data/chars/Phoenix/phoenix-Slice 40.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_293 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 40.png;../../data/chars/Phoenix/phoenix-Slice 39.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_294 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 39.png;../../data/chars/Phoenix/phoenix-Slice 38.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_42:
 .byte $0D ; size
 .byte $0A ; time
 .word (img_295 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 41.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $1E ; time
 .word (img_296 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 41.png;../../data/chars/Phoenix/phoenix-Slice 42.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_297 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 42.png;../../data/chars/Phoenix/phoenix-Slice 41.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_43:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_298 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 43.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_299 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 43.png;../../data/chars/Phoenix/phoenix-Slice 44.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_300 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 44.png;../../data/chars/Phoenix/phoenix-Slice 45.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_301 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 45.png;../../data/chars/Phoenix/phoenix-Slice 44.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_302 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 44.png;../../data/chars/Phoenix/phoenix-Slice 43.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_44:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_303 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 42.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_304 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 42.png;../../data/chars/Phoenix/phoenix-Slice 46.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_305 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 46.png;../../data/chars/Phoenix/phoenix-Slice 47.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_306 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 47.png;../../data/chars/Phoenix/phoenix-Slice 46.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_307 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 46.png;../../data/chars/Phoenix/phoenix-Slice 42.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_45:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_308 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 48.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_309 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 48.png;../../data/chars/Phoenix/phoenix-Slice 49.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_310 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 49.png;../../data/chars/Phoenix/phoenix-Slice 50.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_311 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 50.png;../../data/chars/Phoenix/phoenix-Slice 51.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $00 ; time
 .word (img_312 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 51.png;../../data/chars/Phoenix/phoenix-Slice 48.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 img_anim_46:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_308 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 48.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_313 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 48.png;../../data/chars/Phoenix/phoenix-Slice 52.png
-.byte $ca ; bank
+.byte IMG_BNK + $9 ; bank
 .byte $0A ; time
 .word (img_314 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 52.png;../../data/chars/Phoenix/phoenix-Slice 53.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_315 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 53.png;../../data/chars/Phoenix/phoenix-Slice 52.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_316 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 52.png;../../data/chars/Phoenix/phoenix-Slice 48.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_47:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_317 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 54.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_318 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 54.png;../../data/chars/Phoenix/phoenix-Slice 55.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_319 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 55.png;../../data/chars/Phoenix/phoenix-Slice 56.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_320 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 56.png;../../data/chars/Phoenix/phoenix-Slice 55.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_321 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 55.png;../../data/chars/Phoenix/phoenix-Slice 54.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_48:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_317 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 54.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_322 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 54.png;../../data/chars/Phoenix/phoenix-Slice 57.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_323 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 57.png;../../data/chars/Phoenix/phoenix-Slice 58.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_324 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 58.png;../../data/chars/Phoenix/phoenix-Slice 57.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_325 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 57.png;../../data/chars/Phoenix/phoenix-Slice 54.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_49:
 .byte $29 ; size
 .byte $0A ; time
 .word (img_229 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_268 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 1.png;../../data/chars/Phoenix/phoenix-Slice 26.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $0A ; time
 .word (img_326 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 26.png;../../data/chars/Phoenix/phoenix-Slice 59.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_327 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 59.png;../../data/chars/Phoenix/phoenix-Slice 27.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_328 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 27.png;../../data/chars/Phoenix/phoenix-Slice 60.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_329 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 60.png;../../data/chars/Phoenix/phoenix-Slice 27.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_330 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 27.png;../../data/chars/Phoenix/phoenix-Slice 59.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_331 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 59.png;../../data/chars/Phoenix/phoenix-Slice 26.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $7F ; time
 .word (img_271 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 26.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 .byte $00 ; time
 .word (img_272 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 1.png;../../data/chars/Phoenix/phoenix-Slice 1.png
-.byte $c9 ; bank
+.byte IMG_BNK + $8 ; bank
 img_anim_50:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_332 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 61.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_333 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 61.png;../../data/chars/Phoenix/phoenix-Slice 62.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_334 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 62.png;../../data/chars/Phoenix/phoenix-Slice 63.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_335 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 63.png;../../data/chars/Phoenix/phoenix-Slice 62.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_336 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 62.png;../../data/chars/Phoenix/phoenix-Slice 61.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_51:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_337 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 64.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_338 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 64.png;../../data/chars/Phoenix/phoenix-Slice 65.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_339 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 65.png;../../data/chars/Phoenix/phoenix-Slice 66.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_340 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 66.png;../../data/chars/Phoenix/phoenix-Slice 65.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_341 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 65.png;../../data/chars/Phoenix/phoenix-Slice 64.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_52:
 .byte $25 ; size
 .byte $0A ; time
 .word (img_342 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png;../../data/chars/Phoenix/phoenix-Slice 67.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_343 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 67.png;../../data/chars/Phoenix/phoenix-Slice 68.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_344 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 68.png;../../data/chars/Phoenix/phoenix-Slice 69.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_345 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 69.png;../../data/chars/Phoenix/phoenix-Slice 70.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_346 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 70.png;../../data/chars/Phoenix/phoenix-Slice 71.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_347 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 71.png;../../data/chars/Phoenix/phoenix-Slice 72.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_348 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 72.png;../../data/chars/Phoenix/phoenix-Slice 73.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $7F ; time
 .word (img_349 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 73.png;../../data/chars/Phoenix/phoenix-Slice 74.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_350 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 74.png;../../data/chars/Phoenix/phoenix-Slice 67.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_53:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_351 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/action_lines.png;../../data/chars/Phoenix/phoenix-Slice 75.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_352 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 75.png;../../data/chars/Phoenix/phoenix-Slice 76.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_353 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 76.png;../../data/chars/Phoenix/phoenix-Slice 77.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_354 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 77.png;../../data/chars/Phoenix/phoenix-Slice 76.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_355 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 76.png;../../data/chars/Phoenix/phoenix-Slice 75.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 img_anim_54:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_351 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/action_lines.png;../../data/chars/Phoenix/phoenix-Slice 75.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_356 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 75.png;../../data/chars/Phoenix/phoenix-Slice 77.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_357 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 77.png;../../data/chars/Phoenix/phoenix-Slice 78.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $0A ; time
 .word (img_358 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 78.png;../../data/chars/Phoenix/phoenix-Slice 77.png
-.byte $cb ; bank
+.byte IMG_BNK + $a ; bank
 .byte $00 ; time
 .word (img_359 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Phoenix/phoenix-Slice 77.png;../../data/chars/Phoenix/phoenix-Slice 75.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_55:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_396 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 1.png;../../data/chars/Judge/judge-Slice 2.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_397 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 2.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_398 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 2.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_399 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 2.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_56:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_400 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 4.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_401 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 4.png;../../data/chars/Judge/judge-Slice 5.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_402 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 5.png;../../data/chars/Judge/judge-Slice 4.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_403 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 4.png;../../data/chars/Judge/judge-Slice 6.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_404 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 6.png;../../data/chars/Judge/judge-Slice 4.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_57:
 .byte $29 ; size
 .byte $05 ; time
 .word (img_395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_396 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 1.png;../../data/chars/Judge/judge-Slice 2.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_397 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 2.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_405 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 7.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_406 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 7.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_407 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 8.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_408 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 8.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_398 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 2.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $7F ; time
 .word (img_399 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 2.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_409 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 1.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_58:
 .byte $29 ; size
 .byte $05 ; time
 .word (img_395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_396 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 1.png;../../data/chars/Judge/judge-Slice 2.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_397 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 2.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_410 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 9.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_411 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 9.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_412 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 10.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_413 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 10.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $05 ; time
 .word (img_398 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 2.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $7F ; time
 .word (img_399 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 2.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $00 ; time
 .word (img_409 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 1.png;../../data/chars/Judge/judge-Slice 1.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 img_anim_59:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_414 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 11.png
-.byte $cc ; bank
+.byte IMG_BNK + $b ; bank
 .byte $0A ; time
 .word (img_415 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 11.png;../../data/chars/Judge/judge-Slice 12.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_416 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 12.png;../../data/chars/Judge/judge-Slice 13.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_417 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 13.png;../../data/chars/Judge/judge-Slice 12.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_418 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 12.png;../../data/chars/Judge/judge-Slice 11.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_60:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_419 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 14.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_420 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 14.png;../../data/chars/Judge/judge-Slice 15.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_421 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 15.png;../../data/chars/Judge/judge-Slice 14.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_422 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 14.png;../../data/chars/Judge/judge-Slice 16.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_423 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 16.png;../../data/chars/Judge/judge-Slice 14.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_61:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_424 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 17.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_425 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 17.png;../../data/chars/Judge/judge-Slice 18.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_426 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 18.png;../../data/chars/Judge/judge-Slice 19.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_427 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 19.png;../../data/chars/Judge/judge-Slice 18.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_428 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 18.png;../../data/chars/Judge/judge-Slice 17.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_62:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_429 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 20.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_430 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 20.png;../../data/chars/Judge/judge-Slice 21.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_431 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 21.png;../../data/chars/Judge/judge-Slice 20.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_432 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 20.png;../../data/chars/Judge/judge-Slice 22.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_433 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 22.png;../../data/chars/Judge/judge-Slice 20.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_63:
 .byte $09 ; size
 .byte $7F ; time
 .word (img_434 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_6.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_435 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Judge/judge-Slice 3.png;../../data/chars/Judge/judge-Slice 3.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_64:
 .byte $09 ; size
 .byte $7F ; time
 .word (img_436 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 1.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_437 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 1.png;../../data/chars/Payne/payne-Slice 1.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_65:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_436 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 1.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_438 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 1.png;../../data/chars/Payne/payne-Slice 2.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_439 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 2.png;../../data/chars/Payne/payne-Slice 3.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_440 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 3.png;../../data/chars/Payne/payne-Slice 2.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_441 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 2.png;../../data/chars/Payne/payne-Slice 1.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_66:
 .byte $0D ; size
 .byte $0A ; time
 .word (img_442 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 5.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_443 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 5.png;../../data/chars/Payne/payne-Slice 6.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_444 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 6.png;../../data/chars/Payne/payne-Slice 5.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_67:
 .byte $25 ; size
 .byte $0A ; time
 .word (img_442 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 5.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_445 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 5.png;../../data/chars/Payne/payne-Slice 7.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_446 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 7.png;../../data/chars/Payne/payne-Slice 8.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_447 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 8.png;../../data/chars/Payne/payne-Slice 7.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_448 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 7.png;../../data/chars/Payne/payne-Slice 6.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_449 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 6.png;../../data/chars/Payne/payne-Slice 10.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_450 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 10.png;../../data/chars/Payne/payne-Slice 11.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_451 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 11.png;../../data/chars/Payne/payne-Slice 7.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_452 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 7.png;../../data/chars/Payne/payne-Slice 5.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_68:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_453 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 12.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_454 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 12.png;../../data/chars/Payne/payne-Slice 13.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_455 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 13.png;../../data/chars/Payne/payne-Slice 14.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_456 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 14.png;../../data/chars/Payne/payne-Slice 15.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_457 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 15.png;../../data/chars/Payne/payne-Slice 12.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_69:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_453 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 12.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_458 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 12.png;../../data/chars/Payne/payne-Slice 16.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_459 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 16.png;../../data/chars/Payne/payne-Slice 17.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_460 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 17.png;../../data/chars/Payne/payne-Slice 18.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_461 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 18.png;../../data/chars/Payne/payne-Slice 12.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_70:
 .byte $11 ; size
 .byte $0A ; time
 .word (img_462 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_4.png;../../data/chars/Payne/payne-Slice 19.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $0A ; time
 .word (img_463 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 19.png;../../data/chars/Payne/payne-Slice 20.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $7F ; time
 .word (img_464 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 20.png;../../data/chars/Payne/payne-Slice 21.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 .byte $00 ; time
 .word (img_465 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Payne/payne-Slice 21.png;../../data/chars/Payne/payne-Slice 19.png
-.byte $cd ; bank
+.byte IMG_BNK + $c ; bank
 img_anim_71:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_144 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_145 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 2.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_146 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 2.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_147 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 3.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_148 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 3.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 img_anim_72:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_144 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 4.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 4.png;../../data/chars/Sahwit/sahwit-Slice 5.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_152 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 5.png;../../data/chars/Sahwit/sahwit-Slice 6.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_153 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 6.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 1.png;../../data/chars/Sahwit/sahwit-Slice 1.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 img_anim_73:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_154 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_155 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 8.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_156 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 8.png;../../data/chars/Sahwit/sahwit-Slice 9.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_157 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 9.png;../../data/chars/Sahwit/sahwit-Slice 10.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_158 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 10.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_159 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_159 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_159 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 img_anim_74:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_154 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_160 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 11.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $0A ; time
 .word (img_161 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 11.png;../../data/chars/Sahwit/sahwit-Slice 12.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_162 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 12.png;../../data/chars/Sahwit/sahwit-Slice 13.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_163 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 13.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_159 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_159 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 .byte $00 ; time
 .word (img_159 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 7.png;../../data/chars/Sahwit/sahwit-Slice 7.png
-.byte $c6 ; bank
+.byte IMG_BNK + $5 ; bank
 img_anim_75:
 .byte $2D ; size
 .byte $0A ; time
 .word (img_164 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 14.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_165 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 14.png;../../data/chars/Sahwit/sahwit-Slice 15.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_166 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 15.png;../../data/chars/Sahwit/sahwit-Slice 16.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_167 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 16.png;../../data/chars/Sahwit/sahwit-Slice 15.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_168 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 15.png;../../data/chars/Sahwit/sahwit-Slice 14.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_169 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 14.png;../../data/chars/Sahwit/sahwit-Slice 17.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_170 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 17.png;../../data/chars/Sahwit/sahwit-Slice 18.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_171 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 18.png;../../data/chars/Sahwit/sahwit-Slice 14.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_172 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 14.png;../../data/chars/Sahwit/sahwit-Slice 14.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_172 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 14.png;../../data/chars/Sahwit/sahwit-Slice 14.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_172 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 14.png;../../data/chars/Sahwit/sahwit-Slice 14.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 img_anim_76:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_173 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 19.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_174 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 19.png;../../data/chars/Sahwit/sahwit-Slice 20.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_175 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 20.png;../../data/chars/Sahwit/sahwit-Slice 21.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_176 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 21.png;../../data/chars/Sahwit/sahwit-Slice 20.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_177 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 20.png;../../data/chars/Sahwit/sahwit-Slice 19.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_178 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 19.png;../../data/chars/Sahwit/sahwit-Slice 19.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_178 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 19.png;../../data/chars/Sahwit/sahwit-Slice 19.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_178 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 19.png;../../data/chars/Sahwit/sahwit-Slice 19.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 img_anim_77:
 .byte $25 ; size
 .byte $0A ; time
 .word (img_179 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 22.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_180 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 22.png;../../data/chars/Sahwit/sahwit-Slice 23.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_181 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 23.png;../../data/chars/Sahwit/sahwit-Slice 24.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_182 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 24.png;../../data/chars/Sahwit/sahwit-Slice 23.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $7F ; time
 .word (img_183 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 23.png;../../data/chars/Sahwit/sahwit-Slice 22.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_184 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 22.png;../../data/chars/Sahwit/sahwit-Slice 22.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_184 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 22.png;../../data/chars/Sahwit/sahwit-Slice 22.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_184 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 22.png;../../data/chars/Sahwit/sahwit-Slice 22.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_184 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 22.png;../../data/chars/Sahwit/sahwit-Slice 22.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 img_anim_78:
 .byte $2D ; size
 .byte $0A ; time
 .word (img_185 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 26.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_186 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 26.png;../../data/chars/Sahwit/sahwit-Slice 27.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_187 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 27.png;../../data/chars/Sahwit/sahwit-Slice 28.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_188 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 28.png;../../data/chars/Sahwit/sahwit-Slice 29.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_189 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 29.png;../../data/chars/Sahwit/sahwit-Slice 30.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $0A ; time
 .word (img_190 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 30.png;../../data/chars/Sahwit/sahwit-Slice 31.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $7F ; time
 .word (img_191 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 31.png;../../data/chars/Sahwit/sahwit-Slice 32.png
-.byte $c7 ; bank
+.byte IMG_BNK + $6 ; bank
 .byte $00 ; time
 .word (img_192 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 32.png;../../data/chars/Sahwit/sahwit-Slice 26.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_193 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 26.png;../../data/chars/Sahwit/sahwit-Slice 26.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_193 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 26.png;../../data/chars/Sahwit/sahwit-Slice 26.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_193 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 26.png;../../data/chars/Sahwit/sahwit-Slice 26.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 img_anim_79:
 .byte $21 ; size
 .byte $3C ; time
 .word (img_194 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_195 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 34.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_196 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 34.png;../../data/chars/Sahwit/sahwit-Slice 35.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_197 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 35.png;../../data/chars/Sahwit/sahwit-Slice 34.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_198 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 34.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_199 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_199 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_199 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 img_anim_80:
 .byte $21 ; size
 .byte $0A ; time
 .word (img_194 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_200 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 36.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_201 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 36.png;../../data/chars/Sahwit/sahwit-Slice 37.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_202 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 37.png;../../data/chars/Sahwit/sahwit-Slice 36.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_203 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 36.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_199 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_199 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_199 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 33.png;../../data/chars/Sahwit/sahwit-Slice 33.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 img_anim_81:
 .byte $39 ; size
 .byte $0A ; time
 .word (img_204 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_2.png;../../data/chars/Sahwit/sahwit-Slice 38.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_205 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 38.png;../../data/chars/Sahwit/sahwit-Slice 39.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_206 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 39.png;../../data/chars/Sahwit/sahwit-Slice 40.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_207 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 40.png;../../data/chars/Sahwit/sahwit-Slice 39.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_208 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 39.png;../../data/chars/Sahwit/sahwit-Slice 41.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_209 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 41.png;../../data/chars/Sahwit/sahwit-Slice 42.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_210 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 42.png;../../data/chars/Sahwit/sahwit-Slice 43.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $0A ; time
 .word (img_211 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 43.png;../../data/chars/Sahwit/sahwit-Slice 44.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $7F ; time
 .word (img_212 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 44.png;../../data/empty_chr.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $7F ; time
 .word (img_213 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty_chr.png;../../data/empty_chr.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_214 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty_chr.png;../../data/chars/Sahwit/sahwit-Slice 38.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_215 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 38.png;../../data/chars/Sahwit/sahwit-Slice 38.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_215 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 38.png;../../data/chars/Sahwit/sahwit-Slice 38.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 .byte $00 ; time
 .word (img_215 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Sahwit/sahwit-Slice 38.png;../../data/chars/Sahwit/sahwit-Slice 38.png
-.byte $c8 ; bank
+.byte IMG_BNK + $7 ; bank
 
 palette_table:
 

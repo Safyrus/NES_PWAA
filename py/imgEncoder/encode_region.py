@@ -19,7 +19,7 @@ def main():
     # parser.add_argument("-mc", "--max-chr-size", dest="max_chr_size", type=int, required=False, default=1024*1024)
     # parser.add_argument("-mp", "--max-prg-size", dest="max_prg_size", type=int, required=False, default=1024*512)
     # parser.add_argument("-bsc", "--bank-start-chr", dest="chr_start", type=int, required=False, default=1)
-    parser.add_argument("-bsp", "--bank-start-prg", dest="prg_start", type=int, required=False, default=0xC0)
+    # parser.add_argument("-bsp", "--bank-start-prg", dest="prg_start", type=int, required=False, default=0xC0)
     args = parser.parse_args()
 
     args.tile_chr_path = os.path.join(args.cpath, "CHR.chr")
@@ -74,7 +74,7 @@ def main():
             ca65_info_all[k].extend(ca65_info[k])
 
     # write results
-    write_files(ca65_info_all, all_frames, CHR_roms, basechr_file=args.basechr, chr_name=args.out_chr, prg_start_bank=args.prg_start)
+    write_files(ca65_info_all, all_frames, CHR_roms, basechr_file=args.basechr, chr_name=args.out_chr)
 
 
 if __name__ == "__main__":

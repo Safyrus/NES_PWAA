@@ -80,5 +80,5 @@ endif
 	cd c && make
 	cd asm/data && $(PYTHON) ../../py/imgEncoder/encode_region.py \
 	-i ../../data/anim/pwaa_anim_v3_reg0.json ../../data/anim/pwaa_anim_v3_reg1.json ../../data/anim/pwaa_anim_v3_reg2.json \
-	-bc ../../data/FONT.chr -cp ../../c/ -oc ../../PWAA.chr -bsp 193
+	-bc ../../data/FONT.chr -cp ../../c/ -oc ../../PWAA.chr
 

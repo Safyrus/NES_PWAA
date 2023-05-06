@@ -4,7 +4,6 @@ import os.path
 # const
 BLOCK_SIZE = 8192
 BANK_SIZE = 8192
-STARTING_BANK = 3
 STARTING_ADR = 0xA000
 
 # args
@@ -45,7 +44,7 @@ for b in blocks:
     print("encode block", i)
 
     lt = len(text) // 8
-    bnk_idx = (lt // BANK_SIZE) + 0x80 + STARTING_BANK
+    bnk_idx = (lt // BANK_SIZE)
     block_bnk.append(bnk_idx)
     block_adr.append((adr_tmp % BANK_SIZE) + STARTING_ADR)
     encode_block = lz_encode(b, outputfile="", do_print=False)
@@ -72,7 +71,7 @@ with open(asmfile, "w") as f:
     f.write("\n.segment \"CODE_BNK\"\n")
     f.write("lz_bnk_table:\n")
     for b in block_bnk:
-        f.write(".byte $" + "%0.2X" % b + "\n")
+        f.write(".byte TXT_BNK + $" + "%0.2X" % b + "\n")
     f.write("\nlz_adr_table_lo:\n")
     for b in block_adr:
         f.write(".byte $" + "%0.2X" % (b % 256) + "\n")
