@@ -3,24 +3,34 @@
     ; m = next_char()
     JSR read_next_char
     STA music
-    ;
+    TAX
+    ; push bank
     LDA mmc5_banks+2
     PHA
-    LDA #MUS_BNK
+    ; set $A000 to the correct music bank
+    LDA music_bank_table, X
     STA mmc5_banks+2
     STA MMC5_PRG_BNK1
-    ; play_music(m)
-    LDA music
+    ; if m > 0
+    TXA
     bze @MUS_stop_mus
     @MUS_play_mus:
-        sub #$01
+        ; init famistudio music
+        LDX #<$A000
+        LDY #>$A000
+        JSR famistudio_init
+        ; play_music(m)
+        LDX music
+        LDA music_idx_table, X
         JSR famistudio_music_play
         JMP @MUS_end
     @MUS_stop_mus:
+        ; stop_music()
         JSR famistudio_music_stop
     @MUS_end:
-    ;
+    ; pull bank
     PLA
     STA mmc5_banks+2
     STA MMC5_PRG_BNK1
+    ; return
     RTS

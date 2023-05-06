@@ -40,6 +40,7 @@
 
 ## Done
 
+- [X] Refactor music to not be limited to 2 banks of data.
 - [X] Add a markdown file describing the dialog script 'language'.
 - [X] Add names to display with the dialog box.
 - [X] Update Makefile

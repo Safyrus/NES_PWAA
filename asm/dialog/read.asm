@@ -85,6 +85,7 @@ read_jump:
     RTS
 
 
+; /!\ don't save registers
 read_bip:
     ; if bip = 0 then break
     LDA bip
@@ -93,21 +94,21 @@ read_bip:
     LDX #FAMISTUDIO_SFX_CH0
     LDA famistudio_sfx_ptr_hi, X
     bnz @end
-    ;
-    LDA mmc5_banks+2
+    ; push bank
+    LDA mmc5_banks+3
     PHA
-    LDA #MUS_BNK
-    STA mmc5_banks+2
-    STA MMC5_PRG_BNK1
-    ;
+    ; set $C000 to the correct music bank
+    mov mmc5_banks+3, #MUS_SFX
+    STA MMC5_PRG_BNK2
+    ; sfx_play(bip)
     LDA bip
-    SEC
-    SBC #$01
+    sub #$01
     JSR famistudio_sfx_play
-    ;
+    ; pull bank
     PLA
-    STA mmc5_banks+2
-    STA MMC5_PRG_BNK1
+    STA mmc5_banks+3
+    STA MMC5_PRG_BNK2
+    ; return
     @end:
     RTS
 

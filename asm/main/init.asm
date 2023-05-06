@@ -7,12 +7,13 @@
     STA ppu_ctrl_val
     STA PPU_CTRL
 
-    ; init famistudio music
-    LDX #<music_data_pwaa_ost
-    LDY #>music_data_pwaa_ost
+    ; init famistudio with fake music
+    LDX #<$A000
+    LDY #>$A000
     mov MMC5_PRG_BNK1, #MUS_BNK
     JSR famistudio_init
     ; init famistudio sfx
+    mov MMC5_PRG_BNK2, #MUS_SFX
     LDX #<sounds
     LDY #>sounds
     JSR famistudio_sfx_init

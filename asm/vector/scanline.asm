@@ -63,9 +63,12 @@ scanline_irq_handler:
             STA MMC5_SCNL_VAL
             JMP @end
         @palette_change_start:
-        ; skipping 10 cpu cycles
-        ROL 0
-        ROR 0
+        ; skipping 11 cpu cycles
+        NOP
+        NOP
+        NOP
+        NOP
+        LDA $0
         ; setup registers
         LDX #$16
         LDY #$26
@@ -144,7 +147,7 @@ scanline_irq_handler:
         STX PPU_DATA
         STY PPU_DATA
         ; wait
-        LDX #$11
+        LDX #$0F
         @dialog_wait_4:
             DEX
             bnz @dialog_wait_4
@@ -192,9 +195,6 @@ scanline_irq_handler:
         JMP @end
     @scanline_irq_bot_img:
         ;
-        LDA #$00
-        STA MMC5_CHR_UPPER
-        ;
         BIT effect_flags
         BMI @botimg_palette_change
             LDA #238
@@ -204,13 +204,16 @@ scanline_irq_handler:
         ; set next scanline.
         ; Because we have disabled rendering,
         ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,
-        ; Therefore, scanline 82 mean scanline when enable (155) + 83 = 238
+        ; Therefore, scanline 83 mean scanline when enable (155) + 83 = 238
         LDA #83
         STA MMC5_SCNL_VAL
         @botimg_next:
         ;
         LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
         STA PPU_MASK
+        ;
+        LDA #$00
+        STA MMC5_CHR_UPPER
         ; change nametable mapping
         LDA #NT_MAPPING_EMPTY
         STA MMC5_NAMETABLE

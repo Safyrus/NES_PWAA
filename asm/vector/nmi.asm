@@ -239,8 +239,10 @@ NMI:
     ; enable interrupt
     CLI
     ; load music banks
-    mov MMC5_PRG_BNK1, #MUS_BNK
-    mov MMC5_PRG_BNK2, #MUS_BNK+1
+    LDX music
+    LDA music_bank_table, X
+    STA MMC5_PRG_BNK1
+    mov MMC5_PRG_BNK2, #MUS_SFX
     ; update famistudio
     JSR famistudio_update
     ; restore banks
