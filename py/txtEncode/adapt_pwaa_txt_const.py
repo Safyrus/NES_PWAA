@@ -414,7 +414,7 @@ BIP_CONST = [
     ("BIP_TYPEWRITER", "4")
 ]
 SFX_CONST = [
-    ("14", "SFX_REALIAZTION", "0"),
+    ("14", "SFX_REALIZATION", "0"),
     ("17", "SFX_LIGHTBULB", "4"),
     ("32", "SFX_WHOOPS", "0"),
     ("57", "SFX_OBJ_PAYNE", "0"),
