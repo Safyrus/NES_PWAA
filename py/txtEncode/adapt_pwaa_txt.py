@@ -188,6 +188,8 @@ for c in CHR_CONST:
     text = re.sub(rf"<character:{c[0]}>", f"<character:{c[1]}>", text)
 for c in MUS_CONST:
     text = re.sub(rf"<music:{c[0]}>", f"<music:{c[1]}>", text)
+for c in SFX_CONST:
+    text = re.sub(rf"<sound:{c[0]}>", f"<sound:{c[1]}>", text)
 for c in ANI_CONST:
     text = re.sub(rf"<animation:{c[0]}>", f"<animation:{c[1]}>", text)
 
@@ -214,6 +216,9 @@ for b in ANI_CONST:
     header += "<const:" + b[1] + "," + b[2] + ">\n"
 header += "\n<!-- Musics constants -->\n"
 for b in MUS_CONST:
+    header += "<const:" + b[1] + "," + b[2] + ">\n"
+header += "\n<!-- SFX constants -->\n"
+for b in SFX_CONST:
     header += "<const:" + b[1] + "," + b[2] + ">\n"
 header += "\n<!-- Bip constants -->\n"
 for b in BIP_CONST:

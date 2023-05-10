@@ -25,7 +25,7 @@
 |      | **0F** |     |                                                              |                                               |
 |      | **10** | BIP | change dialog BIP effect                                     | 1: bip (0=remove)                             |
 |      | **11** | MUS | MUSic                                                        | 1: music (0=remove)                           |
-|  X   | **12** | SND | SouND effect                                                 | 1: sound (0=remove)                           |
+|      | **12** | SND | SouND effect                                                 | 1: sfx                                        |
 |  X   | **13** | PHT | show PHoto                                                   | 1: photo (0=remove)                           |
 |  /   | **14** | CHR | CHaRacter to show                                            | 1: character (0=remove)                       |
 |      | **15** | ANI | character ANImation                                          | 1: animation                                  |

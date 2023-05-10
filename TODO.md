@@ -136,7 +136,7 @@
     - [X] COL
     - [X] BIP
     - [X] MUS
-    - [ ] SND
+    - [X] SND
     - [ ] PHT
     - [ ] CHR
     - [X] ANI
