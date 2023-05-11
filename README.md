@@ -80,7 +80,7 @@ Capcom for making the original game.
 
 ### Visuals
 
-- Font based on the [Igiari font](https://www.dafont.com/igiari.font) by [Caveras](https://caveras.net/). Change the font to be 8 pixels tall instead of 16. (only ASCII characters).
+- Font based on the [Igiari font](https://caveras.net/#igiari) by [Caveras](https://caveras.net/). Remade the ASCII, hiragana & katakana characters to be 8 pixels tall instead of 16.
 - Sprites converted from [The sprite resource](https://www.spriters-resource.com/ds_dsi/phoenixwrightaceattorney/). Rippers:
   - Trish Rowdy (exclamation).
   - Badassbill (First turnabout).

@@ -109,9 +109,9 @@ Font based on the<b>
 <color:1>Igiari<color:0> font by <color:3>Caveras<color:0><b><color:2>
 (caveras.net/)<p><wait:5>
 
-(Use only ASCII characters<b>
-+ change font size to<b>
-8 pixels tall instead of 16)<p><wait:5><color:0>
+(Remade the ASCII,hiragana &<b>
+katakana characters to be 8
+pixels tall instead of 16)<p><wait:5><color:0>
 
 <color:1>The sprite resource<color:0><b><color:2>
 (spriters-resource.com/ds_ds<b>

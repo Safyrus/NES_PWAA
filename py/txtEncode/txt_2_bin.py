@@ -1,14 +1,7 @@
 import sys
 import re
 
-def append_byte(textbin, val, name, i):
-    if val > 255:
-        print(f"WARNING: {name} is > 255 (val={val}) at {i}. Replacing by 0")
-        val = 0
-    textbin.append(val)
-    return textbin
-
-CHAR_MAP = [
+CHAR_MAP_ASCII = [
     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
     " ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
@@ -19,44 +12,105 @@ CHAR_MAP = [
     "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", ",", "}", "~", " "
 ]
 
-END = 0x00  # END of dialog                                            |
-LB = 0x01  # Line Break                                                |
-DB = 0x02  # Dialog Break                                              |
-FDB = 0x03  # Force Dialog Break                                       |
-TD = 0x04  # Toggle Dialog Box display                                 |
-SET = 0x05  # Set flag                                                 | 1: index
-CLR = 0x06  # Clear flag                                               | 1: index
-SAK = 0x07  # |
-SPD = 0x08  # SPeeD                                                    | 1: speed
-DL = 0x09  # DeLay                                                     | 1: delay
-NAM = 0x0A  # change NAMe of dialog box                                | 1: name
-FLH = 0x0B  # FLasH                                                    | 1: color
-FI = 0x0C  # Fade In                                                   | 1: color
-FO = 0x0D  # Fade Out                                                  | 1: color
-COL = 0x0E  # change text COLor                                        | 1: color
-BC = 0x0F  # change Background Color                                   | 1: color
-BIP = 0x10  # change dialog BIP effect                                 | 1: bip
-MUS = 0x11  # MUSic                                                    | 1: music
-SND = 0x12  # SouND effect                                             | 1: sound
-# show PHoto                                                | 1: photo (0=remove)
+CHAR_MAP_HIRAGANA = [
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    " ", "。", "「", "」", "、", "・", "を", "ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "ゃ", "ゅ", "ょ", "っ",
+    "ー", "あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ",
+    "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま",
+    "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ", "ん", "゛", "゜",
+    "￥", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+]
+
+CHAR_MAP_KATAKANA = [
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    " ", "。", "「", "」", "、", "・", "ヲ", "ァ", "ィ", "ゥ", "ェ", "ォ", "ャ", "ュ", "ョ", "ッ",
+    "ー", "ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ",
+    "タ", "チ", "ツ", "テ", "ト", "ナ", "ニ", "ヌ", "ネ", "ノ", "ハ", "ヒ", "フ", "ヘ", "ホ", "マ",
+    "ミ", "ム", "メ", "モ", "ヤ", "ユ", "ヨ", "ラ", "リ", "ル", "レ", "ロ", "ワ", "ン", "゛", "゜",
+    "￥", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+]
+
+CHAR_HIRAGANA_VOICE_MARKER_IN = ["が", "ぎ", "ぐ", "げ", "ご", "ざ", "じ", "ず", "ぜ", "ぞ", "だ", "ぢ", "づ", "で", "ど", "ば", "び", "ぶ", "べ", "ぼ"]
+CHAR_HIRAGANA_VOICE_MARKER_OUT = ["か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "は", "ひ", "ふ", "へ", "ほ"]
+CHAR_HIRAGANA_SEMIVOICE_MARKER_IN = ["ぱ", "ぴ", "ぷ", "ぺ", "ぽ"]
+CHAR_HIRAGANA_SEMIVOICE_MARKER_OUT = ["は", "ひ", "ふ", "へ", "ほ"]
+CHAR_KATAKANA_VOICE_MARKER_IN = ["ガ", "ギ", "グ", "ゲ", "ゴ", "ザ", "ジ", "ズ", "ゼ", "ゾ", "ダ", "ヂ", "ヅ", "デ", "ド", "バ", "ビ", "ブ", "ベ", "ボ"]
+CHAR_KATAKANA_VOICE_MARKER_OUT = ["カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト", "ハ", "ヒ", "フ", "ヘ", "ホ"]
+CHAR_KATAKANA_SEMIVOICE_MARKER_IN = ["パ", "ピ", "プ", "ペ", "ポ"]
+CHAR_KATAKANA_SEMIVOICE_MARKER_OUT = ["ハ", "ヒ", "フ", "ヘ", "ホ"]
+
+
+END = 0x00
+LB = 0x01
+DB = 0x02
+FDB = 0x03
+TD = 0x04
+SET = 0x05
+CLR = 0x06
+SAK = 0x07
+SPD = 0x08
+DL = 0x09
+NAM = 0x0A
+FLH = 0x0B
+FI = 0x0C
+FO = 0x0D
+COL = 0x0E
+BC = 0x0F
+BIP = 0x10
+MUS = 0x11
+SND = 0x12
 PHT = 0x13
-# CHaRacter to show                                         | 1: character (0=remove)
 CHR = 0x14
-ANI = 0x15  # character ANImation                                      | 1: animation
-BKG = 0x16  # change BacKGround                                        | 1: background
-FNT = 0x17  # Change FoNT to use                                       | 1: font
-# JuMP to another dialog                                    | jmp_adr, [condition]
+ANI = 0x15
+BKG = 0x16
+FNT = 0x17
 JMP = 0x18
-# jump to the selected choice (depend on the player ACTion) | (jmp_adr, [condition], text line)*nb_choice
 ACT = 0x19
-# Background Palette                                        | 4: palettes (pal 0 first)
 BP = 0x1A
-# Sprite Palette                                            | 4: palettes (pal 0 first)
 SP = 0x1B
-RES = 0x1C  # Reserved                                                  |
-RES = 0x1D  # Reserved                                                  |
-EVT = 0x1E  # EVenT                                                     | 1: function
-EXT = 0x1F  # EXTension command                                         | 1: ext command
+EVT = 0x1E
+EXT = 0x1F
+
+
+def append_byte(textbin, val, name, i):
+    if val > 255:
+        print(f"WARNING: {name} is > 255 (val={val}) at {i}. Replacing by 0")
+        val = 0
+    textbin.append(val)
+    return textbin
+
+
+def add_normal_char(textbin, c):
+    marker = None
+    # separate marker from character
+    if c in CHAR_HIRAGANA_VOICE_MARKER_IN:
+        c = CHAR_HIRAGANA_VOICE_MARKER_OUT[CHAR_HIRAGANA_VOICE_MARKER_IN.index(c)]
+        marker = CHAR_MAP_HIRAGANA.index("゛")
+    elif c in CHAR_HIRAGANA_SEMIVOICE_MARKER_IN:
+        c = CHAR_HIRAGANA_SEMIVOICE_MARKER_OUT[CHAR_HIRAGANA_SEMIVOICE_MARKER_IN.index(c)]
+        marker = CHAR_MAP_HIRAGANA.index("゜")
+    elif c in CHAR_KATAKANA_VOICE_MARKER_IN:
+        c = CHAR_KATAKANA_VOICE_MARKER_OUT[CHAR_KATAKANA_VOICE_MARKER_IN.index(c)]
+        marker = CHAR_MAP_HIRAGANA.index("゛")
+    elif c in CHAR_KATAKANA_SEMIVOICE_MARKER_IN:
+        c = CHAR_KATAKANA_SEMIVOICE_MARKER_OUT[CHAR_KATAKANA_SEMIVOICE_MARKER_IN.index(c)]
+        marker = CHAR_MAP_HIRAGANA.index("゜")
+    # add character
+    if c in CHAR_MAP_ASCII:
+        textbin.append(CHAR_MAP_ASCII.index(c))
+    elif c in CHAR_MAP_HIRAGANA:
+        textbin.append(CHAR_MAP_HIRAGANA.index(c))
+    elif c in CHAR_MAP_KATAKANA:
+        textbin.append(CHAR_MAP_KATAKANA.index(c))
+    # add marker if any
+    if marker:
+        textbin.append(marker)
+    # return
+    return textbin
 
 ########
 # MAIN #
@@ -68,15 +122,13 @@ outputfile = sys.argv[2]
 
 # read text file
 print(f"reading file...")
-with open(txtfile, "r") as f:
+with open(txtfile, "r", encoding="utf-8") as f:
     text = f.read()
 
 # filtering file
 print(f"filtering...")
-# remove control character and char not in CHAR_MAP
-text = re.sub(r"[^\x20-\x7E]", "", text)
-# remove unknown/unused metadata
-text = re.sub(r"\[[0-9]+\]", "", text)
+# remove control character
+text = re.sub(r"[\x00-\x1E]", "", text)
 # remove comments
 text = re.sub(r"<!--(.*?)-->", "", text)
 
@@ -126,8 +178,7 @@ while i < len(text):
         i = tag_end+1
     else:
         # add char
-        if c in CHAR_MAP:
-            textbin.append(CHAR_MAP.index(c))
+        textbin = add_normal_char(textbin, c)
         # update index
         i += 1
 
@@ -211,6 +262,9 @@ while i < len(text):
         elif name == "clear":
             textbin.append(CLR)
             textbin = append_byte(textbin, int(args[0]), name, i)
+        elif name == "font":
+            textbin.append(FNT)
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "label":
             pass
         elif name == "const":
@@ -247,8 +301,7 @@ while i < len(text):
         i = tag_end+1
     else:
         # add char
-        if c in CHAR_MAP:
-            textbin.append(CHAR_MAP.index(c))
+        textbin = add_normal_char(textbin, c)
         # update index
         i += 1
 
@@ -259,7 +312,7 @@ if m > 127:
     print("       largest char found:", m)
 if 0 in textbin:
     print("WARNING: A 0 value has been detected. It may be interpreted has 'END'")
-
+print("text size:", len(textbin))
 
 # outputting results
 print(f"writing new file...")
