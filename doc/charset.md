@@ -30,7 +30,7 @@
 |  /   | **14** | CHR | CHaRacter to show                                            | 1: character (0=remove)                       |
 |      | **15** | ANI | character ANImation                                          | 1: animation                                  |
 |      | **16** | BKG | change BacKGround                                            | 1: background                                 |
-|  X   | **17** | FNT | Change FoNT to use                                           | 1: font                                       |
+|      | **17** | FNT | Change FoNT to use                                           | 1: font                                       |
 |      | **18** | JMP | JuMP to another dialog                                       | jmp_adr, \[condition\]                        |
 |      | **19** | ACT | jump to the selected choice (depending on the player ACTion) | (jmp_adr, \[condition\], text line)*nb_choice |
 |  X   | **1A** | BP  | Background Palette                                           | 4: palettes (pal 0 first)                     |
@@ -76,7 +76,9 @@ ccccccc
 
 ## Display char
 
-### Occidental (0)
+### Occidental
+
+#### ASCII (0)
 
 |    | 0  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C  | D | E | F |
 |:---|:--:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:--:|:-:|:-:|:-:|
@@ -89,18 +91,18 @@ ccccccc
 
 ### Japanese (日本語)
 
-#### Hiragana (平仮名) (1)
+#### Hiragana (平仮名) (2)
 
 |    | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
 |:---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | 2x |   | 。 | 「 | 」 | 、 | ・ | を | ぁ | ぃ | ぅ | ぇ | ぉ | ゃ | ゅ | ょ | っ |
 | 3x | ー | あ | い | う | え | お | か | き | く | け | こ | さ | し | す | せ | そ |
 | 4x | た | ち | つ | て | と | な | に | ぬ | ね | の | は | ひ | ふ | へ | ほ | ま |
-| 5x | み | む | め | も | や | ゆ | よ | ら | り | る | れ | ろ | わ | ン | ゛ | ゜ |
+| 5x | み | む | め | も | や | ゆ | よ | ら | り | る | れ | ろ | わ | ん | ゛ | ゜ |
 | 6x | ￥ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
 | 7x |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
 
-#### Katakana (片仮名) (2)
+#### Katakana (片仮名) (3)
 
 |    | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
 |:---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|

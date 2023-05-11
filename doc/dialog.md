@@ -67,6 +67,7 @@ Example:
 - [label](#-label)
 - [jump](#-jump)
 - [act](#-act)
+- [font](#-font)
 - [photo](#-photo)
 - [event](#-event)
 
@@ -513,6 +514,21 @@ Make a choice<p>
 <label:secret><fp>You found the secret choose !<p><jump:choice_end>
 
 <label:choice_end>
+```
+
+### **font**
+
+This tag change the current font to another one.
+Any character following this tag will be of that font until another `font` tag is encounter.
+
+The argument is the index of the font to use.
+
+Example:
+
+```html
+This is ASCII.<b><font:2>
+これ　は　ひらがな　です。<b><font:3>
+コレ　ハ　カタカナ　デス。<p><font:0>
 ```
 
 ### **photo**

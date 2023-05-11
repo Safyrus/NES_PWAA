@@ -100,7 +100,7 @@ draw_dialog_box:
     ; set ptr to ext ram
     sta_ptr tmp, (MMC5_EXP_RAM+$260)
     ; set ext ram
-    LDA #$C0
+    LDA #BOX_UPPER_TILE
     for_y @loop_ext, #0
         STA (tmp), Y
     to_y_inc @loop_ext, #0

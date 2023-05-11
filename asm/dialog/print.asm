@@ -9,14 +9,23 @@
 print_char:
     PHA
 
-    ;
+    ; if char < $20 then return
     CMP #$20
     blt @end
-    ;
+    ; print_ppu_buf[X] = char + (font << 7)
     LDX print_counter
     STA print_ppu_buf, X
+    LDA txt_font
+    AND #$01
+    CLC
+    ROR
+    ROR
+    ADC print_ppu_buf, X
+    STA print_ppu_buf, X
+    ; print_ext_buf[X] = print_ext_val
     LDA print_ext_val
     STA print_ext_buf, X
+    ; x++
     INC print_counter
 
     @end:
