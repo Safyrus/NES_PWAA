@@ -16,11 +16,11 @@ lz_bnk_table:
 lz_adr_table_lo:
 .byte $00
 .byte $79
-.byte $32
-.byte $AE
-.byte $AF
-.byte $32
-.byte $1F
+.byte $2A
+.byte $73
+.byte $71
+.byte $F2
+.byte $11
 
 lz_adr_table_hi:
 .byte $A0
@@ -28,5 +28,5 @@ lz_adr_table_hi:
 .byte $A5
 .byte $B5
 .byte $A5
-.byte $B7
+.byte $B6
 .byte $A9

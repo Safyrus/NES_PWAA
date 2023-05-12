@@ -319,6 +319,9 @@ Thanks :)<wait:120><fp>
 <const:BKG_GLOBAL_SUTDIO_EMPLOYEE_AREA_VENT_LEFT,0>
 <const:BKG_STUDIO_2_ENTRANCE_LEFT,0>
 <const:BKG_GOURD_LAKE_WOODS_LEFT,0>
+<const:BKG_HOLDIT,11>
+<const:BKG_OBJECTION,12>
+<const:BKG_TAKETHAT,13>
 
 <!-- Characters constants -->
 <const:CHR_NONE,0>
@@ -590,6 +593,8 @@ Thanks :)<wait:120><fp>
 <const:SFX_LONGBEEP,0>
 <const:SFX_SUPERSHOCK,6>
 <const:SFX_DRAMAPOUND,0>
+<const:SFX_OBJ_PHOENIX,0>
+<const:SFX_HOLD_PHOENIX,0>
 
 <!-- Bip constants -->
 <const:BIP_NONE,0>
@@ -983,7 +988,7 @@ the defendant<color:0> in this case.<animation:ANI_JUDGE_ANGRY_STAND><p>
 Um... the defendant...<b>
 is me, right?<animation:ANI_PHOENIX_THINK_STAND><p>
 
-<character:CHR_MIA><animation:ANI_MIA_SAD_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><flash><sound:67><shake>
+<character:CHR_MIA><animation:ANI_MIA_SAD_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><flash><sound:SFX_SMACK><shake>
 
 <name:NAM_MIA><bip:BIP_HIGH>
 Wright!<wait:20> <shake>Have you completely<b>
@@ -1050,7 +1055,7 @@ going so soon, is there?<p>
 Wright!<animation:ANI_MIA_SHOCK_STAND><p><animation:ANI_MIA_SHOCK_TALK>
 
 Listen: the defendant is<b>
-the one on trial--<flash><sound:67><shake><b>
+the one on trial--<flash><sound:SFX_SMACK><shake><b>
 your client!<animation:ANI_MIA_SHOCK_STAND><p>
 
 <animation:ANI_MIA_SADPOSE_TALK>
@@ -1114,13 +1119,13 @@ to cover so many times.)<p>
 I'm drawing a total blank<b>
 here!)<color:0><animation:ANI_PHOENIX_SWEAT_STAND><p>
 
-<character:CHR_MIA><animation:ANI_MIA_SHOCK_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><flash><sound:67><shake><speed:2>
+<character:CHR_MIA><animation:ANI_MIA_SHOCK_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><flash><sound:SFX_SMACK><shake><speed:2>
 
 <name:NAM_MIA><bip:BIP_HIGH>
 Phoenix!<wait:30><speed:2> <shake>Are you absolutely<b>
 SURE you're up to this?<animation:ANI_MIA_SHOCK_STAND><p>
 
-<animation:ANI_MIA_SHOCK_TALK><flash><sound:67><shake>
+<animation:ANI_MIA_SHOCK_TALK><flash><sound:SFX_SMACK><shake>
 
 You don't even know the<b>
 victim's name!?<animation:ANI_MIA_SHOCK_STAND><p>
@@ -1300,7 +1305,7 @@ She died because she was...?<animation:ANI_JUDGE_ANGRY_STAND><p>
 Oh, right!<wait:20><speed:4> Wasn't she, um,<b>
 poisoned by er...<wait:20> poison?<speed:2><animation:ANI_PHOENIX_THINK_STAND><p>
 
-<animation:ANI_PHOENIX_THINK_TALK><character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:67><shake>
+<animation:ANI_PHOENIX_THINK_TALK><character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:SFX_SMACK><shake>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 You're asking me!?<animation:ANI_JUDGE_SHOCK_STAND><p>
@@ -1382,7 +1387,7 @@ Mr. Wright.<wait:15> Good for you.<animation:ANI_JUDGE_ANGRY_STAND><p>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
-Thank you,<wait:10> Your Honor.<animation:ANI_PHOENIX_STAND><wait:30><animation:ANI_PHOENIX_SWEAT_STAND><sound:32><shake><speed:6><color:2><b>
+Thank you,<wait:10> Your Honor.<animation:ANI_PHOENIX_STAND><wait:30><animation:ANI_PHOENIX_SWEAT_STAND><sound:SFX_WHOOPS><shake><speed:6><color:2><b>
 (Because I don't FEEL<b>
 relaxed,<wait:15> that's for sure.)<color:0><p>
 
@@ -1504,16 +1509,16 @@ Mr. Butz.<wait:15> Is it not true that<b>
 the victim had recently<b>
 dumped you?<animation:ANI_PAYNE_STAND><p>
 
-<hidetextbox><event:0><wait:30><character:CHR_LARRY><animation:ANI_LARRY_BLUSH_ANGRY_TALK><background:BKG_COURTROOM_STAND><hidetextbox><flash><sound:67><shake><speed:1>
+<hidetextbox><event:0><wait:30><character:CHR_LARRY><animation:ANI_LARRY_BLUSH_ANGRY_TALK><background:BKG_COURTROOM_STAND><hidetextbox><flash><sound:SFX_SMACK><shake><speed:1>
 
 <name:NAM_BUTZ><bip:BIP_NORMAL>
-Hey,<wait:15> watch it buddy!<animation:ANI_LARRY_BLUSH_STAND><p><animation:ANI_LARRY_BLUSH_ANGRY_TALK><sound:76><shake><flash>
+Hey,<wait:15> watch it buddy!<animation:ANI_LARRY_BLUSH_STAND><p><animation:ANI_LARRY_BLUSH_ANGRY_TALK><sound:SFX_DAMAGE2><shake><flash>
 
 We were great together!<wait:15><shake><b>
 We were Romeo and Juliet,<wait:10><shake><b>
 Cleopatra and Mark Anthony!<speed:2><animation:ANI_LARRY_BLUSH_STAND><p>
 
-<character:CHR_PHOENIX><animation:ANI_PHOENIX_STAND><background:BKG_COURTROOM_DEFENSE><hidetextbox><animation:ANI_PHOENIX_SHOCK><speed:5><sound:32><shake><flash><wait:20><hidetextbox><speed:6><color:2>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_STAND><background:BKG_COURTROOM_DEFENSE><hidetextbox><animation:ANI_PHOENIX_SHOCK><speed:5><sound:SFX_WHOOPS><shake><flash><wait:20><hidetextbox><speed:6><color:2>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 (Um...<wait:42><shake><flash> didn't they all die?)<color:0><speed:2><animation:ANI_PHOENIX_SWEAT_STAND><p>
@@ -1661,7 +1666,7 @@ irrelevant to this case!<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><p>
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 Oof! <speed:2><wait:20>*wince*<animation:ANI_PAYNE_SWEAT_STAND><p>
 
-<character:CHR_LARRY><animation:ANI_LARRY_BLUSH_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:67><shake><speed:2>
+<character:CHR_LARRY><animation:ANI_LARRY_BLUSH_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:SFX_SMACK><shake><speed:2>
 
 <name:NAM_BUTZ><bip:BIP_NORMAL>
 Dude! <wait:10>Nick!<wait:10><flash><shake><b>
@@ -1686,7 +1691,7 @@ get involved in this one...)<color:0><p>
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 Well, Mr. Butz?<animation:ANI_PAYNE_STAND><p>
 
-<hidetextbox><event:0><wait:30><character:CHR_LARRY><animation:ANI_LARRY_BLUSH_ANGRY_TALK><background:BKG_COURTROOM_STAND><hidetextbox><flash><sound:67><shake>
+<hidetextbox><event:0><wait:30><character:CHR_LARRY><animation:ANI_LARRY_BLUSH_ANGRY_TALK><background:BKG_COURTROOM_STAND><hidetextbox><flash><sound:SFX_SMACK><shake>
 
 <name:NAM_BUTZ><bip:BIP_NORMAL>
 Dude,<wait:10> no way!<wait:20><wait:15><flash><shake><b>
@@ -1704,7 +1709,7 @@ That cheatin' she-<wait:20>dog!<animation:ANI_LARRY_BLUSH_STAND><p>
 I'm gonna die.<flash><wait:20><b>
 I'm just gonna drop dead!<wait:10><speed:2><animation:ANI_LARRY_BLUSH_STAND><p>
 
-<music:MUS_NONE><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><music:MUS_NONE><shake><flash><sound:122><speed:2>
+<music:MUS_NONE><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><music:MUS_NONE><shake><flash><sound:SFX_DRAMAPOUND><speed:2>
 Yeah,<wait:10> and when <speed:5>I meet her<b>
 in the afterlife.<wait:10>.<wait:10>.<wait:20><fp><flash>
 
@@ -1819,7 +1824,7 @@ Dude,<wait:15><shake> chill!<speed:2><animation:ANI_LARRY_NERVOUS_STAND><p><anim
 She wasn't home, man... <wait:15><b>
 So, <wait:10>like,<wait:10> I didn't see her.<animation:ANI_LARRY_NERVOUS_STAND><p>
 
-<animation:ANI_LARRY_NERVOUS_TALK><hidetextbox><flash><sound:57><wait:60><event:0><wait:30><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><flash><sound:SFX_OBJ_PAYNE><wait:120><event:0><wait:30><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 Your Honor,<wait:16> the defendant<b>
@@ -1890,7 +1895,6 @@ victim's apartment that day!<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:larry_2_end>
-<label:DEBUG>
 <character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
@@ -1907,7 +1911,7 @@ the victim's body.<animation:ANI_PAYNE_STAND><p><animation:ANI_PAYNE_TALK>
 Just before making the<b>
 gruesome discovery...<animation:ANI_PAYNE_STAND><p>
 
-<hidetextbox><event:0><wait:30><character:CHR_LARRY><animation:ANI_LARRY_BLUSH_STAND><background:BKG_COURTROOM_STAND><hidetextbox><sound:122><shake><flash>
+<hidetextbox><event:0><wait:30><character:CHR_LARRY><animation:ANI_LARRY_BLUSH_STAND><background:BKG_COURTROOM_STAND><hidetextbox><sound:SFX_DRAMAPOUND><shake><flash>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 He saw the defendant <flash>fleeing<b>
@@ -2248,7 +2252,7 @@ and the witness's testimony.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA
 Then,<wait:20> once you've found the<b>
 contradicting <color:1>evidence<color:0>... <animation:ANI_MIA_ANGRY_STAND><p>
 
-<animation:ANI_MIA_SHOCK_TALK><shake><sound:72><flash><speed:2><color:1>present<flash><color:0> it and rub<b>
+<animation:ANI_MIA_SHOCK_TALK><shake><sound:SFX_OBJECTION><flash><speed:2><color:1>present<flash><color:0> it and rub<b>
 it in the witness's face!<animation:ANI_MIA_ANGRY_STAND><p><speed:7>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2478,6 +2482,7 @@ and <color:1>present<color:0> it to him!<animation:ANI_MIA_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-1><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2527,6 +2532,7 @@ So, <wait:10>what happened next?<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-2><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:6>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2560,6 +2566,7 @@ And <wait:5>what happened next?<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-3><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2608,6 +2615,7 @@ What happened then?<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-4><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <background:BKG_COURTROOM_DEFENSE><hidetextbox><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2640,6 +2648,7 @@ what happened next?<animation:ANI_PHOENIX_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-5><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2666,6 +2675,7 @@ What happened next?<animation:ANI_PHOENIX_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-6><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <background:BKG_COURTROOM_DEFENSE><hidetextbox><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2691,6 +2701,7 @@ police... What happened next?<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-7><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2740,6 +2751,7 @@ What happened next?<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-8><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2770,6 +2782,7 @@ did you call again?<animation:ANI_PHOENIX_THINK_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-9><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <background:BKG_COURTROOM_DEFENSE><hidetextbox><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK><flash><shake>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2808,6 +2821,7 @@ to <color:1>contradict<color:0> him!<animation:ANI_MIA_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit1-10><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <background:BKG_COURTROOM_DEFENSE><hidetextbox><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -2834,7 +2848,8 @@ The witness says he's certain!<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Object-Sahwit1-9><fp>
-<music:MUS_NONE><character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE>
+<music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 You found the body <wait:5><b>
@@ -2876,7 +2891,7 @@ three-hour gap?<animation:ANI_PHOENIX_CONFIDENT_STAND><p>
 
 <animation:ANI_SAHWIT_SWEAT_TALK><speed:6>Oh, <wait:14>that! <wait:30><shake><speed:8>Oh,<wait:15><speed:10> er... <animation:ANI_SAHWIT_SWEAT_STAND><p>
 
-<speed:2><hidetextbox><flash><sound:57><wait:60><event:0><wait:30><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><flash><sound:67><shake><speed:2>
+<speed:2><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><flash><sound:SFX_OBJ_PAYNE><wait:120><event:0><wait:30><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><flash><sound:SFX_SMACK><shake><speed:2>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 This is <wait:8>trivial! <wait:25><speed:2>The witness<b>
@@ -2932,6 +2947,7 @@ your testimony again?<animation:ANI_JUDGE_ANGRY_STAND><p>
 | Testimony : Sahwit 2   |
 --------------------------
 -->
+<label:DEBUG>
 <hidetextbox><music:MUS_NONE><wait:30><fade><wait:25><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:7><event:6><wait:20><speed:2><hidetextbox><color:1>
 
 <name:NAM_NONE><bip:BIP_NONE>
@@ -3132,6 +3148,7 @@ Notice anything suspicious?<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit2-1><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:6>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3163,7 +3180,7 @@ But <wait:5>if you were so shocked by<b>
 the body,<wait:15><speed:3> you wouldn't hear<b>
 anything at all!<animation:ANI_PHOENIX_STAND><p>
 
-<speed:2><hidetextbox><flash><sound:57><wait:60><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION>
+<speed:2><hidetextbox><flash><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PAYNE><wait:120><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 The witness did say he<b>
@@ -3191,6 +3208,7 @@ your testimony.<animation:ANI_JUDGE_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit2-2><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3243,6 +3261,7 @@ He heard the time.<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit2-3><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><speed:3>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3263,6 +3282,7 @@ Can you explain this?<animation:ANI_JUDGE_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit2-4><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3302,6 +3322,7 @@ the time at the scene, then.<animation:ANI_JUDGE_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit2-5><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3345,6 +3366,7 @@ remembered it just now.<animation:ANI_SAHWIT_SWEAT_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit2-6><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><flash><shake>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3363,7 +3385,8 @@ was there?)<color:0><p>
 --------------------------
 -->
 <label:Object-Sahwit2-4><fp>
-<music:MUS_NONE><character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><flash><shake><speed:2>
+<music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><flash><shake><speed:2>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Hold it right there!<animation:ANI_PHOENIX_OBJECTION_STAND><p><speed:2><animation:ANI_PHOENIX_OBJECTION_TALK>
@@ -3414,7 +3437,7 @@ puzzling myself! <wait:20>Quite!<animation:ANI_SAHWIT_SWEAT_STAND><p>
 
 <speed:2><animation:ANI_SAHWIT_DAMAGE><sound:SFX_LIGHTBULB><flash><shake>Aah!<wait:30><flash><fp><animation:ANI_SAHWIT_SWEAT_TALK>
 
-W-<wait:12><flash><sound:67><shake><speed:2>wait!<wait:20><speed:2><b>
+W-<wait:12><flash><sound:SFX_SMACK><shake><speed:2>wait!<wait:20><speed:2><b>
 I remember now!<speed:2><animation:ANI_SAHWIT_SWEAT_STAND><p>
 
 <character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE><speed:4>
@@ -3612,6 +3635,7 @@ Now,<wait:20> find the contradiction!<animation:ANI_MIA_ANGRY_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit3-1><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3642,6 +3666,7 @@ A "table clock"?<speed:2><animation:ANI_JUDGE_SHOCK_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit3-2><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3664,6 +3689,7 @@ I've heard of it!<speed:2><animation:ANI_JUDGE_SHOCK_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit3-3><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3693,6 +3719,7 @@ of my testimony or something?<animation:ANI_SAHWIT_STAND><p>
 --------------------------
 -->
 <label:Hold-Sahwit3-4><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
 <character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_TALK><background:BKG_COURTROOM_DEFENSE><speed:3>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -3723,7 +3750,8 @@ table clock.<wait:20> End of story.<animation:ANI_PAYNE_STAND><p>
 --------------------------
 -->
 <label:Object-Sahwit3-3><fp>
-<music:MUS_NONE><character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><wait:10><speed:3>
+<music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><wait:10><speed:3>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Wait just a moment!<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><p>
@@ -3759,7 +3787,7 @@ Mr. Sahwit.<speed:2><animation:ANI_PHOENIX_SLAM_STAND><p>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 Hey,<speed:5><wait:15> I...<wait:20> <flash><shake>I saw it there,<wait:15><speed:2><b>
-okay!<wait:20><speed:2><flash><sound:67><shake>That's a clock!<speed:2><animation:ANI_SAHWIT_ANGRY_STAND><p>
+okay!<wait:20><speed:2><flash><sound:SFX_SMACK><shake>That's a clock!<speed:2><animation:ANI_SAHWIT_ANGRY_STAND><p>
 
 <hidetextbox><event:0><wait:30><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><hidetextbox><flash><speed:3>
 
@@ -3932,7 +3960,7 @@ a clock,<wait:15> because he...<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><
 Tell me,<wait:15> isn't it true that<b>
 you knew the victim?<animation:ANI_PHOENIX_OBJECTION_STAND><p>
 
-<animation:ANI_PHOENIX_OBJECTION_TALK><shake><sound:72><flash>
+<animation:ANI_PHOENIX_OBJECTION_TALK><shake><sound:SFX_OBJECTION><flash>
 
 In fact,<wait:10> you were <flash>one of her<b>
 "<flash>sugar daddies"! <wait:20><speed:5>Be frank<b>
@@ -3956,7 +3984,7 @@ the victim's relationships.<animation:ANI_PAYNE_STAND><p><animation:ANI_PAYNE_TA
 Mr. Frank Sahwit does<b>
 not appear anywhere.<animation:ANI_PAYNE_STAND><p>
 
-<character:CHR_PHOENIX><animation:ANI_PHOENIX_SWEAT_TALK><background:BKG_COURTROOM_DEFENSE><sound:32><flash><shake><speed:5>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_SWEAT_TALK><background:BKG_COURTROOM_DEFENSE><sound:SFX_WHOOPS><flash><shake><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Huh?<wait:25><b>
@@ -3965,7 +3993,7 @@ Oh, really?<speed:2><animation:ANI_PHOENIX_SWEAT_STAND><p>
 <character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
-Please,<wait:8> Mr. Wright...<wait:20><flash><sound:67><shake><b>
+Please,<wait:8> Mr. Wright...<wait:20><flash><sound:SFX_SMACK><shake><b>
 Is "Huh" the best response<b>
 you can muster up?<animation:ANI_JUDGE_SHOCK_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
 
@@ -4013,7 +4041,7 @@ You struck her with the clock<wait:12><b>
 and the shock of the blow<b>
 triggered the clock's voice!<speed:2><p>
 
-<character:CHR_PHOENIX_BIG><animation:ANI_PHOENIX_BIG_TALK><background:BKG_ACTION_LINES><flash><sound:72><flash><shake><speed:2>
+<character:CHR_PHOENIX_BIG><animation:ANI_PHOENIX_BIG_TALK><background:BKG_ACTION_LINES><flash><sound:SFX_OBJECTION><flash><shake><speed:2>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 That <flash>was the sound <flash>you heard!<speed:2><animation:ANI_PHOENIX_BIG_STAND><p>
@@ -4055,10 +4083,10 @@ into your mind.<speed:2><p>
 That's why <wait:8>you were so<b>
 certain about the time!<p>
 
-<hidetextbox><flash><sound:57><wait:60><event:0><wait:30><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><speed:5>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><flash><sound:SFX_OBJ_PAYNE><wait:120><event:0><wait:30><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><speed:5>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
-W-<wait:10>w-<wait:8><speed:2><flash><sound:67><shake>what's the meaning<b>
+W-<wait:10>w-<wait:8><speed:2><flash><sound:SFX_SMACK><shake>what's the meaning<b>
 of this?<animation:ANI_PAYNE_SWEAT_STAND><p>
 
 <animation:ANI_PAYNE_SWEAT_TALK><flash><shake><speed:3>
@@ -4071,7 +4099,7 @@ conjecture!<speed:2><animation:ANI_PAYNE_SWEAT_STAND><p>
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Baseless...?<speed:2><animation:ANI_PHOENIX_SLAM_STAND><p>
 
-<animation:ANI_PHOENIX_SLAM_TALK><animation:ANI_PHOENIX_OBJECTION_TALK><sound:122><shake><flash><speed:3>
+<animation:ANI_PHOENIX_SLAM_TALK><animation:ANI_PHOENIX_OBJECTION_TALK><sound:SFX_DRAMAPOUND><shake><flash><speed:3>
 
 Just look at the<flash><b>
 witness's face!<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><p>
@@ -4103,7 +4131,7 @@ I mean,<wait:10> I <shake>saw...<flash><background:BKG_CINDY_MURDER><wait:1>Saw.
 
 <speed:2><flash><wait:10><flash><animation:ANI_SAHWIT_THROW_WIG><music:MUS_NONE><sound:SFX_SUPERSHOCK>Gwa<flash>aaa<flash>aa<flash>aaa<flash>aaa<flash>ah!<wait:27><fp>
 
-<hidetextbox><character:CHR_PHOENIX><animation:ANI_PHOENIX_WIG_ANGRY><background:BKG_COURTROOM_DEFENSE><wait:153><hidetextbox><character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><sound:76><shake><flash><speed:2>
+<hidetextbox><character:CHR_PHOENIX><animation:ANI_PHOENIX_WIG_ANGRY><background:BKG_COURTROOM_DEFENSE><wait:153><hidetextbox><character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><sound:SFX_DAMAGE2><shake><flash><speed:2>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 Shutup<wait:5>shutup<wait:5>shutup!<wait:20><speed:3><flash><b>
@@ -4112,7 +4140,7 @@ I hate you!<speed:2><animation:ANI_SAHWITNOWIG_ANGRY_STAND><p><animation:ANI_SAH
 I-<wait:8>it was him,<wait:15> I tell you!<wait:20><shake><flash><b>
 I saw him!<animation:ANI_SAHWITNOWIG_ANGRY_STAND><p><animation:ANI_SAHWITNOWIG_ANGRY_TALK><speed:5>
 
-H-<wait:8><flash><sound:67><shake>he killed her and he<b>
+H-<wait:8><flash><sound:SFX_SMACK><shake>he killed her and he<b>
 should burn!<speed:2> <wait:20>Burn!<wait:20><speed:2><b>
 Give him death!<animation:ANI_SAHWITNOWIG_ANGRY_STAND><p>
 
@@ -4132,7 +4160,7 @@ a-<wait:8>a moment please!<animation:ANI_PAYNE_SWEAT_STAND><p>
 evidence supporting the<b>
 defense's claims!<animation:ANI_PAYNE_SWEAT_STAND><p>
 
-<wait:120><music:MUS_CORNERED_1><character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:67><shake>
+<wait:120><music:MUS_CORNERED_1><character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:SFX_SMACK><shake>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Mr. Wright!<animation:ANI_JUDGE_ANGRY_STAND><p>
@@ -4216,11 +4244,11 @@ Yes,<wait:10> and...?<speed:2><animation:ANI_PAYNE_STAND><p>
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 ...<p>
 
-<animation:ANI_PHOENIX_SWEAT_TALK><sound:32><flash><shake>Umm,<wait:20> I'm sorry,<wait:15> I think<b>
+<animation:ANI_PHOENIX_SWEAT_TALK><sound:SFX_WHOOPS><flash><shake>Umm,<wait:20> I'm sorry,<wait:15> I think<b>
 I got confused back there<b>
 with all those testimonies.<speed:2><animation:ANI_PHOENIX_SWEAT_STAND><p>
 
-<character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:67><shake><speed:3>
+<character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:SFX_SMACK><shake><speed:3>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Mr. Wright!<speed:2><animation:ANI_JUDGE_SHOCK_STAND><p>
@@ -4379,7 +4407,7 @@ is exactly three hours slow!<animation:ANI_PHOENIX_SLAM_STAND><p>
 between what Mr. Sahwit heard<b>
 and the actual time of death!<speed:2><animation:ANI_PHOENIX_SLAM_STAND><p>
 
-<speed:2><event:2><character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_STAND><background:BKG_COURTROOM_STAND><sound:70><shake><flash><speed:5>
+<speed:2><event:2><character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_STAND><background:BKG_COURTROOM_STAND><sound:SFX_THUD4><shake><flash><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 So,<wait:15> Mr. Sahwit...<p>
@@ -4460,7 +4488,7 @@ This ends the cross-<b>
 examination of<b>
 Mr. Frank Sahwit.<animation:ANI_JUDGE_STAND><p>
 
-<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:67><shake><speed:4>
+<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:SFX_SMACK><shake><speed:4>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 I come all the way down here<b>
@@ -4486,12 +4514,12 @@ you.)<p>
 <speed:6>(There's nothing I can<wait:25><b>
 do about it now...)<color:0><speed:2><p>
 
-<speed:2><hidetextbox><wait:40><fade><wait:25><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><hidetextbox><sound:72><flash><speed:1>
+<speed:2><hidetextbox><wait:40><fade><wait:25><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><hidetextbox><sound:SFX_OBJECTION><flash><speed:1>
 
 <name:NAM_MIA><bip:BIP_HIGH>
 Not so fast,<wait:10> Mr. Sahwit!<speed:2><music:MUS_CORNERED_2><p>
 
-<hidetextbox><sound:87><character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_STAND><background:BKG_COURTROOM_STAND><flash><wait:30><sound:87><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_STAND><background:BKG_COURTROOM_PROSECUTION><flash><wait:30><sound:87><character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_STAND><background:BKG_COURTROOM_JUDGE><flash><wait:30><sound:87><character:CHR_MIA><animation:ANI_MIA_ANGRY_STAND><background:BKG_COURTROOM_DEFENSE_SIDE><flash><wait:5><hidetextbox><flash><sound:67><shake>
+<hidetextbox><sound:SFX_BADUM><character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_STAND><background:BKG_COURTROOM_STAND><flash><wait:30><sound:SFX_BADUM><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_STAND><background:BKG_COURTROOM_PROSECUTION><flash><wait:30><sound:SFX_BADUM><character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_STAND><background:BKG_COURTROOM_JUDGE><flash><wait:30><sound:SFX_BADUM><character:CHR_MIA><animation:ANI_MIA_ANGRY_STAND><background:BKG_COURTROOM_DEFENSE_SIDE><flash><wait:5><hidetextbox><flash><sound:SFX_SMACK><shake>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Mia! <wait:25>I mean,<wait:10> Chief!<p><animation:ANI_MIA_SHOCK_TALK>
@@ -4503,7 +4531,7 @@ Listen up,<wait:15> Wright!<animation:ANI_MIA_ANGRY_STAND><p>
 not like this! <wait:20><flash><shake>Think!<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
-But,<wait:8> Chief,<wait:20> <speed:7><flash><sound:67><shake>it's over.<speed:2><p>
+But,<wait:8> Chief,<wait:20> <speed:7><flash><sound:SFX_SMACK><shake>it's over.<speed:2><p>
 
 <speed:5>I can't prove the clock was<b>
 slow the day of the murder!<speed:2><p>
@@ -4550,7 +4578,7 @@ three hours slow?<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
 <label:clock_3hourslow_no><fp>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
-H-<wait:10><flash><sound:67><shake>how am I supposed<b>
+H-<wait:10><flash><sound:SFX_SMACK><shake>how am I supposed<b>
 to know that!?<p>
 
 <animation:ANI_MIA_ANGRY_TALK><speed:5>
@@ -4599,7 +4627,7 @@ to prove this?<animation:ANI_JUDGE_ANGRY_STAND><p>
 <speed:2><animation:ANI_PHOENIX_TALK><speed:4>I believe I have the evidence<b>
 that can prove my claim!<speed:2><animation:ANI_PHOENIX_STAND><p>
 
-<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:67><shake><speed:6>
+<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:SFX_SMACK><shake><speed:6>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 Hah <wait:10>hah! <speed:2><wait:20>I'd like to see THAT!<animation:ANI_SAHWITNOWIG_ANGRY_STAND><p>
@@ -4691,7 +4719,7 @@ Of course.<speed:2><animation:ANI_PHOENIX_STAND><p>
 in the Court Record that can<b>
 prove my claim beyond a doubt!<animation:ANI_PHOENIX_STAND><p>
 
-<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:67><shake><speed:6>
+<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><flash><sound:SFX_SMACK><shake><speed:6>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 Hah!<speed:2><wait:20> Tough words!<wait:20> Let's see<b>
@@ -4963,7 +4991,7 @@ see the headlines now:<wait:20><b>
 Heh...<wait:15> um...<wait:15> thanks!<wait:15><b>
 I really owe you one.<animation:ANI_LARRY_HAPPY_STAND><p>
 
-<animation:ANI_LARRY_TUMB_UP_TALK><shake><sound:72><flash>
+<animation:ANI_LARRY_TUMB_UP_TALK><shake><sound:SFX_OBJECTION><flash>
 
 I won't forget this,<wait:15> ever!<wait:25><b>
 Let's celebrate! <wait:15>Dinner?<b>
@@ -4985,7 +5013,7 @@ got you off the hook!)<color:0><speed:2><p>
 <name:NAM_BUTZ><bip:BIP_NORMAL>
 Oh,<wait:10> hey!<animation:ANI_LARRY_HAPPY_STAND><p>
 
-<photo:7><animation:ANI_LARRY_TUMB_UP_TALK><flash><sound:67><shake><speed:6>
+<photo:7><animation:ANI_LARRY_TUMB_UP_TALK><flash><sound:SFX_SMACK><shake><speed:6>
 
 H-<wait:8>here,<wait:10> take this!<wait:15><speed:2><b>
 It's a present!<animation:ANI_LARRY_TUMB_UP_STAND><p>
@@ -5164,7 +5192,7 @@ made for her,<wait:10> Larry!<p>
 She took it with her<b>
 when she traveled.<p>
 
-<animation:ANI_LARRY_HAPPY_TALK><flash><sound:67><shake>
+<animation:ANI_LARRY_HAPPY_TALK><flash><sound:SFX_SMACK><shake>
 
 <name:NAM_BUTZ><bip:BIP_NORMAL>
 Hmm,<wait:15> she probably just<b>

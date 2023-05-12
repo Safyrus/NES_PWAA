@@ -414,11 +414,11 @@ BIP_CONST = [
     ("BIP_TYPEWRITER", "4")
 ]
 SFX_CONST = [
-    ("14", "SFX_REALIZATION", "0"),
+    ("14", "SFX_REALIZATION", "7"),
     ("17", "SFX_LIGHTBULB", "4"),
     ("32", "SFX_WHOOPS", "0"),
     ("57", "SFX_OBJ_PAYNE", "0"),
-    ("61", "SFX_GAVEL", "0"),
+    ("61", "SFX_GAVEL", "8"),
     ("67", "SFX_SMACK", "0"),
     ("70", "SFX_THUD4", "0"),
     ("72", "SFX_OBJECTION", "0"),
@@ -426,13 +426,13 @@ SFX_CONST = [
     ("74", "SFX_SHOOMP", "0"),
     ("75", "SFX_DAMAGE", "0"),
     ("76", "SFX_DAMAGE2", "0"),
-    ("78", "SFX_STAB2", "0"),
-    ("80", "SFX_STAB", "0"),
+    ("78", "SFX_STAB2", "10"),
+    ("80", "SFX_STAB", "9"),
     ("87", "SFX_BADUM", "0"),
     ("90", "SFX_RINGPHONE", "0"),
     ("91", "SFX_BIP2", "5"),
     ("92", "SFX_LONGBEEP", "0"),
-    ("105", "SFX_SUPERSHOCK", "0"),
+    ("105", "SFX_SUPERSHOCK", "6"),
     ("122", "SFX_DRAMAPOUND", "0"),
 ]
 FILE_HEADER = """
