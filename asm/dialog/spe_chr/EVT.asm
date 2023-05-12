@@ -3,4 +3,5 @@
     ; e = next_char()
     JSR read_next_char
     ; jsr event_table[e]
-    JMP exec_evt
+    ; JMP exec_evt
+    RTS

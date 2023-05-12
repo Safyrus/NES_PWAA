@@ -4,8 +4,5 @@
 .include "read.asm"
 .include "print.asm"
 .include "box.asm"
-.include "evt.asm"
-.include "ext.asm"
-.include "pal.asm"
 .include "flag.asm"
 .include "name.asm"

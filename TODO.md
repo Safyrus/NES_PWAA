@@ -26,7 +26,7 @@
   - [X] Character sprites.
   - [ ] Photo sprites.
   - [X] Musics.
-  - [ ] SFX.
+  - [/] SFX.
 - [ ] Refine game resources:
   - [ ] Dialogs/scripts.
   - [ ] Background scenes.
@@ -40,6 +40,9 @@
 
 ## Done
 
+- [X] Replace FI and FO by FAD.
+- [X] Add hiragana & katakana font.
+- [X] Add some basic SFX.
 - [X] Refactor music to not be limited to 2 banks of data.
 - [X] Add a markdown file describing the dialog script 'language'.
 - [X] Add names to display with the dialog box.
@@ -131,8 +134,7 @@
     - [X] DL 
     - [X] NAM
     - [X] FLH
-    - [X] FI 
-    - [X] FO 
+    - [X] FAD
     - [X] COL
     - [X] BIP
     - [X] MUS
@@ -141,7 +143,7 @@
     - [ ] CHR
     - [X] ANI
     - [X] BKG
-    - [ ] FNT
+    - [X] FNT
     - [X] JMP
     - [X] ACT
     - [ ] BP 

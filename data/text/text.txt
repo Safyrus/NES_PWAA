@@ -15,8 +15,8 @@ This text will not be draw.<fp>
 <hidetextbox>Don't worry.<wait:8><b>I'm still here.<p>
 <shake>Ouch!!!<wait:8><b>What a shake effect!<p>
 Smile for the camera<wait:20><flash><wait:10><b>:)<p>
-Fade out<fade_out><p>
-Fade in<fade_in><p>
+Fade out<fade><p>
+Fade in<fade><p>
 <label:test_flag>Checking if dialog flag<b>is set...<p><jump:test_flag_set,1,0,0><jump:test_flag_clear>
 <label:test_flag_clear>The flag is cleared!<wait:8><b>Let me change that.<p>
 <set:0>There!<wait:8>Now we will jump<b>back and try again.<p><jump:test_flag>

@@ -261,10 +261,9 @@ read_text:
     .include "spe_chr/EVT.asm"
     .include "spe_chr/EXT.asm"
     .include "spe_chr/FDB.asm"
-    .include "spe_chr/FI.asm"
+    .include "spe_chr/FAD.asm"
     .include "spe_chr/FLH.asm"
     .include "spe_chr/FNT.asm"
-    .include "spe_chr/FO.asm"
     .include "spe_chr/JMP.asm"
     .include "spe_chr/LB.asm"
     .include "spe_chr/MUS.asm"
@@ -291,8 +290,8 @@ read_text:
         .byte <(@DL-1)
         .byte <(@NAM-1)
         .byte <(@FLH-1)
-        .byte <(@FI-1)
-        .byte <(@FO-1)
+        .byte <(@FAD-1)
+        .byte <(@default-1)
         .byte <(@COL-1)
         .byte <(@BC-1)
         .byte <(@BIP-1)
@@ -324,8 +323,8 @@ read_text:
         .byte >(@DL-1)
         .byte >(@NAM-1)
         .byte >(@FLH-1)
-        .byte >(@FI-1)
-        .byte >(@FO-1)
+        .byte >(@FAD-1)
+        .byte >(@default-1)
         .byte >(@COL-1)
         .byte >(@BC-1)
         .byte >(@BIP-1)

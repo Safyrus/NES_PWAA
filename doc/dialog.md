@@ -57,8 +57,7 @@ Example:
 - [background](#-background)
 - [character](#-character)
 - [animation](#-animation)
-- [fade_out](#-fade_out)
-- [fade_in](#-fade_in)
+- [fade](#-fade)
 - [music](#-music)
 - [sound](#-sound)
 - [bip](#-bip)
@@ -334,32 +333,25 @@ Ho, hello you!
 <const:ANI_STAND><p>
 ```
 
-### **fade_out**
+### **fade**
 
-Fade the screen to black.
-The screen will stay black until a `fade_in` tag is encounter.
+Fade the screen to/from black.
+Switch between fade out and fade in depending on the last fade effect.
+The default state when starting the script is "fade in".
+The screen will stay in this fade state until another `fade` tag is encounter.
 
 Example:
 
 ```html
 <const:BKG_FINAL_SCENE>
+<const:BKG_TRUE_FINAL_SCENE>
 
 <background:BKG_FINAL_SCENE>
 And so the hero defeated the bad guy<p>
-<fade_out>
-```
-
-### **fade_in**
-
-Fade the screen back from black.
-
-Example:
-
-```html
-<const:BKG_TRUE_FINAL_SCENE>
+<fade> <!-- fade out -->
 
 <background:BKG_TRUE_FINAL_SCENE>
-<fade_in>
+<fade> <!-- fade in -->
 Or not ?<p>
 ```
 

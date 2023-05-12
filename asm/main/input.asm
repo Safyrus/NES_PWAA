@@ -8,15 +8,15 @@
         ; is button A-B pressed ?
         LDA buttons_1
         TAX
-        AND #$C0
+        AND #(BTN_A+BTN_B)
         bnz @choice_validate
         ; is button R-D pressed ?
         TXA
-        AND #$05
+        AND #(BTN_DOWN+BTN_RIGHT)
         bnz @choice_plus
         ; is button L-U pressed ?
         TXA
-        AND #$0A
+        AND #(BTN_UP+BTN_LEFT)
         bnz @choice_minus
         ; no button pressed
         JMP @flags_end
@@ -64,13 +64,13 @@
         and_adr txt_flags, #($FF - TXT_FLAG_INPUT)
         ; is button A or B pressed ?
         LDA buttons_1
-        AND #$C0
+        AND #(BTN_A+BTN_B)
         BEQ @txt_input_next_end
             ora_adr txt_flags, #TXT_FLAG_INPUT
         @txt_input_next_end:
         ; is button B pressed ?
         LDA buttons_1
-        AND #$40
+        AND #BTN_B
         BEQ @txt_input_skip_end
             ora_adr txt_flags, #TXT_FLAG_SKIP
         @txt_input_skip_end:

@@ -1,5 +1,6 @@
 import sys
 import re
+from datetime import datetime
 
 CHAR_MAP_ASCII = [
     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -56,10 +57,8 @@ SPD = 0x08
 DL = 0x09
 NAM = 0x0A
 FLH = 0x0B
-FI = 0x0C
-FO = 0x0D
+FAD = 0x0C
 COL = 0x0E
-BC = 0x0F
 BIP = 0x10
 MUS = 0x11
 SND = 0x12
@@ -75,10 +74,35 @@ SP = 0x1B
 EVT = 0x1E
 EXT = 0x1F
 
+verbose = 0
+
+def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
+    global verbose
+    if v > verbose:
+        return
+
+    if "e" in param:
+        print("\033[31m", end="", flush=flush)
+    if "w" in param:
+        print("\033[33m", end="", flush=flush)
+    if "i" in param:
+        print("\033[34m", end="", flush=flush)
+    if "t" in param:
+        now = datetime.now()
+        print(f"[{now}] ", end="", flush=flush)
+
+    for s in str:
+        print(s, end=sep, flush=flush)
+
+    if "w" in param or "e" in param or "i" in param:
+        print("\033[0m", end="", flush=flush)
+    print("", end=end)
+    
+
 
 def append_byte(textbin, val, name, i):
     if val > 255:
-        print(f"WARNING: {name} is > 255 (val={val}) at {i}. Replacing by 0")
+        printv(f"WARNING: {name} is > 255 (val={val}) at {i}. Replacing by 0", param="tw")
         val = 0
     textbin.append(val)
     return textbin
@@ -119,21 +143,23 @@ def add_normal_char(textbin, c):
 # arguments
 txtfile = sys.argv[1]
 outputfile = sys.argv[2]
+if len(sys.argv) > 3:
+    verbose = int(sys.argv[3])
 
 # read text file
-print(f"reading file...")
+printv(f"reading file...", param="t")
 with open(txtfile, "r", encoding="utf-8") as f:
     text = f.read()
 
 # filtering file
-print(f"filtering...")
+printv(f"filtering...", param="t")
 # remove control character
 text = re.sub(r"[\x00-\x1E]", "", text)
 # remove comments
 text = re.sub(r"<!--(.*?)-->", "", text)
 
 # find labels
-print(f"parsing... (labels)")
+printv(f"parsing... (labels)", param="t")
 textbin = bytearray()
 i = 0
 labels = {}
@@ -154,7 +180,7 @@ while i < len(text):
         # transform tag to code
         if name == "label":
             labels[args[0]] = len(textbin)
-            print(f"label: '{args[0]}' at {hex(labels[args[0]])}")
+            printv(f"label: '{args[0]}' at {hex(labels[args[0]])}", param="it", v=2)
         elif name == "jump":
             # add dummy character to keep the length correct
             if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
@@ -165,7 +191,7 @@ while i < len(text):
                 textbin.append(0)
         elif name == "const":
             consts[args[0]] = args[1]
-            print(f"const: '{args[0]}' with value '{args[1]}'")
+            printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
         elif name == "flash": # for now to skip arguments
             textbin.append(0)
         else:
@@ -183,7 +209,7 @@ while i < len(text):
         i += 1
 
 # parsing file
-print(f"parsing... (all)")
+printv(f"parsing... (all)", param="t")
 textbin = bytearray()
 i = 0
 while i < len(text):
@@ -231,10 +257,8 @@ while i < len(text):
             textbin.append(SAK)
         elif name == "flash":
             textbin.append(FLH)
-        elif name == "fade_out":
-            textbin.append(FO)
-        elif name == "fade_in":
-            textbin.append(FI)
+        elif name == "fade":
+            textbin.append(FAD)
         elif name == "photo":
             textbin.append(PHT)
             textbin = append_byte(textbin, int(args[0]), name, i)
@@ -295,7 +319,7 @@ while i < len(text):
             for a in args:
                 textbin = append_byte(textbin, int(a), name, i)
         else:
-            print(f"Unknown tag '{name}' at {i}")
+            printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
 
         # update index
         i = tag_end+1
@@ -308,15 +332,15 @@ while i < len(text):
 # check if all char are encoded with 7 bits
 m = max(textbin)
 if m > 127:
-    print("ERROR: some character(s) use more than 7 bits")
-    print("       largest char found:", m)
+    printv("ERROR: some character(s) use more than 7 bits", param="et")
+    printv("       largest char found:", m, param="et")
 if 0 in textbin:
-    print("WARNING: A 0 value has been detected. It may be interpreted has 'END'")
-print("text size:", len(textbin))
+    printv("WARNING: A 0 value has been detected. It may be interpreted has 'END'", param="wt")
+printv("text size:", len(textbin), param="t")
 
 # outputting results
-print(f"writing new file...")
+printv(f"writing new file...", param="t")
 with open(outputfile, "wb") as f:
     f.write(textbin)
 
-print(f"done.")
+printv(f"done", param="t")

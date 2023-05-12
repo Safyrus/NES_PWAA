@@ -19,8 +19,8 @@
 |      | **09** | DL  | DeLay                                                        | 1: delay                                      |
 |      | **0A** | NAM | change NAMe of dialog box                                    | 1: name (0=remove)                            |
 |      | **0B** | FLH | FLasH                                                        |                                               |
-|      | **0C** | FI  | Fade In                                                      |                                               |
-|      | **0D** | FO  | Fade Out                                                     |                                               |
+|      | **0C** | FAD | FADe in/out                                                  |                                               |
+|      | **0D** |     |                                                              |                                               |
 |      | **0E** | COL | change text COLor                                            | 1: color                                      |
 |      | **0F** |     |                                                              |                                               |
 |      | **10** | BIP | change dialog BIP effect                                     | 1: bip (0=remove)                             |

@@ -18,9 +18,9 @@ lz_adr_table_lo:
 .byte $79
 .byte $32
 .byte $AE
-.byte $B0
-.byte $35
-.byte $24
+.byte $AF
+.byte $32
+.byte $1F
 
 lz_adr_table_hi:
 .byte $A0

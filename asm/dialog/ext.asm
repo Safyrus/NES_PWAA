@@ -1,2 +1,0 @@
-exec_ext:
-    RTS
