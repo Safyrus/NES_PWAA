@@ -113,6 +113,9 @@ frame_decode:
         LDA img_bkg_table_bank, X
         STA mmc5_banks+2
         STA MMC5_PRG_BNK1
+        add #$01
+        STA mmc5_banks+3
+        STA MMC5_PRG_BNK2
         ; Set pointer to image.
         ;  We only need to set it 1 time,
         ;  because the rleinc decode subroutine
