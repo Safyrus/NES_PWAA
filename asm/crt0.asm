@@ -28,7 +28,7 @@
     ; ||||        0: No
     ; ||||        1: Yes
     ; ++++------ Mapper Number D0..D3
-    .byte %01010000
+    .byte %01010010
 
     ; 7: Flags 7
     ; NNNN 10TT
@@ -60,7 +60,7 @@
     ; If the shift count is zero, there is no PRG-(NV)RAM.
     ; If the shift count is non-zero, the actual size is
     ; "64 << shift count" bytes, i.e. 8192 bytes for a shift count of 7.
-    .byte %00001000
+    .byte %10000000
 
     ; 11: CHR-RAM size
     ; cccc CCCC

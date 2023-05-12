@@ -75,26 +75,26 @@ RST:
     mov MMC5_CHR_MODE, #$01
 
     ; Clean PRG RAM
-    mov tmp+2, #$00 ; loop counter
-    @clean_prgram:
-        ; set bank
-        mov MMC5_RAM_BNK, tmp+2
-        for_x @clean_prgram_bank, #0
-            ; set page address
-            TXA
-            add #$60
-            STA tmp+1
-            mov tmp, #$00
-            ; clear page
-            for_y @clean_prgram_page, #0
-                STA (tmp), Y
-            to_y_inc @clean_prgram_page, #0
-        to_x_inc @clean_prgram_bank, #$20
-        ; increase loop counter
-        LDX tmp+2
-        INX
-        STX tmp+2
-    to_x_dec @clean_prgram, #RAM_MAX_BNK
+    ; mov tmp+2, #$00 ; loop counter
+    ; @clean_prgram:
+    ;     ; set bank
+    ;     mov MMC5_RAM_BNK, tmp+2
+    ;     for_x @clean_prgram_bank, #0
+    ;         ; set page address
+    ;         TXA
+    ;         add #$60
+    ;         STA tmp+1
+    ;         mov tmp, #$00
+    ;         ; clear page
+    ;         for_y @clean_prgram_page, #0
+    ;             STA (tmp), Y
+    ;         to_y_inc @clean_prgram_page, #0
+    ;     to_x_inc @clean_prgram_bank, #$20
+    ;     ; increase loop counter
+    ;     LDX tmp+2
+    ;     INX
+    ;     STX tmp+2
+    ; to_x_dec @clean_prgram, #RAM_MAX_BNK
 
     ; - - - - - - -
     ; setup code
