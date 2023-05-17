@@ -5,19 +5,19 @@
     STA music
     TAX
     ; push bank
-    LDA mmc5_banks+2
+    LDA mmc5_banks+MUS_BNK_OFF
     PHA
-    ; set $A000 to the correct music bank
+    ; set the correct music bank
     LDA music_bank_table, X
-    STA mmc5_banks+2
-    STA MMC5_PRG_BNK1
+    STA mmc5_banks+MUS_BNK_OFF
+    STA MMC5_RAM_BNK+MUS_BNK_OFF
     ; if m > 0
     TXA
     bze @MUS_stop_mus
     @MUS_play_mus:
         ; init famistudio music
-        LDX #<$A000
-        LDY #>$A000
+        LDX #<($6000+(MUS_BNK_OFF*$2000))
+        LDY #>($6000+(MUS_BNK_OFF*$2000))
         JSR famistudio_init
         ; play_music(m)
         LDX music
@@ -30,7 +30,7 @@
     @MUS_end:
     ; pull bank
     PLA
-    STA mmc5_banks+2
-    STA MMC5_PRG_BNK1
+    STA mmc5_banks+MUS_BNK_OFF
+    STA MMC5_RAM+MUS_BNK_OFF
     ; return
     RTS

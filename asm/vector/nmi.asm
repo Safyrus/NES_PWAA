@@ -241,13 +241,13 @@ NMI:
     ; load music banks
     LDX music
     LDA music_bank_table, X
-    STA MMC5_PRG_BNK1
-    mov MMC5_PRG_BNK2, #MUS_SFX
+    STA MMC5_RAM_BNK+MUS_BNK_OFF
+    mov MMC5_RAM_BNK+SFX_BNK_OFF, #MUS_SFX
     ; update famistudio
     JSR famistudio_update
     ; restore banks
-    mov MMC5_PRG_BNK1, mmc5_banks+2
-    mov MMC5_PRG_BNK2, mmc5_banks+3
+    mov MMC5_RAM_BNK+MUS_BNK_OFF, mmc5_banks+MUS_BNK_OFF
+    mov MMC5_RAM_BNK+SFX_BNK_OFF, mmc5_banks+SFX_BNK_OFF
 
     ; read text
     JSR read_text

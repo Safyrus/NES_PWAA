@@ -95,19 +95,19 @@ read_bip:
     LDA famistudio_sfx_ptr_hi, X
     bnz @end
     ; push bank
-    LDA mmc5_banks+3
+    LDA mmc5_banks+SFX_BNK_OFF
     PHA
-    ; set $C000 to the correct music bank
-    mov mmc5_banks+3, #MUS_SFX
-    STA MMC5_PRG_BNK2
+    ; set the correct sfx bank
+    mov mmc5_banks+SFX_BNK_OFF, #MUS_SFX
+    STA MMC5_RAM_BNK+SFX_BNK_OFF
     ; sfx_play(bip)
     LDA bip
     sub #$01
     JSR famistudio_sfx_play
     ; pull bank
     PLA
-    STA mmc5_banks+3
-    STA MMC5_PRG_BNK2
+    STA mmc5_banks+SFX_BNK_OFF
+    STA MMC5_RAM_BNK+SFX_BNK_OFF
     ; return
     @end:
     RTS
