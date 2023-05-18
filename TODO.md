@@ -5,6 +5,7 @@
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
   - [ ] Entire screen glitching when loading the next text data block
+  - [ ] Glitching background (maybe cause by wrong bank link to audio)
 - [ ] Visual effects
   - [ ] Scrolling
   - [/] Flash
@@ -40,6 +41,7 @@
 
 ## Done
 
+- [X] Play DPCM as SFX.
 - [X] Replace FI and FO by FAD.
 - [X] Add hiragana & katakana font.
 - [X] Add some basic SFX.

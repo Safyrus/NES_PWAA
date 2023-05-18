@@ -38,8 +38,6 @@ Description:
 <!--####################################################-->
 <!--####################################################-->
 
-<!--<jump:DEBUG>-->
-
 
 <color:1>
 ============================<b>
@@ -576,7 +574,7 @@ Thanks :)<wait:120><fp>
 <const:SFX_REALIZATION,7>
 <const:SFX_LIGHTBULB,4>
 <const:SFX_WHOOPS,0>
-<const:SFX_OBJ_PAYNE,0>
+<const:SFX_OBJ_PAYNE,66>
 <const:SFX_GAVEL,8>
 <const:SFX_SMACK,0>
 <const:SFX_THUD4,0>
@@ -593,8 +591,8 @@ Thanks :)<wait:120><fp>
 <const:SFX_LONGBEEP,0>
 <const:SFX_SUPERSHOCK,6>
 <const:SFX_DRAMAPOUND,0>
-<const:SFX_OBJ_PHOENIX,0>
-<const:SFX_HOLD_PHOENIX,0>
+<const:SFX_OBJ_PHOENIX,64>
+<const:SFX_HOLD_PHOENIX,65>
 
 <!-- Bip constants -->
 <const:BIP_NONE,0>
@@ -2930,7 +2928,7 @@ Lies always beget more lies!<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA
 See through one,<wait:20> and their<b>
 whole story falls apart!<animation:ANI_MIA_ANGRY_STAND><p>
 
-<hidetextbox><wait:20><fade><wait:25><wait:25><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><wait:1><hidetextbox><sound:SFX_LIGHTBULB><flash><shake><speed:2>
+<hidetextbox><wait:20><fade><background:BKG_NONE><character:CHR_NONE><animation:ANI_NONE><fade><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><wait:1><hidetextbox><sound:SFX_LIGHTBULB><flash><shake><speed:2>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 Wait!<flash><wait:30><speed:3><b>
@@ -2947,7 +2945,6 @@ your testimony again?<animation:ANI_JUDGE_ANGRY_STAND><p>
 | Testimony : Sahwit 2   |
 --------------------------
 -->
-<label:DEBUG>
 <hidetextbox><music:MUS_NONE><wait:30><fade><wait:25><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:7><event:6><wait:20><speed:2><hidetextbox><color:1>
 
 <name:NAM_NONE><bip:BIP_NONE>
