@@ -1,9 +1,7 @@
-.segment "LAST_BNK"
-.include "read.asm"
-
 .segment "CODE_BNK"
 .include "lz.asm"
 .include "lz_init.asm"
+.include "read.asm"
 .include "print.asm"
 .include "box.asm"
 .include "flag.asm"

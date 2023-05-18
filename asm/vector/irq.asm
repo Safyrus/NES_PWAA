@@ -12,9 +12,16 @@ IRQ:
 
     ; clear APU interrupt
     BIT APU_STATUS
-    BVC @apu_irq_end
-        JMP @end
-    @apu_irq_end:
+
+    PHA
+    ; if DPCM byte remaining == 0
+    LDA APU_STATUS
+    AND #$10
+    BNE @dpcm_end
+        mov APU_DMC_FREQ, #$00 ; clear interrupt flag
+        mov APU_SND_CHN, #%00001111 ; stop DPCM
+    @dpcm_end:
+    PLA
 
     @end:
     ; return

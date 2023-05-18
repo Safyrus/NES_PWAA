@@ -90,12 +90,8 @@ frame_decode:
         ; MMC5_PRG_BNK1 = anim_adr[3]
         INY
         LDA (tmp+2), Y
-        TAX
-        STX mmc5_banks+2
-        STX MMC5_PRG_BNK1
-        INX
-        STX mmc5_banks+3
-        STX MMC5_PRG_BNK2
+        STA mmc5_banks+2
+        STA MMC5_PRG_BNK1
         ; anim_img_counter--
         DEC anim_img_counter
         ; update anim_adr
@@ -113,9 +109,6 @@ frame_decode:
         LDA img_bkg_table_bank, X
         STA mmc5_banks+2
         STA MMC5_PRG_BNK1
-        add #$01
-        STA mmc5_banks+3
-        STA MMC5_PRG_BNK2
         ; Set pointer to image.
         ;  We only need to set it 1 time,
         ;  because the rleinc decode subroutine

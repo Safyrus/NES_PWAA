@@ -3,7 +3,22 @@
 ; need Y to be 0
 rleinc_next:
     LDA (tmp), Y
-    inc_16 tmp
+    ; increase pointer
+    INC tmp+0
+    BNE @end
+        INC tmp+1
+        PHA
+        LDA tmp+1
+        AND #$1F
+        BNE @ret
+            INC mmc5_banks+2
+            mov MMC5_PRG_BNK1, mmc5_banks+2
+            LDA tmp+1
+            sub #$20
+            STA tmp+1
+        @ret:
+        PLA
+    @end:
     RTS
 
 ; description:

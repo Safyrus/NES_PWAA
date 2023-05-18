@@ -85,6 +85,7 @@ read_jump:
     RTS
 
 
+.segment "LAST_BNK"
 ; /!\ don't save registers
 read_bip:
     ; if bip = 0 then break
@@ -343,3 +344,5 @@ read_text:
         .byte >(@default-1)
         .byte >(@EVT-1)
         .byte >(@EXT-1)
+
+.segment "CODE_BNK"

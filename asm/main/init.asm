@@ -13,10 +13,11 @@
     mov MMC5_PRG_BNK1, #MUS_BNK
     JSR famistudio_init
     ; init famistudio sfx
-    mov MMC5_PRG_BNK2, #MUS_SFX
+    mov MMC5_RAM_BNK+SFX_BNK_OFF, #MUS_SFX
     LDX #<sounds
     LDY #>sounds
     JSR famistudio_sfx_init
+    mov MMC5_RAM_BNK+SFX_BNK_OFF, #CODE_BNK
 
     ; set dialog box palette
     mov palettes+10, #$00
