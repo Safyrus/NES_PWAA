@@ -132,10 +132,8 @@ frame_decode:
     ; read header byte
     ; - - - - - - - -
     LDY #$00
-    LDA (tmp), Y
+    JSR rleinc_next
     STA img_header
-    ; increase pointer
-    inc_16 tmp
     ; skip partial frame flag
     ASL
 
@@ -149,23 +147,19 @@ frame_decode:
         ; save header byte
         PHA
 
-        ; for y in 12..0
-        for_y @palette_loop, #12
+        ; for x in 0..12
+        for_x @palette_loop, #0
             ; get color
-            LDA (tmp), Y
+            JSR rleinc_next
             ; if valid color
             CMP #$40
             bge :+
                 ; then set color
-                STA img_palettes, Y
+                STA img_palettes, X
             ; next
             :
-        to_y_dec @palette_loop, #-1
+        to_x_inc @palette_loop, #13
         
-        ; update pointer
-        LDA #13
-        LDY #$00
-        add_A2ptr tmp
         ; restore header byte
         PLA
     @palette_end:
@@ -207,29 +201,22 @@ frame_decode:
         ; save header byte
         PHA
         ; read sprite header
-        LDA (tmp), Y
+        JSR rleinc_next
         STA img_spr_w
-        INY
-        LDA (tmp), Y
+        JSR rleinc_next
         STA img_spr_b
-        INY
-        LDA (tmp), Y
+        JSR rleinc_next
         STA img_spr_x
-        INY
-        LDA (tmp), Y
+        JSR rleinc_next
         add #24
         STA img_spr_y
-        INY
-        ; update pointer
-        TYA
-        add_A2ptr tmp
         ; set pointer to sprites background buffer
         sta_ptr tmp+2, IMG_CHR_BUF_SPR
         ; decode sprites
         JSR rleinc
         ; update number of sprites
         mov img_spr_count, tmp+2
-        ;
+        ; clear the character sprite buffer
         TAY
         LDA #$00
         STA tmp+2
