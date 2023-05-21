@@ -4,7 +4,6 @@
   - [ ] Encode ACCURATE palette with images
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
-  - [ ] Entire screen glitching when loading the next text data block
   - [/] Glitching background (cause by not changing bank during palette & sprite reading)
 - [ ] Visual effects
   - [ ] Scrolling
@@ -41,6 +40,7 @@
 
 ## Done
 
+- [X] Fix entire screen glitching when loading the next text data block
 - [X] Play DPCM as SFX.
 - [X] Replace FI and FO by FAD.
 - [X] Add hiragana & katakana font.
