@@ -3,7 +3,7 @@ _dialog_flag_start:
     PHA
     shift LSR, 3
     TAX
-    LDA dialog_flag, X
+    LDA dialog_flags, X
     STA tmp
     ;
     PLA
@@ -24,7 +24,7 @@ _dialog_flag_start:
 set_dialog_flag:
     JSR _dialog_flag_start
     ORA tmp
-    STA dialog_flag, X
+    STA dialog_flags, X
     RTS
 
 ; param:
@@ -33,7 +33,7 @@ clear_dialog_flag:
     JSR _dialog_flag_start
     EOR #$FF
     AND tmp
-    STA dialog_flag, X
+    STA dialog_flags, X
     RTS
 
 ; param:
@@ -46,7 +46,7 @@ get_dialog_flag:
     PLA
     AND #$07
     TAY
-    LDA dialog_flag, X
+    LDA dialog_flags, X
     @loop:
         CPY #$00
         BEQ @loop_end

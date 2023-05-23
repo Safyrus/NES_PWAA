@@ -4,7 +4,7 @@ draw_name:
     pushregs
 
     ; if name == 0 then return
-    LDA txt_name
+    LDA name_idx
     BEQ @end
     ; if dialog box is hidden then return
     ; BIT box_flags

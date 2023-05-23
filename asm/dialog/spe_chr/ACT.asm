@@ -9,7 +9,7 @@
         BVC @ACT_cond_end
             ; c_idx = next_char()
             JSR read_next_char
-            ; flag = dialog_flag[c_idx]
+            ; flag = dialog_flags[c_idx]
             JSR get_dialog_flag
             ; if flag clear then skip this choice
             BEQ @ACT_while_next

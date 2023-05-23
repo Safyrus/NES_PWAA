@@ -39,7 +39,7 @@ NAMES_ADR_LO:
 ; update name_adr & name_size
 update_name:
     push_ax
-    LDX txt_name
+    LDX name_idx
     ; name_adr = (NAME_CHR_BANK << 8) + NAMES_ADR_LO[X]
     LDA NAMES_ADR_LO, X
     STA name_adr

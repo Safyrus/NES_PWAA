@@ -2,6 +2,33 @@
 ; Memory
 ;**********
 
+; - - - - - - - -
+; Layout
+; - - - - - - - -
+; 
+; - NES Memory:
+;   Page | Description
+;   $00 | Zero page (NMI, tmp & other variables)
+;   $01 | Stack
+;   $02 | OAM (sprites)
+;   $03 | Famistudio
+;   $04 | Famistudio
+;   $05 | Game
+;   $06 | Game
+;   $07 | unused
+; 
+; - MMC5 Memory Bank (TEXT_BUF_BNK):
+;   $0000-$1FFF = 8K decoded text buffer
+; 
+; - MMC5 Memory Bank (IMG_BUF_BNK):
+;   $0000-$02FF = decoded character image (low)
+;   $0300-$05FF = decoded character image (high)
+;   $0600-$08FF = decoded character sprites
+;   $0900-$0BFF = decoded background image (low)
+;   $0C00-$0EFF = decoded background image (high)
+;   $0F00-$1FFF = unused
+
+
 ;****************
 ; ZEROPAGE SEGMENT
 ;****************
@@ -41,7 +68,7 @@
     ; $2F = Nametable 4
     atr_nametable: .res 1
     
-    ; value of the PPU_MASK (need to be refresh manually)
+    ; value of the PPUCTRL register (need to be refresh manually)
     ppu_ctrl_val: .res 1
 
     ; pointer to current text to read
@@ -92,202 +119,219 @@ OAM:
     ; - - - - - - - -
     ; Player input variables
     ; - - - - - - - -
-    ; player 1 inputs
-    buttons_1: .res 1
-    ; timer before processing any input of player 1
-    buttons_1_timer: .res 1
+        ; player 1 inputs
+        buttons_1: .res 1
+        ; timer before processing any input of player 1
+        buttons_1_timer: .res 1
 
     ; - - - - - - - -
     ; Scanline state
     ; - - - - - - - -
-    ; WFSS SSSS
-    ; ||++-++++-- scanline IRQ state
-    ; |+--------- 1 = in frame, 0 = in vblank
-    ; +---------- wait for scanline, cleare when scanline IRQ occured
-    scanline: .res 1
+        ; WFSS SSSS
+        ; ||++-++++-- scanline IRQ state
+        ; |+--------- 1 = in frame, 0 = in vblank
+        ; +---------- wait for scanline, cleare when scanline IRQ occured
+        scanline: .res 1
 
     ; - - - - - - - -
     ; Music and sound variables
     ; - - - - - - - -
-    ; music to play
-    music: .res 1
-    ; sound effect to play
-    sound: .res 1
-    ; bip sound to play when text is draw
-    bip: .res 1
+        ; music to play
+        music: .res 1
+        ; sound effect to play
+        sound: .res 1
+        ; bip sound to play when text is draw
+        bip: .res 1
 
     ; - - - - - - - -
     ; Visual effect variables
     ; - - - - - - - -
-    ; P.UD BN.F
-    ; | || || +-- Fade in (1) or out (0)
-    ; | || |+---- current Nametable (0=left, 1=right)
-    ; | || +----- redraw Background
-    ; | |+------- currently Drawing the background
-    ; | +-------- update background Upper tiles when drawing a partial frame
-    ; +---------- mid frame Pallette switch for the dialog box (1=active)
-    effect_flags: .res 1
-    ;
-    fade_timer: .res 1
-    ;
-    flash_timer: .res 1
-    ;
-    shake_timer: .res 1
-    ; D... ..NR
-    ; |      |+-- Refresh box (1=refresh, 0=redraw)
-    ; |      +--- refresh box Name
-    ; +---------- Display box (0=show, 1=hidden)
-    box_flags: .res 1
+        ; P.UD BN.F
+        ; | || || +-- Fade in (1) or out (0)
+        ; | || |+---- current Nametable (0=left, 1=right)
+        ; | || +----- redraw Background
+        ; | |+------- currently Drawing the background
+        ; | +-------- update background Upper tiles when drawing a partial frame
+        ; +---------- mid frame Pallette switch for the dialog box (1=active)
+        effect_flags: .res 1
+        ; time remaining before the end of the fade effect
+        fade_timer: .res 1
+        ; time remaining before the end of the flash effect
+        flash_timer: .res 1
+        ; time remaining before the end of the shake effect
+        shake_timer: .res 1
+        ; D... ..NR
+        ; |      |+-- Refresh box (1=refresh, 0=redraw)
+        ; |      +--- refresh box Name
+        ; +---------- Display box (0=show, 1=hidden)
+        box_flags: .res 1
 
     ; - - - - - - - -
     ; Variables for LZ decoding
     ; - - - - - - - -
-    ; pointer to input data
-    lz_in: .res 2
-    ; bank to use for input data
-    lz_in_bnk: .res 1
-    ; index to use for fetching data in lz tables
-    lz_idx: .res 1
+        ; pointer to input data
+        lz_in: .res 2
+        ; bank to use for input data
+        lz_in_bnk: .res 1
+        ; index to use for fetching data in lz tables
+        lz_idx: .res 1
 
     ; - - - - - - - -
     ; Variables for text reading
     ; - - - - - - - -
-    ; first byte of flags
-    ; RSPZ BFIW
-    ; |||| |||+-- Wait for user input to continue
-    ; |||| ||+--- Player input
-    ; |||| |+---- Force action (ignore player inputs)
-    ; |||| +----- Wait for dialog box drawing
-    ; |||+------- Wait for LZ decoding
-    ; ||+-------- Wait for print
-    ; |+--------- Skip to end of dialog
-    ; +---------- Ready (set to 1 to enable read subroutines)
-    txt_flags: .res 1
-    ; speed of text
-    txt_speed: .res 1
-    ; speed counter
-    txt_speed_count: .res 1
-    ; delay to wait
-    txt_delay: .res 1
-    ;
-    txt_name: .res 1
-    ;
-    txt_font: .res 1
-    ;
-    txt_bck_color: .res 1
-    ;
-    txt_jump_buf: .res 3
-    ;
-    txt_jump_flag_buf: .res 1
+        ; first byte of flags
+        ; RSPZ BFIW
+        ; |||| |||+-- Wait for user input to continue
+        ; |||| ||+--- Player input
+        ; |||| |+---- Force action (ignore player inputs)
+        ; |||| +----- Wait for dialog box drawing
+        ; |||+------- Wait for LZ decoding
+        ; ||+-------- Wait for print
+        ; |+--------- Skip to end of dialog
+        ; +---------- Ready (set to 1 to enable read subroutines)
+        txt_flags: .res 1
+        ; speed of text
+        txt_speed: .res 1
+        ; speed counter
+        txt_speed_count: .res 1
+        ; delay to wait
+        txt_delay: .res 1
+        ; index of the current font
+        txt_font: .res 1
+        ;
+        txt_bck_color: .res 1
+        ;
+        txt_jump_buf: .res 3
+        ;
+        txt_jump_flag_buf: .res 1
 
     ; - - - - - - - -
     ; Variables for name displaying
     ; - - - - - - - -
-    ; low address for name CHR data
-    name_adr: .res 1
-    ; size in CHR tiles of the name
-    name_size: .res 1
+        ; inde of the name of the current dialog
+        name_idx: .res 1
+        ; low address for name CHR data
+        name_adr: .res 1
+        ; size in CHR tiles of the name
+        name_size: .res 1
+
+
+    ; - - - - - - - -
+    ; Court Record Variables
+    ; - - - - - - - -
+        ; .... .PAS
+        ;           is Show
+        ;           can Access
+        ;           can Present
+        cr_flag: .res 1
+        ; current evidence selected
+        evidence_idx: .res 1
+        ; array of flag to determine which evidences is obtained
+        evidence_flags: .res 16
 
     ; - - - - - - - -
     ; Variables for text printing
     ; - - - - - - - -
-    ; Value to print in ext ram
-    ; value to send to MMC5 expansion RAM
-    print_ext_val: .res 1
-    ; pointer to current printed text in ext ram
-    print_ext_ptr: .res 2
-    ; pointer to current printed text in ppu
-    print_ppu_ptr: .res 2
-    ; number of character to print
-    print_counter: .res 1
-    ; buffer containing text to print to ppu
-    print_ppu_buf: .res 24
-    ; buffer containing text to print to ext ram
-    print_ext_buf: .res 24
+        ; Value to send to MMC5 expansion RAM when printing text
+        print_ext_val: .res 1
+        ; pointer to current printed text in ext ram
+        print_ext_ptr: .res 2
+        ; pointer to current printed text in ppu
+        print_ppu_ptr: .res 2
+        ; number of character to print
+        print_counter: .res 1
+        ; buffer containing text to print to ppu
+        print_ppu_buf: .res 24
+        ; buffer containing text to print to ext ram
+        print_ext_buf: .res 24
 
     ; - - - - - - - -
     ; Image Variables
     ; - - - - - - - -
-    ; photo/evidence toshow
-    img_photo: .res 1
-    ; background image to display
-    img_background: .res 1
-    ; character animation index
-    img_anim:
-        ; character image to display
-        img_character: .res 1
-        ; character animation image to display
-        img_animation: .res 1
-    ;
-    img_partial_buf_len: .res 1
-    ;
-    img_partial_buf: .res IMG_PARTIAL_MAX_BUF_LEN
+        ; photo/evidence to show
+        img_photo: .res 1
+        ; background image to display
+        img_background: .res 1
+        ; character animation index
+        img_anim:
+            ; character image to display
+            img_character: .res 1
+            ; character animation image to display
+            img_animation: .res 1
+        ; length of img_partial_buf
+        img_partial_buf_len: .res 1
+        ; data buffer of the partial image to send to PPU
+        img_partial_buf: .res IMG_PARTIAL_MAX_BUF_LEN
 
     ; - - - - - - - -
     ; Animation Variables
     ; - - - - - - - -
-    ; pointer to the base of the current animation data
-    anim_base_adr: .res 2
-    ; pointer to the current animation data
-    anim_adr: .res 2
-    ; current animation frame index
-    anim_img_counter: .res 1
-    ; remaining game frame before the next animation frame
-    anim_frame_counter: .res 1
+        ; pointer to the base of the current animation data
+        anim_base_adr: .res 2
+        ; pointer to the current animation data
+        anim_adr: .res 2
+        ; current animation frame index
+        anim_img_counter: .res 1
+        ; remaining game frame before the next animation frame
+        anim_frame_counter: .res 1
 
     ; - - - - - - - -
     ; Sprites Variables
     ; - - - - - - - -
-
-    ; img_spr_header:
-    ; FPTS ..BB
-    ; ||||   ++-- CHR bits for the MMC5 upper CHR Bank bits
-    ; |||+------- is Sprite map present ?
-    ; ||+-------- is Tile map present ?
-    ; |+--------- is Palette present ?
-    ; +---------- 1 = Full frame
-    ;             0 = partial frame
-    img_header: .res 1
-    ; width in tiles of the mega sprite
-    img_spr_w: .res 1
-    ; bank index of the mega sprite
-    img_spr_b: .res 1
-    ; image mega sprite position offset x
-    img_spr_x: .res 1
-    ; image mega sprite position offset y
-    img_spr_y: .res 1
-    ; image number of sprites
-    img_spr_count: .res 1
+        ; img_spr_header:
+        ; FPTS ..BB
+        ; ||||   ++-- CHR bits for the MMC5 upper CHR Bank bits
+        ; |||+------- is Sprite map present ?
+        ; ||+-------- is Tile map present ?
+        ; |+--------- is Palette present ?
+        ; +---------- 1 = Full frame
+        ;             0 = partial frame
+        img_header: .res 1
+        ; width in tiles of the mega sprite
+        img_spr_w: .res 1
+        ; bank index of the mega sprite
+        img_spr_b: .res 1
+        ; image mega sprite position offset x
+        img_spr_x: .res 1
+        ; image mega sprite position offset y
+        img_spr_y: .res 1
+        ; image number of sprites
+        img_spr_count: .res 1
 
     ; - - - - - - - -
     ; Palette Variables
     ; - - - - - - - -
-    ;
-    img_palettes:
-        img_palette_bkg: .res 1
-        img_palette_0: .res 3
-        img_palette_1: .res 3
-        img_palette_2: .res 3
-        img_palette_3: .res 3
+        ; palettes to use for the background and character
+        img_palettes:
+            ; background color
+            img_palette_bkg: .res 1
+            ; background palette
+            img_palette_0: .res 3
+            ; character primary/background palette
+            img_palette_1: .res 3
+            ; character contour palette
+            img_palette_2: .res 3
+            ; character secondary/sprites palette
+            img_palette_3: .res 3
 
     ; - - - - - - - -
-    ; Action/choice variables
+    ; Player choice variables
     ; - - - - - - - -
-    ;
-    choice: .res 1
-    ;
-    max_choice: .res 1
-    ;
-    choice_jmp_table: .res 3*4
+        ; the current choice selected
+        choice: .res 1
+        ; the maximum number of choice for this dialog
+        max_choice: .res 1
+        ; pointers to jump to for each choice
+        choice_jmp_table: .res 3*4
 
     ; - - - - - - - -
     ; Other variables
     ; - - - - - - - -
-    ;
-    mmc5_upper_chr: .res 1
-    ;
-    dialog_flag: .res 16
-    ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
-    mmc5_banks: .res 4
-    ;
-    spr_x_buf: .res 64
+        ; the upper bits of the MMC5 CHR register
+        mmc5_upper_chr: .res 1
+        ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
+        mmc5_banks: .res 4
+        ; array of flags use to make conditionnal jump in dialogs
+        dialog_flags: .res 16
+        ; buffer for the X position of sprites
+        spr_x_buf: .res 64

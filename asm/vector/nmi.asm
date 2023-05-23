@@ -273,6 +273,11 @@ NMI:
             STA palettes, X
         to_x_dec @flash_loop_white, #-1
 
+        LDA #$00
+        STA palettes+10
+        LDA #$10
+        STA palettes+11
+
         DEC flash_timer
         BEQ @flash_stop
 

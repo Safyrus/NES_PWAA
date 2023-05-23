@@ -116,6 +116,7 @@
     ; main file
     .include "main.asm"
     .include "joypad.asm"
+    .include "other.asm"
 
     ; FamiStudio Sound Engine
     .include "audio/famistudio_ca65.s"
@@ -125,6 +126,7 @@
 .segment "CODE_BNK"
     .include "dialog/main.asm"
     .include "img/main.asm"
+    .include "courtrecord/main.asm"
 
 .segment "IMGS_BNK"
     .include "data/imgs.asm"

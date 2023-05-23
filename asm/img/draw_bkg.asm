@@ -105,45 +105,152 @@ img_bkg_draw:
     pullregs
     RTS
 
-; A = nametable high address
+; ; A = nametable high address
+; img_draw_bot:
+;     ; set ppu pointer hi
+;     STA tmp+1
+;     ; push registers
+;     pushregs
+
+;     ; set ppu pointer lo
+;     mov tmp+0, #$60
+
+;     ; copy lower tiles
+;     LDY #$00
+;     @loop:
+;         ; wait for the next frame
+;         JSR wait_next_frame
+;         ;
+;         @wait_inframe:
+;             BIT scanline
+;             BVC @wait_inframe
+
+;         ; init packet
+;         LDX background_index
+;         LDA #$40
+;         STA background, X
+;         INX
+;         LDA tmp+1
+;         STA background, X
+;         INX
+;         LDA tmp+0
+;         STA background, X
+;         INX
+;         ; fill packet
+;         @data:
+;             ; if CHR_PTR_HI[y] = 0
+;             LDA IMG_CHR_BUF_HI+$200, Y
+;             BNE @chr
+;             @bkg:
+;                 ; then EXP_PTR[y] = hi tile
+;                 LDA IMG_BKG_BUF_HI+$200, Y
+;                 STA MMC5_EXP_RAM+$260, Y
+;                 ; tile = BKG_PTR[y]
+;                 LDA IMG_BKG_BUF_LO+$200, Y
+;                 JMP @send
+;             @chr:
+;                 ; else EXP_PTR[y] = hi tile
+;                 STA MMC5_EXP_RAM+$260, Y
+;                 ; tile = CHR_PTR[y]
+;                 LDA IMG_CHR_BUF_LO+$200, Y
+;             @send:
+;             ; PPU_PTR[y] = tile
+;             STA background, X
+;             INX
+;             ; y++
+;             INY
+;             ; if y % 64 = 0 then break
+;             TYA
+;             AND #$3F
+;             BNE @data
+;         ; close packet
+;         LDA #$00
+;         STA background, X
+;         STX background_index
+;         ; ppu_ptr += $40
+;         add_A2ptr tmp+0, #$40
+;         ; if y = 0 then break
+;         CPY #$00
+;         BNE @loop
+
+;     pullregs
+;     RTS
+
+
+
+; tmp = ppu address
 img_draw_bot_lo:
-    PHA
+    ; push registers
+    pushregs
 
-    ; set ppu pointer
-    STA tmp+1
-    mov tmp+0, #$60
-    ; set data pointer
-    sta_ptr tmp+2, (IMG_BKG_BUF_LO+$200)
-    ; draw 2 lines
-    JSR img_bkg_draw_2lines
-    ; draw another 2 lines
-    add_A2ptr tmp+0, #$40
-    add_A2ptr tmp+2, #$40
-    JSR img_bkg_draw_2lines
-    ; draw another 2 lines
-    add_A2ptr tmp+0, #$40
-    add_A2ptr tmp+2, #$40
-    JSR img_bkg_draw_2lines
-    ; draw last 2 lines
-    add_A2ptr tmp+0, #$40
-    add_A2ptr tmp+2, #$40
-    JSR img_bkg_draw_2lines
+    ; copy lower tiles
+    LDY #$00
+    @loop:
+        ; wait for the next frame
+        JSR wait_next_frame
+        ; init packet
+        LDX background_index
+        LDA #$40
+        STA background, X
+        INX
+        LDA tmp+1
+        STA background, X
+        INX
+        LDA tmp+0
+        STA background, X
+        INX
+        ; fill packet
+        @data:
+            ; if CHR_PTR_HI[y] = 0
+            LDA IMG_CHR_BUF_HI+$200, Y
+            BNE @chr
+            @bkg:
+                ; then tile = BKG_PTR[y]
+                LDA IMG_BKG_BUF_LO+$200, Y
+                JMP @send
+            @chr:
+                LDA IMG_CHR_BUF_LO+$200, Y
+                ; else tile = CHR_PTR[y]
+            @send:
+            ; PPU_PTR[y] = tile
+            STA background, X
+            INX
+            ; y++
+            INY
+            ; if y % 64 = 0 then break
+            TYA
+            AND #$3F
+            BNE @data
+        ; close packet
+        LDA #$00
+        STA background, X
+        STX background_index
+        ; ppu_ptr += $40
+        add_A2ptr tmp+0, #$40
+        ; if y = 0 then break
+        CPY #$00
+        BNE @loop
 
-    PLA
+    pullregs
     RTS
 
 ; /!\ need to be in-frame
+; tmp+0 = exp pointer
 img_draw_bot_hi:
     PHA
 
-    ; set exp pointer
-    sta_ptr tmp+0, (MMC5_EXP_RAM+$260)
-    ; set upper tiles pointer
-    sta_ptr tmp+2, (IMG_BKG_BUF_HI+$200)
-
     ; copy upper tiles
+    ; for y from 0 to 255
     for_y @loop, #0
-        LDA (tmp+2), Y
+        ; if CHR_PTR[y] = 0
+        LDA IMG_CHR_BUF_HI+$200, Y
+        BNE @chr
+        @bkg:
+            ; then tile = BKG_PTR[y]
+            LDA IMG_BKG_BUF_HI+$200, Y
+        @chr:
+            ; else tile = CHR_PTR[y]
+        ; EXP_PTR[y] = tile
         STA (tmp+0), Y
     to_y_inc @loop, #0    
 
