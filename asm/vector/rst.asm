@@ -114,5 +114,8 @@ RST:
     STA PPU_CTRL
     STA ppu_ctrl_val
 
+    ; init new line offset
+    mov print_nl_offset, #$42
+
     CLI ; Enable back interrupt
     JMP MAIN ; jump to main function

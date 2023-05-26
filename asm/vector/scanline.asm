@@ -54,6 +54,9 @@ scanline_irq_handler:
             ; and update mmmc5 high upper chr bits
             LDA #$00
             STA mmc5_upper_chr
+            ; and set chr upper bit to 0
+            LDA #$00
+            STA MMC5_CHR_UPPER
         @scanline_irq_top_midbox_end:
         ; return
         JMP @end
@@ -67,6 +70,9 @@ scanline_irq_handler:
             STA PPU_MASK
             ; and update scrolling
             JSR update_screen_scroll
+            ; and restore chr upper bit
+            LDA mmc5_upper_chr
+            STA MMC5_CHR_UPPER
         @scanline_irq_bot_midbox_end:
         ; return
         JMP @end

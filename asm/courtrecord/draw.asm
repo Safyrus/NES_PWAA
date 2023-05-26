@@ -71,6 +71,86 @@ draw_court_record_box:
         STA (tmp), Y
     to_y_inc @loop_ext, #0
 
+
+    push txt_rd_ptr+0
+    push txt_rd_ptr+1
+    push print_ext_ptr+0
+    push print_ext_ptr+1
+    push print_ppu_ptr+0
+    push print_ppu_ptr+1
+    push print_nl_offset
+
+    sta_ptr print_ext_ptr, (MMC5_EXP_RAM+$109)
+    sta_ptr print_ppu_ptr, (PPU_NAMETABLE_0+$109)
+    mov print_nl_offset, #$29
+
+    LDX evidence_idx
+    LDA table_evidence_top_lo, X
+    STA txt_rd_ptr+0
+    LDA table_evidence_top_hi, X
+    STA txt_rd_ptr+1
+
+    ; read top choice text
+    LDY #$00
+    @while_top:
+        ;
+        LDA (txt_rd_ptr), Y
+        inc_16 txt_rd_ptr
+        ;
+        JSR print_char
+        ;
+        CMP #$02
+        BEQ @while_top_end
+        CMP #$01
+        BNE @while_top
+        JSR print_lb
+        JMP @while_top
+    @while_top_end:
+    JSR print_lb
+
+    pull print_nl_offset
+
+    push name_idx
+    mov name_idx, #$00
+
+    JSR draw_dialog_box
+
+    pull name_idx
+
+    sta_ptr print_ext_ptr, (MMC5_EXP_RAM+$282)
+    sta_ptr print_ppu_ptr, (PPU_NAMETABLE_0+$282)
+
+    LDX evidence_idx
+    LDA table_evidence_bot_lo, X
+    STA txt_rd_ptr+0
+    LDA table_evidence_bot_hi, X
+    STA txt_rd_ptr+1
+
+    ; read bottom choice text
+    LDY #$00
+    @while_bot:
+        ;
+        LDA (txt_rd_ptr), Y
+        inc_16 txt_rd_ptr
+        ;
+        JSR print_char
+        ;
+        CMP #$02
+        BEQ @while_bot_end
+        CMP #$01
+        BNE @while_bot
+        JSR print_lb
+        JMP @while_bot
+    @while_bot_end:
+    JSR print_lb
+
+    pull print_ppu_ptr+1
+    pull print_ppu_ptr+0
+    pull print_ext_ptr+1
+    pull print_ext_ptr+0
+    pull txt_rd_ptr+1
+    pull txt_rd_ptr+0
+
     pullregs
     RTS
 
@@ -81,6 +161,12 @@ undraw_court_record_box:
     JSR img_draw_mid_lo
     sta_ptr tmp+0, (MMC5_EXP_RAM+$E0)
     JSR img_draw_mid_hi
+
+    mov txt_rd_ptr+0, txt_last_dialog_adr+0
+    mov txt_rd_ptr+1, txt_last_dialog_adr+1
+    mov lz_idx, txt_last_dialog_adr+2
+    ora_adr txt_flags, #(TXT_FLAG_FORCE)
+    JSR draw_dialog_box
 
     PLA
     RTS

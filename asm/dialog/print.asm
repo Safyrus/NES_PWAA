@@ -43,7 +43,7 @@ print_lb:
     ; change ppu pointer to next line
     LDA print_ppu_ptr+0
     AND #%11100000
-    add #$42
+    add print_nl_offset
     STA print_ppu_ptr+0
     BCC @add_ppu_end
         INC print_ppu_ptr+1
@@ -52,7 +52,7 @@ print_lb:
     ; change ext ram pointer to next line
     LDA print_ext_ptr+0
     AND #%11100000
-    add #$42
+    add print_nl_offset
     STA print_ext_ptr+0
     BCC @add_ext_end
         INC print_ext_ptr+1

@@ -204,11 +204,13 @@ OAM:
         txt_jump_buf: .res 3
         ;
         txt_jump_flag_buf: .res 1
+        ; pointer to the last dialog (0=lo, 1=hi, 2=bnk)
+        txt_last_dialog_adr: .res 3
 
     ; - - - - - - - -
     ; Variables for name displaying
     ; - - - - - - - -
-        ; inde of the name of the current dialog
+        ; index of the name of the current dialog
         name_idx: .res 1
         ; low address for name CHR data
         name_adr: .res 1
@@ -220,9 +222,10 @@ OAM:
     ; Court Record Variables
     ; - - - - - - - -
         ; .... .PAS
-        ;           is Show
-        ;           can Access
-        ;           can Present
+        ;       |||
+        ;       ||+-- is Show
+        ;       |+--- can Access
+        ;       +---- can Present
         cr_flag: .res 1
         ; current evidence selected
         evidence_idx: .res 1
@@ -240,10 +243,12 @@ OAM:
         print_ppu_ptr: .res 2
         ; number of character to print
         print_counter: .res 1
+        ; offset to add to the text position (ppu+ext) when drawing a new line to the screen
+        print_nl_offset: .res 1
         ; buffer containing text to print to ppu
-        print_ppu_buf: .res 24
+        print_ppu_buf: .res 32
         ; buffer containing text to print to ext ram
-        print_ext_buf: .res 24
+        print_ext_buf: .res 32
 
     ; - - - - - - - -
     ; Image Variables

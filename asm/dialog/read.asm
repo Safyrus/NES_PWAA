@@ -31,6 +31,11 @@ read_next_dailog:
     sta_ptr print_ext_ptr, (MMC5_EXP_RAM+$282)
     ; init ptr to ppu
     sta_ptr print_ppu_ptr, (PPU_NAMETABLE_0+$282)
+    ; save adr
+    mov txt_last_dialog_adr+0, txt_rd_ptr+0
+    mov txt_last_dialog_adr+1, txt_rd_ptr+1
+    mov txt_last_dialog_adr+2, lz_idx
+    ; return
     PLA
     RTS
 

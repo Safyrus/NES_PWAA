@@ -46,9 +46,17 @@
     ; draw dialog box
     JSR draw_dialog_box
 
+    ; lz_idx, txt_last_dialog_adr+2 = 0
+    LDA #$00
+    STA lz_idx
+    STA txt_last_dialog_adr+2
     ; init text read pointer
-    mov lz_idx, #$00
     JSR lz_init
-    sta_ptr txt_rd_ptr, MMC5_RAM
+    LDA #<MMC5_RAM
+    STA txt_rd_ptr+0
+    STA txt_last_dialog_adr+0
+    LDA #>MMC5_RAM
+    STA txt_rd_ptr+1
+    STA txt_last_dialog_adr+1
     ; enable READY flag
     ora_adr txt_flags, #TXT_FLAG_READY

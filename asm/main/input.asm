@@ -3,7 +3,7 @@
 
     ; update choice index
     LDA max_choice
-    bze @no_choice
+    bze @choice_end
     @a_choice:
         ; is button A-B pressed ?
         LDA buttons_1
@@ -19,7 +19,7 @@
         AND #(BTN_UP+BTN_LEFT)
         bnz @choice_minus
         ; no button pressed
-        JMP @flags_end
+        JMP @input_end
 
         @choice_plus:
             LDX choice
@@ -29,7 +29,7 @@
                 LDX #$00
             @choice_plus_update:
             STX choice
-            JMP @flags_end
+            JMP @input_end
         @choice_minus:
             LDX choice
             DEX
@@ -38,7 +38,7 @@
                 DEX
             @choice_minus_update:
             STX choice
-            JMP @flags_end
+            JMP @input_end
         @choice_validate:
             ; get choice_jmp_table index
             mov MMC5_MUL_A, choice
@@ -59,8 +59,28 @@
             LDA #$00
             STA max_choice
             STA choice
-            JMP @flags_end
-    @no_choice:
+            JMP @input_end
+    @choice_end:
+
+    ; if court record is displayed
+    LDA cr_flag
+    AND #CR_FLAG_SHOW
+    BEQ @cr_end
+    @cr:
+        and_adr txt_flags, #($FF - TXT_FLAG_INPUT)
+        ; is button SELECT pressed ?
+        LDA buttons_1
+        AND #BTN_SELECT
+        BEQ @cr_select_end
+            ; then set/clear court record show flag
+            and_adr cr_flag, #($FF-CR_FLAG_SHOW)
+            ; and draw/undraw the court record
+            JSR update_court_record_box
+        @cr_select_end:
+        JMP @input_end
+    @cr_end:
+
+    @normal_input:
         and_adr txt_flags, #($FF - TXT_FLAG_INPUT)
         ; is button SELECT pressed ?
         LDA buttons_1
@@ -75,10 +95,10 @@
             ; AND #CR_FLAG_ACCESS
             ; BEQ @txt_input_cr_end
                 ; then set/clear court record show flag
-                eor_adr cr_flag, #CR_FLAG_SHOW
+                ora_adr cr_flag, #CR_FLAG_SHOW
                 ; and draw/undraw the court record
                 JSR update_court_record_box
-                JMP @flags_end
+                JMP @input_end
         @txt_input_cr_end:
         ; is button A or B pressed ?
         LDA buttons_1
@@ -92,4 +112,5 @@
         BEQ @txt_input_skip_end
             ora_adr txt_flags, #TXT_FLAG_SKIP
         @txt_input_skip_end:
-    @flags_end:
+
+    @input_end:
