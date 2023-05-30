@@ -103,10 +103,12 @@ draw_court_record_box:
         BEQ @while_top_end
         CMP #$01
         BNE @while_top
-        JSR print_lb
+        JSR print_flush_wait
+        JSR print_lb_noflush
         JMP @while_top
     @while_top_end:
-    JSR print_lb
+    JSR print_flush_wait
+    JSR print_lb_noflush
 
     pull print_nl_offset
 
@@ -139,10 +141,12 @@ draw_court_record_box:
         BEQ @while_bot_end
         CMP #$01
         BNE @while_bot
-        JSR print_lb
+        JSR print_flush_wait
+        JSR print_lb_noflush
         JMP @while_bot
     @while_bot_end:
-    JSR print_lb
+    JSR print_flush_wait
+    JSR print_lb_noflush
 
     pull print_ppu_ptr+1
     pull print_ppu_ptr+0

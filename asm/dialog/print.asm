@@ -37,7 +37,9 @@ print_char:
 print_lb:
     ; flush any characters
     JSR print_flush
+    JMP print_lb_noflush
 
+print_lb_noflush:
     PHA
 
     ; change ppu pointer to next line
@@ -61,6 +63,19 @@ print_lb:
     PLA
     RTS
 
+print_flush_wait:
+    ; if background buffer is too full
+    LDA background_index
+    add print_counter
+    CMP #$40
+    blt @start
+        ; then wait for it to be empty
+        JSR wait_next_frame
+    @start:
+    ;
+    JMP print_flush
+
+
 ; description:
 ;   flush any text from text buffer to screen
 ; use: tmp[0..1]
@@ -79,14 +94,6 @@ print_flush:
     ; if text box hidden, then just update pointers
     BIT box_flags
     BMI @update_ptrs
-    ; if background buffer is too full
-    LDA background_index
-    add print_counter
-    CMP #$40
-    blt @start
-        ; then wait for it to be empty
-        JSR wait_next_frame
-    @start:
 
     ; - - - - - - - -
     ; copy ext_buf to ext ram
