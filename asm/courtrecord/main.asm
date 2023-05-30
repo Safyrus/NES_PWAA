@@ -1,5 +1,6 @@
 .include "data.asm"
 .include "draw.asm"
+.include "flag.asm"
 
 ; .struct Evidence
 ;     ; id .byte  implicite, flag position

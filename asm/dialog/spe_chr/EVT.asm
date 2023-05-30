@@ -2,6 +2,34 @@
 @EVT:
     ; e = next_char()
     JSR read_next_char
-    ; jsr event_table[e]
-    ; JMP exec_evt
+    TAX
+    ; jump event_table[e]
+    LDA @evt_jmp_hi, X
+    PHA
+    LDA @evt_jmp_lo, X
+    PHA
     RTS
+
+    @evt_jmp_lo:
+        .byte <(@EVT_cr-1)
+        .byte <(@EVT_cr_obj-1)
+        .byte <(@EVT_cr_set-1)
+        .byte <(@EVT_cr_clr-1)
+    @evt_jmp_hi:
+        .byte >(@EVT_cr-1)
+        .byte >(@EVT_cr_obj-1)
+        .byte >(@EVT_cr_set-1)
+        .byte >(@EVT_cr_clr-1)
+
+    @EVT_cr:
+        eor_adr cr_flag, #CR_FLAG_ACCESS
+        RTS
+    @EVT_cr_obj:
+        eor_adr cr_flag, #CR_FLAG_PRESENT
+        RTS
+    @EVT_cr_set:
+        JSR read_next_char
+        JMP set_evidence_flag
+    @EVT_cr_clr:
+        JSR read_next_char
+        JMP clear_evidence_flag

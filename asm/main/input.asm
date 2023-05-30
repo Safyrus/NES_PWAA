@@ -121,9 +121,9 @@
             AND #TXT_FLAG_WAIT
             BEQ @txt_input_cr_end
             ; and if the court record can be access
-            ; LDA cr_flag
-            ; AND #CR_FLAG_ACCESS
-            ; BEQ @txt_input_cr_end
+            LDA cr_flag
+            AND #CR_FLAG_ACCESS
+            BEQ @txt_input_cr_end
                 ; then set/clear court record show flag
                 ora_adr cr_flag, #CR_FLAG_SHOW
                 ; and draw/undraw the court record

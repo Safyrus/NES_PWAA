@@ -38,6 +38,7 @@ Description:
 <!--####################################################-->
 <!--####################################################-->
 
+<jump:DEBUG>
 
 <color:1>
 ============================<b>
@@ -601,6 +602,11 @@ Thanks :)<wait:120><fp>
 <const:BIP_LOW,3>
 <const:BIP_TYPEWRITER,4>
 
+<!-- Event constants -->
+<const:EVT_CR,0>
+<const:EVT_CR_OBJ,1>
+<const:EVT_CR_SET,2>
+<const:EVT_CR_CLR,3>
 
 
 <!--
@@ -643,6 +649,7 @@ Someone like... <wait:35><speed:1>him!<wait:60><fp>
 I'll make it look like<wait:30><b>
 HE did it!<wait:120><fp>
 
+<label:DEBUG>
 <music:MUS_NONE><speed:2><hidetextbox><wait:40><fade><wait:25>
 
 <!--
@@ -656,7 +663,7 @@ HE did it!<wait:120><fp>
       District Court<b>
    Defendant Lobby No. 2<color:0><p>
 
-<hidetextbox><speed:2><music:MUS_COURTROOM_LOUNGE><wait:30><fade><wait:7><character:CHR_NONE><background:BKG_COURTROOM_LOBBY><fade><wait:15><wait:30><hidetextbox><fp><shake><color:2>
+<event:EVT_CR><hidetextbox><speed:2><music:MUS_COURTROOM_LOUNGE><wait:30><fade><wait:7><character:CHR_NONE><background:BKG_COURTROOM_LOBBY><fade><wait:15><wait:30><hidetextbox><fp><shake><color:2>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 (Boy am I nervous!)<color:0><p>
@@ -856,7 +863,7 @@ case... to clear his name.<p><flash><shake>
 And that's just what I'm<b>
 going to do!<p>
 
-<hidetextbox><wait:65>
+<event:EVT_CR><hidetextbox><wait:65>
 
 <!--
 --------------------------
@@ -869,7 +876,7 @@ going to do!<p>
        District Court<b>
       Courtroom No. 2<p>
 
-<color:0><speed:2><wait:30><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><event:1><wait:40><background:BKG_COURTROOM_JUDGE><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><music:MUS_TRIAL><hidetextbox>
+<event:EVT_CR><color:0><speed:2><wait:30><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><event:1><wait:40><background:BKG_COURTROOM_JUDGE><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><music:MUS_TRIAL><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 The court is now in session<b>
