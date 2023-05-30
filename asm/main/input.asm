@@ -77,6 +77,36 @@
             ; and draw/undraw the court record
             JSR update_court_record_box
         @cr_select_end:
+        ; is button RIGHT pressed ?
+        LDA buttons_1
+        AND #BTN_RIGHT
+        BEQ @cr_left_end
+            ; increase evidence index
+            INC evidence_idx
+            ; if index > MAX_EVIDENCE_IDX
+            LDA evidence_idx
+            CMP #MAX_EVIDENCE_IDX
+            blt @cr_left_update
+                ; index = 0
+                mov evidence_idx, #$00
+            @cr_left_update:
+            ; update the court record display
+            JSR update_court_record_box
+        @cr_left_end:
+        ; is button LEFT pressed ?
+        LDA buttons_1
+        AND #BTN_LEFT
+        BEQ @cr_right_end
+            ; decrease evidence index
+            DEC evidence_idx
+            ; if index < 0
+            BPL @cr_right_update
+                ; index = MAX_EVIDENCE_IDX
+                mov evidence_idx, #MAX_EVIDENCE_IDX
+            @cr_right_update:
+            ; update the court record display
+            JSR update_court_record_box
+        @cr_right_end:
         JMP @input_end
     @cr_end:
 

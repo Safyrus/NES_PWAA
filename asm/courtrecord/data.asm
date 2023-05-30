@@ -61,62 +61,87 @@ evidence_0_bot:
 evidence_1_top:
 .byte "Cindy's Autopsy Report", 1
 .byte "Type: Reports", 1
-.byte "Obtained: Received from Mia Fey.", 2
+.byte "Obtained: Received", 1
+.byte "from Mia Fey.", 2
 evidence_1_bot:
-.byte "Time of death: 7/31, 4PM-5PM. Cause of death: loss of blood due to blunt trauma.", 2
+.byte "Time of death: 7/31, 4PM-5PM.", 1
+.byte "Cause of death: loss of blood", 1
+.byte "due to blunt trauma.", 2
 
 evidence_2_top:
 .byte "Statue/The Thinker", 1
 .byte "Type: Weapons", 1
-.byte "Obtained: Submitted as evidence by Prosecutor Payne.", 2
+.byte "Obtained: Submitted", 1
+.byte "as evidence", 1
+.byte "by Prosecutor Payne.", 2
 evidence_2_bot:
-.byte "A statue in the shape of", $22, "The Thinker", $22,". It's rather heavy.", 2
+.byte "A statue in the shape of", 1
+.byte $22, "The Thinker", $22,".", 1
+.byte "It's rather heavy.", 2
 
 evidence_3_top:
 .byte "Passport", 1
 .byte "Type: Evidence", 1
-.byte "Obtained: Submitted as evidence by Prosecutor Payne.", 2
+.byte "Obtained: Submitted", 1
+.byte "as evidence by", 1
+.byte "Prosecutor Payne.", 2
 evidence_3_bot:
-.byte "The victim apparently arrived home from Paris on 7/30, the day before the murder.", 2
+.byte "The victim apparently arrived", 1
+.byte "home from Paris on 7/30,", 1
+.byte "the day before the murder.", 2
 
 evidence_4_top:
 .byte "Blackout Record", 1
 .byte "Type: Documents", 1
-.byte "Obtained: Submitted as evidence by Prosecutor Payne.", 2
+.byte "Obtained: Submitted", 1
+.byte "as evidence by", 1
+.byte "Prosecutor Payne.", 2
 evidence_4_bot:
-.byte "Electricity to Ms. Stone's building was out from noon to 6 PM on the day of the crime.", 2
+.byte "Electricity to Ms. Stone's", 1
+.byte "building was out from noon to", 1
+.byte "6 PM on the day of the crime.", 2
 
 profile_0_top:
 .byte "Mia Fey", 1
 .byte "Age: 27", 1
 .byte "Gender: Female", 2
 profile_0_bot:
-.byte "Chief Attorney at Fey & Co.. My boss, and a very good defense attorney.", 2
+.byte "Chief Attorney at Fey & Co..", 1
+.byte "My boss, and a very good", 1
+.byte "defense attorney.", 2
 
 profile_1_top:
 .byte "Larry Butz", 1
 .byte "Age: 23", 1
 .byte "Gender: Male", 2
 profile_1_bot:
-.byte "The defendant in this case. A likeable guy who was my friend in grade school.", 2
+.byte "The defendant in this case.", 1
+.byte "A likeable guy who was my", 1
+.byte "friend in grade school.", 2
 
 profile_2_top:
 .byte "Cindy Stone", 1
 .byte "Age: 22", 1
 .byte "Gender: Female", 2
 profile_2_bot:
-.byte "The victim in this case. A model, she lived in an apartment by herself.", 2
+.byte "The victim in this case.", 1
+.byte "A model, she lived in an", 1
+.byte "apartment by herself.", 2
 
 profile_3_top:
 .byte "Winston Payne", 1
 .byte "Age: 52", 1
 .byte "Gender: Male", 2
 profile_3_bot:
-.byte "The prosecutor for this case. Lacks presence. Generally bad at getting his points across.", 2
+.byte "The prosecutor for this case.", 1
+.byte "Lacks presence. Generally bad", 1
+.byte "at getting his points across.", 2
 
 profile_4_top:
 .byte "Frank Sahwit", 1
 .byte "Age: 44*", 1
 .byte "Gender: Male", 2
 profile_4_bot:
-.byte "Discovered Ms. Stone's body. Newspaper salesman who saw Larry flee the scene.", 2
+.byte "Discovered Ms. Stone's body.", 1
+.byte "Newspaper salesman who saw", 1
+.byte "Larry flee the scene.", 2

@@ -79,6 +79,14 @@ print_flush:
     ; if text box hidden, then just update pointers
     BIT box_flags
     BMI @update_ptrs
+    ; if background buffer is too full
+    LDA background_index
+    add print_counter
+    CMP #$40
+    blt @start
+        ; then wait for it to be empty
+        JSR wait_next_frame
+    @start:
 
     ; - - - - - - - -
     ; copy ext_buf to ext ram

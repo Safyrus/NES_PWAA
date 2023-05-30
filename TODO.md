@@ -19,7 +19,19 @@
   - [/] Visual effects
   - [ ] Saving
   - [ ] Investigation scene
-  - [ ] Court record
+  - [/] Court record
+    - [/] visual
+      - [X] Box draw/clear
+      - [X] Text
+      - [ ] Evidence images
+      - [ ] Scrolling when switching evidence
+    - [/] logic
+      - [X] inputs to display court record
+      - [X] inputs to switch between evidence
+      - [ ] show only unlocked evidence
+      - [ ] char to set/clear evidence
+      - [ ] char to enable/disable court record button
+      - [ ] char to enable/disable present evidence button
 - [/] Game resources:
   - [X] Dialogs/scripts.
   - [X] Background scenes.
