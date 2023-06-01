@@ -11,6 +11,7 @@
   - [/] Shake
   - [/] Fade
   - [ ] UI Movement
+  - [ ] Scrolling when switching evidence
 - [ ] Make the Project core functionality
   - [X] Main process loop
   - [X] Dialog box
@@ -19,19 +20,6 @@
   - [/] Visual effects
   - [ ] Saving
   - [ ] Investigation scene
-  - [/] Court record
-    - [/] visual
-      - [X] Box draw/clear
-      - [X] Text
-      - [ ] Evidence images
-      - [ ] Scrolling when switching evidence
-    - [/] logic
-      - [X] inputs to display court record
-      - [X] inputs to switch between evidence
-      - [ ] show only unlocked evidence
-      - [ ] char to set/clear evidence
-      - [ ] char to enable/disable court record button
-      - [ ] char to enable/disable present evidence button
 - [/] Game resources:
   - [X] Dialogs/scripts.
   - [X] Background scenes.
@@ -52,6 +40,18 @@
 
 ## Done
 
+- [X] Court record
+  - [/] visual
+    - [X] Box draw/clear
+    - [X] Text
+    - [ ] Evidence images
+  - [X] logic
+    - [X] inputs to display court record
+    - [X] inputs to switch between evidence
+    - [X] show only unlocked evidence
+    - [X] char to set/clear evidence
+    - [X] char to enable/disable court record button
+    - [X] char to enable/disable present evidence button
 - [X] Fix entire screen glitching when loading the next text data block
 - [X] Play DPCM as SFX.
 - [X] Replace FI and FO by FAD.

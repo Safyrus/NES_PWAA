@@ -79,15 +79,15 @@ text = re.sub(r"<personvanish:[^>]*>", "<character:CHR_NONE><animation:ANI_NONE>
 text = re.sub(r"<hideperson>", "<character:CHR_NONE><animation:ANI_NONE>", text)
 text = re.sub(r"<finger_choice_2args_jmp:[^>]*>", "<act><jump:label_unknow>TODO1<b><jump:label_unknow>TODO2<b>", text)
 text = re.sub(r"<finger_choice_3args_jmp:[^>]*>", "<act><jump:label_unknow>TODO1<b><jump:label_unknow>TODO2<b><jump:label_unknow>TODO3<b>", text)
-text = re.sub(r"<swoosh:[^>]*>", "<event:0,0>", text) # swoosh (0), (screen pos)
-text = re.sub(r"<bganim:98,273>", "<event:1>", text) # gavel slam anim
-text = re.sub(r"<bganim:98,579>", "<event:2>", text) # another gavel slam anim
-text = re.sub(r"<lifebar:[^>]*>", "<event:3>", text) # toggle life-bar display
-text = re.sub(r"<newevidence:[^>]*>", "<event:4,0>", text) # new evidence (4), evidence idx
-text = re.sub(r"<littlesprite:[^>]*>", "<event:5,0>", text) # littlesprite/point_on_map (5), which point where
-text = re.sub(r"<testimony_animation:1>", "<event:6>", text) # testimony scrolling animation (6) + testimony top text
-text = re.sub(r"<testimony_animation:0>", "<event:7>", text) # remove testimony top text (7)
-text = re.sub(r"<testimony_box:[^>]*>", "<event:8>", text) # cross-examination top text (8)
+text = re.sub(r"<swoosh:[^>]*>", "<event:EVT_SWOOSH>", text) # swoosh (0), (screen pos)
+text = re.sub(r"<bganim:98,273>", "<event:EVT_GAVEL>", text) # gavel slam anim
+text = re.sub(r"<bganim:98,579>", "<event:EVT_GAVEL_2>", text) # another gavel slam anim
+text = re.sub(r"<lifebar:[^>]*>", "<event:EVT_HP>", text) # toggle life-bar display
+text = re.sub(r"<newevidence:[^>]*>", "<event:EVT_CR_SET,0>", text) # new evidence (4), evidence idx
+text = re.sub(r"<littlesprite:[^>]*>", "<event:EVT_LILSPR,0>", text) # littlesprite/point_on_map (5), which point where
+text = re.sub(r"<testimony_animation:1>", "<event:EVT_TESTIMONY_ON>", text) # testimony scrolling animation (6) + testimony top text
+text = re.sub(r"<testimony_animation:0>", "<event:EVT_TESTIMONY_OFF>", text) # remove testimony top text (7)
+text = re.sub(r"<testimony_box:[^>]*>", "<event:EVT_CR_OBJ>", text) # cross-examination top text (8)
 text = re.sub(r"<2B>", "<event:9>", text) # lifehit_effect
 # moving
 for _ in range(MAX_REGEX_LOOP):
