@@ -30,7 +30,7 @@
         eor_adr cr_flag, #CR_FLAG_ACCESS
         RTS
     @EVT_cr_obj:
-        eor_adr cr_flag, #CR_FLAG_PRESENT
+        eor_adr cr_flag, #CR_FLAG_OBJ
         RTS
     @EVT_cr_set:
         JSR read_next_char

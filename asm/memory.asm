@@ -223,11 +223,11 @@ OAM:
     ; - - - - - - - -
     ; Court Record Variables
     ; - - - - - - - -
-        ; .... .PAS
+        ; .... .OAS
         ;       |||
         ;       ||+-- is Show
         ;       |+--- can Access
-        ;       +---- can Present
+        ;       +---- can Object/Holdit
         cr_flag: .res 1
         ; current evidence selected
         cr_idx: .res 1
