@@ -71,17 +71,21 @@ read_next_jmp:
     RTS
 
 read_jump:
+    ; txt_rd_ptr = adr_lo, adr_hi
+    mov_ptr txt_rd_ptr, txt_jump_buf
     ; block = lz_bnk_table[block]
     LDA txt_jump_buf+2
     AND #$3F
+    CMP lz_idx
     STA lz_idx
     STA txt_jump_buf+2
-    ; txt_rd_ptr = adr_lo, adr_hi
-    mov_ptr txt_rd_ptr, txt_jump_buf
+    BNE @lz
     ; if block != current_block:
-    LDA txt_jump_buf+2
+    TAX
+    LDA lz_bnk_table, X
     CMP lz_in_bnk
     BEQ @JMP_char_end
+    @lz:
         ; reset lz decoding
         JSR lz_init
         ; async lz_decode()
@@ -275,7 +279,9 @@ read_text:
     .include "spe_chr/MUS.asm"
     .include "spe_chr/NAM.asm"
     .include "spe_chr/PHT.asm"
+    .include "spe_chr/RET.asm"
     .include "spe_chr/SAK.asm"
+    .include "spe_chr/SAV.asm"
     .include "spe_chr/SET.asm"
     .include "spe_chr/SND.asm"
     .include "spe_chr/SP.asm"
@@ -297,9 +303,9 @@ read_text:
         .byte <(@NAM-1)
         .byte <(@FLH-1)
         .byte <(@FAD-1)
-        .byte <(@default-1)
+        .byte <(@SAV-1)
         .byte <(@COL-1)
-        .byte <(@BC-1)
+        .byte <(@RET-1)
         .byte <(@BIP-1)
         .byte <(@MUS-1)
         .byte <(@SND-1)
@@ -330,9 +336,9 @@ read_text:
         .byte >(@NAM-1)
         .byte >(@FLH-1)
         .byte >(@FAD-1)
-        .byte >(@default-1)
+        .byte >(@SAV-1)
         .byte >(@COL-1)
-        .byte >(@BC-1)
+        .byte >(@RET-1)
         .byte >(@BIP-1)
         .byte >(@MUS-1)
         .byte >(@SND-1)

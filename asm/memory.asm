@@ -206,6 +206,8 @@ OAM:
         txt_jump_flag_buf: .res 1
         ; pointer to the last dialog (0=lo, 1=hi, 2=bnk)
         txt_last_dialog_adr: .res 3
+        ; saved pointer to jump back to when using a RET char
+        txt_save_adr: .res 3
 
     ; - - - - - - - -
     ; Variables for name displaying
@@ -228,7 +230,9 @@ OAM:
         ;       +---- can Present
         cr_flag: .res 1
         ; current evidence selected
-        evidence_idx: .res 1
+        cr_idx: .res 1
+        ; current evidence selected
+        cr_correct_idx: .res 1
         ; array of flag to determine which evidences is obtained
         evidence_flags: .res 16
 

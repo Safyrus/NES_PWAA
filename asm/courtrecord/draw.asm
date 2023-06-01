@@ -84,7 +84,7 @@ draw_court_record_box:
     sta_ptr print_ppu_ptr, (PPU_NAMETABLE_0+$109)
     mov print_nl_offset, #$29
 
-    LDX evidence_idx
+    LDX cr_idx
     LDA table_evidence_top_lo, X
     STA txt_rd_ptr+0
     LDA table_evidence_top_hi, X
@@ -122,7 +122,7 @@ draw_court_record_box:
     sta_ptr print_ext_ptr, (MMC5_EXP_RAM+$282)
     sta_ptr print_ppu_ptr, (PPU_NAMETABLE_0+$282)
 
-    LDX evidence_idx
+    LDX cr_idx
     LDA table_evidence_bot_lo, X
     STA txt_rd_ptr+0
     LDA table_evidence_bot_hi, X
@@ -166,9 +166,26 @@ undraw_court_record_box:
     sta_ptr tmp+0, (MMC5_EXP_RAM+$E0)
     JSR img_draw_mid_hi
 
+    ; restore text pointer
     mov txt_rd_ptr+0, txt_last_dialog_adr+0
     mov txt_rd_ptr+1, txt_last_dialog_adr+1
-    mov lz_idx, txt_last_dialog_adr+2
+    ; restore text bank
+    LDX txt_last_dialog_adr+2
+    CPX lz_idx
+    STX lz_idx
+    ; if it is not the same as now then lz
+    BNE @lz
+    ; if text bank not the same
+    LDA lz_bnk_table, X
+    CMP lz_in_bnk
+    BEQ @undraw
+    @lz:
+        ; reset lz decoding
+        JSR lz_init
+        ; async lz_decode()
+        ora_adr txt_flags, #TXT_FLAG_LZ
+    @undraw:
+    ; redraw dialog box
     ora_adr txt_flags, #(TXT_FLAG_FORCE)
     JSR draw_dialog_box
 

@@ -58,7 +58,9 @@ DL = 0x09
 NAM = 0x0A
 FLH = 0x0B
 FAD = 0x0C
+SAV = 0x0D
 COL = 0x0E
+RET = 0x0F
 BIP = 0x10
 MUS = 0x11
 SND = 0x12
@@ -318,6 +320,10 @@ while i < len(text):
             textbin.append(EVT)
             for a in args:
                 textbin = append_byte(textbin, int(a), name, i)
+        elif name == "save":
+            textbin.append(SAV)
+        elif name == "return":
+            textbin.append(RET)
         else:
             printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
 

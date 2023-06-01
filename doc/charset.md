@@ -20,9 +20,9 @@
 |      | **0A** | NAM | change NAMe of dialog box                                    | 1: name (0=remove)                            |
 |      | **0B** | FLH | FLasH                                                        |                                               |
 |      | **0C** | FAD | FADe in/out                                                  |                                               |
-|      | **0D** |     |                                                              |                                               |
+|  X   | **0D** | SAV |                                                              |                                               |
 |      | **0E** | COL | change text COLor                                            | 1: color                                      |
-|      | **0F** |     |                                                              |                                               |
+|  X   | **0F** | RET |                                                              |                                               |
 |      | **10** | BIP | change dialog BIP effect                                     | 1: bip (0=remove)                             |
 |      | **11** | MUS | MUSic                                                        | 1: music (0=remove)                           |
 |      | **12** | SND | SouND effect                                                 | 1: sfx                                        |
@@ -37,21 +37,28 @@
 |  X   | **1B** | SP  | Sprite Palette                                               | 4: palettes (pal 0 first)                     |
 |      | **1C** | RES | Reserved                                                     |                                               |
 |      | **1D** | RES | Reserved                                                     |                                               |
-|      | **1E** | EVT | EVenT                                                        | 1: function                                   |
-|      | **1F** | EXT | EXTension command                                            | 1: ext command                                |
+|      | **1E** | EVT | EVenT. Use to add control characters specific to the game    | 1: function                                   |
+|      | **1F** | EXT | EXTension. Reserved to add more ctrl char to the dialog box  | 1: ext command                                |
 
 ### Events
 
-|  Name  | code | description                           |
-|:------:|:----:|:--------------------------------------|
-| swoosh |  ??  | Scroll to the other side of the scene |
-| scroll |  ??  | Scroll to the other background        |
-| hp-bar |  ??  | Toggle life-bar display               |
-| hp-hit |  ??  | Life-bar hit effect                   |
-| ce-txt |  ??  | Cross-examination top text            |
-| t-txt  |  ??  | Testimony top text                    |
-| t-SCR  |  ??  | Testimony scroll text effect          |
-| clue   |  ??  | New evidence scroll effect            |
+Note: each name is precead by `evt-`.
+
+|  Name  | code | args | description                           |
+|:------:|:----:|:----:|:--------------------------------------|
+| cr     | $00  |  /   | Toggle court record                   |
+| cr-obj | $01  |  /   | Toggle present evidence               |
+| cr-set | $02  | flag | Set evidence flag                     |
+| cr-clr | $03  | flag | Clear evidence flag                   |
+| cr-idx | $04  | idx  | Index of correct evidence to present  |
+| swoosh | $??  |  /   | Scroll to the other side of the scene |
+| scroll | $??  |  /   | Scroll to the other background        |
+| hp-bar | $??  |  /   | Toggle life-bar display               |
+| hp-hit | $??  |  /   | Life-bar hit effect                   |
+| ce-txt | $??  |  /   | Cross-examination top text            |
+| t-txt  | $??  |  /   | Testimony top text                    |
+| t-SCR  | $??  |  /   | Testimony scroll text effect          |
+| clue   | $??  |  /   | New evidence scroll effect            |
 
 ### Jump addresses format
 
