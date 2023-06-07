@@ -42,9 +42,6 @@ def main():
             print(f"too many region to encode. stop.")
             break
         print(f"encode region number {region_bits} - {file}")
-        # open and read the json file
-        with open(file) as f:
-            json_anim = json.load(f)
         #
         args.json = file
         l = len(CHR_roms) + basechr_size
@@ -55,7 +52,7 @@ def main():
         if region_bits == 0:
             args.max_chr_size -= basechr_size
         # encode all animations of the json file
-        ca65_info, frames, CHR_rom = encode_all_constrain(args, json_anim, ca65_info_all["pal_bank"])
+        ca65_info, frames, CHR_rom = encode_all_constrain(args, file, ca65_info_all["pal_bank"])
         # add frames
         for i in range(len(frames)):
             frames[i][0] |= region_bits

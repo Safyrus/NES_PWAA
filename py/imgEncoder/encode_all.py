@@ -106,7 +106,7 @@ def ca65_file(frames, ca65_info):
     return ca65
 
 
-def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr_start_bank=0):
+def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr_start_bank=0):
     # prepare data
     frames = []
     frames_name = []
@@ -120,10 +120,14 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
         np.full((SPR_SIZE_H, SPR_SIZE_W), 0)
     ]
 
+    # open and read the json file
+    with open(jsonfile) as f:
+        jsondata = json.load(f)
+
     # get all files and check if their all exist
     print("check files")
     error = False
-    for anim in json:
+    for anim in jsondata:
         # if background image does not exist
         if not os.path.exists(anim["background"]):
             print("ERROR: file", anim["background"], "does not exist")
@@ -139,7 +143,7 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
 
     # for all animations:
     print("background encoding")
-    for anim in json:
+    for anim in jsondata:
         # if background isn't already encoded
         if anim["background"] not in frames_name:
             # encode background as full image
@@ -160,7 +164,7 @@ def encode_all(json, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[], chr
     # for all animations:
     print("character encoding")
     spr_bnk_to_fix = {}
-    for anim in json:
+    for anim in jsondata:
         # get animation info
         chars = anim["character"]
         times = anim["time"]
