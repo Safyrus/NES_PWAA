@@ -24,7 +24,7 @@
   - [X] Dialogs/scripts.
   - [X] Background scenes.
   - [X] Character sprites.
-  - [ ] Photo sprites.
+  - [/] Photo sprites.
   - [X] Musics.
   - [/] SFX.
 - [ ] Refine game resources:
@@ -40,6 +40,13 @@
 
 ## Done
 
+- [X] Kinda fix a bug when encoding images. Sometimes the same image was encoded multiple times (because of a variable name/refresh ?)
+- [/] Evidence images / Photo
+  - [X] Get evidence images
+  - [/] Get evidence text
+  - [X] Encode Photo (python)
+  - [ ] Decode Photo (asm)
+  - [ ] Display Photo
 - [X] Court record
   - [/] visual
     - [X] Box draw/clear
