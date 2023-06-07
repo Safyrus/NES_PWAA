@@ -72,6 +72,8 @@ endif
 	cd asm/data && $(PYTHON) ../../py/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
 img:
+	make photo
+	$(PYTHON) py/merge_chr.py data/FONT.chr data/EVI.chr -o data/tmp.chr
 ifeq ($(OS), Windows_NT)
 	@-if not exist "asm/data" ( mkdir "asm/data" )
 else
@@ -80,5 +82,14 @@ endif
 	cd c && make
 	cd asm/data && $(PYTHON) ../../py/imgEncoder/encode_region.py \
 	-i ../../data/anim/pwaa_anim_v3_reg0.json ../../data/anim/pwaa_anim_v3_reg1.json ../../data/anim/pwaa_anim_v3_reg2.json \
-	-bc ../../data/FONT.chr -cp ../../c/ -oc ../../PWAA.chr
+	-bc ../../data/tmp.chr -cp ../../c/ -oc ../../PWAA.chr
 
+photo:
+	cd py/imgEncoder && $(PYTHON) encode_photo.py \
+	-i ../../data/evidences.json \
+	-o ../../asm/data/evidences.bin \
+	-c ../../data/EVI.chr \
+	-b 2
+
+visual:
+	$(PYTHON) py/bin2img.py PWAA.nes visual.png NES 2048
