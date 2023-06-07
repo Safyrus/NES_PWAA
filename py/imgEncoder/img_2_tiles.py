@@ -4,7 +4,7 @@ import numpy as np
 TILE_SIZE = 8
 
 
-def img_2_tile(img):
+def img_2_tile(img : Image.Image):
     arr = np.array(img)
     w, h = arr.shape[0], arr.shape[1]
     tiles = [arr[x:x+TILE_SIZE, y:y+TILE_SIZE]
