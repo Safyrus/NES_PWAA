@@ -436,7 +436,7 @@ def encode_all_constrain(args, json_anim, pal_bank=[]):
     dif = args.start_dif
     while True:
         set_pixel_diff(dif)
-        set_spr_pixel_diff(dif)
+        set_spr_pixel_diff(dif//2)
 
         # execute C program to convert binary images to CHR
         if not os.path.exists(args.tile_maps_folder):
@@ -466,11 +466,6 @@ def encode_all_constrain(args, json_anim, pal_bank=[]):
 
         PRG_size = sum([len(f) for f in frames])
         if PRG_size <= args.max_prg_size and len(CHR_rom) <= args.max_chr_size:
-            return ca65_info, frames, CHR_rom
-        if dif >= 64:
-            print("/!\\ "*6)
-            print(" Impossible. Abording")
-            print("/!\\ "*6)
             return ca65_info, frames, CHR_rom
 
         dif += 1

@@ -14,6 +14,22 @@
 #define IMG_SIZE 256 * 3
 #define ROM_SIZE 1024 * 1024
 
+uint8_t tile_dif_col(uint8_t t1[TILE_SIZE], uint8_t t2[TILE_SIZE], uint8_t MAX_PIX_DIF)
+{
+    uint8_t dif = 0;
+    for (uint8_t i = 0; i < TILE_SIZE; i++)
+    {
+        int8_t d = t1[i] - t2[i];
+        if (d < 0)
+            d *= -1;
+        dif += d;
+        if (dif > MAX_PIX_DIF)
+            return dif;
+    }
+    return dif;
+}
+
+
 uint8_t tile_dif(uint8_t t1[TILE_SIZE], uint8_t t2[TILE_SIZE], uint8_t MAX_PIX_DIF)
 {
     uint8_t dif = 0;
@@ -32,7 +48,7 @@ int closest_tile(uint8_t tile[TILE_SIZE], uint8_t bank[BANK_SIZE][TILE_SIZE], in
     uint8_t best = MAX_PIX_DIF + 1;
     for (int i = 0; i < bank_len; i++)
     {
-        uint8_t dif = tile_dif(tile, bank[i], MAX_PIX_DIF);
+        uint8_t dif = tile_dif_col(tile, bank[i], MAX_PIX_DIF);
         if (dif == 0)
             return i;
         if (dif < best)
