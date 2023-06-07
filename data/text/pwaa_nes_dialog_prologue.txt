@@ -123,9 +123,9 @@ Rippers of these sprites:<p><wait:5>
 <color:3>Badassbill <color:2><b>
 (First turnabout)<color:0>.<p><wait:5>
 
-<color:3>Shoda <color:2><b>
-(Sahwit, Judge, Larry, Mia,<b>
-Phoenix, Payne, Cutscene)<color:0>.<p><wait:5>
+<color:3>Shoda <color:2>            (Sahwit,<b>
+Judge, Larry, Mia, Phoenix<b>
+Payne, Cutscene, Evidence)<color:0>.<p><wait:5>
 
 <color:3>TSP184 <color:2><b>
 (Gavel slam, Action lines,<b>

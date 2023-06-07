@@ -84,7 +84,7 @@ Capcom for making the original game.
 - Sprites converted from [The sprite resource](https://www.spriters-resource.com/ds_dsi/phoenixwrightaceattorney/). Rippers:
   - Trish Rowdy (exclamation).
   - Badassbill (First turnabout).
-  - Shoda (Sahwit, Judge, Larry, Mia, Phoenix, Payne, Cutscene).
+  - Shoda (Sahwit, Judge, Larry, Mia, Phoenix, Payne, Cutscene, Evidence).
   - TSP184 (Gavel slam, Action lines, Courtroom).
 
 ### Others
