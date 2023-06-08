@@ -3,12 +3,14 @@
     @ACT_while:
         ; read next jump adr
         JSR read_next_jmp
+        BMI @ACT_end ; return if async lz() has been called
 
         ; if condition flag is present
         BIT txt_jump_buf+2
         BVC @ACT_cond_end
             ; c_idx = next_char()
             JSR read_next_char
+            BMI @ACT_end ; return if async lz() has been called
             ; flag = dialog_flags[c_idx]
             JSR get_dialog_flag
             ; if flag clear then skip this choice
@@ -34,6 +36,7 @@
         ; read choice text
         @ACT_while_read:
             JSR read_next_char
+            BMI @ACT_end ; return if async lz() has been called
             JSR print_char
             CMP #$01
             BNE @ACT_while_read
@@ -68,4 +71,5 @@
     LDA #$00
     STA background, X
     STX background_index
+    @ACT_end:
     RTS

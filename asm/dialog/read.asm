@@ -7,10 +7,15 @@ read_next_char:
     ; txt_rd_ptr += 1
     inc_16 txt_rd_ptr
     ; save char
-    PHA
+    TAY
     ; if txt_rd_ptr is out of the text block
     LDA txt_rd_ptr+1
     BPL @end
+        ; lz_ret = caller address
+        PLA
+        STA lz_ret+0
+        PLA
+        STA lz_ret+1
         ; lz_idx += 1
         INC lz_idx
         ; reset lz decoding
@@ -19,9 +24,21 @@ read_next_char:
         sta_ptr txt_rd_ptr, MMC5_RAM
         ; async lz_decode()
         ora_adr txt_flags, #TXT_FLAG_LZ
+        ; push back caller address
+        LDA lz_ret+1
+        PHA
+        LDA lz_ret+0
+        PHA
+        ; save last char read
+        TYA
+        STA lz_ret_chr
+        ; change last bit to signifie bank change
+        ; (works because char are 7-bit)
+        ORA #$80
+        TAY
     @end:
     ; retreive char
-    PLA
+    TYA
     RTS
 
 
@@ -42,6 +59,7 @@ read_next_dailog:
 read_next_jmp:
     ; c = next_char()
     JSR read_next_char
+    BMI @end ; return if async lz() has been called
     STA txt_jump_buf+1
     STA txt_jump_flag_buf
     ; adr_lo = (c << 7) & 0xFF
@@ -57,6 +75,7 @@ read_next_jmp:
     STA txt_jump_buf+1
     ; adr_lo += next_char()
     JSR read_next_char
+    BMI @end ; return if async lz() has been called
     ORA txt_jump_buf+0
     STA txt_jump_buf+0
     ; block = next_char()
@@ -65,9 +84,13 @@ read_next_jmp:
     AND #$80
     STA txt_jump_flag_buf
     JSR read_next_char
+    BMI @end ; return if async lz() has been called
     STA txt_jump_buf+2
     ORA txt_jump_flag_buf
     STA txt_jump_flag_buf
+    ; clear negative flag
+    LDA #$00
+    @end:
     RTS
 
 read_jump:
@@ -141,14 +164,40 @@ read_text:
         ; if we are ready
         LDA txt_flags
         AND #TXT_FLAG_READY
-        BEQ @end
+        BNE :+
+            JMP @end
+        :
 
         ; if we need to wait for time consomming task to end
         ; (draw dialog box, lz decoding and printing characters)
         LDA txt_flags
         AND #(TXT_FLAG_LZ + TXT_FLAG_BOX + TXT_FLAG_PRINT)
-        bnz @end
+        bze :+
+            JMP @end
+        :
         @fps_label:
+
+        ; if we need to jump back at a special character
+        ; (because the instruction was cut mid bank)
+        ; if lz_ret != 0
+        LDX lz_ret+0
+        BNE @lz_return
+        LDA lz_ret+1
+        BEQ @lz_return_end
+        @lz_return:
+            LDY #$00
+            ; push return address + lz_ret = 0
+            LDA lz_ret+1
+            PHA
+            STY lz_ret+1
+            LDA lz_ret+0
+            PHA
+            STY lz_ret+0
+            ; A = lz_ret_chr
+            LDA lz_ret_chr
+            ; rts trick
+            RTS
+        @lz_return_end:
 
         ; fade guard
         LDA fade_timer
@@ -214,6 +263,8 @@ read_text:
         @start:
         ; c = next_char()
         JSR read_next_char
+        ; return if async lz() has been called
+        BMI @end
 
         ; if c is graphic char:
         CMP #$20

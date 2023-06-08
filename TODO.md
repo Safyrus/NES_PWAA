@@ -40,7 +40,8 @@
 
 ## Done
 
-- [X] Kinda fix a bug when encoding images. Sometimes the same image was encoded multiple times (because of a variable name/refresh ?)
+- [X] Fix not waiting for next text bank to load when reading multiple char in the same frame that are located between 2 banks.
+- [X] Kinda fix a bug when encoding images. Sometimes the same image was encoded multiple times (because of a variable name/refresh ?).
 - [/] Evidence images / Photo
   - [X] Get evidence images
   - [/] Get evidence text

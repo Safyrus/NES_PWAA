@@ -117,6 +117,20 @@ OAM:
 .segment "BSS"
 
     ; - - - - - - - -
+    ; Arrays
+    ; - - - - - - - -
+        ; buffer for storing the evidence photo (low byte)
+        photo_lo: .res 64
+        ; buffer for storing the evidence photo (high byte)
+        photo_hi: .res 64
+        ; buffer for the X position of sprites
+        spr_x_buf: .res 64
+        ; array of flags use to make conditionnal jump in dialogs
+        dialog_flags: .res 16
+        ; padding because i like well aligned array
+        array_padding: .res 48
+
+    ; - - - - - - - -
     ; Player input variables
     ; - - - - - - - -
         ; player 1 inputs
@@ -175,6 +189,10 @@ OAM:
         lz_in_bnk: .res 1
         ; index to use for fetching data in lz tables
         lz_idx: .res 1
+        ; address to jump back to in read_text() when LZ has finish loading
+        lz_ret: .res 2
+        ; char read before setting lz_ret
+        lz_ret_chr: .res 1
 
     ; - - - - - - - -
     ; Variables for text reading
@@ -340,7 +358,3 @@ OAM:
         mmc5_upper_chr: .res 1
         ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
         mmc5_banks: .res 4
-        ; array of flags use to make conditionnal jump in dialogs
-        dialog_flags: .res 16
-        ; buffer for the X position of sprites
-        spr_x_buf: .res 64

@@ -2,6 +2,7 @@
 @EVT:
     ; e = next_char()
     JSR read_next_char
+    BMI @EVT_end ; return if async lz() has been called
     CMP #MAX_EVENT
     bge @EVT_end
     TAX
