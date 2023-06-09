@@ -170,10 +170,11 @@ MMC5_RAM       := $6000
 ; Game
 ;----------
 CODE_BNK     = $80
-MUS_SFX      = $81
+SFX_BNK      = $81
 MUS_BNK      = $82
 DPCM_BNK     = $84
-IMG_BNK      = $85
+EVI_BNK      = $85
+IMG_BNK      = $86
 TXT_BNK      = $C0
 TEXT_BUF_BNK = $01
 IMG_BUF_BNK  = $00

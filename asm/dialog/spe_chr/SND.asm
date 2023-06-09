@@ -7,7 +7,7 @@
     LDA mmc5_banks+SFX_BNK_OFF
     PHA
     ; set the correct sfx bank
-    LDA #MUS_SFX
+    LDA #SFX_BNK
     STA mmc5_banks+SFX_BNK_OFF
     STA MMC5_RAM_BNK+SFX_BNK_OFF
     ; play_sound(s)

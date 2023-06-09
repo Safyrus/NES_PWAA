@@ -131,7 +131,7 @@ read_bip:
     LDA mmc5_banks+SFX_BNK_OFF
     PHA
     ; set the correct sfx bank
-    mov mmc5_banks+SFX_BNK_OFF, #MUS_SFX
+    mov mmc5_banks+SFX_BNK_OFF, #SFX_BNK
     STA MMC5_RAM_BNK+SFX_BNK_OFF
     ; sfx_play(bip)
     LDA bip

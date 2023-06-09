@@ -46,8 +46,8 @@
   - [X] Get evidence images
   - [/] Get evidence text
   - [X] Encode Photo (python)
-  - [ ] Decode Photo (asm)
-  - [ ] Display Photo
+  - [X] Decode Photo (asm)
+  - [/] Display Photo
 - [X] Court record
   - [/] visual
     - [X] Box draw/clear

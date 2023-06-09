@@ -58,7 +58,7 @@ def main():
         # RLEINC
         indices = np.array(indices)
         rle_lo = rleinc_encode(indices % 256)
-        rle_hi = rleinc_encode((indices // 256) + args.bnk)
+        rle_hi = rleinc_encode((indices // 256) + args.bnk + 0xC0)
         rle = rle_lo + rle_hi
 
         # encoded image = RLEINC + palette
@@ -78,9 +78,9 @@ def main():
     print("convert image to binary")
     encoded_data = []
     for image in encoded_images:
-        encoded_data.append(len(image["data"]))  # size
-        encoded_data.extend(image["pal"])        # palette
-        encoded_data.extend(image["data"])       # data
+        encoded_data.append(len(image["data"])+4) # size
+        encoded_data.extend(image["pal"])         # palette
+        encoded_data.extend(image["data"])        # data
     encoded_data = bytes(encoded_data)
 
     print("convert chr to binary")

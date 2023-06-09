@@ -6,3 +6,4 @@
 .include "frame.asm"
 .include "find.asm"
 .include "draw_name.asm"
+.include "draw_photo.asm"

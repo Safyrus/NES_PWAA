@@ -5,7 +5,7 @@
 .segment "MUS_BNK1"
 .include "music_1.s"
 
-.segment "MUS_SFX"
+.segment "SFX_BNK"
 .include "sfx.s"
 
 .segment "DPCM_BNK"

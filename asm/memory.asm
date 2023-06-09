@@ -120,15 +120,21 @@ OAM:
     ; Arrays
     ; - - - - - - - -
         ; buffer for storing the evidence photo (low byte)
-        photo_lo: .res 64
+        buf_photo_lo: .res 64
         ; buffer for storing the evidence photo (high byte)
-        photo_hi: .res 64
+        buf_photo_hi: .res 64
         ; buffer for the X position of sprites
         spr_x_buf: .res 64
+        ; data buffer of the partial image to send to PPU
+        img_partial_buf: .res IMG_PARTIAL_MAX_BUF_LEN
+        ; buffer containing text to print to ppu
+        print_ppu_buf: .res 32
+        ; buffer containing text to print to ext ram
+        print_ext_buf: .res 32
         ; array of flags use to make conditionnal jump in dialogs
         dialog_flags: .res 16
-        ; padding because i like well aligned array
-        array_padding: .res 48
+        ; array of flag to determine which evidences is obtained
+        evidence_flags: .res 16
 
     ; - - - - - - - -
     ; Player input variables
@@ -251,8 +257,6 @@ OAM:
         cr_idx: .res 1
         ; current evidence selected
         cr_correct_idx: .res 1
-        ; array of flag to determine which evidences is obtained
-        evidence_flags: .res 16
 
     ; - - - - - - - -
     ; Variables for text printing
@@ -267,15 +271,12 @@ OAM:
         print_counter: .res 1
         ; offset to add to the text position (ppu+ext) when drawing a new line to the screen
         print_nl_offset: .res 1
-        ; buffer containing text to print to ppu
-        print_ppu_buf: .res 32
-        ; buffer containing text to print to ext ram
-        print_ext_buf: .res 32
 
     ; - - - - - - - -
     ; Image Variables
     ; - - - - - - - -
         ; photo/evidence to show
+        ; byte 7 = need to be draw
         img_photo: .res 1
         ; background image to display
         img_background: .res 1
@@ -287,8 +288,6 @@ OAM:
             img_animation: .res 1
         ; length of img_partial_buf
         img_partial_buf_len: .res 1
-        ; data buffer of the partial image to send to PPU
-        img_partial_buf: .res IMG_PARTIAL_MAX_BUF_LEN
 
     ; - - - - - - - -
     ; Animation Variables
@@ -340,6 +339,9 @@ OAM:
             img_palette_2: .res 3
             ; character secondary/sprites palette
             img_palette_3: .res 3
+        ; evidence palette
+        evi_palette: .res 3
+
 
     ; - - - - - - - -
     ; Player choice variables

@@ -134,6 +134,10 @@
 .segment "TXT_BNK"
     .include "data/txt_data.asm"
 
+.segment "EVI_BNK"
+    evi_imgs:
+    .incbin "data/evidences.bin"
+
 ; 6502 vectors
 .segment "VECTORS"
     ; 6502 vectors

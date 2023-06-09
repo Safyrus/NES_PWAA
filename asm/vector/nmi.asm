@@ -242,7 +242,7 @@ NMI:
     LDX music
     LDA music_bank_table, X
     STA MMC5_RAM_BNK+MUS_BNK_OFF
-    mov MMC5_RAM_BNK+SFX_BNK_OFF, #MUS_SFX
+    mov MMC5_RAM_BNK+SFX_BNK_OFF, #SFX_BNK
     ; update famistudio
     JSR famistudio_update
     ; restore banks

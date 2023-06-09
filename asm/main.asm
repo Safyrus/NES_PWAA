@@ -85,5 +85,14 @@ MAIN:
         and_adr txt_flags, #($FF-TXT_FLAG_BOX)
     @box_end:
 
+    ; display photo if needed
+    BIT img_photo
+    BPL @photo_end
+        ; clear draw flag
+        and_adr img_photo, #$7F
+        ; draw photo
+        JSR draw_photo
+    @photo_end:
+
     ; loop back to start of main
     JMP @main_loop
