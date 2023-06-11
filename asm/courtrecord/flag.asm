@@ -22,18 +22,22 @@ _evidence_flag_start:
 ; param:
 ; A = index
 set_evidence_flag:
+    push tmp
     JSR _evidence_flag_start
     ORA tmp
     STA evidence_flags, X
+    pull tmp
     RTS
 
 ; param:
 ; A = index
 clear_evidence_flag:
+    push tmp
     JSR _evidence_flag_start
     EOR #$FF
     AND tmp
     STA evidence_flags, X
+    pull tmp
     RTS
 
 ; param:

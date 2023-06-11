@@ -22,18 +22,22 @@ _dialog_flag_start:
 ; param:
 ; A = index
 set_dialog_flag:
+    push tmp
     JSR _dialog_flag_start
     ORA tmp
     STA dialog_flags, X
+    pull tmp
     RTS
 
 ; param:
 ; A = index
 clear_dialog_flag:
+    push tmp
     JSR _dialog_flag_start
     EOR #$FF
     AND tmp
     STA dialog_flags, X
+    pull tmp
     RTS
 
 ; param:

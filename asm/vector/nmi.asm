@@ -259,7 +259,11 @@ NMI:
     LDA txt_flags
     AND #TXT_FLAG_PRINT
     BEQ @print_end
+        push tmp
+        push tmp+1
         JSR print_flush
+        pull tmp+1
+        pull tmp
         and_adr txt_flags, #($FF-TXT_FLAG_PRINT)
     @print_end:
 
