@@ -252,7 +252,9 @@ img_draw_bot_hi:
             ; else tile = CHR_PTR[y]
         ; EXP_PTR[y] = tile
         STA (tmp+0), Y
-    to_y_inc @loop, #0    
+    to_y_inc @loop, #0
+
+    mov MMC5_CHR_UPPER, img_header
 
     PLA
     RTS
