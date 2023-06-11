@@ -2,10 +2,9 @@
 @JMP_char:
     JSR read_next_jmp
     BMI @JMP_char_end ; return if async lz() has been called
-    ; c = block & 0x40
-    AND #$40
-    ; if c:
-    BEQ @JMP_char_cond_end
+    ; if condition flag:
+    BIT txt_jump_flag_buf
+    BVC @JMP_char_cond_end
         ; c_idx = next_char()
         JSR read_next_char
         ; flag = dialog_flags[c_idx]

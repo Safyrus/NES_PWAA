@@ -224,9 +224,11 @@ OAM:
         txt_font: .res 1
         ;
         txt_bck_color: .res 1
-        ;
+        ; byte 0 = low
+        ; byte 1 = high
+        ; byte 2 = bank
         txt_jump_buf: .res 3
-        ;
+        ; nc.. ....
         txt_jump_flag_buf: .res 1
         ; pointer to the last dialog (0=lo, 1=hi, 2=bnk)
         txt_last_dialog_adr: .res 3

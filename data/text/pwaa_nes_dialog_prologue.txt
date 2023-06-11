@@ -2454,7 +2454,7 @@ It was 1:00 PM.<color:0><animation:ANI_SAHWIT_STAND><p>
 <jump:CE-Sahwit1-10>
 <label:Object-Sahwit1>
 <jump:Object-Sahwit1-OK,1,0,FLG_OBJ_OK>
-<save><jump:Object-Wrong>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
 
 
 <!--
@@ -3081,7 +3081,7 @@ coming from the television.<color:0><animation:ANI_SAHWIT_STAND><p>
 <jump:CE-Sahwit2-3>
 <label:Object-Sahwit2>
 <jump:Object-Sahwit2-OK,1,0,FLG_OBJ_OK>
-<save><jump:Object-Wrong>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
 
 <!--
 --------------------------
@@ -3118,7 +3118,7 @@ of a taped program!<color:0><animation:ANI_SAHWIT_STAND><p>
 <jump:CE-Sahwit2-5>
 <label:Object-Sahwit2>
 <jump:Object-Sahwit2-OK,1,0,FLG_OBJ_OK>
-<save><jump:Object-Wrong>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
 
 <!--
 --------------------------
@@ -3622,7 +3622,7 @@ hit the victim!<color:0><animation:ANI_SAHWIT_SWEAT_STAND><p>
 <jump:CE-Sahwit2-4>
 <label:Object-Sahwit3>
 <jump:Object-Sahwit3-OK,1,0,FLG_OBJ_OK>
-<save><jump:Object-Wrong>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
 
 
 <!--

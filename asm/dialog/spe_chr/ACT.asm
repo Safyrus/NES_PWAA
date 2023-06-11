@@ -6,7 +6,7 @@
         BMI @ACT_end ; return if async lz() has been called
 
         ; if condition flag is present
-        BIT txt_jump_buf+2
+        BIT txt_jump_flag_buf
         BVC @ACT_cond_end
             ; c_idx = next_char()
             JSR read_next_char
