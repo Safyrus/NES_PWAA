@@ -4,7 +4,8 @@
   - [ ] Encode ACCURATE palette with images
   - [ ] Character sprites being all redrawn for every animation frame
   - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
-  - [/] Glitching background (cause by not changing bank during palette & sprite reading)
+  - [ ] Glitching background (cause by not changing bank during palette & sprite reading)
+  - [ ] Encoded images are not the best
 - [ ] Visual effects
   - [ ] Scrolling
   - [/] Flash
@@ -17,15 +18,16 @@
   - [X] Dialog box
   - [X] Image drawing
   - [X] Image Animation
+  - [X] Court record
   - [/] Visual effects
   - [ ] Saving
   - [ ] Investigation scene
 - [/] Game resources:
   - [X] Dialogs/scripts.
   - [X] Background scenes.
-  - [X] Character sprites.
-  - [/] Photo sprites.
-  - [X] Musics.
+  - [/] Character sprites.
+  - [X] Photo sprites.
+  - [/] Musics.
   - [/] SFX.
 - [ ] Refine game resources:
   - [ ] Dialogs/scripts.
@@ -33,58 +35,86 @@
   - [ ] Character sprites.
   - [ ] Musics + SFX.
 - [ ] Python script documentation.
+  - [ ] text scripts
+  - [ ] image scripts
+  - [ ] other scripts
 - [ ] Assembly documentation.
+  - [ ] Dialog box
+  - [ ] Image display
+  - [ ] LZ decoding
+  - [ ] RLE-INC decoding
+  - [ ] Court Record
+  - [ ] Vectors
+  - [ ] Scanlines
+  - [ ] Inputs
+  - [ ] Audio
 - [ ] Data structure documentation.
-- [ ] Fix cross emulators bugs
+  - [ ] Images
+  - [ ] Evidences
+  - [ ] Dialogs
+  - [ ] Sounds
+- [ ] Fix cross emulators bugs:
   - [ ] MMC5 Scanline not behaving correctly?
 
 ## Done
 
 - [X] Fix not waiting for next text bank to load when reading multiple char in the same frame that are located between 2 banks.
 - [X] Kinda fix a bug when encoding images. Sometimes the same image was encoded multiple times (because of a variable name/refresh ?).
-- [/] Evidence images / Photo
-  - [X] Get evidence images
-  - [/] Get evidence text
+
+- [X] Photo
   - [X] Encode Photo (python)
   - [X] Decode Photo (asm)
-  - [/] Display Photo
-- [X] Court record
-  - [/] visual
+  - [X] Display Photo
+
+- [X] Court record:
+  - [X] visual:
     - [X] Box draw/clear
-    - [X] Text
-    - [ ] Evidence images
-  - [X] logic
+    - [X] Get text
+    - [X] Display text
+    - [X] Evidence images
+  - [X] logic:
     - [X] inputs to display court record
     - [X] inputs to switch between evidence
     - [X] show only unlocked evidence
     - [X] char to set/clear evidence
     - [X] char to enable/disable court record button
     - [X] char to enable/disable present evidence button
+
 - [X] Fix entire screen glitching when loading the next text data block
+
 - [X] Play DPCM as SFX.
 - [X] Replace FI and FO by FAD.
 - [X] Add hiragana & katakana font.
 - [X] Add some basic SFX.
+
 - [X] Refactor music to not be limited to 2 banks of data.
+
 - [X] Add a markdown file describing the dialog script 'language'.
 - [X] Add names to display with the dialog box.
+
 - [X] Update Makefile
 - [X] other text data to test animations, music and backgrounds.
 - [X] PWAA cartridge concept art.
+
 - [X] Change music, SFX, text and images for the PWAA data.
 - [X] Encode necessary PWAA musics in FamiStudio.
+
 - [X] Refactor palettes encoding.
 - [X] The JSON animations files (will still need some rework)
 - [X] Cut all needed sprites and convert then to a NES palette.
+
 - [X] A LOT of fixes on PWAA dialogs.
 - [X] Script to convert PWAA original dialog to the text format used.
+
 - [X] Basic game resources for the prologue:
   - [X] Dialogs/scripts.
   - [X] Background scenes.
   - [X] Character sprites.
   - [X] Musics.
+
 - [X] Credits for tools and resources.
 - [X] A useless script to convert file into images.
+
 - [X] Temporary fix music crashing the game by loading 16K of music bank instead of 8K
 - [X] Fix dialog box having graphical glitches when appearing/disappearing (at least it seems)
 - [X] Fix images encoding and display not considering MMC5 CHR 'region' (256K block)
@@ -92,15 +122,19 @@
 - [X] (Kind of fix during refactor) encoding not converting images to tiles with the maximum number of colors
 - [X] Refactor image encoding scripts to be more performant (the closest tiles are now calculated with a C program)
 - [X] Fix Sprite x position being incorrect, because spr_x buffer wasn't reversed after sprite flickering.
+
 - [X] Add fast-forward dialog button
 - [X] Encode ACCURATE sprites with images (Choose to maximize top sprites and cut bottom ones if too many)
+
 - [X] Fix MMC5 nametable updated 1 frame too late/soon when switching animation
 - [X] Fix temporary wrong scrolling position when starting the animation because of NMI not acknowledged during the draw animation phase
 - [X] Fix dialog box top row using PPU backdrop color
 - [X] Fix background tiles overflow when drawing the dialog box
 - [X] Fix a temporary wrong CHR bank when switching animation
+
 - [X] Do sprite flickering to kind of "draw more sprites"
 - [X] PPU background buffer (enable "instant" background update)
+
 - [X] Fix sprites not disappearing when removing the character
 - [X] Fix temporary wrong palette
 - [X] Fix image encoding not using the background color for the character
@@ -161,7 +195,7 @@
     - [X] BIP
     - [X] MUS
     - [X] SND
-    - [ ] PHT
+    - [/] PHT
     - [ ] CHR
     - [X] ANI
     - [X] BKG

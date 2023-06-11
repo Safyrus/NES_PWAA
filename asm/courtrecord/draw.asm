@@ -115,6 +115,14 @@ draw_court_record_box:
     push name_idx
     mov name_idx, #$00
 
+    ; draw photo
+    LDX cr_idx
+    LDA table_cr2photo, X
+    STA img_photo
+    LDY #$20
+    LDX #$E0
+    JSR draw_photo
+
     JSR draw_dialog_box
 
     pull name_idx

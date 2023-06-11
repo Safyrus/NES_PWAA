@@ -11,7 +11,7 @@ inc_evidence_idx:
         ; if cr_idx > MAX_EVIDENCE_IDX
         LDA cr_idx
         CMP #MAX_EVIDENCE_IDX
-        blt @next
+        ble @next
             ; cr_idx = 0
             mov cr_idx, #$00
         @next:
@@ -39,11 +39,3 @@ dec_evidence_idx:
         BEQ @while ; while not obtained
     @end:
     RTS
-
-
-; .struct Evidence
-;     ; id .byte  implicite, flag position
-;     txt .word ; pointer to text description (end by `p`)
-;     img .byte ; image index (same as for PHT) to find the pointer to the image (just RLE-INC with no header)
-;     pad .byte ; padding
-; .endstruct

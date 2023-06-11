@@ -340,7 +340,7 @@ OAM:
             ; character secondary/sprites palette
             img_palette_3: .res 3
         ; evidence palette
-        evi_palette: .res 3
+        ; evi_palette: .res 3
 
 
     ; - - - - - - - -

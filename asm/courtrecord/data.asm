@@ -47,9 +47,21 @@ table_evidence_bot_hi:
 .byte >profile_4_bot
 
 
+table_cr2photo:
+.byte 0
+.byte 1
+.byte 6
+.byte 7
+.byte 2
+.byte 42
+.byte 43
+.byte 44
+.byte 45
+.byte 46
+
 
 evidence_0_top:
-.byte "Attorney's Badge", 1
+.byte "Attorney's Badge", 1, 1
 .byte "Type: Other", 1
 .byte "Obtained: One of my", 1
 .byte "possessions.", 2
@@ -59,7 +71,7 @@ evidence_0_bot:
 .byte "didn't carry this.", 2
 
 evidence_1_top:
-.byte "Cindy's Autopsy Report", 1
+.byte "Cindy's Autopsy Report", 1, 1
 .byte "Type: Reports", 1
 .byte "Obtained: Received", 1
 .byte "from Mia Fey.", 2
@@ -69,7 +81,7 @@ evidence_1_bot:
 .byte "due to blunt trauma.", 2
 
 evidence_2_top:
-.byte "Statue/The Thinker", 1
+.byte "Statue/The Thinker", 1, 1
 .byte "Type: Weapons", 1
 .byte "Obtained: Submitted", 1
 .byte "as evidence", 1
@@ -80,7 +92,7 @@ evidence_2_bot:
 .byte "It's rather heavy.", 2
 
 evidence_3_top:
-.byte "Passport", 1
+.byte "Passport", 1, 1
 .byte "Type: Evidence", 1
 .byte "Obtained: Submitted", 1
 .byte "as evidence by", 1
@@ -91,7 +103,7 @@ evidence_3_bot:
 .byte "the day before the murder.", 2
 
 evidence_4_top:
-.byte "Blackout Record", 1
+.byte "Blackout Record", 1, 1
 .byte "Type: Documents", 1
 .byte "Obtained: Submitted", 1
 .byte "as evidence by", 1
@@ -102,7 +114,7 @@ evidence_4_bot:
 .byte "6 PM on the day of the crime.", 2
 
 profile_0_top:
-.byte "Mia Fey", 1
+.byte "Mia Fey", 1, 1
 .byte "Age: 27", 1
 .byte "Gender: Female", 2
 profile_0_bot:
@@ -111,7 +123,7 @@ profile_0_bot:
 .byte "defense attorney.", 2
 
 profile_1_top:
-.byte "Larry Butz", 1
+.byte "Larry Butz", 1, 1
 .byte "Age: 23", 1
 .byte "Gender: Male", 2
 profile_1_bot:
@@ -120,7 +132,7 @@ profile_1_bot:
 .byte "friend in grade school.", 2
 
 profile_2_top:
-.byte "Cindy Stone", 1
+.byte "Cindy Stone", 1, 1
 .byte "Age: 22", 1
 .byte "Gender: Female", 2
 profile_2_bot:
@@ -129,7 +141,7 @@ profile_2_bot:
 .byte "apartment by herself.", 2
 
 profile_3_top:
-.byte "Winston Payne", 1
+.byte "Winston Payne", 1, 1
 .byte "Age: 52", 1
 .byte "Gender: Male", 2
 profile_3_bot:
@@ -138,7 +150,7 @@ profile_3_bot:
 .byte "at getting his points across.", 2
 
 profile_4_top:
-.byte "Frank Sahwit", 1
+.byte "Frank Sahwit", 1, 1
 .byte "Age: 44*", 1
 .byte "Gender: Male", 2
 profile_4_bot:

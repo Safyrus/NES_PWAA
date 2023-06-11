@@ -78,8 +78,8 @@ def main():
     print("convert image to binary")
     encoded_data = []
     for image in encoded_images:
-        encoded_data.append(len(image["data"])+4) # size
-        encoded_data.extend(image["pal"])         # palette
+        encoded_data.append(len(image["data"])+1) # size
+        # encoded_data.extend(image["pal"])         # palette
         encoded_data.extend(image["data"])        # data
     encoded_data = bytes(encoded_data)
 

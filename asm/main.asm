@@ -91,6 +91,8 @@ MAIN:
         ; clear draw flag
         and_adr img_photo, #$7F
         ; draw photo
+        LDY #$22
+        LDX #$6C
         JSR draw_photo
     @photo_end:
 

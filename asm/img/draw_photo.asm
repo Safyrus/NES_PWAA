@@ -1,9 +1,8 @@
+; X,Y = ppu address (lo, hi)
 draw_photo:
     ; - - - - - - - - - -
     ; Setup
     ; - - - - - - - - - -
-    pushregs
-
     ; push bank at $A000-$BFFF
     LDA mmc5_banks+2
     PHA
@@ -17,6 +16,13 @@ draw_photo:
     push tmp+1
     push tmp+2
     push tmp+3
+
+    ; push X,Y
+    TXA
+    PHA
+    TYA
+    PHA
+
     ; tmp = evi_imgs
     sta_ptr tmp, evi_imgs
 
@@ -44,22 +50,24 @@ draw_photo:
     ; - - - - - - - - - -
     ; Decode photo
     ; - - - - - - - - - -
-    ; palette[0]
-    INY
-    LDA (tmp), Y
-    STA evi_palette+0
-    ; palette[1]
-    INY
-    LDA (tmp), Y
-    STA evi_palette+1
-    ; palette[2]
-    INY
-    LDA (tmp), Y
-    STA evi_palette+2
+    ; ; palette[0]
+    ; INY
+    ; LDA (tmp), Y
+    ; STA evi_palette+0
+    ; ; palette[1]
+    ; INY
+    ; LDA (tmp), Y
+    ; STA evi_palette+1
+    ; ; palette[2]
+    ; INY
+    ; LDA (tmp), Y
+    ; STA evi_palette+2
     ; tmp += 4
-    INY
-    TYA
-    add_A2ptr tmp
+    ; INY
+    ; TYA
+    ; add_A2ptr tmp
+    ; tmp++
+    inc_16 tmp
     ; output pointer
     sta_ptr tmp+2, buf_photo_lo
     ; rleinc for low bytes
@@ -71,8 +79,11 @@ draw_photo:
     ; - - - - - - - - - -
     ; Draw photo
     ; - - - - - - - - - -
-    ; TODO choose address to draw it
-    sta_ptr tmp, $226C
+    ; tmp = pull X,Y
+    PLA
+    STA tmp+1
+    PLA
+    STA tmp+0
 
     ; wait for ppu buffer to be empty
     JSR wait_next_frame
@@ -126,7 +137,6 @@ draw_photo:
     STA MMC5_PRG_BNK1
 
     ; return
-    pullregs
     RTS
 
 
