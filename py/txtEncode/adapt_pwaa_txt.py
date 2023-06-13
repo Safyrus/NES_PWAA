@@ -137,6 +137,9 @@ while i < len(text):
             if not box_toggle:
                 tag += "><fp"
             box_toggle = not box_toggle
+        elif name == "photo":
+            # bit 8 for box position (0=left, 1=right)
+            tag = "photo:" + str(int(args[0]) & 0xFF)
         i = tag_end+1
         new_text += "<" + tag + ">"
     else:
@@ -192,6 +195,8 @@ for c in SFX_CONST:
     text = re.sub(rf"<sound:{c[0]}>", f"<sound:{c[1]}>", text)
 for c in ANI_CONST:
     text = re.sub(rf"<animation:{c[0]}>", f"<animation:{c[1]}>", text)
+for c in PHT_CONST:
+    text = re.sub(rf"<photo:{c[0]}>", f"<photo:{c[1]}>", text)
 
 print(f"add header...")
 header = FILE_HEADER + DISCLAIMER
@@ -223,6 +228,10 @@ for b in SFX_CONST:
 header += "\n<!-- Bip constants -->\n"
 for b in BIP_CONST:
     header += "<const:" + b[0] + "," + b[1] + ">\n"
+header += "\n<!-- Photo constants -->\n"
+for b in PHT_CONST:
+    header += "<const:" + b[1] + "," + b[2] + ">\n"
+header += CUSTOM_CONST
 
 print(f"add footer...")
 footer = """

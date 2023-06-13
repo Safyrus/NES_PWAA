@@ -48,7 +48,7 @@ int closest_tile(uint8_t tile[TILE_SIZE], uint8_t bank[BANK_SIZE][TILE_SIZE], in
     uint8_t best = MAX_PIX_DIF + 1;
     for (int i = 0; i < bank_len; i++)
     {
-        uint8_t dif = tile_dif_col(tile, bank[i], MAX_PIX_DIF);
+        uint8_t dif = tile_dif(tile, bank[i], MAX_PIX_DIF);
         if (dif == 0)
             return i;
         if (dif < best)
