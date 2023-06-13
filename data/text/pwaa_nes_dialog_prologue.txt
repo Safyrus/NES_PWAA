@@ -143,9 +143,9 @@ PS:<b><wait:60>
 This version only contain<b>
 the prologue of the game.<p><wait:5>
 
-It """works""", but it is<b>
-missing some features.<color:2>(like<b>
-SFX & the court record)<color:0><p><wait:5>
+It "works", and it is<b>
+missing some small features.<b><color:2>
+(visual effect stuff)<color:0><p><wait:5>
 
 All the resources <color:2>(images,<b>
 text, musics)<color:0> are pretty<b>
@@ -600,6 +600,13 @@ Thanks :)<wait:120><fp>
 <const:BIP_HIGH,2>
 <const:BIP_LOW,3>
 <const:BIP_TYPEWRITER,4>
+
+<!-- Photo constants -->
+<const:PHT_NONE,0>
+<const:PHT_REPORT,2>
+<const:PHT_THINKER,7>
+<const:PHT_PASSPORT,8>
+<const:PHT_RECORD,3>
 
 <!-- Event constants -->
 <const:EVT_CR,0>
@@ -1444,7 +1451,7 @@ Would you explain to the<b>
 court<wait:15><speed:5> just what that<b>
 "object" was?<speed:2><animation:ANI_JUDGE_ANGRY_STAND><p>
 
-<character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION><photo:7>
+<character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION><photo:PHT_THINKER>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 The murder weapon was this<b>
@@ -1588,7 +1595,7 @@ Whaddya mean, <wait:10>"one of them"!?<wait:15><animation:ANI_LARRY_BLUSH_STAND>
 Lies!<wait:15> <speed:2>All of it,<wait:8> lies!<wait:20><b>
 I don't believe a word of it!<speed:2><animation:ANI_LARRY_BLUSH_STAND><p>
 
-<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION><hidetextbox><photo:8>
+<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION><hidetextbox><photo:PHT_PASSPORT>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 Your Honor,<wait:15> the<b>
@@ -1598,7 +1605,7 @@ According to this,<wait:15> she was<b>
 in Paris until the day before<b>
 she died.<animation:ANI_PAYNE_STAND><p>
 
-<photo:0><event:EVT_CR_SET,CR_PASSPORT><speed:5><color:2>
+<photo:PHT_NONE><event:EVT_CR_SET,CR_PASSPORT><speed:5><color:2>
 
 <name:NAM_NONE><bip:BIP_NONE>
 Passport added to<b>
@@ -2186,12 +2193,12 @@ used was one of those.<animation:ANI_NONE><p>
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 Your Honor...<animation:ANI_PAYNE_STAND><p>
 
-<photo:9><animation:ANI_PAYNE_TALK>
+<photo:PHT_RECORD><animation:ANI_PAYNE_TALK>
 
 I have a record of the<b>
 blackout,<wait:5> for your perusal.<animation:ANI_PAYNE_STAND><p>
 
-<photo:0><event:EVT_CR_SET,CR_BLACKOUT><speed:5><color:2>
+<photo:PHT_NONE><event:EVT_CR_SET,CR_BLACKOUT><speed:5><color:2>
 
 <name:NAM_NONE><bip:BIP_NONE>
 Blackout Record added<b>
@@ -2892,7 +2899,7 @@ It was 1:00 PM,<wait:5> for certain.<animation:ANI_SAHWIT_STAND><p>
 Frankly, <wait:25><speed:2><shake><animation:ANI_PHOENIX_TALK><flash><shake>I find that<b>
 hard to believe!<animation:ANI_PHOENIX_STAND><p>
 
-<photo:262><animation:ANI_PHOENIX_PAPER_TALK><music:MUS_OBJECTION><speed:3>
+<photo:PHT_REPORT><animation:ANI_PHOENIX_PAPER_TALK><music:MUS_OBJECTION><speed:3>
 
 Your statement directly <b>
 contradicts<wait:5> the autopsy<b>
@@ -3420,7 +3427,7 @@ The prosecution has said<wait:8><b>
 there was a blackout <wait:8>at the<b>
 time of the discovery!<animation:ANI_PHOENIX_OBJECTION_STAND><p>
 
-<photo:265><animation:ANI_PHOENIX_PAPER_TALK><speed:5>
+<photo:PHT_RECORD><animation:ANI_PHOENIX_PAPER_TALK><speed:5>
 
 And this record proves it!<animation:ANI_PHOENIX_PAPER_STAND><p>
 
@@ -3782,7 +3789,7 @@ table clock.<wait:20> End of story.<animation:ANI_PAYNE_STAND><p>
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Wait just a moment!<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><p>
 
-<photo:263><hidetextbox><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK><speed:5>
+<photo:PHT_THINKER><hidetextbox><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 The murder weapon wasn't <wait:15><b>
@@ -3826,7 +3833,7 @@ If I may...<animation:ANI_PAYNE_SWEAT_STAND><p>
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Yes,<wait:15> Mr. Payne?<speed:2><animation:ANI_JUDGE_ANGRY_STAND><p>
 
-<character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><photo:7>
+<character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION><photo:PHT_THINKER>
 
 <name:NAM_PAYNE><bip:BIP_NORMAL>
 As the witness stated,<wait:15> <speed:5>this<b>
@@ -4244,7 +4251,7 @@ if you simply...<speed:2><animation:ANI_PHOENIX_STAND><p>
 All you have to do<b>
 is examine the batteries!<animation:ANI_PHOENIX_OBJECTION_STAND><p>
 
-<hidetextbox><fade><wait:15><character:CHR_JUDGE><animation:ANI_JUDGE_STAND><background:BKG_COURTROOM_JUDGE><fade><wait:15><photo:7><animation:ANI_JUDGE_TALK><hidetextbox>
+<hidetextbox><fade><wait:15><character:CHR_JUDGE><animation:ANI_JUDGE_STAND><background:BKG_COURTROOM_JUDGE><fade><wait:15><photo:PHT_THINKER><animation:ANI_JUDGE_TALK><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Indeed? <wait:20>The batteries are...<wait:25><b>
@@ -4380,7 +4387,7 @@ have the clock?<animation:ANI_PHOENIX_OBJECTION_STAND><p>
 I ask the court to<b>
 listen very carefully...<speed:2><p>
 
-<photo:7><bip:BIP_NONE><speed:1><color:1>
+<photo:PHT_THINKER><bip:BIP_NONE><speed:1><color:1>
 
 <name:NAM_ALARMCLOCK><bip:BIP_NONE>
 <b>
@@ -4423,7 +4430,7 @@ It's 11:25...<speed:2><animation:ANI_PAYNE_SWEAT_STAND><p>
 
 Ac<flash>k!<wait:30><animation:ANI_PAYNE_SWEAT_STAND><p>
 
-<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_TALK><background:BKG_COURTROOM_DEFENSE><hidetextbox><photo:263><speed:5>
+<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_TALK><background:BKG_COURTROOM_DEFENSE><hidetextbox><photo:PHT_THINKER><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 As you can see,<wait:15><speed:3> this clock<b>
@@ -4457,7 +4464,7 @@ way out of this one!<p><speed:6>
 (Uh oh...<wait:15> what's he<wait:20><b>
 talking about...?)<color:0><speed:2><p>
 
-<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><photo:7><speed:5>
+<character:CHR_SAHWIT><animation:ANI_SAHWITNOWIG_ANGRY_TALK><background:BKG_COURTROOM_STAND><photo:PHT_THINKER><speed:5>
 
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 While it may seem like<b>
@@ -4759,7 +4766,7 @@ you pull this one off!<p>
 --------------------------
 -->
 <label:clock_3hourslow_done>
-<character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_STAND><background:BKG_COURTROOM_DEFENSE><photo:264><hidetextbox><fp>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_STAND><background:BKG_COURTROOM_DEFENSE><photo:PHT_PASSPORT><hidetextbox><fp>
 
 <animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_SLAM_TALK>
 
@@ -4772,7 +4779,7 @@ before the murder.<animation:ANI_PHOENIX_SLAM_STAND><p>
 difference between here and<b>
 Paris is nine hours!<animation:ANI_PHOENIX_SLAM_STAND><p>
 
-<photo:0><animation:ANI_PHOENIX_SLAM_TALK>When it's 4:00 PM here,<wait:12><b>
+<photo:PHT_NONE><animation:ANI_PHOENIX_SLAM_TALK>When it's 4:00 PM here,<wait:12><b>
 it's 1:00 AM the next day<b>
 there.<animation:ANI_PHOENIX_SLAM_STAND><p>
 
@@ -5041,7 +5048,7 @@ got you off the hook!)<color:0><speed:2><p>
 <name:NAM_BUTZ><bip:BIP_NORMAL>
 Oh,<wait:10> hey!<animation:ANI_LARRY_HAPPY_STAND><p>
 
-<photo:7><animation:ANI_LARRY_TUMB_UP_TALK><flash><sound:SFX_SMACK><shake><speed:6>
+<photo:PHT_THINKER><animation:ANI_LARRY_TUMB_UP_TALK><flash><sound:SFX_SMACK><shake><speed:6>
 
 H-<wait:8>here,<wait:10> take this!<wait:15><speed:2><b>
 It's a present!<animation:ANI_LARRY_TUMB_UP_STAND><p>
@@ -5079,7 +5086,7 @@ R-<wait:8>really? <wait:15>You? <wait:15>You made this?<speed:2><animation:ANI_M
 Well,<wait:15> thank you.<b>
 I'll keep it as a memento.<animation:ANI_MIA_CONFIDENT_STAND><p>
 
-<hidetextbox><photo:0><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_STAND><wait:16><animation:ANI_LARRY_TALK><hidetextbox><speed:7>
+<hidetextbox><photo:PHT_NONE><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_STAND><wait:16><animation:ANI_LARRY_TALK><hidetextbox><speed:7>
 
 <name:NAM_BUTZ><bip:BIP_NORMAL>
 Yo,<wait:15> Nick...<animation:ANI_LARRY_STAND><p>
@@ -5200,7 +5207,7 @@ right thing to show him...)<color:0><p>
 --------------------------
 -->
 <label:larry_proof_yes><fp>
-<photo:7><speed:5>
+<photo:PHT_THINKER><speed:5>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Check this out,<wait:15> Larry.<speed:2><b>
@@ -5231,7 +5238,7 @@ You think so? <wait:20>It's a pretty<b>
 heavy clock to take traveling.<speed:2><p><speed:8>
 
 <name:NAM_BUTZ><bip:BIP_NORMAL>
-...<speed:2><p><photo:0>
+...<speed:2><p><photo:PHT_NONE>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Well,<wait:15> make of it<b>

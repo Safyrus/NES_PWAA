@@ -14,11 +14,11 @@ lz_bnk_table:
 
 lz_adr_table_lo:
 .byte $00
-.byte $7C
-.byte $3C
-.byte $BF
-.byte $CC
-.byte $3D
+.byte $7D
+.byte $3B
+.byte $C2
+.byte $CF
+.byte $3E
 
 lz_adr_table_hi:
 .byte $A0
