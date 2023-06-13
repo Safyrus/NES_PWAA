@@ -1,5 +1,5 @@
 ; case SND
-@SND:
+SND:
     ; s = next_char()
     JSR read_next_char
     STA sound

@@ -1,5 +1,5 @@
 ; case ACT
-@ACT:
+ACT:
     @ACT_while:
         ; read next jump adr
         JSR read_next_jmp

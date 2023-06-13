@@ -1,5 +1,5 @@
 ; case EVT
-@EVT:
+EVT:
     ; e = next_char()
     JSR read_next_char
     BMI @EVT_end ; return if async lz() has been called

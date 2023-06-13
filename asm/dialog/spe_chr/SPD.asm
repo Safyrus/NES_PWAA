@@ -1,5 +1,5 @@
 ; case SPD
-@SPD:
+SPD:
     ; spd = next_char() - 1
     JSR read_next_char
     sub #$01

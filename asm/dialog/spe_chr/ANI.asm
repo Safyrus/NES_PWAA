@@ -1,5 +1,5 @@
 ; case ANI
-@ANI:
+ANI:
     ; character_animation = next_char()
     JSR read_next_char
     STA img_animation

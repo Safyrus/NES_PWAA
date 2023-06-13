@@ -3,8 +3,6 @@ _dialog_flag_start:
     PHA
     shift LSR, 3
     TAX
-    LDA dialog_flags, X
-    STA tmp
     ;
     PLA
     AND #$07
@@ -22,22 +20,18 @@ _dialog_flag_start:
 ; param:
 ; A = index
 set_dialog_flag:
-    push tmp
     JSR _dialog_flag_start
-    ORA tmp
+    ORA dialog_flags, X
     STA dialog_flags, X
-    pull tmp
     RTS
 
 ; param:
 ; A = index
 clear_dialog_flag:
-    push tmp
     JSR _dialog_flag_start
     EOR #$FF
-    AND tmp
+    AND dialog_flags, X
     STA dialog_flags, X
-    pull tmp
     RTS
 
 ; param:

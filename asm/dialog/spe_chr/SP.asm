@@ -1,5 +1,5 @@
 ; case SP
-@SP:
+SP:
     ; for i from 0 to 4
     ; for_x @sp_loop, #0
     ;     ; p = next_char()

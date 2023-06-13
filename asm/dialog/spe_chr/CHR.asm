@@ -1,5 +1,5 @@
 ; case CHR
-@CHR:
+CHR:
     ; character = next_char()
     JSR read_next_char
     STA img_character

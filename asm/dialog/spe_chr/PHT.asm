@@ -1,5 +1,5 @@
 ; case PHT
-@PHT:
+PHT:
     ; photo = next_char()
     JSR read_next_char
     BEQ @PHT_end

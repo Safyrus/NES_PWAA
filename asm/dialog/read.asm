@@ -264,7 +264,7 @@ read_text:
         ; c = next_char()
         JSR read_next_char
         ; return if async lz() has been called
-        BMI @end
+        BMI read_text_end
 
         ; if c is graphic char:
         CMP #$20
@@ -290,14 +290,16 @@ read_text:
             LDA #<(@loop-1)
             PHA
             ; push jump adr
-            LDA @switch_hi, X
+            LDA read_text_switch_hi, X
             PHA
-            LDA @switch_lo, X
+            LDA read_text_switch_lo, X
             PHA
             ; jump
             RTS
 
     @end:
+    sta_ptr lz_ret, 0
+read_text_end:
     ; flush any text if needed
     LDA print_counter
     BEQ :+
@@ -340,71 +342,71 @@ read_text:
     .include "spe_chr/TD.asm"
     .include "spe_chr/default.asm"
 
-    @switch_lo:
-        .byte <(@END_char-1)
-        .byte <(@LB-1)
-        .byte <(@DB-1)
-        .byte <(@FDB-1)
-        .byte <(@TD-1)
-        .byte <(@SET-1)
-        .byte <(@CLR-1)
-        .byte <(@SAK-1)
-        .byte <(@SPD-1)
-        .byte <(@DL-1)
-        .byte <(@NAM-1)
-        .byte <(@FLH-1)
-        .byte <(@FAD-1)
-        .byte <(@SAV-1)
-        .byte <(@COL-1)
-        .byte <(@RET-1)
-        .byte <(@BIP-1)
-        .byte <(@MUS-1)
-        .byte <(@SND-1)
-        .byte <(@PHT-1)
-        .byte <(@CHR-1)
-        .byte <(@ANI-1)
-        .byte <(@BKG-1)
-        .byte <(@FNT-1)
-        .byte <(@JMP_char-1)
-        .byte <(@ACT-1)
-        .byte <(@BP-1)
-        .byte <(@SP-1)
-        .byte <(@default-1)
-        .byte <(@default-1)
-        .byte <(@EVT-1)
-        .byte <(@EXT-1)
-    @switch_hi:
-        .byte >(@END_char-1)
-        .byte >(@LB-1)
-        .byte >(@DB-1)
-        .byte >(@FDB-1)
-        .byte >(@TD-1)
-        .byte >(@SET-1)
-        .byte >(@CLR-1)
-        .byte >(@SAK-1)
-        .byte >(@SPD-1)
-        .byte >(@DL-1)
-        .byte >(@NAM-1)
-        .byte >(@FLH-1)
-        .byte >(@FAD-1)
-        .byte >(@SAV-1)
-        .byte >(@COL-1)
-        .byte >(@RET-1)
-        .byte >(@BIP-1)
-        .byte >(@MUS-1)
-        .byte >(@SND-1)
-        .byte >(@PHT-1)
-        .byte >(@CHR-1)
-        .byte >(@ANI-1)
-        .byte >(@BKG-1)
-        .byte >(@FNT-1)
-        .byte >(@JMP_char-1)
-        .byte >(@ACT-1)
-        .byte >(@BP-1)
-        .byte >(@SP-1)
-        .byte >(@default-1)
-        .byte >(@default-1)
-        .byte >(@EVT-1)
-        .byte >(@EXT-1)
+read_text_switch_lo:
+        .byte <(END_char-1)
+        .byte <(LB-1)
+        .byte <(DB-1)
+        .byte <(FDB-1)
+        .byte <(TD-1)
+        .byte <(SET-1)
+        .byte <(CLR-1)
+        .byte <(SAK-1)
+        .byte <(SPD-1)
+        .byte <(DL-1)
+        .byte <(NAM-1)
+        .byte <(FLH-1)
+        .byte <(FAD-1)
+        .byte <(SAV-1)
+        .byte <(COL-1)
+        .byte <(RET-1)
+        .byte <(BIP-1)
+        .byte <(MUS-1)
+        .byte <(SND-1)
+        .byte <(PHT-1)
+        .byte <(CHR-1)
+        .byte <(ANI-1)
+        .byte <(BKG-1)
+        .byte <(FNT-1)
+        .byte <(JMP_char-1)
+        .byte <(ACT-1)
+        .byte <(BP-1)
+        .byte <(SP-1)
+        .byte <(default-1)
+        .byte <(default-1)
+        .byte <(EVT-1)
+        .byte <(EXT-1)
+read_text_switch_hi:
+        .byte >(END_char-1)
+        .byte >(LB-1)
+        .byte >(DB-1)
+        .byte >(FDB-1)
+        .byte >(TD-1)
+        .byte >(SET-1)
+        .byte >(CLR-1)
+        .byte >(SAK-1)
+        .byte >(SPD-1)
+        .byte >(DL-1)
+        .byte >(NAM-1)
+        .byte >(FLH-1)
+        .byte >(FAD-1)
+        .byte >(SAV-1)
+        .byte >(COL-1)
+        .byte >(RET-1)
+        .byte >(BIP-1)
+        .byte >(MUS-1)
+        .byte >(SND-1)
+        .byte >(PHT-1)
+        .byte >(CHR-1)
+        .byte >(ANI-1)
+        .byte >(BKG-1)
+        .byte >(FNT-1)
+        .byte >(JMP_char-1)
+        .byte >(ACT-1)
+        .byte >(BP-1)
+        .byte >(SP-1)
+        .byte >(default-1)
+        .byte >(default-1)
+        .byte >(EVT-1)
+        .byte >(EXT-1)
 
 .segment "CODE_BNK"

@@ -1,5 +1,5 @@
 ; case COL
-@COL:
+COL:
     ; col = next_char()
     JSR read_next_char
     ; (col-1) << 6

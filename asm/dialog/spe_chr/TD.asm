@@ -1,5 +1,5 @@
 ; case TD
-@TD:
+TD:
     ; flip display dialog box flag
     LDA box_flags
     EOR #BOX_FLAG_HIDE

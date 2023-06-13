@@ -1,5 +1,5 @@
 ; case FAD
-@FAD:
+FAD:
     ; set fade timer
     mov fade_timer, #FADE_TIME
     ; if fade in flag set

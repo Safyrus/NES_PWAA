@@ -1,5 +1,5 @@
 ; case NAM
-@NAM:
+NAM:
     ; name = next_char()
     JSR read_next_char
     STA name_idx

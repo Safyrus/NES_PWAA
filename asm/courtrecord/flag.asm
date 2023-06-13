@@ -3,8 +3,6 @@ _evidence_flag_start:
     PHA
     shift LSR, 3
     TAX
-    LDA evidence_flags, X
-    STA tmp
     ;
     PLA
     AND #$07
@@ -22,22 +20,18 @@ _evidence_flag_start:
 ; param:
 ; A = index
 set_evidence_flag:
-    push tmp
     JSR _evidence_flag_start
-    ORA tmp
+    ORA evidence_flags, X
     STA evidence_flags, X
-    pull tmp
     RTS
 
 ; param:
 ; A = index
 clear_evidence_flag:
-    push tmp
     JSR _evidence_flag_start
     EOR #$FF
-    AND tmp
+    AND evidence_flags, X
     STA evidence_flags, X
-    pull tmp
     RTS
 
 ; param:

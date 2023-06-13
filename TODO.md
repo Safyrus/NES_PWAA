@@ -11,7 +11,7 @@
   - [/] Flash
   - [/] Shake
   - [/] Fade
-  - [ ] UI Movement
+  - [ ] UI Movement (like testimony text scrolling)
   - [ ] Scrolling when switching evidence
 - [ ] Make the Project core functionality
   - [X] Main process loop
@@ -58,6 +58,8 @@
 
 ## Done
 
+- [X] Fix returning to already executed special char because of lz return
+- [X] Fix NMI not saving tmp causing wrong data in background buffer.
 - [X] Fix not waiting for next text bank to load when reading multiple char in the same frame that are located between 2 banks.
 - [X] Kinda fix a bug when encoding images. Sometimes the same image was encoded multiple times (because of a variable name/refresh ?).
 

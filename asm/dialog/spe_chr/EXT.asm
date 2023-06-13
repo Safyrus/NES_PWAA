@@ -1,5 +1,5 @@
 ; case EXT
-@EXT:
+EXT:
     ; e = next_char()
     JSR read_next_char
     ; extension_char(e)
