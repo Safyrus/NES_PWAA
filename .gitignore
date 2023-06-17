@@ -10,9 +10,17 @@ c/maps
 c/*.chr
 c/*.exe
 
+# Natural Doc
+cfg/nd/Working Data/
+doc/html
+
 # Other
 ignore/
 bin/
 dump_*.txt
 *.nes
 *.dbg
+EVI.chr
+tmp.chr
+visual.png
+const_info.txt

@@ -95,32 +95,40 @@ hex:
 
 text:
 ifeq ($(OS), Windows_NT)
-	@-if not exist "asm/data" ( mkdir "asm/data" )
+	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
 else
-	mkdir -p "asm/data"
+	mkdir -p "$(ASM)/data"
 endif
-	cd asm/data && $(PYTHON) ../../py/txtEncode/txt_2_bin.py ../../data/text/pwaa_nes_dialog_prologue.txt ./text.bin
-	cd asm/data && $(PYTHON) ../../py/txtEncode/lz_encode_block.py ./text.bin ./text.bin
+	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin
+	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
 img:
 	make photo
-	$(PYTHON) py/merge_chr.py data/FONT.chr data/EVI.chr -o data/tmp.chr
+	$(PYTHON) $(PY)/merge_chr.py $(DATA)/FONT.chr $(DATA)/EVI.chr -o $(DATA)/tmp.chr
 ifeq ($(OS), Windows_NT)
-	@-if not exist "asm/data" ( mkdir "asm/data" )
+	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
 else
-	mkdir -p "asm/data"
+	mkdir -p "$(ASM)/data"
 endif
 	cd c && make
-	cd asm/data && $(PYTHON) ../../py/imgEncoder/encode_region.py \
-	-i ../../data/anim/pwaa_anim_v3_reg0.json ../../data/anim/pwaa_anim_v3_reg1.json ../../data/anim/pwaa_anim_v3_reg2.json \
-	-bc ../../data/tmp.chr -cp ../../c/ -oc ../../PWAA.chr
+	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
+	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
+	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr
 
 photo:
-	cd py/imgEncoder && $(PYTHON) encode_photo.py \
-	-i ../../data/evidences.json \
-	-o ../../asm/data/evidences.bin \
-	-c ../../data/EVI.chr \
+	cd $(PY)/imgEncoder && $(PYTHON) encode_photo.py \
+	-i ../../$(EVIDENCE) \
+	-o ../../$(ASM)/data/evidences.bin \
+	-c ../../$(DATA)/EVI.chr \
 	-b 2
 
 visual:
-	$(PYTHON) py/bin2img.py PWAA.nes visual.png NES 2048
+	$(PYTHON) $(PY)/bin2img.py $(GAME_NAME).nes visual.png NES 2048
+
+gendoc:
+ifeq ($(OS), Windows_NT)
+	@-if not exist "doc/html" ( mkdir "doc/html" )
+else
+	mkdir -p "doc/html"
+endif
+	$(NATURALDOC) "cfg/nd"
