@@ -13,6 +13,8 @@
     ; 5: CHR ROM size in 8KB
     .byte $80
 
+.ifndef INES1
+    .out "ines 2.0"
     ; 6: Flags 6
     ; NNNN FTBM
     ; |||| |||+-- Hard-wired nametable mirroring type
@@ -100,6 +102,53 @@
     ; ..DD DDDD
     ;   ++-++++- Default Expansion Device
     .byte %00000000
+.else
+    .out "ines 1.0"
+    ; Flag 6
+    ; 76543210
+    ; ||||||||
+    ; |||||||+- Mirroring: 0: horizontal (vertical arrangement) (CIRAM A10 = PPU A11)
+    ; |||||||              1: vertical (horizontal arrangement) (CIRAM A10 = PPU A10)
+    ; ||||||+-- 1: Cartridge contains battery-backed PRG RAM ($6000-7FFF) or other persistent memory
+    ; |||||+--- 1: 512-byte trainer at $7000-$71FF (stored before PRG data)
+    ; ||||+---- 1: Ignore mirroring control or above mirroring bit; instead provide four-screen VRAM
+    ; ++++----- Lower nybble of mapper number
+    .byte %01010010
+
+    ; Flag 7
+    ; 76543210
+    ; ||||||||
+    ; |||||||+- VS Unisystem
+    ; ||||||+-- PlayChoice-10 (8 KB of Hint Screen data stored after CHR data)
+    ; ||||++--- If equal to 2, flags 8-15 are in NES 2.0 format
+    ; ++++----- Upper nybble of mapper number
+    .byte %00000000
+
+    ; Flag 8
+    ; 76543210
+    ; ||||||||
+    ; ++++++++- PRG RAM size
+    .byte %00000010
+
+    ; Flag 9
+    ; 76543210
+    ; ||||||||
+    ; |||||||+- TV system (0: NTSC; 1: PAL)
+    ; +++++++-- Reserved, set to zero
+    .byte %00000000
+
+    ; Flag 10
+    ; 76543210
+    ;   ||  ||
+    ;   ||  ++- TV system (0: NTSC; 2: PAL; 1/3: dual compatible)
+    ;   |+----- PRG RAM ($6000-$7FFF) (0: present; 1: not present)
+    ;   +------ 0: Board has no bus conflicts; 1: Board has bus conflicts
+    .byte %00000000
+
+    ; padding
+    .byte 0, 0, 0, 0, 0
+
+.endif
 
 ; assembler declaration
 .include "constant.asm"

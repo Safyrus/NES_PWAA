@@ -13,6 +13,7 @@ include ${CONFIG}
 all:
 	make clean_all
 	make $(GAME_NAME).nes
+	make $(GAME_NAME)_ines1.nes
 
 
 # create the nes file from assembler sources
@@ -24,9 +25,23 @@ else
 	mkdir -p "$(BIN)"
 endif
 # assemble main file
-	$(CA65) asm/crt0.asm -o $(BIN)/$(GAME_NAME).o --debug-info
+	$(CA65) $(ASM)/crt0.asm -o $(BIN)/$(GAME_NAME).o --debug-info
 # link files
 	$(LD65) $(BIN)/$(GAME_NAME).o -C link.cfg -o $(GAME_NAME).nes --dbgfile $(GAME_NAME).dbg
+
+
+# create the nes file from assembler sources (Ines 1.0 version)
+$(GAME_NAME)_ines1.nes:
+# create folder if it does not exist
+ifeq ($(OS), Windows_NT)
+	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
+else
+	mkdir -p "$(BIN)"
+endif
+# assemble main file
+	$(CA65) $(ASM)/crt0.asm -o $(BIN)/$(GAME_NAME)_ines1.o --debug-info -DINES1
+# link files
+	$(LD65) $(BIN)/$(GAME_NAME)_ines1.o -C link.cfg -o $(GAME_NAME)_ines1.nes --dbgfile $(GAME_NAME)_ines1.dbg
 
 
 # clean object files
@@ -42,13 +57,29 @@ endif
 clean_all:
 	make clean
 ifeq ($(OS), Windows_NT)
-	del $(GAME_NAME).nes
-	del $(GAME_NAME).DBG
-	del dump_$(GAME_NAME).txt
+	del "$(GAME_NAME).nes"
+	del "$(GAME_NAME)_ines1.nes"
+	del "$(GAME_NAME).DBG"
+	del "dump_$(GAME_NAME).txt"
 else
 	rm -f $(GAME_NAME).nes
 	rm -f $(GAME_NAME).DBG
 	rm -f dump_$(GAME_NAME).txt
+endif
+
+clean_data:
+ifeq ($(OS), Windows_NT)
+	del "$(DATA)\EVI.chr"
+	del "$(DATA)\tmp.chr"
+	del "$(C)\a.exe"
+	del "$(C)\CHR.chr"
+	del "$(ASM)\data" /s /q
+else
+	rm -f $(DATA)/EVI.chr
+	rm -f $(DATA)/tmp.chr
+	rm -f $(C)/a
+	rm -f $(C)/CHR.chr
+	rm -f -r "$(ASM)/data"
 endif
 
 

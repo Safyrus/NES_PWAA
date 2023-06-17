@@ -19,3 +19,9 @@ jobs:
         with:
           name: PWAA
           path: PWAA.nes
+      # Upload binary file
+      - name: Upload NES file (Ines 1.0)
+        uses: actions/upload-artifact@v3
+        with:
+          name: PWAA_ines1
+          path: PWAA_ines1.nes
