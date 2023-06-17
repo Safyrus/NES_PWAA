@@ -58,7 +58,7 @@ def ca65_file(frames, ca65_info):
     ca65_inc = ".segment \"IMGS_BNK\"\n"
     ca65_bkg = "img_bkg_table:\n"
     ca65_bkg_bnk = "img_bkg_table_bank:\n"
-    ca65_anim = "img_anim_table:\ndefault:\n.byte $01 ; size\n"
+    ca65_anim = "img_anim_table:\n@default:\n.byte $01 ; size\n"
     chr_anims = {}
     PRG_size = 0
 

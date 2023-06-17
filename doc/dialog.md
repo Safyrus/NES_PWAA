@@ -68,7 +68,10 @@ Example:
 - [act](#-act)
 - [font](#-font)
 - [photo](#-photo)
+- [save](#-save)
+- [return](#-return)
 - [event](#-event)
+- [ext](#-ext)
 
 ### **comments** / `<!-- -->`
 
@@ -525,30 +528,102 @@ This is ASCII.<b><font:2>
 
 ### **photo**
 
-TODO
+Display a photo/evidence image (in the dialog box for now, but that may change)
+
+The argument is the index of the photo to use.
+An index of 0 make the photo disappear.
 
 Example:
 
 ```html
-TODO
+<const:SHOCK_PHOTO, 4>
+
+That's what you tought.
+But look at this!<p>
+
+<photo:SHOCK_PHOTO>
+<p>
 ```
+
+### **save**
+
+Save the current position in the script.
+This is normal use with `return`.
+
+Example:
+
+```html
+<save>
+
+I am in a loop<p>
+
+<return>
+```
+
+### **return**
+
+Jump back to the saved position.
+This is normal use with `save`.
+
+Example:
+
+```html
+<save>
+
+I am in a loop<p>
+
+<return>
+```
+
 
 ### **event**
 
-TODO
+Special character use to call events.
+It is typically specific to a game.
+You can use it to add your own event / special characters.
 
-Example:
+The first argument is the event you want to call.
+Other arguments may be necessary depending on the event trigger.
 
-```html
-TODO
-```
+#### NES-PWAA event char
+
+This is all the event that you can trigger in the NES-PWAA project
+
+##### EVT_CR
+
+Toggle access to the court record
+
+##### EVT_CR_OBJ
+
+Toggle the 'objection!' and 'hold it!' button of the court record
+
+##### EVT_CR_SET
+
+Set a court record flag
+
+Argument: flag index
+
+##### EVT_CR_CLR
+
+Clear a court record flag
+
+Argument: flag index
+
+##### EVT_CR_IDX
+
+Set the correct evidence index of the court record
+
+Argument: flag index
 
 ### **ext**
 
-TODO
+Special character use to extend the range of special characters.
+You cannot use it to add your own special characters, for this see [event](###-event).
 
-Example:
+The first argument is the special character you want to use.
+Other arguments may be necessary depending on the special character used.
 
-```html
-TODO
-```
+For now there is no `ext` special characters,
+but that may change in the future
+(this is the point of this character after all)
+
