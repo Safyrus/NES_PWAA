@@ -1,8 +1,26 @@
 # Phoenix Wright: Ace attorney - NES Demake
 
-<div style="text-align: center">
+<div align="center">
   <img src="data/cartridge/cover_front.png" alt="Phoenix Wright: Ace attorney Demake cartridge">
 </div>
+
+## Table of Contents
+
++ [About The Project](#about-the-project)
++ [Compile](#compile)
+  + [Prerequisite](#prerequisite)
+  + [Commands](#commands)
++ [Download](#downloads)
++ [Emulators](#emulators)
++ [Credits / Disclaimer](#credits--disclaimer)
+  + [PWAA](#pwaa)
+  + [NES](#nes)
+  + [Sound](#sound)
+  + [Dialogs](#dialogs)
+  + [Visuals](#visuals)
+  + [Others](#others)
+
+## About The Project
 
 This is an attempt to create a Demake of the first "Phoenix Wright: Ace attorney" (PWAA) game for the NES.
 
@@ -30,6 +48,20 @@ Note: You may need to change some configs in the "cfg" folder to be able to run 
 | `make text` | Compile the dialogs |
 | `make img`  | Compile the images  |
 | `make run`  | Run the game        |
+
+## Downloads
+
+### Releases build
+
+Releases build are ""stable"" version of the fan demake,
+you can find those builds at [GitHub Releases](https://github.com/Safyrus/NES_PWAA/releases) page.
+
+### Nightly build
+
+Nightly builds are ""unstable""
+version of the fan demake build with GitHub actions by consequence we can't say if it runs,
+you can find those builds at [GitHub Actions](https://github.com/Safyrus/NES_PWAA/actions/workflows/build-nes.yaml) page.
+
 
 ## Emulators
 
