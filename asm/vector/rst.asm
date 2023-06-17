@@ -19,6 +19,12 @@ RST:
     STX PPU_MASK     ; Disable Rendering
     STX APU_DMC_FREQ ; Disable DMC IRQ
 
+    ; Wait 1 frame (for the PPU to be initialized)
+    BIT PPU_STATUS ; Clear the VBlank flag if it was set at reset time
+    @wait_vblank:
+        BIT PPU_STATUS
+        BPL @wait_vblank ; At this point, about 27384 cycles have passed
+
     ; Clear NES RAM
     @clrmem:
         LDA #$00
