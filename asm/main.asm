@@ -24,7 +24,7 @@
 MAIN:
     .include "main/init.asm"
 
-    @main_loop:
+MAIN_LOOP:
     JSR wait_next_frame
 
     ; if we are not drawing the background
@@ -35,8 +35,8 @@ MAIN:
         JSR update_screen_scroll
     :
 
-    .include "main/input.asm"
-    .include "main/effect.asm"
+    .include "input/input.asm"
+    .include "effect/main.asm"
 
     ; if we don't do a lenghty operation
     LDA txt_flags
@@ -116,4 +116,4 @@ MAIN:
     @photo_end:
 
     ; loop back to start of main
-    JMP @main_loop
+    JMP MAIN_LOOP

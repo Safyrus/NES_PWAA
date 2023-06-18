@@ -61,7 +61,7 @@
     STX PPU_DATA
     STY PPU_DATA
     ; wait
-    LDX #$12
+    LDX #$0F
     @dialog_wait_2:
         DEX
         bnz @dialog_wait_2

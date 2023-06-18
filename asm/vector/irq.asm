@@ -1,8 +1,18 @@
-;***********
+;################
+; File: IRQ
+;################
+
+
+;--------------------------------
+; Subroutine: IRQ
+;--------------------------------
 ; IRQ vector
-;***********
-
-
+;
+; IRQ can be trigger by APU or
+; MMC5 scanline counter
+;
+; See Also: <scanline_irq_handler>
+;--------------------------------
 IRQ:
     ; clear scanline IRQ
     BIT MMC5_SCNL_STAT

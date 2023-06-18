@@ -1,3 +1,12 @@
+;################
+; File: Scanline
+;################
+
+;--------------------------------
+; Subroutine: scanline_irq_handler
+;--------------------------------
+; Handler for MMC5 scanline IRQ
+;--------------------------------
 scanline_irq_handler:
     pushregs
 

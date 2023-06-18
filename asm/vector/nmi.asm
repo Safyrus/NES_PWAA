@@ -1,11 +1,15 @@
-;***********
+;################
+; File: NMI
+;################
+
+
+;--------------------------------
+; Subroutine: NMI
+;--------------------------------
 ; NMI vector
-;***********
-
-
-;--------------------
-; Cycles notes
-;--------------------
+;
+; Cycles notes:
+;--- Text
 ; 2273 cycles per VBLANK
 ; base (before @done) = 13+3+2+3+(2+3)*5
 ; @sprite = 513+ cycles
@@ -13,9 +17,8 @@
 ; @attribute = 821 cycles
 ; @palette = 356 cycless
 ; @background ~= 16+(38*p+14*p[i].n)
-;--------------------
-
-
+;---
+;--------------------------------
 NMI:
     ; save registers
     pushregs
