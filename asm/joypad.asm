@@ -1,6 +1,22 @@
-; Subroutine from NesDev (https://www.nesdev.org/wiki/Controller_reading_code)
-; At the same time that we strobe bit 0, we initialize the ring counter
-; so we're hitting two birds with one stone here
+;################
+; File: Joypad
+;################
+; subrountines related to player inputs
+
+;--------------------------------
+; Subroutine: readjoy
+;--------------------------------
+;
+; Subroutine from <NesDev:https://www.nesdev.org/wiki/Controller_reading_code>
+;
+; Read the player input from joypad 1
+; 
+; Parameter:
+;   None
+;
+; Return:
+;   buttons_1 - Joypad 1 inputs (ABTSUDLR)
+;--------------------------------
 readjoy:
     lda #$01
     ; While the strobe bit is set, buttons will be continuously reloaded.
@@ -12,14 +28,27 @@ readjoy:
     ; By storing 0 into IO_JOY1, the strobe bit is cleared and the reloading stops.
     ; This allows all 8 buttons (newly reloaded) to be read from IO_JOY1.
     sta IO_JOY1
-loop:
-    lda IO_JOY1
-    lsr a	       ; bit 0 -> Carry
-    rol buttons_1  ; Carry -> bit 0; bit 7 -> Carry
-    bcc loop
+    @loop:
+        lda IO_JOY1
+        lsr a	       ; bit 0 -> Carry
+        rol buttons_1  ; Carry -> bit 0; bit 7 -> Carry
+        bcc @loop
     rts
 
 
+;--------------------------------
+; Subroutine: update_input
+;--------------------------------
+;
+; Update the player input
+; if the input timer has reached 0
+; 
+; Parameter:
+;   None
+;
+; Return:
+;   buttons_1 - Joypad 1 inputs (ABTSUDLR)
+;--------------------------------
 update_input:
     ; if buttons_1_timer > 0
     LDA buttons_1_timer

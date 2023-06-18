@@ -1,7 +1,15 @@
-;----------
-; math
-;----------
+;################
+; File: Macro - Math
+;################
 
+;--------------------------------
+; Macro: inc_16
+;--------------------------------
+; increment a 16 bit value
+;
+; Param:
+; adr - the address pointing to the value
+;--------------------------------
 .macro inc_16 adr
     .local @end
     ; increase pointer
@@ -11,7 +19,17 @@
     @end:
 .endmacro
 
-; /!\ Change A to 0
+;--------------------------------
+; Macro: inc_16
+;--------------------------------
+; decrement a 16 bit value
+;
+; /!\ Warning /!\:
+; - Change A to 0
+;
+; Param:
+; adr - the address pointing to the value
+;--------------------------------
 .macro dec_16 adr
     .local @end
     ; decrease pointer
@@ -23,7 +41,18 @@
     DEC adr+0
 .endmacro
 
-; /!\ Change A
+;--------------------------------
+; Macro: add_A2ptr
+;--------------------------------
+; Add the A register to a 16 bit pointer
+;
+; /!\ Warning /!\:
+; - Change A
+;
+; Param:
+; ptr - the address pointing to the value
+; val - The value to load to A (optionnal)
+;--------------------------------
 .macro add_A2ptr ptr, val
     .local @end
     ; add A to pointer
