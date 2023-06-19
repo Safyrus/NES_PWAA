@@ -1,19 +1,21 @@
+import argparse
 import sys
 import re
 from adapt_pwaa_txt_const import *
 
-# check args
-if len(sys.argv) <= 2:
-    print("args: <input_filename> <output_filename>")
-    exit()
 
 # constants
 MAX_REGEX_LOOP = 20
 
 # args
-infile = sys.argv[1]
-outfile = sys.argv[2]
-remove_incorrect_tag = True
+parser = argparse.ArgumentParser()
+parser.add_argument("input", type=str)
+parser.add_argument("output", type=str)
+parser.add_argument("-t", "--remove_incorrect_tag", dest="remove_tag", type=int, default=True)
+args = parser.parse_args()
+infile = args.input
+outfile = args.output
+remove_incorrect_tag = args.remove_tag
 
 # read text file
 print(f"reading file...")
