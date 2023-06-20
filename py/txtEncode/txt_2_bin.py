@@ -296,7 +296,11 @@ while i < len(text):
         elif name == "const":
             pass
         elif name == "jump":
-            adr = labels[args[0]]
+            if args[0] not in labels:
+                adr = 0xFFFFF
+                printv(f"WARNING: Unknow label '{args[0]}'. address has been replaced by {adr}", param="wt")
+            else:
+                adr = labels[args[0]]
             c = 0
             n = 0
 

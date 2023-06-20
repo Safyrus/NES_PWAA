@@ -259,6 +259,7 @@ ANI_CONST = [
     ("42", "ANI_MAYA_COVER_MOUTH_TALK", "0"),
     ("43", "ANI_MAYA_ANGRY_STAND", "0"),
     ("44", "ANI_MAYA_ANGRY_TALK", "0"),
+    ("45", "ANI_MAYA_EYESCLOSED", "0"),
     ("46", "ANI_MAYA_HAPPY_STAND", "0"),
     ("47", "ANI_MAYA_HAPPY_TALK", "0"),
     ("48", "ANI_MAYA_YES", "0"),
@@ -270,6 +271,8 @@ ANI_CONST = [
     ("54", "ANI_MAYA_COURT_DISAPPOINTED_TALK", "0"),
     ("55", "ANI_MAYA_COURT_THINK_STAND", "0"),
     ("56", "ANI_MAYA_COURT_THINK_TALK", "0"),
+    ("57", "ANI_MAYA_COURT_SURE_STAND", "0"),
+    ("58", "ANI_MAYA_COURT_SURE_TALK", "0"),
     ("59", "ANI_MAYA_MIA_STAND", "0"),
     ("60", "ANI_MAYA_MIA_TALK", "0"),
     ("61", "ANI_MAYA_MIA_SERIOUS_STAND", "0"),
@@ -284,6 +287,8 @@ ANI_CONST = [
     ("70", "ANI_MAYA_MIA_COURT_SERIOUS_TALK", "0"),
     ("71", "ANI_MAYA_MIA_COURT_TALK", "0"),
     ("72", "ANI_MAYA_MIA_COURT_STAND", "0"),
+    ("73", "ANI_MAYA_MIA_COURT_SAD_TALK", "0"),
+    ("74", "ANI_MAYA_MIA_COURT_SAD_STAND", "0"),
     ("75", "ANI_MAYA_MIA_COURT_YES", "0"),
 
     ("77", "ANI_MIA_STAND", "1"),
@@ -334,6 +339,8 @@ ANI_CONST = [
     ("119", "ANI_EDGEWORTH_SHOCK_START", "0"),
     ("120", "ANI_EDGEWORTH_BOW_START", "0"),
     ("121", "ANI_EDGEWORTH_BOW_STAND", "0"),
+    ("126", "ANI_EDGEWORTH_THINK_STAND", "0"),
+    ("127", "ANI_EDGEWORTH_THINK_TALK", "0"),
 
     ("122", "ANI_EDGEWORTHMIDDLE_STAND", "0"),
     ("123", "ANI_EDGEWORTHMIDDLE_TALK", "0"),
@@ -343,6 +350,10 @@ ANI_CONST = [
     ("129", "ANI_EDGEWORTHMIDDLE_LOOKASIDE_TALK", "0"),
     ("132", "ANI_EDGEWORTHMIDDLE_SAD_STAND", "0"),
     ("133", "ANI_EDGEWORTHMIDDLE_SAD_TALK", "0"),
+    ("134", "ANI_EDGEWORTHMIDDLE_ARMCROSS_STAND", "0"),
+    ("135", "ANI_EDGEWORTHMIDDLE_ARMCROSS_TALK", "0"),
+    ("136", "ANI_EDGEWORTHMIDDLE_OBJECTION_END", "0"),
+    ("137", "ANI_EDGEWORTHMIDDLE_OBJECTION_START", "0"),
 
     ("140", "ANI_GUMSHOE_SAD_STAND", "0"),
     ("141", "ANI_GUMSHOE_SAD_TALK", "0"),
@@ -412,9 +423,20 @@ ANI_CONST = [
     ("203", "ANI_LARRY_HAPPY_STAND", "26"),
     ("204", "ANI_LARRY_HAPPY_TALK", "27"),
     ("200", "ANI_LARRY_BLUSH_STAND", "20"),
+    ("205", "ANI_LARRY_SANTA_SMILE_STAND", "0"),
+    ("206", "ANI_LARRY_SANTA_SMILE_TALK", "0"),
+    ("207", "ANI_LARRY_SANTA_ANGRY_STAND", "0"),
+    ("208", "ANI_LARRY_SANTA_ANGRY_TALK", "0"),
+    ("209", "ANI_LARRY_SANTA_SAD_STAND", "0"),
+    ("210", "ANI_LARRY_SANTA_SAD_TALK", "0"),
+    ("211", "ANI_LARRY_SANTA", "0"),
+    ("212", "ANI_LARRY_OOPS_STAND", "0"),
+    ("213", "ANI_LARRY_OOPS_TALK", "0"),
     ("215", "ANI_LARRY_BLUSH_ANGRY_TALK", "21"),
     ("216", "ANI_LARRY_NERVOUS_STAND", "18"),
     ("217", "ANI_LARRY_NERVOUS_TALK", "19"),
+    ("218", "ANI_LARRY_THINK_STAND", "16"),
+    ("219", "ANI_LARRY_THINK_TALK", "17"),
     ("223", "ANI_LARRY_TUMB_UP_TALK", "25"),
     ("222", "ANI_LARRY_TUMB_UP_STAND", "24"),
 
@@ -452,7 +474,7 @@ ANI_CONST = [
     ("253", "ANI_PENNY_SMILE_STAND", "0"),
     ("254", "ANI_PENNY_SMILE_TALK", "0"),
     ("255", "ANI_PENNY_CARD_STAND", "0"),
-    ("256", "ANI_PENNY_CARD_TALK", "0"),
+    ("256", "ANI_PENNY_CARD_TALK", "0"), # also something with map animation
 
     ("263", "ANI_MANELLA_STAND", "0"),
     ("264", "ANI_MANELLA_TALK", "0"),
@@ -511,6 +533,70 @@ ANI_CONST = [
     ("309", "ANI_PHOENIX_BIG_TALK", "54"),
     ("310", "ANI_EDGEWORTH_BIG_STAND", "0"),
     ("311", "ANI_EDGEWORTH_BIG_TALK", "0"),
+
+    ("312", "ANI_LOTTA_SMILE_STAND", "0"),
+    ("313", "ANI_LOTTA_SMILE_TALK", "0"),
+    ("314", "ANI_LOTTA_OOPS_STAND", "0"),
+    ("315", "ANI_LOTTA_OOPS_TALK", "0"),
+    ("316", "ANI_LOTTA_ANGRY_STAND", "0"),
+    ("317", "ANI_LOTTA_ANGRY_TALK", "0"),
+    ("318", "ANI_LOTTA_DAMAGE", "0"),
+    ("320", "ANI_LOTTA_SAD_STAND", "0"),
+    ("321", "ANI_LOTTA_SAD_TALK", "0"),
+    ("322", "ANI_LOTTA_CONFIDENT_STAND", "0"),
+    ("323", "ANI_LOTTA_CONFIDENT_TALK", "0"),
+    ("324", "ANI_LOTTA_LOOKASIDE_STAND", "0"),
+    ("325", "ANI_LOTTA_LOOKASIDE_TALK", "0"),
+    ("326", "ANI_LOTTA_HEADOWN_STAND", "0"),
+    ("327", "ANI_LOTTA_HEADOWN_TALK", "0"),
+    ("328", "ANI_LOTTA_HAPPY_STAND", "0"),
+    ("329", "ANI_LOTTA_HAPPY_TALK", "0"),
+
+    ("330", "ANI_YOGI_STAND", "0"),
+    ("331", "ANI_YOGI_TALK", "0"),
+    ("332", "ANI_YOGI_SLEEP_START", "0"),
+    ("333", "ANI_YOGI_SLEEP", "0"),
+    ("334", "ANI_YOGI_SLEEP_END", "0"),
+    ("337", "ANI_YOGI_LOOKLEFT_STAND", "0"),
+    ("338", "ANI_YOGI_LOOKLEFT_TALK", "0"),
+    ("339", "ANI_YOGI_THINK_STAND", "0"),
+    ("340", "ANI_YOGI_THINK_TALK", "0"),
+    ("341", "ANI_YOGI_ANGRY_STAND", "0"),
+    ("342", "ANI_YOGI_ANGRY_TALK", "0"),
+    ("343", "ANI_YOGI_FALL", "0"),
+    ("345", "ANI_REALYOGI_STAND", "0"),
+    ("346", "ANI_REALYOGI_TALK", "0"),
+    ("347", "ANI_REALYOGI_SAD_STAND", "0"),
+    ("348", "ANI_REALYOGI_SAD_TALK", "0"),
+
+    ("349", "ANI_KARMA_STAND", "0"),
+    ("350", "ANI_KARMA_TALK", "0"),
+    ("351", "ANI_KARMA_SMILE_STAND", "0"),
+    ("352", "ANI_KARMA_SMILE_TALK", "0"),
+    ("353", "ANI_KARMA_ARMCROSS_STAND", "0"),
+    ("354", "ANI_KARMA_ARMCROSS_TALK", "0"),
+    ("355", "ANI_KARMA_TSK_TSK_TSK", "0"),
+    ("357", "ANI_KARMA_SWEAT_STAND", "0"),
+    ("358", "ANI_KARMA_SWEAT_TALK", "0"),
+    ("359", "ANI_KARMA_FINGER_STAND", "0"),
+    ("360", "ANI_KARMA_FINGER_TALK", "0"),
+    ("361", "ANI_KARMA_FINGER_START", "0"),
+    ("363", "ANI_KARMA_SCREAM", "0"),
+    ("364", "ANI_KARMA_SCREAM_2", "0"),
+    ("365", "ANI_KARMA_SCREAM_3", "0"),
+    ("366", "ANI_KARMAMIDDLE_STAND", "0"),
+    ("367", "ANI_KARMAMIDDLE_TALK", "0"),
+    ("368", "ANI_KARMAMIDDLE_SMILE_STAND", "0"),
+    ("369", "ANI_KARMAMIDDLE_SMILE_TALK", "0"),
+    ("370", "ANI_KARMAMIDDLE_STUNGUN_STAND", "0"),
+    ("371", "ANI_KARMAMIDDLE_STUNGUN_TALK", "0"),
+    ("372", "ANI_KARMA_HEADSLAM", "0"),
+    ("373", "ANI_KARMA_HEADSLAM_FAST", "0"),
+
+    ("374", "ANI_PARROT_STAND", "0"),
+    ("375", "ANI_PARROT_TALK", "0"),
+
+    ("536", "ANI_NONE", "0"), # something with map animation
 ]
 BIP_CONST = [
     ("BIP_NONE", "0"),
@@ -562,6 +648,7 @@ CUSTOM_CONST = """
 <const:EVT_SWOOSH,127>
 <const:EVT_TESTIMONY_OFF,127>
 <const:EVT_TESTIMONY_ON,127>
+<const:EVT_LILSPR,127>
 
 <!-- Court record constants -->
 <const:CR_BADGE,0>
@@ -621,7 +708,7 @@ CHAPTER_START = """
 
 <!--
 ==========================
-# CHAPTER ???            #
+# CHAPTER ???
 ==========================
 -->
 """
@@ -629,7 +716,7 @@ SCENE_START = """
 
 <!--
 --------------------------
-| SCENE ???              |
+| SCENE ???
 --------------------------
 -->
 """
@@ -644,8 +731,7 @@ KNOWN_TAG_LIST = [
     "hidetextbox",
     "shake",
     "flash",
-    "fade_out",
-    "fade_in",
+    "fade",
     "background",
     "character",
     "animation",
