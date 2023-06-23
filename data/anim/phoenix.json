@@ -1,0 +1,366 @@
+[
+    {
+        "name": "ANI_PHOENIX_STAND",
+        "idx": 32,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 1.png",
+            "../../data/chars/Phoenix/phoenix-Slice 2.png",
+            "../../data/chars/Phoenix/phoenix-Slice 3.png",
+            "../../data/chars/Phoenix/phoenix-Slice 2.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_TALK",
+        "idx": 33,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 1.png",
+            "../../data/chars/Phoenix/phoenix-Slice 4.png",
+            "../../data/chars/Phoenix/phoenix-Slice 5.png",
+            "../../data/chars/Phoenix/phoenix-Slice 4.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_SWEAT_STAND",
+        "idx": 34,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 6.png",
+            "../../data/chars/Phoenix/phoenix-Slice 7.png",
+            "../../data/chars/Phoenix/phoenix-Slice 8.png",
+            "../../data/chars/Phoenix/phoenix-Slice 9.png",
+            "../../data/chars/Phoenix/phoenix-Slice 6.png",
+            "../../data/chars/Phoenix/phoenix-Slice 10.png",
+            "../../data/chars/Phoenix/phoenix-Slice 11.png",
+            "../../data/chars/Phoenix/phoenix-Slice 12.png",
+            "../../data/chars/Phoenix/phoenix-Slice 6.png",
+            "../../data/chars/Phoenix/phoenix-Slice 7.png",
+            "../../data/chars/Phoenix/phoenix-Slice 8.png",
+            "../../data/chars/Phoenix/phoenix-Slice 9.png",
+            "../../data/chars/Phoenix/phoenix-Slice 6.png",
+            "../../data/chars/Phoenix/phoenix-Slice 7.png",
+            "../../data/chars/Phoenix/phoenix-Slice 8.png",
+            "../../data/chars/Phoenix/phoenix-Slice 9.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_SWEAT_TALK",
+        "idx": 35,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 13.png",
+            "../../data/chars/Phoenix/phoenix-Slice 14.png",
+            "../../data/chars/Phoenix/phoenix-Slice 15.png",
+            "../../data/chars/Phoenix/phoenix-Slice 16.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_THINK_STAND",
+        "idx": 36,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 17.png",
+            "../../data/chars/Phoenix/phoenix-Slice 18.png",
+            "../../data/chars/Phoenix/phoenix-Slice 19.png",
+            "../../data/chars/Phoenix/phoenix-Slice 17.png",
+            "../../data/chars/Phoenix/phoenix-Slice 18.png",
+            "../../data/chars/Phoenix/phoenix-Slice 19.png",
+            "../../data/chars/Phoenix/phoenix-Slice 17.png",
+            "../../data/chars/Phoenix/phoenix-Slice 18.png",
+            "../../data/chars/Phoenix/phoenix-Slice 19.png",
+            "../../data/chars/Phoenix/phoenix-Slice 19.png",
+            "../../data/chars/Phoenix/phoenix-Slice 17.png",
+            "../../data/chars/Phoenix/phoenix-Slice 19.png",
+            "../../data/chars/Phoenix/phoenix-Slice 17.png",
+            "../../data/chars/Phoenix/phoenix-Slice 20.png",
+            "../../data/chars/Phoenix/phoenix-Slice 21.png",
+            "../../data/chars/Phoenix/phoenix-Slice 20.png",
+            "../../data/chars/Phoenix/phoenix-Slice 22.png",
+            "../../data/chars/Phoenix/phoenix-Slice 23.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_THINK_TALK",
+        "idx": 37,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 17.png",
+            "../../data/chars/Phoenix/phoenix-Slice 24.png",
+            "../../data/chars/Phoenix/phoenix-Slice 25.png",
+            "../../data/chars/Phoenix/phoenix-Slice 24.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_YES",
+        "idx": 38,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 1.png",
+            "../../data/chars/Phoenix/phoenix-Slice 26.png",
+            "../../data/chars/Phoenix/phoenix-Slice 27.png",
+            "../../data/chars/Phoenix/phoenix-Slice 26.png",
+            "../../data/chars/Phoenix/phoenix-Slice 1.png"
+        ],
+        "time": [10, 10, 10, 10, 255],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_SHOCK",
+        "idx": 39,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 28.png",
+            "../../data/chars/Phoenix/phoenix-Slice 29.png",
+            "../../data/chars/Phoenix/phoenix-Slice 30.png",
+            "../../data/chars/Phoenix/phoenix-Slice 31.png",
+            "../../data/chars/Phoenix/phoenix-Slice 32.png",
+            "../../data/chars/Phoenix/phoenix-Slice 28.png",
+            "../../data/chars/Phoenix/phoenix-Slice 33.png",
+            "../../data/chars/Phoenix/phoenix-Slice 32.png",
+            "../../data/chars/Phoenix/phoenix-Slice 34.png"
+        ],
+        "time": [5, 5, 5, 5, 5, 5, 5, 5, 255],
+        "palettes_each": [
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 54, 38, 48]]
+        ]
+    },
+    {
+        "name": "ANI_PHOENIX_SLAM_START",
+        "idx": 40,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 35.png",
+            "../../data/chars/Phoenix/phoenix-Slice 36.png"
+        ],
+        "time": [10, 255],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_SLAM_STAND",
+        "idx": 41,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 38.png",
+            "../../data/chars/Phoenix/phoenix-Slice 37.png",
+            "../../data/chars/Phoenix/phoenix-Slice 36.png",
+            "../../data/chars/Phoenix/phoenix-Slice 37.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_SLAM_TALK",
+        "idx": 42,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 38.png",
+            "../../data/chars/Phoenix/phoenix-Slice 39.png",
+            "../../data/chars/Phoenix/phoenix-Slice 40.png",
+            "../../data/chars/Phoenix/phoenix-Slice 39.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_OBJECTION_START",
+        "idx": 43,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 41.png",
+            "../../data/chars/Phoenix/phoenix-Slice 42.png"
+        ],
+        "time": [10, 30],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_OBJECTION_TALK",
+        "idx": 44,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 43.png",
+            "../../data/chars/Phoenix/phoenix-Slice 44.png",
+            "../../data/chars/Phoenix/phoenix-Slice 45.png",
+            "../../data/chars/Phoenix/phoenix-Slice 44.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_OBJECTION_STAND",
+        "idx": 45,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 42.png",
+            "../../data/chars/Phoenix/phoenix-Slice 46.png",
+            "../../data/chars/Phoenix/phoenix-Slice 47.png",
+            "../../data/chars/Phoenix/phoenix-Slice 46.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_PAPER_TALK",
+        "idx": 46,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 48.png",
+            "../../data/chars/Phoenix/phoenix-Slice 49.png",
+            "../../data/chars/Phoenix/phoenix-Slice 50.png",
+            "../../data/chars/Phoenix/phoenix-Slice 51.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes_each": [
+            [[6, 23, 39, 48], [1, 17, 54, 15, 48, 38]],
+            [[6, 23, 39, 48], [1, 17, 54, 15, 38, 48]],
+            [[6, 23, 39, 48], [1, 17, 54, 15, 38, 48]],
+            [[6, 23, 39, 48], [1, 17, 54, 15, 38, 48]]
+        ]
+    },
+    {
+        "name": "ANI_PHOENIX_PAPER_STAND",
+        "idx": 47,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 48.png",
+            "../../data/chars/Phoenix/phoenix-Slice 52.png",
+            "../../data/chars/Phoenix/phoenix-Slice 53.png",
+            "../../data/chars/Phoenix/phoenix-Slice 52.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 54, 15, 48, 38]]
+    },
+    {
+        "name": "ANI_PHOENIX_CONFIDENT_STAND",
+        "idx": 48,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 54.png",
+            "../../data/chars/Phoenix/phoenix-Slice 55.png",
+            "../../data/chars/Phoenix/phoenix-Slice 56.png",
+            "../../data/chars/Phoenix/phoenix-Slice 55.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_CONFIDENT_TALK",
+        "idx": 49,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 54.png",
+            "../../data/chars/Phoenix/phoenix-Slice 57.png",
+            "../../data/chars/Phoenix/phoenix-Slice 58.png",
+            "../../data/chars/Phoenix/phoenix-Slice 57.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_NO",
+        "idx": 50,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 1.png",
+            "../../data/chars/Phoenix/phoenix-Slice 26.png",
+            "../../data/chars/Phoenix/phoenix-Slice 59.png",
+            "../../data/chars/Phoenix/phoenix-Slice 27.png",
+            "../../data/chars/Phoenix/phoenix-Slice 60.png",
+            "../../data/chars/Phoenix/phoenix-Slice 27.png",
+            "../../data/chars/Phoenix/phoenix-Slice 59.png",
+            "../../data/chars/Phoenix/phoenix-Slice 26.png",
+            "../../data/chars/Phoenix/phoenix-Slice 1.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 10, 10, 255],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_OOPS_STAND",
+        "idx": 51,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 61.png",
+            "../../data/chars/Phoenix/phoenix-Slice 62.png",
+            "../../data/chars/Phoenix/phoenix-Slice 63.png",
+            "../../data/chars/Phoenix/phoenix-Slice 62.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_OOPS_TALK",
+        "idx": 52,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 64.png",
+            "../../data/chars/Phoenix/phoenix-Slice 65.png",
+            "../../data/chars/Phoenix/phoenix-Slice 66.png",
+            "../../data/chars/Phoenix/phoenix-Slice 65.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIX_WIG",
+        "idx": 53,
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 67.png",
+            "../../data/chars/Phoenix/phoenix-Slice 68.png",
+            "../../data/chars/Phoenix/phoenix-Slice 69.png",
+            "../../data/chars/Phoenix/phoenix-Slice 70.png",
+            "../../data/chars/Phoenix/phoenix-Slice 71.png",
+            "../../data/chars/Phoenix/phoenix-Slice 72.png",
+            "../../data/chars/Phoenix/phoenix-Slice 73.png",
+            "../../data/chars/Phoenix/phoenix-Slice 74.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 10, 255],
+        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+    },
+    {
+        "name": "ANI_PHOENIXBIG_TALK",
+        "idx": 54,
+        "background": "../../data/backgrounds/action_lines.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 75.png",
+            "../../data/chars/Phoenix/phoenix-Slice 76.png",
+            "../../data/chars/Phoenix/phoenix-Slice 77.png",
+            "../../data/chars/Phoenix/phoenix-Slice 76.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [17, 38, 1, 55, 48, 22]]
+    },
+    {
+        "name": "ANI_PHOENIXBIG_STAND",
+        "idx": 55,
+        "background": "../../data/backgrounds/action_lines.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 75.png",
+            "../../data/chars/Phoenix/phoenix-Slice 77.png",
+            "../../data/chars/Phoenix/phoenix-Slice 78.png",
+            "../../data/chars/Phoenix/phoenix-Slice 77.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [17, 38, 1, 55, 48, 22]]
+    }
+]

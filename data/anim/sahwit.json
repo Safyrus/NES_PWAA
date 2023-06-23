@@ -1,0 +1,163 @@
+[
+    {
+        "name": "ANI_SAHWIT_STAND",
+        "idx": 72,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 1.png",
+            "../../data/chars/Sahwit/sahwit-Slice 2.png",
+            "../../data/chars/Sahwit/sahwit-Slice 1.png",
+            "../../data/chars/Sahwit/sahwit-Slice 3.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_TALK",
+        "idx": 73,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 1.png",
+            "../../data/chars/Sahwit/sahwit-Slice 4.png",
+            "../../data/chars/Sahwit/sahwit-Slice 5.png",
+            "../../data/chars/Sahwit/sahwit-Slice 6.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_SWEAT_STAND",
+        "idx": 74,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 7.png",
+            "../../data/chars/Sahwit/sahwit-Slice 8.png",
+            "../../data/chars/Sahwit/sahwit-Slice 9.png",
+            "../../data/chars/Sahwit/sahwit-Slice 10.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_SWEAT_TALK",
+        "idx": 75,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 7.png",
+            "../../data/chars/Sahwit/sahwit-Slice 11.png",
+            "../../data/chars/Sahwit/sahwit-Slice 12.png",
+            "../../data/chars/Sahwit/sahwit-Slice 13.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_ANGRY_STAND",
+        "idx": 76,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 14.png",
+            "../../data/chars/Sahwit/sahwit-Slice 15.png",
+            "../../data/chars/Sahwit/sahwit-Slice 16.png",
+            "../../data/chars/Sahwit/sahwit-Slice 15.png",
+            "../../data/chars/Sahwit/sahwit-Slice 14.png",
+            "../../data/chars/Sahwit/sahwit-Slice 17.png",
+            "../../data/chars/Sahwit/sahwit-Slice 18.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_ANGRY_TALK",
+        "idx": 77,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 19.png",
+            "../../data/chars/Sahwit/sahwit-Slice 20.png",
+            "../../data/chars/Sahwit/sahwit-Slice 21.png",
+            "../../data/chars/Sahwit/sahwit-Slice 20.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_DAMAGE",
+        "idx": 78,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 22.png",
+            "../../data/chars/Sahwit/sahwit-Slice 23.png",
+            "../../data/chars/Sahwit/sahwit-Slice 24.png",
+            "../../data/chars/Sahwit/sahwit-Slice 23.png",
+            "../../data/chars/Sahwit/sahwit-Slice 22.png"
+        ],
+        "time": [10, 10, 10, 10, 255],
+        "palettes": [[6, 23, 39, 48], [21, 38, 37, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWIT_THROWWIG",
+        "idx": 79,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 26.png",
+            "../../data/chars/Sahwit/sahwit-Slice 27.png",
+            "../../data/chars/Sahwit/sahwit-Slice 28.png",
+            "../../data/chars/Sahwit/sahwit-Slice 29.png",
+            "../../data/chars/Sahwit/sahwit-Slice 30.png",
+            "../../data/chars/Sahwit/sahwit-Slice 31.png",
+            "../../data/chars/Sahwit/sahwit-Slice 32.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 255],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 21, 54]]
+    },
+    {
+        "name": "ANI_SAHWITNOWIG_ANGRY_STAND",
+        "idx": 80,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 33.png",
+            "../../data/chars/Sahwit/sahwit-Slice 34.png",
+            "../../data/chars/Sahwit/sahwit-Slice 35.png",
+            "../../data/chars/Sahwit/sahwit-Slice 34.png"
+        ],
+        "time": [60, 10, 10, 10],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 54, 5, 21]]
+    },
+    {
+        "name": "ANI_SAHWITNOWIG_ANGRY_TALK",
+        "idx": 81,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 33.png",
+            "../../data/chars/Sahwit/sahwit-Slice 36.png",
+            "../../data/chars/Sahwit/sahwit-Slice 37.png",
+            "../../data/chars/Sahwit/sahwit-Slice 36.png"
+        ],
+        "time": [10, 10, 10, 10],
+        "palettes_each": [
+            [[6, 23, 39, 48], [21, 37, 38, 54, 5, 21]],
+            [[6, 23, 39, 48], [21, 37, 38, 5, 54, 21]],
+            [[6, 23, 39, 48], [21, 37, 38, 5, 54, 21]],
+            [[6, 23, 39, 48], [21, 37, 38, 5, 54, 21]]
+        ]
+    },
+    {
+        "name": "ANI_SAHWIT_DEFEAT",
+        "idx": 82,
+        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "character": [
+            "../../data/chars/Sahwit/sahwit-Slice 38.png",
+            "../../data/chars/Sahwit/sahwit-Slice 39.png",
+            "../../data/chars/Sahwit/sahwit-Slice 40.png",
+            "../../data/chars/Sahwit/sahwit-Slice 39.png",
+            "../../data/chars/Sahwit/sahwit-Slice 41.png",
+            "../../data/chars/Sahwit/sahwit-Slice 42.png",
+            "../../data/chars/Sahwit/sahwit-Slice 43.png",
+            "../../data/chars/Sahwit/sahwit-Slice 44.png",
+            "../../data/empty_chr.png",
+            "../../data/empty_chr.png"
+        ],
+        "time": [10, 10, 10, 10, 10, 10, 10, 10, 255, 255],
+        "palettes": [[6, 23, 39, 48], [21, 37, 38, 5, 54, 21]]
+    }
+]

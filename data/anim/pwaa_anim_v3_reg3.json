@@ -1,2 +1,191 @@
 [
+    {
+        "background": "../../data/backgrounds/locations/location_0.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_0"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_1.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_1"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_2.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_2"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_3.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_3"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_4.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_4"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_5.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_5"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_6.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_6"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_7.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_7"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_8.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_8"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_9.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_9"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_10.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_10"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_11.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_11"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_12.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_12"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_13.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_13"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_14.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_14"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_15.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_15"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_16.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_16"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_17.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_17"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_18.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_18"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_19.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_19"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_20.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_20"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_21.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_21"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_22.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_22"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_23.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_23"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_24.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_24"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_25.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_25"
+    },
+    {
+        "background": "../../data/backgrounds/locations/location_26.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_LOCATION_26"
+    }
 ]

@@ -1,7 +1,492 @@
 [
-    {"background": "../../data/backgrounds/cutscene_70.png","character": [],"time": [], "idx": 16, "name": "BKG_TINKER_BLOOD"},
-    {"background": "../../data/backgrounds/cutscene_51a.png","character": [],"time": [], "idx": 18, "name": "BKG_SAHWIT_MURDERER_1"},
-    {"background": "../../data/backgrounds/cutscene_52.png","character": [],"time": [], "idx": 19, "name": "BKG_SAHWIT_MURDERER_2"},
-    {"background": "../../data/backgrounds/cutscene_53.png","character": [],"time": [], "idx": 20, "name": "BKG_SAHWIT_MURDERER_3"},
-    {"background": "../../data/backgrounds/cutscene_54.png","character": [],"time": [], "idx": 21, "name": "BKG_SAHWIT_MURDERER_4"}
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_70.png",
+        "character": [],
+        "time": [],
+        "idx": 16,
+        "name": "BKG_TINKER_BLOOD"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_51a.png",
+        "character": [],
+        "time": [],
+        "idx": 18,
+        "name": "BKG_SAHWIT_MURDERER_1"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_52.png",
+        "character": [],
+        "time": [],
+        "idx": 19,
+        "name": "BKG_SAHWIT_MURDERER_2"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_53.png",
+        "character": [],
+        "time": [],
+        "idx": 20,
+        "name": "BKG_SAHWIT_MURDERER_3"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_54.png",
+        "character": [],
+        "time": [],
+        "idx": 21,
+        "name": "BKG_SAHWIT_MURDERER_4"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_2.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_2"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_3.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_3"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_4a.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_4A"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_4b.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_4B"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_5.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_5"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_6.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_6"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_7.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_7"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_8.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_8"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_9.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_9"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_10.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_10"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_11.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_11"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_12.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_12"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_13.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_13"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_14.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_14"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_15.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_15"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_16.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_16"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_17.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_17"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_18.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_18"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_19.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_19"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_20.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_20"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_21.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_21"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_22.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_22"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_23.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_23"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_24.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_24"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_25.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_25"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_26.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_26"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_27.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_27"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_28.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_28"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_29.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_29"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_30.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_30"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_31.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_31"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_32.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_32"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_33.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_33"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_34.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_34"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_35.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_35"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_36.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_36"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_37.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_37"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_38.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_38"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_39.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_39"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_40.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_40"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_41.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_41"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_42.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_42"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_43.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_43"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_44.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_44"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_45.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_45"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_46.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_46"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_47.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_47"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_48.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_48"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_49.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_49"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_51b.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_51B"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_56.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_56"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_57.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_57"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_58.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_58"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_59.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_59"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_60.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_60"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_61.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_61"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_62.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_62"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_63.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_63"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_64.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_64"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_65.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_65"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_66.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_66"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_67.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_67"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_68.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_68"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_69.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_69"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_69.png",
+        "character": [],
+        "time": [],
+        "idx": 1023,
+        "name": "BKG_CUTSCENE_70"
+    }
 ]

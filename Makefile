@@ -9,12 +9,22 @@ CONFIG = cfg/make_default.cfg
 include ${CONFIG}
 
 
+#--------------------------------
+
 # make the nes game from assembler files
 all:
-	make clean_all
+	make clean_bin
 	make $(GAME_NAME).nes
 	make $(GAME_NAME)_ines1.nes
 
+ressource:
+	make clean_data
+	make clean_tmp
+	make text
+	make img
+	make clean_tmp
+
+#--------------------------------
 
 # create the nes file from assembler sources
 $(GAME_NAME).nes:
@@ -44,54 +54,68 @@ endif
 	$(LD65) $(BIN)/$(GAME_NAME)_ines1.o -C link.cfg -o $(GAME_NAME)_ines1.nes --dbgfile $(GAME_NAME)_ines1.dbg
 
 
-# clean object files
-clean:
-ifeq ($(OS), Windows_NT)
-	@-if exist "$(BIN)" ( rmdir /Q /S "$(BIN)" )
-else
-	rm -rf "$(BIN)"
-endif
-
+#--------------------------------
 
 # clean all generated files
-clean_all:
-	make clean
+clean:
+	make clean_bin
+	make clean_data
+	make clean_tmp
+
+
+# clean object and binary files
+clean_bin:
 ifeq ($(OS), Windows_NT)
-	del "$(GAME_NAME).nes"
-	del "$(GAME_NAME)_ines1.nes"
-	del "$(GAME_NAME).DBG"
-	del "dump_$(GAME_NAME).txt"
+	@-if exist "$(BIN)" ( rmdir /Q /S "$(BIN)" )
+	-del "$(GAME_NAME).nes"
+	-del "$(GAME_NAME)_ines1.nes"
+	-del "$(GAME_NAME).DBG"
+	-del "dump_$(GAME_NAME).txt"
 else
-	rm -f $(GAME_NAME).nes
-	rm -f $(GAME_NAME).DBG
-	rm -f dump_$(GAME_NAME).txt
+	-rm -rf "$(BIN)"
+	-rm -f $(GAME_NAME).nes
+	-rm -f $(GAME_NAME).DBG
+	-rm -f dump_$(GAME_NAME).txt
 endif
 
+#
 clean_data:
 ifeq ($(OS), Windows_NT)
-	del "$(DATA)\EVI.chr"
-	del "$(DATA)\tmp.chr"
-	del "$(C)\a.exe"
-	del "$(C)\CHR.chr"
-	del "$(ASM)\data" /s /q
+	-del "$(ASM)\data" /s /q
 else
-	rm -f $(DATA)/EVI.chr
-	rm -f $(DATA)/tmp.chr
-	rm -f $(C)/a
-	rm -f $(C)/CHR.chr
-	rm -f -r "$(ASM)/data"
+	-rm -f -r "$(ASM)/data"
 endif
 
+clean_tmp:
+ifeq ($(OS), Windows_NT)
+	-del "$(DATA)\EVI.chr"
+	-del "$(DATA)\tmp.chr"
+	-del "$(C)\a.exe"
+	-del "$(C)\CHR.chr"
+	-del "$(ANIM_0)"
+	-del "$(ANIM_1)"
+	-del "$(ANIM_2)"
+	-del "$(ANIM_3)"
+else
+	-rm -f $(DATA)/EVI.chr
+	-rm -f $(DATA)/tmp.chr
+	-rm -f $(C)/a
+	-rm -f $(C)/CHR.chr
+	-rm -f "$(ANIM_0)"
+	-rm -f "$(ANIM_1)"
+	-rm -f "$(ANIM_2)"
+	-rm -f "$(ANIM_3)"
+endif
+
+
+#--------------------------------
 
 # run the nes game generated with assembler sources
 run:
 	$(EMULATOR) $(GAME_NAME).nes
 
 
-# dump the nes files binary into hex text
-hex:
-	$(HEXDUMP) $(GAME_NAME).nes > dump_$(GAME_NAME).txt
-
+#--------------------------------
 
 text:
 ifeq ($(OS), Windows_NT)
@@ -102,9 +126,13 @@ endif
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
+
+#--------------------------------
+
 img:
 	make photo
-	$(PYTHON) $(PY)/merge_chr.py $(DATA)/FONT.chr $(DATA)/EVI.chr -o $(DATA)/tmp.chr
+	make anim
+	$(PYTHON) $(PY)/chr/merge_chr.py $(DATA)/FONT.chr $(DATA)/EVI.chr -o $(DATA)/tmp.chr
 ifeq ($(OS), Windows_NT)
 	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
 else
@@ -122,9 +150,38 @@ photo:
 	-c ../../$(DATA)/EVI.chr \
 	-b 2
 
+anim:
+	cd $(PY) && $(PYTHON) merge_json.py \
+	../data/anim/bkg_0.json \
+	../data/anim/mia.json \
+	../data/anim/larry.json \
+	../data/anim/sahwit.json \
+	../$(ANIM_0)
+
+	cd $(PY) && $(PYTHON) merge_json.py \
+	../data/anim/bkg_1.json \
+	../data/anim/mia_court.json \
+	../data/anim/phoenix.json \
+	../data/anim/judge.json \
+	../data/anim/payne.json \
+	../data/anim/edgeworth.json \
+	../$(ANIM_1)
+
+	cd $(PY) && $(PYTHON) merge_json.py ../data/anim/bkg_2.json ../$(ANIM_2)
+	cd $(PY) && $(PYTHON) merge_json.py ../data/anim/bkg_3.json ../$(ANIM_3)
+
+
+#--------------------------------
+
+# dump the nes files binary into hex text
+hex:
+	$(HEXDUMP) $(GAME_NAME).nes > dump_$(GAME_NAME).txt
+
+# generate an image of the nes file
 visual:
 	$(PYTHON) $(PY)/bin2img.py $(GAME_NAME).nes visual.png NES 2048
 
+# generate the documentation
 gendoc:
 ifeq ($(OS), Windows_NT)
 	@-if not exist "doc/html" ( mkdir "doc/html" )

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "ANI_EDGEWORTHMIDDLE_STAND",
+        "idx": 104,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_3.png",
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_4.png",
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_5.png",
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_4.png"
+        ],
+        "time": [120, 10, 10, 10]
+    },
+    {
+        "name": "ANI_EDGEWORTHMIDDLE_TALK",
+        "idx": 105,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_3.png",
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_8.png",
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_9.png",
+            "../../data/chars/EdgeworthMiddle/edgeworth_middle_8.png"
+        ],
+        "time": [10, 10, 10, 10]
+    },
+]

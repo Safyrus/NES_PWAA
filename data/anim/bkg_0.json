@@ -1,0 +1,7 @@
+[
+    {"background": "../../data/empty.png","character": [],"time": [], "idx": 0, "name": "BKG_EMPTY"},
+    {"background": "../../data/backgrounds/courtroom/courtroom_2.png","character": [],"time": [], "idx": 2, "name": "BKG_COURTROOM_STAND"},
+    {"background": "../../data/backgrounds/courtroom/courtroom_8.png","character": [],"time": [], "idx": 7, "name": "BKG_COURTROOM_LOBBY"},
+    {"background": "../../data/backgrounds/cutscenes/cutscene_1.png","character": [],"time": [], "idx": 22, "name": "BKG_SCENE_CINDY_SEE_SAHWIT"},
+    {"background": "../../data/backgrounds/cutscenes/cutscene_50.png","character": [],"time": [], "idx": 17, "name": "BKG_CINDY_MURDER"}
+]

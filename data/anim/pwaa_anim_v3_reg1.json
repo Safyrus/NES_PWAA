@@ -1,50 +1,427 @@
 [
-    {"background": "../../data/backgrounds/courtroom_6.png","character": [],"time": [], "idx": 5, "name": "BKG_COURTROOM_JUDGE"},
-    {"background": "../../data/backgrounds/gavel_0.png","character": [],"time": [], "idx": 9, "name": "BKG_GAVEL_0"},
-    {"background": "../../data/backgrounds/gavel_1.png","character": [],"time": [], "idx": 10, "name": "BKG_GAVEL_1"},
-    {"background": "../../data/backgrounds/exclamation_hol.png","character": [],"time": [], "idx": 11, "name": "BKG_HOLDIT"},
-    {"background": "../../data/backgrounds/exclamation_obj.png","character": [],"time": [], "idx": 12, "name": "BKG_OBJECTION"},
-    {"background": "../../data/backgrounds/exclamation_tak.png","character": [],"time": [], "idx": 13, "name": "BKG_TAKETHAT"},
-    {"background": "../../data/backgrounds/cutscene_0.png","character": [],"time": [], "idx": 14, "name": "BKG_SCENE_SAHWIT_FOUND_BODY"},
-    {"background": "../../data/backgrounds/cutscene_55.png","character": [],"time": [], "idx": 15, "name": "BKG_SCENE_LARRY_SAHWIT"},
-    {"background": "../../data/backgrounds/action_lines.png","character": [],"time": [], "idx": 8, "name": "BKG_ACTION_LINES"},
-    {"background": "../../data/backgrounds/courtroom_7.png","character": [],"time": [], "idx": 6, "name": "BKG_COURTROOM_TALK"},
-    {"background": "../../data/backgrounds/courtroom_5.png","character": [],"time": [], "idx": 4, "name": "BKG_COURTROOM_DEFENSE_SIDE"},
-    {"background": "../../data/backgrounds/courtroom_4.png","character": [],"time": [], "idx": 3, "name": "BKG_COURTROOM_PROSECUTION"},
-    {"background": "../../data/backgrounds/courtroom_0.png","character": [],"time": [], "idx": 1, "name": "BKG_COURTROOM_DEFENSE"},
-
-
-
+    {
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "character": [],
+        "time": [],
+        "idx": 5,
+        "name": "BKG_COURTROOM_JUDGE"
+    },
+    {
+        "background": "../../data/backgrounds/gavel_0.png",
+        "character": [],
+        "time": [],
+        "idx": 9,
+        "name": "BKG_GAVEL_0"
+    },
+    {
+        "background": "../../data/backgrounds/gavel_1.png",
+        "character": [],
+        "time": [],
+        "idx": 10,
+        "name": "BKG_GAVEL_1"
+    },
+    {
+        "background": "../../data/backgrounds/exclamation_hol.png",
+        "character": [],
+        "time": [],
+        "idx": 11,
+        "name": "BKG_HOLDIT"
+    },
+    {
+        "background": "../../data/backgrounds/exclamation_obj.png",
+        "character": [],
+        "time": [],
+        "idx": 12,
+        "name": "BKG_OBJECTION"
+    },
+    {
+        "background": "../../data/backgrounds/exclamation_tak.png",
+        "character": [],
+        "time": [],
+        "idx": 13,
+        "name": "BKG_TAKETHAT"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_0.png",
+        "character": [],
+        "time": [],
+        "idx": 14,
+        "name": "BKG_SCENE_SAHWIT_FOUND_BODY"
+    },
+    {
+        "background": "../../data/backgrounds/cutscenes/cutscene_55.png",
+        "character": [],
+        "time": [],
+        "idx": 15,
+        "name": "BKG_SCENE_LARRY_SAHWIT"
+    },
+    {
+        "background": "../../data/backgrounds/action_lines.png",
+        "character": [],
+        "time": [],
+        "idx": 8,
+        "name": "BKG_ACTION_LINES"
+    },
+    {
+        "background": "../../data/backgrounds/courtroom/courtroom_7.png",
+        "character": [],
+        "time": [],
+        "idx": 6,
+        "name": "BKG_COURTROOM_TALK"
+    },
+    {
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [],
+        "time": [],
+        "idx": 4,
+        "name": "BKG_COURTROOM_DEFENSE_SIDE"
+    },
+    {
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [],
+        "time": [],
+        "idx": 3,
+        "name": "BKG_COURTROOM_PROSECUTION"
+    },
+    {
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "character": [],
+        "time": [],
+        "idx": 1,
+        "name": "BKG_COURTROOM_DEFENSE"
+    },
+    {
+        "name": "ANI_MIA_SADPOSE_STAND",
+        "idx": 8,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 18.png",
+            "../../data/chars/Mia/mia-Slice 19.png",
+            "../../data/chars/Mia/mia-Slice 20.png",
+            "../../data/chars/Mia/mia-Slice 19.png"
+        ],
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                45,
+                54,
+                39,
+                23,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_SADPOSE_TALK",
+        "idx": 9,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 18.png",
+            "../../data/chars/Mia/mia-Slice 21.png",
+            "../../data/chars/Mia/mia-Slice 22.png",
+            "../../data/chars/Mia/mia-Slice 21.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                45,
+                54,
+                39,
+                23,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_ANGRY_STAND",
+        "idx": 10,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 23.png",
+            "../../data/chars/Mia/mia-Slice 24.png",
+            "../../data/chars/Mia/mia-Slice 25.png",
+            "../../data/chars/Mia/mia-Slice 23.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                45,
+                54,
+                39,
+                23,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_ANGRY_TALK",
+        "idx": 11,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 23.png",
+            "../../data/chars/Mia/mia-Slice 26.png",
+            "../../data/chars/Mia/mia-Slice 27.png",
+            "../../data/chars/Mia/mia-Slice 26.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                45,
+                54,
+                39,
+                23,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_SHOCK_STAND",
+        "idx": 12,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 28.png",
+            "../../data/chars/Mia/mia-Slice 29.png",
+            "../../data/chars/Mia/mia-Slice 30.png",
+            "../../data/chars/Mia/mia-Slice 29.png"
+        ],
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                54,
+                23,
+                39,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_SHOCK_TALK",
+        "idx": 13,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 28.png",
+            "../../data/chars/Mia/mia-Slice 31.png",
+            "../../data/chars/Mia/mia-Slice 32.png"
+        ],
+        "time": [
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                54,
+                23,
+                39,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_SAD_STAND",
+        "idx": 14,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 33.png",
+            "../../data/chars/Mia/mia-Slice 34.png",
+            "../../data/chars/Mia/mia-Slice 35.png",
+            "../../data/chars/Mia/mia-Slice 34.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                45,
+                54,
+                39,
+                23,
+                48
+            ]
+        ]
+    },
+    {
+        "name": "ANI_MIA_SAD_TALK",
+        "idx": 15,
+        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "character": [
+            "../../data/chars/Mia/mia-Slice 33.png",
+            "../../data/chars/Mia/mia-Slice 36.png",
+            "../../data/chars/Mia/mia-Slice 37.png",
+            "../../data/chars/Mia/mia-Slice 36.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                45,
+                54,
+                39,
+                23,
+                48
+            ]
+        ]
+    },
     {
         "name": "ANI_PHOENIX_STAND",
         "idx": 32,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 2.png",
             "../../data/chars/Phoenix/phoenix-Slice 3.png",
             "../../data/chars/Phoenix/phoenix-Slice 2.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_TALK",
         "idx": 33,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 4.png",
             "../../data/chars/Phoenix/phoenix-Slice 5.png",
             "../../data/chars/Phoenix/phoenix-Slice 4.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_SWEAT_STAND",
         "idx": 34,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 6.png",
             "../../data/chars/Phoenix/phoenix-Slice 7.png",
@@ -63,26 +440,78 @@
             "../../data/chars/Phoenix/phoenix-Slice 8.png",
             "../../data/chars/Phoenix/phoenix-Slice 9.png"
         ],
-        "time": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_SWEAT_TALK",
         "idx": 35,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 13.png",
             "../../data/chars/Phoenix/phoenix-Slice 14.png",
             "../../data/chars/Phoenix/phoenix-Slice 15.png",
             "../../data/chars/Phoenix/phoenix-Slice 16.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_THINK_STAND",
         "idx": 36,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 17.png",
             "../../data/chars/Phoenix/phoenix-Slice 18.png",
@@ -103,26 +532,80 @@
             "../../data/chars/Phoenix/phoenix-Slice 22.png",
             "../../data/chars/Phoenix/phoenix-Slice 23.png"
         ],
-        "time": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_THINK_TALK",
         "idx": 37,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 17.png",
             "../../data/chars/Phoenix/phoenix-Slice 24.png",
             "../../data/chars/Phoenix/phoenix-Slice 25.png",
             "../../data/chars/Phoenix/phoenix-Slice 24.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_YES",
         "idx": 38,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
@@ -130,13 +613,34 @@
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
             "../../data/chars/Phoenix/phoenix-Slice 1.png"
         ],
-        "time": [10, 10, 10, 10, 255],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_SHOCK",
         "idx": 39,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 28.png",
             "../../data/chars/Phoenix/phoenix-Slice 29.png",
@@ -148,154 +652,540 @@
             "../../data/chars/Phoenix/phoenix-Slice 32.png",
             "../../data/chars/Phoenix/phoenix-Slice 34.png"
         ],
-        "time": [5, 5, 5, 5, 5, 5, 5, 5, 255],
+        "time": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            255
+        ],
         "palettes_each": [
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
-            [[6, 23, 39, 48], [1, 17, 15, 54, 38, 48]]
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    38,
+                    54,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    15,
+                    54,
+                    38,
+                    48
+                ]
+            ]
         ]
     },
     {
         "name": "ANI_PHOENIX_SLAM_START",
         "idx": 40,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 35.png",
             "../../data/chars/Phoenix/phoenix-Slice 36.png"
         ],
-        "time": [10, 255],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_SLAM_STAND",
         "idx": 41,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 38.png",
             "../../data/chars/Phoenix/phoenix-Slice 37.png",
             "../../data/chars/Phoenix/phoenix-Slice 36.png",
             "../../data/chars/Phoenix/phoenix-Slice 37.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_SLAM_TALK",
         "idx": 42,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 38.png",
             "../../data/chars/Phoenix/phoenix-Slice 39.png",
             "../../data/chars/Phoenix/phoenix-Slice 40.png",
             "../../data/chars/Phoenix/phoenix-Slice 39.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_OBJECTION_START",
         "idx": 43,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 41.png",
             "../../data/chars/Phoenix/phoenix-Slice 42.png"
         ],
-        "time": [10, 30],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            30
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_OBJECTION_TALK",
         "idx": 44,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 43.png",
             "../../data/chars/Phoenix/phoenix-Slice 44.png",
             "../../data/chars/Phoenix/phoenix-Slice 45.png",
             "../../data/chars/Phoenix/phoenix-Slice 44.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_OBJECTION_STAND",
         "idx": 45,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 42.png",
             "../../data/chars/Phoenix/phoenix-Slice 46.png",
             "../../data/chars/Phoenix/phoenix-Slice 47.png",
             "../../data/chars/Phoenix/phoenix-Slice 46.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_PAPER_TALK",
         "idx": 46,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 48.png",
             "../../data/chars/Phoenix/phoenix-Slice 49.png",
             "../../data/chars/Phoenix/phoenix-Slice 50.png",
             "../../data/chars/Phoenix/phoenix-Slice 51.png"
         ],
-        "time": [10, 10, 10, 10],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
         "palettes_each": [
-            [[6, 23, 39, 48], [1, 17, 54, 15, 48, 38]],
-            [[6, 23, 39, 48], [1, 17, 54, 15, 38, 48]],
-            [[6, 23, 39, 48], [1, 17, 54, 15, 38, 48]],
-            [[6, 23, 39, 48], [1, 17, 54, 15, 38, 48]]
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    54,
+                    15,
+                    48,
+                    38
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    54,
+                    15,
+                    38,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    54,
+                    15,
+                    38,
+                    48
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    1,
+                    17,
+                    54,
+                    15,
+                    38,
+                    48
+                ]
+            ]
         ]
     },
     {
         "name": "ANI_PHOENIX_PAPER_STAND",
         "idx": 47,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 48.png",
             "../../data/chars/Phoenix/phoenix-Slice 52.png",
             "../../data/chars/Phoenix/phoenix-Slice 53.png",
             "../../data/chars/Phoenix/phoenix-Slice 52.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 54, 15, 48, 38]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                54,
+                15,
+                48,
+                38
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_CONFIDENT_STAND",
         "idx": 48,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 54.png",
             "../../data/chars/Phoenix/phoenix-Slice 55.png",
             "../../data/chars/Phoenix/phoenix-Slice 56.png",
             "../../data/chars/Phoenix/phoenix-Slice 55.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_CONFIDENT_TALK",
         "idx": 49,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 54.png",
             "../../data/chars/Phoenix/phoenix-Slice 57.png",
             "../../data/chars/Phoenix/phoenix-Slice 58.png",
             "../../data/chars/Phoenix/phoenix-Slice 57.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_NO",
         "idx": 50,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
@@ -307,39 +1197,104 @@
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
             "../../data/chars/Phoenix/phoenix-Slice 1.png"
         ],
-        "time": [10, 10, 10, 10, 10, 10, 10, 10, 255],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_OOPS_STAND",
         "idx": 51,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 61.png",
             "../../data/chars/Phoenix/phoenix-Slice 62.png",
             "../../data/chars/Phoenix/phoenix-Slice 63.png",
             "../../data/chars/Phoenix/phoenix-Slice 62.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_OOPS_TALK",
         "idx": 52,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 64.png",
             "../../data/chars/Phoenix/phoenix-Slice 65.png",
             "../../data/chars/Phoenix/phoenix-Slice 66.png",
             "../../data/chars/Phoenix/phoenix-Slice 65.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIX_WIG",
         "idx": 53,
-        "background": "../../data/backgrounds/courtroom_0.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 67.png",
             "../../data/chars/Phoenix/phoenix-Slice 68.png",
@@ -350,8 +1305,32 @@
             "../../data/chars/Phoenix/phoenix-Slice 73.png",
             "../../data/chars/Phoenix/phoenix-Slice 74.png"
         ],
-        "time": [10, 10, 10, 10, 10, 10, 10, 255],
-        "palettes": [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                1,
+                17,
+                15,
+                38,
+                54,
+                48
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIXBIG_TALK",
@@ -363,8 +1342,28 @@
             "../../data/chars/Phoenix/phoenix-Slice 77.png",
             "../../data/chars/Phoenix/phoenix-Slice 76.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [17, 38, 1, 55, 48, 22]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                17,
+                38,
+                1,
+                55,
+                48,
+                22
+            ]
+        ]
     },
     {
         "name": "ANI_PHOENIXBIG_STAND",
@@ -376,148 +1375,99 @@
             "../../data/chars/Phoenix/phoenix-Slice 78.png",
             "../../data/chars/Phoenix/phoenix-Slice 77.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [17, 38, 1, 55, 48, 22]]
-    },
-
-
-
-    {
-        "name": "ANI_MIA_SADPOSE_STAND",
-        "idx": 8,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 18.png",
-            "../../data/chars/Mia/mia-Slice 19.png",
-            "../../data/chars/Mia/mia-Slice 20.png",
-            "../../data/chars/Mia/mia-Slice 19.png"
+        "time": [
+            60,
+            10,
+            10,
+            10
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 45, 54, 39, 23, 48]]
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                17,
+                38,
+                1,
+                55,
+                48,
+                22
+            ]
+        ]
     },
-    {
-        "name": "ANI_MIA_SADPOSE_TALK",
-        "idx": 9,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 18.png",
-            "../../data/chars/Mia/mia-Slice 21.png",
-            "../../data/chars/Mia/mia-Slice 22.png",
-            "../../data/chars/Mia/mia-Slice 21.png"
-        ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 45, 54, 39, 23, 48]]
-    },
-    {
-        "name": "ANI_MIA_ANGRY_STAND",
-        "idx": 10,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 23.png",
-            "../../data/chars/Mia/mia-Slice 24.png",
-            "../../data/chars/Mia/mia-Slice 25.png",
-            "../../data/chars/Mia/mia-Slice 23.png"
-        ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 45, 54, 39, 23, 48]]
-    },
-    {
-        "name": "ANI_MIA_ANGRY_TALK",
-        "idx": 11,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 23.png",
-            "../../data/chars/Mia/mia-Slice 26.png",
-            "../../data/chars/Mia/mia-Slice 27.png",
-            "../../data/chars/Mia/mia-Slice 26.png"
-        ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 45, 54, 39, 23, 48]]
-    },
-    {
-        "name": "ANI_MIA_SHOCK_STAND",
-        "idx": 12,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 28.png",
-            "../../data/chars/Mia/mia-Slice 29.png",
-            "../../data/chars/Mia/mia-Slice 30.png",
-            "../../data/chars/Mia/mia-Slice 29.png"
-        ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 54, 23, 39, 48]]
-    },
-    {
-        "name": "ANI_MIA_SHOCK_TALK",
-        "idx": 13,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 28.png",
-            "../../data/chars/Mia/mia-Slice 31.png",
-            "../../data/chars/Mia/mia-Slice 32.png"
-        ],
-        "time": [10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 54, 23, 39, 48]]
-    },
-    {
-        "name": "ANI_MIA_SAD_STAND",
-        "idx": 14,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 33.png",
-            "../../data/chars/Mia/mia-Slice 34.png",
-            "../../data/chars/Mia/mia-Slice 35.png",
-            "../../data/chars/Mia/mia-Slice 34.png"
-        ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 45, 54, 39, 23, 48]]
-    },
-    {
-        "name": "ANI_MIA_SAD_TALK",
-        "idx": 15,
-        "background": "../../data/backgrounds/courtroom_5.png",
-        "character": [
-            "../../data/chars/Mia/mia-Slice 33.png",
-            "../../data/chars/Mia/mia-Slice 36.png",
-            "../../data/chars/Mia/mia-Slice 37.png",
-            "../../data/chars/Mia/mia-Slice 36.png"
-        ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 45, 54, 39, 23, 48]]
-    },
-
-
-
     {
         "name": "ANI_JUDGE_STAND",
         "idx": 56,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
             "../../data/chars/Judge/judge-Slice 3.png",
             "../../data/chars/Judge/judge-Slice 2.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                48,
+                55,
+                23,
+                39
+            ]
+        ]
     },
     {
         "name": "ANI_JUDGE_TALK",
         "idx": 57,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 4.png",
             "../../data/chars/Judge/judge-Slice 5.png",
             "../../data/chars/Judge/judge-Slice 4.png",
             "../../data/chars/Judge/judge-Slice 6.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                48,
+                55,
+                23,
+                39
+            ]
+        ]
     },
     {
         "name": "ANI_JUDGE_YES",
         "idx": 58,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -529,23 +1479,168 @@
             "../../data/chars/Judge/judge-Slice 2.png",
             "../../data/chars/Judge/judge-Slice 1.png"
         ],
-        "time": [5, 5, 5, 5, 5, 5, 5, 5, 255],
+        "time": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            255
+        ],
         "palettes_each": [
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 39, 23]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 39, 23]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]]
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    39,
+                    23
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    39,
+                    23
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ]
         ]
     },
     {
         "name": "ANI_JUDGE_NO",
         "idx": 59,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -557,130 +1652,484 @@
             "../../data/chars/Judge/judge-Slice 2.png",
             "../../data/chars/Judge/judge-Slice 1.png"
         ],
-         "time": [5, 5, 5, 5, 5, 5, 5, 5, 255],
-         "palettes_each": [
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 39, 23]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 39, 23]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]]
+        "time": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            255
+        ],
+        "palettes_each": [
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    39,
+                    23
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    39,
+                    23
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ]
         ]
     },
     {
         "name": "ANI_JUDGE_SHOCK_STAND",
         "idx": 60,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 11.png",
             "../../data/chars/Judge/judge-Slice 12.png",
             "../../data/chars/Judge/judge-Slice 13.png",
             "../../data/chars/Judge/judge-Slice 12.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 48, 55, 55, 39]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                48,
+                55,
+                55,
+                39
+            ]
+        ]
     },
     {
         "name": "ANI_JUDGE_SHOCK_TALK",
         "idx": 61,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 14.png",
             "../../data/chars/Judge/judge-Slice 15.png",
             "../../data/chars/Judge/judge-Slice 14.png",
             "../../data/chars/Judge/judge-Slice 16.png"
         ],
-        "time": [10, 10, 10, 10],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
         "palettes_each": [
-            [[6, 23, 39, 48], [15, 0, 48, 39, 55, 55]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]],
-            [[6, 23, 39, 48], [15, 0, 48, 39, 55, 55]],
-            [[6, 23, 39, 48], [15, 0, 48, 55, 55, 39]]
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    39,
+                    55,
+                    55
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    23,
+                    39
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    39,
+                    55,
+                    55
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    15,
+                    0,
+                    48,
+                    55,
+                    55,
+                    39
+                ]
+            ]
         ]
     },
     {
         "name": "ANI_JUDGE_ANGRY_STAND",
         "idx": 62,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 17.png",
             "../../data/chars/Judge/judge-Slice 18.png",
             "../../data/chars/Judge/judge-Slice 19.png",
             "../../data/chars/Judge/judge-Slice 18.png"
         ],
-        "time": [60, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 48, 39, 55, 55]]
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                48,
+                39,
+                55,
+                55
+            ]
+        ]
     },
     {
         "name": "ANI_JUDGE_ANGRY_TALK",
         "idx": 63,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 20.png",
             "../../data/chars/Judge/judge-Slice 21.png",
             "../../data/chars/Judge/judge-Slice 20.png",
             "../../data/chars/Judge/judge-Slice 22.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [15, 0, 48, 39, 55, 55]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                48,
+                39,
+                55,
+                55
+            ]
+        ]
     },
     {
         "name": "ANI_JUDGE_EYESCLOSED",
         "idx": 64,
-        "background": "../../data/backgrounds/courtroom_6.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 3.png"
         ],
-        "time": [255],
-        "palettes": [[6, 23, 39, 48], [15, 0, 48, 55, 23, 39]]
+        "time": [
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                15,
+                0,
+                48,
+                55,
+                23,
+                39
+            ]
+        ]
     },
-
-
-
     {
         "name": "ANI_PAYNE_STAND",
         "idx": 65,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 1.png"
         ],
-        "time": [255],
-        "palettes": [[6, 23, 39, 48], [45, 16, 0, 54, 38, 22]]
+        "time": [
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                45,
+                16,
+                0,
+                54,
+                38,
+                22
+            ]
+        ]
     },
     {
         "name": "ANI_PAYNE_TALK",
         "idx": 66,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 1.png",
             "../../data/chars/Payne/payne-Slice 2.png",
             "../../data/chars/Payne/payne-Slice 3.png",
             "../../data/chars/Payne/payne-Slice 2.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [45, 16, 0, 38, 54, 22]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                45,
+                16,
+                0,
+                38,
+                54,
+                22
+            ]
+        ]
     },
     {
         "name": "ANI_PAYNE_HAND_STAND",
         "idx": 67,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 5.png",
             "../../data/chars/Payne/payne-Slice 6.png"
         ],
-        "time": [10, 10],
+        "time": [
+            10,
+            10
+        ],
         "palettes_each": [
-            [[6, 23, 39, 48], [45, 16, 0, 38, 54, 22]],
-            [[6, 23, 39, 48], [45, 16, 0, 54, 38, 22]]
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    45,
+                    16,
+                    0,
+                    38,
+                    54,
+                    22
+                ]
+            ],
+            [
+                [
+                    6,
+                    23,
+                    39,
+                    48
+                ],
+                [
+                    45,
+                    16,
+                    0,
+                    54,
+                    38,
+                    22
+                ]
+            ]
         ]
     },
     {
         "name": "ANI_PAYNE_HAND_TALK",
         "idx": 68,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 5.png",
             "../../data/chars/Payne/payne-Slice 7.png",
@@ -691,45 +2140,547 @@
             "../../data/chars/Payne/payne-Slice 11.png",
             "../../data/chars/Payne/payne-Slice 7.png"
         ],
-        "time": [10, 10, 10, 10, 10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [45, 16, 0, 54, 38, 22]]
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                45,
+                16,
+                0,
+                54,
+                38,
+                22
+            ]
+        ]
     },
     {
         "name": "ANI_PAYNE_SWEAT_STAND",
         "idx": 69,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 12.png",
             "../../data/chars/Payne/payne-Slice 13.png",
             "../../data/chars/Payne/payne-Slice 14.png",
             "../../data/chars/Payne/payne-Slice 15.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [45, 16, 0, 54, 38, 22]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                45,
+                16,
+                0,
+                54,
+                38,
+                22
+            ]
+        ]
     },
     {
         "name": "ANI_PAYNE_SWEAT_TALK",
         "idx": 70,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 12.png",
             "../../data/chars/Payne/payne-Slice 16.png",
             "../../data/chars/Payne/payne-Slice 17.png",
             "../../data/chars/Payne/payne-Slice 18.png"
         ],
-        "time": [10, 10, 10, 10],
-        "palettes": [[6, 23, 39, 48], [45, 16, 0, 54, 38, 22]]
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                45,
+                16,
+                0,
+                54,
+                38,
+                22
+            ]
+        ]
     },
     {
         "name": "ANI_PAYNE_DAMAGE",
         "idx": 71,
-        "background": "../../data/backgrounds/courtroom_4.png",
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 19.png",
             "../../data/chars/Payne/payne-Slice 20.png",
             "../../data/chars/Payne/payne-Slice 21.png"
         ],
-        "time": [10, 10, 255],
-        "palettes": [[6, 23, 39, 48], [45, 16, 0, 54, 38, 22]]
+        "time": [
+            10,
+            10,
+            255
+        ],
+        "palettes": [
+            [
+                6,
+                23,
+                39,
+                48
+            ],
+            [
+                45,
+                16,
+                0,
+                54,
+                38,
+                22
+            ]
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_STAND",
+        "idx": 83,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_4.png",
+            "../../data/chars/Edgeworth/edgeworth_5.png",
+            "../../data/chars/Edgeworth/edgeworth_6.png",
+            "../../data/chars/Edgeworth/edgeworth_5.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_TALK",
+        "idx": 84,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_4.png",
+            "../../data/chars/Edgeworth/edgeworth_9.png",
+            "../../data/chars/Edgeworth/edgeworth_10.png",
+            "../../data/chars/Edgeworth/edgeworth_9.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_BOW_START",
+        "idx": 85,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_12.png",
+            "../../data/chars/Edgeworth/edgeworth_13.png",
+            "../../data/chars/Edgeworth/edgeworth_14.png"
+        ],
+        "time": [
+            15,
+            15,
+            255
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_BOW_STAND",
+        "idx": 86,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_14.png"
+        ],
+        "time": [
+            255
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_SLAM_START",
+        "idx": 87,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_15.png",
+            "../../data/chars/Edgeworth/edgeworth_16.png",
+            "../../data/chars/Edgeworth/edgeworth_17.png",
+            "../../data/chars/Edgeworth/edgeworth_18.png",
+            "../../data/chars/Edgeworth/edgeworth_17.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_SLAM_STAND",
+        "idx": 88,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_18.png",
+            "../../data/chars/Edgeworth/edgeworth_24.png",
+            "../../data/chars/Edgeworth/edgeworth_25.png",
+            "../../data/chars/Edgeworth/edgeworth_24.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_SLAM_TALK",
+        "idx": 89,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_18.png",
+            "../../data/chars/Edgeworth/edgeworth_28.png",
+            "../../data/chars/Edgeworth/edgeworth_29.png",
+            "../../data/chars/Edgeworth/edgeworth_28.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_POINT_STAND",
+        "idx": 90,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_34.png",
+            "../../data/chars/Edgeworth/edgeworth_35.png",
+            "../../data/chars/Edgeworth/edgeworth_36.png",
+            "../../data/chars/Edgeworth/edgeworth_35.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_POINT_TALK",
+        "idx": 91,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_34.png",
+            "../../data/chars/Edgeworth/edgeworth_39.png",
+            "../../data/chars/Edgeworth/edgeworth_40.png",
+            "../../data/chars/Edgeworth/edgeworth_39.png",
+            "../../data/chars/Edgeworth/edgeworth_34.png",
+            "../../data/chars/Edgeworth/edgeworth_39.png",
+            "../../data/chars/Edgeworth/edgeworth_43.png",
+            "../../data/chars/Edgeworth/edgeworth_39.png",
+            "../../data/chars/Edgeworth/edgeworth_44.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_WELL_START",
+        "idx": 92,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_48.png",
+            "../../data/chars/Edgeworth/edgeworth_47.png",
+            "../../data/chars/Edgeworth/edgeworth_49.png",
+            "../../data/chars/Edgeworth/edgeworth_50.png",
+            "../../data/chars/Edgeworth/edgeworth_49.png",
+            "../../data/chars/Edgeworth/edgeworth_52.png",
+            "../../data/chars/Edgeworth/edgeworth_49.png",
+            "../../data/chars/Edgeworth/edgeworth_50.png",
+            "../../data/chars/Edgeworth/edgeworth_49.png",
+            "../../data/chars/Edgeworth/edgeworth_52.png",
+            "../../data/chars/Edgeworth/edgeworth_48.png"
+        ],
+        "time": [
+            30,
+            10,
+            30,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            255
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_WELL_STAND",
+        "idx": 93,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_56.png",
+            "../../data/chars/Edgeworth/edgeworth_57.png",
+            "../../data/chars/Edgeworth/edgeworth_58.png",
+            "../../data/chars/Edgeworth/edgeworth_57.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_WELL_TALK",
+        "idx": 94,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_56.png",
+            "../../data/chars/Edgeworth/edgeworth_61.png",
+            "../../data/chars/Edgeworth/edgeworth_62.png",
+            "../../data/chars/Edgeworth/edgeworth_61.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_ARMCROSS_STAND",
+        "idx": 95,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_70.png",
+            "../../data/chars/Edgeworth/edgeworth_71.png",
+            "../../data/chars/Edgeworth/edgeworth_72.png",
+            "../../data/chars/Edgeworth/edgeworth_71.png"
+        ],
+        "time": [
+            15,
+            15,
+            15,
+            15
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_ARMCROSS_TALK",
+        "idx": 96,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_67.png",
+            "../../data/chars/Edgeworth/edgeworth_76.png",
+            "../../data/chars/Edgeworth/edgeworth_77.png",
+            "../../data/chars/Edgeworth/edgeworth_76.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_TSK_START",
+        "idx": 97,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_81.png",
+            "../../data/chars/Edgeworth/edgeworth_82.png",
+            "../../data/chars/Edgeworth/edgeworth_83.png",
+            "../../data/chars/Edgeworth/edgeworth_84.png",
+            "../../data/chars/Edgeworth/edgeworth_83.png",
+            "../../data/chars/Edgeworth/edgeworth_84.png",
+            "../../data/chars/Edgeworth/edgeworth_83.png",
+            "../../data/chars/Edgeworth/edgeworth_84.png",
+            "../../data/chars/Edgeworth/edgeworth_85.png",
+            "../../data/chars/Edgeworth/edgeworth_86.png",
+            "../../data/chars/Edgeworth/edgeworth_87.png",
+            "../../data/chars/Edgeworth/edgeworth_88.png"
+        ],
+        "time": [
+            30,
+            30,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            10,
+            10,
+            10,
+            255
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_TSK_STAND",
+        "idx": 98,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_88.png"
+        ],
+        "time": [
+            255
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_PAPER_STAND",
+        "idx": 99,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_92.png",
+            "../../data/chars/Edgeworth/edgeworth_93.png",
+            "../../data/chars/Edgeworth/edgeworth_94.png",
+            "../../data/chars/Edgeworth/edgeworth_93.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_PAPER_TALK",
+        "idx": 100,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_92.png",
+            "../../data/chars/Edgeworth/edgeworth_97.png",
+            "../../data/chars/Edgeworth/edgeworth_98.png",
+            "../../data/chars/Edgeworth/edgeworth_97.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_SHOCK_START",
+        "idx": 101,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_103.png",
+            "../../data/chars/Edgeworth/edgeworth_104.png",
+            "../../data/chars/Edgeworth/edgeworth_105.png",
+            "../../data/chars/Edgeworth/edgeworth_106.png"
+        ],
+        "time": [
+            15,
+            15,
+            15,
+            255
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_SHOCK_STAND",
+        "idx": 102,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_106.png",
+            "../../data/chars/Edgeworth/edgeworth_107.png",
+            "../../data/chars/Edgeworth/edgeworth_108.png",
+            "../../data/chars/Edgeworth/edgeworth_107.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_SHOCK_TALK",
+        "idx": 103,
+        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_106.png",
+            "../../data/chars/Edgeworth/edgeworth_111.png",
+            "../../data/chars/Edgeworth/edgeworth_112.png",
+            "../../data/chars/Edgeworth/edgeworth_111.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_BIG_STAND",
+        "idx": 104,
+        "background": "../../data/backgrounds/action_lines.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_117.png",
+            "../../data/chars/Edgeworth/edgeworth_118.png",
+            "../../data/chars/Edgeworth/edgeworth_119.png",
+            "../../data/chars/Edgeworth/edgeworth_118.png"
+        ],
+        "time": [
+            120,
+            10,
+            10,
+            10
+        ]
+    },
+    {
+        "name": "ANI_EDGEWORTH_BIG_TALK",
+        "idx": 105,
+        "background": "../../data/backgrounds/action_lines.png",
+        "character": [
+            "../../data/chars/Edgeworth/edgeworth_117.png",
+            "../../data/chars/Edgeworth/edgeworth_122.png",
+            "../../data/chars/Edgeworth/edgeworth_123.png",
+            "../../data/chars/Edgeworth/edgeworth_122.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ]
     }
 ]
