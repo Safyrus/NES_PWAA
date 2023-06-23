@@ -436,7 +436,7 @@ def encode_all_constrain(args, json_anim, pal_bank=[]):
     dif = args.start_dif
     while True:
         set_pixel_diff(dif)
-        set_spr_pixel_diff(dif//2)
+        set_spr_pixel_diff(dif*2)
 
         # execute C program to convert binary images to CHR
         if not os.path.exists(args.tile_maps_folder):
