@@ -8,6 +8,10 @@ find_anim:
     push tmp+3
 
     ;
+    LDA #ANI_BNK
+    STA mmc5_banks+3
+    STA MMC5_PRG_BNK2
+    ;
     mov tmp+3, img_anim+0
     mov tmp+2, img_anim+1
     ;

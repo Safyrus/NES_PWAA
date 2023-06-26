@@ -3,6 +3,10 @@ frame_decode:
 
     ; tmp+2 = anim_adr
     mov_ptr tmp+2, anim_adr
+    ;
+    LDA #ANI_BNK
+    STA mmc5_banks+3
+    STA MMC5_PRG_BNK2
 
     ; is a fade effect active ?
     ; LDA fade_timer

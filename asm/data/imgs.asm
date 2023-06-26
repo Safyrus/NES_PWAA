@@ -892,7 +892,7 @@ img_443:
 img_444:
 .incbin "imgs/img_444.bin" ;../../data/chars/Mia/mia-Slice 10.png;../../data/chars/Mia/mia-Slice 9.png
 
-.segment "CODE_BNK"
+.segment "ANIM_BNK"
 img_bkg_table:
 .word (img_0 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png
 .word (img_1 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/backgrounds/courtroom_0.png

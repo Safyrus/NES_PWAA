@@ -329,15 +329,17 @@
     ; MUS_BNK  - _$82_ Starting bank containing music data
     ; DPCM_BNK - _$84_ Bank containing DPCM sound data
     ; EVI_BNK  - _$85_ Bank containing evidence image data
-    ; IMG_BNK  - _$86_ Starting bank containing image data
-    ; TXT_BNK  - _$C0_ Starting bank containing text data
+    ; ANI_BNK  - _$86_ Bank containing animation table
+    ; IMG_BNK  - _$87_ Starting bank containing image data
+    ; TXT_BNK  - _$B8_ Starting bank containing text data
     CODE_BNK     = $80
     SFX_BNK      = $81
     MUS_BNK      = $82
     DPCM_BNK     = $84
     EVI_BNK      = $85
-    IMG_BNK      = $86
-    TXT_BNK      = $C0
+    ANI_BNK      = $86
+    IMG_BNK      = $87
+    TXT_BNK      = $B8
 
     ; Constants: Game RAM Banks
     ;
