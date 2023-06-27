@@ -4,7 +4,7 @@ frame_decode:
     ; tmp+2 = anim_adr
     mov_ptr tmp+2, anim_adr
     ;
-    LDA #ANI_BNK
+    LDA anim_bnk
     STA mmc5_banks+3
     STA MMC5_PRG_BNK2
 
@@ -151,18 +151,63 @@ frame_decode:
         ; save header byte
         PHA
 
-        ; for x in 0..12
-        for_x @palette_loop, #0
+        ; reset counters
+        LDA #$00
+        STA palette_counter+0
+        STA palette_counter+1
+        STA palette_counter+2
+
+        @palette_while:
             ; get color
             JSR rleinc_next
-            ; if valid color
+            ; if color == $FF (invalid color) then stop
+            CMP #$FF
+            BEQ @palette_while_end
+            ; if color for the sprites palette
+            CMP #$80
+            blt @palette_while_chr_or_bkg
+            @palette_while_spr:
+                ; remove flags
+                AND #$3F
+                ; palette[3][X] = color
+                LDX palette_counter+2
+                STA img_palette_3, X
+                ; X++
+                INC palette_counter+2
+                JMP @palette_while
+            @palette_while_chr_or_bkg:
+            ; if color for the character palette
             CMP #$40
-            bge :+
-                ; then set color
-                STA img_palettes, X
-            ; next
-            :
-        to_x_inc @palette_loop, #13
+            blt @palette_while_bkg
+            @palette_while_chr:
+                ; remove flags
+                AND #$3F
+                ; if X == 0
+                LDX palette_counter+1
+                BNE :+
+                    ; palette[2][0] = color
+                    STA img_palette_2
+                :
+                ; palette[1][X] = color
+                STA img_palette_1, X
+                ; X++
+                INC palette_counter+1
+                JMP @palette_while
+            ; else it is for the background palette
+            @palette_while_bkg:
+                ; palette[0][X] = color
+                LDX palette_counter+0
+                STA img_palette_bkg, X
+                ; if X >= 2
+                CPX #$02
+                blt :+
+                    ; palette[2][X-1] = color
+                    STA img_palette_2-1, X
+                :
+                ; X++
+                INC palette_counter+0
+                JMP @palette_while
+        @palette_while_end:
         
         ; restore header byte
         PLA

@@ -36,7 +36,7 @@ img_spr_draw:
     sta_ptr tmp+2, IMG_CHR_BUF_SPR
 
     ; set sprite bank
-    mov MMC5_CHR_BNK3, img_spr_b
+    mov MMC5_CHR_BNK7, img_spr_b
 
     ; draw sprites
     mov tmp+0, #0 ; counter_y
@@ -58,7 +58,9 @@ img_spr_draw:
             INX
             ; set tile
             LDA (tmp+2), Y
-            ASL
+            CLC
+            ROL
+            ADC #$00
             STA OAM, X
             INX
             ; set attributes

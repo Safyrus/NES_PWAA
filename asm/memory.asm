@@ -514,6 +514,11 @@ OAM:
         ; pointer to the current animation data
         anim_adr: .res 2
 
+        ; Variable: anim_bnk
+        ;----------------
+        ; bank of the current animation data
+        anim_bnk: .res 1
+
         ; Variable: anim_img_counter
         ;----------------
         ; current animation frame index
@@ -633,3 +638,5 @@ OAM:
         ;----------------
         ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
         mmc5_banks: .res 4
+
+        palette_counter: .res 3

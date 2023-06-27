@@ -83,7 +83,7 @@ RST:
     STA MMC5_SPLT_SCRL
 
     ; Set CHR banking mode
-    mov MMC5_CHR_MODE, #$01
+    STA MMC5_CHR_MODE
 
     ; Clean PRG RAM
     ; mov tmp+2, #$00 ; loop counter

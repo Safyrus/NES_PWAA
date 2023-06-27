@@ -330,16 +330,16 @@
     ; DPCM_BNK - _$84_ Bank containing DPCM sound data
     ; EVI_BNK  - _$85_ Bank containing evidence image data
     ; ANI_BNK  - _$86_ Bank containing animation table
-    ; IMG_BNK  - _$87_ Starting bank containing image data
-    ; TXT_BNK  - _$B8_ Starting bank containing text data
+    ; IMG_BNK  - _$89_ Starting bank containing image data
+    ; TXT_BNK  - _$C0_ Starting bank containing text data
     CODE_BNK     = $80
     SFX_BNK      = $81
     MUS_BNK      = $82
     DPCM_BNK     = $84
     EVI_BNK      = $85
     ANI_BNK      = $86
-    IMG_BNK      = $87
-    TXT_BNK      = $B8
+    IMG_BNK      = $89
+    TXT_BNK      = $BC
 
     ; Constants: Game RAM Banks
     ;

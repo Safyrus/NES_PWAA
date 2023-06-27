@@ -42,14 +42,15 @@ The only difference is that when drawing a tile equal to 0 (low part or high par
 
 ### Palettes
 
-Each byte correspond to a NES color.
-A color equal to $FF mean this color will not be changed.
+Each byte correspond to a NES color plus 2 bits to indicate what palette to change.
+To indicate the position in the palette, a counter is used. It starts at 0 and increment each time a color is written.
+A value of $FF indicate the end of data.
 
-- Byte 1: background color
-- Byte 2-4: background palette
-- Byte 5-7: character primary/background palette
-- Byte 8-10: character contour palette
-- Byte 11-13: character secondary/sprites palette
+```
+ppcc cccc
+||++-++++-- color
+++--------- palette index (0=background, 1=character, 2=sprites)
+```
 
 ### Tile map
 
