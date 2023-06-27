@@ -101,7 +101,7 @@ def ca65_file(frames, ca65_info):
     #     ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
 
     # final touch
-    ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"CODE_BNK\"\n"
+    ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"ANIM_BNK\"\n"
     ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n" + ca65_pal + "\n"
     return ca65
 
@@ -217,7 +217,8 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     print("\033[A\033[2K\rencoded all character")
 
     print("fixing some bytes")
-    offset = (len(tile_bank) // 16 // 256) + chr_start_bank
+    offset = ((len(tile_bank) // 4096) + chr_start_bank)
+    offset = offset // 2 + (offset % 2)
     for k, v in spr_bnk_to_fix.items():
         for i in range(len(frames)):
             if frames_name[i] == k:
@@ -239,9 +240,9 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     print("CHR ROM file")
     CHR_rom = []
     CHR_rom.extend(tile_bank)
-    padding = len(CHR_rom) % 4096
+    padding = (len(CHR_rom) + (chr_start_bank*4096)) % (32*SPR_BANK_PAGE_SIZE)
     if padding != 0:
-        CHR_rom.extend(bytes(4096-padding))
+        CHR_rom.extend(bytes(32*SPR_BANK_PAGE_SIZE-padding))
     for t in spr_bank:
         t1 = np.full((8, 8), 0)
         t2 = np.full((8, 8), 0)
@@ -293,11 +294,7 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set, chr_start_bank=0):
 
     # palette bytes
     frame.extend(pal)
-    frame.extend([0xFF]*3)
     frame.append(0xFF)
-    frame.append(pal[2])
-    frame.append(pal[3])
-    frame.extend([0xFF]*3)
 
     # add tilemap to frame
     frame.extend(tile_map)
@@ -338,11 +335,13 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
         if pal_chr[i] not in pal_bank:
             pal_bank.append(pal_chr[i])
     # palette bytes
-    frame.extend([0xFF]*4)
-    frame.extend(pal_chr[0][1:])
-    frame.append(pal_chr[1][1])
-    frame.extend([0xFF]*2)
-    frame.extend(pal_chr[2][1:])
+    frame.append(pal_chr[0][1] + 0x40)
+    frame.append(pal_chr[0][2] + 0x40)
+    frame.append(pal_chr[0][3] + 0x40)
+    frame.append(pal_chr[2][1] + 0x80)
+    frame.append(pal_chr[2][2] + 0x80)
+    frame.append(pal_chr[2][3] + 0x80)
+    frame.append(0xFF)
 
     # remove same tiles between frames
     tile_map = []
