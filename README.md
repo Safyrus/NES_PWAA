@@ -113,10 +113,11 @@ Capcom for making the original game.
 ### Visuals
 
 - Font based on the [Igiari font](https://caveras.net/#igiari) by [Caveras](https://caveras.net/). Remade the ASCII, hiragana & katakana characters to be 8 pixels tall instead of 16.
+- Animations GIFs from the [Court records](court-records.net)
 - Sprites converted from [The sprite resource](https://www.spriters-resource.com/ds_dsi/phoenixwrightaceattorney/). Rippers:
   - Trish Rowdy (exclamation).
   - Badassbill (First turnabout).
-  - Shoda (Sahwit, Judge, Larry, Mia, Phoenix, Payne, Cutscene, Evidence).
+  - Shoda (Sahwit, Judge, Larry, Mia, Phoenix, Payne, Cutscene, Evidence, Locations).
   - TSP184 (Gavel slam, Action lines, Courtroom).
 
 ### Others

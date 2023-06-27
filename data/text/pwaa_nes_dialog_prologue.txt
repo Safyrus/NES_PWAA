@@ -111,6 +111,10 @@ Font based on the<b>
 katakana characters to be 8<b>
 pixels tall instead of 16)<p><wait:5><color:0>
 
+<color:1>Court records net<color:0><b><color:2>
+(court-records.net)<b><color:0>
+for the animations GIFs<p><wait:5>
+
 <color:1>The sprite resource<color:0><b><color:2>
 (spriters-resource.com/ds_ds<b>
 i/phoenixwrightaceattorney/)<p><wait:5><color:0>

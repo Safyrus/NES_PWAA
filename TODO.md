@@ -6,6 +6,10 @@
   - [ ] If it is possible in 1 frame, update MMC5 nametable and sprite at the same time
   - [ ] Glitching background (cause by not changing bank during palette & sprite reading)
   - [ ] Encoded images are not the best
+  - [ ] Court record Palette (due to background palette)
+  - [ ] Undraw court record replay the special char of dialog (like CR_OBJ)
+  - [ ] Wrong upper tile sometime (maybe due to incorrect MMC5 EXT RAM timing)
+  - [ ] Undraw dialog box don't work on one of the two nametables
 - [ ] Visual effects
   - [ ] Scrolling
   - [/] Flash
@@ -13,7 +17,7 @@
   - [/] Fade
   - [ ] UI Movement (like testimony text scrolling)
   - [ ] Scrolling when switching evidence
-- [ ] Make the Project core functionality
+- [/] Make the Project core functionality
   - [X] Main process loop
   - [X] Dialog box
   - [X] Image drawing
@@ -58,6 +62,11 @@
 
 ## Done
 
+- [X] Refactor palette data in images (take less bytes)
+- [X] Refactor asm to have the animation table span multiple banks
+- [X] Refactor sprites to have a window of 2 CHR bank
+- [X] Script to generate animations (json+frames) from gif
+- [X] Fix softlock for Fceux (by adding a ROM with iNES 1.0 header)
 - [X] Fix returning to already executed special char because of lz return
 - [X] Fix NMI not saving tmp causing wrong data in background buffer.
 - [X] Fix not waiting for next text bank to load when reading multiple char in the same frame that are located between 2 banks.
