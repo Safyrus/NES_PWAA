@@ -20,12 +20,14 @@ EVT:
         .byte <(@EVT_cr_set-1)
         .byte <(@EVT_cr_clr-1)
         .byte <(@EVT_cr_idx-1)
+        .byte <(@EVT_click-1)
     @evt_jmp_hi:
         .byte >(@EVT_cr-1)
         .byte >(@EVT_cr_obj-1)
         .byte >(@EVT_cr_set-1)
         .byte >(@EVT_cr_clr-1)
         .byte >(@EVT_cr_idx-1)
+        .byte >(@EVT_click-1)
 
     @EVT_cr:
         eor_adr cr_flag, #CR_FLAG_ACCESS
@@ -43,4 +45,7 @@ EVT:
         JSR read_next_char
         STA cr_correct_idx
         RTS
-
+    @EVT_click:
+        ; set investigation flag
+        ora_adr click_flag, #CLICK_ENA
+        RTS

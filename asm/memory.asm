@@ -31,7 +31,9 @@
 ;   $0600-$08FF = decoded character sprites
 ;   $0900-$0BFF = decoded background image (low)
 ;   $0C00-$0EFF = decoded background image (high)
-;   $0F00-$1FFF = unused
+;   $0F00-$0FFF = HITBOX address
+;   $1000-$12FF = HITBOX map
+;   $1300-$1FFF = unused
 ;---
 
 
@@ -639,4 +641,38 @@ OAM:
         ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
         mmc5_banks: .res 4
 
+        ; Variable: palette_counter
+        ;----------------
+        ; palette offsets use when decoding palette from an image
         palette_counter: .res 3
+
+        ; Variable: frame_counter
+        ;----------------
+        ; Count the number of frame ellapsed
+        frame_counter: .res 2
+
+    ;================
+    ; Group: Investigation variables
+    ;================
+
+        ; Variable: click_flag
+        ;----------------
+        ; .... ..IE
+        ;        |+-- is Enable
+        ;        +--- has been Initialized
+        click_flag: .res 1
+
+        ; Variable: cursor_x
+        ;----------------
+        ; X position of the investigation cursor
+        cursor_x: .res 1
+
+        ; Variable: cursor_y
+        ;----------------
+        ; Y position of the investigation cursor
+        cursor_y: .res 1
+
+        ; Variable: invest_tmp
+        ;----------------
+        ; Variables for investigation code
+        invest_tmp: .res 5

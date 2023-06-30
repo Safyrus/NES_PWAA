@@ -1,4 +1,7 @@
 sprite_fliker:
+    ; don't flicker if investigation scene
+    LDA click_flag
+    BNE @sprite_fliker_end
     ; sprite flickering effect
     LDX #(RES_SPR*4)
     LDY #$FC

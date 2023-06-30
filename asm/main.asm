@@ -115,5 +115,50 @@ MAIN_LOOP:
         JSR draw_photo
     @photo_end:
 
+    LDA click_flag
+    BEQ @invest_end
+        ;
+        AND #CLICK_INIT
+        BNE :+
+            JSR investigation_init
+        :
+        ; set cursor sprite palette
+        mov img_palette_3+0, #$0F
+        LDA buttons_1_timer
+        BEQ :+
+            mov img_palette_3+1, #$00
+            mov img_palette_3+2, #$10
+            JMP :++
+        :
+            mov img_palette_3+1, #$10
+            mov img_palette_3+2, #$20
+        :
+
+        ; set cursor sprite
+        LDA cursor_y
+        STA OAM+0 ; y
+        STA OAM+4 ; y
+        LDA cursor_x
+        CMP #$F8
+        blt :+
+            LDA #$FF
+            STA OAM+4
+        :
+        LDA cursor_x
+        STA OAM+3 ; x
+        add #$08
+        STA OAM+7 ; x
+        mov MMC5_CHR_BNK7, #CLICK_SPR_BNK
+        LDX #CLICK_SPR_IDX
+        STX OAM+1 ; tile
+        INX
+        INX
+        STX OAM+5 ; tile
+        LDA #$00
+        STA OAM+2 ; atr
+        STA OAM+6 ; atr
+    @invest_end:
+
+
     ; loop back to start of main
     JMP MAIN_LOOP

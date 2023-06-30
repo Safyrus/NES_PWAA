@@ -175,6 +175,11 @@ read_text:
         bze :+
             JMP @end
         :
+        ; if we are in investigation mode
+        LDA click_flag
+        bze :+
+            JMP @end
+        :
         @fps_label:
 
         ; if we need to jump back at a special character

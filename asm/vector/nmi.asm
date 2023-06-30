@@ -239,6 +239,8 @@ NMI:
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
 
+    inc_16 frame_counter
+
     ; enable interrupt
     CLI
     ; load music banks

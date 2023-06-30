@@ -176,6 +176,7 @@
     .include "dialog/main.asm"
     .include "img/main.asm"
     .include "courtrecord/main.asm"
+    .include "investigation/main.asm"
 
 .segment "IMGS_BNK"
     .include "data/imgs.asm"

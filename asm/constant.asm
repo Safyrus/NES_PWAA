@@ -480,6 +480,13 @@
     IMG_BKG_BUF_LO  = MMC5_RAM + $900
     IMG_BKG_BUF_HI  = MMC5_RAM + $C00
 
+    ; Constants: HITBOX buffers addresses
+    ;
+    ; HITBOX_ADR  - _MMC5_RAM+$F00_  Text pointer array to jump to if the correct hitbox was selected
+    ; HITBOX_MAP  - _MMC5_RAM+$1000_ Hitbox map use to detect where the player is clicking on
+    HITBOX_ADR = MMC5_RAM + $F00
+    HITBOX_MAP = MMC5_RAM + $1000
+
     ; Constants: Names tiles addresses
     ;
     ; NAME_CHR_BANK - _$C0_
@@ -516,6 +523,17 @@
     TXT_FLG_OBJ    = 1
     TXT_FLG_OBJ_OK = 2
 
+    ; Constants: Investigation constants
+    ;
+    ; CLICK_ENA      - _%00000001_ Flag for enabling investigation
+    ; CLICK_INIT     - _%00000010_ Flag set when investigation has been initialized
+    ; CLICK_SPR_BNK  - _0_ CHR Banks of the cursor sprite
+    ; CLICK_SPR_IDX  - _$FC_ tile index of the cursor sprite
+    CLICK_ENA     = %00000001
+    CLICK_INIT    = %00000010
+    CLICK_SPR_BNK = 0
+    CLICK_SPR_IDX = $FC
+
     ; Constants: Others constants
     ;
     ; FADE_TIME               - _$3F_   Time for the fade effect
@@ -535,4 +553,4 @@
     IMG_PARTIAL_MAX_BUF_LEN = $40
     SEGMENT_IMGS_START_ADR  = $A000
     MAX_EVIDENCE_IDX        = 9
-    MAX_EVENT               = 5
+    MAX_EVENT               = 6

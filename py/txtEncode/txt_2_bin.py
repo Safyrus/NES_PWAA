@@ -196,6 +196,9 @@ while i < len(text):
             printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
         elif name == "flash": # for now to skip arguments
             textbin.append(0)
+        elif name == "box":
+            for _ in range(3):
+                textbin.append(0)
         else:
             # add dummy character to keep the length correct
             textbin.append(0)
@@ -272,7 +275,7 @@ while i < len(text):
             textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "animation":
             textbin.append(ANI)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin.append(int(args[0]) % 128)
         elif name == "music":
             textbin.append(MUS)
             textbin = append_byte(textbin, int(args[0]), name, i)
@@ -328,6 +331,27 @@ while i < len(text):
             textbin.append(SAV)
         elif name == "return":
             textbin.append(RET)
+        elif name == "box":
+            # Char:   0         1         2
+            # Bits:   6543210   6543210   6543210
+            # Name:   nXxxxxY   yyyyWww   wwHhhhh
+            #         |||||||   |||||||   ||+++++-- height of the hitbox (W=MSB)
+            #         |||||||   ||||+++---++------- width of the hitbox (W=MSB)
+            #         ||||||+---++++--------------- y position of the hitbox (Y=MSB)
+            #         |+++++----------------------- x position of the hitbox (X=MSB)
+            #         +---------------------------- Next flag (1=another data block after this one
+            #                                                 0=last data bloack)
+            x = int(args[0])
+            y = int(args[1])
+            w = int(args[2])
+            h = int(args[3])
+            n = int(args[4])
+            b0 = (x << 1) | ((y & 0x10) >> 4) | n << 6
+            b1 = ((y & 0x0F) << 3) | ((w & 0x18) >> 2)
+            b2 = ((w & 0x03) << 5) | h
+            textbin.append(b0)
+            textbin.append(b1)
+            textbin.append(b2)
         else:
             printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
 
