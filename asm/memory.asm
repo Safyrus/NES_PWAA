@@ -338,7 +338,7 @@ OAM:
         ; |||| +----- Wait for dialog box drawing
         ; |||+------- Wait for LZ decoding
         ; ||+-------- Wait for print
-        ; |+--------- Skip to end of dialog
+        ; |+--------- Skip certain special char (SET, CLR, FAD, EVT, TD)
         ; +---------- Ready (set to 1 to enable read subroutines)
         ;---
         txt_flags: .res 1

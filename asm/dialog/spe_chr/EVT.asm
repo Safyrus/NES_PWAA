@@ -5,6 +5,20 @@ EVT:
     BMI @EVT_end ; return if async lz() has been called
     CMP #MAX_EVENT
     bge @EVT_end
+
+    ; if TXT_FLAG_SKIP
+    BIT txt_flags
+    BVC :+
+        CMP EVT_CHR::CR
+        BEQ @EVT_end
+        CMP EVT_CHR::CR_OBJ
+        BEQ @EVT_end
+        CMP EVT_CHR::CLICK
+        BEQ @EVT_end
+
+        JMP read_next_char
+    :
+
     TAX
     ; jump event_table[e]
     LDA @evt_jmp_hi, X

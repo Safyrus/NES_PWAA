@@ -206,11 +206,15 @@ read_text:
 
         ; fade guard
         LDA fade_timer
-        bnz @end
+        bze :+
+            JMP @end
+        :
 
         ; choice guard
         LDA max_choice
-        bnz @end
+        bze :+
+            JMP @end
+        :
 
         ; if wait flag
         LDA txt_flags
@@ -234,12 +238,6 @@ read_text:
                 @input_boxhidden:
                 JSR read_next_dailog
         @no_wait_flag:
-
-        ; if TXT_FLAG_SKIP
-        LDA txt_flags
-        AND #TXT_FLAG_SKIP
-            ; then read next char immediatly
-            bnz @start
 
         ; if delay > 0
         LDA txt_delay
@@ -283,6 +281,25 @@ read_text:
         @special_char:
             ; debug print
             ; JSR print_char
+
+            ; if TXT_FLAG_SKIP
+            BIT txt_flags
+            BVC :+
+                ; if c == TD|SET|CLR|FAD then skip char
+                CMP SPE_CHR::TD
+                BEQ @end
+                CMP SPE_CHR::SET
+                BEQ @skip_1chr
+                CMP SPE_CHR::CLR
+                BEQ @skip_1chr
+                CMP SPE_CHR::FAD
+                BEQ @end
+                JMP :+
+
+                @skip_1chr:
+                JSR read_next_char
+                JMP @end
+            :
 
             ; - - - - - - - -
             ; switch (c)

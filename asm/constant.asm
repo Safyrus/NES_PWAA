@@ -357,7 +357,7 @@
     ; TXT_FLAG_BOX   - _%00001000_ Wait for dialog box to be draw
     ; TXT_FLAG_LZ    - _%00010000_ Wait for LZ decoding to finish
     ; TXT_FLAG_PRINT - _%00100000_ Wait for text to be print
-    ; TXT_FLAG_SKIP  - _%01000000_ Try to read & display text as fast as possible, skipping animation
+    ; TXT_FLAG_SKIP  - _%01000000_ Skip certain special characters (SET, CLR, FAD, EVT, TD). Use when reprinting a dialog.
     ; TXT_FLAG_READY - _%10000000_ Set when the dialog box is ready
     TXT_FLAG_WAIT  = %00000001
     TXT_FLAG_INPUT = %00000010
@@ -365,7 +365,7 @@
     TXT_FLAG_BOX   = %00001000
     TXT_FLAG_LZ    = %00010000
     TXT_FLAG_PRINT = %00100000
-    TXT_FLAG_SKIP  = %01000000
+    TXT_FLAG_SKIP = %01000000
     TXT_FLAG_READY = %10000000
 
     ; Constants: Effect flags
@@ -554,3 +554,54 @@
     SEGMENT_IMGS_START_ADR  = $A000
     MAX_EVIDENCE_IDX        = 9
     MAX_EVENT               = 6
+
+
+;================
+; Group: Special Characters
+;================
+
+.enum SPE_CHR
+    END ; END of dialog
+    LB  ; Line Break
+    DB  ; Dialog Break
+    FDB ; Force Dialog Break
+    TD  ; Toggle Dialog Box display
+    SET ; Set flag
+    CLR ; Clear flag
+    SAK ; ShAKe
+    SPD ; SPeeD
+    DL  ; DeLay
+    NAM ; change NAMe of dialog box
+    FLH ; FLasH
+    FAD ; FADe in/out
+    SAV ; Save the current text location
+    COL ; change text COLor
+    RET ; Return to the previous saved location
+    BIP ; change dialog BIP effect
+    MUS ; MUSic
+    SND ; SouND effect
+    PHT ; show PHoto
+    CHR ; CHaRacter to show
+    ANI ; character ANImation
+    BKG ; change BacKGround
+    FNT ; Change FoNT to use
+    JMP ; JuMP to another dialog
+    ACT ; jump to the selected choice (depending on the player ACTion
+    BP  ; Background Palette
+    SP  ; Sprite Palette
+    R1C ; Reserved
+    R1D ; Reserved
+    EVT ; EVenT. Use to add control characters specific to the game
+    EXT ; EXTension. Reserved to add more ctrl char to the dialog box
+.endenum
+
+
+.enum EVT_CHR
+    CR     ; 
+    CR_OBJ ; 
+    CR_SET ; 
+    CR_CLR ; 
+    CR_IDX ; 
+    CLICK  ; 
+.endenum
+

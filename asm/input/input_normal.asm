@@ -40,9 +40,4 @@
         BEQ @txt_input_next_end
             ora_adr txt_flags, #TXT_FLAG_INPUT
         @txt_input_next_end:
-        ; is button B pressed ?
-        LDA buttons_1
-        AND #BTN_B
-        BEQ @txt_input_skip_end
-            ora_adr txt_flags, #TXT_FLAG_SKIP
         @txt_input_skip_end:

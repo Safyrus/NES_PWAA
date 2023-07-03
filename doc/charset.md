@@ -20,13 +20,13 @@
 |      | **0A** | NAM | change NAMe of dialog box                                    | 1: name (0=remove)                            |
 |      | **0B** | FLH | FLasH                                                        |                                               |
 |      | **0C** | FAD | FADe in/out                                                  |                                               |
-|  X   | **0D** | SAV |                                                              |                                               |
+|      | **0D** | SAV | Save the current text location                               |                                               |
 |      | **0E** | COL | change text COLor                                            | 1: color                                      |
-|  X   | **0F** | RET |                                                              |                                               |
+|      | **0F** | RET | Return to the previous saved location                        |                                               |
 |      | **10** | BIP | change dialog BIP effect                                     | 1: bip (0=remove)                             |
 |      | **11** | MUS | MUSic                                                        | 1: music (0=remove)                           |
 |      | **12** | SND | SouND effect                                                 | 1: sfx                                        |
-|  X   | **13** | PHT | show PHoto                                                   | 1: photo (0=remove)                           |
+|  /   | **13** | PHT | show PHoto                                                   | 1: photo (0=remove)                           |
 |  /   | **14** | CHR | CHaRacter to show                                            | 1: character (0=remove)                       |
 |      | **15** | ANI | character ANImation                                          | 1: animation                                  |
 |      | **16** | BKG | change BacKGround                                            | 1: background                                 |

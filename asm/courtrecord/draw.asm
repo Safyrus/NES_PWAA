@@ -197,6 +197,9 @@ undraw_court_record_box:
     ora_adr txt_flags, #(TXT_FLAG_FORCE)
     JSR draw_dialog_box
 
+    ; set TXT_FLAG_SKIP
+    ora_adr txt_flags, #TXT_FLAG_SKIP
+
     PLA
     RTS
 
