@@ -2,11 +2,16 @@
     LDA max_choice
     bze @choice_end
     @a_choice:
-        ; is button A-B pressed ?
+        ; is button A pressed ?
         LDA buttons_1
         TAX
-        AND #(BTN_A+BTN_B)
+        AND #BTN_A
         bnz @choice_validate
+        ; is button B pressed ?
+        LDA buttons_1
+        TAX
+        AND #BTN_B
+        bnz @choice_return
         ; is button R-D pressed ?
         TXA
         AND #(BTN_DOWN+BTN_RIGHT)
@@ -56,5 +61,7 @@
             LDA #$00
             STA max_choice
             STA choice
+            JMP @input_end
+        @choice_return:
             JMP @input_end
     @choice_end:

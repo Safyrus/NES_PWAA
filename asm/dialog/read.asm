@@ -12,10 +12,10 @@ read_next_char:
     LDA txt_rd_ptr+1
     BPL @end
         ; lz_ret = caller address
-        PLA
-        STA lz_ret+0
-        PLA
-        STA lz_ret+1
+        ; PLA
+        ; STA lz_ret+0
+        ; PLA
+        ; STA lz_ret+1
         ; lz_idx += 1
         INC lz_idx
         ; reset lz decoding
@@ -24,18 +24,22 @@ read_next_char:
         sta_ptr txt_rd_ptr, MMC5_RAM
         ; async lz_decode()
         ora_adr txt_flags, #TXT_FLAG_LZ
+        JSR lz_decode
+        and_adr txt_flags, #($FF-TXT_FLAG_LZ)
         ; push back caller address
-        LDA lz_ret+1
-        PHA
-        LDA lz_ret+0
-        PHA
+        ; LDA lz_ret+1
+        ; PHA
+        ; LDA lz_ret+0
+        ; PHA
         ; save last char read
-        TYA
-        STA lz_ret_chr
-        ; change last bit to signifie bank change
-        ; (works because char are 7-bit)
-        ORA #$80
-        TAY
+        ; TYA
+        ; STA lz_ret_chr
+        ;
+        ; JMP read_text_end ; return if async lz() has been called
+        ; ; change last bit to signifie bank change
+        ; ; (works because char are 7-bit)
+        ; ORA #$80
+        ; TAY
     @end:
     ; retreive char
     TYA
@@ -59,7 +63,6 @@ read_next_dailog:
 read_next_jmp:
     ; c = next_char()
     JSR read_next_char
-    BMI @end ; return if async lz() has been called
     STA txt_jump_buf+1
     STA txt_jump_flag_buf
     ; adr_lo = (c << 7) & 0xFF
@@ -75,7 +78,6 @@ read_next_jmp:
     STA txt_jump_buf+1
     ; adr_lo += next_char()
     JSR read_next_char
-    BMI @end ; return if async lz() has been called
     ORA txt_jump_buf+0
     STA txt_jump_buf+0
     ; block = next_char()
@@ -84,7 +86,6 @@ read_next_jmp:
     AND #$80
     STA txt_jump_flag_buf
     JSR read_next_char
-    BMI @end ; return if async lz() has been called
     STA txt_jump_buf+2
     ORA txt_jump_flag_buf
     STA txt_jump_flag_buf
@@ -165,7 +166,7 @@ read_text:
         LDA txt_flags
         AND #TXT_FLAG_READY
         BNE :+
-            JMP @end
+            JMP read_text_end
         :
 
         ; if we need to wait for time consomming task to end
@@ -173,12 +174,12 @@ read_text:
         LDA txt_flags
         AND #(TXT_FLAG_LZ + TXT_FLAG_BOX + TXT_FLAG_PRINT)
         bze :+
-            JMP @end
+            JMP read_text_end
         :
         ; if we are in investigation mode
         LDA click_flag
         bze :+
-            JMP @end
+            JMP read_text_end
         :
         @fps_label:
 
@@ -266,8 +267,6 @@ read_text:
         @start:
         ; c = next_char()
         JSR read_next_char
-        ; return if async lz() has been called
-        BMI read_text_end
 
         ; if c is graphic char:
         CMP #$20
@@ -286,13 +285,13 @@ read_text:
             BIT txt_flags
             BVC :+
                 ; if c == TD|SET|CLR|FAD then skip char
-                CMP SPE_CHR::TD
+                CMP #SPE_CHR::TD
                 BEQ @end
-                CMP SPE_CHR::SET
+                CMP #SPE_CHR::SET
                 BEQ @skip_1chr
-                CMP SPE_CHR::CLR
+                CMP #SPE_CHR::CLR
                 BEQ @skip_1chr
-                CMP SPE_CHR::FAD
+                CMP #SPE_CHR::FAD
                 BEQ @end
                 JMP :+
 

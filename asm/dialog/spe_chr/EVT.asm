@@ -9,11 +9,11 @@ EVT:
     ; if TXT_FLAG_SKIP
     BIT txt_flags
     BVC :+
-        CMP EVT_CHR::CR
+        CMP #EVT_CHR::CR
         BEQ @EVT_end
-        CMP EVT_CHR::CR_OBJ
+        CMP #EVT_CHR::CR_OBJ
         BEQ @EVT_end
-        CMP EVT_CHR::CLICK
+        CMP #EVT_CHR::CLICK
         BEQ @EVT_end
 
         JMP read_next_char

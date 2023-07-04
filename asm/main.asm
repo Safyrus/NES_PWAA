@@ -42,6 +42,9 @@ MAIN_LOOP:
     LDA txt_flags
     AND #(TXT_FLAG_BOX + TXT_FLAG_LZ + TXT_FLAG_PRINT)
     BNE :+
+    ; or if we are not in a choice
+    LDA max_choice
+    BNE :+
     ; or if we are not in the court record
     LDA cr_flag
     AND #CR_FLAG_SHOW
@@ -115,6 +118,7 @@ MAIN_LOOP:
         JSR draw_photo
     @photo_end:
 
+    ;
     LDA click_flag
     BEQ @invest_end
         ;

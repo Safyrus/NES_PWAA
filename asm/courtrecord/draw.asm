@@ -9,7 +9,7 @@ update_court_record_box:
         ; else undraw the box
         JMP undraw_court_record_box
 
-draw_court_record_box:
+draw_court_record_box_only:
     pushregs
 
     ; wait for the start of the frame
@@ -71,6 +71,13 @@ draw_court_record_box:
         STA (tmp), Y
     to_y_inc @loop_ext, #0
 
+    pullregs
+    RTS
+
+draw_court_record_box:
+    pushregs
+
+    JSR draw_court_record_box_only
 
     push txt_rd_ptr+0
     push txt_rd_ptr+1

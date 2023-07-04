@@ -1,7 +1,6 @@
 ; case JMP
 JMP_char:
     JSR read_next_jmp
-    BMI @JMP_char_end ; return if async lz() has been called
     ; if condition flag:
     BIT txt_jump_flag_buf
     BVC @JMP_char_cond_end

@@ -620,12 +620,23 @@ OAM:
         ; Variable: max_choice
         ;----------------
         ; the maximum number of choice for this dialog
+        ; bit 7 = flag set when we need to init choice display
         max_choice: .res 1
 
         ; Variable: choice_jmp_table
         ;----------------
         ; pointers to jump to for each choice
         choice_jmp_table: .res 3*4
+
+        ; Variable: act_ptr
+        ;----------------
+        ; pointers to the last act character
+        act_ptr: .res 3
+
+        ; Variable: last_act_ptr
+        ;----------------
+        ; pointers to the last previous act character
+        last_act_ptr: .res 3
 
     ;================
     ; Group: Other variables
@@ -676,3 +687,4 @@ OAM:
         ;----------------
         ; Variables for investigation code
         invest_tmp: .res 5
+

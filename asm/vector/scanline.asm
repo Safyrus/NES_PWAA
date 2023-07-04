@@ -49,10 +49,13 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_top_midbox:
-        ; if the court record is showned
+        ; if the court record or choice is showned
+        LDA max_choice
+        BNE @scanline_irq_top_midbox_change
         LDA cr_flag
         AND #CR_FLAG_SHOW
         BEQ @scanline_irq_top_midbox_end
+        @scanline_irq_top_midbox_change:
             ; then disable sprites
             LDA #PPU_MASK_BKG+PPU_MASK_BKG8
             STA PPU_MASK
@@ -70,10 +73,13 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_bot_midbox:
-        ; if the court record is showned
+        ; if the court record or choice is showned
+        LDA max_choice
+        BNE @scanline_irq_bot_midbox_change
         LDA cr_flag
         AND #CR_FLAG_SHOW
         BEQ @scanline_irq_bot_midbox_end
+        @scanline_irq_bot_midbox_change:
             ; then enable sprites
             LDA #PPU_MASK_BKG+PPU_MASK_BKG8+PPU_MASK_SPR+PPU_MASK_SPR8
             STA PPU_MASK

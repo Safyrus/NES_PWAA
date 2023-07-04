@@ -62,6 +62,8 @@
 
 ## Done
 
+- [X] Ugly fix when switching text bank causing wrong stack (but introduce graphics glitch and garbadge code)
+- [X] Refactor choice to be displayed in the top box
 - [X] Fix incorrect state because undrawing the court record replay special chars (like CR_OBJ)
 - [X] Change text script to encode hitbox.
 - [X] Add cursor sprite.

@@ -545,6 +545,7 @@
     ; SEGMENT_IMGS_START_ADR  - _$A000_ Use for image data pointer table
     ; MAX_EVIDENCE_IDX        - _9_     Maximum number of evidences
     ; MAX_EVENT               - _5_     Maximum number of event chr
+    ; ACT_SPR_TILE            - _$FA_   Tile index of the choice indicator sprite
     FADE_TIME               = $3F
     FLASH_TIME              = $04
     RAM_MAX_BNK             = 1
@@ -554,6 +555,7 @@
     SEGMENT_IMGS_START_ADR  = $A000
     MAX_EVIDENCE_IDX        = 9
     MAX_EVENT               = 6
+    ACT_SPR_TILE            = $FA
 
 
 ;================

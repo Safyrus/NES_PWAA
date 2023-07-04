@@ -174,6 +174,7 @@
 
 .segment "CODE_BNK"
     .include "dialog/main.asm"
+    .include "choice.asm"
     .include "img/main.asm"
     .include "courtrecord/main.asm"
     .include "investigation/main.asm"
