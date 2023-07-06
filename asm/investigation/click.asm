@@ -40,14 +40,25 @@ investigation_click:
         LDA HITBOX_ADR, X
         STA txt_jump_buf+2
         ;
-        and_adr click_flag, #($FF-CLICK_ENA-CLICK_INIT)
+        JSR investigation_disable
         ; jump_text(jmp_adr)
         JSR read_jump
-        ; clear cursor sprite
-        LDA #$FF
-        for_x @clr_spr, #7
-            STA OAM, X
-        to_x_dec @clr_spr, #0
+        JSR investigation_clear_sprite
     @end:
     pullregs
+    RTS
+
+investigation_disable:
+    ;
+    and_adr click_flag, #($FF-CLICK_ENA-CLICK_INIT)
+    ;
+    JMP investigation_clear_sprite
+
+
+; clear cursor sprite
+investigation_clear_sprite:
+    LDA #$FF
+    for_x @clr_spr, #7
+        STA OAM, X
+    to_x_dec @clr_spr, #0
     RTS

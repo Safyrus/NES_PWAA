@@ -219,6 +219,11 @@ OAM:
         ;   <update_input>
         buttons_1_timer: .res 1
 
+        ; Variable: inpu_flags
+        ;----------------
+        ;
+        input_flags: .res 1
+
     ;================
     ; Group: Scanline state
     ;================

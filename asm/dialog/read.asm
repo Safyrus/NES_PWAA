@@ -98,24 +98,10 @@ read_jump:
     ; txt_rd_ptr = adr_lo, adr_hi
     mov_ptr txt_rd_ptr, txt_jump_buf
     ; block = lz_bnk_table[block]
-    LDA txt_jump_buf+2
+    LDX txt_jump_buf+2
     AND #$3F
-    CMP lz_idx
-    STA lz_idx
-    STA txt_jump_buf+2
-    BNE @lz
-    ; if block != current_block:
-    TAX
-    LDA lz_bnk_table, X
-    CMP lz_in_bnk
-    BEQ @JMP_char_end
-    @lz:
-        ; reset lz decoding
-        JSR lz_init
-        ; async lz_decode()
-        ora_adr txt_flags, #TXT_FLAG_LZ
-    @JMP_char_end:
-    RTS
+    STX txt_jump_buf+2
+    JMP lz_check
 
 
 .segment "LAST_BNK"

@@ -544,7 +544,7 @@
     ; IMG_PARTIAL_MAX_BUF_LEN - _$40_   Size of the <img_partial_buf> array
     ; SEGMENT_IMGS_START_ADR  - _$A000_ Use for image data pointer table
     ; MAX_EVIDENCE_IDX        - _9_     Maximum number of evidences
-    ; MAX_EVENT               - _5_     Maximum number of event chr
+    ; MAX_EVENT               - _7_     Maximum number of event chr
     ; ACT_SPR_TILE            - _$FA_   Tile index of the choice indicator sprite
     FADE_TIME               = $3F
     FLASH_TIME              = $04
@@ -554,8 +554,9 @@
     IMG_PARTIAL_MAX_BUF_LEN = $40
     SEGMENT_IMGS_START_ADR  = $A000
     MAX_EVIDENCE_IDX        = 9
-    MAX_EVENT               = 6
+    MAX_EVENT               = 7
     ACT_SPR_TILE            = $FA
+    ACT_RET_FLAG            = %00000001
 
 
 ;================
@@ -605,5 +606,6 @@
     CR_CLR ; 
     CR_IDX ; 
     CLICK  ; 
+    ACT_RET; 
 .endenum
 

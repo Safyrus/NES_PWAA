@@ -75,7 +75,6 @@ print_flush_wait:
     ;
     JMP print_flush
 
-
 ; description:
 ;   flush any text from text buffer to screen
 ; use: tmp[0..1]
@@ -87,13 +86,25 @@ print_flush:
     LDA tmp+1
     PHA
 
+    ; if text box hidden, then just update pointers
+    BIT box_flags
+    BMI print_flush_force_update_pointer
+
+    JMP _print_flush
+
+
+print_flush_force:
+    pushregs
+
+    LDA tmp+0
+    PHA
+    LDA tmp+1
+    PHA
+_print_flush:
     ; if print_counter == 0
     LDA print_counter
         ; then exit (we din't have any character to flush)
         bze @end
-    ; if text box hidden, then just update pointers
-    BIT box_flags
-    BMI @update_ptrs
 
     ; - - - - - - - -
     ; copy ext_buf to ext ram
@@ -184,3 +195,5 @@ print_flush:
 
     pullregs
     RTS
+
+print_flush_force_update_pointer = @update_ptrs

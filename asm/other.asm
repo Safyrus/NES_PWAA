@@ -74,3 +74,21 @@ div:
     @end:
     ADC tmp
     RTS
+
+
+
+lz_check:
+    CPX lz_idx
+    STX lz_idx
+    BNE @lz
+    ; if text bank not the same
+    LDA lz_bnk_table, X
+    CMP lz_in_bnk
+    BEQ @end
+    @lz:
+        ; reset lz decoding
+        JSR lz_init
+        ; async lz_decode()
+        ora_adr txt_flags, #TXT_FLAG_LZ
+    @end:
+    RTS

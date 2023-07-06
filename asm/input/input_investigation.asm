@@ -9,7 +9,7 @@
         ROL
         BCS @invest_A
         ROL
-        ; BCS @invest_B
+        BCS @invest_B
         ROL
         ; BCS @invest_SELECT
         ROL
@@ -29,6 +29,11 @@
 
         @invest_A:
             JSR investigation_click
+            JMP @invest_end
+        @invest_B:
+            JSR dec_act_ptr
+            JSR act_return
+            JSR investigation_disable
             JMP @invest_end
         @invest_UP:
             PHA

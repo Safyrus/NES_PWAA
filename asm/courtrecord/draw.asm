@@ -186,20 +186,7 @@ undraw_court_record_box:
     mov txt_rd_ptr+1, txt_last_dialog_adr+1
     ; restore text bank
     LDX txt_last_dialog_adr+2
-    CPX lz_idx
-    STX lz_idx
-    ; if it is not the same as now then lz
-    BNE @lz
-    ; if text bank not the same
-    LDA lz_bnk_table, X
-    CMP lz_in_bnk
-    BEQ @undraw
-    @lz:
-        ; reset lz decoding
-        JSR lz_init
-        ; async lz_decode()
-        ora_adr txt_flags, #TXT_FLAG_LZ
-    @undraw:
+    JSR lz_check
     ; redraw dialog box
     ora_adr txt_flags, #(TXT_FLAG_FORCE)
     JSR draw_dialog_box

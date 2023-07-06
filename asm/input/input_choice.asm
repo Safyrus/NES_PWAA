@@ -1,6 +1,7 @@
     ; if this dialog is a choice
     LDA max_choice
-    bze @choice_end
+    bnz @a_choice
+    JMP @choice_end
     @a_choice:
         ; is button A pressed ?
         LDA buttons_1
@@ -63,5 +64,20 @@
             STA choice
             JMP @input_end
         @choice_return:
-            JMP @input_end
+            LDA input_flags
+            AND #ACT_RET_FLAG
+            BEQ @choice_end
+                ;
+                LDA #$00
+                STA max_choice
+                STA choice
+                ;
+                and_adr input_flags, #($FF-ACT_RET_FLAG)
+                ;
+                JSR dec_act_last_ptr
+                ;
+                mov_ptr txt_rd_ptr, last_act_ptr
+                LDX last_act_ptr+2
+                JSR lz_check
+                JMP @input_end
     @choice_end:

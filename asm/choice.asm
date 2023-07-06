@@ -1,26 +1,7 @@
 act_display:
     pushregs
 
-    ; text_adr = act_ptr_buf
-    mov txt_rd_ptr+0, act_ptr+0
-    mov txt_rd_ptr+1, act_ptr+1
-    LDX act_ptr+2
-    CPX lz_idx
-    STX lz_idx
-    ; if it is not the same as now then lz
-    BNE @lz
-    ; if text bank not the same
-    LDA lz_bnk_table, X
-    CMP lz_in_bnk
-    BEQ @lz_end
-    @lz:
-        ; reset lz decoding
-        JSR lz_init
-        ; lz_decode()
-        ora_adr txt_flags, #TXT_FLAG_LZ
-        JSR lz_decode
-        and_adr txt_flags, #($FF-TXT_FLAG_LZ)
-    @lz_end:
+    JSR act_return
     ; set text bank
     LDA #TEXT_BUF_BNK
     STA MMC5_RAM_BNK
@@ -68,7 +49,7 @@ act_display:
             CMP #SPE_CHR::LB
             BNE @print
         ; flush()
-        JSR print_flush
+        JSR print_flush_force
 
         ; print_ext_ptr += $20
         LDA print_ext_ptr+0
@@ -87,4 +68,54 @@ act_display:
 
     @end:
     pullregs
+    RTS
+
+
+act_return:
+    ; text_adr = act_ptr_buf
+    mov txt_rd_ptr+0, act_ptr+0
+    mov txt_rd_ptr+1, act_ptr+1
+    LDX act_ptr+2
+    CPX lz_idx
+    STX lz_idx
+    ; if it is not the same as now then lz
+    BNE @lz
+    ; if text bank not the same
+    LDA lz_bnk_table, X
+    CMP lz_in_bnk
+    BEQ @lz_end
+    @lz:
+        ; reset lz decoding
+        JSR lz_init
+        ; lz_decode()
+        ora_adr txt_flags, #TXT_FLAG_LZ
+        JSR lz_decode
+        and_adr txt_flags, #($FF-TXT_FLAG_LZ)
+    @lz_end:
+    RTS
+
+dec_act_ptr:
+    LDA #$FF
+    DEC act_ptr+0
+    CMP act_ptr+0
+    BNE @end
+    LDA #$5F
+    DEC act_ptr+1
+    CMP act_ptr+1
+    BNE @end
+    DEC act_ptr+2
+    @end:
+    RTS
+
+dec_act_last_ptr:
+    LDA #$FF
+    DEC last_act_ptr+0
+    CMP last_act_ptr+0
+    BNE @end
+    LDA #$5F
+    DEC last_act_ptr+1
+    CMP last_act_ptr+1
+    BNE @end
+    DEC last_act_ptr+2
+    @end:
     RTS
