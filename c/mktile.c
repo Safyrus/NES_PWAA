@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "rle_inc.h"
+#include "default_tiles.h"
 
 #define TILE_SIZE 64
 #define TILE_ROW_SIZE 8
@@ -147,7 +148,7 @@ int main(int argc, char const *argv[])
 
     srand(time(NULL));
 
-    int bank_len = 4;
+    int bank_len = 10*7;
     int nb_img = atoi(argv[1]);
     char chr_path[64];
     strcpy(chr_path, "out.chr");
@@ -158,9 +159,13 @@ int main(int argc, char const *argv[])
         MAX_PIX_DIF = atoi(argv[3]);
 
     printf("init bank\n");
+    int def_idx = 0;
     for (int i = 0; i < bank_len; i++)
         for (int j = 0; j < TILE_SIZE; j++)
-            tile_bank[i][j] = i;
+        {
+            tile_bank[i][j] = DEFAULT_TILES[def_idx];
+            def_idx++;
+        }
 
     printf("start converting image to tiles\n");
     printf("0/%d | time: 0 sec\n", nb_img);
