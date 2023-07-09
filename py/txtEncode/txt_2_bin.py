@@ -347,7 +347,7 @@ while i < len(text):
             h = int(args[3])
             n = int(args[4])
             b0 = (x << 1) | ((y & 0x10) >> 4) | n << 6
-            b1 = ((y & 0x0F) << 3) | ((w & 0x18) >> 2)
+            b1 = ((y & 0x0F) << 3) | ((w & 0x1C) >> 2)
             b2 = ((w & 0x03) << 5) | h
             textbin.append(b0)
             textbin.append(b1)

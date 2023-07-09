@@ -27,7 +27,7 @@
 |      | **11** | MUS | MUSic                                                        | 1: music (0=remove)                           |
 |      | **12** | SND | SouND effect                                                 | 1: sfx                                        |
 |  /   | **13** | PHT | show PHoto                                                   | 1: photo (0=remove)                           |
-|  /   | **14** | CHR | CHaRacter to show                                            | 1: character (0=remove)                       |
+|      | **14** | CHR | CHaRacter to show                                            | 1: character (0=remove)                       |
 |      | **15** | ANI | character ANImation                                          | 1: animation                                  |
 |      | **16** | BKG | change BacKGround                                            | 1: background                                 |
 |      | **17** | FNT | Change FoNT to use                                           | 1: font                                       |

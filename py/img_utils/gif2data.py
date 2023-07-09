@@ -63,15 +63,17 @@ def pal2nes(pal, img):
     # quantize the image
     pal_image= Image.new("P", (1,1))
     pal_image.putpalette(pal + (0,0,0)*(256-len(pal)//3))
-    quantize_img = img.convert("RGB").quantize(palette=pal_image, dither=Image.Dither.NONE)
+    quantize_img = img.convert("RGB").quantize(palette=pal_image, dither=Image.Dither.NONE).convert("RGB")
     # get sorted color count
     colors = sorted(quantize_img.getcolors(), key= lambda x: x[0])
-    colors.reverse()
-    colors = np.pad(colors, 8)
     # RGB -> NES
     nes_pal = []
-    for c in colors[1:7]:
-        nes_pal.append(closest_nes_color(pal[c[1]*3:c[1]*3+3]))
+    for i in range(1,7):
+        if i < len(colors):
+            c = colors[i][1]
+        else:
+            c = (0,0,0)
+        nes_pal.append(closest_nes_color(c))
     nes_pal = [[0, 15, 16, 32], nes_pal]
     return nes_pal
 

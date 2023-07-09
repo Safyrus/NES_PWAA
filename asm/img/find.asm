@@ -12,8 +12,16 @@ find_anim:
     STA mmc5_banks+3
     STA MMC5_PRG_BNK2
     ;
-    mov tmp+3, img_anim+0
-    mov tmp+2, img_anim+1
+    LDA img_character
+    CLC
+    ROR
+    STA tmp+3
+    ROR
+    AND #$80
+    STA tmp+2
+    LDA img_animation
+    ORA tmp+2
+    STA tmp+2
     ;
     sta_ptr tmp, img_anim_table
     ;
