@@ -110,7 +110,10 @@ last_music = ""
 chapter_count = 0
 box_toggle = True
 fade_out = False
+print()
 while i < len(text):
+    if i % 1000 == 0:
+        print("\033[A\033[2K", i/len(text)*100, "%")
     c = text[i]
     if c == "[":
         # get label
