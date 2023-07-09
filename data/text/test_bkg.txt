@@ -1,8 +1,8 @@
    [Background image Test]<b>
 Each dialog change to a<b>
-new background.<p>
+new background.<p><wait:1>
 
-This script test 99 bkg.<b>
+This script test 127 bkg.<b>
 The game may crash if you<b>
 don't have that many bkg.<p>
 
@@ -116,6 +116,37 @@ don't have that many bkg.<p>
 <background:97>Background 97<p><hidetextbox><p><hidetextbox>
 <background:98>Background 98<p><hidetextbox><p><hidetextbox>
 <background:99>Background 99<p><hidetextbox><p><hidetextbox>
+
+<background:100>Background 100<p><hidetextbox><p><hidetextbox>
+<background:101>Background 101<p><hidetextbox><p><hidetextbox>
+<background:102>Background 102<p><hidetextbox><p><hidetextbox>
+<background:103>Background 103<p><hidetextbox><p><hidetextbox>
+<background:104>Background 104<p><hidetextbox><p><hidetextbox>
+<background:105>Background 105<p><hidetextbox><p><hidetextbox>
+<background:106>Background 106<p><hidetextbox><p><hidetextbox>
+<background:107>Background 107<p><hidetextbox><p><hidetextbox>
+<background:108>Background 108<p><hidetextbox><p><hidetextbox>
+<background:109>Background 109<p><hidetextbox><p><hidetextbox>
+
+<background:110>Background 110<p><hidetextbox><p><hidetextbox>
+<background:111>Background 111<p><hidetextbox><p><hidetextbox>
+<background:112>Background 112<p><hidetextbox><p><hidetextbox>
+<background:113>Background 113<p><hidetextbox><p><hidetextbox>
+<background:114>Background 114<p><hidetextbox><p><hidetextbox>
+<background:115>Background 115<p><hidetextbox><p><hidetextbox>
+<background:116>Background 116<p><hidetextbox><p><hidetextbox>
+<background:117>Background 117<p><hidetextbox><p><hidetextbox>
+<background:118>Background 118<p><hidetextbox><p><hidetextbox>
+<background:119>Background 119<p><hidetextbox><p><hidetextbox>
+
+<background:120>Background 120<p><hidetextbox><p><hidetextbox>
+<background:121>Background 121<p><hidetextbox><p><hidetextbox>
+<background:122>Background 122<p><hidetextbox><p><hidetextbox>
+<background:123>Background 123<p><hidetextbox><p><hidetextbox>
+<background:124>Background 124<p><hidetextbox><p><hidetextbox>
+<background:125>Background 125<p><hidetextbox><p><hidetextbox>
+<background:126>Background 126<p><hidetextbox><p><hidetextbox>
+<background:127>Background 127<p><hidetextbox><p><hidetextbox>
 
 Now looping<p>
 <jump:loop>
