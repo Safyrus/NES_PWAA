@@ -213,7 +213,7 @@
     - [X] MUS
     - [X] SND
     - [/] PHT
-    - [ ] CHR
+    - [X] CHR
     - [X] ANI
     - [X] BKG
     - [X] FNT
