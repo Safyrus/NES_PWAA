@@ -38,22 +38,22 @@
         "background": "../../data/backgrounds/cutscenes/cutscene_2.png",
         "character": [],
         "time": [],
-        "idx": 1023,
-        "name": "BKG_CUTSCENE_2"
+        "idx": 24,
+        "name": "BKG_MIA_BEFORE_MURDER"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_3.png",
         "character": [],
         "time": [],
-        "idx": 1023,
-        "name": "BKG_CUTSCENE_3"
+        "idx": 25,
+        "name": "BKG_TINKER_WHITE"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_4a.png",
         "character": [],
         "time": [],
-        "idx": 1023,
-        "name": "BKG_CUTSCENE_4A"
+        "idx": 26,
+        "name": "BKG_SLAM"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_4b.png",
@@ -66,22 +66,22 @@
         "background": "../../data/backgrounds/cutscenes/cutscene_5.png",
         "character": [],
         "time": [],
-        "idx": 1023,
-        "name": "BKG_CUTSCENE_5"
+        "idx": 30,
+        "name": "BKG_MIA_DEAD_SIDE"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_6.png",
         "character": [],
         "time": [],
-        "idx": 1023,
-        "name": "BKG_CUTSCENE_6"
+        "idx": 31,
+        "name": "BKG_MIA_DEAD_FRONT"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_7.png",
         "character": [],
         "time": [],
-        "idx": 1023,
-        "name": "BKG_CUTSCENE_7"
+        "idx": 27,
+        "name": "BKG_APRIL_CALL"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_8.png",

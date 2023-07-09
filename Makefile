@@ -123,7 +123,7 @@ ifeq ($(OS), Windows_NT)
 else
 	mkdir -p "$(ASM)/data"
 endif
-	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin
+	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin 1
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
 
@@ -167,8 +167,14 @@ anim:
 	../data/anim/edgeworth.json \
 	../$(ANIM_1)
 
-	cd $(PY) && $(PYTHON) merge_json.py ../data/anim/bkg_2.json ../$(ANIM_2)
-	cd $(PY) && $(PYTHON) merge_json.py ../data/anim/bkg_3.json ../$(ANIM_3)
+	cd $(PY) && $(PYTHON) merge_json.py \
+	../data/anim/bkg_2.json \
+	../$(ANIM_2)
+
+	cd $(PY) && $(PYTHON) merge_json.py \
+	../data/anim/bkg_3.json \
+	../data/anim/maya.json \
+	../$(ANIM_3)
 
 
 #--------------------------------

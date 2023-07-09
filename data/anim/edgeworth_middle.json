@@ -1,7 +1,7 @@
 [
     {
         "name": "ANI_EDGEWORTHMIDDLE_STAND",
-        "idx": 104,
+        "idx": 106,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/EdgeworthMiddle/edgeworth_middle_3.png",
@@ -13,7 +13,7 @@
     },
     {
         "name": "ANI_EDGEWORTHMIDDLE_TALK",
-        "idx": 105,
+        "idx": 107,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/EdgeworthMiddle/edgeworth_middle_3.png",
