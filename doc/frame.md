@@ -38,7 +38,7 @@ A **full frame** contain all the data to draw the frame to the screen.
 A **partial frame** contains only the change to apply to the last draw frame.
 
 The 2 types of frame are encoded the same way.
-The only difference is that when drawing a tile equal to 0 (low part or high part), the partial frame will not draw it and use the previous draw data.
+The only difference is that when drawing a tile equal to $00xx (high part), the partial frame will not draw it and use the previous draw data.
 
 ### Palettes
 
