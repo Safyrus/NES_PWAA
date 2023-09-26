@@ -1,0 +1,262 @@
+[
+  {
+    "name": "LARRY-SANTA-NORMAL(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Larry-santa/569.png"
+    ],
+    "time": [
+      1
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        23,
+        54,
+        38,
+        21,
+        38,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LARRY-SANTA-NORMAL(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Larry-santa/569.png",
+      "../../data/chars/Larry-santa/570.png",
+      "../../data/chars/Larry-santa/571.png",
+      "../../data/chars/Larry-santa/570.png",
+      "../../data/chars/Larry-santa/572.png",
+      "../../data/chars/Larry-santa/570.png",
+      "../../data/chars/Larry-santa/571.png",
+      "../../data/chars/Larry-santa/570.png"
+    ],
+    "time": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        23,
+        54,
+        38,
+        21,
+        38,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LARRY-SANTA-TWITCH(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Larry-santa/573.png",
+      "../../data/chars/Larry-santa/574.png",
+      "../../data/chars/Larry-santa/573.png",
+      "../../data/chars/Larry-santa/574.png",
+      "../../data/chars/Larry-santa/573.png",
+      "../../data/chars/Larry-santa/575.png",
+      "../../data/chars/Larry-santa/576.png",
+      "../../data/chars/Larry-santa/575.png",
+      "../../data/chars/Larry-santa/573.png"
+    ],
+    "time": [
+      10,
+      6,
+      6,
+      6,
+      40,
+      6,
+      6,
+      6,
+      100
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        23,
+        54,
+        38,
+        21,
+        38,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LARRY-SANTA-TWITCH(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Larry-santa/563.png",
+      "../../data/chars/Larry-santa/564.png",
+      "../../data/chars/Larry-santa/565.png",
+      "../../data/chars/Larry-santa/564.png",
+      "../../data/chars/Larry-santa/566.png",
+      "../../data/chars/Larry-santa/567.png",
+      "../../data/chars/Larry-santa/568.png",
+      "../../data/chars/Larry-santa/564.png",
+      "../../data/chars/Larry-santa/565.png",
+      "../../data/chars/Larry-santa/564.png",
+      "../../data/chars/Larry-santa/563.png",
+      "../../data/chars/Larry-santa/564.png",
+      "../../data/chars/Larry-santa/565.png",
+      "../../data/chars/Larry-santa/564.png"
+    ],
+    "time": [
+      10,
+      10,
+      10,
+      10,
+      5,
+      5,
+      5,
+      5,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        23,
+        54,
+        38,
+        21,
+        38,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LARRY-SANTA-UHOH(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Larry-santa/577.png",
+      "../../data/chars/Larry-santa/578.png",
+      "../../data/chars/Larry-santa/579.png",
+      "../../data/chars/Larry-santa/578.png",
+      "../../data/chars/Larry-santa/577.png"
+    ],
+    "time": [
+      30,
+      6,
+      6,
+      6,
+      100
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        23,
+        54,
+        38,
+        21,
+        38,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LARRY-SANTA-UHOH(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Larry-santa/577.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/581.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/582.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/581.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/578.png",
+      "../../data/chars/Larry-santa/579.png",
+      "../../data/chars/Larry-santa/583.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/581.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/582.png",
+      "../../data/chars/Larry-santa/580.png",
+      "../../data/chars/Larry-santa/581.png",
+      "../../data/chars/Larry-santa/580.png"
+    ],
+    "time": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      5,
+      5,
+      5,
+      5,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        23,
+        54,
+        38,
+        21,
+        38,
+        42
+      ]
+    ]
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "name": "GROSSBERG-NORMAL(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Grossberg/358.png",
+      "../../data/chars/Grossberg/359.png",
+      "../../data/chars/Grossberg/358.png",
+      "../../data/chars/Grossberg/359.png",
+      "../../data/chars/Grossberg/358.png",
+      "../../data/chars/Grossberg/359.png",
+      "../../data/chars/Grossberg/358.png"
+    ],
+    "time": [
+      30,
+      5,
+      60,
+      5,
+      6,
+      5,
+      100
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        45,
+        48,
+        0,
+        38,
+        23,
+        39
+      ]
+    ]
+  },
+  {
+    "name": "GROSSBERG-NORMAL(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Grossberg/358.png",
+      "../../data/chars/Grossberg/360.png",
+      "../../data/chars/Grossberg/361.png",
+      "../../data/chars/Grossberg/360.png"
+    ],
+    "time": [
+      8,
+      8,
+      10,
+      8
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        45,
+        48,
+        0,
+        38,
+        23,
+        39
+      ]
+    ]
+  },
+  {
+    "name": "GROSSBERG-SWEATING(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Grossberg/362.png",
+      "../../data/chars/Grossberg/362.png",
+      "../../data/chars/Grossberg/363.png",
+      "../../data/chars/Grossberg/364.png",
+      "../../data/chars/Grossberg/362.png",
+      "../../data/chars/Grossberg/364.png",
+      "../../data/chars/Grossberg/363.png",
+      "../../data/chars/Grossberg/364.png",
+      "../../data/chars/Grossberg/362.png",
+      "../../data/chars/Grossberg/364.png",
+      "../../data/chars/Grossberg/363.png",
+      "../../data/chars/Grossberg/364.png",
+      "../../data/chars/Grossberg/362.png"
+    ],
+    "time": [
+      30,
+      4,
+      5,
+      4,
+      60,
+      4,
+      5,
+      4,
+      4,
+      5,
+      4,
+      6,
+      120
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        45,
+        48,
+        38,
+        0,
+        23,
+        39
+      ]
+    ]
+  },
+  {
+    "name": "GROSSBERG-SWEATING(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Grossberg/362.png",
+      "../../data/chars/Grossberg/365.png",
+      "../../data/chars/Grossberg/366.png",
+      "../../data/chars/Grossberg/367.png",
+      "../../data/chars/Grossberg/364.png",
+      "../../data/chars/Grossberg/363.png",
+      "../../data/chars/Grossberg/368.png",
+      "../../data/chars/Grossberg/365.png",
+      "../../data/chars/Grossberg/366.png",
+      "../../data/chars/Grossberg/367.png",
+      "../../data/chars/Grossberg/362.png",
+      "../../data/chars/Grossberg/365.png",
+      "../../data/chars/Grossberg/366.png",
+      "../../data/chars/Grossberg/367.png"
+    ],
+    "time": [
+      8,
+      8,
+      8,
+      8,
+      4,
+      4,
+      4,
+      4,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        45,
+        48,
+        38,
+        0,
+        23,
+        39
+      ]
+    ]
+  }
+]

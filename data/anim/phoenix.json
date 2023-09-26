@@ -2,7 +2,7 @@
     {
         "name": "ANI_PHOENIX_STAND",
         "idx": 32,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 2.png",
@@ -15,7 +15,7 @@
     {
         "name": "ANI_PHOENIX_TALK",
         "idx": 33,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 4.png",
@@ -28,7 +28,7 @@
     {
         "name": "ANI_PHOENIX_SWEAT_STAND",
         "idx": 34,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 6.png",
             "../../data/chars/Phoenix/phoenix-Slice 7.png",
@@ -53,7 +53,7 @@
     {
         "name": "ANI_PHOENIX_SWEAT_TALK",
         "idx": 35,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 13.png",
             "../../data/chars/Phoenix/phoenix-Slice 14.png",
@@ -66,7 +66,7 @@
     {
         "name": "ANI_PHOENIX_THINK_STAND",
         "idx": 36,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 17.png",
             "../../data/chars/Phoenix/phoenix-Slice 18.png",
@@ -93,7 +93,7 @@
     {
         "name": "ANI_PHOENIX_THINK_TALK",
         "idx": 37,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 17.png",
             "../../data/chars/Phoenix/phoenix-Slice 24.png",
@@ -106,7 +106,7 @@
     {
         "name": "ANI_PHOENIX_YES",
         "idx": 38,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
@@ -120,7 +120,7 @@
     {
         "name": "ANI_PHOENIX_SHOCK",
         "idx": 39,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 28.png",
             "../../data/chars/Phoenix/phoenix-Slice 29.png",
@@ -148,7 +148,7 @@
     {
         "name": "ANI_PHOENIX_SLAM_START",
         "idx": 40,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 35.png",
             "../../data/chars/Phoenix/phoenix-Slice 36.png"
@@ -159,7 +159,7 @@
     {
         "name": "ANI_PHOENIX_SLAM_STAND",
         "idx": 41,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 38.png",
             "../../data/chars/Phoenix/phoenix-Slice 37.png",
@@ -172,7 +172,7 @@
     {
         "name": "ANI_PHOENIX_SLAM_TALK",
         "idx": 42,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 38.png",
             "../../data/chars/Phoenix/phoenix-Slice 39.png",
@@ -185,7 +185,7 @@
     {
         "name": "ANI_PHOENIX_OBJECTION_START",
         "idx": 43,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 41.png",
             "../../data/chars/Phoenix/phoenix-Slice 42.png"
@@ -196,7 +196,7 @@
     {
         "name": "ANI_PHOENIX_OBJECTION_TALK",
         "idx": 44,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 43.png",
             "../../data/chars/Phoenix/phoenix-Slice 44.png",
@@ -209,7 +209,7 @@
     {
         "name": "ANI_PHOENIX_OBJECTION_STAND",
         "idx": 45,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 42.png",
             "../../data/chars/Phoenix/phoenix-Slice 46.png",
@@ -222,7 +222,7 @@
     {
         "name": "ANI_PHOENIX_PAPER_TALK",
         "idx": 46,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 48.png",
             "../../data/chars/Phoenix/phoenix-Slice 49.png",
@@ -240,7 +240,7 @@
     {
         "name": "ANI_PHOENIX_PAPER_STAND",
         "idx": 47,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 48.png",
             "../../data/chars/Phoenix/phoenix-Slice 52.png",
@@ -253,7 +253,7 @@
     {
         "name": "ANI_PHOENIX_CONFIDENT_STAND",
         "idx": 48,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 54.png",
             "../../data/chars/Phoenix/phoenix-Slice 55.png",
@@ -266,7 +266,7 @@
     {
         "name": "ANI_PHOENIX_CONFIDENT_TALK",
         "idx": 49,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 54.png",
             "../../data/chars/Phoenix/phoenix-Slice 57.png",
@@ -279,7 +279,7 @@
     {
         "name": "ANI_PHOENIX_NO",
         "idx": 50,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
@@ -297,7 +297,7 @@
     {
         "name": "ANI_PHOENIX_OOPS_STAND",
         "idx": 51,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 61.png",
             "../../data/chars/Phoenix/phoenix-Slice 62.png",
@@ -310,7 +310,7 @@
     {
         "name": "ANI_PHOENIX_OOPS_TALK",
         "idx": 52,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 64.png",
             "../../data/chars/Phoenix/phoenix-Slice 65.png",
@@ -323,7 +323,7 @@
     {
         "name": "ANI_PHOENIX_WIG",
         "idx": 53,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 67.png",
             "../../data/chars/Phoenix/phoenix-Slice 68.png",

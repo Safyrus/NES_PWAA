@@ -2,7 +2,7 @@
     {
         "name": "ANI_MIA_SADPOSE_STAND",
         "idx": 8,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 18.png",
             "../../data/chars/Mia/mia-Slice 19.png",
@@ -15,7 +15,7 @@
     {
         "name": "ANI_MIA_SADPOSE_TALK",
         "idx": 9,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 18.png",
             "../../data/chars/Mia/mia-Slice 21.png",
@@ -28,7 +28,7 @@
     {
         "name": "ANI_MIA_ANGRY_STAND",
         "idx": 10,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 23.png",
             "../../data/chars/Mia/mia-Slice 24.png",
@@ -41,7 +41,7 @@
     {
         "name": "ANI_MIA_ANGRY_TALK",
         "idx": 11,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 23.png",
             "../../data/chars/Mia/mia-Slice 26.png",
@@ -54,7 +54,7 @@
     {
         "name": "ANI_MIA_SHOCK_STAND",
         "idx": 12,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 28.png",
             "../../data/chars/Mia/mia-Slice 29.png",
@@ -67,7 +67,7 @@
     {
         "name": "ANI_MIA_SHOCK_TALK",
         "idx": 13,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 28.png",
             "../../data/chars/Mia/mia-Slice 31.png",
@@ -79,7 +79,7 @@
     {
         "name": "ANI_MIA_SAD_STAND",
         "idx": 14,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 33.png",
             "../../data/chars/Mia/mia-Slice 34.png",
@@ -92,7 +92,7 @@
     {
         "name": "ANI_MIA_SAD_TALK",
         "idx": 15,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 33.png",
             "../../data/chars/Mia/mia-Slice 36.png",

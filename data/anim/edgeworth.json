@@ -2,7 +2,7 @@
     {
         "name": "ANI_EDGEWORTH_STAND",
         "idx": 83,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_4.png",
             "../../data/chars/Edgeworth/edgeworth_5.png",
@@ -14,7 +14,7 @@
     {
         "name": "ANI_EDGEWORTH_TALK",
         "idx": 84,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_4.png",
             "../../data/chars/Edgeworth/edgeworth_9.png",
@@ -26,7 +26,7 @@
     {
         "name": "ANI_EDGEWORTH_BOW_START",
         "idx": 85,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_12.png",
             "../../data/chars/Edgeworth/edgeworth_13.png",
@@ -37,7 +37,7 @@
     {
         "name": "ANI_EDGEWORTH_BOW_STAND",
         "idx": 86,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_14.png"
         ],
@@ -46,7 +46,7 @@
     {
         "name": "ANI_EDGEWORTH_SLAM_START",
         "idx": 87,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_15.png",
             "../../data/chars/Edgeworth/edgeworth_16.png",
@@ -59,7 +59,7 @@
     {
         "name": "ANI_EDGEWORTH_SLAM_STAND",
         "idx": 88,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_18.png",
             "../../data/chars/Edgeworth/edgeworth_24.png",
@@ -71,7 +71,7 @@
     {
         "name": "ANI_EDGEWORTH_SLAM_TALK",
         "idx": 89,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_18.png",
             "../../data/chars/Edgeworth/edgeworth_28.png",
@@ -83,7 +83,7 @@
     {
         "name": "ANI_EDGEWORTH_POINT_STAND",
         "idx": 90,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_34.png",
             "../../data/chars/Edgeworth/edgeworth_35.png",
@@ -95,7 +95,7 @@
     {
         "name": "ANI_EDGEWORTH_POINT_TALK",
         "idx": 91,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_34.png",
             "../../data/chars/Edgeworth/edgeworth_39.png",
@@ -112,7 +112,7 @@
     {
         "name": "ANI_EDGEWORTH_WELL_START",
         "idx": 92,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_48.png",
             "../../data/chars/Edgeworth/edgeworth_47.png",
@@ -131,7 +131,7 @@
     {
         "name": "ANI_EDGEWORTH_WELL_STAND",
         "idx": 93,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_56.png",
             "../../data/chars/Edgeworth/edgeworth_57.png",
@@ -143,7 +143,7 @@
     {
         "name": "ANI_EDGEWORTH_WELL_TALK",
         "idx": 94,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_56.png",
             "../../data/chars/Edgeworth/edgeworth_61.png",
@@ -155,7 +155,7 @@
     {
         "name": "ANI_EDGEWORTH_ARMCROSS_STAND",
         "idx": 95,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_70.png",
             "../../data/chars/Edgeworth/edgeworth_71.png",
@@ -167,7 +167,7 @@
     {
         "name": "ANI_EDGEWORTH_ARMCROSS_TALK",
         "idx": 96,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_67.png",
             "../../data/chars/Edgeworth/edgeworth_76.png",
@@ -179,7 +179,7 @@
     {
         "name": "ANI_EDGEWORTH_TSK_START",
         "idx": 97,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_81.png",
             "../../data/chars/Edgeworth/edgeworth_82.png",
@@ -199,7 +199,7 @@
     {
         "name": "ANI_EDGEWORTH_TSK_STAND",
         "idx": 98,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_88.png"
         ],
@@ -208,7 +208,7 @@
     {
         "name": "ANI_EDGEWORTH_PAPER_STAND",
         "idx": 99,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_92.png",
             "../../data/chars/Edgeworth/edgeworth_93.png",
@@ -220,7 +220,7 @@
     {
         "name": "ANI_EDGEWORTH_PAPER_TALK",
         "idx": 100,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_92.png",
             "../../data/chars/Edgeworth/edgeworth_97.png",
@@ -232,7 +232,7 @@
     {
         "name": "ANI_EDGEWORTH_SHOCK_START",
         "idx": 101,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_103.png",
             "../../data/chars/Edgeworth/edgeworth_104.png",
@@ -244,7 +244,7 @@
     {
         "name": "ANI_EDGEWORTH_SHOCK_STAND",
         "idx": 102,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_106.png",
             "../../data/chars/Edgeworth/edgeworth_107.png",
@@ -256,7 +256,7 @@
     {
         "name": "ANI_EDGEWORTH_SHOCK_TALK",
         "idx": 103,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_106.png",
             "../../data/chars/Edgeworth/edgeworth_111.png",

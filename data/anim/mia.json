@@ -2,7 +2,7 @@
     {
         "name": "ANI_MIA_STAND",
         "idx": 1,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 1.png",
             "../../data/chars/Mia/mia-Slice 2.png",
@@ -15,7 +15,7 @@
     {
         "name": "ANI_MIA_TALK",
         "idx": 2,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 1.png",
             "../../data/chars/Mia/mia-Slice 4.png",
@@ -28,7 +28,7 @@
     {
         "name": "ANI_MIA_QUESTION_STAND",
         "idx": 3,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 6.png",
             "../../data/chars/Mia/mia-Slice 7.png",
@@ -41,7 +41,7 @@
     {
         "name": "ANI_MIA_QUESTION_TALK",
         "idx": 4,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 6.png",
             "../../data/chars/Mia/mia-Slice 9.png",
@@ -54,7 +54,7 @@
     {
         "name": "ANI_MIA_CONFIDENT_STAND",
         "idx": 5,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 11.png",
             "../../data/chars/Mia/mia-Slice 12.png",
@@ -67,7 +67,7 @@
     {
         "name": "ANI_MIA_CONFIDENT_TALK",
         "idx": 6,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 11.png",
             "../../data/chars/Mia/mia-Slice 14.png",
@@ -80,7 +80,7 @@
     {
         "name": "ANI_MIA_SMILE",
         "idx": 7,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 14.png",
             "../../data/chars/Mia/mia-Slice 16.png",

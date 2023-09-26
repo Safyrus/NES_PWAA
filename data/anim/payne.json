@@ -2,7 +2,7 @@
     {
         "name": "ANI_PAYNE_STAND",
         "idx": 65,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 1.png"
         ],
@@ -12,7 +12,7 @@
     {
         "name": "ANI_PAYNE_TALK",
         "idx": 66,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 1.png",
             "../../data/chars/Payne/payne-Slice 2.png",
@@ -39,7 +39,7 @@
     {
         "name": "ANI_PAYNE_SWEAT_STAND",
         "idx": 69,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 12.png",
             "../../data/chars/Payne/payne-Slice 13.png",
@@ -52,7 +52,7 @@
     {
         "name": "ANI_PAYNE_SWEAT_TALK",
         "idx": 70,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 12.png",
             "../../data/chars/Payne/payne-Slice 16.png",

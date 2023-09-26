@@ -1,0 +1,1049 @@
+[
+  {
+    "name": "LOTTA-BADMOOD(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/664.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/666.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/664.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/666.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/664.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/666.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/664.png"
+    ],
+    "time": [
+      30,
+      5,
+      5,
+      5,
+      120,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        43,
+        23,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-BADMOOD(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/664.png",
+      "../../data/chars/Lotta/667.png",
+      "../../data/chars/Lotta/668.png",
+      "../../data/chars/Lotta/667.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/666.png",
+      "../../data/chars/Lotta/665.png",
+      "../../data/chars/Lotta/667.png",
+      "../../data/chars/Lotta/668.png",
+      "../../data/chars/Lotta/667.png",
+      "../../data/chars/Lotta/664.png",
+      "../../data/chars/Lotta/667.png",
+      "../../data/chars/Lotta/668.png",
+      "../../data/chars/Lotta/667.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      3,
+      3,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        43,
+        23,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-CONFIDENT(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/669.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/671.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/669.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/671.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/669.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/671.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/669.png"
+    ],
+    "time": [
+      30,
+      5,
+      5,
+      5,
+      120,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        43,
+        23,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-CONFIDENT(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/669.png",
+      "../../data/chars/Lotta/672.png",
+      "../../data/chars/Lotta/673.png",
+      "../../data/chars/Lotta/672.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/671.png",
+      "../../data/chars/Lotta/670.png",
+      "../../data/chars/Lotta/672.png",
+      "../../data/chars/Lotta/673.png",
+      "../../data/chars/Lotta/672.png",
+      "../../data/chars/Lotta/669.png",
+      "../../data/chars/Lotta/672.png",
+      "../../data/chars/Lotta/673.png",
+      "../../data/chars/Lotta/672.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      3,
+      3,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        43,
+        23,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-DAMAGE",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/674.png",
+      "../../data/chars/Lotta/675.png"
+    ],
+    "time": [
+      10,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        56,
+        43,
+        23,
+        43,
+        53,
+        15
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-DISAPPOINTED(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/676.png",
+      "../../data/chars/Lotta/677.png",
+      "../../data/chars/Lotta/678.png",
+      "../../data/chars/Lotta/676.png",
+      "../../data/chars/Lotta/677.png",
+      "../../data/chars/Lotta/678.png",
+      "../../data/chars/Lotta/676.png"
+    ],
+    "time": [
+      30,
+      45,
+      45,
+      90,
+      45,
+      45,
+      60
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        56,
+        22,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-DISAPPOINTED(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/676.png",
+      "../../data/chars/Lotta/679.png",
+      "../../data/chars/Lotta/678.png",
+      "../../data/chars/Lotta/679.png"
+    ],
+    "time": [
+      11,
+      11,
+      11,
+      11
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        56,
+        22,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-MAD(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/680.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/682.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/680.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/682.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/680.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/682.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/680.png"
+    ],
+    "time": [
+      30,
+      5,
+      5,
+      5,
+      120,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-MAD(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/683.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/685.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/682.png",
+      "../../data/chars/Lotta/681.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/685.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/683.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/685.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/680.png",
+      "../../data/chars/Lotta/684.png",
+      "../../data/chars/Lotta/685.png",
+      "../../data/chars/Lotta/684.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      3,
+      3,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes_each": [
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          23,
+          43,
+          43,
+          42
+        ]
+      ],
+      [
+        [
+          0,
+          15,
+          16,
+          32
+        ],
+        [
+          53,
+          56,
+          43,
+          23,
+          43,
+          42
+        ]
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-NORMAL(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/686.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/688.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/686.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/688.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/686.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/688.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/686.png"
+    ],
+    "time": [
+      30,
+      5,
+      5,
+      5,
+      120,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-NORMAL(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/686.png",
+      "../../data/chars/Lotta/689.png",
+      "../../data/chars/Lotta/690.png",
+      "../../data/chars/Lotta/689.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/688.png",
+      "../../data/chars/Lotta/687.png",
+      "../../data/chars/Lotta/689.png",
+      "../../data/chars/Lotta/690.png",
+      "../../data/chars/Lotta/689.png",
+      "../../data/chars/Lotta/686.png",
+      "../../data/chars/Lotta/689.png",
+      "../../data/chars/Lotta/690.png",
+      "../../data/chars/Lotta/689.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      3,
+      3,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-SHY(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/691.png",
+      "../../data/chars/Lotta/692.png",
+      "../../data/chars/Lotta/691.png",
+      "../../data/chars/Lotta/692.png",
+      "../../data/chars/Lotta/691.png",
+      "../../data/chars/Lotta/692.png",
+      "../../data/chars/Lotta/691.png",
+      "../../data/chars/Lotta/692.png",
+      "../../data/chars/Lotta/691.png",
+      "../../data/chars/Lotta/692.png",
+      "../../data/chars/Lotta/691.png",
+      "../../data/chars/Lotta/692.png",
+      "../../data/chars/Lotta/691.png"
+    ],
+    "time": [
+      30,
+      9,
+      9,
+      9,
+      100,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-SHY(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/693.png",
+      "../../data/chars/Lotta/694.png",
+      "../../data/chars/Lotta/695.png",
+      "../../data/chars/Lotta/694.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-SMILING(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/696.png"
+    ],
+    "time": [
+      10
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        43,
+        23,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-SMILING(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/696.png",
+      "../../data/chars/Lotta/697.png",
+      "../../data/chars/Lotta/698.png",
+      "../../data/chars/Lotta/697.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        43,
+        23,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-THINKING(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/699.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/701.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/699.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/701.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/699.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/701.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/699.png"
+    ],
+    "time": [
+      30,
+      5,
+      5,
+      5,
+      120,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      30
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "LOTTA-THINKING(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Lotta/699.png",
+      "../../data/chars/Lotta/702.png",
+      "../../data/chars/Lotta/703.png",
+      "../../data/chars/Lotta/702.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/701.png",
+      "../../data/chars/Lotta/700.png",
+      "../../data/chars/Lotta/702.png",
+      "../../data/chars/Lotta/703.png",
+      "../../data/chars/Lotta/702.png",
+      "../../data/chars/Lotta/699.png",
+      "../../data/chars/Lotta/702.png",
+      "../../data/chars/Lotta/703.png",
+      "../../data/chars/Lotta/702.png"
+    ],
+    "time": [
+      10,
+      10,
+      10,
+      10,
+      3,
+      3,
+      3,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        53,
+        56,
+        23,
+        43,
+        43,
+        42
+      ]
+    ]
+  }
+]

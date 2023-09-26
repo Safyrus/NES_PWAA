@@ -1,0 +1,278 @@
+[
+  {
+    "name": "PENNY-CARDS(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Penny/972.png",
+      "../../data/chars/Penny/973.png",
+      "../../data/chars/Penny/974.png",
+      "../../data/chars/Penny/973.png",
+      "../../data/chars/Penny/972.png"
+    ],
+    "time": [
+      20,
+      8,
+      8,
+      8,
+      100
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        8,
+        48,
+        54,
+        16,
+        0,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "PENNY-CARDS(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Penny/972.png",
+      "../../data/chars/Penny/975.png",
+      "../../data/chars/Penny/976.png",
+      "../../data/chars/Penny/975.png",
+      "../../data/chars/Penny/977.png",
+      "../../data/chars/Penny/975.png",
+      "../../data/chars/Penny/976.png",
+      "../../data/chars/Penny/975.png",
+      "../../data/chars/Penny/973.png",
+      "../../data/chars/Penny/978.png",
+      "../../data/chars/Penny/979.png",
+      "../../data/chars/Penny/975.png",
+      "../../data/chars/Penny/977.png",
+      "../../data/chars/Penny/975.png",
+      "../../data/chars/Penny/976.png",
+      "../../data/chars/Penny/975.png"
+    ],
+    "time": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        8,
+        48,
+        54,
+        16,
+        0,
+        42
+      ]
+    ]
+  },
+  {
+    "name": "PENNY-NORMAL(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Penny/980.png",
+      "../../data/chars/Penny/981.png",
+      "../../data/chars/Penny/982.png",
+      "../../data/chars/Penny/981.png",
+      "../../data/chars/Penny/980.png"
+    ],
+    "time": [
+      20,
+      8,
+      8,
+      8,
+      100
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        48,
+        54,
+        16,
+        0,
+        42,
+        15
+      ]
+    ]
+  },
+  {
+    "name": "PENNY-NORMAL(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Penny/980.png",
+      "../../data/chars/Penny/983.png",
+      "../../data/chars/Penny/984.png",
+      "../../data/chars/Penny/983.png",
+      "../../data/chars/Penny/985.png",
+      "../../data/chars/Penny/983.png",
+      "../../data/chars/Penny/984.png",
+      "../../data/chars/Penny/983.png",
+      "../../data/chars/Penny/981.png",
+      "../../data/chars/Penny/986.png",
+      "../../data/chars/Penny/987.png",
+      "../../data/chars/Penny/983.png",
+      "../../data/chars/Penny/985.png",
+      "../../data/chars/Penny/983.png",
+      "../../data/chars/Penny/984.png",
+      "../../data/chars/Penny/983.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        48,
+        54,
+        16,
+        0,
+        42,
+        15
+      ]
+    ]
+  },
+  {
+    "name": "PENNY-SECRET(A)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Penny/988.png",
+      "../../data/chars/Penny/989.png",
+      "../../data/chars/Penny/990.png",
+      "../../data/chars/Penny/989.png",
+      "../../data/chars/Penny/988.png"
+    ],
+    "time": [
+      20,
+      8,
+      8,
+      8,
+      100
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        48,
+        54,
+        0,
+        16,
+        42,
+        15
+      ]
+    ]
+  },
+  {
+    "name": "PENNY-SECRET(B)",
+    "idx": 1000,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Penny/988.png",
+      "../../data/chars/Penny/991.png",
+      "../../data/chars/Penny/992.png",
+      "../../data/chars/Penny/991.png",
+      "../../data/chars/Penny/993.png",
+      "../../data/chars/Penny/991.png",
+      "../../data/chars/Penny/992.png",
+      "../../data/chars/Penny/991.png",
+      "../../data/chars/Penny/989.png",
+      "../../data/chars/Penny/994.png",
+      "../../data/chars/Penny/995.png",
+      "../../data/chars/Penny/991.png",
+      "../../data/chars/Penny/993.png",
+      "../../data/chars/Penny/991.png",
+      "../../data/chars/Penny/992.png",
+      "../../data/chars/Penny/991.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        48,
+        54,
+        0,
+        16,
+        42,
+        15
+      ]
+    ]
+  }
+]

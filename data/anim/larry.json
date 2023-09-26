@@ -2,7 +2,7 @@
     {
         "name": "ANI_LARRY_STAND",
         "idx": 16,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 1.png",
             "../../data/chars/Larry/larry-Slice 2.png",
@@ -15,7 +15,7 @@
     {
         "name": "ANI_LARRY_TALK",
         "idx": 17,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 1.png",
             "../../data/chars/Larry/larry-Slice 4.png",
@@ -28,7 +28,7 @@
     {
         "name": "ANI_LARRY_NERVOUS_STAND",
         "idx": 18,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 6.png",
             "../../data/chars/Larry/larry-Slice 7.png",
@@ -43,7 +43,7 @@
     {
         "name": "ANI_LARRY_NERVOUS_TALK",
         "idx": 19,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 10.png",
             "../../data/chars/Larry/larry-Slice 11.png",
@@ -56,7 +56,7 @@
     {
         "name": "ANI_LARRY_BLUSH_STAND",
         "idx": 20,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 13.png",
             "../../data/chars/Larry/larry-Slice 14.png",
@@ -71,7 +71,7 @@
     {
         "name": "ANI_LARRY_BLUSH_TALK",
         "idx": 21,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 19.png",
             "../../data/chars/Larry/larry-Slice 20.png",
@@ -86,7 +86,7 @@
     {
         "name": "ANI_LARRY_CRY_STAND",
         "idx": 22,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 25.png",
             "../../data/chars/Larry/larry-Slice 26.png",
@@ -98,7 +98,7 @@
     {
         "name": "ANI_LARRY_CRY_TALK",
         "idx": 23,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 28.png",
             "../../data/chars/Larry/larry-Slice 29.png",
@@ -111,7 +111,7 @@
     {
         "name": "ANI_LARRY_TUMBUP_STAND",
         "idx": 24,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 31.png",
             "../../data/chars/Larry/larry-Slice 32.png",
@@ -127,7 +127,7 @@
     {
         "name": "ANI_LARRY_TUMBUP_TALK",
         "idx": 25,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 37.png",
             "../../data/chars/Larry/larry-Slice 38.png",
@@ -140,7 +140,7 @@
     {
         "name": "ANI_LARRY_HAPPY_STAND",
         "idx": 26,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 41.png",
             "../../data/chars/Larry/larry-Slice 42.png",
@@ -166,7 +166,7 @@
     {
         "name": "ANI_LARRY_HAPPY_TALK",
         "idx": 27,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 46.png",
             "../../data/chars/Larry/larry-Slice 47.png",
@@ -184,7 +184,7 @@
     {
         "name": "ANI_LARRY_SCRATCH_STAND",
         "idx": 28,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 49.png",
             "../../data/chars/Larry/larry-Slice 50.png"
@@ -195,7 +195,7 @@
     {
         "name": "ANI_LARRY_SCRATCH_TALK",
         "idx": 29,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 51.png",
             "../../data/chars/Larry/larry-Slice 52.png",
@@ -208,7 +208,7 @@
     {
         "name": "ANI_LARRY_THINK_STAND",
         "idx": 30,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 54.png",
             "../../data/chars/Larry/larry-Slice 55.png",
@@ -221,7 +221,7 @@
     {
         "name": "ANI_LARRY_THINK_TALK",
         "idx": 31,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 57.png",
             "../../data/chars/Larry/larry-Slice 58.png",

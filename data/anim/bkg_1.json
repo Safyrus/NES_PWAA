@@ -1,15 +1,15 @@
 [
-    {"background": "../../data/backgrounds/courtroom/courtroom_6.png","character": [],"time": [], "idx": 5, "name": "BKG_COURTROOM_JUDGE"},
-    {"background": "../../data/backgrounds/gavel_0.png","character": [],"time": [], "idx": 9, "name": "BKG_GAVEL_0"},
-    {"background": "../../data/backgrounds/gavel_1.png","character": [],"time": [], "idx": 10, "name": "BKG_GAVEL_1"},
-    {"background": "../../data/backgrounds/exclamation_hol.png","character": [],"time": [], "idx": 11, "name": "BKG_HOLDIT"},
-    {"background": "../../data/backgrounds/exclamation_obj.png","character": [],"time": [], "idx": 12, "name": "BKG_OBJECTION"},
-    {"background": "../../data/backgrounds/exclamation_tak.png","character": [],"time": [], "idx": 13, "name": "BKG_TAKETHAT"},
-    {"background": "../../data/backgrounds/cutscenes/cutscene_0.png","character": [],"time": [], "idx": 14, "name": "BKG_SCENE_SAHWIT_FOUND_BODY"},
-    {"background": "../../data/backgrounds/cutscenes/cutscene_55.png","character": [],"time": [], "idx": 15, "name": "BKG_SCENE_LARRY_SAHWIT"},
-    {"background": "../../data/backgrounds/action_lines.png","character": [],"time": [], "idx": 8, "name": "BKG_ACTION_LINES"},
+    {"background": "../../data/backgrounds/courtroom/courtroom_6.png","character": [],"time": [], "idx": 8, "name": "BKG_COURTROOM_JUDGE"},
+    {"background": "../../data/backgrounds/gavel_0.png","character": [],"time": [], "idx": 27, "name": "BKG_GAVEL_SLAM_0"},
+    {"background": "../../data/backgrounds/gavel_1.png","character": [],"time": [], "idx": 67, "name": "BKG_GAVEL_SLAM_1"},
+    {"background": "../../data/backgrounds/exclamation_hol.png","character": [],"time": [], "idx": 46, "name": "BKG_HOLDIT"},
+    {"background": "../../data/backgrounds/exclamation_obj.png","character": [],"time": [], "idx": 47, "name": "BKG_OBJECTION"},
+    {"background": "../../data/backgrounds/exclamation_tak.png","character": [],"time": [], "idx": 48, "name": "BKG_TAKETHAT"},
+    {"background": "../../data/backgrounds/cutscenes/cutscene_0.png","character": [],"time": [], "idx": 43, "name": "BKG_SCENE_SAHWIT_FOUND_BODY"},
+    {"background": "../../data/backgrounds/cutscenes/cutscene_55.png","character": [],"time": [], "idx": 42, "name": "BKG_SCENE_LARRY_SAHWIT"},
+    {"background": "../../data/backgrounds/action_lines.png","character": [],"time": [], "idx": 66, "name": "BKG_ACTION_LINES"},
     {"background": "../../data/backgrounds/courtroom/courtroom_7.png","character": [],"time": [], "idx": 6, "name": "BKG_COURTROOM_TALK"},
-    {"background": "../../data/backgrounds/courtroom/courtroom_5.png","character": [],"time": [], "idx": 4, "name": "BKG_COURTROOM_DEFENSE_SIDE"},
-    {"background": "../../data/backgrounds/courtroom/courtroom_4.png","character": [],"time": [], "idx": 3, "name": "BKG_COURTROOM_PROSECUTION"},
-    {"background": "../../data/backgrounds/courtroom/courtroom_0.png","character": [],"time": [], "idx": 1, "name": "BKG_COURTROOM_DEFENSE"}
+    {"background": "../../data/backgrounds/courtroom/courtroom_5.png","character": [],"time": [], "idx": 7, "name": "BKG_COURTROOM_DEFENSE_SIDE"},
+    {"background": "../../data/backgrounds/courtroom/courtroom_4.png","character": [],"time": [], "idx": 4, "name": "BKG_COURTROOM_PROSECUTION"},
+    {"background": "../../data/backgrounds/courtroom/courtroom_0.png","character": [],"time": [], "idx": 3, "name": "BKG_COURTROOM_DEFENSE"}
 ]

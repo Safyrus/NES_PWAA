@@ -2,7 +2,7 @@
     {
         "name": "ANI_JUDGE_STAND",
         "idx": 56,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -15,7 +15,7 @@
     {
         "name": "ANI_JUDGE_TALK",
         "idx": 57,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 4.png",
             "../../data/chars/Judge/judge-Slice 5.png",
@@ -28,7 +28,7 @@
     {
         "name": "ANI_JUDGE_YES",
         "idx": 58,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -56,7 +56,7 @@
     {
         "name": "ANI_JUDGE_NO",
         "idx": 59,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -84,7 +84,7 @@
     {
         "name": "ANI_JUDGE_SHOCK_STAND",
         "idx": 60,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 11.png",
             "../../data/chars/Judge/judge-Slice 12.png",
@@ -97,7 +97,7 @@
     {
         "name": "ANI_JUDGE_SHOCK_TALK",
         "idx": 61,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 14.png",
             "../../data/chars/Judge/judge-Slice 15.png",
@@ -115,7 +115,7 @@
     {
         "name": "ANI_JUDGE_ANGRY_STAND",
         "idx": 62,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 17.png",
             "../../data/chars/Judge/judge-Slice 18.png",
@@ -128,7 +128,7 @@
     {
         "name": "ANI_JUDGE_ANGRY_TALK",
         "idx": 63,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 20.png",
             "../../data/chars/Judge/judge-Slice 21.png",
@@ -141,7 +141,7 @@
     {
         "name": "ANI_JUDGE_EYESCLOSED",
         "idx": 64,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 3.png"
         ],

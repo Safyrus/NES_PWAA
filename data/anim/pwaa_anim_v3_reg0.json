@@ -7,37 +7,44 @@
         "name": "BKG_EMPTY"
     },
     {
+        "background": "../../data/backgrounds/title.png",
+        "character": [],
+        "time": [],
+        "idx": 109,
+        "name": "BKG_TITLE"
+    },
+    {
         "background": "../../data/backgrounds/courtroom/courtroom_2.png",
         "character": [],
         "time": [],
-        "idx": 2,
+        "idx": 5,
         "name": "BKG_COURTROOM_STAND"
     },
     {
         "background": "../../data/backgrounds/courtroom/courtroom_8.png",
         "character": [],
         "time": [],
-        "idx": 7,
+        "idx": 2,
         "name": "BKG_COURTROOM_LOBBY"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_1.png",
         "character": [],
         "time": [],
-        "idx": 22,
+        "idx": 41,
         "name": "BKG_SCENE_CINDY_SEE_SAHWIT"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_50.png",
         "character": [],
         "time": [],
-        "idx": 17,
+        "idx": 34,
         "name": "BKG_CINDY_MURDER"
     },
     {
         "name": "ANI_MIA_STAND",
         "idx": 1,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 1.png",
             "../../data/chars/Mia/mia-Slice 2.png",
@@ -70,7 +77,7 @@
     {
         "name": "ANI_MIA_TALK",
         "idx": 2,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 1.png",
             "../../data/chars/Mia/mia-Slice 4.png",
@@ -103,7 +110,7 @@
     {
         "name": "ANI_MIA_QUESTION_STAND",
         "idx": 3,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 6.png",
             "../../data/chars/Mia/mia-Slice 7.png",
@@ -136,7 +143,7 @@
     {
         "name": "ANI_MIA_QUESTION_TALK",
         "idx": 4,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 6.png",
             "../../data/chars/Mia/mia-Slice 9.png",
@@ -169,7 +176,7 @@
     {
         "name": "ANI_MIA_CONFIDENT_STAND",
         "idx": 5,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 11.png",
             "../../data/chars/Mia/mia-Slice 12.png",
@@ -202,7 +209,7 @@
     {
         "name": "ANI_MIA_CONFIDENT_TALK",
         "idx": 6,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 11.png",
             "../../data/chars/Mia/mia-Slice 14.png",
@@ -235,7 +242,7 @@
     {
         "name": "ANI_MIA_SMILE",
         "idx": 7,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 14.png",
             "../../data/chars/Mia/mia-Slice 16.png",
@@ -268,7 +275,7 @@
     {
         "name": "ANI_LARRY_STAND",
         "idx": 16,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 1.png",
             "../../data/chars/Larry/larry-Slice 2.png",
@@ -301,7 +308,7 @@
     {
         "name": "ANI_LARRY_TALK",
         "idx": 17,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 1.png",
             "../../data/chars/Larry/larry-Slice 4.png",
@@ -334,7 +341,7 @@
     {
         "name": "ANI_LARRY_NERVOUS_STAND",
         "idx": 18,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 6.png",
             "../../data/chars/Larry/larry-Slice 7.png",
@@ -371,7 +378,7 @@
     {
         "name": "ANI_LARRY_NERVOUS_TALK",
         "idx": 19,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 10.png",
             "../../data/chars/Larry/larry-Slice 11.png",
@@ -404,7 +411,7 @@
     {
         "name": "ANI_LARRY_BLUSH_STAND",
         "idx": 20,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 13.png",
             "../../data/chars/Larry/larry-Slice 14.png",
@@ -441,7 +448,7 @@
     {
         "name": "ANI_LARRY_BLUSH_TALK",
         "idx": 21,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 19.png",
             "../../data/chars/Larry/larry-Slice 20.png",
@@ -478,7 +485,7 @@
     {
         "name": "ANI_LARRY_CRY_STAND",
         "idx": 22,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 25.png",
             "../../data/chars/Larry/larry-Slice 26.png",
@@ -509,7 +516,7 @@
     {
         "name": "ANI_LARRY_CRY_TALK",
         "idx": 23,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 28.png",
             "../../data/chars/Larry/larry-Slice 29.png",
@@ -542,7 +549,7 @@
     {
         "name": "ANI_LARRY_TUMBUP_STAND",
         "idx": 24,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 31.png",
             "../../data/chars/Larry/larry-Slice 32.png",
@@ -581,7 +588,7 @@
     {
         "name": "ANI_LARRY_TUMBUP_TALK",
         "idx": 25,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 37.png",
             "../../data/chars/Larry/larry-Slice 38.png",
@@ -614,7 +621,7 @@
     {
         "name": "ANI_LARRY_HAPPY_STAND",
         "idx": 26,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 41.png",
             "../../data/chars/Larry/larry-Slice 42.png",
@@ -769,7 +776,7 @@
     {
         "name": "ANI_LARRY_HAPPY_TALK",
         "idx": 27,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 46.png",
             "../../data/chars/Larry/larry-Slice 47.png",
@@ -852,7 +859,7 @@
     {
         "name": "ANI_LARRY_SCRATCH_STAND",
         "idx": 28,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 49.png",
             "../../data/chars/Larry/larry-Slice 50.png"
@@ -881,7 +888,7 @@
     {
         "name": "ANI_LARRY_SCRATCH_TALK",
         "idx": 29,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 51.png",
             "../../data/chars/Larry/larry-Slice 52.png",
@@ -914,7 +921,7 @@
     {
         "name": "ANI_LARRY_THINK_STAND",
         "idx": 30,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 54.png",
             "../../data/chars/Larry/larry-Slice 55.png",
@@ -947,7 +954,7 @@
     {
         "name": "ANI_LARRY_THINK_TALK",
         "idx": 31,
-        "background": "../../data/backgrounds/courtroom/courtroom_8.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Larry/larry-Slice 57.png",
             "../../data/chars/Larry/larry-Slice 58.png",
@@ -980,7 +987,7 @@
     {
         "name": "ANI_SAHWIT_STAND",
         "idx": 72,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 1.png",
             "../../data/chars/Sahwit/sahwit-Slice 2.png",
@@ -1013,7 +1020,7 @@
     {
         "name": "ANI_SAHWIT_TALK",
         "idx": 73,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 1.png",
             "../../data/chars/Sahwit/sahwit-Slice 4.png",
@@ -1046,7 +1053,7 @@
     {
         "name": "ANI_SAHWIT_SWEAT_STAND",
         "idx": 74,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 7.png",
             "../../data/chars/Sahwit/sahwit-Slice 8.png",
@@ -1079,7 +1086,7 @@
     {
         "name": "ANI_SAHWIT_SWEAT_TALK",
         "idx": 75,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 7.png",
             "../../data/chars/Sahwit/sahwit-Slice 11.png",
@@ -1112,7 +1119,7 @@
     {
         "name": "ANI_SAHWIT_ANGRY_STAND",
         "idx": 76,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 14.png",
             "../../data/chars/Sahwit/sahwit-Slice 15.png",
@@ -1151,7 +1158,7 @@
     {
         "name": "ANI_SAHWIT_ANGRY_TALK",
         "idx": 77,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 19.png",
             "../../data/chars/Sahwit/sahwit-Slice 20.png",
@@ -1184,7 +1191,7 @@
     {
         "name": "ANI_SAHWIT_DAMAGE",
         "idx": 78,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 22.png",
             "../../data/chars/Sahwit/sahwit-Slice 23.png",
@@ -1219,7 +1226,7 @@
     {
         "name": "ANI_SAHWIT_THROWWIG",
         "idx": 79,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 26.png",
             "../../data/chars/Sahwit/sahwit-Slice 27.png",
@@ -1258,7 +1265,7 @@
     {
         "name": "ANI_SAHWITNOWIG_ANGRY_STAND",
         "idx": 80,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 33.png",
             "../../data/chars/Sahwit/sahwit-Slice 34.png",
@@ -1291,7 +1298,7 @@
     {
         "name": "ANI_SAHWITNOWIG_ANGRY_TALK",
         "idx": 81,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 33.png",
             "../../data/chars/Sahwit/sahwit-Slice 36.png",
@@ -1374,7 +1381,7 @@
     {
         "name": "ANI_SAHWIT_DEFEAT",
         "idx": 82,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 38.png",
             "../../data/chars/Sahwit/sahwit-Slice 39.png",
@@ -1413,6 +1420,4179 @@
                 5,
                 54,
                 21
+            ]
+        ]
+    },
+    {
+        "name": "LARRY-SANTA-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Larry-santa/569.png"
+        ],
+        "time": [
+            1
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                23,
+                54,
+                38,
+                21,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "LARRY-SANTA-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Larry-santa/569.png",
+            "../../data/chars/Larry-santa/570.png",
+            "../../data/chars/Larry-santa/571.png",
+            "../../data/chars/Larry-santa/570.png",
+            "../../data/chars/Larry-santa/572.png",
+            "../../data/chars/Larry-santa/570.png",
+            "../../data/chars/Larry-santa/571.png",
+            "../../data/chars/Larry-santa/570.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                23,
+                54,
+                38,
+                21,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "LARRY-SANTA-TWITCH(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Larry-santa/573.png",
+            "../../data/chars/Larry-santa/574.png",
+            "../../data/chars/Larry-santa/573.png",
+            "../../data/chars/Larry-santa/574.png",
+            "../../data/chars/Larry-santa/573.png",
+            "../../data/chars/Larry-santa/575.png",
+            "../../data/chars/Larry-santa/576.png",
+            "../../data/chars/Larry-santa/575.png",
+            "../../data/chars/Larry-santa/573.png"
+        ],
+        "time": [
+            10,
+            6,
+            6,
+            6,
+            40,
+            6,
+            6,
+            6,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                23,
+                54,
+                38,
+                21,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "LARRY-SANTA-TWITCH(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Larry-santa/563.png",
+            "../../data/chars/Larry-santa/564.png",
+            "../../data/chars/Larry-santa/565.png",
+            "../../data/chars/Larry-santa/564.png",
+            "../../data/chars/Larry-santa/566.png",
+            "../../data/chars/Larry-santa/567.png",
+            "../../data/chars/Larry-santa/568.png",
+            "../../data/chars/Larry-santa/564.png",
+            "../../data/chars/Larry-santa/565.png",
+            "../../data/chars/Larry-santa/564.png",
+            "../../data/chars/Larry-santa/563.png",
+            "../../data/chars/Larry-santa/564.png",
+            "../../data/chars/Larry-santa/565.png",
+            "../../data/chars/Larry-santa/564.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                23,
+                54,
+                38,
+                21,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "LARRY-SANTA-UHOH(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Larry-santa/577.png",
+            "../../data/chars/Larry-santa/578.png",
+            "../../data/chars/Larry-santa/579.png",
+            "../../data/chars/Larry-santa/578.png",
+            "../../data/chars/Larry-santa/577.png"
+        ],
+        "time": [
+            30,
+            6,
+            6,
+            6,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                23,
+                54,
+                38,
+                21,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "LARRY-SANTA-UHOH(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Larry-santa/577.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/581.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/582.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/581.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/578.png",
+            "../../data/chars/Larry-santa/579.png",
+            "../../data/chars/Larry-santa/583.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/581.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/582.png",
+            "../../data/chars/Larry-santa/580.png",
+            "../../data/chars/Larry-santa/581.png",
+            "../../data/chars/Larry-santa/580.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                23,
+                54,
+                38,
+                21,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-COFIDENT(A)",
+        "idx": 294,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/62.png",
+            "../../data/chars/Cody/63.png",
+            "../../data/chars/Cody/62.png",
+            "../../data/chars/Cody/63.png",
+            "../../data/chars/Cody/62.png",
+            "../../data/chars/Cody/64.png",
+            "../../data/chars/Cody/65.png",
+            "../../data/chars/Cody/64.png",
+            "../../data/chars/Cody/62.png"
+        ],
+        "time": [
+            20,
+            10,
+            10,
+            10,
+            60,
+            6,
+            6,
+            6,
+            80
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-CONFIDENT(B)",
+        "idx": 295,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/62.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/67.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/68.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/67.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/64.png",
+            "../../data/chars/Cody/65.png",
+            "../../data/chars/Cody/69.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/67.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/68.png",
+            "../../data/chars/Cody/66.png",
+            "../../data/chars/Cody/67.png",
+            "../../data/chars/Cody/66.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                54,
+                45,
+                56,
+                0,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-CRYING(A)",
+        "idx": 297,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/70.png",
+            "../../data/chars/Cody/71.png",
+            "../../data/chars/Cody/72.png",
+            "../../data/chars/Cody/73.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                42,
+                45,
+                38,
+                56,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-CRYING(B)",
+        "idx": 298,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/70.png",
+            "../../data/chars/Cody/74.png",
+            "../../data/chars/Cody/75.png",
+            "../../data/chars/Cody/76.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                42,
+                45,
+                38,
+                56,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-DAMAGE",
+        "idx": 306,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/77.png",
+            "../../data/chars/Cody/78.png"
+        ],
+        "time": [
+            10,
+            10
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-MISCHIEF(B)",
+        "idx": 289,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/79.png",
+            "../../data/chars/Cody/80.png",
+            "../../data/chars/Cody/81.png",
+            "../../data/chars/Cody/80.png",
+            "../../data/chars/Cody/82.png",
+            "../../data/chars/Cody/80.png",
+            "../../data/chars/Cody/81.png",
+            "../../data/chars/Cody/80.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-MUTTER(A)",
+        "idx": 303,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/83.png",
+            "../../data/chars/Cody/84.png",
+            "../../data/chars/Cody/85.png",
+            "../../data/chars/Cody/84.png",
+            "../../data/chars/Cody/83.png"
+        ],
+        "time": [
+            30,
+            6,
+            6,
+            6,
+            100
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-MUTTER(B)",
+        "idx": 304,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/86.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/88.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/86.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/88.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/89.png",
+            "../../data/chars/Cody/90.png",
+            "../../data/chars/Cody/91.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/88.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/86.png",
+            "../../data/chars/Cody/87.png",
+            "../../data/chars/Cody/88.png",
+            "../../data/chars/Cody/87.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            5,
+            5,
+            5,
+            5,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-NORMAL(A)",
+        "idx": 301,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/92.png",
+            "../../data/chars/Cody/93.png",
+            "../../data/chars/Cody/94.png",
+            "../../data/chars/Cody/93.png",
+            "../../data/chars/Cody/92.png"
+        ],
+        "time": [
+            30,
+            6,
+            6,
+            6,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                54,
+                45,
+                56,
+                0,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-NORMAL(B)",
+        "idx": 302,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/95.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/97.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/98.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/97.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/99.png",
+            "../../data/chars/Cody/100.png",
+            "../../data/chars/Cody/101.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/97.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/98.png",
+            "../../data/chars/Cody/96.png",
+            "../../data/chars/Cody/97.png",
+            "../../data/chars/Cody/96.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            5,
+            5,
+            5,
+            4,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                54,
+                45,
+                56,
+                0,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SHORT",
+        "idx": 307,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/102.png"
+        ],
+        "time": [
+            1
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                56,
+                38,
+                54,
+                0,
+                45,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SNIFFLING(A)",
+        "idx": 291,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/103.png",
+            "../../data/chars/Cody/104.png",
+            "../../data/chars/Cody/105.png",
+            "../../data/chars/Cody/104.png",
+            "../../data/chars/Cody/103.png"
+        ],
+        "time": [
+            30,
+            10,
+            20,
+            10,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                42,
+                45,
+                38,
+                56,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SNIFFLING",
+        "idx": 292,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/103.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/107.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/108.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/107.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/109.png",
+            "../../data/chars/Cody/110.png",
+            "../../data/chars/Cody/111.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/107.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/108.png",
+            "../../data/chars/Cody/106.png",
+            "../../data/chars/Cody/107.png",
+            "../../data/chars/Cody/106.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            5,
+            5,
+            5,
+            5,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                42,
+                45,
+                38,
+                56,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SOBBING(A)",
+        "idx": 299,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/112.png",
+            "../../data/chars/Cody/113.png",
+            "../../data/chars/Cody/114.png",
+            "../../data/chars/Cody/115.png",
+            "../../data/chars/Cody/116.png",
+            "../../data/chars/Cody/117.png",
+            "../../data/chars/Cody/118.png",
+            "../../data/chars/Cody/115.png",
+            "../../data/chars/Cody/116.png",
+            "../../data/chars/Cody/117.png",
+            "../../data/chars/Cody/118.png",
+            "../../data/chars/Cody/115.png",
+            "../../data/chars/Cody/116.png",
+            "../../data/chars/Cody/117.png",
+            "../../data/chars/Cody/118.png"
+        ],
+        "time": [
+            10,
+            40,
+            5,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    56,
+                    45,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    56,
+                    45,
+                    0,
+                    54,
+                    38,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SOBBING(B)",
+        "idx": 300,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/119.png",
+            "../../data/chars/Cody/120.png",
+            "../../data/chars/Cody/121.png",
+            "../../data/chars/Cody/122.png",
+            "../../data/chars/Cody/119.png",
+            "../../data/chars/Cody/120.png",
+            "../../data/chars/Cody/121.png",
+            "../../data/chars/Cody/122.png",
+            "../../data/chars/Cody/119.png",
+            "../../data/chars/Cody/120.png",
+            "../../data/chars/Cody/121.png",
+            "../../data/chars/Cody/122.png"
+        ],
+        "time": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                42,
+                45,
+                0,
+                54,
+                38,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SWORD(A)",
+        "idx": 295,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/123.png",
+            "../../data/chars/Cody/124.png",
+            "../../data/chars/Cody/125.png",
+            "../../data/chars/Cody/126.png",
+            "../../data/chars/Cody/125.png",
+            "../../data/chars/Cody/126.png",
+            "../../data/chars/Cody/125.png",
+            "../../data/chars/Cody/126.png",
+            "../../data/chars/Cody/125.png",
+            "../../data/chars/Cody/126.png",
+            "../../data/chars/Cody/125.png",
+            "../../data/chars/Cody/124.png",
+            "../../data/chars/Cody/123.png"
+        ],
+        "time": [
+            15,
+            2,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            30,
+            2,
+            80
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    54,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "CODY-SWORD(B)",
+        "idx": 296,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/123.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/128.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/129.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/128.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/130.png",
+            "../../data/chars/Cody/131.png",
+            "../../data/chars/Cody/132.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/128.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/129.png",
+            "../../data/chars/Cody/127.png",
+            "../../data/chars/Cody/128.png",
+            "../../data/chars/Cody/127.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            5,
+            5,
+            5,
+            5,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    0,
+                    38,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    45,
+                    42,
+                    56,
+                    38,
+                    0,
+                    42
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    42,
+                    45,
+                    38,
+                    56,
+                    0,
+                    42
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "SAL-DAMAGE",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1236.png",
+            "../../data/chars/Manella/1237.png",
+            "../../data/chars/Manella/1238.png",
+            "../../data/chars/Manella/1239.png",
+            "../../data/chars/Manella/1240.png",
+            "../../data/chars/Manella/1241.png",
+            "../../data/chars/Manella/1240.png",
+            "../../data/chars/Manella/1241.png"
+        ],
+        "time": [
+            7,
+            4,
+            7,
+            9,
+            7,
+            7,
+            7,
+            7
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    44,
+                    33,
+                    55,
+                    21,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    44,
+                    33,
+                    55,
+                    21,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    33,
+                    55,
+                    21,
+                    44,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    33,
+                    55,
+                    21,
+                    44,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    33,
+                    55,
+                    21,
+                    44,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    33,
+                    55,
+                    21,
+                    44,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    33,
+                    55,
+                    21,
+                    44,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    0,
+                    33,
+                    55,
+                    21,
+                    44,
+                    48
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "SAL-MAD(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1242.png",
+            "../../data/chars/Manella/1243.png",
+            "../../data/chars/Manella/1244.png",
+            "../../data/chars/Manella/1243.png",
+            "../../data/chars/Manella/1242.png"
+        ],
+        "time": [
+            30,
+            3,
+            2,
+            3,
+            90
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                44,
+                33,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-MAD(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1242.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1246.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1247.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1246.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1243.png",
+            "../../data/chars/Manella/1244.png",
+            "../../data/chars/Manella/1248.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1246.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1247.png",
+            "../../data/chars/Manella/1245.png",
+            "../../data/chars/Manella/1246.png",
+            "../../data/chars/Manella/1245.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                44,
+                33,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1249.png",
+            "../../data/chars/Manella/1250.png",
+            "../../data/chars/Manella/1251.png",
+            "../../data/chars/Manella/1250.png",
+            "../../data/chars/Manella/1249.png"
+        ],
+        "time": [
+            30,
+            3,
+            2,
+            3,
+            90
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                44,
+                33,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1249.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1253.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1254.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1253.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1250.png",
+            "../../data/chars/Manella/1251.png",
+            "../../data/chars/Manella/1255.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1253.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1254.png",
+            "../../data/chars/Manella/1252.png",
+            "../../data/chars/Manella/1253.png",
+            "../../data/chars/Manella/1252.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                44,
+                33,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-THINKING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1256.png",
+            "../../data/chars/Manella/1257.png",
+            "../../data/chars/Manella/1258.png",
+            "../../data/chars/Manella/1257.png",
+            "../../data/chars/Manella/1256.png"
+        ],
+        "time": [
+            30,
+            5,
+            5,
+            5,
+            90
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                33,
+                44,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-THINKING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1256.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1260.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1261.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1260.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1257.png",
+            "../../data/chars/Manella/1258.png",
+            "../../data/chars/Manella/1262.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1260.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1261.png",
+            "../../data/chars/Manella/1259.png",
+            "../../data/chars/Manella/1260.png",
+            "../../data/chars/Manella/1259.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                33,
+                44,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-WIGGLE(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1263.png",
+            "../../data/chars/Manella/1264.png",
+            "../../data/chars/Manella/1263.png",
+            "../../data/chars/Manella/1265.png",
+            "../../data/chars/Manella/1266.png",
+            "../../data/chars/Manella/1267.png",
+            "../../data/chars/Manella/1266.png",
+            "../../data/chars/Manella/1264.png",
+            "../../data/chars/Manella/1263.png",
+            "../../data/chars/Manella/1265.png",
+            "../../data/chars/Manella/1263.png",
+            "../../data/chars/Manella/1264.png",
+            "../../data/chars/Manella/1263.png",
+            "../../data/chars/Manella/1265.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            3,
+            2,
+            3,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                44,
+                33,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-WIGGLE(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1268.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1270.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1271.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1270.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1272.png",
+            "../../data/chars/Manella/1273.png",
+            "../../data/chars/Manella/1274.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1270.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1271.png",
+            "../../data/chars/Manella/1269.png",
+            "../../data/chars/Manella/1270.png",
+            "../../data/chars/Manella/1269.png"
+        ],
+        "time": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                44,
+                33,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-WORRIED(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1275.png",
+            "../../data/chars/Manella/1276.png",
+            "../../data/chars/Manella/1275.png",
+            "../../data/chars/Manella/1277.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                33,
+                44,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "SAL-WORRIED(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Manella/1278.png",
+            "../../data/chars/Manella/1279.png",
+            "../../data/chars/Manella/1280.png",
+            "../../data/chars/Manella/1281.png",
+            "../../data/chars/Manella/1282.png",
+            "../../data/chars/Manella/1283.png",
+            "../../data/chars/Manella/1280.png",
+            "../../data/chars/Manella/1281.png"
+        ],
+        "time": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                33,
+                44,
+                55,
+                21,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-DAMAGE",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/923.png",
+            "../../data/chars/Oldbag/924.png",
+            "../../data/chars/Oldbag/925.png"
+        ],
+        "time": [
+            5,
+            5,
+            60
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    0,
+                    16,
+                    33,
+                    17,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    0,
+                    16,
+                    33,
+                    17,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    54,
+                    0,
+                    16,
+                    17,
+                    33,
+                    48
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-INLOVE(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/927.png",
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/927.png",
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/927.png",
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/927.png",
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/927.png",
+            "../../data/chars/Oldbag/926.png"
+        ],
+        "time": [
+            20,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            30
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                8,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-INLOVE(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/929.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/930.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/929.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/927.png",
+            "../../data/chars/Oldbag/926.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/929.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/930.png",
+            "../../data/chars/Oldbag/928.png",
+            "../../data/chars/Oldbag/929.png",
+            "../../data/chars/Oldbag/928.png"
+        ],
+        "time": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            4,
+            3,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                8,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-MAD(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/931.png",
+            "../../data/chars/Oldbag/932.png",
+            "../../data/chars/Oldbag/933.png",
+            "../../data/chars/Oldbag/932.png",
+            "../../data/chars/Oldbag/934.png",
+            "../../data/chars/Oldbag/935.png",
+            "../../data/chars/Oldbag/934.png",
+            "../../data/chars/Oldbag/931.png",
+            "../../data/chars/Oldbag/932.png",
+            "../../data/chars/Oldbag/933.png",
+            "../../data/chars/Oldbag/933.png"
+        ],
+        "time": [
+            20,
+            7,
+            20,
+            7,
+            5,
+            5,
+            5,
+            5,
+            7,
+            20,
+            7
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    17,
+                    33,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    48,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    17,
+                    33,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    17,
+                    33,
+                    0
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-MAD(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/931.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/937.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/938.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/937.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/934.png",
+            "../../data/chars/Oldbag/935.png",
+            "../../data/chars/Oldbag/939.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/937.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/938.png",
+            "../../data/chars/Oldbag/936.png",
+            "../../data/chars/Oldbag/937.png",
+            "../../data/chars/Oldbag/936.png"
+        ],
+        "time": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            3,
+            3,
+            3,
+            3,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/940.png",
+            "../../data/chars/Oldbag/941.png",
+            "../../data/chars/Oldbag/942.png",
+            "../../data/chars/Oldbag/941.png",
+            "../../data/chars/Oldbag/940.png"
+        ],
+        "time": [
+            30,
+            3,
+            2,
+            3,
+            90
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/940.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/944.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/945.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/944.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/941.png",
+            "../../data/chars/Oldbag/942.png",
+            "../../data/chars/Oldbag/946.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/944.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/945.png",
+            "../../data/chars/Oldbag/943.png",
+            "../../data/chars/Oldbag/944.png",
+            "../../data/chars/Oldbag/943.png"
+        ],
+        "time": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            3,
+            3,
+            3,
+            3,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-TEASING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/947.png",
+            "../../data/chars/Oldbag/948.png",
+            "../../data/chars/Oldbag/949.png",
+            "../../data/chars/Oldbag/948.png",
+            "../../data/chars/Oldbag/947.png"
+        ],
+        "time": [
+            30,
+            4,
+            4,
+            4,
+            90
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-TEASING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/947.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/951.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/947.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/951.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/948.png",
+            "../../data/chars/Oldbag/949.png",
+            "../../data/chars/Oldbag/952.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/951.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/947.png",
+            "../../data/chars/Oldbag/950.png",
+            "../../data/chars/Oldbag/951.png",
+            "../../data/chars/Oldbag/950.png"
+        ],
+        "time": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            3,
+            3,
+            3,
+            3,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                33,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-TEEHEE(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/953.png",
+            "../../data/chars/Oldbag/954.png",
+            "../../data/chars/Oldbag/955.png",
+            "../../data/chars/Oldbag/955.png",
+            "../../data/chars/Oldbag/953.png",
+            "../../data/chars/Oldbag/954.png",
+            "../../data/chars/Oldbag/955.png",
+            "../../data/chars/Oldbag/955.png",
+            "../../data/chars/Oldbag/953.png",
+            "../../data/chars/Oldbag/956.png",
+            "../../data/chars/Oldbag/957.png",
+            "../../data/chars/Oldbag/956.png",
+            "../../data/chars/Oldbag/953.png"
+        ],
+        "time": [
+            20,
+            5,
+            10,
+            5,
+            10,
+            5,
+            10,
+            5,
+            60,
+            5,
+            5,
+            5,
+            100
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    16,
+                    33,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    8,
+                    54,
+                    33,
+                    16,
+                    17,
+                    0
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "OLDBAG-TEEHEE(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Oldbag/953.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/959.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/960.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/959.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/956.png",
+            "../../data/chars/Oldbag/957.png",
+            "../../data/chars/Oldbag/956.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/959.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/960.png",
+            "../../data/chars/Oldbag/958.png",
+            "../../data/chars/Oldbag/959.png",
+            "../../data/chars/Oldbag/958.png"
+        ],
+        "time": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            3,
+            3,
+            3,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                8,
+                54,
+                33,
+                16,
+                17,
+                0
+            ]
+        ]
+    },
+    {
+        "name": "PENNY-CARDS(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Penny/972.png",
+            "../../data/chars/Penny/973.png",
+            "../../data/chars/Penny/974.png",
+            "../../data/chars/Penny/973.png",
+            "../../data/chars/Penny/972.png"
+        ],
+        "time": [
+            20,
+            8,
+            8,
+            8,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                8,
+                48,
+                54,
+                16,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "PENNY-CARDS(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Penny/972.png",
+            "../../data/chars/Penny/975.png",
+            "../../data/chars/Penny/976.png",
+            "../../data/chars/Penny/975.png",
+            "../../data/chars/Penny/977.png",
+            "../../data/chars/Penny/975.png",
+            "../../data/chars/Penny/976.png",
+            "../../data/chars/Penny/975.png",
+            "../../data/chars/Penny/973.png",
+            "../../data/chars/Penny/978.png",
+            "../../data/chars/Penny/979.png",
+            "../../data/chars/Penny/975.png",
+            "../../data/chars/Penny/977.png",
+            "../../data/chars/Penny/975.png",
+            "../../data/chars/Penny/976.png",
+            "../../data/chars/Penny/975.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                8,
+                48,
+                54,
+                16,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "PENNY-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Penny/980.png",
+            "../../data/chars/Penny/981.png",
+            "../../data/chars/Penny/982.png",
+            "../../data/chars/Penny/981.png",
+            "../../data/chars/Penny/980.png"
+        ],
+        "time": [
+            20,
+            8,
+            8,
+            8,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                0,
+                42,
+                15
+            ]
+        ]
+    },
+    {
+        "name": "PENNY-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Penny/980.png",
+            "../../data/chars/Penny/983.png",
+            "../../data/chars/Penny/984.png",
+            "../../data/chars/Penny/983.png",
+            "../../data/chars/Penny/985.png",
+            "../../data/chars/Penny/983.png",
+            "../../data/chars/Penny/984.png",
+            "../../data/chars/Penny/983.png",
+            "../../data/chars/Penny/981.png",
+            "../../data/chars/Penny/986.png",
+            "../../data/chars/Penny/987.png",
+            "../../data/chars/Penny/983.png",
+            "../../data/chars/Penny/985.png",
+            "../../data/chars/Penny/983.png",
+            "../../data/chars/Penny/984.png",
+            "../../data/chars/Penny/983.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                16,
+                0,
+                42,
+                15
+            ]
+        ]
+    },
+    {
+        "name": "PENNY-SECRET(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Penny/988.png",
+            "../../data/chars/Penny/989.png",
+            "../../data/chars/Penny/990.png",
+            "../../data/chars/Penny/989.png",
+            "../../data/chars/Penny/988.png"
+        ],
+        "time": [
+            20,
+            8,
+            8,
+            8,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                0,
+                16,
+                42,
+                15
+            ]
+        ]
+    },
+    {
+        "name": "PENNY-SECRET(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Penny/988.png",
+            "../../data/chars/Penny/991.png",
+            "../../data/chars/Penny/992.png",
+            "../../data/chars/Penny/991.png",
+            "../../data/chars/Penny/993.png",
+            "../../data/chars/Penny/991.png",
+            "../../data/chars/Penny/992.png",
+            "../../data/chars/Penny/991.png",
+            "../../data/chars/Penny/989.png",
+            "../../data/chars/Penny/994.png",
+            "../../data/chars/Penny/995.png",
+            "../../data/chars/Penny/991.png",
+            "../../data/chars/Penny/993.png",
+            "../../data/chars/Penny/991.png",
+            "../../data/chars/Penny/992.png",
+            "../../data/chars/Penny/991.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            8,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                48,
+                54,
+                0,
+                16,
+                42,
+                15
             ]
         ]
     }

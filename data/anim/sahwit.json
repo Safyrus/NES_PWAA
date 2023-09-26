@@ -2,7 +2,7 @@
     {
         "name": "ANI_SAHWIT_STAND",
         "idx": 72,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 1.png",
             "../../data/chars/Sahwit/sahwit-Slice 2.png",
@@ -15,7 +15,7 @@
     {
         "name": "ANI_SAHWIT_TALK",
         "idx": 73,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 1.png",
             "../../data/chars/Sahwit/sahwit-Slice 4.png",
@@ -28,7 +28,7 @@
     {
         "name": "ANI_SAHWIT_SWEAT_STAND",
         "idx": 74,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 7.png",
             "../../data/chars/Sahwit/sahwit-Slice 8.png",
@@ -41,7 +41,7 @@
     {
         "name": "ANI_SAHWIT_SWEAT_TALK",
         "idx": 75,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 7.png",
             "../../data/chars/Sahwit/sahwit-Slice 11.png",
@@ -54,7 +54,7 @@
     {
         "name": "ANI_SAHWIT_ANGRY_STAND",
         "idx": 76,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 14.png",
             "../../data/chars/Sahwit/sahwit-Slice 15.png",
@@ -70,7 +70,7 @@
     {
         "name": "ANI_SAHWIT_ANGRY_TALK",
         "idx": 77,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 19.png",
             "../../data/chars/Sahwit/sahwit-Slice 20.png",
@@ -83,7 +83,7 @@
     {
         "name": "ANI_SAHWIT_DAMAGE",
         "idx": 78,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 22.png",
             "../../data/chars/Sahwit/sahwit-Slice 23.png",
@@ -97,7 +97,7 @@
     {
         "name": "ANI_SAHWIT_THROWWIG",
         "idx": 79,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 26.png",
             "../../data/chars/Sahwit/sahwit-Slice 27.png",
@@ -113,7 +113,7 @@
     {
         "name": "ANI_SAHWITNOWIG_ANGRY_STAND",
         "idx": 80,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 33.png",
             "../../data/chars/Sahwit/sahwit-Slice 34.png",
@@ -126,7 +126,7 @@
     {
         "name": "ANI_SAHWITNOWIG_ANGRY_TALK",
         "idx": 81,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 33.png",
             "../../data/chars/Sahwit/sahwit-Slice 36.png",
@@ -144,7 +144,7 @@
     {
         "name": "ANI_SAHWIT_DEFEAT",
         "idx": 82,
-        "background": "../../data/backgrounds/courtroom/courtroom_2.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Sahwit/sahwit-Slice 38.png",
             "../../data/chars/Sahwit/sahwit-Slice 39.png",

@@ -3,63 +3,63 @@
         "background": "../../data/backgrounds/courtroom/courtroom_6.png",
         "character": [],
         "time": [],
-        "idx": 5,
+        "idx": 8,
         "name": "BKG_COURTROOM_JUDGE"
     },
     {
         "background": "../../data/backgrounds/gavel_0.png",
         "character": [],
         "time": [],
-        "idx": 9,
-        "name": "BKG_GAVEL_0"
+        "idx": 27,
+        "name": "BKG_GAVEL_SLAM_0"
     },
     {
         "background": "../../data/backgrounds/gavel_1.png",
         "character": [],
         "time": [],
-        "idx": 10,
-        "name": "BKG_GAVEL_1"
+        "idx": 67,
+        "name": "BKG_GAVEL_SLAM_1"
     },
     {
         "background": "../../data/backgrounds/exclamation_hol.png",
         "character": [],
         "time": [],
-        "idx": 11,
+        "idx": 46,
         "name": "BKG_HOLDIT"
     },
     {
         "background": "../../data/backgrounds/exclamation_obj.png",
         "character": [],
         "time": [],
-        "idx": 12,
+        "idx": 47,
         "name": "BKG_OBJECTION"
     },
     {
         "background": "../../data/backgrounds/exclamation_tak.png",
         "character": [],
         "time": [],
-        "idx": 13,
+        "idx": 48,
         "name": "BKG_TAKETHAT"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_0.png",
         "character": [],
         "time": [],
-        "idx": 14,
+        "idx": 43,
         "name": "BKG_SCENE_SAHWIT_FOUND_BODY"
     },
     {
         "background": "../../data/backgrounds/cutscenes/cutscene_55.png",
         "character": [],
         "time": [],
-        "idx": 15,
+        "idx": 42,
         "name": "BKG_SCENE_LARRY_SAHWIT"
     },
     {
         "background": "../../data/backgrounds/action_lines.png",
         "character": [],
         "time": [],
-        "idx": 8,
+        "idx": 66,
         "name": "BKG_ACTION_LINES"
     },
     {
@@ -73,27 +73,27 @@
         "background": "../../data/backgrounds/courtroom/courtroom_5.png",
         "character": [],
         "time": [],
-        "idx": 4,
+        "idx": 7,
         "name": "BKG_COURTROOM_DEFENSE_SIDE"
     },
     {
         "background": "../../data/backgrounds/courtroom/courtroom_4.png",
         "character": [],
         "time": [],
-        "idx": 3,
+        "idx": 4,
         "name": "BKG_COURTROOM_PROSECUTION"
     },
     {
         "background": "../../data/backgrounds/courtroom/courtroom_0.png",
         "character": [],
         "time": [],
-        "idx": 1,
+        "idx": 3,
         "name": "BKG_COURTROOM_DEFENSE"
     },
     {
         "name": "ANI_MIA_SADPOSE_STAND",
         "idx": 8,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 18.png",
             "../../data/chars/Mia/mia-Slice 19.png",
@@ -126,7 +126,7 @@
     {
         "name": "ANI_MIA_SADPOSE_TALK",
         "idx": 9,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 18.png",
             "../../data/chars/Mia/mia-Slice 21.png",
@@ -159,7 +159,7 @@
     {
         "name": "ANI_MIA_ANGRY_STAND",
         "idx": 10,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 23.png",
             "../../data/chars/Mia/mia-Slice 24.png",
@@ -192,7 +192,7 @@
     {
         "name": "ANI_MIA_ANGRY_TALK",
         "idx": 11,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 23.png",
             "../../data/chars/Mia/mia-Slice 26.png",
@@ -225,7 +225,7 @@
     {
         "name": "ANI_MIA_SHOCK_STAND",
         "idx": 12,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 28.png",
             "../../data/chars/Mia/mia-Slice 29.png",
@@ -258,7 +258,7 @@
     {
         "name": "ANI_MIA_SHOCK_TALK",
         "idx": 13,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 28.png",
             "../../data/chars/Mia/mia-Slice 31.png",
@@ -289,7 +289,7 @@
     {
         "name": "ANI_MIA_SAD_STAND",
         "idx": 14,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 33.png",
             "../../data/chars/Mia/mia-Slice 34.png",
@@ -322,7 +322,7 @@
     {
         "name": "ANI_MIA_SAD_TALK",
         "idx": 15,
-        "background": "../../data/backgrounds/courtroom/courtroom_5.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Mia/mia-Slice 33.png",
             "../../data/chars/Mia/mia-Slice 36.png",
@@ -355,7 +355,7 @@
     {
         "name": "ANI_PHOENIX_STAND",
         "idx": 32,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 2.png",
@@ -388,7 +388,7 @@
     {
         "name": "ANI_PHOENIX_TALK",
         "idx": 33,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 4.png",
@@ -421,7 +421,7 @@
     {
         "name": "ANI_PHOENIX_SWEAT_STAND",
         "idx": 34,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 6.png",
             "../../data/chars/Phoenix/phoenix-Slice 7.png",
@@ -478,7 +478,7 @@
     {
         "name": "ANI_PHOENIX_SWEAT_TALK",
         "idx": 35,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 13.png",
             "../../data/chars/Phoenix/phoenix-Slice 14.png",
@@ -511,7 +511,7 @@
     {
         "name": "ANI_PHOENIX_THINK_STAND",
         "idx": 36,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 17.png",
             "../../data/chars/Phoenix/phoenix-Slice 18.png",
@@ -572,7 +572,7 @@
     {
         "name": "ANI_PHOENIX_THINK_TALK",
         "idx": 37,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 17.png",
             "../../data/chars/Phoenix/phoenix-Slice 24.png",
@@ -605,7 +605,7 @@
     {
         "name": "ANI_PHOENIX_YES",
         "idx": 38,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
@@ -640,7 +640,7 @@
     {
         "name": "ANI_PHOENIX_SHOCK",
         "idx": 39,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 28.png",
             "../../data/chars/Phoenix/phoenix-Slice 29.png",
@@ -813,7 +813,7 @@
     {
         "name": "ANI_PHOENIX_SLAM_START",
         "idx": 40,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 35.png",
             "../../data/chars/Phoenix/phoenix-Slice 36.png"
@@ -842,7 +842,7 @@
     {
         "name": "ANI_PHOENIX_SLAM_STAND",
         "idx": 41,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 38.png",
             "../../data/chars/Phoenix/phoenix-Slice 37.png",
@@ -875,7 +875,7 @@
     {
         "name": "ANI_PHOENIX_SLAM_TALK",
         "idx": 42,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 38.png",
             "../../data/chars/Phoenix/phoenix-Slice 39.png",
@@ -908,7 +908,7 @@
     {
         "name": "ANI_PHOENIX_OBJECTION_START",
         "idx": 43,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 41.png",
             "../../data/chars/Phoenix/phoenix-Slice 42.png"
@@ -937,7 +937,7 @@
     {
         "name": "ANI_PHOENIX_OBJECTION_TALK",
         "idx": 44,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 43.png",
             "../../data/chars/Phoenix/phoenix-Slice 44.png",
@@ -970,7 +970,7 @@
     {
         "name": "ANI_PHOENIX_OBJECTION_STAND",
         "idx": 45,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 42.png",
             "../../data/chars/Phoenix/phoenix-Slice 46.png",
@@ -1003,7 +1003,7 @@
     {
         "name": "ANI_PHOENIX_PAPER_TALK",
         "idx": 46,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 48.png",
             "../../data/chars/Phoenix/phoenix-Slice 49.png",
@@ -1086,7 +1086,7 @@
     {
         "name": "ANI_PHOENIX_PAPER_STAND",
         "idx": 47,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 48.png",
             "../../data/chars/Phoenix/phoenix-Slice 52.png",
@@ -1119,7 +1119,7 @@
     {
         "name": "ANI_PHOENIX_CONFIDENT_STAND",
         "idx": 48,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 54.png",
             "../../data/chars/Phoenix/phoenix-Slice 55.png",
@@ -1152,7 +1152,7 @@
     {
         "name": "ANI_PHOENIX_CONFIDENT_TALK",
         "idx": 49,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 54.png",
             "../../data/chars/Phoenix/phoenix-Slice 57.png",
@@ -1185,7 +1185,7 @@
     {
         "name": "ANI_PHOENIX_NO",
         "idx": 50,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 1.png",
             "../../data/chars/Phoenix/phoenix-Slice 26.png",
@@ -1228,7 +1228,7 @@
     {
         "name": "ANI_PHOENIX_OOPS_STAND",
         "idx": 51,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 61.png",
             "../../data/chars/Phoenix/phoenix-Slice 62.png",
@@ -1261,7 +1261,7 @@
     {
         "name": "ANI_PHOENIX_OOPS_TALK",
         "idx": 52,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 64.png",
             "../../data/chars/Phoenix/phoenix-Slice 65.png",
@@ -1294,7 +1294,7 @@
     {
         "name": "ANI_PHOENIX_WIG",
         "idx": 53,
-        "background": "../../data/backgrounds/courtroom/courtroom_0.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Phoenix/phoenix-Slice 67.png",
             "../../data/chars/Phoenix/phoenix-Slice 68.png",
@@ -1401,7 +1401,7 @@
     {
         "name": "ANI_JUDGE_STAND",
         "idx": 56,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -1434,7 +1434,7 @@
     {
         "name": "ANI_JUDGE_TALK",
         "idx": 57,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 4.png",
             "../../data/chars/Judge/judge-Slice 5.png",
@@ -1467,7 +1467,7 @@
     {
         "name": "ANI_JUDGE_YES",
         "idx": 58,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -1640,7 +1640,7 @@
     {
         "name": "ANI_JUDGE_NO",
         "idx": 59,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 1.png",
             "../../data/chars/Judge/judge-Slice 2.png",
@@ -1813,7 +1813,7 @@
     {
         "name": "ANI_JUDGE_SHOCK_STAND",
         "idx": 60,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 11.png",
             "../../data/chars/Judge/judge-Slice 12.png",
@@ -1846,7 +1846,7 @@
     {
         "name": "ANI_JUDGE_SHOCK_TALK",
         "idx": 61,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 14.png",
             "../../data/chars/Judge/judge-Slice 15.png",
@@ -1929,7 +1929,7 @@
     {
         "name": "ANI_JUDGE_ANGRY_STAND",
         "idx": 62,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 17.png",
             "../../data/chars/Judge/judge-Slice 18.png",
@@ -1962,7 +1962,7 @@
     {
         "name": "ANI_JUDGE_ANGRY_TALK",
         "idx": 63,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 20.png",
             "../../data/chars/Judge/judge-Slice 21.png",
@@ -1995,7 +1995,7 @@
     {
         "name": "ANI_JUDGE_EYESCLOSED",
         "idx": 64,
-        "background": "../../data/backgrounds/courtroom/courtroom_6.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Judge/judge-Slice 3.png"
         ],
@@ -2022,7 +2022,7 @@
     {
         "name": "ANI_PAYNE_STAND",
         "idx": 65,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 1.png"
         ],
@@ -2049,7 +2049,7 @@
     {
         "name": "ANI_PAYNE_TALK",
         "idx": 66,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 1.png",
             "../../data/chars/Payne/payne-Slice 2.png",
@@ -2096,7 +2096,7 @@
     {
         "name": "ANI_PAYNE_SWEAT_STAND",
         "idx": 69,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 12.png",
             "../../data/chars/Payne/payne-Slice 13.png",
@@ -2129,7 +2129,7 @@
     {
         "name": "ANI_PAYNE_SWEAT_TALK",
         "idx": 70,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Payne/payne-Slice 12.png",
             "../../data/chars/Payne/payne-Slice 16.png",
@@ -2169,7 +2169,7 @@
     {
         "name": "ANI_EDGEWORTH_STAND",
         "idx": 83,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_4.png",
             "../../data/chars/Edgeworth/edgeworth_5.png",
@@ -2186,7 +2186,7 @@
     {
         "name": "ANI_EDGEWORTH_TALK",
         "idx": 84,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_4.png",
             "../../data/chars/Edgeworth/edgeworth_9.png",
@@ -2203,7 +2203,7 @@
     {
         "name": "ANI_EDGEWORTH_BOW_START",
         "idx": 85,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_12.png",
             "../../data/chars/Edgeworth/edgeworth_13.png",
@@ -2218,7 +2218,7 @@
     {
         "name": "ANI_EDGEWORTH_BOW_STAND",
         "idx": 86,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_14.png"
         ],
@@ -2229,7 +2229,7 @@
     {
         "name": "ANI_EDGEWORTH_SLAM_START",
         "idx": 87,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_15.png",
             "../../data/chars/Edgeworth/edgeworth_16.png",
@@ -2248,7 +2248,7 @@
     {
         "name": "ANI_EDGEWORTH_SLAM_STAND",
         "idx": 88,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_18.png",
             "../../data/chars/Edgeworth/edgeworth_24.png",
@@ -2265,7 +2265,7 @@
     {
         "name": "ANI_EDGEWORTH_SLAM_TALK",
         "idx": 89,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_18.png",
             "../../data/chars/Edgeworth/edgeworth_28.png",
@@ -2282,7 +2282,7 @@
     {
         "name": "ANI_EDGEWORTH_POINT_STAND",
         "idx": 90,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_34.png",
             "../../data/chars/Edgeworth/edgeworth_35.png",
@@ -2299,7 +2299,7 @@
     {
         "name": "ANI_EDGEWORTH_POINT_TALK",
         "idx": 91,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_34.png",
             "../../data/chars/Edgeworth/edgeworth_39.png",
@@ -2326,7 +2326,7 @@
     {
         "name": "ANI_EDGEWORTH_WELL_START",
         "idx": 92,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_48.png",
             "../../data/chars/Edgeworth/edgeworth_47.png",
@@ -2357,7 +2357,7 @@
     {
         "name": "ANI_EDGEWORTH_WELL_STAND",
         "idx": 93,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_56.png",
             "../../data/chars/Edgeworth/edgeworth_57.png",
@@ -2374,7 +2374,7 @@
     {
         "name": "ANI_EDGEWORTH_WELL_TALK",
         "idx": 94,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_56.png",
             "../../data/chars/Edgeworth/edgeworth_61.png",
@@ -2391,7 +2391,7 @@
     {
         "name": "ANI_EDGEWORTH_ARMCROSS_STAND",
         "idx": 95,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_70.png",
             "../../data/chars/Edgeworth/edgeworth_71.png",
@@ -2408,7 +2408,7 @@
     {
         "name": "ANI_EDGEWORTH_ARMCROSS_TALK",
         "idx": 96,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_67.png",
             "../../data/chars/Edgeworth/edgeworth_76.png",
@@ -2425,7 +2425,7 @@
     {
         "name": "ANI_EDGEWORTH_TSK_START",
         "idx": 97,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_81.png",
             "../../data/chars/Edgeworth/edgeworth_82.png",
@@ -2458,7 +2458,7 @@
     {
         "name": "ANI_EDGEWORTH_TSK_STAND",
         "idx": 98,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_88.png"
         ],
@@ -2469,7 +2469,7 @@
     {
         "name": "ANI_EDGEWORTH_PAPER_STAND",
         "idx": 99,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_92.png",
             "../../data/chars/Edgeworth/edgeworth_93.png",
@@ -2486,7 +2486,7 @@
     {
         "name": "ANI_EDGEWORTH_PAPER_TALK",
         "idx": 100,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_92.png",
             "../../data/chars/Edgeworth/edgeworth_97.png",
@@ -2503,7 +2503,7 @@
     {
         "name": "ANI_EDGEWORTH_SHOCK_START",
         "idx": 101,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_103.png",
             "../../data/chars/Edgeworth/edgeworth_104.png",
@@ -2520,7 +2520,7 @@
     {
         "name": "ANI_EDGEWORTH_SHOCK_STAND",
         "idx": 102,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_106.png",
             "../../data/chars/Edgeworth/edgeworth_107.png",
@@ -2537,7 +2537,7 @@
     {
         "name": "ANI_EDGEWORTH_SHOCK_TALK",
         "idx": 103,
-        "background": "../../data/backgrounds/courtroom/courtroom_4.png",
+        "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Edgeworth/edgeworth_106.png",
             "../../data/chars/Edgeworth/edgeworth_111.png",
@@ -2583,6 +2583,3231 @@
             10,
             10,
             10
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/829.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/829.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/827.png"
+        ],
+        "time": [
+            75,
+            8,
+            8,
+            8,
+            130,
+            8,
+            8,
+            8,
+            140
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/831.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/831.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/829.png",
+            "../../data/chars/Mia-maya/832.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/831.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/831.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/830.png",
+            "../../data/chars/Mia-maya/831.png",
+            "../../data/chars/Mia-maya/830.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            6,
+            4,
+            6,
+            3,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-GRINNING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/854.png",
+            "../../data/chars/Mia-maya/855.png",
+            "../../data/chars/Mia-maya/856.png",
+            "../../data/chars/Mia-maya/855.png",
+            "../../data/chars/Mia-maya/854.png",
+            "../../data/chars/Mia-maya/855.png",
+            "../../data/chars/Mia-maya/856.png",
+            "../../data/chars/Mia-maya/855.png",
+            "../../data/chars/Mia-maya/854.png"
+        ],
+        "time": [
+            75,
+            8,
+            8,
+            8,
+            130,
+            8,
+            8,
+            8,
+            140
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-GRINNING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/854.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/858.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/854.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/858.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/855.png",
+            "../../data/chars/Mia-maya/856.png",
+            "../../data/chars/Mia-maya/859.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/858.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/854.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/858.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/854.png",
+            "../../data/chars/Mia-maya/857.png",
+            "../../data/chars/Mia-maya/858.png",
+            "../../data/chars/Mia-maya/857.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            6,
+            4,
+            6,
+            3,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/860.png",
+            "../../data/chars/Mia-maya/861.png",
+            "../../data/chars/Mia-maya/861.png",
+            "../../data/chars/Mia-maya/860.png",
+            "../../data/chars/Mia-maya/861.png",
+            "../../data/chars/Mia-maya/861.png",
+            "../../data/chars/Mia-maya/860.png"
+        ],
+        "time": [
+            75,
+            8,
+            8,
+            130,
+            8,
+            8,
+            140
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/860.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/863.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/860.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/863.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/861.png",
+            "../../data/chars/Mia-maya/864.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/863.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/860.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/863.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/860.png",
+            "../../data/chars/Mia-maya/862.png",
+            "../../data/chars/Mia-maya/863.png",
+            "../../data/chars/Mia-maya/862.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            6,
+            4,
+            3,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-OHMY(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/865.png",
+            "../../data/chars/Mia-maya/866.png",
+            "../../data/chars/Mia-maya/867.png",
+            "../../data/chars/Mia-maya/866.png",
+            "../../data/chars/Mia-maya/865.png",
+            "../../data/chars/Mia-maya/866.png",
+            "../../data/chars/Mia-maya/867.png",
+            "../../data/chars/Mia-maya/866.png",
+            "../../data/chars/Mia-maya/865.png"
+        ],
+        "time": [
+            75,
+            6,
+            6,
+            6,
+            150,
+            6,
+            6,
+            6,
+            180
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-OHMY(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/865.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/869.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/865.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/869.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/866.png",
+            "../../data/chars/Mia-maya/867.png",
+            "../../data/chars/Mia-maya/870.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/869.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/865.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/869.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/865.png",
+            "../../data/chars/Mia-maya/868.png",
+            "../../data/chars/Mia-maya/869.png",
+            "../../data/chars/Mia-maya/868.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            5,
+            3,
+            5,
+            3,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-STRICT(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/871.png",
+            "../../data/chars/Mia-maya/872.png",
+            "../../data/chars/Mia-maya/873.png",
+            "../../data/chars/Mia-maya/872.png",
+            "../../data/chars/Mia-maya/871.png",
+            "../../data/chars/Mia-maya/872.png",
+            "../../data/chars/Mia-maya/873.png",
+            "../../data/chars/Mia-maya/872.png",
+            "../../data/chars/Mia-maya/871.png"
+        ],
+        "time": [
+            75,
+            8,
+            8,
+            8,
+            130,
+            8,
+            8,
+            8,
+            140
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-STRICT(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/871.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/875.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/871.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/875.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/872.png",
+            "../../data/chars/Mia-maya/873.png",
+            "../../data/chars/Mia-maya/876.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/875.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/871.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/875.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/871.png",
+            "../../data/chars/Mia-maya/874.png",
+            "../../data/chars/Mia-maya/875.png",
+            "../../data/chars/Mia-maya/874.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            6,
+            4,
+            6,
+            3,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                16,
+                53,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-FORWARD(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/833.png",
+            "../../data/chars/Mia-maya/834.png",
+            "../../data/chars/Mia-maya/835.png",
+            "../../data/chars/Mia-maya/834.png",
+            "../../data/chars/Mia-maya/833.png",
+            "../../data/chars/Mia-maya/834.png",
+            "../../data/chars/Mia-maya/835.png",
+            "../../data/chars/Mia-maya/834.png",
+            "../../data/chars/Mia-maya/833.png"
+        ],
+        "time": [
+            75,
+            8,
+            8,
+            8,
+            160,
+            8,
+            8,
+            8,
+            140
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-FORWARD(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/833.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/837.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/833.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/837.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/834.png",
+            "../../data/chars/Mia-maya/835.png",
+            "../../data/chars/Mia-maya/838.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/837.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/833.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/837.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/833.png",
+            "../../data/chars/Mia-maya/836.png",
+            "../../data/chars/Mia-maya/837.png",
+            "../../data/chars/Mia-maya/836.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            6,
+            4,
+            6,
+            3,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-HEADSHAKE",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/841.png",
+            "../../data/chars/Mia-maya/842.png",
+            "../../data/chars/Mia-maya/835.png",
+            "../../data/chars/Mia-maya/842.png",
+            "../../data/chars/Mia-maya/841.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/839.png"
+        ],
+        "time": [
+            10,
+            8,
+            8,
+            12,
+            15,
+            12,
+            12,
+            8,
+            40
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    16,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    16,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-NOD",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/827.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/829.png",
+            "../../data/chars/Mia-maya/843.png",
+            "../../data/chars/Mia-maya/844.png",
+            "../../data/chars/Mia-maya/843.png",
+            "../../data/chars/Mia-maya/829.png",
+            "../../data/chars/Mia-maya/828.png",
+            "../../data/chars/Mia-maya/827.png"
+        ],
+        "time": [
+            10,
+            8,
+            8,
+            12,
+            18,
+            14,
+            12,
+            10,
+            50
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    16,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    53,
+                    0,
+                    55,
+                    45,
+                    0,
+                    28
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-SAD(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/845.png",
+            "../../data/chars/Mia-maya/846.png",
+            "../../data/chars/Mia-maya/847.png",
+            "../../data/chars/Mia-maya/846.png",
+            "../../data/chars/Mia-maya/845.png",
+            "../../data/chars/Mia-maya/846.png",
+            "../../data/chars/Mia-maya/847.png",
+            "../../data/chars/Mia-maya/846.png",
+            "../../data/chars/Mia-maya/845.png"
+        ],
+        "time": [
+            75,
+            10,
+            10,
+            10,
+            155,
+            10,
+            10,
+            10,
+            168
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-SAD(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/845.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/849.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/845.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/849.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/846.png",
+            "../../data/chars/Mia-maya/847.png",
+            "../../data/chars/Mia-maya/850.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/849.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/845.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/849.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/845.png",
+            "../../data/chars/Mia-maya/848.png",
+            "../../data/chars/Mia-maya/849.png",
+            "../../data/chars/Mia-maya/848.png"
+        ],
+        "time": [
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            7,
+            7,
+            7,
+            7,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11,
+            11
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-STRICT(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/841.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/841.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/839.png"
+        ],
+        "time": [
+            75,
+            8,
+            8,
+            8,
+            130,
+            8,
+            8,
+            8,
+            140
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "MIAMAYA-BENCH-STRICT(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/852.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/852.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/840.png",
+            "../../data/chars/Mia-maya/841.png",
+            "../../data/chars/Mia-maya/853.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/852.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/852.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/839.png",
+            "../../data/chars/Mia-maya/851.png",
+            "../../data/chars/Mia-maya/852.png",
+            "../../data/chars/Mia-maya/851.png"
+        ],
+        "time": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            6,
+            4,
+            6,
+            3,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                53,
+                0,
+                55,
+                45,
+                0,
+                28
+            ]
+        ]
+    },
+    {
+        "name": "REDD-BRAGGING",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1099.png",
+            "../../data/chars/White/1100.png",
+            "../../data/chars/White/1101.png",
+            "../../data/chars/White/1102.png",
+            "../../data/chars/White/1103.png",
+            "../../data/chars/White/1104.png",
+            "../../data/chars/White/1102.png",
+            "../../data/chars/White/1103.png",
+            "../../data/chars/White/1104.png",
+            "../../data/chars/White/1102.png",
+            "../../data/chars/White/1103.png",
+            "../../data/chars/White/1104.png",
+            "../../data/chars/White/1102.png",
+            "../../data/chars/White/1103.png",
+            "../../data/chars/White/1104.png",
+            "../../data/chars/White/1101.png"
+        ],
+        "time": [
+            15,
+            6,
+            5,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            5
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "REDD-BREAKS",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1105.png",
+            "../../data/chars/White/1106.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1107.png",
+            "../../data/chars/White/1108.png",
+            "../../data/chars/White/1106.png",
+            "../../data/chars/White/1109.png",
+            "../../data/chars/White/1110.png",
+            "../../data/chars/White/1109.png",
+            "../../data/chars/White/1110.png",
+            "../../data/chars/White/1109.png",
+            "../../data/chars/White/1110.png",
+            "../../data/chars/White/1109.png"
+        ],
+        "time": [
+            60,
+            5,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            5,
+            20,
+            5,
+            40,
+            5,
+            5,
+            5,
+            60
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    20,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    20,
+                    38,
+                    55,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    45,
+                    38,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    20,
+                    38,
+                    55,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    45,
+                    20,
+                    37,
+                    53,
+                    48
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "REDD-DAMAGE",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1105.png",
+            "../../data/chars/White/1111.png"
+        ],
+        "time": [
+            12,
+            8
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    20,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "REDD-MYMY(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1112.png",
+            "../../data/chars/White/1113.png",
+            "../../data/chars/White/1114.png",
+            "../../data/chars/White/1115.png",
+            "../../data/chars/White/1114.png",
+            "../../data/chars/White/1116.png",
+            "../../data/chars/White/1114.png",
+            "../../data/chars/White/1115.png",
+            "../../data/chars/White/1114.png",
+            "../../data/chars/White/1116.png",
+            "../../data/chars/White/1114.png",
+            "../../data/chars/White/1113.png",
+            "../../data/chars/White/1112.png"
+        ],
+        "time": [
+            30,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            120
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                38,
+                20,
+                55,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-MYMY(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1117.png",
+            "../../data/chars/White/1118.png",
+            "../../data/chars/White/1119.png",
+            "../../data/chars/White/1118.png",
+            "../../data/chars/White/1120.png",
+            "../../data/chars/White/1121.png",
+            "../../data/chars/White/1122.png",
+            "../../data/chars/White/1121.png",
+            "../../data/chars/White/1117.png",
+            "../../data/chars/White/1118.png",
+            "../../data/chars/White/1119.png",
+            "../../data/chars/White/1118.png",
+            "../../data/chars/White/1120.png",
+            "../../data/chars/White/1118.png",
+            "../../data/chars/White/1119.png",
+            "../../data/chars/White/1118.png"
+        ],
+        "time": [
+            8,
+            8,
+            10,
+            8,
+            8,
+            8,
+            10,
+            8,
+            8,
+            8,
+            10,
+            8,
+            8,
+            8,
+            10,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                38,
+                20,
+                55,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1123.png",
+            "../../data/chars/White/1124.png",
+            "../../data/chars/White/1125.png",
+            "../../data/chars/White/1126.png",
+            "../../data/chars/White/1127.png",
+            "../../data/chars/White/1128.png",
+            "../../data/chars/White/1127.png",
+            "../../data/chars/White/1126.png",
+            "../../data/chars/White/1125.png",
+            "../../data/chars/White/1124.png",
+            "../../data/chars/White/1123.png"
+        ],
+        "time": [
+            30,
+            7,
+            12,
+            8,
+            8,
+            10,
+            8,
+            8,
+            8,
+            6,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                38,
+                55,
+                20,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1123.png",
+            "../../data/chars/White/1129.png",
+            "../../data/chars/White/1130.png",
+            "../../data/chars/White/1129.png",
+            "../../data/chars/White/1131.png",
+            "../../data/chars/White/1132.png",
+            "../../data/chars/White/1133.png",
+            "../../data/chars/White/1132.png",
+            "../../data/chars/White/1123.png",
+            "../../data/chars/White/1129.png",
+            "../../data/chars/White/1130.png",
+            "../../data/chars/White/1129.png",
+            "../../data/chars/White/1131.png",
+            "../../data/chars/White/1129.png",
+            "../../data/chars/White/1130.png",
+            "../../data/chars/White/1129.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                38,
+                55,
+                20,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-SHOUTING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1136.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1136.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1136.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1134.png"
+        ],
+        "time": [
+            30,
+            3,
+            4,
+            3,
+            100,
+            3,
+            4,
+            3,
+            3,
+            3,
+            4,
+            3,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                20,
+                38,
+                55,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-SHOUTING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1137.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1138.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1139.png",
+            "../../data/chars/White/1135.png",
+            "../../data/chars/White/1140.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1137.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1138.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1137.png",
+            "../../data/chars/White/1134.png",
+            "../../data/chars/White/1140.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            6,
+            6,
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                20,
+                38,
+                55,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-SHRUG",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1141.png",
+            "../../data/chars/White/1142.png",
+            "../../data/chars/White/1143.png",
+            "../../data/chars/White/1144.png",
+            "../../data/chars/White/1145.png"
+        ],
+        "time": [
+            10,
+            6,
+            20,
+            6,
+            10
+        ],
+        "palettes_each": [
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    38,
+                    55,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ],
+            [
+                [
+                    0,
+                    15,
+                    16,
+                    32
+                ],
+                [
+                    55,
+                    38,
+                    45,
+                    37,
+                    53,
+                    48
+                ]
+            ]
+        ]
+    },
+    {
+        "name": "REDD-SWEATING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1146.png",
+            "../../data/chars/White/1147.png",
+            "../../data/chars/White/1148.png",
+            "../../data/chars/White/1149.png",
+            "../../data/chars/White/1150.png",
+            "../../data/chars/White/1146.png",
+            "../../data/chars/White/1151.png",
+            "../../data/chars/White/1152.png",
+            "../../data/chars/White/1153.png",
+            "../../data/chars/White/1148.png",
+            "../../data/chars/White/1149.png",
+            "../../data/chars/White/1150.png",
+            "../../data/chars/White/1146.png",
+            "../../data/chars/White/1147.png",
+            "../../data/chars/White/1148.png",
+            "../../data/chars/White/1149.png",
+            "../../data/chars/White/1150.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            4,
+            4,
+            4,
+            4,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                20,
+                38,
+                55,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-SWEATING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1146.png",
+            "../../data/chars/White/1154.png",
+            "../../data/chars/White/1155.png",
+            "../../data/chars/White/1156.png",
+            "../../data/chars/White/1157.png",
+            "../../data/chars/White/1158.png",
+            "../../data/chars/White/1159.png",
+            "../../data/chars/White/1160.png",
+            "../../data/chars/White/1161.png",
+            "../../data/chars/White/1162.png",
+            "../../data/chars/White/1163.png",
+            "../../data/chars/White/1164.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            4,
+            4,
+            4,
+            4,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                20,
+                38,
+                55,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-THINKING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1165.png",
+            "../../data/chars/White/1166.png",
+            "../../data/chars/White/1167.png",
+            "../../data/chars/White/1166.png",
+            "../../data/chars/White/1165.png",
+            "../../data/chars/White/1166.png",
+            "../../data/chars/White/1167.png",
+            "../../data/chars/White/1166.png",
+            "../../data/chars/White/1165.png",
+            "../../data/chars/White/1166.png",
+            "../../data/chars/White/1167.png",
+            "../../data/chars/White/1166.png",
+            "../../data/chars/White/1165.png"
+        ],
+        "time": [
+            30,
+            4,
+            6,
+            6,
+            100,
+            4,
+            6,
+            4,
+            4,
+            4,
+            4,
+            4,
+            80
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                38,
+                55,
+                20,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-THINKING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1165.png",
+            "../../data/chars/White/1168.png",
+            "../../data/chars/White/1169.png",
+            "../../data/chars/White/1168.png",
+            "../../data/chars/White/1170.png",
+            "../../data/chars/White/1171.png",
+            "../../data/chars/White/1172.png",
+            "../../data/chars/White/1171.png",
+            "../../data/chars/White/1165.png",
+            "../../data/chars/White/1168.png",
+            "../../data/chars/White/1169.png",
+            "../../data/chars/White/1168.png",
+            "../../data/chars/White/1170.png",
+            "../../data/chars/White/1168.png",
+            "../../data/chars/White/1169.png",
+            "../../data/chars/White/1168.png"
+        ],
+        "time": [
+            8,
+            8,
+            10,
+            8,
+            7,
+            7,
+            7,
+            7,
+            8,
+            8,
+            10,
+            8,
+            8,
+            8,
+            10,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                38,
+                55,
+                20,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "REDD-TWITCH",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/White/1173.png",
+            "../../data/chars/White/1174.png",
+            "../../data/chars/White/1173.png",
+            "../../data/chars/White/1174.png",
+            "../../data/chars/White/1173.png",
+            "../../data/chars/White/1174.png",
+            "../../data/chars/White/1173.png"
+        ],
+        "time": [
+            20,
+            5,
+            90,
+            5,
+            5,
+            5,
+            120
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                55,
+                38,
+                20,
+                37,
+                53,
+                45
+            ]
+        ]
+    },
+    {
+        "name": "GROSSBERG-NORMAL(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Grossberg/358.png",
+            "../../data/chars/Grossberg/359.png",
+            "../../data/chars/Grossberg/358.png",
+            "../../data/chars/Grossberg/359.png",
+            "../../data/chars/Grossberg/358.png",
+            "../../data/chars/Grossberg/359.png",
+            "../../data/chars/Grossberg/358.png"
+        ],
+        "time": [
+            30,
+            5,
+            60,
+            5,
+            6,
+            5,
+            100
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                45,
+                48,
+                0,
+                38,
+                23,
+                39
+            ]
+        ]
+    },
+    {
+        "name": "GROSSBERG-NORMAL(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Grossberg/358.png",
+            "../../data/chars/Grossberg/360.png",
+            "../../data/chars/Grossberg/361.png",
+            "../../data/chars/Grossberg/360.png"
+        ],
+        "time": [
+            8,
+            8,
+            10,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                45,
+                48,
+                0,
+                38,
+                23,
+                39
+            ]
+        ]
+    },
+    {
+        "name": "GROSSBERG-SWEATING(A)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Grossberg/362.png",
+            "../../data/chars/Grossberg/362.png",
+            "../../data/chars/Grossberg/363.png",
+            "../../data/chars/Grossberg/364.png",
+            "../../data/chars/Grossberg/362.png",
+            "../../data/chars/Grossberg/364.png",
+            "../../data/chars/Grossberg/363.png",
+            "../../data/chars/Grossberg/364.png",
+            "../../data/chars/Grossberg/362.png",
+            "../../data/chars/Grossberg/364.png",
+            "../../data/chars/Grossberg/363.png",
+            "../../data/chars/Grossberg/364.png",
+            "../../data/chars/Grossberg/362.png"
+        ],
+        "time": [
+            30,
+            4,
+            5,
+            4,
+            60,
+            4,
+            5,
+            4,
+            4,
+            5,
+            4,
+            6,
+            120
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                45,
+                48,
+                38,
+                0,
+                23,
+                39
+            ]
+        ]
+    },
+    {
+        "name": "GROSSBERG-SWEATING(B)",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Grossberg/362.png",
+            "../../data/chars/Grossberg/365.png",
+            "../../data/chars/Grossberg/366.png",
+            "../../data/chars/Grossberg/367.png",
+            "../../data/chars/Grossberg/364.png",
+            "../../data/chars/Grossberg/363.png",
+            "../../data/chars/Grossberg/368.png",
+            "../../data/chars/Grossberg/365.png",
+            "../../data/chars/Grossberg/366.png",
+            "../../data/chars/Grossberg/367.png",
+            "../../data/chars/Grossberg/362.png",
+            "../../data/chars/Grossberg/365.png",
+            "../../data/chars/Grossberg/366.png",
+            "../../data/chars/Grossberg/367.png"
+        ],
+        "time": [
+            8,
+            8,
+            8,
+            8,
+            4,
+            4,
+            4,
+            4,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                45,
+                48,
+                38,
+                0,
+                23,
+                39
+            ]
+        ]
+    },
+    {
+        "name": "ANI_BELLBOY_STAND",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/BellBoy/bellboy_4.png",
+            "../../data/chars/BellBoy/bellboy_5.png",
+            "../../data/chars/BellBoy/bellboy_6.png",
+            "../../data/chars/BellBoy/bellboy_5.png"
+        ],
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                15,
+                0,
+                16,
+                32
+            ],
+            [
+                4,
+                20,
+                36,
+                8,
+                24,
+                40
+            ]
+        ]
+    },
+    {
+        "name": "ANI_BELLBOY_TALK",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/BellBoy/bellboy_4.png",
+            "../../data/chars/BellBoy/bellboy_12.png",
+            "../../data/chars/BellBoy/bellboy_4.png",
+            "../../data/chars/BellBoy/bellboy_13.png"
+        ],
+        "time": [
+            15,
+            15,
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                15,
+                0,
+                16,
+                32
+            ],
+            [
+                4,
+                20,
+                36,
+                8,
+                24,
+                40
+            ]
+        ]
+    },
+    {
+        "name": "ANI_BELLBOY_BLUSH_STAND",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/BellBoy/bellboy_24.png",
+            "../../data/chars/BellBoy/bellboy_25.png",
+            "../../data/chars/BellBoy/bellboy_26.png",
+            "../../data/chars/BellBoy/bellboy_25.png"
+        ],
+        "time": [
+            60,
+            10,
+            10,
+            10
+        ],
+        "palettes": [
+            [
+                15,
+                0,
+                16,
+                32
+            ],
+            [
+                4,
+                20,
+                36,
+                8,
+                24,
+                40
+            ]
+        ]
+    },
+    {
+        "name": "ANI_BELLBOY_BLUSH_TALK",
+        "idx": 1000,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/BellBoy/bellboy_24.png",
+            "../../data/chars/BellBoy/bellboy_37.png",
+            "../../data/chars/BellBoy/bellboy_24.png",
+            "../../data/chars/BellBoy/bellboy_38.png"
+        ],
+        "time": [
+            15,
+            15,
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                15,
+                0,
+                16,
+                32
+            ],
+            [
+                4,
+                20,
+                36,
+                8,
+                24,
+                40
+            ]
         ]
     }
 ]
