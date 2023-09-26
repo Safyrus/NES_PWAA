@@ -49,7 +49,7 @@ def img2bin(args):
 
     if not os.path.exists(args.out):
         print("make dir")
-        os.mkdir(args.out)
+        os.makedirs(args.out, exist_ok=True)
 
     # convert all images to tiles
     for i, img_name in enumerate(img_names):

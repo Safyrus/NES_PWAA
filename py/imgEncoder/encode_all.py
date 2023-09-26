@@ -5,6 +5,7 @@ import subprocess
 
 from encode_frame import *
 from img2bin import img2bin
+from opti_chr import *
 
 EMPTY_IMG = "../../data/empty.png"
 IMG_NB_TILE = 256*3
@@ -23,7 +24,6 @@ def ca65_file(frames, ca65_info):
     anims = ca65_info["anims"]
     anims_name = ca65_info["anims_name"]
     anims_idx = ca65_info["anims_idx"]
-    pal_bank = ca65_info["pal_bank"]
 
     # sort backgrounds
     for i in range(len(frames)):
@@ -86,23 +86,9 @@ def ca65_file(frames, ca65_info):
         for a in anim:
             ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
 
-    # write palettes table
-    ca65_pal = "palette_table:\n"
-    # for p in pal_bank:
-    #     pal = ".byte"
-    #     pal_cmt = " ;"
-    #     for c in p:
-    #         pal += f" $" + "%0.2X" % c + ","
-    #         if c > 64:
-    #             print(f"ERROR: wrong palette ({c})")
-    #             pal_cmt += f" ERROR,"
-    #         else:
-    #             pal_cmt += f" {str(NES_PAL_NAM[c])}{str(NES_PAL[c])},"
-    #     ca65_pal += pal[0:-1] + pal_cmt[0:-1] + "\n"
-
     # final touch
     ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"ANIM_BNK\"\n"
-    ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n" + ca65_pal + "\n"
+    ca65 += ca65_bkg + ca65_bkg_bnk + "\n" + ca65_anim + "\n"
     return ca65
 
 
@@ -176,6 +162,8 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
         chars.append(chars[0])
         times.append(0)
         pal_set = anim["palettes"] if "palettes" in anim else None
+        do_add_pal = True
+        add_pal = "palettes_each" in anim
         anim_frame = []
         last_char = bck
         # for all characters:
@@ -200,7 +188,7 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
                 tile_map2 = tile_maps[tile_map2_idx]
                 pal_map1 = pal_maps[tile_map1_idx]
                 pal_map2 = pal_maps[tile_map2_idx]
-                frame, spr_bank, spr_data_bnk_idx = encode_frame_partial(bck, chars[i], spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2, chr_start_bank=chr_start_bank)
+                frame, spr_bank, spr_data_bnk_idx = encode_frame_partial(bck, chars[i], spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2, chr_start_bank=chr_start_bank, add_pal=do_add_pal)
                 spr_bnk_to_fix[anim_name] = spr_data_bnk_idx
                 # frames += frame
                 frames.append(frame)
@@ -210,6 +198,8 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
                 frames_bkg_idx.append(MAX_FRAME_IDX)
             #
             anim_frame.append((anim_name, times[i] % 128))
+            if add_pal:
+                do_add_pal = False
         #
         anims.append(anim_frame)
         anims_name.append(anim["name"] if "name" in anim else f"CHR_{len(anims_name)}")
@@ -224,6 +214,31 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
             if frames_name[i] == k:
                 frames[i][v] += offset
 
+    # tile_bank to ROM
+    print("CHR ROM file")
+    CHR_rom = []
+    CHR_rom.extend(tile_bank)
+    padding = (len(CHR_rom) + (chr_start_bank*4096)) % (32*SPR_BANK_PAGE_SIZE)
+    if padding != 0:
+        CHR_rom.extend(bytes(32*SPR_BANK_PAGE_SIZE-padding))
+    spr_bank_start = len(CHR_rom) // 4096
+    for t in spr_bank:
+        t1 = np.full((8, 8), 0)
+        t2 = np.full((8, 8), 0)
+        shape = np.shape(t[:8, :])
+        t1[:shape[0], :shape[1]] = t[:8, :]
+        shape = np.shape(t[8:16, :])
+        t2[:shape[0], :shape[1]] = t[8:16, :]
+        CHR_rom.extend(tile_2_chr(t1))
+        CHR_rom.extend(tile_2_chr(t2))
+    padding = len(CHR_rom) % (32*SPR_BANK_PAGE_SIZE)
+    if padding != 0:
+        CHR_rom.extend(bytes(32*SPR_BANK_PAGE_SIZE-padding))
+    CHR_rom = bytearray(CHR_rom)
+
+    print("CHRrom size before opti:", len(CHR_rom))
+    CHR_rom, frames = opti_chrrom_space(CHR_rom, spr_bank_start, frames)
+
     # pack ca65 info
     ca65_info = {
         "frames_bkg_idx": frames_bkg_idx,
@@ -235,24 +250,6 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
         "anims_idx": anims_idx,
         "pal_bank": pal_bank
     }
-
-    # tile_bank to ROM
-    print("CHR ROM file")
-    CHR_rom = []
-    CHR_rom.extend(tile_bank)
-    padding = (len(CHR_rom) + (chr_start_bank*4096)) % (32*SPR_BANK_PAGE_SIZE)
-    if padding != 0:
-        CHR_rom.extend(bytes(32*SPR_BANK_PAGE_SIZE-padding))
-    for t in spr_bank:
-        t1 = np.full((8, 8), 0)
-        t2 = np.full((8, 8), 0)
-        shape = np.shape(t[:8, :])
-        t1[:shape[0], :shape[1]] = t[:8, :]
-        shape = np.shape(t[8:16, :])
-        t2[:shape[0], :shape[1]] = t[8:16, :]
-        CHR_rom.extend(tile_2_chr(t1))
-        CHR_rom.extend(tile_2_chr(t2))
-    CHR_rom = bytes(CHR_rom)
 
     # return
     PRG_size = sum([len(f) for f in frames])
@@ -302,7 +299,7 @@ def encode_frame_bkg(background, tile_map, pal_bank, pal_set, chr_start_bank=0):
     return frame
 
 
-def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2, chr_start_bank=0):
+def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, tile_map1, tile_map2, pal_map1, pal_map2, chr_start_bank=0, add_pal=True):
     frame = []
 
     # Byte 0: flags.
@@ -313,7 +310,8 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     # |+--------- is Palette present ?
     # +---------- 1 = Full frame
     #             0 = partial frame
-    flags = 0b01110000
+    flags = 0b00110000
+    flags += 0x40 if add_pal else 0
     frame.append(flags)
 
     # get the full image of the previous and current frame
@@ -325,7 +323,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
         pal_chr = pal_set[1]
     if pal_bkg not in pal_bank:
         pal_bank.append(pal_bkg)
-    #
+    # get character palette
     pal_chr = [
         [pal_bkg[0], pal_chr[0], pal_chr[1], pal_chr[2]],
         [pal_bkg[0], pal_chr[0], pal_bkg[2], pal_bkg[3]],
@@ -334,14 +332,16 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     for i in range(len(pal_chr)):
         if pal_chr[i] not in pal_bank:
             pal_bank.append(pal_chr[i])
-    # palette bytes
-    frame.append(pal_chr[0][1] + 0x40)
-    frame.append(pal_chr[0][2] + 0x40)
-    frame.append(pal_chr[0][3] + 0x40)
-    frame.append(pal_chr[2][1] + 0x80)
-    frame.append(pal_chr[2][2] + 0x80)
-    frame.append(pal_chr[2][3] + 0x80)
-    frame.append(0xFF)
+
+    if add_pal:
+        # palette bytes
+        frame.append(pal_chr[0][1] + 0x40)
+        frame.append(pal_chr[0][2] + 0x40)
+        frame.append(pal_chr[0][3] + 0x40)
+        frame.append(pal_chr[2][1] + 0x80)
+        frame.append(pal_chr[2][2] + 0x80)
+        frame.append(pal_chr[2][3] + 0x80)
+        frame.append(0xFF)
 
     # remove same tiles between frames
     tile_map = []

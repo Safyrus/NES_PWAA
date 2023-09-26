@@ -28,7 +28,8 @@ def main():
     args.c_program = os.path.join(args.cpath, args.exe)
 
     ca65_info_all = {
-        "pal_bank": []
+        "pal_bank": [],
+        "names": []
     }
     all_frames = []
     CHR_roms = bytearray()
@@ -46,7 +47,7 @@ def main():
         args.json = file
         l = len(CHR_roms) + basechr_size
         args.chr_start = l // 4096 + (1 if l % 4096 != 0 else 0)
-        args.max_prg_size = 1024*128
+        args.max_prg_size = 1024*256
         args.max_chr_size = 1024*256
         args.start_dif = 0
         if region_bits == 0:
@@ -69,6 +70,19 @@ def main():
             if k not in ca65_info_all:
                 ca65_info_all[k] = []
             ca65_info_all[k].extend(ca65_info[k])
+
+    # remove same frame
+    names = ca65_info_all["names"]
+    for k in names:
+        while (len([c for c in ca65_info_all["names"] if c == k]) > 1):
+            i = len(ca65_info_all["names"])-1
+            while ca65_info_all["names"][i] != k:
+                i -= 1
+            del all_frames[i]
+            del ca65_info_all["frames_bkg_name"][i]
+            del ca65_info_all["frames_bkg_idx"][i]
+            del ca65_info_all["ischr"][i]
+            del ca65_info_all["names"][i]
 
     # write results
     write_files(ca65_info_all, all_frames, CHR_roms, basechr_file=args.basechr, chr_name=args.out_chr)

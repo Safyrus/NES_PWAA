@@ -127,7 +127,7 @@ def rleinc_decode(data, doprint=False):
         if n == RLEINC_CMD_END:
             if doprint:
                 print("[DECODE]: END", len(out))
-            return out
+            return out, idx
         elif n < RLEINC_CMD_SEQ:
             if doprint:
                 print("[DECODE]: LIT", n, len(out))
