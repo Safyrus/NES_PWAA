@@ -182,154 +182,169 @@ Thanks :)<wait:120><fp>
 <const:NAM_MISSINGNO,0>
 <const:NAM_UNKNOW,1>
 <const:NAM_PHOENIX,2>
-<const:NAM_POLICE,0>
-<const:NAM_MAYA,0>
+<const:NAM_POLICE,12>
+<const:NAM_MAYA,10>
 <const:NAM_ALARMCLOCK,8>
 <const:NAM_MIA,3>
 <const:NAM_JUDGE,5>
-<const:NAM_EDGEWORTH,0>
+<const:NAM_EDGEWORTH,14>
 <const:NAM_PAYNE,6>
-<const:NAM_INTERPHONE,0>
-<const:NAM_GROSSBERG,0>
-<const:NAM_CELLULAR,0>
+<const:NAM_INTERPHONE,18>
+<const:NAM_GROSSBERG,13>
+<const:NAM_CELLULAR,9>
 <const:NAM_UNKNOW2,1>
-<const:NAM_PENNY,0>
-<const:NAM_OLDBAG,0>
-<const:NAM_MANELLA,0>
-<const:NAM_TV,0>
-<const:NAM_GUMSHOE,0>
-<const:NAM_WHITE,0>
-<const:NAM_APRIL,0>
-<const:NAM_BELLBOY,0>
-<const:NAM_VASQUEZ,0>
+<const:NAM_PENNY,22>
+<const:NAM_OLDBAG,21>
+<const:NAM_MANELLA,24>
+<const:NAM_TV,19>
+<const:NAM_GUMSHOE,11>
+<const:NAM_WHITE,17>
+<const:NAM_APRIL,15>
+<const:NAM_BELLBOY,16>
+<const:NAM_VASQUEZ,25>
 <const:NAM_BUTZ,4>
 <const:NAM_SAHWIT,7>
-<const:NAM_WILL,0>
-<const:NAM_CODY,0>
-<const:NAM_LOTTA,0>
-<const:NAM_YOGI,0>
-<const:NAM_KARMA,0>
-<const:NAM_PARROT,0>
-<const:NAM_MISSILE,0>
-<const:NAM_UNCLE,0>
-<const:NAM_GUARD,0>
-<const:NAM_TEACHER,0>
-<const:NAM_EDGEWORTH_CHILD,0>
-<const:NAM_BUTZ_CHILD,0>
+<const:NAM_WILL,20>
+<const:NAM_CODY,23>
+<const:NAM_LOTTA,26>
+<const:NAM_YOGI,32>
+<const:NAM_KARMA,29>
+<const:NAM_PARROT,27>
+<const:NAM_MISSILE,30>
+<const:NAM_UNCLE,28>
+<const:NAM_GUARD,31>
+<const:NAM_TEACHER,33>
+<const:NAM_EDGEWORTH_CHILD,14>
+<const:NAM_BUTZ_CHILD,4>
 <const:NAM_CHIEF,0>
 
 <!-- Backgrounds constants -->
 <const:BKG_NONE,0>
-<const:BKG_FEY_OFFICE,0>
-<const:BKG_COURTROOM_LOBBY,7>
-<const:BKG_COURTROOM_DEFENSE,1>
-<const:BKG_COURTROOM_PROSECUTION,3>
-<const:BKG_COURTROOM_STAND,2>
+<const:BKG_FEY_OFFICE,1>
+<const:BKG_COURTROOM_LOBBY,2>
+<const:BKG_COURTROOM_DEFENSE,3>
+<const:BKG_COURTROOM_PROSECUTION,4>
+<const:BKG_COURTROOM_STAND,5>
 <const:BKG_COURTROOM_TALK,6>
-<const:BKG_COURTROOM_DEFENSE_SIDE,4>
-<const:BKG_COURTROOM_JUDGE,5>
-<const:BKG_FEY_OFFICE_NIGHT,23>
-<const:BKG_MIA_DEAD_SIDE,30>
-<const:BKG_SUTDIO_1_ENTRANCE,0>
-<const:BKG_GLOBAL_SUTDIO_EMPLOYEE_AREA,0>
-<const:BKG_MIA_RUN_RIGHT,0>
-<const:BKG_MIA_RUN_LEFT,0>
-<const:BKG_FEY_OFFICE_MAP,0>
-<const:BKG_SCENE_BELLBOY_APRIL,0>
-<const:BKG_MIA_DEAD_FRONT,31>
-<const:BKG_FEY_OFFICE_MIA_GHOST,0>
-<const:BKG_STDUI_2_TRAILER,0>
-<const:BKG_APRIL_CALL,27>
-<const:BKG_SLAM,26>
-<const:BKG_MIA_BEFORE_MURDER,24>
-<const:BKG_TINKER_WHITE,25>
-<const:BKG_WILL_ROOM,0>
-<const:BKG_GLOBAL_STUDIO_MAIN_GATE,0>
-<const:BKG_STUDIO_1,0>
-<const:BKG_GAVEL_SLAM,9>
-<const:BKG_FEY_OFFICE_MAP_WINDOW,0>
-<const:BKG_DEENTION_CENTER,0>
-<const:BKG_BLUECORP,0>
-<const:BKG_GATEWATER_HOTEL,0>
-<const:BKG_TINKER_BLOOD,16>
-<const:BKG_CINDY_MURDER,17>
-<const:BKG_SAHWIT_MURDERER_1,18>
-<const:BKG_SAHWIT_MURDERER_2,19>
-<const:BKG_SAHWIT_MURDERER_3,20>
-<const:BKG_SAHWIT_MURDERER_4,21>
-<const:BKG_GROSSBERG_OFFICE,0>
-<const:BKG_GROSSBERG_OFFICE_NO_PAINTING,0>
-<const:BKG_SCENE_CINDY_SEE_SAHWIT,22>
-<const:BKG_SCENE_LARRY_SAHWIT,15>
-<const:BKG_SCENE_SAHWIT_FOUND_BODY,14>
-<const:BKG_STUDIO_2_ENTRANCE,0>
-<const:BKG_SCENE_PHOTO_STEEL_SAMURAI_WALK,0>
-<const:BKG_SCENE_JACK_DEAD,0>
-<const:BKG_SCENE_JACK_STEEL_COSTUME,0>
-<const:BKG_SCENE_VASQUEZ_KILL_JACK,0>
-<const:BKG_SCENE_GLOBAL_STUDIO_LUNCH,0>
-<const:BKG_SCENE_STEEL_SAMURIA_VASQUEZ,0>
-<const:BKG_SCENE_STEEL_SAMURIA_CODY,0>
-<const:BKG_SCENE_PHOTO_STEEL_SAMURIA_BACK,0>
-<const:BKG_SCENE_PHOTO_ACCIDENT,0>
-<const:BKG_STUDIO_2_TRAILER_MAFIA,0>
-<const:BKG_POSTER_PINK_PRINCESS,0>
-<const:BKG_MONKEY_HEAD,0>
-<const:BKG_GLOBAL_STUDIO_MAP,0>
-<const:BKG_SCENE_STUDIO_ACTION_SCENE,0>
-<const:BKG_POSTER_STEEL_SAMURAI,0>
-<const:BKG_ACTION_LINES,8>
-<const:BKG_STEEL_SAMURAI_SHOW_4,0>
-<const:BKG_GOURD_LAKE_ENTRANCE,0>
-<const:BKG_GOURD_LAKE_BEACH_SAMURAI,0>
-<const:BKG_GOURD_LAKE_BEACH,0>
-<const:BKG_GOURD_LAKE_WOODS,0>
-<const:BKG_STEEL_SAMURAI_SHOW_1,0>
-<const:BKG_STEEL_SAMURAI_SHOW_2,0>
-<const:BKG_BOAT_RENTAL_SHOP,0>
-<const:BKG_CARETAKER_SHACK,0>
-<const:BKG_POLICE_DEPARTMENT,0>
-<const:BKG_POLICE_DEPARTMENT_RECORDS_ROOM,0>
-<const:BKG_STEEL_SAMURAI_SHOW_3,0>
-<const:BKG_TRAIN_STATION,0>
-<const:BKG_MAP_GOURD_LAKE,0>
-<const:BKG_SCENE_PHOTO_BOAT_SHOOT_CLOSE,0>
-<const:BKG_SCENE_PHOTO_CRIME_ELEVATOR,0>
-<const:BKG_ARTICLE,0>
-<const:BKG_SCENE_AIR_TANK,0>
-<const:BKG_SCENE_SAMURAI_FALL_WATER,0>
-<const:BKG_SCENE_BOAT_LARRY,0>
-<const:BKG_SCENE_CLASSROOM,0>
-<const:BKG_SCENE_PHOTO_BOAT_SHOOT_FAR,0>
-<const:BKG_PHOENIX_CHILD,0>
-<const:BKG_EDGEWORTH_CHILD,0>
-<const:BKG_LARRY_CHILD,0>
-<const:BKG_SCENE_MURDER_SHACK,0>
-<const:BKG_SCENE_BOAT_SHOOT_WATER,0>
-<const:BKG_SCENE_ELEVATOR,0>
-<const:BKG_SCENE_EDGEWORTH_THROW_GUN,0>
-<const:BKG_SCENE_MURDERER_GET_HIT,0>
-<const:BKG_SCENE_MURDERER_OPEN_DOOR,0>
-<const:BKG_MAYA_GOODBYE,0>
-<const:BKG_THE_END,0>
-<const:BKG_SCENE_BOAT_2_PEOPLE,0>
-<const:BKG_SCENE_GUN_FRONT,0>
-<const:BKG_SCENE_BOAT_1_PERSON,0>
-<const:BKG_CAPCOM,0>
-<const:BKG_FEY_OFFICE_MURDER_LEFT,28>
-<const:BKG_FEY_OFFICE_MURDER_RIGHT,29>
-<const:BKG_GLOBAL_SUTDIO_EMPLOYEE_AREA_VENT_LEFT,0>
-<const:BKG_STUDIO_2_ENTRANCE_LEFT,0>
-<const:BKG_GOURD_LAKE_WOODS_LEFT,0>
-<const:BKG_HOLDIT,11>
-<const:BKG_OBJECTION,12>
-<const:BKG_TAKETHAT,13>
+<const:BKG_COURTROOM_DEFENSE_SIDE,7>
+<const:BKG_COURTROOM_JUDGE,8>
+<const:BKG_FEY_OFFICE_NIGHT,9>
+<const:BKG_MIA_DEAD_SIDE,10>
+<const:BKG_STUDIO_1_ENTRANCE,11>
+<const:BKG_GLOBAL_STUDIO_EMPLOYEE_AREA,12>
+<const:BKG_MIA_RUN_RIGHT,13>
+<const:BKG_MIA_RUN_LEFT,14>
+<const:BKG_FEY_OFFICE_MAP,15>
+<const:BKG_SCENE_BELLBOY_APRIL,16>
+<const:BKG_MIA_DEAD_FRONT,17>
+<const:BKG_FEY_OFFICE_MIA_GHOST,18>
+<const:BKG_STUDIO_2_TRAILER,19>
+<const:BKG_APRIL_CALL,20>
+<const:BKG_SLAM_A,21>
+<const:BKG_MIA_BEFORE_MURDER,22>
+<const:BKG_TINKER_WHITE,23>
+<const:BKG_WILL_ROOM,24>
+<const:BKG_GLOBAL_STUDIO_MAIN_GATE,25>
+<const:BKG_STUDIO_1,26>
+<const:BKG_GAVEL_SLAM_0,27>
+<const:BKG_STEEL_SAMURAI_ANIM_5,28>
+<const:BKG_FEY_OFFICE_MAP_WINDOW,29>
+<const:BKG_DETENTION_CENTER,30>
+<const:BKG_BLUECORP,31>
+<const:BKG_GATEWATER_HOTEL,32>
+<const:BKG_TINKER_BLOOD,33>
+<const:BKG_CINDY_MURDER,34>
+<const:BKG_SAHWIT_MURDERER_1,35>
+<const:BKG_SAHWIT_MURDERER_2,36>
+<const:BKG_SAHWIT_MURDERER_3,37>
+<const:BKG_SAHWIT_MURDERER_4,38>
+<const:BKG_GROSSBERG_OFFICE,39>
+<const:BKG_GROSSBERG_OFFICE_NO_PAINTING,40>
+<const:BKG_SCENE_CINDY_SEE_SAHWIT,41>
+<const:BKG_SCENE_LARRY_SAHWIT,42>
+<const:BKG_SCENE_SAHWIT_FOUND_BODY,43>
+<const:BKG_STUDIO_2_ENTRANCE,44>
+<const:BKG_STEEL_SAMURAI_HIT_ANIM_1,45>
+<const:BKG_HOLDIT,46>
+<const:BKG_OBJECTION,47>
+<const:BKG_TAKETHAT,48>
+<const:BKG_SCENE_PHOTO_STEEL_SAMURAI_WALK,49>
+<const:BKG_SCENE_JACK_DEAD,50>
+<const:BKG_SCENE_JACK_STEEL_COSTUME,51>
+<const:BKG_SCENE_VASQUEZ_KILL_JACK,52>
+<const:BKG_SCENE_GLOBAL_STUDIO_LUNCH,53>
+<const:BKG_SCENE_STEEL_SAMURIA_VASQUEZ,54>
+<const:BKG_SCENE_STEEL_SAMURIA_CODY,55>
+<const:BKG_SCENE_PHOTO_STEEL_SAMURIA_BACK,56>
+<const:BKG_SCENE_PHOTO_ACCIDENT,57>
+<const:BKG_STUDIO_2_TRAILER_MAFIA,58>
+<const:BKG_POSTER_PINK_PRINCESS,59>
+<const:BKG_MONKEY_HEAD,60>
+<const:BKG_GLOBAL_STUDIO_MAP,61>
+<const:BKG_SCENE_STUDIO_ACTION_SCENE,62>
+<const:BKG_POSTER_STEEL_SAMURAI,63>
+<const:BKG_STEEL_SAMURAI_HIT_ANIM_2,64>
+<const:BKG_STEEL_SAMURAI_HIT_ANIM_3,65>
+<const:BKG_ACTION_LINES,66>
+<const:BKG_GAVEL_SLAM_1,67>
+<const:BKG_SLAM_B,68>
+<const:BKG_STEEL_SAMURAI_SHOW_4,69>
+<const:BKG_GOURD_LAKE_ENTRANCE,70>
+<const:BKG_GOURD_LAKE_BEACH_SAMURAI,71>
+<const:BKG_GOURD_LAKE_BEACH,72>
+<const:BKG_GOURD_LAKE_WOODS,73>
+<const:BKG_STEEL_SAMURAI_SHOW_1,74>
+<const:BKG_FEY_OFFICE_MAP_CORPSE,75>
+<const:BKG_STEEL_SAMURAI_SHOW_2,76>
+<const:BKG_BOAT_RENTAL_SHOP,77>
+<const:BKG_CARETAKER_SHACK,78>
+<const:BKG_POLICE_DEPARTMENT,79>
+<const:BKG_POLICE_DEPARTMENT_RECORDS_ROOM,80>
+<const:BKG_STEEL_SAMURAI_ANIM_1,81>
+<const:BKG_STEEL_SAMURAI_ANIM_2,82>
+<const:BKG_STEEL_SAMURAI_ANIM_3,83>
+<const:BKG_STEEL_SAMURAI_ANIM_4,84>
+<const:BKG_TRAIN_STATION,85>
+<const:BKG_MAP_GOURD_LAKE,86>
+<const:BKG_SCENE_PHOTO_BOAT_SHOOT_CLOSE,87>
+<const:BKG_SCENE_PHOTO_CRIME_ELEVATOR,88>
+<const:BKG_ARTICLE,89>
+<const:BKG_SCENE_AIR_TANK,90>
+<const:BKG_SCENE_SAMURAI_FALL_WATER,91>
+<const:BKG_SCENE_BOAT_LARRY,92>
+<const:BKG_SCENE_CLASSROOM,93>
+<const:BKG_SCENE_PHOTO_BOAT_SHOOT_FAR,94>
+<const:BKG_PHOENIX_CHILD,95>
+<const:BKG_EDGEWORTH_CHILD,96>
+<const:BKG_LARRY_CHILD,97>
+<const:BKG_SCENE_MURDER_SHACK,98>
+<const:BKG_SCENE_BOAT_SHOOT_WATER,99>
+<const:BKG_SCENE_ELEVATOR,100>
+<const:BKG_SCENE_EDGEWORTH_THROW_GUN,101>
+<const:BKG_SCENE_MURDERER_GET_HIT,102>
+<const:BKG_SCENE_MURDERER_OPEN_DOOR,103>
+<const:BKG_MAYA_GOODBYE,104>
+<const:BKG_THE_END,105>
+<const:BKG_SCENE_BOAT_2_PEOPLE,106>
+<const:BKG_SCENE_GUN_FRONT,107>
+<const:BKG_SCENE_BOAT_1_PERSON,108>
+<const:BKG_TITLE,109>
+<const:BKG_FEY_OFFICE_MURDER_LEFT,110>
+<const:BKG_GLOBAL_SUTDIO_EMPLOYEE_AREA_LEFT,111>
+<const:BKG_STUDIO_2_ENTRANCE_LEFT,112>
+<const:BKG_GOURD_LAKE_WOODS_LEFT,113>
+<const:BKG_MAP_GOURD_LAKE_BOAT,114>
+<const:BKG_CINDY_MURDER_B,115>
+<const:EDGEWORTH_GUN_A,116>
+<const:EDGEWORTH_GUN_B,117>
+<const:BKG_TINKER_BLOOD_TOP,118>
+<const:BKG_FEY_OFFICE_MURDER_RIGHT,119>
 
 <!-- Characters constants -->
 <const:CHR_NONE,0>
 <const:CHR_PHOENIX,0>
-<const:CHR_MAYA,0>
-<const:CHR_MIA_IN_MAYA,0>
+<const:CHR_MAYA,1>
+<const:CHR_MIA_IN_MAYA,1>
 <const:CHR_MIA,0>
 <const:CHR_JUDGE,0>
 <const:CHR_EDGEWORTH,0>
@@ -338,9 +353,9 @@ Thanks :)<wait:120><fp>
 <const:CHR_PENNY,0>
 <const:CHR_OLDBAG,0>
 <const:CHR_MANELLA,0>
-<const:CHR_GUMSHOE,0>
-<const:CHR_WHITE,0>
-<const:CHR_APRIL,0>
+<const:CHR_GUMSHOE,1>
+<const:CHR_WHITE,1>
+<const:CHR_APRIL,1>
 <const:CHR_BELLBOY,0>
 <const:CHR_VASQUEZ,0>
 <const:CHR_LARRY,0>
@@ -925,7 +940,7 @@ going to do!<p>
       Courtroom No. 2<p>
 
 <event:EVT_CR><event:EVT_CR_SET,CR_CINDY><event:EVT_CR_SET,CR_CINDY_AUTOPSY>
-<color:0><speed:2><wait:30><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><background:BKG_COURTROOM_JUDGE><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><music:MUS_TRIAL><hidetextbox>
+<color:0><speed:2><wait:30><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><background:BKG_COURTROOM_JUDGE><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><music:MUS_TRIAL><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 The court is now in session<b>
@@ -1511,7 +1526,7 @@ Record frequently.<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
 | Subscene: Call Larry   |
 --------------------------
 -->
-<wait:30><music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><hidetextbox><background:BKG_COURTROOM_JUDGE>
+<wait:30><music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><hidetextbox><background:BKG_COURTROOM_JUDGE>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Mr. Payne,<wait:15> the prosecution<b>
@@ -1770,7 +1785,7 @@ in the afterlife.<wait:10>.<wait:10>.<wait:20><fp><flash>
 I'm going to get to the<b>
 bottom of this!<flash><wait:100><speed:2><fp>
 
-<hidetextbox><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
+<hidetextbox><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Let's continue with the<b>
@@ -1863,7 +1878,7 @@ TRUTH)<color:0><p>
 Er...<wait:20> Yeah! <wait:15>Yeah!<b>
 I was there!<wait:15> <shake>I went!<animation:ANI_LARRY_NERVOUS_STAND><p>
 
-<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Order!<animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
@@ -1971,7 +1986,7 @@ gruesome discovery...<animation:ANI_PAYNE_STAND><p>
 He saw the defendant <flash>fleeing<b>
 the scene of the <flash>crime!<p>
 
-<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><flash><shake>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><flash><shake>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Order!<wait:15> Order in the court!<wait:15><animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
@@ -4097,7 +4112,7 @@ triggered the clock's voice!<speed:2><p>
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 That <flash>was the sound <flash>you heard!<speed:2><animation:ANI_PHOENIX_BIG_STAND><p>
 
-<character:CHR_NONE><animation:ANI_NONE><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:3>
+<character:CHR_NONE><animation:ANI_NONE><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:3>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Order in the court!<speed:2><animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_TALK>
@@ -4195,7 +4210,7 @@ H-<wait:8><flash><sound:SFX_SMACK><shake>he killed her and he<b>
 should burn!<speed:2> <wait:20>Burn!<wait:20><speed:2><b>
 Give him death!<animation:ANI_SAHWITNOWIG_ANGRY_STAND><p>
 
-<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:5>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:5>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Order!<wait:15><b>
@@ -4532,7 +4547,7 @@ you indict the witness.<animation:ANI_JUDGE_STAND><p>
 
 <animation:ANI_JUDGE_NO><speed:7>Unfortunately...<wait:10><speed:2><animation:ANI_JUDGE_STAND><p>
 
-<speed:2><music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
+<speed:2><music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 This ends the cross-<b>
@@ -4826,7 +4841,7 @@ I say...<wait:15><speed:3> Mr. Did It!<speed:2><animation:ANI_PHOENIX_SLAM_STAND
 <name:NAM_SAHWIT><bip:BIP_NORMAL>
 Ngh!<animation:ANI_SAHWIT_DEFEAT><wait:50><flash><speed:5> .<shake>..!<wait:50><fp><hidetextbox>
 
-<wait:100><flash><shake><wait:50><speed:2><wait:80><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><flash><shake>
+<wait:100><flash><shake><wait:50><speed:2><wait:80><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox><flash><shake>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 O-<wait:8>order! <wait:20>Order,<wait:15> I say!<animation:ANI_JUDGE_STAND><p>
@@ -4883,7 +4898,7 @@ only a formality,<wait:15> but...<animation:ANI_JUDGE_STAND><p>
 <animation:ANI_JUDGE_TALK>This court finds the<b>
 defendant,<wait:20> <speed:5>Mr. Larry Butz...<speed:2><animation:ANI_JUDGE_STAND><p>
 
-<music:MUS_NONE><animation:ANI_JUDGE_ANGRY_STAND><hidetextbox><wait:60><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><background:BKG_GAVEL_SLAM><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
+<music:MUS_NONE><animation:ANI_JUDGE_ANGRY_STAND><hidetextbox><wait:60><character:CHR_NONE><animation:ANI_NONE><background:BKG_COURTROOM_TALK><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 <b>
@@ -7993,7 +8008,7 @@ too.<p>
 -->
 <label:label_2_67><fp>
 
-{127}{127}{127}<character:CHR_NONE><animation:ANI_NONE><background:BKG_DEENTION_CENTER><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
+{127}{127}{127}<character:CHR_NONE><animation:ANI_NONE><background:BKG_DETENTION_CENTER><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
 
 <name:NAM_NONE><bip:BIP_NONE>
 September 6, 9:07 AM<b>
@@ -8006,7 +8021,7 @@ Visitor's Room<color:0><p>
 (Wow,<wait:20> they have poor Maya<b>
 locked up like a criminal.)<color:0><p>
 
-<fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:15><music:MUS_NONE><wait:30><hidetextbox><fp>
+<fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><music:MUS_NONE><wait:30><hidetextbox><fp>
 
 <sound:SFX_REALIZATION><flash>
 
@@ -8092,7 +8107,7 @@ me like I had done it!<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
 (Did I look at her<b>
 like that?)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 <shake><flash>No,<wait:15> no!<wait:20> I never thought...<p>
 
@@ -8172,7 +8187,7 @@ me like I had done it!<animation:ANI_MAYA_SAD_STAND><p>
 (Did I look at her<b>
 like that?)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 <shake><flash>No,<wait:15> no! <wait:20>I never thought...<p>
 
@@ -8311,7 +8326,7 @@ me like I had done it!<animation:ANI_MAYA_SAD_STAND><p>
 (Did I look at her<b>
 like that?)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 <shake><flash>No, <wait:15>no! <wait:20>I never thought...<p>
 
@@ -8408,7 +8423,7 @@ more years."<color:0><animation:ANI_MIA_STAND><p>
 <animation:ANI_MIA_TALK><animation:ANI_MIA_CONFIDENT_TALK><color:3><speed:6>"That is,<wait:15> unless you want<b>
 to be found guilty."<speed:2><color:0><animation:ANI_MIA_CONFIDENT_STAND><p>
 
-<animation:ANI_MIA_CONFIDENT_TALK><hidetextbox><fade><wait:25><character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><background:BKG_DEENTION_CENTER><fade><wait:25><animation:ANI_MAYA_SMILE_TALK><hidetextbox><fp>
+<animation:ANI_MIA_CONFIDENT_TALK><hidetextbox><fade><wait:25><character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><background:BKG_DETENTION_CENTER><fade><wait:25><animation:ANI_MAYA_SMILE_TALK><hidetextbox><fp>
 
 <name:NAM_MAYA><bip:BIP_NONE>
 That's what she said!<animation:ANI_MAYA_SMILE_STAND><p>
@@ -8464,7 +8479,7 @@ who did this to Mia...<p>
 <hidetextbox>
 <save>
 <hidetextbox>
-<background:BKG_DEENTION_CENTER>
+<background:BKG_DETENTION_CENTER>
 <event:EVT_CLICK>
 <box:25,9,4,10,1><jump:label_2_76,0,1>
 <box:4,5,3,3,0><jump:label_2_77,0,1>
@@ -9176,7 +9191,7 @@ when they brought me in.<color:0><animation:ANI_MAYA_SAD_STAND><p>
 get it back next time<b>
 I see him...)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><p>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><p>
 
 <!--
 --------------------------
@@ -9243,7 +9258,7 @@ No,<wait:15> I don't.<p>
 
 <color:2>(It's just a hunch,<wait:15> but...)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
 
 <name:NAM_MAYA><bip:BIP_NONE>
 That detective<b>
@@ -9293,7 +9308,7 @@ I've decided you did it!<p>
 <color:2>(She seemed so lost<b>
 at the crime scene.)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><p>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><p>
 
 <!--
 --------------------------
@@ -9394,7 +9409,7 @@ I could smell blood.<p>
 Th-<wait:8>then I found her.<wait:20><b>
 My sister...<p>
 
-<hidetextbox><fade><wait:25><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:25><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 <shake>
 
@@ -9713,7 +9728,7 @@ to roll down her cheeks.)<color:0><p>
 
 ...<p>
 
-<speed:2><hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
+<speed:2><hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
 
 <speed:6>
 
@@ -9762,7 +9777,7 @@ Absolutely none!<animation:ANI_MAYA_SAD_STAND><p>
 -->
 <label:label_2_98><fp>
 
-<!--TODO--><!--TODO--><!--TODO--><!--TODO--><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><wait:16><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
+<!--TODO--><!--TODO--><!--TODO--><!--TODO--><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><wait:16><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
 
 <name:NAM_NONE><bip:BIP_NONE>
 September 6, 3:42 PM<b>
@@ -9913,7 +9928,7 @@ me, please, tell me!<p>
 
 <speed:8>...<speed:2><p>
 
-<music:MUS_NONE><hidetextbox><fade><wait:25><wait:60><background:BKG_NONE><fade><wait:7><wait:10><character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><background:BKG_DEENTION_CENTER><shake><sound:SFX_SUPERSHOCK><hidetextbox><fp>
+<music:MUS_NONE><hidetextbox><fade><wait:25><wait:60><background:BKG_NONE><fade><wait:7><wait:10><character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><background:BKG_DETENTION_CENTER><shake><sound:SFX_SUPERSHOCK><hidetextbox><fp>
 
 <speed:2>
 
@@ -9987,7 +10002,7 @@ in the first place...?)<p>
 out for the people who have<b>
 no one on their side.)<color:0><p>
 
-<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DEENTION_CENTER><fade><wait:15><wait:15><hidetextbox><fp>
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><wait:15><hidetextbox><fp>
 
 Maya...<p>
 
@@ -10038,7 +10053,7 @@ all an act?)<color:0><p>
 <color:2>(And the way that lawyer<b>
 refused to help out Maya...)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 <color:2>(But more than all that,<b>
 she has no one left<b>
@@ -10061,7 +10076,7 @@ in the first place...?)<p>
 out for the people who have<b>
 no one on their side.)<color:0><p>
 
-<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 Maya...<p>
 
@@ -10112,7 +10127,7 @@ all an act?)<color:0><p>
 <color:2>(And the way that lawyer<b>
 refused to help out Maya...)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 <color:2>(But more than all that,<wait:15><b>
 she has no one left<b>
@@ -10135,7 +10150,7 @@ in the first place...?)<p>
 out for the people who have<b>
 no one on their side.)<color:0><p>
 
-<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><hidetextbox><fp>
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
 
 There's only one thing<b>
 I know for certain.<p>
@@ -10163,7 +10178,7 @@ You can count on me.<fp>
 
 <speed:7>...<p>
 
-<hidetextbox><fade><wait:25><wait:60><animation:ANI_MAYA_SAD_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><speed:2><hidetextbox><fp>
+<hidetextbox><fade><wait:25><wait:60><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><speed:2><hidetextbox><fp>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Well!<p>
@@ -10220,7 +10235,7 @@ she got all defensive.)<p>
 (There has to be<b>
 something in there!)<color:0><p>
 
-<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_HAPPY_STAND><background:BKG_DEENTION_CENTER><fade><wait:7><p>
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_HAPPY_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><p>
 
 <name:NAM_MAYA><bip:BIP_NONE>
 
@@ -10261,7 +10276,7 @@ to roll down her cheeks.)<color:0><speed:2><p>
 
 <speed:6>...<speed:2><p>
 
-<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
 
 <speed:6>
 
@@ -10281,7 +10296,7 @@ Thank you.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
 -->
 <label:label_2_107><fp>
 
-<character:CHR_NONE><animation:ANI_NONE><background:BKG_DEENTION_CENTER>
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_DETENTION_CENTER>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
 Hmm...<wait:15> Maya's not here.<wait:20><b>
@@ -10825,7 +10840,7 @@ Oh,<wait:15> right.<wait:20> Sure.<p>
 (Mr. White...<wait:15> of Bluecorp?<wait:30><b>
 Where have I heard that name?)<p>
 
-<color:0><hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DEENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><sound:SFX_REALIZATION><hidetextbox><fp>
+<color:0><hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><sound:SFX_REALIZATION><hidetextbox><fp>
 
 <speed:5><color:1>
 

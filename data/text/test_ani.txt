@@ -6,27 +6,42 @@ This script test 127 anim.<b>
 The game may crash if you<b>
 don't have that many anim.<p><wait:1>
 
-<label:loop>
+<!--------------------------------->
+
+<label:loop><fp>
+<background:0>
 Select the CHR<b>
 you want to test<b>
 
 <act>
 <jump:chr_0,0,1>CHR 0<b>
-<jump:chr_1,0,0>CHR 1<b>
-
-<!--------------------------------->
+<jump:chr_1,0,1>CHR 1<b>
+<jump:chr_2,0,0>CHR 2<b>
 
 <label:chr_0><fp>
 <character:0>
-<jump:anims>
+<jump:background>
 
 <label:chr_1><fp>
 <character:1>
-<jump:anims>
+<jump:background>
+
+<label:chr_2><fp>
+<character:2>
+<jump:background>
+
+<label:background>
+Do you want a background?<b>
+<act>
+<jump:anims,0,1>No<b>
+<jump:background_yes,0,0>Yes<b>
+
+<label:background_yes><fp>
+<background:2>
 
 <!--------------------------------->
 
-<label:anims>
+<label:anims><fp>
 <animation:0>Animation 0<wait:60><hidetextbox><p><hidetextbox>
 <animation:1>Animation 1<wait:60><hidetextbox><p><hidetextbox>
 <animation:2>Animation 2<wait:60><hidetextbox><p><hidetextbox>
@@ -168,6 +183,6 @@ you want to test<b>
 <animation:126>Animation 126<wait:60><hidetextbox><p><hidetextbox>
 <animation:127>Animation 127<wait:60><hidetextbox><p><hidetextbox>
 
-Now looping<p>
+Now looping<p><wait:1>
 <jump:loop>
 
