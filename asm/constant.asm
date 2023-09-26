@@ -339,7 +339,7 @@
     EVI_BNK      = $85
     ANI_BNK      = $86
     IMG_BNK      = $89
-    TXT_BNK      = $BC
+    TXT_BNK      = $CB
 
     ; Constants: Game RAM Banks
     ;

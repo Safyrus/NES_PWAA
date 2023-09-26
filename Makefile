@@ -29,11 +29,11 @@ ressource:
 # create the nes file from assembler sources
 $(GAME_NAME).nes:
 # create folder if it does not exist
-ifeq ($(OS), Windows_NT)
-	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
-else
+# ifeq ($(OS), Windows_NT)
+# 	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
+# else
 	mkdir -p "$(BIN)"
-endif
+# endif
 # assemble main file
 	$(CA65) $(ASM)/crt0.asm -o $(BIN)/$(GAME_NAME).o --debug-info
 # link files
@@ -43,11 +43,11 @@ endif
 # create the nes file from assembler sources (Ines 1.0 version)
 $(GAME_NAME)_ines1.nes:
 # create folder if it does not exist
-ifeq ($(OS), Windows_NT)
-	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
-else
+# ifeq ($(OS), Windows_NT)
+# 	@-if not exist "$(BIN)" ( mkdir "$(BIN)" )
+# else
 	mkdir -p "$(BIN)"
-endif
+# endif
 # assemble main file
 	$(CA65) $(ASM)/crt0.asm -o $(BIN)/$(GAME_NAME)_ines1.o --debug-info -DINES1
 # link files
@@ -65,38 +65,38 @@ clean:
 
 # clean object and binary files
 clean_bin:
-ifeq ($(OS), Windows_NT)
-	@-if exist "$(BIN)" ( rmdir /Q /S "$(BIN)" )
-	-del "$(GAME_NAME).nes"
-	-del "$(GAME_NAME)_ines1.nes"
-	-del "$(GAME_NAME).DBG"
-	-del "dump_$(GAME_NAME).txt"
-else
+# ifeq ($(OS), Windows_NT)
+# 	@-if exist "$(BIN)" ( rmdir /Q /S "$(BIN)" )
+# 	-del "$(GAME_NAME).nes"
+# 	-del "$(GAME_NAME)_ines1.nes"
+# 	-del "$(GAME_NAME).DBG"
+# 	-del "dump_$(GAME_NAME).txt"
+# else
 	-rm -rf "$(BIN)"
-	-rm -f $(GAME_NAME).nes
-	-rm -f $(GAME_NAME).DBG
-	-rm -f dump_$(GAME_NAME).txt
-endif
+	-rm -f $(GAME_NAME)*.nes
+	-rm -f $(GAME_NAME)*.DBG
+	-rm -f dump_$(GAME_NAME)*.txt
+# endif
 
 #
 clean_data:
-ifeq ($(OS), Windows_NT)
-	-del "$(ASM)\data" /s /q
-else
+# ifeq ($(OS), Windows_NT)
+# 	-del "$(ASM)\data" /s /q
+# else
 	-rm -f -r "$(ASM)/data"
-endif
+# endif
 
 clean_tmp:
-ifeq ($(OS), Windows_NT)
-	-del "$(DATA)\EVI.chr"
-	-del "$(DATA)\tmp.chr"
-	-del "$(C)\a.exe"
-	-del "$(C)\CHR.chr"
-	-del "$(ANIM_0)"
-	-del "$(ANIM_1)"
-	-del "$(ANIM_2)"
-	-del "$(ANIM_3)"
-else
+# ifeq ($(OS), Windows_NT)
+# 	-del "$(DATA)\EVI.chr"
+# 	-del "$(DATA)\tmp.chr"
+# 	-del "$(C)\a.exe"
+# 	-del "$(C)\CHR.chr"
+# 	-del "$(ANIM_0)"
+# 	-del "$(ANIM_1)"
+# 	-del "$(ANIM_2)"
+# 	-del "$(ANIM_3)"
+# else
 	-rm -f $(DATA)/EVI.chr
 	-rm -f $(DATA)/tmp.chr
 	-rm -f $(C)/a
@@ -105,7 +105,7 @@ else
 	-rm -f "$(ANIM_1)"
 	-rm -f "$(ANIM_2)"
 	-rm -f "$(ANIM_3)"
-endif
+# endif
 
 
 #--------------------------------
@@ -118,11 +118,11 @@ run:
 #--------------------------------
 
 text:
-ifeq ($(OS), Windows_NT)
-	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
-else
+# ifeq ($(OS), Windows_NT)
+# 	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
+# else
 	mkdir -p "$(ASM)/data"
-endif
+# endif
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin 1
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
@@ -133,11 +133,11 @@ img:
 	make photo
 	make anim
 	$(PYTHON) $(PY)/chr/merge_chr.py $(DATA)/FONT.chr $(DATA)/EVI.chr -o $(DATA)/tmp.chr
-ifeq ($(OS), Windows_NT)
-	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
-else
+# ifeq ($(OS), Windows_NT)
+# 	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
+# else
 	mkdir -p "$(ASM)/data"
-endif
+# endif
 	cd c && make
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
 	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
@@ -156,6 +156,11 @@ anim:
 	../data/anim/mia.json \
 	../data/anim/larry.json \
 	../data/anim/sahwit.json \
+	../data/anim/larry_santa.json \
+	../data/anim/cody.json \
+	../data/anim/manella.json \
+	../data/anim/oldbag.json \
+	../data/anim/penny.json \
 	../$(ANIM_0)
 
 	cd $(PY) && $(PYTHON) merge_json.py \
@@ -165,15 +170,27 @@ anim:
 	../data/anim/judge.json \
 	../data/anim/payne.json \
 	../data/anim/edgeworth.json \
+	../data/anim/mia_maya_court.json \
+	../data/anim/mia_maya.json \
+	../data/anim/white.json \
+	../data/anim/grossberg.json \
+	../data/anim/bellboy.json \
 	../$(ANIM_1)
 
 	cd $(PY) && $(PYTHON) merge_json.py \
 	../data/anim/bkg_2.json \
+	../data/anim/vasquez.json \
+	../data/anim/parrot.json \
+	../data/anim/karma.json \
 	../$(ANIM_2)
 
 	cd $(PY) && $(PYTHON) merge_json.py \
 	../data/anim/bkg_3.json \
 	../data/anim/maya.json \
+	../data/anim/lotta.json \
+	../data/anim/yogi.json \
+	../data/anim/april.json \
+	../data/anim/gumshoe.json \
 	../$(ANIM_3)
 
 
@@ -189,9 +206,9 @@ visual:
 
 # generate the documentation
 gendoc:
-ifeq ($(OS), Windows_NT)
-	@-if not exist "doc/html" ( mkdir "doc/html" )
-else
+# ifeq ($(OS), Windows_NT)
+# 	@-if not exist "doc/html" ( mkdir "doc/html" )
+# else
 	mkdir -p "doc/html"
-endif
+# endif
 	$(NATURALDOC) "cfg/nd"
