@@ -141,7 +141,7 @@
     ; Variable: tmp
     ;----------------
     ; temporary variables
-    tmp: .res 12
+    tmp: .res 13
 
 ;****************
 ; OAM SEGMENT

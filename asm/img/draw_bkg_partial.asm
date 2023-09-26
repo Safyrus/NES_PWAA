@@ -8,12 +8,21 @@ img_bkg_draw_partial:
     ; init data pointer
     sta_ptr tmp, IMG_CHR_BUF_LO
     sta_ptr tmp+4, IMG_CHR_BUF_HI
+    sta_ptr tmp+10, (MMC5_EXP_RAM+$60)
+    sta_ptr tmp+8, IMG_BKG_BUF_HI
 
     ; enable NMI_FORCE flag
     ora_adr nmi_flags, #NMI_FORCE
 
     ;
     JSR img_partial_ppuadr
+
+    LDA #$62
+    STA tmp+12
+    BIT box_flags
+    BPL :+
+        INC tmp+12
+    :
 
     ; while not end of buffer
     @while_ppu:
@@ -22,30 +31,47 @@ img_bkg_draw_partial:
         ; if byte = 0, then flush buffer
         BNE @draw
         @flush:
+            ; if EFFECT_FLAG_BKG_MMC5 is set
+            LDA effect_flags
+            AND #EFFECT_FLAG_BKG_MMC5
+            BEQ :++
+                ; wait_inframe
+                :
+                    BIT scanline
+                    BVC :-
+                ; copy background tile to MMC5
+                LDA (tmp+8), Y
+                STA (tmp+10), Y
+            :
+            ; 
             inc_16 tmp
-            ; then flush buffer (and skip the low tile)
+            ; flush buffer (and skip the low tile)
             JSR img_partial_buf_flush
             JSR img_partial_ppuadr
             JMP @continue
         @draw:
+            ; wait in frame
+            :
+                BIT scanline
+                BVC :-
+            ; copy character tile to MMC5
+            LDA (tmp+4), Y
+            STA (tmp+10), Y
+            ;
             LDA (tmp), Y
             inc_16 tmp
             ; else draw the low tile
             JSR img_partial_buf_draw
         @continue:
+        ; increase pointers
         inc_16 tmp+4
+        inc_16 tmp+10
+        inc_16 tmp+8
         ; wild code to check if the loop is finished
         ; depending on if the dialog box is active or not
         LDA tmp+1
-        BIT box_flags
-        BMI @ppu_dialog_off
-        @ppu_dialog_on:
-            CMP #$62
-            BNE @while_ppu
-            JMP @while_ppu_end
-        @ppu_dialog_off:
-            CMP #$63
-            BNE @while_ppu
+        CMP tmp+12
+        BNE @while_ppu
     @while_ppu_end:
     JSR img_partial_buf_flush
 
@@ -61,21 +87,8 @@ img_bkg_draw_partial:
     and_adr nmi_flags, #($FF-NMI_FORCE)
     ; clear the EFFECT_FLAG_DRAW flag
     and_adr effect_flags, #($FF - EFFECT_FLAG_DRAW)
-
-    ;
-    LDA effect_flags
-    AND #EFFECT_FLAG_BKG_MMC5
-    BEQ @bkg_mmc5_update_end
-        ;
-        JSR cp_bkgchr_2_mmc5_exp
-        ;
-        and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5)
-        JMP @end
-    @bkg_mmc5_update_end:
-
-    ;
-    sta_ptr tmp, IMG_CHR_BUF_HI
-    JSR cp_non0_2_mmc5_exp
+    ; clear the EFFECT_FLAG_BKG_MMC5 flag
+    and_adr effect_flags, #($FF-EFFECT_FLAG_BKG_MMC5)
 
     @end:
     pullregs
@@ -105,13 +118,17 @@ img_partial_ppuadr:
 ; param: A
 ; use: X
 img_partial_buf_draw:
+    ; if img_partial_buf_len >= IMG_PARTIAL_MAX_BUF_LEN
     LDX img_partial_buf_len
     CPX #IMG_PARTIAL_MAX_BUF_LEN
-    blt @do
+    blt :+
+        ; img_partial_buf_flush()
         JSR img_partial_buf_flush
         LDX img_partial_buf_len
-    @do:
+    :
+    ; img_partial_buf = A
     STA img_partial_buf, X
+    ; img_partial_buf++
     INX
     STX img_partial_buf_len
     RTS
