@@ -1,0 +1,213 @@
+<!--
+--------------------------
+| SCENE 1-2:Lobby         |
+--------------------------
+-->
+<background:BKG_NONE><fade><wait:7><hidetextbox><fp><wait:30><speed:5><bip:BIP_TYPEWRITER><color:3>
+
+     August 3, 9:47 AM<b>
+      District Court<b>
+   Defendant Lobby No. 2<color:0><p>
+
+<event:EVT_CR><event:EVT_CR_SET,CR_BADGE>
+<hidetextbox><speed:2><music:MUS_COURTROOM_LOUNGE><wait:30><fade><wait:7><character:CHR_NONE><background:BKG_COURTROOM_LOBBY><fade><wait:15><wait:30><hidetextbox><fp><shake><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Boy am I nervous!)<color:0><p>
+
+<hidetextbox><wait:45><hidetextbox><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<p>
+
+<hidetextbox><wait:35><character:CHR_MIA><animation:ANI_MIA_STAND><wait:67><hidetextbox><sound:SFX_LIGHTBULB><flash><event:EVT_CR_SET,CR_MIA>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh, <wait:10>h-<wait:8>hiya, <shake>Chief.<animation:ANI_MIA_STAND><p><animation:ANI_MIA_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Whew,<wait:25><b>
+I'm glad I made it on time.<animation:ANI_MIA_STAND><p><animation:ANI_MIA_TALK>
+
+Well,<wait:16> I have to say Phoenix,<wait:16><b>
+I'm impressed!<animation:ANI_MIA_STAND><p><animation:ANI_MIA_CONFIDENT_TALK>
+
+Not everyone takes on a<b>
+murder trial right off<b>
+the bat like this.<animation:ANI_MIA_CONFIDENT_STAND><p><animation:ANI_MIA_CONFIDENT_TALK>
+
+It says a lot about<wait:25><b>
+you... and your client as<b>
+well.<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um... thanks.<p><wait:30>
+
+Actually, it's because<wait:5><b>
+I owe him a favor.<p>
+
+<animation:ANI_MIA_QUESTION_TALK><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+A favor?<animation:ANI_MIA_QUESTION_STAND><p><animation:ANI_MIA_QUESTION_TALK>
+
+You mean, you knew the<b>
+defendant before this case?<animation:ANI_MIA_QUESTION_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yes.<p>
+
+Actually, I kind of owe <b>
+my current job to him.<p>
+
+He's one of the reasons<wait:5><b>
+I became an attorney.<p><animation:ANI_MIA_CONFIDENT_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Well, that's news to me!<animation:ANI_MIA_CONFIDENT_STAND><p><animation:ANI_MIA_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I want to help him out<b>
+any way I can!<p>
+
+I just... really want to help<b>
+him. I owe him that much.<p>
+
+<wait:15><animation:ANI_MIA_QUESTION_STAND><shake><music:MUS_NONE><sound:SFX_SUPERSHOCK><flash><color:3>
+
+<name:NAM_UNKNOW><bip:BIP_NONE>
+(It's over!)<color:0><p>
+
+<shake><sound:SFX_SUPERSHOCK><flash><color:3>
+
+(My life, everything,<b>
+it's all over!)<color:0><p>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+...<p><animation:ANI_MIA_QUESTION_TALK>
+
+Isn't that your client<wait:15><b>
+screaming over there?<animation:ANI_MIA_QUESTION_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yeah... <shake>that's him.<p>
+
+<shake><sound:SFX_SUPERSHOCK><flash><color:3>
+
+<name:NAM_UNKNOW><bip:BIP_NONE>
+(Death! Despair! Ohhhh!)<p>
+
+<animation:ANI_MIA_QUESTION_STAND><shake><sound:SFX_SUPERSHOCK><flash>
+
+(I'm gonna do it,<wait:10><shake><flash><b>
+I'm gonna <flash>die!!!)<color:0><p><animation:ANI_MIA_QUESTION_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+It sounds like<b>
+he wants to die...<animation:ANI_MIA_QUESTION_STAND><p><animation:ANI_MIA_CONFIDENT_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um,<wait:12><speed:6> yeah. *sigh*<speed:2><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_CRY_STAND><wait:16><sound:SFX_REALIZATION><animation:ANI_LARRY_CRY_TALK><hidetextbox><event:EVT_CR_SET,CR_LARRY><fp>
+
+<name:NAM_NONE><bip:BIP_NONE>
+Nick!!!<wait:60><music:MUS_COURTROOM_LOUNGE><animation:ANI_LARRY_CRY_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hey.<wait:15><b>
+Hey <shake>there, Larry.<p>
+
+<animation:ANI_LARRY_TUMB_UP_TALK><shake><sound:SFX_SUPERSHOCK><flash><speed:2>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Dude,<wait:17> I'm so guilty!!<wait:20><b>
+Tell them I'm guilty!!!<animation:ANI_LARRY_TUMB_UP_STAND><p>
+
+<animation:ANI_LARRY_TUMB_UP_TALK><sound:SFX_SUPERSHOCK><flash><shake>
+
+Gimme the death sentence!<wait:20><b>
+I ain't afraid to die!<animation:ANI_LARRY_TUMB_UP_STAND><p><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+What!?<wait:25><b>
+What's wrong,<wait:12> Larry?<p>
+
+<animation:ANI_LARRY_CRY_TALK><flash><shake><speed:5>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Oh,<wait:16> it's all over... <wait:25><speed:8><b>
+I...<wait:16> <speed:5>I'm finished. <wait:25><speed:2>Finished!<animation:ANI_LARRY_CRY_STAND><p><animation:ANI_LARRY_CRY_TALK>
+
+I can't live in a world<b>
+without her!<wait:20> I can't!<animation:ANI_LARRY_CRY_STAND><p><animation:ANI_LARRY_CRY_TALK><speed:8>
+
+Who... <wait:25><speed:2>who took her away<b>
+from me, Nick? <wait:20>Who did this!?<animation:ANI_LARRY_CRY_STAND><p>
+
+<animation:ANI_LARRY_CRY_TALK><shake><sound:SFX_SUPERSHOCK><flash>
+
+Aww,<wait:10> Nick,<wait:16> ya gotta tell me!<wait:25><b>
+Who took my baby away!?<animation:ANI_LARRY_CRY_STAND><p><speed:8><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm...<wait:30><speed:6>The person responsible<b>
+for your girlfriend's death?)<p><speed:5>
+
+(The newspapers say<wait:20><speed:5><b>
+it was<wait:16> <color:1><sound:SFX_REALIZATION>you<color:2>...)<speed:2><color:0><p>
+
+<hidetextbox><wait:35><speed:2><fade><wait:25><music:MUS_NONE><wait:30><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+My name is Phoenix Wright.<p>
+
+Here's the story:<p>
+
+My first case is<b>
+a fairly simple one.<p>
+
+<hidetextbox><fade><wait:7><background:BKG_CINDY_MURDER><fade><wait:15><wait:90><hidetextbox><fp>
+
+A young woman was killed<b>
+in her apartment.<wait:5><p>
+
+The guy they arrested was<b>
+the unlucky sap dating her:<p>
+
+<hidetextbox><fade><wait:7><background:BKG_NONE><character:CHR_LARRY><animation:ANI_LARRY_TUMB_UP_STAND><fade><hidetextbox><fp>
+
+<speed:8>Larry Butz...<wait:45><speed:2> my best<b>
+friend since grade school.<p>
+
+Our school had a saying:<wait:25><speed:5><b>
+"<color:1>When something smells,<wait:15><b>
+it's usually the Butz.<color:0>"<speed:2><p>
+
+<animation:ANI_LARRY_CRY_STAND>
+In the 23 years I've known<b>
+him, it's usually been true.<p>
+
+He has a knack for getting<b>
+himself in trouble.<p>
+
+One thing I can say though:<wait:30><b>
+it's usually not his fault.<b>
+He just has terrible luck.<p>
+
+<character:CHR_NONE><animation:ANI_NONE><wait:32>
+
+But I know better than<b>
+anyone, that he's a good<b>
+guy at heart.<p>
+
+That and I owe him one.<b>
+Which is why I took the<b>
+case... to clear his name.<p><flash><shake>
+
+And that's just what I'm<b>
+going to do!<p>
+
+<event:EVT_CR><hidetextbox><wait:65>

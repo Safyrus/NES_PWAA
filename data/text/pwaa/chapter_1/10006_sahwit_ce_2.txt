@@ -1,0 +1,535 @@
+<!--
+--------------------------
+| Testimony : Sahwit 2   |
+--------------------------
+-->
+<hidetextbox><music:MUS_NONE><wait:30><fade><wait:25><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:7><event:EVT_TESTIMONY_ON><wait:20><speed:2><hidetextbox><color:1>
+
+<name:NAM_NONE><bip:BIP_NONE>
+<b>
+-- The Time of Discovery --<color:0><wait:100><p>
+
+<speed:2><wait:30><music:MUS_EXAMINATION_1>
+
+<!--
+--------------------------
+| Testimony : Sahwit 2-0 |
+--------------------------
+-->
+<animation:ANI_SAHWIT_TALK>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+You see,<wait:16> when I found the<b>
+body, <wait:15>I heard the time.<animation:ANI_SAHWIT_STAND><p>
+
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_SCENE_SAHWIT_FOUND_BODY>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+There was a voice saying the<speed:6><b>
+time...<wait:26><speed:4> It was probably<b>
+coming from the television.<p>
+
+<flash><speed:3>Oh,<wait:16> but it was three hours<b>
+off,<wait:12> wasn't it?<p>
+
+<speed:4>I guess the victim must<b>
+have been watching <wait:10>a video<b>
+of a taped program!<p>
+
+<character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><speed:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+That's why I thought<b>
+it was 1:00 PM!<animation:ANI_SAHWIT_STAND><p>
+
+<animation:ANI_SAHWIT_TALK><speed:5>Terribly sorry about<b>
+the misunderstanding... <animation:ANI_SAHWIT_STAND><p>
+
+<hidetextbox><event:EVT_TESTIMONY_OFF><music:MUS_NONE><fade><wait:25><character:CHR_JUDGE><animation:ANI_JUDGE_EYES_CLOSED_STAND><background:BKG_COURTROOM_JUDGE><wait:25><fade><wait:35><hidetextbox><speed:8>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Hmm... <wait:25><speed:4>I see.<wait:21><animation:ANI_JUDGE_ANGRY_TALK><speed:3><b>
+You heard a voice saying<b>
+the time on a taped program.<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
+
+Mr. Wright,<wait:15> you may cross-<b>
+examine the witness.<speed:2><animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MIA><animation:ANI_MIA_ANGRY_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><fade><wait:7><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
+
+You know what to do!<animation:ANI_MIA_ANGRY_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I've got this one.<p>
+
+<!--
+--------------------------
+| C-E: Sahwit 2         |
+--------------------------
+-->
+<hidetextbox><fade><wait:45><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:27><speed:2><hidetextbox><color:1>
+
+<name:NAM_NONE><bip:BIP_NONE>
+<b>
+-- The Time of Discovery --<color:0><wait:100><p>
+
+<speed:2><wait:30><music:MUS_EXAMINATION_1>
+
+<!--
+--------------------------
+| C-E: Sahwit 2-1        |
+--------------------------
+-->
+<label:CE-Sahwit2-1><fp>
+<event:EVT_CR_OBJ><event:EVT_CR_IDX,CR_BLACKOUT><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><color:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+You see, when I found the<b>
+body, I heard the time.<color:0><animation:ANI_SAHWIT_STAND><p>
+
+<event:EVT_CR_OBJ>
+<jump:Hold-Sahwit2-1,1,0,FLG_HOLD>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
+
+<!--
+--------------------------
+| C-E: Sahwit 2-2        |
+--------------------------
+-->
+<label:CE-Sahwit2-2><fp>
+<event:EVT_CR_OBJ><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><color:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+There was a voice saying the<b>
+time... It was probably<b>
+coming from the television.<color:0><animation:ANI_SAHWIT_STAND><p>
+
+<event:EVT_CR_OBJ>
+<jump:Hold-Sahwit2-2,1,0,FLG_HOLD>
+<jump:Object-Sahwit2,1,0,FLG_OBJ>
+<jump:CE-Sahwit2-3>
+<label:Object-Sahwit2>
+<jump:Object-Sahwit2-OK,1,0,FLG_OBJ_OK>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
+
+<!--
+--------------------------
+| C-E: Sahwit 2-3        |
+--------------------------
+-->
+<label:CE-Sahwit2-3><fp>
+<event:EVT_CR_OBJ><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><color:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Oh, but it was three hours<b>
+off, wasn't it?<color:0><animation:ANI_SAHWIT_STAND><p>
+
+<event:EVT_CR_OBJ>
+<jump:Hold-Sahwit2-3,1,0,FLG_HOLD>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
+
+<!--
+--------------------------
+| C-E: Sahwit 2-4        |
+--------------------------
+-->
+<label:CE-Sahwit2-4><fp>
+<event:EVT_CR_OBJ><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><color:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+I guess the victim must<b>
+have been watching a video<b>
+of a taped program!<color:0><animation:ANI_SAHWIT_STAND><p>
+
+<event:EVT_CR_OBJ>
+<jump:Hold-Sahwit2-4,1,0,FLG_HOLD>
+<jump:Object-Sahwit2,1,0,FLG_OBJ>
+<jump:CE-Sahwit2-5>
+<label:Object-Sahwit2>
+<jump:Object-Sahwit2-OK,1,0,FLG_OBJ_OK>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
+
+<!--
+--------------------------
+| C-E: Sahwit 2-5        |
+--------------------------
+-->
+<label:CE-Sahwit2-5><fp>
+<event:EVT_CR_OBJ><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><color:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+That's why I thought<b>
+it was 1:00 PM!<color:0><animation:ANI_SAHWIT_STAND><p>
+
+<event:EVT_CR_OBJ>
+<jump:Hold-Sahwit2-5,1,0,FLG_HOLD>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
+
+<!--
+--------------------------
+| C-E: Sahwit 2-6        |
+--------------------------
+-->
+<label:CE-Sahwit2-6><fp>
+<event:EVT_CR_OBJ><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><color:3>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Terribly sorry about<b>
+the misunderstanding...<color:0><animation:ANI_SAHWIT_STAND><p>
+
+<event:EVT_CR_OBJ>
+<jump:Hold-Sahwit2-6,1,0,FLG_HOLD>
+<save><jump:Object-Wrong,1,0,FLG_OBJ>
+
+<!--
+--------------------------
+| C-E: Sahwit 2 end      |
+--------------------------
+-->
+<label:CE-Sahwit2-end><fp>
+<character:CHR_MIA><animation:ANI_MIA_ANGRY_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><speed:5>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+<b>
+Notice anything suspicious?<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
+
+<hidetextbox><fade><wait:15><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-1>
+
+
+<!--
+--------------------------
+| Hold: Sahwit 2-1       |
+--------------------------
+-->
+<label:Hold-Sahwit2-1><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You said "heard"...<wait:25><speed:2><b>
+Not "saw"?<color:0><animation:ANI_PHOENIX_THINK_STAND><p>
+
+<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><hidetextbox>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Yes, <wait:10>heard.<animation:ANI_SAHWIT_STAND><p><animation:ANI_SAHWIT_TALK>
+
+All I saw was the body<b>
+lying there...<animation:ANI_SAHWIT_STAND><p><animation:ANI_SAHWIT_TALK>
+
+I didn't think to look at<b>
+anything else,<wait:15> least of all<b>
+my watch.<animation:ANI_SAHWIT_STAND><p>
+
+<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><hidetextbox>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hmm...<wait:20><b>
+Isn't that a little strange?<animation:ANI_PHOENIX_THINK_STAND><p><animation:ANI_PHOENIX_TALK>
+
+So you're saying you <b>
+"heard" something.<animation:ANI_PHOENIX_STAND><p><animation:ANI_PHOENIX_TALK>
+
+But <wait:5>if you were so shocked by<b>
+the body,<wait:15><speed:3> you wouldn't hear<b>
+anything at all!<animation:ANI_PHOENIX_STAND><p>
+
+<speed:2><hidetextbox><flash><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PAYNE><wait:120><hidetextbox><character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+The witness did say he<b>
+actually heard the time.<animation:ANI_PAYNE_SWEAT_STAND><p><animation:ANI_PAYNE_SWEAT_TALK>
+
+It's ludicrous to suggest<b>
+he "wouldn't hear anything"!<animation:ANI_PAYNE_SWEAT_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_EYES_CLOSED_STAND><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Hmm...<wait:20><animation:ANI_JUDGE_ANGRY_TALK><b>
+I have to agree with<b>
+the prosecution.<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_ANGRY_TALK><speed:6>
+
+Witness,<wait:15><speed:2> continue<b>
+your testimony.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<hidetextbox><fade><wait:7><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-2>
+
+
+<!--
+--------------------------
+| Hold: Sahwit 2-2       |
+--------------------------
+-->
+<label:Hold-Sahwit2-2><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Are you sure it was a<b>
+television <wait:5>and not...<wait:10><b>
+a radio?<animation:ANI_PHOENIX_STAND><p>
+
+<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><hidetextbox><shake>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Well,<wait:15> no, I guess it<b>
+might have been a radio.<animation:ANI_SAHWIT_STAND><p>
+
+<character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+Incidentally,<wait:15> there was<b>
+no radio on the premises.<animation:ANI_PAYNE_STAND><p>
+
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_SCENE_SAHWIT_FOUND_BODY>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+There was only one<b>
+large television.<animation:ANI_NONE><p>
+
+<character:CHR_MIA><animation:ANI_MIA_ANGRY_TALK><background:BKG_COURTROOM_DEFENSE_SIDE>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<wait:10><animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
+
+I can't put my finger on it,<wait:15><b>
+but something about this<b>
+seems fishy.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
+
+Something about <wait:10>"hearing"<b>
+the television...<animation:ANI_MIA_ANGRY_STAND><p>
+
+<character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+The witness has testified.<wait:30><b>
+He heard the time.<animation:ANI_PAYNE_STAND><p>
+
+<hidetextbox><fade><wait:7><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-3>
+
+
+<!--
+--------------------------
+| Hold: Sahwit 2-3       |
+--------------------------
+-->
+<label:Hold-Sahwit2-3><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+How do you explain the gap!<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Well,<wait:15> witness?<wait:20> <b>
+Can you explain this?<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<hidetextbox><fade><wait:7><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-4>
+
+
+<!--
+--------------------------
+| Hold: Sahwit 2-4       |
+--------------------------
+-->
+<label:Hold-Sahwit2-4><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A...<wait:15> video?<speed:2><animation:ANI_PHOENIX_THINK_STAND><p>
+
+<speed:2><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Yes,<wait:6> that would explain<b>
+why the time was wrong!<animation:ANI_SAHWIT_STAND><p>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+True,<wait:10> true...<animation:ANI_PHOENIX_STAND><p>
+
+<speed:2><character:CHR_MIA><animation:ANI_MIA_SADPOSE_TALK><background:BKG_COURTROOM_DEFENSE_SIDE>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<animation:ANI_MIA_SADPOSE_STAND><p><animation:ANI_MIA_SADPOSE_TALK>
+
+I think the problem lies<b>
+someplace else...<animation:ANI_MIA_SADPOSE_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+We're agreed that you heard<b>
+the time at the scene, then.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<hidetextbox><fade><wait:7><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-5>
+
+
+<!--
+--------------------------
+| Hold: Sahwit 2-5       |
+--------------------------
+-->
+<label:Hold-Sahwit2-5><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Are you sure the voice you<b>
+heard said it was 1:00 PM?<animation:ANI_PHOENIX_STAND><p>
+
+<hidetextbox><event:EVT_SWOOSH><wait:30><character:CHR_SAHWIT><animation:ANI_SAHWIT_TALK><background:BKG_COURTROOM_STAND><hidetextbox>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Yes,<wait:10> I can practically hear<b>
+it now.<wait:20> It was quite clear.<animation:ANI_SAHWIT_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Mr. Payne,<wait:15> has the<b>
+prosecution verified this<b>
+testimony?<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PAYNE><animation:ANI_PAYNE_SWEAT_TALK><background:BKG_COURTROOM_PROSECUTION>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+My apologies,<wait:15> Your Honor.<animation:ANI_PAYNE_SWEAT_STAND><p><animation:ANI_PAYNE_SWEAT_TALK>
+
+I, <wait:10>too,<wait:10> have only just<b>
+learned that the witness<b>
+"heard" the time.<animation:ANI_PAYNE_SWEAT_STAND><p>
+
+<character:CHR_SAHWIT><animation:ANI_SAHWIT_SWEAT_TALK><background:BKG_COURTROOM_STAND>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Oh,<wait:10> I'm really sorry.<wait:20> I only<b>
+remembered it just now.<animation:ANI_SAHWIT_SWEAT_STAND><p>
+
+<hidetextbox><fade><wait:7><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-6>
+
+
+<!--
+--------------------------
+| Hold: Sahwit 2-6       |
+--------------------------
+-->
+<label:Hold-Sahwit2-6><fp>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_HOLDIT><shake><sound:SFX_HOLD_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><flash><shake>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Well,<wait:15> you just watch it!<animation:ANI_PHOENIX_OBJECTION_STAND><p><animation:ANI_PHOENIX_THINK_STAND><speed:5><color:2>
+
+(Hmm...<wait:15> Not much point<b>
+pressing him on that one,<wait:5><b>
+was there?)<color:0><p>
+
+<speed:2><hidetextbox><fade><wait:7><character:CHR_SAHWIT><animation:ANI_SAHWIT_STAND><background:BKG_COURTROOM_STAND><fade><wait:15><hidetextbox><jump:CE-Sahwit2-end>
+
+
+<!--
+--------------------------
+| Objection: Sahwit 2    |
+--------------------------
+-->
+<label:Object-Sahwit2-OK><fp>
+<music:MUS_NONE><hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PHOENIX><wait:120><hidetextbox>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_OBJECTION_TALK><background:BKG_COURTROOM_DEFENSE><flash><shake><speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hold it right there!<animation:ANI_PHOENIX_OBJECTION_STAND><p><speed:2><animation:ANI_PHOENIX_OBJECTION_TALK>
+
+The prosecution has said<wait:8><b>
+there was a blackout <wait:8>at the<b>
+time of the discovery!<animation:ANI_PHOENIX_OBJECTION_STAND><p>
+
+<photo:PHT_RECORD><animation:ANI_PHOENIX_PAPER_TALK><speed:5>
+
+And this record proves it!<animation:ANI_PHOENIX_PAPER_STAND><p>
+
+<speed:2><event:EVT_GAVEL_2><character:CHR_SAHWIT><animation:ANI_SAHWIT_SWEAT_STAND><background:BKG_COURTROOM_STAND><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+...!<flash><p>
+
+<hidetextbox><event:EVT_SWOOSH><wait:30><background:BKG_COURTROOM_DEFENSE><character:CHR_PHOENIX><animation:ANI_PHOENIX_SLAM_START><wait:70><hidetextbox><animation:ANI_PHOENIX_OBJECTION_TALK><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You couldn't have heard<b>
+a <flash>television...<wait:12> <music:MUS_OBJECTION>or a <flash>video!<animation:ANI_PHOENIX_OBJECTION_STAND><p>
+
+<speed:2><character:CHR_SAHWIT><animation:ANI_SAHWIT_DAMAGE><background:BKG_COURTROOM_STAND><shake><flash><sound:SFX_STAB><wait:20><speed:2>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+Gah!!!<wait:10><animation:ANI_SAHWIT_SWEAT_STAND><p>
+
+<animation:ANI_SAHWIT_SWEAT_TALK><shake><speed:7>
+
+I...<wait:10> well...<wait:10> urk!<speed:2><animation:ANI_SAHWIT_SWEAT_STAND><p>
+
+<hidetextbox><character:CHR_JUDGE><animation:ANI_JUDGE_YES><background:BKG_COURTROOM_JUDGE><wait:18><hidetextbox>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+The defense has a point.<animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
+
+Do you have an explanation<b>
+for this,<wait:20> Mr. Sahwit?<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_SAHWIT><animation:ANI_SAHWIT_SWEAT_TALK><background:BKG_COURTROOM_STAND><flash><shake>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+No, I<speed:5>...<wait:20> I find it quite<b>
+puzzling myself! <wait:20>Quite!<animation:ANI_SAHWIT_SWEAT_STAND><p>
+
+...<p>
+
+<speed:2><animation:ANI_SAHWIT_DAMAGE><sound:SFX_LIGHTBULB><flash><shake>Aah!<wait:30><flash><fp><animation:ANI_SAHWIT_SWEAT_TALK>
+
+W-<wait:12><flash><sound:SFX_SMACK><shake><speed:2>wait!<wait:20><speed:2><b>
+I remember now!<speed:2><animation:ANI_SAHWIT_SWEAT_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE><speed:4>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Mr. Sahwit?<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_ANGRY_TALK><speed:2>
+
+The court would prefer to<b>
+hear an accurate testimony<b>
+from the very beginning.<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_NO>
+
+These constant corrections<b>
+are harming your credibility.<animation:ANI_JUDGE_STAND><p>
+
+<character:CHR_SAHWIT><animation:ANI_SAHWIT_SWEAT_STAND><background:BKG_COURTROOM_STAND><speed:5>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+That, and you seem<b>
+rather...<wait:20> distraught.<p>
+
+<speed:2><animation:ANI_SAHWIT_DAMAGE><flash><sound:SFX_STAB><shake><wait:20><animation:ANI_SAHWIT_SWEAT_STAND>
+
+<name:NAM_SAHWIT><bip:BIP_NORMAL>
+...!<p><animation:ANI_SAHWIT_SWEAT_TALK>
+
+M-<wait:8><shake>my apologies,<wait:12> Your Honor!<animation:ANI_SAHWIT_SWEAT_STAND><p><animation:ANI_SAHWIT_SWEAT_TALK>
+
+It...<wait:15> er,<wait:10> it must have<b>
+been the shock of finding<b>
+the body!<animation:ANI_SAHWIT_SWEAT_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_EYES_CLOSED_STAND><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Very well,<wait:15> Mr. Sahwit.<p><animation:ANI_JUDGE_ANGRY_TALK>
+
+Let's hear your testimony<wait:15><b>
+once more please.<animation:ANI_JUDGE_ANGRY_STAND><p>

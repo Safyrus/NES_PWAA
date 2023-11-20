@@ -1,0 +1,496 @@
+
+
+<!--
+--------------------------
+| SCENE 1-?: Explaination|
+--------------------------
+-->
+<hidetextbox><wait:60><fade><wait:25><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:25><hidetextbox>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It turns out that Frank<b>
+Sahwit was a common burglar!<p>
+
+He posed as a newspaper<b>
+sales-man<p>
+
+to check and see when<b>
+people were out<b>
+of the house!<p>
+
+<speed:7>That day...<speed:2><p>
+
+<hidetextbox><fade><wait:7><background:BKG_SCENE_LARRY_SAHWIT><fade><wait:25><hidetextbox>
+
+When Larry went to her<b>
+apartment,<wait:15> the victim<b>
+wasn't home.<p>
+
+After he left,<wait:20> Mr. Sahwit<b>
+let himself in to do his<b>
+dirty work!<p>
+
+<hidetextbox><fade><wait:7><background:BKG_SCENE_CINDY_SEE_SAHWIT><fade><wait:25><hidetextbox>
+
+While he was searching her<b>
+place,<wait:15> the victim returned!<p>
+
+Flustered,<wait:15> Mr. Sahwit grabbed<b>
+the nearest blunt object he<b>
+could find...<p>
+
+<hidetextbox><fade><wait:7><background:BKG_SAHWIT_MURDERER_1><fade><wait:37><fade><wait:7><background:BKG_CINDY_MURDER><fade><wait:127><fade><background:BKG_NONE><wait:25><hidetextbox><fade>
+
+<!--
+--------------------------
+| SCENE 1-?: Won the case|
+--------------------------
+-->
+<wait:7><speed:10><bip:BIP_TYPEWRITER><color:3>
+
+<name:NAM_NONE><bip:BIP_NONE>
+    August 3, 2:32 PM<b>
+      District Court<b>
+   Defendant Lobby No. 2<color:0><p>
+
+<music:MUS_WON_THE_CASE><speed:2><wait:30><background:BKG_COURTROOM_LOBBY><shake><speed:6><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Whew...<wait:15> I still can't<b>
+believe we won!)<color:0><p>
+
+<hidetextbox><character:CHR_MIA><animation:ANI_MIA_SMILE><wait:16><hidetextbox><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<wait:20><b>
+Good job in there!<wait:20><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK>Congratulations!<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Th-<wait:8>thanks,<wait:15> Chief.<wait:20><b>
+I owe it all to you.<p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><speed:4>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Not at all,<wait:18> not at all!<wait:20><b>
+You fought your own battles<b>
+in there.<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><wait:22><flash><shake>It's been a while since I've<b>
+seen a trial end on such a<b>
+satisfying note!<animation:ANI_MIA_SMILE><p>
+
+<animation:ANI_MIA_CONFIDENT_STAND><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I've never seen the chief<wait:12><b>
+looking this happy...)<speed:2><p>
+
+<flash><shake><speed:5>(If she's this glad,<wait:10> imagine<b>
+how Larry must feel!)<speed:2><color:0><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_CRY_STAND><wait:16><music:MUS_NONE><sound:SFX_REALIZATION><animation:ANI_LARRY_CRY_TALK><hidetextbox><speed:7>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+My life is over...<speed:2><animation:ANI_LARRY_CRY_STAND><p>
+
+<speed:2><flash><sound:SFX_STAB><shake><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Larry!<speed:2><wait:20> You're supposed to<b>
+be happy!<wait:20> What's wrong now!?<p>
+
+<animation:ANI_LARRY_CRY_TALK><speed:8>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Aww,<wait:15> Nick...<speed:2><animation:ANI_LARRY_CRY_STAND><p>
+
+<animation:ANI_LARRY_TUMB_UP_TALK><speed:3>Don't worry 'bout me!<wait:15><b>
+I'll be dead and gone soon!<speed:2><animation:ANI_LARRY_TUMB_UP_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Good! <wait:15>Wait,<wait:15> no! <wait:20>I mean...<wait:20><flash><shake><b>
+Bad!<wait:10> Bad <wait:5>bad <wait:5>bad!<p><animation:ANI_LARRY_CRY_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Larry,<wait:15> you're innocent!<b>
+The case is closed.<p><speed:8>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<animation:ANI_LARRY_CRY_TALK>But...<wait:15> but my Cindy-<wait:8>windy's<b>
+gone,<wait:8> man!<wait:15> Gone forever!<animation:ANI_LARRY_CRY_STAND><p>
+
+<speed:2><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Larry,<wait:10> she was a...<wait:15><b>
+Nah...<wait:15> Never mind.)<color:0><speed:2><p>
+
+<speed:2><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_STAND><wait:16><animation:ANI_MIA_SMILE><wait:110><music:MUS_WON_THE_CASE><hidetextbox><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Congratulations,<wait:8> Harry!<animation:ANI_MIA_SMILE><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_CRY_STAND><wait:16><animation:ANI_LARRY_CRY_TALK><hidetextbox><sound:SFX_REALIZATION><flash>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+H-<wait:8>Harry...?<animation:ANI_LARRY_CRY_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_STAND><wait:16><animation:ANI_MIA_TALK><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Yes,<wait:10> you! <wait:15>I can practically<b>
+see the headlines now:<wait:20><b>
+"Harry Butz,<wait:5> Innocent!"<animation:ANI_MIA_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_HAPPY_STAND><wait:16><animation:ANI_LARRY_HAPPY_TALK><hidetextbox><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Heh...<wait:15> um...<wait:15> thanks!<wait:15><b>
+I really owe you one.<animation:ANI_LARRY_HAPPY_STAND><p>
+
+<animation:ANI_LARRY_TUMB_UP_TALK><shake><sound:SFX_OBJECTION><flash>
+
+I won't forget this,<wait:15> ever!<wait:25><b>
+Let's celebrate! <wait:15>Dinner?<b>
+Movie? <wait:20>My treat!<animation:ANI_LARRY_TUMB_UP_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_CONFIDENT_STAND><wait:16><animation:ANI_MIA_CONFIDENT_TALK><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Oh,<wait:10> no,<wait:10> I couldn't.<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_HAPPY_STAND><wait:16><speed:5><hidetextbox><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hey,<wait:10> I was the one who<b>
+got you off the hook!)<color:0><speed:2><p>
+
+<speed:2><animation:ANI_LARRY_HAPPY_TALK><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Oh,<wait:10> hey!<animation:ANI_LARRY_HAPPY_STAND><p>
+
+<photo:PHT_THINKER><animation:ANI_LARRY_TUMB_UP_TALK><flash><sound:SFX_SMACK><shake><speed:6>
+
+H-<wait:8>here,<wait:10> take this!<wait:15><speed:2><b>
+It's a present!<animation:ANI_LARRY_TUMB_UP_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_QUESTION_STAND><wait:16><animation:ANI_MIA_QUESTION_TALK><hidetextbox><speed:6>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+A present? <wait:20>For me?<speed:2><animation:ANI_MIA_QUESTION_STAND><p>
+
+<animation:ANI_MIA_QUESTION_TALK><sound:SFX_REALIZATION><flash>
+
+Wait...<wait:15><b>
+Wasn't this the evidence<b>
+that... <animation:ANI_MIA_QUESTION_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_HAPPY_STAND><wait:16><animation:ANI_LARRY_HAPPY_TALK><hidetextbox>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Actually,<wait:15> I made this<b>
+clock for her!<animation:ANI_LARRY_HAPPY_STAND><p>
+
+<animation:ANI_LARRY_HAPPY_TALK>I made one for her<b>
+and one for me.<animation:ANI_LARRY_HAPPY_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_QUESTION_STAND><wait:16><animation:ANI_MIA_QUESTION_TALK><hidetextbox><speed:5>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+R-<wait:8>really? <wait:15>You? <wait:15>You made this?<speed:2><animation:ANI_MIA_QUESTION_STAND><p>
+
+...<p>
+
+<animation:ANI_MIA_CONFIDENT_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Well,<wait:15> thank you.<b>
+I'll keep it as a memento.<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<hidetextbox><photo:PHT_NONE><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_STAND><wait:16><animation:ANI_LARRY_TALK><hidetextbox><speed:7>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Yo,<wait:15> Nick...<animation:ANI_LARRY_STAND><p>
+
+<animation:ANI_LARRY_TALK><speed:4>Can you believe it?<wait:15><b>
+I was so into that chick...<animation:ANI_LARRY_STAND><p>
+
+<animation:ANI_LARRY_TALK><speed:5>And...<speed:4><wait:15> and she was just<b>
+playing me for a fool!<speed:2><animation:ANI_LARRY_STAND><p>
+
+<animation:ANI_LARRY_CRY_TALK><sound:SFX_REALIZATION><flash>Don't that make you<b>
+wanna just cry? <wait:8>*sob*<animation:ANI_LARRY_CRY_STAND><p><speed:2><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Larry...<speed:2><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_STAND><wait:16><hidetextbox><speed:7>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+...<speed:2><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><speed:5>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Are you so sure?<speed:2><animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_STAND><wait:16><animation:ANI_LARRY_TALK><hidetextbox><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Ex-<wait:10>squeeze me?<animation:ANI_LARRY_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_STAND><wait:16><animation:ANI_MIA_TALK><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+I think she thought quite a<b>
+lot of you,<wait:15> in her own way.<animation:ANI_MIA_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_STAND><wait:16><animation:ANI_LARRY_TALK><hidetextbox><flash><shake>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Nah,<wait:15> you don't gotta<b>
+sympathize with me,<wait:10> 'sokay.<animation:ANI_LARRY_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MIA><animation:ANI_MIA_STAND><wait:16><animation:ANI_MIA_TALK><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Oh,<wait:15> I'm not just<b>
+sympathizing,<wait:10> really.<animation:ANI_MIA_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK>Isn't that right,<wait:15> Wright?<b>
+Don't you have something<b>
+to show your friend?<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><speed:5>Something that proves how<b>
+she felt about him?<speed:2><animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<sound:SFX_LIGHTBULB><flash><shake><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+H-<wait:8>huh?<wait:16><b>
+Oh,<wait:20> yeah,<wait:20> right!<speed:2><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_LARRY><animation:ANI_LARRY_STAND><wait:16><hidetextbox>
+
+<!--
+--------------------------
+| Choice : larry proof   |
+--------------------------
+-->
+<speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(What the heck is<b>
+she talking about?)<color:0><speed:2><wait:1><animation:ANI_LARRY_STAND><p>
+
+<act>
+<jump:larry_proof_yes,0,1>Show good proof<b>
+<jump:larry_proof_no,0,0>Show wrong proof<b>
+
+<!--
+--------------------------
+| Choice : larry proof no|
+--------------------------
+-->
+<label:larry_proof_no><fp>
+<flash><shake>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Here you go,<wait:12> Larry.<wait:18><b>
+Proof.<p><speed:8>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<animation:ANI_LARRY_HAPPY_TALK><speed:6>
+
+Eh...<wait:20> heh heh?<wait:10><speed:5><b>
+It's okay,<wait:15> Nick.<b>
+Don't worry about me.<speed:2><animation:ANI_LARRY_HAPPY_STAND><p>
+
+<animation:ANI_LARRY_HAPPY_TALK><speed:5>I'll forget about<b>
+her soon enough.<speed:2><animation:ANI_LARRY_HAPPY_STAND><p>
+
+<animation:ANI_LARRY_HAPPY_TALK>Look,<wait:15> I'm gonna head<b>
+home.<wait:15> Thanks a ton, eh?<animation:ANI_LARRY_HAPPY_STAND><p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><hidetextbox><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Guess that wasn't the<b>
+right thing to show him...)<color:0><p>
+
+<speed:2><hidetextbox><fade><wait:25><music:MUS_NONE><jump:larry_proof_end>
+
+<!--
+--------------------------
+| Choice: larry proof yes|
+--------------------------
+-->
+<label:larry_proof_yes><fp>
+<photo:PHT_THINKER><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Check this out,<wait:15> Larry.<speed:2><b>
+Proof Positive you weren't<b>
+just some chump to her.<p>
+
+<animation:ANI_LARRY_TALK><speed:6>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Huh...?<wait:20><speed:2><flash><shake><b>
+Where'd you get that clock?<animation:ANI_LARRY_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+This is the clock you<b>
+made for her,<wait:10> Larry!<p>
+
+She took it with her<b>
+when she traveled.<p>
+
+<animation:ANI_LARRY_HAPPY_TALK><flash><sound:SFX_SMACK><shake>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+Hmm,<wait:15> she probably just<b>
+needed a clock,<wait:15> that's all.<animation:ANI_LARRY_HAPPY_STAND><p><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You think so? <wait:20>It's a pretty<b>
+heavy clock to take traveling.<speed:2><p><speed:8>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+...<speed:2><p><photo:PHT_NONE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Well,<wait:15> make of it<b>
+what you will.<p>
+
+<name:NAM_BUTZ><bip:BIP_NORMAL>
+...<p>
+
+<animation:ANI_LARRY_TALK>Hey,<wait:10> Nick.<animation:ANI_LARRY_STAND><p>
+
+<animation:ANI_LARRY_TUMB_UP_TALK><sound:SFX_REALIZATION><flash><speed:5>I'm glad I asked you<b>
+to be my lawyer.<speed:2><animation:ANI_LARRY_TUMB_UP_STAND><p>
+
+<animation:ANI_LARRY_CRY_TALK>Really,<wait:15> I am.<wait:25><b>
+Thanks.<animation:ANI_LARRY_CRY_STAND><p>
+
+<speed:2><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><speed:4><hidetextbox><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hope that made him feel<b>
+a little better...)<speed:2><color:0><p>
+
+<speed:2><hidetextbox><wait:40><music:MUS_NONE><fade><wait:25>
+
+<!--
+--------------------------
+| Choice: larry proof end|
+--------------------------
+-->
+<label:larry_proof_end>
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright?<p>
+
+<speed:5>I hope you see the importance<b>
+of evidence now.<speed:2><p>
+
+Also,<wait:15> hopefully you realize,<wait:15><speed:5><b>
+things change depending on<b>
+how you look at them.<speed:2><p>
+
+<speed:5>People,<wait:15> too.<speed:2><p>
+
+We never really know if<b>
+our clients are guilty<b>
+or innocent.<p>
+
+All we can do is<wait:10><speed:5><b>
+believe in them.<speed:2><p>
+
+And in order to believe in<b>
+them,<wait:15> <speed:5>you have to believe<b>
+in yourself.<speed:2><p>
+
+<wait:8><speed:6>Wright...<p>
+
+<speed:5>Listen.<wait:10> Learn.<wait:10> Grow strong.<speed:2><p>
+
+<speed:5>Never let go of what<b>
+you believe in. Never.<speed:2><p>
+
+<wait:90><music:MUS_WON_THE_CASE><hidetextbox><fade><wait:7><character:CHR_MIA><animation:ANI_MIA_STAND><background:BKG_COURTROOM_LOBBY><fade><wait:20><animation:ANI_MIA_TALK><hidetextbox>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Well,<wait:15> I think our work here<b>
+is done!<wait:15> Shall we be off?<animation:ANI_MIA_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yeah,<wait:15> I guess so!<p><animation:ANI_MIA_SMILE>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Say,<wait:10> how about dinner.<b>
+On me?<p>
+
+<animation:ANI_MIA_CONFIDENT_TALK>We'll drink a toast<b>
+to innocent Butz!<animation:ANI_MIA_CONFIDENT_STAND><p><speed:2><flash><shake>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yeah!<p>
+
+<animation:ANI_MIA_QUESTION_TALK><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Oh,<wait:10> speaking of Harry...<animation:ANI_MIA_QUESTION_STAND><p>
+
+<speed:2><animation:ANI_MIA_TALK>You were saying part of why<b>
+you became a lawyer was<b>
+because of him.<animation:ANI_MIA_STAND><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Er,<wait:15> <shake>yeah.<wait:20> Part,<wait:10> at least.<p><speed:2><animation:ANI_MIA_CONFIDENT_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+You'll have to tell me<b>
+more about it sometime!<wait:20><speed:5><b>
+Maybe...<wait:20> over drinks?<speed:2><animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<speed:2><hidetextbox><wait:10><fade><wait:25><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+And so,<wait:8> my first<b>
+trial came to a close.<speed:2><p>
+
+Larry slapped me on the back<b>
+and said, "Gee, Nick,<wait:10><b>
+it's good to have friends!"<p>
+
+But I'm pretty sure he's not<b>
+going to pay me.<wait:15> Unless you<b>
+count the clock he gave Mia.<p>
+
+<music:MUS_NONE><speed:8>...<speed:2><p>
+
+<speed:5>I didn't know it then...<p>
+
+<speed:5>but that clock was soon<b>
+going to be at the center<b>
+of another incident.<p>
+
+<speed:5>And my promise to tell the<b>
+chief about me and Larry...<p>
+
+<speed:5>would be one promise that<wait:15><speed:8><b>
+I wouldn't be able to keep.<speed:2><p>
+
+<bip:BIP_NONE><b>
+            THE END<wait:110><wait:120><p>

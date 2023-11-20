@@ -1,0 +1,2307 @@
+<!--
+--------------------------
+| SCENE 67
+--------------------------
+-->
+<label:label_2_67><fp>
+
+{127}{127}{127}<character:CHR_NONE><animation:ANI_NONE><background:BKG_DETENTION_CENTER><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
+
+<name:NAM_NONE><bip:BIP_NONE>
+September 6, 9:07 AM<b>
+Detention Center<b>
+Visitor's Room<color:0><p>
+
+<speed:2><wait:30><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Wow,<wait:20> they have poor Maya<b>
+locked up like a criminal.)<color:0><p>
+
+<fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><music:MUS_NONE><wait:30><hidetextbox><fp>
+
+<sound:SFX_REALIZATION><flash>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh!<p>
+
+<wait:20><animation:ANI_MAYA_SAD_TALK><speed:5>It's you!<wait:20> The lawyer...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><shake>G-<wait:8>good morning.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Good morning!<p>
+
+<color:2>(She looks so tired...)<color:0><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Um...<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>Are you going to<b>
+be my attorney?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Well,<wait:15> that's what I wanted<b>
+to talk to you about... <wait:1><b>
+<animation:ANI_MAYA_SAD_STAND><p>
+
+<act><jump:label_2_68,0,1>It's up to you<b>
+<jump:label_2_69,0,1>Of course I will<b>
+<jump:label_2_70,0,0>Sorry, not a chance<b>
+
+<!--
+--------------------------
+| SCENE 68
+--------------------------
+-->
+<label:label_2_68><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I'd better give it<b>
+to her straight...)<color:0><p>
+
+It's up to you.<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Up... <wait:15>to me?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yes.<wait:20> I don't think this is<b>
+something I should decide.<p>
+
+After all, you're the one<b>
+in trouble here.<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:5>They're never going to<b>
+believe me...<wait:20> are they?<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>Even you,<wait:15> when you found me<b>
+in the office.<wait:20> You looked at<b>
+me like I had done it!<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_MIA_DEAD_SIDE><fade><wait:7><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Did I look at her<b>
+like that?)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+<shake><flash>No,<wait:15> no!<wait:20> I never thought...<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I-<wait:8>it's okay.<wait:20><b>
+I understand.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>...<speed:2><p>
+
+<animation:ANI_MAYA_SMILE_TALK>And...<wait:20> I've also heard<b>
+about you.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Heard...?<wait:20> Heard what<b>
+about me?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I...<wait:20> was talking to my sister<b>
+on the phone the other day...<fp>
+
+<jump:label_2_71>
+
+<!--
+--------------------------
+| SCENE 69
+--------------------------
+-->
+<label:label_2_69><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(First things first,<wait:15> I better<b>
+get her cheered up...)<color:0><p>
+
+<sound:SFX_LIGHTBULB><flash>Yeah,<wait:15> of course I will!<b>
+Cheer up!<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><sound:SFX_REALIZATION><flash>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+R-<wait:8>really...?<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><flash><sound:SFX_STAB><shake><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Whoa! <wait:20>Did I say the wrong<b>
+thing? <wait:20>She looks sadder now!)<color:0><p>
+
+Um...<wait:20> what...<wait:20> <shake>what's wrong?<wait:20><b>
+You don't think I can do it?<p>
+
+<speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>No...<wait:20> no one could!<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>Who would believe me?<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_TALK>Even you,<wait:15> when you found me<b>
+in the office.<wait:20> You looked at<b>
+me like I had done it!<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_MIA_DEAD_SIDE><fade><wait:7><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Did I look at her<b>
+like that?)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+<shake><flash>No,<wait:15> no! <wait:20>I never thought...<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I-<wait:8>it's okay.<wait:20><b>
+I understand.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>...<speed:2><p>
+
+<animation:ANI_MAYA_SMILE_TALK>And...<wait:20> I've also heard<b>
+about you.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Heard...?<wait:20> Heard what<b>
+about me?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I...<wait:20> was talking to my sister<b>
+on the phone the other day...<fp>
+
+<jump:label_2_71>
+
+<!--
+--------------------------
+| SCENE 70
+--------------------------
+-->
+<label:label_2_70><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Maybe if I joke a bit<b>
+she'll cheer up...)<color:0><p>
+
+<flash><sound:SFX_SMACK><shake>Hah<wait:15> hah!<wait:15><sound:SFX_LIGHTBULB><flash><shake><b>
+No way,<wait:15> Jose!<p>
+
+Just kidding...<p>
+
+<speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<p>
+
+...<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><sound:SFX_REALIZATION><flash>...<speed:2><p>
+
+<flash><sound:SFX_STAB><shake><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Eh heh.<wait:20> Whoops.<wait:20><b>
+That didn't go so well.)<color:0><p>
+
+<speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...Heh...<speed:2><p>
+
+<speed:2><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Huh?<p>
+
+M-<wait:8>Maya...?<p>
+
+<speed:2>Was that a...<wait:20> chuckle?<p>
+
+<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+What?<p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><shake>N-<wait:8>no!<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><animation:ANI_MAYA_SUPRISE_STAND><speed:8>...<speed:2><p>
+
+<animation:ANI_MAYA_SAD_TALK><sound:SFX_REALIZATION><flash>It wasn't very<b>
+believable, was it?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:2><animation:ANI_MAYA_SAD_STAND><flash><sound:SFX_STAB><shake><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Not really...)<color:0><p>
+
+<animation:ANI_MAYA_COVER_MOUTH_TALK><shake><flash>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I-<wait:8>I'm sorry!<animation:ANI_MAYA_COVER_MOUTH_STAND><p>
+
+<animation:ANI_MAYA_COVER_MOUTH_TALK>I just thought,<wait:15> since<b>
+you'd made a joke...<animation:ANI_MAYA_COVER_MOUTH_STAND><p>
+
+<animation:ANI_MAYA_COVER_MOUTH_TALK><shake><flash>Please,<wait:15> don't mind me!<wait:20><b>
+You're doing just fine!<animation:ANI_MAYA_COVER_MOUTH_STAND><p>
+
+<animation:ANI_MAYA_COVER_MOUTH_TALK><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Who's trying to<b>
+cheer up who here!?)<color:0><p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:10>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>I knew it.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><shake><flash>No one will believe me.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><sound:SFX_REALIZATION><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+What?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Even you--<wait:15>when you found me<b>
+in the office.<wait:20> You looked at<b>
+me like I had done it!<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:2><hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_MIA_DEAD_SIDE><fade><wait:7><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Did I look at her<b>
+like that?)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+<shake><flash>No, <wait:15>no! <wait:20>I never thought...<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I-<wait:8>it's okay.<wait:20><b>
+I understand.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>...<speed:2><p>
+
+<animation:ANI_MAYA_SMILE_TALK>And...<wait:20> I've also heard<b>
+about you.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Heard...?<wait:20> Heard what<b>
+about me?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I...<wait:20> was talking to my sister<b>
+on the phone the other day...<fp>
+
+<jump:label_2_71>
+
+<!--
+--------------------------
+| SCENE 71
+--------------------------
+-->
+<label:label_2_71><fp>
+
+<music:MUS_NONE><hidetextbox><fade><wait:25><character:CHR_MIA><animation:ANI_MIA_STAND><background:BKG_NONE><fade><wait:15><animation:ANI_MIA_TALK><hidetextbox><fp>
+
+<color:3>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+"Today was my junior partner's<b>
+first time in court."<color:0><animation:ANI_MIA_STAND><p>
+
+<animation:ANI_MIA_TALK><animation:ANI_MIA_STAND>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Wow! <wait:15>Really?<wait:20><b>
+How'd that go?<p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><color:3>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+"It was quite the scene!"<animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK>"Honestly,<wait:15> I was on edge<b>
+the whole time.<wait:20> It's<b>
+been a while..."<color:0><animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><animation:ANI_MIA_STAND>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Hah!<wait:20> So,<wait:15> he crashed and<b>
+burned?<p>
+
+<animation:ANI_MIA_SMILE><color:3>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+"...He's a genius."<p>
+
+<animation:ANI_MIA_CONFIDENT_TALK>"One of those 'strike fear<b>
+into the hearts of evil'<b>
+types..."<color:0><animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><animation:ANI_MIA_TALK><color:3>"The only thing he's lacking<b>
+is...<wait:20> experience."<color:0><animation:ANI_MIA_STAND><p>
+
+<animation:ANI_MIA_TALK><animation:ANI_MIA_STAND>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Huh,<wait:15> sounds like it was fun!<p>
+
+Well,<wait:15> I know who to go to if<b>
+I ever get into trouble now!<p>
+
+<animation:ANI_MIA_TALK><color:3>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+"I don't know, Maya."<animation:ANI_MIA_STAND><p>
+
+<animation:ANI_MIA_TALK>"I think you might want<b>
+to wait...<wait:20> give him three<b>
+more years."<color:0><animation:ANI_MIA_STAND><p>
+
+<animation:ANI_MIA_TALK><animation:ANI_MIA_CONFIDENT_TALK><color:3><speed:6>"That is,<wait:15> unless you want<b>
+to be found guilty."<speed:2><color:0><animation:ANI_MIA_CONFIDENT_STAND><p>
+
+<animation:ANI_MIA_CONFIDENT_TALK><hidetextbox><fade><wait:25><character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><background:BKG_DETENTION_CENTER><fade><wait:25><animation:ANI_MAYA_SMILE_TALK><hidetextbox><fp>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+That's what she said!<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><speed:8>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I-<wait:8>I'm sorry!<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><animation:ANI_MAYA_SAD_TALK>I didn't mean to<b>
+trouble you...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+No,<wait:15> it's okay.<wait:20><b>
+It's true, I guess.<p>
+
+But...<wait:15> at the same time,<wait:15><b>
+I can't just sit and watch!<p>
+
+<animation:ANI_MAYA_SUPRISE_STAND>When I think of the person<b>
+who did this to Mia...<p>
+
+<animation:ANI_MAYA_SAD_STAND><speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<p>
+
+<animation:ANI_MAYA_CRY_TALK>I know...<speed:2><animation:ANI_MAYA_CRY_STAND><p><music:MUS_NONE>
+
+<set:FLG_2_78_TALK_THE_DAY_OF_THE_CRIME>
+
+<hidetextbox>
+<act>
+<save>
+<jump:menu_2_71_click,0,1>Examine<b>
+<jump:menu_2_71_move,0,1>Move<b>
+<jump:menu_2_71_talk,0,1>Talk<b>
+<jump:menu_2_71_present,0,0>Present<b>
+
+<label:menu_2_71_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:menu_2_71_move,0,0>TODO<b>
+
+<label:menu_2_71_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_DETENTION_CENTER>
+<event:EVT_CLICK>
+<box:25,9,4,10,1><jump:label_2_76,0,1>
+<box:4,5,3,3,0><jump:label_2_77,0,1>
+
+<label:menu_2_71_talk>
+<save>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:label_2_79,0,1>Maya<b>
+<jump:label_2_78,0,1,FLG_2_78_TALK_THE_DAY_OF_THE_CRIME>The day of the crime<b>
+<jump:label_2_90,0,1,FLG_2_78_TALK_THE_DAY_OF_THE_CRIME_2>The day of the crime<b>
+<jump:label_2_79,0,1,FLG_2_78_TALK_YOUR_CELL_PHONE>Your cell phone<b>
+<jump:label_2_85,0,1,FLG_2_78_TALK_YOUR_CELL_PHONE_2>Your cell phone<b>
+<jump:label_2_80,0,0,FLG_2_78_TALK_SPIRIT_MEDIUMS>Spirit mediums<b>
+
+<label:menu_2_71_present>
+TODO FORCE CR<p>
+<save>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:label_2_82,0,1>Wrong evidence<b>
+<jump:label_2_83,0,1>Glass shards<b>
+<jump:label_2_84,0,1>The Thinker<b>
+<jump:label_2_86,0,0>Receipt<b>
+
+
+
+<!--
+--------------------------
+| SCENE 72
+--------------------------
+-->
+<label:label_2_72><fp>
+
+<!--TODO MENU--><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<p>
+
+<animation:ANI_MAYA_SAD_TALK><shake><flash>Um...!<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Huh?<wait:20> Something the matter?<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Um...<wait:20> I was wondering,<wait:15><b>
+could I ask you a favor?<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...?<p>
+
+<animation:ANI_MAYA_SAD_TALK><photo:40>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+This is the address of<b>
+a famous lawyer.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>My sister gave me<b>
+this a long time ago.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_TALK>She said if I was ever in<b>
+trouble,<wait:15> I should call him.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><photo:PHT_NONE><animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+And,<wait:15> well,<wait:15> I'm in trouble.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_TALK>Do you think you could go<b>
+ask him to represent me?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><speed:6><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm...)<color:0><speed:2><wait:1><animation:ANI_MAYA_SAD_STAND><p>
+
+<act><jump:label_2_73,0,1>TODO1<b>
+<jump:label_2_74,0,0>TODO2<b>
+
+<!--
+--------------------------
+| SCENE 73
+--------------------------
+-->
+<label:label_2_73><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Sure,<wait:15> why not?<wait:20><b>
+I'll go ask.<p>
+
+<animation:ANI_MAYA_HAPPY_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Thank you so much!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>I have no one <b>
+else to turn to...<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...?<speed:2><p>
+
+<animation:ANI_MAYA_SAD_STAND>Say,<wait:15> what about<b>
+your parents?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<p>
+
+...<p>
+
+...<p>
+
+<speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I...<wait:15> <shake>I see.<wait:20><b>
+Don't worry, leave it to me.<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Thank you!<wait:20><b>
+The trial's tomorrow...<wait:15><b>
+at 10:00.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+W-<wait:8><flash><sound:SFX_STAB><shake>what!?<wait:20> <shake>Tomorrow!?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Tomorrow.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+What if this guy refuses!?<fp>
+
+<jump:label_2_75>
+
+<!--
+--------------------------
+| SCENE 74
+--------------------------
+-->
+<label:label_2_74><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I'm sorry...<p>
+
+I think this is the kind<b>
+of thing you should really<b>
+do yourself.<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...You're right.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><speed:7>...<speed:2><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Something wrong?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Actually,<wait:15> I asked the police<b>
+to contact him, and they<b>
+tried calling a few times.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>Nobody could get<b>
+a hold of him!<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+They couldn't find him?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I have no one left to ask!<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...?<p>
+
+Say,<wait:15> what about<b>
+your parents...?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<p>
+
+...<p>
+
+...<p>
+
+<speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+O-<wait:8><flash><sound:SFX_STAB><shake>okay!<wait:20> Don't worry,<wait:15><b>
+I'll go ask him for you.<p>
+
+<animation:ANI_MAYA_HAPPY_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Y-<wait:8>you will?<wait:15><b>
+Thank you so much!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I'm just worried what will<b>
+happen if I can't find him.<fp>
+
+<jump:label_2_75>
+
+<!--
+--------------------------
+| SCENE 75
+--------------------------
+-->
+<label:label_2_75><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+They told me that if I don't<b>
+find one,<wait:15> the state will pick<b>
+an attorney to defend me.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+When will that happen?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+They're giving me until<b>
+4:00 this afternoon.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(And visiting hours are almost<b>
+up...<wait:20> I'd better hurry!)<color:0><p>
+
+Right,<wait:15> I'll be back!<p>
+
+<color:255>{127}<color:255>{127}<p>
+
+<color:255><color:5>{127}<color:5>{127}<p>
+
+<color:255><p>
+
+<!--
+--------------------------
+| SCENE 76
+--------------------------
+-->
+<label:label_2_76>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+This guard monitors<b>
+the visitor's room.<p>
+
+He hasn't moved an inch.<b>
+A real pro,<wait:10> this guy.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 77
+--------------------------
+-->
+<label:label_2_77>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Smile for the camera...<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 78
+--------------------------
+-->
+<label:label_2_78>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Could you tell me about<b>
+the day of the murder?<p>
+
+<animation:ANI_MAYA_SMILE_TALK><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes!<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_THINK_TALK>Let's see...<wait:20> that morning,<wait:15><b>
+I got a call from my sister.<animation:ANI_MAYA_THINK_STAND><p>
+
+<animation:ANI_MAYA_THINK_TALK><animation:ANI_MAYA_SMILE_TALK>She wanted me to hold onto<b>
+a piece of evidence for an<b>
+upcoming trial.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Evidence?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes.<wait:20> That clock shaped like<b>
+"The Thinker."<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(The one Larry made...)<color:0><p>
+
+How could that have been<b>
+evidence in a case?<p>
+
+<animation:ANI_MAYA_THINK_TALK><shake><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Um,<wait:30> right,<wait:15> she said<b>
+something about that...<animation:ANI_MAYA_THINK_STAND><p>
+
+<animation:ANI_MAYA_THINK_TALK>...<speed:2><animation:ANI_MAYA_THINK_STAND><p>
+
+<animation:ANI_MAYA_THINK_TALK><speed:2><animation:ANI_MAYA_HAPPY_TALK><sound:SFX_LIGHTBULB><flash><shake>I remember!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_SMILE_TALK>Do you want to hear it<b>
+in her own voice?<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><sound:SFX_LIGHTBULB>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+H-<wait:8>her own voice!?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>I'm pretty sure our<b>
+conversation is on<b>
+my cell phone.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You recorded it!<p>
+
+<animation:ANI_MAYA_SMILE_TALK><shake><flash>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yeah! <wait:20>I forgot how to<b>
+delete those things.<animation:ANI_MAYA_SMILE_STAND><p>
+<set:FLG_2_78_TALK_YOUR_CELL_PHONE>
+<return>
+
+<!--
+--------------------------
+| SCENE 79
+--------------------------
+-->
+<label:label_2_79>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+There's something I've<b>
+been wanting to ask you...<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes?<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+What's with that outfit?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh,<wait:15> this?<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>This is what all acolytes<b>
+wear.<wait:20> It's my uniform,<wait:15> you<b>
+could say.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A-<wait:8>acolytes?<wait:20> Like people in<b>
+religious training?<wait:20> What is<b>
+it you do?<p>
+
+<speed:2><animation:ANI_MAYA_SUPRISE_TALK><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh!<wait:20> It's nothing<b>
+strange,<wait:15> really!<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><animation:ANI_MAYA_SMILE_TALK><speed:5>I'm a spirit medium.<wait:20><b>
+...In training.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><speed:2><animation:ANI_MAYA_SMILE_STAND><sound:SFX_REALIZATION><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A s-<wait:8>spirit medium!?<wait:12><speed:5><color:2><b>
+(I'm pretty sure that<b>
+qualifies as strange.)<color:0><p>
+<set:FLG_2_78_TALK_SPIRIT_MEDIUMS>
+<return>
+
+<!--
+--------------------------
+| SCENE 80
+--------------------------
+-->
+<label:label_2_80>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+So you're an acolyte.<wait:20><b>
+A,<wait:15> er,<wait:15> medium-in-training.<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+That's right.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>The Fey family,<wait:15> especially the<b>
+women,<wait:15> have always been very<b>
+sensitive to the spirit world.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Wait a second,<wait:15> you said<wait:15><b>
+the <sound:SFX_REALIZATION>"Fey Family"?<p>
+
+So,<wait:15> Mia was into<b>
+this stuff too?<p>
+
+<animation:ANI_MAYA_HAPPY_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Of course!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK>She left the mountain to<b>
+"follow her career," she said.<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_SMILE_TALK>Her powers were first-<b>
+class,<wait:10> too!<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I...<wait:15> I had no idea.)<color:0><p>
+
+<flash><speed:7>Hmm...<speed:2><p>
+
+<sound:SFX_REALIZATION><flash>Wait...!<wait:20><p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+What?<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+So,<wait:15> you're a real,<wait:15> honest-<b>
+to-goodness spirit medium?<wait:20><b>
+With E.S.P. and all that?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes.<wait:12><b>
+...In training.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Well,<wait:15> can't you contact<b>
+Mia's spirit,<wait:10> then?<p>
+
+We can just ask<b>
+her who killed her!<p>
+
+<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...!<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:5>I-<wait:8>I'm sorry...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>I'm still in training.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>I couldn't do something<b>
+on that level...<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm...<wait:20> I thought that<b>
+would be too easy.)<color:0><p>
+<return>
+
+
+<!--
+--------------------------
+| SCENE 81
+--------------------------
+-->
+<label:label_2_81>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+So,<wait:15> you say you have a<b>
+conversation with your<b>
+sister on your cell phone?<p>
+
+Let's hear it!<p>
+
+<animation:ANI_MAYA_HAPPY_TALK><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Right!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_SMILE_TALK><sound:SFX_REALIZATION><flash><speed:6>Oh!<speed:2><animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_TALK>I just remembered: that<b>
+detective took my cell phone.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>Sorry.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh,<wait:15> right.<wait:12><color:2><b>
+(Of course...)<color:0><p>
+
+<animation:ANI_MAYA_SAD_STAND>Next time I see Detective<b>
+Gumshoe I'll ask him for it.<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I'll write you a note so<b>
+you don't forget,<wait:20> okay?<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Sure,<wait:15> thanks.<p>
+
+<event:EVT_CR_SET,16409><speed:5><color:2>
+
+<name:NAM_NONE><bip:BIP_NONE>
+Maya's Memo added<b>
+to the Court Record.<color:0><p>
+
+<speed:2>
+<clear:FLG_2_78_TALK_YOUR_CELL_PHONE><set:FLG_2_78_TALK_YOUR_CELL_PHONE_2><set:FLG_2_78_TALK_THE_DAY_OF_THE_CRIME_2>
+<return>
+
+<!--
+--------------------------
+| SCENE 82
+--------------------------
+-->
+<label:label_2_82>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Sorry...<wait:20> I've never<b>
+seen that before.<animation:ANI_MAYA_SAD_STAND><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 83
+--------------------------
+-->
+<label:label_2_83>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:27>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+This was lying next<b>
+to the chief's body...<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I saw that too.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>They said they thought<b>
+these were pieces of a<b>
+broken light stand.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yeah,<wait:15> that seems<b>
+about right.<p>
+
+<color:2>(Though I'd never heard<b>
+of a glass light stand<b>
+before this...)<color:0><p>
+
+<photo:PHT_NONE><return>
+
+<!--
+--------------------------
+| SCENE 84
+--------------------------
+-->
+<label:label_2_84>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:PHT_THINKER>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I wanted to ask you<b>
+about the murder weapon...<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Poor Sis...<wait:20> *sniff*<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:2><photo:PHT_NONE><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm.<wait:20> Better not ask<b>
+her about this now.)<color:0><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 85
+--------------------------
+-->
+<label:label_2_85>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I wanted to ask you<b>
+about your cell phone...<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+That detective took it<b>
+when they brought me in.<color:0><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><fade><wait:7><character:CHR_GUMSHOE><animation:ANI_GUMSHOE_SAD_STAND><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(So,<wait:15> Gumshoe took it...)<p>
+
+(I'll have to try to<b>
+get it back next time<b>
+I see him...)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><p>
+
+<!--
+--------------------------
+| SCENE 86
+--------------------------
+-->
+<label:label_2_86>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:30>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Remember that receipt?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Y-<wait:8>you mean the one<b>
+with my name on it?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Any idea why she...<p>
+
+<photo:PHT_NONE><animation:ANI_MAYA_SAD_TALK><speed:3>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Absolutely none!<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:5>Um...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>Do you trust me?<speed:2><wait:1><animation:ANI_MAYA_SAD_STAND><p>
+
+<act><jump:label_2_87,0,1>Yes<b>
+<jump:label_2_88,0,0>No<b>
+
+<!--
+--------------------------
+| SCENE 87
+--------------------------
+-->
+<label:label_2_87><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I trust you.<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Why?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>Don't you think<b>
+I did it,<wait:10> too?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+No,<wait:15> I don't.<p>
+
+<fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_MIA_DEAD_SIDE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(It's just a hunch,<wait:15> but...)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+That detective<b>
+thinks I did it.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<p>
+
+<hidetextbox><p>
+
+<!--
+--------------------------
+| SCENE 88
+--------------------------
+-->
+<label:label_2_88><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I didn't think<b>
+you'd believe me.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>You're just like<b>
+the detective.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I'm sorry...<speed:2><p>
+
+<animation:ANI_MAYA_SAD_STAND>I don't like lying just to<b>
+make people feel better.<p>
+
+But it doesn't mean that<b>
+I've decided you did it!<p>
+
+<fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_MIA_DEAD_SIDE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(She seemed so lost<b>
+at the crime scene.)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><p>
+
+<!--
+--------------------------
+| SCENE 89
+--------------------------
+-->
+<label:label_2_89><fp>
+
+<!--TODO--><!--TODO--><!--TODO--><!--TODO--><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_HAPPY_STAND><wait:16><animation:ANI_MAYA_HAPPY_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Hey!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><flash><shake>What is it? <wait:20>Did you<b>
+meet the lawyer?<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_SMILE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Sorry.<p>
+
+<animation:ANI_MAYA_SAD_STAND>I haven't seen him yet.<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I see...<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm.<wait:20> I'd better go see<b>
+if I can find this elite<b>
+lawyer she's talking about.)<color:0><p>
+
+<music:MUS_NONE><p>
+
+<!--
+--------------------------
+| SCENE 90
+--------------------------
+-->
+<label:label_2_90>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Could you tell me about<b>
+the day of the murder?<p>
+
+Sorry...<wait:20> I know<b>
+it must be hard.<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+No,<wait:15> it's okay.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>All I've been doing the<b>
+last few hours is talking<b>
+about it.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>I've kind of gotten<b>
+used to it...<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_THINK_TALK>Let's see...<wait:15> that morning,<b>
+I got a call from my sister.<animation:ANI_MAYA_THINK_STAND><p>
+
+<animation:ANI_MAYA_THINK_TALK>She wanted me to hold on to<b>
+a piece of evidence for an<b>
+upcoming trial.<animation:ANI_MAYA_THINK_STAND><p>
+
+<animation:ANI_MAYA_THINK_TALK><animation:ANI_MAYA_SMILE_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(That's "The Thinker" clock<b>
+that Larry made.)<p>
+
+(It practically qualifies<b>
+as a serial murderer by now.)<color:0><p>
+
+So then,<wait:15> when did you<b>
+arrive at the office?<p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+It was right around 9:00.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+The lights were off and...<wait:15><b>
+I could smell blood.<p>
+
+<hidetextbox><fade><wait:7><background:BKG_MIA_DEAD_FRONT><fade><wait:7><hidetextbox><fp>
+
+Th-<wait:8>then I found her.<wait:20><b>
+My sister...<p>
+
+<hidetextbox><fade><wait:25><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+<shake>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Thanks,<wait:15> Maya.<p>
+
+That's all I need<b>
+to hear for now.<p>
+<return>
+
+
+<!--
+--------------------------
+| SCENE 91
+--------------------------
+-->
+<label:label_2_91><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+What about your family?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I only had my sister.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>My father died when<b>
+I was very young.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>And I don't know<b>
+where my mother is.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Don't know...?<wait:20><b>
+So she could still be alive?)<speed:2><color:0><p>
+
+<!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO MENU--><p>
+
+<!--
+--------------------------
+| SCENE 92
+--------------------------
+-->
+<label:label_2_92><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+The women in my family have<b>
+been mediums for generations.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>They say that E.S.P.<b>
+runs in our blood.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>About fifteen years ago,<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>our family was involved<b>
+in an...<wait:20> incident.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>There was a man,<b>
+and he...<wait:20> he...<wait:20><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:5>He ruined our mother's life.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><sound:SFX_REALIZATION><flash><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+("Ruined"...?)<color:0><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+After that,<wait:20> she disappeared.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_TALK>Several years after that,<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>my sister announced she would<b>
+"become a lawyer" and she<b>
+left the mountain.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<speed:5>So,<wait:15> you live by yourself?<speed:2><p>
+
+<animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes.<wait:20><b>
+I've gotten used to it.<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>Oh,<wait:15> also...<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK>I had to become independent,<wait:15><b>
+or I would lose my E.S.P.!<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I feel bad for her,<wait:15><b>
+all by herself up<b>
+on that mountain...)<color:0><p>
+
+<!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO--><!--TODO--><p>
+
+<!--
+--------------------------
+| SCENE 93
+--------------------------
+-->
+<label:label_2_93><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+So,<wait:15> who was this man<b>
+who,<wait:15> um,<wait:15> "ruined" your mother?<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+About 15 years ago...<wait:20><speed:3><b>
+there was an unusual<b>
+murder case.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>It made quite a stir,<wait:15><b>
+everyone was talking<b>
+about it,<wait:15> apparently.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>The police were running out<b>
+of leads,<wait:15> and they were<b>
+getting desperate...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><sound:SFX_LIGHTBULB><flash><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Wait...<wait:15> <speed:5>they didn't use<b>
+a spirit medium,<wait:20> did they?<speed:6><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:3>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+The police convinced my mother<b>
+to try to contact the victim.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Wow...<wait:20><b>
+So,<wait:15> what happened?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+The case was solved...<wait:30><speed:7><b>
+we thought.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><sound:SFX_REALIZATION><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You "thought"...?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+The man my mother helped<b>
+the police capture was<b>
+innocent.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_LOOKDOWN_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...!<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+The police's consultation with<b>
+a medium had all been carried<b>
+out in secret,<wait:15> of course.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>But...<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_TALK>A man found out about it<b>
+and leaked it to the press.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>He told all the papers that<b>
+my mother was a fraud,<wait:15> and the<b>
+media jumped on it big time.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK><speed:6>She...<wait:15> my mother...<wait:15> became<b>
+the laughing stock of the<b>
+nation.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I see.<p>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<p>
+
+<music:MUS_NONE><animation:ANI_MAYA_LOOKDOWN_TALK><sound:SFX_REALIZATION>White...<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Excuse me? <wait:20>White?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+That was his name.<wait:22><b>
+My sister told me.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+White? <wait:20>Hmm...<p>
+
+<speed:2><!--TODO MENU--><wait:120><music:MUS_NONE><p>
+
+<!--
+--------------------------
+| SCENE 94
+--------------------------
+-->
+<label:label_2_94><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:PHT_THINKER>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um,<wait:15> about the weapon...<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Poor Sis...<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><photo:PHT_NONE><animation:ANI_MAYA_LOOKDOWN_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm.<wait:15> Best not to talk<b>
+about that subject <b>
+right now.)<color:0><p>
+
+<!--
+--------------------------
+| SCENE 95
+--------------------------
+-->
+<label:label_2_95><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+About your cell phone...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes.<p>
+
+It has a recording of the<b>
+conversation I had with my<b>
+sister on it...<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>Say...<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>If I listened to that,<wait:15><b>
+I could hear my sister's<b>
+voice again.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<!--
+--------------------------
+| SCENE 96
+--------------------------
+-->
+<label:label_2_96><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:26>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hey,<wait:15> I got your<b>
+cell phone back.<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh! <wait:15>Say...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:5>Can I listen<b>
+to my sister's voice?<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><photo:PHT_NONE>{uparrow}BGM{littlecross}{761}{65}<wait:60><fade><wait:15><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<speed:8>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<speed:5><color:2>(Maya's eyes closed...<wait:20><b>
+She listened to every word<b>
+with such intensity...)<p>
+
+(Before long,<wait:15> tears began<b>
+to roll down her cheeks.)<color:0><p>
+
+...<p>
+
+<speed:2><hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
+
+<speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Thank you.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><wait:120><music:MUS_NONE>
+
+<!--
+--------------------------
+| SCENE 97
+--------------------------
+-->
+<label:label_2_97><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:30>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Do you remember<b>
+the receipt?<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh,<wait:15> you mean the one<b>
+with my name on it?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Any idea why...<p>
+
+<photo:PHT_NONE><animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Absolutely none!<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<!--
+--------------------------
+| SCENE 98
+--------------------------
+-->
+<label:label_2_98><fp>
+
+<!--TODO--><!--TODO--><!--TODO--><!--TODO--><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><wait:16><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
+
+<name:NAM_NONE><bip:BIP_NONE>
+September 6, 3:42 PM<b>
+Detention Center<b>
+Visitor's Room<color:0><p>
+
+<speed:2><wait:30>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hiya.<p>
+
+<animation:ANI_MAYA_HAPPY_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh!<wait:12><b>
+You're back!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><flash><sound:SFX_SMACK><shake>Did you find the lawyer?<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_HAPPY_STAND><shake><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um...<wait:15> well...<wait:12><speed:2><color:2><b>
+(What do I tell her?)<color:0><p>
+
+<animation:ANI_MAYA_SMILE_STAND>Well,<wait:15> see...<wait:10><color:2><b>
+(Just be honest!)<color:0><p>
+
+I...<wait:15> I really don't think<b>
+you should use that guy.<p>
+
+<animation:ANI_MAYA_SAD_STAND>He...<wait:20> didn't seem healthy.<wait:20><b>
+He was all skin and bones!<p>
+
+<speed:7>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_SAD_TALK>What really happened?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:2><animation:ANI_MAYA_SAD_STAND><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+You don't mean...<wait:20><b>
+He refused to help?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><shake><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Urp.<p>
+
+<speed:7>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>I see.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>I've been abandoned,<wait:10> then.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><!--TODO MENU--><music:MUS_REMINISCENCE_1><hidetextbox><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<!--
+--------------------------
+| SCENE 99
+--------------------------
+-->
+<label:label_2_99><fp>
+
+<!--TODO MENU--><character:CHR_MAYA><animation:ANI_MAYA_SMILE_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Just a little longer now<b>
+before the state-appointed<b>
+lawyer comes,<wait:10> I guess...<animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><animation:ANI_MAYA_SMILE_STAND><speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<color:2>(4:00 PM.<wait:20> Time's up.)<p>
+
+(What should I do?)<p>
+
+(Do I just leave her<b>
+and go home...?)<color:0><wait:1><animation:ANI_MAYA_SMILE_STAND><p>
+
+<act><jump:label_2_100,0,1>TODO1<b>
+<jump:label_2_101,0,0>TODO2<b>
+
+<!--
+--------------------------
+| SCENE 100
+--------------------------
+-->
+<label:label_2_100><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(There's nothing left<b>
+here for me to do...)<p>
+
+<color:2>(She'll be better off with<b>
+a state-appointed lawyer.)<color:0><p>
+
+I think I'd better<b>
+get home now.<speed:2><p>
+
+<animation:ANI_MAYA_SMILE_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Good-bye.<speed:2><animation:ANI_MAYA_SMILE_STAND><p>
+
+<animation:ANI_MAYA_SMILE_TALK><wait:60><fade><wait:25><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><wait:30><wait:120><music:MUS_REMINISCENCE_1><fade><wait:7><hidetextbox><fp>
+
+<speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It was a few days later when<b>
+I found out how the story<b>
+ended.<p>
+
+The result of the trial<b>
+was in the newspaper.<p>
+
+"Guilty."<p>
+
+<wait:30>I'll probably never<b>
+meet her again.<p>
+
+Did I make the<b>
+right choice?<p>
+
+Will I ever know?<p>
+
+Mia...<wait:15> if you can hear<b>
+me, please, tell me!<p>
+
+<speed:8>...<speed:2><p>
+
+<music:MUS_NONE><hidetextbox><fade><wait:25><wait:60><background:BKG_NONE><fade><wait:7><wait:10><character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><background:BKG_DETENTION_CENTER><shake><sound:SFX_SUPERSHOCK><hidetextbox><fp>
+
+<speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Not!<wait:20> I can't let<b>
+that happen!<p>
+
+<speed:2><shake><flash>I'm not leaving here until<b>
+she takes me as her lawyer!<fp>
+
+<jump:label_2_101>
+
+<!--
+--------------------------
+| SCENE 101
+--------------------------
+-->
+<label:label_2_101><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SMILE_STAND><music:MUS_INVESTIGATION><shake><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I've made up my mind!<p>
+
+I'm going to defend you<b>
+whether you want me to<b>
+or not!<p>
+
+<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+!<p>
+
+<animation:ANI_MAYA_SUPRISE_TALK>Why?<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><speed:2><animation:ANI_MAYA_SUPRISE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Why?<wait:15><b>
+Well...<wait:1><b>
+<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<act><jump:label_2_102,0,1>TODO1<b>
+<jump:label_2_103,0,1>TODO2<b>
+<jump:label_2_104,0,0>TODO3<b>
+
+<!--
+--------------------------
+| SCENE 102
+--------------------------
+-->
+<label:label_2_102><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<color:2>(No one is as sad as a<b>
+person without any friends.)<p>
+
+(I know... I've been there.<b>
+A long time ago.)<color:0><p>
+
+<sound:121><hidetextbox><wait:1><character:CHR_NONE><animation:ANI_NONE><background:BKG_PHOENIX_CHILD><wait:15><fade><wait:7><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(Why did I become a lawyer<b>
+in the first place...?)<p>
+
+(Because someone has to look<b>
+out for the people who have<b>
+no one on their side.)<color:0><p>
+
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><wait:15><hidetextbox><fp>
+
+Maya...<p>
+
+I won't abandon you.<wait:20><b>
+You can count on me.<fp>
+
+<jump:label_2_105>
+
+<!--
+--------------------------
+| SCENE 103
+--------------------------
+-->
+<label:label_2_103><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You aren't the culprit!<wait:15><b>
+Someone else is!<p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><flash><shake><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+H-<wait:8>how do you know?<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><speed:2><animation:ANI_MAYA_SUPRISE_STAND><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I,<wait:15> um,<wait:15> I have a hunch...<p>
+
+<speed:2><color:2>(Given the evidence,<wait:15> it would<b>
+be easy to assume that Maya<b>
+was the killer.)<p>
+
+(But there's something<b>
+about this whole thing<b>
+that smells... fishy.)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_APRIL><animation:ANI_APRIL_STAND><background:BKG_GATEWATER_HOTEL><fade><wait:7><hidetextbox><fp>
+
+<color:2>(That witness's strange<b>
+behavior...<wait:20> was that<b>
+all an act?)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_GROSSBERG><animation:ANI_GROSSBERG_STAND><background:BKG_GROSSBERG_OFFICE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(And the way that lawyer<b>
+refused to help out Maya...)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+<color:2>(But more than all that,<b>
+she has no one left<b>
+to help her!)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(Nothing is more sad,<wait:15><b>
+or more lonely than that.)<p>
+
+(I know...<wait:20> I've been there.<b>
+A long,<wait:15> long time ago.)<color:0><p>
+
+<sound:121><hidetextbox><wait:1><background:BKG_PHOENIX_CHILD><wait:15><fade><wait:7><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(Why did I become a lawyer<b>
+in the first place...?)<p>
+
+(Because someone has to look<b>
+out for the people who have<b>
+no one on their side.)<color:0><p>
+
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+Maya...<p>
+
+I won't abandon you.<b>
+You can count on me.<fp>
+
+<jump:label_2_105>
+
+<!--
+--------------------------
+| SCENE 104
+--------------------------
+-->
+<label:label_2_104><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+To be honest,<b>
+I don't know.<p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+You don't know?<speed:2><animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><animation:ANI_MAYA_SUPRISE_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Is this girl sitting in<b>
+front of me the killer?)<p>
+
+(All the evidence<b>
+seems to say "yes.")<p>
+
+(But there's something<b>
+about this whole thing<b>
+that smells fishy.)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_APRIL><animation:ANI_APRIL_STAND><background:BKG_GATEWATER_HOTEL><fade><wait:7><hidetextbox><fp>
+
+<color:2>(That witness's strange<b>
+behavior...<wait:15> was that<b>
+all an act?)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_GROSSBERG><animation:ANI_GROSSBERG_STAND><background:BKG_GROSSBERG_OFFICE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(And the way that lawyer<b>
+refused to help out Maya...)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+<color:2>(But more than all that,<wait:15><b>
+she has no one left<b>
+to help her!)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(Nothing is more sad,<b>
+or more lonely than that.)<p>
+
+(I know... I've been there.<b>
+A long, long time ago.)<color:0><p>
+
+<sound:121><hidetextbox><wait:1><background:BKG_PHOENIX_CHILD><wait:15><fade><wait:7><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<color:2>(Why did I become a lawyer<b>
+in the first place...?)<p>
+
+(Because someone has to look<b>
+out for the people who have<b>
+no one on their side.)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><hidetextbox><fp>
+
+There's only one thing<b>
+I know for certain.<p>
+
+I won't abandon you.<wait:20><b>
+You can count on me.<fp>
+
+<jump:label_2_105>
+
+<!--
+--------------------------
+| SCENE 105
+--------------------------
+-->
+<label:label_2_105><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><speed:7>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><speed:5>That's so kind of you...<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><animation:ANI_MAYA_CRY_STAND><shake><speed:6>*sniff*...<p>
+
+<speed:7>...<p>
+
+<hidetextbox><fade><wait:25><wait:60><animation:ANI_MAYA_SAD_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><speed:2><hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Well!<p>
+
+Let's fight this one<wait:15><b>
+and get you out of here!<p>
+
+<animation:ANI_MAYA_HAPPY_TALK><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+R-<wait:8>right!<wait:12><b>
+Thank you!<animation:ANI_MAYA_HAPPY_STAND><p>
+
+<animation:ANI_MAYA_HAPPY_TALK><animation:ANI_MAYA_HAPPY_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Whew,<wait:15> she smiled at last.<wait:20><b>
+She looks like an entirely<b>
+different person!)<color:0><p>
+
+<speed:5>One last question...<wait:15><b>
+You are innocent,<wait:10> right?<speed:2><p>
+
+<animation:ANI_MAYA_SURE_TALK><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes!<animation:ANI_MAYA_SURE_STAND><p>
+
+<animation:ANI_MAYA_SURE_TALK>And I trust you...<animation:ANI_MAYA_SURE_STAND><p>
+
+<animation:ANI_MAYA_SURE_TALK>So you trust me,<b>
+too,<wait:10> okay?<animation:ANI_MAYA_SURE_STAND><p>
+
+<animation:ANI_MAYA_SURE_TALK><animation:ANI_MAYA_SURE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It's a deal.<p>
+
+<animation:ANI_MAYA_HAPPY_STAND><color:2>(So,<wait:15> what next...)<p>
+
+(There's something that's<b>
+been bugging me...)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_APRIL><animation:ANI_APRIL_STAND><background:BKG_GATEWATER_HOTEL><fade><wait:7><hidetextbox><fp>
+
+<color:2>(Just what was inside<b>
+that strange woman's<b>
+drawer?)<p>
+
+(It was when I tried to<b>
+look into the drawer that<b>
+she got all defensive.)<p>
+
+(There has to be<b>
+something in there!)<color:0><p>
+
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_HAPPY_STAND><background:BKG_DETENTION_CENTER><fade><wait:7><p>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+
+<!--
+--------------------------
+| SCENE 106
+--------------------------
+-->
+<label:label_2_106><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:26>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hey,<wait:15> I got your<b>
+cell phone back.<p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Oh!<wait:15> Say...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>Can I listen<b>
+to my sister's voice?<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><photo:PHT_NONE><music:MUS_NONE><wait:60><fade><wait:15><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:7><hidetextbox><fp>
+
+<speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<speed:2><p>
+
+<speed:5><color:2>(Maya's eyes closed...<b>
+She listened to every word<b>
+with such intensity...)<p>
+
+(Before long, tears began<b>
+to roll down her cheeks.)<color:0><speed:2><p>
+
+<speed:6>...<speed:2><p>
+
+<hidetextbox><fade><wait:15><character:CHR_MAYA><animation:ANI_MAYA_LOOKDOWN_STAND><background:BKG_DETENTION_CENTER><fade><wait:15><animation:ANI_MAYA_LOOKDOWN_TALK><hidetextbox><fp>
+
+<speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Thank you.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><music:MUS_NONE><hidetextbox><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>
+
+<!--
+--------------------------
+| SCENE 107
+--------------------------
+-->
+<label:label_2_107><fp>
+
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_DETENTION_CENTER>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hmm...<wait:15> Maya's not here.<wait:20><b>
+She must be in questioning.<p>
+
+They probably won't let<b>
+her out for a while.<p>
+
+Maybe I'd better go talk<b>
+to that lawyer again.<p>
+

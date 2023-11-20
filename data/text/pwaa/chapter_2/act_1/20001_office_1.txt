@@ -1,0 +1,80 @@
+<!--
+--------------------------
+| SCENE 2
+--------------------------
+-->
+<label:label_2_2><fp>
+
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><wait:30><bip:BIP_TYPEWRITER><color:3><fade><wait:15><fp>
+
+<wait:15><speed:10>
+
+<name:NAM_NONE><bip:BIP_NONE>
+    September 5, 9:08 PM<b>
+   Fey & Co. Law Offices<color:0><p>
+
+<speed:2><wait:30>
+
+<!--
+--------------------------
+| SCENE 3
+--------------------------
+-->
+<label:label_2_3><fp>
+
+<hidetextbox><fade><wait:7><background:BKG_FEY_OFFICE_NIGHT><fade><wait:25><wait:60><hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Uh <wait:10>oh,<wait:15> I'm late.<p>
+
+Huh,<wait:25> that's strange.<wait:20><b>
+The chief must have<b>
+gone home already.<p>
+
+She said her sister was<b>
+coming over so we should<b>
+all go out for dinner...<p>
+
+<speed:10>...<speed:2><p>
+
+<speed:5>What's that smell...?<speed:2><p>
+
+<sound:SFX_REALIZATION><flash><speed:7><color:1>Blood<color:0>...?<music:MUS_SUSPENSE><speed:2><p>
+
+<speed:2>M<flash><sound:SFX_SMACK><shake>ia!<wait:25><color:2><b>
+(Maybe she's in her office!)<color:0><p>
+
+<hidetextbox>
+<act>
+<jump:menu_2_3_click,0,1>Examine<b>
+<jump:menu_2_3_move,0,0>Move<b>
+
+<label:menu_2_3_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:label_2_52,0,0>Mia's Office<b>
+
+<label:menu_2_3_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_NIGHT>
+<event:EVT_CLICK>
+<box:0,0,31,23,1><jump:label_2_13,0,1>
+
+<!--
+--------------------------
+| SCENE 13
+--------------------------
+-->
+<label:label_2_13>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I smell blood...<b>
+and that can't be good!<p>
+
+I have to check and see if<b>
+Mia... the Chief's okay!<p>
+<return>
+

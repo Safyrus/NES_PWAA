@@ -1,0 +1,161 @@
+<!--
+--------------------------
+| SCENE 5
+--------------------------
+-->
+<label:label_2_5><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><wait:40><animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_SIREN><speed:2><bip:BIP_NONE><color:1>
+
+<name:NAM_NONE><bip:BIP_NONE>
+*whee-ooo* *whee-ooo*...<b>
+*whee-ooo* *whee-ooo*...<color:0><wait:120><p>
+
+<bip:BIP_NONE><speed:2><sound:SFX_SIREN><sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+!<p>
+
+The <shake>police!<wait:30><color:2><b>
+(Sounds like they're<b>
+coming this way!)<color:0><speed:2><p>
+
+<sound:SFX_SHOOMP><shake><wait:40><flash><shake>
+
+<name:NAM_NONE><bip:BIP_NONE>
+Freeze!<wait:20> Police!<p>
+
+<fade><wait:7><wait:30><character:CHR_GUMSHOE><animation:ANI_GUMSHOE_BREATH_STAND><background:BKG_FEY_OFFICE_NIGHT><fade><wait:15><wait:80><animation:ANI_GUMSHOE_CONFIDENT_TALK><hidetextbox><fp>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+Alright,<wait:18> I'm Detective<b>
+Dick Gumshoe,<wait:10> see?<animation:ANI_GUMSHOE_CONFIDENT_STAND><p>
+
+<animation:ANI_GUMSHOE_CONFIDENT_TALK><animation:ANI_GUMSHOE_CONFIDENT_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Gumshoe...?<wait:16><b>
+What an odd name.)<color:0><p>
+
+<event:EVT_CR_SET,32783><animation:ANI_GUMSHOE_SAD_TALK>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+We received a report from the<b>
+building across the way,<wait:10> see.<animation:ANI_GUMSHOE_SAD_STAND><p>
+
+<animation:ANI_GUMSHOE_SAD_TALK>Got a person saying<b>
+they saw a murder.<animation:ANI_GUMSHOE_SAD_STAND><p>
+
+<animation:ANI_GUMSHOE_SAD_TALK><hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_APRIL_CALL><fade><wait:7><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(It must have been<b>
+that woman I saw.)<color:0><p>
+
+<hidetextbox><wait:60><fade><wait:7><character:CHR_GUMSHOE><animation:ANI_GUMSHOE_BREATH_STAND><background:BKG_FEY_OFFICE_NIGHT><fade><wait:7><animation:ANI_GUMSHOE_TALK><hidetextbox><fp>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+Anyway,<wait:15> I don't want either<b>
+of you moving one inch,<wait:25> 'kay?<animation:ANI_GUMSHOE_BREATH_STAND><p>
+
+<animation:ANI_GUMSHOE_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><wait:20><hidetextbox><fp>
+
+<speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Great.<wait:20> Just great.)<speed:2><animation:ANI_GUMSHOE_BREATH_STAND><p>
+
+<animation:ANI_GUMSHOE_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><wait:16><hidetextbox><fp>
+
+(Maya...<wait:15> Wait,<wait:15> she<b>
+wouldn't have...<wait:15> nah.)<color:0><p>
+
+<animation:ANI_MAYA_SUPRISE_STAND><shake><sound:SFX_SUPERSHOCK><speed:2>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+Who<flash>aaaa<flash>aaaaa<flash>aaah!<wait:10><p>
+
+<sound:SFX_SHOOMP><shake><character:CHR_GUMSHOE><animation:ANI_GUMSHOE_ANGRY_TALK><flash><speed:2>Scuze me!<animation:ANI_GUMSHOE_ANGRY_STAND><p>
+
+<animation:ANI_GUMSHOE_ANGRY_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_TALK><wait:16><hidetextbox><fp>
+
+<sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Eek!<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_GUMSHOE><animation:ANI_GUMSHOE_CONFIDENT_STAND><character:CHR_NONE><animation:ANI_NONE><wait:16><photo:30><animation:ANI_GUMSHOE_CONFIDENT_TALK><hidetextbox><fp>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+This word "Maya" here<b>
+mean anything to you?<animation:ANI_GUMSHOE_CONFIDENT_STAND><p>
+
+<animation:ANI_GUMSHOE_CONFIDENT_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><wait:16><hidetextbox><fp>
+
+<flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...!<p>
+
+<animation:ANI_MAYA_COVER_MOUTH_TALK><speed:5>Um...<wait:20> that...<animation:ANI_MAYA_COVER_MOUTH_STAND><p>
+
+<animation:ANI_MAYA_COVER_MOUTH_TALK><animation:ANI_MAYA_SAD_TALK><speed:6>That's my name...<wait:10><fp>
+
+<animation:ANI_MAYA_SUPRISE_STAND><shake><sound:SFX_SUPERSHOCK><speed:2><flash>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+WHAAA<flash>AT!?<p>
+
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_GUMSHOE><animation:ANI_GUMSHOE_BREATH_STAND><character:CHR_NONE><animation:ANI_NONE><wait:16><animation:ANI_GUMSHOE_TALK><hidetextbox><fp>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+The victim drew this here<b>
+note in her own blood,<wait:10> see?<animation:ANI_GUMSHOE_BREATH_STAND><p>
+
+<animation:ANI_GUMSHOE_TALK><photo:PHT_NONE><animation:ANI_GUMSHOE_THINK_TALK>With her dying breath,<wait:15> she<b>
+wrote down the killer's name!<animation:ANI_GUMSHOE_THINK_STAND><p>
+
+<animation:ANI_GUMSHOE_THINK_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_COVER_MOUTH_TALK><wait:16><hidetextbox><fp>
+
+<speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+K-<wait:8>killer...? <wait:20>I'm not--<wait:5><speed:2><fp>
+
+<character:CHR_GUMSHOE><animation:ANI_GUMSHOE_ANGRY_TALK><shake><sound:SFX_SUPERSHOCK>
+
+<name:NAM_GUMSHOE><bip:BIP_NONE>
+Case closed! <wait:20>You're coming<b>
+down to the precinct,<wait:15> ma'am.<animation:ANI_GUMSHOE_ANGRY_STAND><p>
+
+<animation:ANI_GUMSHOE_ANGRY_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_MAYA><animation:ANI_MAYA_SUPRISE_STAND><character:CHR_NONE><animation:ANI_NONE><wait:16><animation:ANI_MAYA_SUPRISE_TALK><hidetextbox><fp>
+
+<flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+W-<wait:8>what?<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><hidetextbox><wait:60><music:MUS_NONE><fade><wait:25><character:CHR_NONE><animation:ANI_NONE><background:BKG_NONE><fade><wait:25><hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Mia's younger sister,<wait:10> Maya,<wait:15><b>
+was arrested on the spot.<p>
+
+I was taken in for questioning<b>
+and didn't get out until the<b>
+next morning.<p>
+
+My eyes were heavy...<wait:20><b>
+but I couldn't sleep.<p>
+
+I sat around,<wait:15> waiting for<b>
+visiting hours to begin at<b>
+the detention center.<p>
+
+I had to talk to Maya<b>
+as soon as possible.<p>
+
+<wait:7><hidetextbox><jump:label_2_67>
+

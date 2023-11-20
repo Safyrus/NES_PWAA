@@ -1,0 +1,110 @@
+<!--
+--------------------------
+| SCENE 4
+--------------------------
+-->
+<label:label_2_4><fp>
+
+<music:MUS_NONE><character:CHR_NONE><animation:ANI_NONE><background:BKG_FEY_OFFICE_NIGHT><sound:SFX_LIGHTBULB><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...!<speed:2><p>
+
+<color:2>(That girl just now...<wait:20><flash><shake><b>
+where'd she go!?)<p>
+
+(I put her right there<b>
+on that sofa...!)<p>
+
+(Uh oh...<wait:20> I hope she<b>
+didn't run on me.)<color:0><p>
+
+<wait:60><character:CHR_NONE><animation:ANI_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><wait:16><wait:30><hidetextbox><fp>
+
+<flash><sound:SFX_STAB><shake><speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yipes!<speed:2><p>
+
+<shake><color:2>(Don't scare me like that...)<color:0><speed:2><p>
+
+<music:MUS_INVESTIGATION><speed:6>Umm...<speed:2><p>
+
+Excuse me but,<wait:20> who are you?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:7>
+
+<name:NAM_UNKNOW><bip:BIP_NONE>
+...<speed:2><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It's okay.<wait:25> I work here.<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Maya...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>Maya Fey.<speed:2><speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Maya...<wait:20> Fey?<speed:2><p>
+
+<music:MUS_NONE><sound:SFX_LIGHTBULB><speed:3><color:2>("Maya"...?)<speed:2><p>
+
+<photo:30>(So Mia was writing<b>
+this girl's name!)<p>
+
+<photo:PHT_NONE>(Maybe I should show<b>
+her the receipt?)<p>
+
+<wait:120><music:MUS_INVESTIGATION>(I never thought there'd be a <b>
+use for evidence like this<b>
+outside the courtroom!)<color:0><p>
+
+<hidetextbox>
+<act>
+<save>
+<jump:menu_2_4_click,0,1>Examine<b>
+<jump:menu_2_4_move,0,1>Move<b>
+<jump:menu_2_4_talk,0,1>Talk<b>
+<jump:menu_2_4_present,0,0>Present<b>
+
+<label:menu_2_4_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:menu_2_4_move,0,0>Mia's Office<b>
+
+<label:menu_2_4_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_NIGHT>
+<event:EVT_CLICK>
+<box:0,0,31,23,1><jump:label_2_13,0,1>
+<box:18,3,5,10,1><jump:label_2_7,0,1>
+<box:0,12,14,12,1><jump:label_2_8,0,1>
+<box:23,11,9,13,1><jump:label_2_9,0,1>
+<box:26,0,6,11,1><jump:label_2_10,0,1>
+<box:5,0,9,9,1><jump:label_2_11,0,1>
+<box:1,8,4,4,0><jump:label_2_12,0,0>
+
+<label:menu_2_4_talk>
+<save>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:label_2_14,0,1>Who are you?<b>
+<jump:label_2_15,0,1>What happened?<b>
+<jump:label_2_16,0,0>Mia<b>
+
+<label:menu_2_4_present>
+TODO FORCE CR<p>
+<save>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:label_2_17,0,1>Wrong evidence<b>
+<jump:label_2_18,0,1>Glass shards<b>
+<jump:label_2_19,0,1>The Thinker<b>
+<jump:label_2_20,0,0>Mia's note<b>

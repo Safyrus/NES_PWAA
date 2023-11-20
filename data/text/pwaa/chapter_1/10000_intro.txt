@@ -1,0 +1,41 @@
+<!--
+==========================
+# CHAPTER:FirstTurnabout #
+==========================
+-->
+
+<!--
+--------------------------
+| SCENE 1-1:Intro Scene  |
+--------------------------
+-->
+<label:chapter_1>
+<music:MUS_PROLOGUE><hidetextbox><background:BKG_TINKER_BLOOD><wait:240><hidetextbox><fp><character:CHR_NONE><animation:ANI_NONE><speed:4>
+
+<name:NAM_NONE><bip:BIP_NONE>
+*gasp*...<wait:28> *gasp*... <wait:60><fp>
+
+<hidetextbox><wait:40><wait:240><fade><wait:7><background:BKG_CINDY_MURDER><fade><wait:100><hidetextbox><fp><flash><shake><speed:1>
+
+Dammit!<wait:34> <speed:5>...Why me?<wait:60><hidetextbox><fade><fp>
+
+<speed:2><hidetextbox><fp>
+
+I can't get caught... <wait:30><shake><speed:1><b>
+Not like this!<wait:60><fp>
+
+<speed:2><hidetextbox><background:BKG_SAHWIT_MURDERER_1><fade><wait:75><hidetextbox><fp>
+
+I-I've gotta find someone<b>
+to pin this on... <wait:60><fp>
+
+<hidetextbox><background:BKG_SAHWIT_MURDERER_2><flash><wait:35><background:BKG_SAHWIT_MURDERER_3><flash><wait:50><background:BKG_SAHWIT_MURDERER_4><flash><wait:20><speed:5><hidetextbox><fp>
+
+Someone like... <wait:35><speed:1>him!<wait:60><fp>
+
+<hidetextbox><background:BKG_SCENE_LARRY_SAHWIT><flash><wait:15><fade><background:BKG_SAHWIT_MURDERER_4><fade><wait:7><wait:60><speed:8><hidetextbox><fp>
+
+I'll make it look like<wait:30><b>
+HE did it!<wait:120><fp>
+
+<music:MUS_NONE><speed:2><hidetextbox><wait:40><fade><wait:25>

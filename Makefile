@@ -118,6 +118,7 @@ run:
 #--------------------------------
 
 text:
+	$(PYTHON) $(PY)/txtEncode/fusionFiles.py data/text/pwaa $(TEXT)
 # ifeq ($(OS), Windows_NT)
 # 	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
 # else

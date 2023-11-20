@@ -1,0 +1,15 @@
+<!--
+--------------------------
+|          DEBUG         |
+--------------------------
+-->
+
+<label:Object-Wrong>
+<hidetextbox><character:CHR_NONE><animation:ANI_NONE><background:BKG_OBJECTION><shake><sound:SFX_OBJ_PHOENIX><wait:120><hidetextbox>
+[TODO]<wait:60><b>
+But wrong, try again.<p><return>
+
+<label:label_unknow><fp>
+This is the unkown label.<b>
+You are now softlock.<p>
+<jump:label_unknow>

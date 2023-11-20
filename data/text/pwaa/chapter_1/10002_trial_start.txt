@@ -1,0 +1,593 @@
+<!--
+--------------------------
+| SCENE 1-3: Trial start |
+--------------------------
+-->
+<hidetextbox><speed:6><bip:BIP_TYPEWRITER><color:3>
+
+     August 3, 10:00 AM<b>
+       District Court<b>
+      Courtroom No. 2<p>
+
+<event:EVT_CR><event:EVT_CR_SET,CR_CINDY><event:EVT_CR_SET,CR_CINDY_AUTOPSY>
+<color:0><speed:2><wait:30><hidetextbox><background:BKG_COURTROOM_TALK><sound:SFX_GAVEL><wait:120><background:BKG_GAVEL_SLAM_0><event:EVT_GAVEL><wait:40><background:BKG_COURTROOM_JUDGE><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><music:MUS_TRIAL><hidetextbox>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+The court is now in session<b>
+for the trial of<b>
+Mr. Larry Butz.<animation:ANI_JUDGE_STAND><p>
+
+<background:BKG_COURTROOM_PROSECUTION><character:CHR_PAYNE><animation:ANI_PAYNE_TALK><event:EVT_CR_SET,CR_PAYNE>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+The prosecution is ready,<wait:14><b>
+Your Honor.<animation:ANI_PAYNE_STAND><p>
+
+<hidetextbox><event:EVT_SWOOSH><wait:30><background:BKG_COURTROOM_DEFENSE><character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><hidetextbox><fp><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The,<wait:15> um,<wait:25><speed:5> <shake>defense is ready,<wait:15><b>
+Your Honor.<animation:ANI_PHOENIX_STAND><p>
+
+<animation:ANI_PHOENIX_TALK><character:CHR_JUDGE><animation:ANI_JUDGE_EYES_CLOSED_STAND><background:BKG_COURTROOM_JUDGE><speed:8>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Ahem.<animation:ANI_JUDGE_EYES_CLOSED_STAND><p>
+
+<animation:ANI_JUDGE_EYES_CLOSED_STAND><speed:2><character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK>
+
+Mr. Wright?<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
+
+This is your first trial,<wait:15><b>
+is it not?<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE><shake>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Y-<wait:20>Yes, Your Honor.<wait:20><speed:6><b>
+I'm,<wait:15> um,<wait:15> a little nervous.<animation:ANI_PHOENIX_STAND><p>
+
+<speed:2><character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Your conduct during this<b>
+trial will decide the fate<b>
+of your client.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<animation:ANI_JUDGE_ANGRY_TALK>
+Murder is a serious charge.<wait:16><animation:ANI_JUDGE_TALK><b>
+For your client's sake,<wait:10>I hope<b>
+you can control your nerves.<animation:ANI_JUDGE_STAND><p>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Thank...<wait:20><speed:4> thank you,<b>
+Your Honor.<animation:ANI_PHOENIX_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_STAND><background:BKG_COURTROOM_JUDGE><speed:6>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+...<p>
+
+<speed:2><animation:ANI_JUDGE_ANGRY_TALK>
+
+Mr. Wright, given the<wait:15><b>
+circumstances... <animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<animation:ANI_JUDGE_ANGRY_TALK>
+
+I think we should have a test<wait:5><b>
+to ascertain your readiness.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Yes, <wait:5>Your Honor.<animation:ANI_PHOENIX_STAND><p>
+
+<animation:ANI_PHOENIX_SWEAT_STAND><flash><shake><speed:7><color:2>
+
+(Gulp... <wait:30><speed:5>Hands shaking... <wait:20><b>
+Eyesight... <wait:25><speed:8>fading...)<color:0><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE><speed:3>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+The test will consist of a<b>
+few simple questions.<wait:30> Answer<b>
+them clearly and concisely.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<!--
+--------------------------
+|Question:Defendant Name |
+--------------------------
+-->
+<label:q_defendant_name>
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Please state the name of<color:1><b>
+the defendant<color:0> in this case.<animation:ANI_JUDGE_ANGRY_STAND><b>
+<act>
+<jump:q_defendant_name_phoenix,0,1>Phoenix Wright<b>
+<jump:q_defendant_name_larry,0,1>Larry Butz<b>
+<jump:q_defendant_name_mia,0,0>Mia Fey<b>
+
+
+<!--
+--------------------------
+|Anwser 1:Defendant Name |
+--------------------------
+-->
+<label:q_defendant_name_phoenix><fp>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um... the defendant...<b>
+is me, right?<animation:ANI_PHOENIX_THINK_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_SAD_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><flash><sound:SFX_SMACK><shake>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<wait:20> <shake>Have you completely<b>
+lost your mind? Focus!<animation:ANI_MIA_SAD_STAND><p>
+
+<animation:ANI_MIA_SHOCK_TALK>
+The defendant is the<b>
+person on trial!<animation:ANI_MIA_SHOCK_STAND><p><animation:ANI_MIA_SHOCK_TALK>
+
+You're his lawyer!<animation:ANI_MIA_SHOCK_STAND><p>
+
+<animation:ANI_MIA_SADPOSE_STAND><sound:SFX_LIGHTBULB><flash><shake><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um, <wait:15>er, <wait:15>eh?<wait:30><speed:3><b>
+Oh yeah,<wait:12> right!<wait:16><shake> Eh heh heh.<p>
+
+<animation:ANI_MIA_SADPOSE_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+This is no laughing matter!<animation:ANI_MIA_SADPOSE_STAND><p><animation:ANI_MIA_SADPOSE_TALK>
+
+You did pass the bar,<wait:12><b>
+didn't you?<animation:ANI_MIA_SADPOSE_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_NO><background:BKG_COURTROOM_JUDGE><wait:69><animation:ANI_JUDGE_ANGRY_TALK><speed:5>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Sorry,<wait:14> I couldn't hear your<b>
+answer.<wait:20><speed:3> I'll ask once more:<p>
+
+<jump:q_defendant_name>
+
+<!--
+--------------------------
+|Anwser 2:Defendant Name |
+--------------------------
+-->
+<label:q_defendant_name_mia><fp>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The,<wait:12> um,<wait:14><speed:4> defendant?<wait:30><speed:7><b>
+That's...<wait:15> er... <wait:30><speed:4>Mia Fey?<animation:ANI_PHOENIX_THINK_STAND><p>
+
+<speed:2><character:CHR_MIA><animation:ANI_MIA_SADPOSE_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wrong, Wright.<b>
+Look, I have to leave.<animation:ANI_MIA_SADPOSE_STAND><p><animation:ANI_MIA_SADPOSE_TALK>
+
+I have to go home. I'm...<wait:12><wait:25><b>
+I'm expecting a delivery.<animation:ANI_MIA_SADPOSE_STAND><p><shake>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Aw, c'mon Chief.<wait:20><b>
+There's no need to be<b>
+going so soon, is there?<p>
+
+<animation:ANI_MIA_SHOCK_TALK><shake><sound:SFX_SUPERSHOCK><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright!<animation:ANI_MIA_SHOCK_STAND><p><animation:ANI_MIA_SHOCK_TALK>
+
+Listen: the defendant is<b>
+the one on trial--<flash><sound:SFX_SMACK><shake><b>
+your client!<animation:ANI_MIA_SHOCK_STAND><p>
+
+<animation:ANI_MIA_SADPOSE_TALK>
+
+I mean, that's about as<wait:15><b>
+basic as you can get!<animation:ANI_MIA_SADPOSE_STAND><p><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I put my foot in it this<b>
+ time!<wait:20> I've got to relax!)<color:0><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_NO><background:BKG_COURTROOM_JUDGE><wait:69><animation:ANI_JUDGE_ANGRY_TALK><speed:5>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Sorry,<wait:14> I couldn't hear your<b>
+answer.<wait:20><speed:3> I'll ask once more:<p>
+
+<jump:q_defendant_name>
+
+<!--
+--------------------------
+|Anwser 3:Defendant Name |
+--------------------------
+-->
+<label:q_defendant_name_larry><fp>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The defendant? <wait:20>Well,<wait:14> that's<b>
+Larry Butz,<wait:12> Your Honor.<animation:ANI_PHOENIX_THINK_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_YES><background:BKG_COURTROOM_JUDGE><wait:40>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Correct.<animation:ANI_JUDGE_STAND><p>
+
+<animation:ANI_JUDGE_TALK>
+Just keep your wits about<b>
+you and you'll do fine.<animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_TALK>
+
+Next question:<animation:ANI_JUDGE_STAND><p>
+
+<animation:ANI_JUDGE_ANGRY_TALK>
+This is a murder trial.<wait:20><b>
+Tell me,<b>
+what's the <color:1>victim's name<color:0>?<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_STAND><background:BKG_COURTROOM_DEFENSE><shake><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Whew, <wait:20>I know this one! <wait:20>Glad<b>
+I read the case report cover<b>
+to cover so many times.)<p>
+
+<animation:ANI_PHOENIX_THINK_STAND><speed:6>
+
+(It's...<wait:20><speed:8> wait... <wait:30><animation:ANI_PHOENIX_SWEAT_STAND><speed:4>Uh-<wait:10>oh!)<p>
+
+<animation:ANI_PHOENIX_SHOCK><sound:SFX_LIGHTBULB><flash><shake><wait:50><animation:ANI_PHOENIX_SWEAT_STAND><speed:6>
+(No... <wait:20><speed:2>no way!<flash><sound:SFX_STAB><shake><wait:12> I forgot!<wait:20><speed:2><b>
+I'm drawing a total blank<b>
+here!)<color:0><animation:ANI_PHOENIX_SWEAT_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_SHOCK_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><flash><sound:SFX_SMACK><shake><speed:2>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Phoenix!<wait:30><speed:2> <shake>Are you absolutely<b>
+SURE you're up to this?<animation:ANI_MIA_SHOCK_STAND><p>
+
+<animation:ANI_MIA_SHOCK_TALK><flash><sound:SFX_SMACK><shake>
+
+You don't even know the<b>
+victim's name!?<animation:ANI_MIA_SHOCK_STAND><p>
+
+<animation:ANI_MIA_SADPOSE_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh, the victim!<wait:20> O-<wait:15><shake>Of course<b>
+I know the victim's name!<animation:ANI_MIA_SADPOSE_STAND><p>
+
+I,<wait:12> um,<wait:16> just forgot.<wait:20><b>
+... Temporarily.<p>
+
+<animation:ANI_MIA_SADPOSE_TALK><speed:5>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+I think I feel a migraine<b>
+coming on.<animation:ANI_MIA_SADPOSE_STAND><p>
+
+<animation:ANI_MIA_ANGRY_TALK><speed:2>
+
+Look,<wait:16> the defendant's name is<b>
+listed in the <color:1>Court Record<color:0>.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
+
+Just touch the <color:1>Court Record<color:0><b>
+button to check it at<b>
+anytime, <wait:12>okay?<animation:ANI_MIA_ANGRY_STAND><p>
+
+<animation:ANI_MIA_SADPOSE_TALK>
+
+Remember to check it often.<wait:25><b>
+Do it for me, please.<wait:12><b>
+I'm begging you.<animation:ANI_MIA_SADPOSE_STAND><p>
+
+<animation:ANI_MIA_SADPOSE_TALK>
+
+<!--
+--------------------------
+| Choice: Victim's name  |
+--------------------------
+-->
+<label:q_victim_name>
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Let's hear your answer.<wait:20><b>
+Who is the <color:1>victim<color:0><b>
+in this case?<animation:ANI_JUDGE_ANGRY_STAND><b>
+<act>
+<jump:q_victim_name_mia,0,1>Mia Fey<b>
+<jump:q_victim_name_cinder_block,0,1>Cinder Block<b>
+<jump:q_victim_name_cindy_stone,0,0>Cindy Stone<b>
+
+
+<!--
+--------------------------
+| Answer-1: Victim's name |
+--------------------------
+-->
+<label:q_victim_name_mia><fp>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:8>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um... <wait:30><speed:3>Mia Fey?<animation:ANI_PHOENIX_THINK_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_SHOCK_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><shake><flash><sound:SFX_SUPERSHOCK><speed:2>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+W-<wait:12>W-<wait:12>What!?<wait:25> How can I be<b>
+the victim!?<animation:ANI_MIA_SHOCK_STAND><p>
+
+<animation:ANI_MIA_SADPOSE_STAND><shake><speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh!<wait:12> Right!<wait:12> Sorry!<wait:20> I,<wait:12> er,<wait:15><speed:2><b>
+it was the first name that<b>
+popped into my head,<wait:12> and--<p>
+
+<animation:ANI_MIA_SADPOSE_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+The <wait:5><color:1>Court Record<color:0> button!<wait:25><animation:ANI_MIA_ANGRY_TALK><b>
+Remember to use it<b>
+when you are in a pinch.<animation:ANI_MIA_ANGRY_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Let me ask that one again:<p><jump:q_victim_name>
+
+
+<!--
+--------------------------
+| Answer-2: Victim's name |
+--------------------------
+-->
+<label:q_victim_name_cinder_block><fp>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh,<wait:12> um,<wait:18> wasn't it Ms. Block?<wait:16><animation:ANI_PHOENIX_TALK><b>
+Ms. Cinder Block?<animation:ANI_PHOENIX_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_NO><background:BKG_COURTROOM_JUDGE><wait:69><animation:ANI_JUDGE_ANGRY_TALK>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+The person in question was a<b>
+victim of murder,<wait:16> not ill-<b>
+conceived naming, <wait:10>Mr. Wright.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_SADPOSE_TALK><background:BKG_COURTROOM_DEFENSE_SIDE>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright?<animation:ANI_MIA_SADPOSE_STAND><p><animation:ANI_MIA_SADPOSE_TALK>
+
+If you forget something,<wait:16> just<b>
+touch the <color:1>Court Record<color:0> button<b>
+to help you remember.<animation:ANI_MIA_SADPOSE_STAND><p>
+
+<animation:ANI_MIA_ANGRY_TALK><sound:SFX_LIGHTBULB><flash><speed:4>
+
+A mistake in court<b>
+could cost you the case.<animation:ANI_MIA_ANGRY_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+I'll ask you again:<speed:2><p><jump:q_victim_name>
+
+<!--
+--------------------------
+| Answer-3: Victim's name |
+--------------------------
+-->
+<label:q_victim_name_cindy_stone><fp>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE><speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um... <wait:30><speed:2>the victim's name<b>
+is Cindy Stone.<animation:ANI_PHOENIX_STAND><p>
+
+<hidetextbox><character:CHR_JUDGE><animation:ANI_JUDGE_YES><background:BKG_COURTROOM_JUDGE><wait:48><hidetextbox><fp>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Correct.<animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_TALK>
+
+Now, tell me, what<b>
+was the cause of death?<animation:ANI_JUDGE_STAND><p>
+
+<!--
+--------------------------
+| Choice: Death cause    |
+--------------------------
+-->
+<label:q_victim_death_cause>
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+She died because she was...?<animation:ANI_JUDGE_ANGRY_STAND><b>
+<act>
+<jump:q_victim_death_cause_poisoned,0,1>Poisoned<b>
+<jump:q_victim_death_cause_strucked,0,1>Hit with a blunt object<b>
+<jump:q_victim_death_cause_strangled,0,0>Strangled<b>
+
+
+<!--
+--------------------------
+| Answer-1: Death cause  |
+--------------------------
+-->
+<label:q_victim_death_cause_poisoned><fp>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh, right!<wait:20><speed:4> Wasn't she, um,<b>
+poisoned by er...<wait:20> poison?<speed:2><animation:ANI_PHOENIX_THINK_STAND><p>
+
+<animation:ANI_PHOENIX_THINK_TALK><character:CHR_JUDGE><animation:ANI_JUDGE_SHOCK_TALK><background:BKG_COURTROOM_JUDGE><flash><sound:SFX_SMACK><shake>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+You're asking me!?<animation:ANI_JUDGE_SHOCK_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_SADPOSE_STAND><background:BKG_COURTROOM_DEFENSE_SIDE><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um...<wait:15><speed:2> Chief!<wait:20> Help me out!<p>
+
+<animation:ANI_MIA_SADPOSE_TALK>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Check the court record.<wait:25><b>
+The <speed:4><color:1>Court Record<color:0> button...<wait:20><speed:2><b>
+remember?<animation:ANI_MIA_SADPOSE_STAND><p><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Geez.<wait:10> Give a guy a break!)<color:0><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Let me ask again.<p><jump:q_victim_death_cause>
+
+<!--
+--------------------------
+| Answer-2: Death cause  |
+--------------------------
+-->
+<label:q_victim_death_cause_strangled><fp>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_THINK_TALK><background:BKG_COURTROOM_DEFENSE><speed:4>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Right...<wait:20> she was<b>
+strangled, wasn't she?<speed:2><animation:ANI_PHOENIX_THINK_STAND><p>
+
+<character:CHR_MIA><animation:ANI_MIA_SADPOSE_TALK><background:BKG_COURTROOM_DEFENSE_SIDE><sound:SFX_REALIZATION><flash>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Please tell me that was<b>
+you talking to yourself.<animation:ANI_MIA_SADPOSE_STAND><p>
+
+<speed:2><character:CHR_JUDGE><animation:ANI_JUDGE_NO><background:BKG_COURTROOM_JUDGE><wait:69><animation:ANI_JUDGE_ANGRY_TALK><sound:SFX_REALIZATION><flash><speed:4>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+If you wish to hang yourself,<b>
+Mr. Wright,<wait:20> you're welcome to,<b>
+but not inside my courtroom.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<animation:ANI_JUDGE_ANGRY_TALK>
+
+I suppose there's nothing to<b>
+do but give you another try:<p><jump:q_victim_death_cause>
+
+<!--
+--------------------------
+| Answer-3: Death cause  |
+--------------------------
+-->
+<label:q_victim_death_cause_strucked><fp>
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+She was struck once,<wait:15><b>
+by a blunt object.<speed:2><animation:ANI_PHOENIX_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_YES><background:BKG_COURTROOM_JUDGE><wait:43>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Correct.<animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_TALK>
+
+You've answered all my<b>
+questions.<wait:15> I see no reason<b>
+why we shouldn't proceed.<animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
+
+You seem much more relaxed,<wait:10><b>
+Mr. Wright.<wait:15> Good for you.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PHOENIX><animation:ANI_PHOENIX_TALK><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Thank you,<wait:10> Your Honor.<animation:ANI_PHOENIX_STAND><wait:30><animation:ANI_PHOENIX_SWEAT_STAND><sound:SFX_WHOOPS><shake><speed:6><color:2><b>
+(Because I don't FEEL<b>
+relaxed,<wait:15> that's for sure.)<color:0><p>
+
+<speed:2><character:CHR_JUDGE><animation:ANI_JUDGE_TALK><background:BKG_COURTROOM_JUDGE><speed:5>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+Well, then...<speed:2><animation:ANI_JUDGE_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
+
+First,<wait:15> a question for the<b>
+prosecution.<wait:15> Mr. Payne?<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+Yes,<wait:10> Your Honor?<animation:ANI_PAYNE_STAND><p>
+
+<character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+As Mr. Wright just told us,<wait:12><b>
+the victim was struck with<b>
+a blunt object.<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_ANGRY_TALK>
+
+Would you explain to the<b>
+court<wait:15><speed:5> just what that<b>
+"object" was?<speed:2><animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<character:CHR_PAYNE><animation:ANI_PAYNE_TALK><background:BKG_COURTROOM_PROSECUTION><photo:PHT_THINKER>
+
+<name:NAM_PAYNE><bip:BIP_NORMAL>
+The murder weapon was this<b>
+statue of <wait:15>"The Thinker."<speed:2><animation:ANI_PAYNE_STAND><p><animation:ANI_PAYNE_TALK>
+
+It was found lying on the<b>
+floor,<wait:10> next to the victim.<animation:ANI_PAYNE_STAND><p>
+
+<event:EVT_GAVEL_2><character:CHR_JUDGE><animation:ANI_JUDGE_ANGRY_TALK><background:BKG_COURTROOM_JUDGE>
+
+<name:NAM_JUDGE><bip:BIP_NORMAL>
+I see...<wait:20> the court accepts<b>
+it into evidence.<animation:ANI_JUDGE_ANGRY_STAND><p>
+
+<event:EVT_CR_SET,CR_STATUE><animation:ANI_JUDGE_STAND><speed:5><color:2>
+
+<name:NAM_NONE><bip:BIP_NONE>
+Statue added to<b>
+the Court Record.<color:0><p>
+
+<speed:2><character:CHR_MIA><animation:ANI_MIA_ANGRY_TALK><background:BKG_COURTROOM_DEFENSE_SIDE>
+
+<name:NAM_MIA><bip:BIP_HIGH>
+Wright...<wait:15><animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK><speed:4>
+
+Be sure to pay attention to<b>
+any evidence added during<b>
+the trial.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
+
+That evidence is the only<b>
+ammunition you have in court.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK><speed:5>
+
+Touch the <color:1>Court Record<color:0><b>
+button to check the Court<b>
+Record frequently.<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
+

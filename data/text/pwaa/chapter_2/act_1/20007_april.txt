@@ -1,0 +1,423 @@
+<!--
+--------------------------
+| SCENE 108
+--------------------------
+-->
+<label:label_2_108><fp>
+
+<character:CHR_NONE><animation:ANI_NONE><background:BKG_GATEWATER_HOTEL><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3>
+
+<name:NAM_NONE><bip:BIP_NONE>
+September 6<b>
+Gatewater Hotel - Room 303<color:0><p>
+
+<speed:2><wait:30><character:CHR_APRIL><animation:ANI_APRIL_STAND><character:CHR_NONE><animation:ANI_NONE><wait:16><animation:ANI_APRIL_TALK><hidetextbox><fp>
+
+<music:MUS_CONGRATULATION_EVERYBODY><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Well!<wait:20><b>
+Hello there,<wait:15> handsome.<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Umm...<wait:10> hi.<wait:20><color:2><b>
+(Smooth,<wait:12> Wright,<wait:12> real smooth.)<color:0><p>
+
+<animation:ANI_APRIL_TALK>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+You're the lawyer,<wait:15> aren't you?<wait:20><b>
+The detective told me...<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><sound:SFX_REALIZATION><flash>He said, "Don't say nothing<b>
+to that lawyer,<wait:10> pal!" <wait:10>Tee hee!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Memo to self:<wait:15> thank<b>
+Detective Gumshoe for<b>
+making my job harder.)<color:0><p>
+
+<animation:ANI_APRIL_TALK><shake>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Gee!<wait:20> This is all like<b>
+something out of a movie!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>It's all so exciting<b>
+I can hardly contain<b>
+myself!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><sound:SFX_LIGHTBULB><flash><shake>Ooh!<wait:20> Let me go freshen up<b>
+so I can look the part of<b>
+the beautiful eyewitness!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><hidetextbox><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_NONE><animation:ANI_NONE><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I pity the lawyer that<b>
+has to cross-examine<b>
+this one.)<color:0><p>
+
+<!--TODO MENU--><hidetextbox><p>
+
+<!--
+--------------------------
+| SCENE 109
+--------------------------
+-->
+<label:label_2_109><fp>
+
+<character:CHR_NONE><animation:ANI_NONE><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(There's a screwdriver<b>
+stuck in this drawer.)<p>
+
+(I wonder what's inside?<wait:20><b>
+Let's take a look...)<color:0><p>
+
+<music:MUS_NONE><sound:SFX_SHOOMP><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Hey!<wait:20> H-<wait:8>h-<wait:8>hey!!!<p>
+
+<character:CHR_APRIL><animation:ANI_APRIL_STRESS_STAND><character:CHR_NONE><animation:ANI_NONE><wait:16><animation:ANI_APRIL_STRESS_TALK><sound:SFX_SUPERSHOCK><shake><hidetextbox><fp>
+
+<flash>What are you doing!?<wait:20><speed:5><flash><b>
+No touching!<animation:ANI_APRIL_STRESS_STAND><p>
+
+<animation:ANI_APRIL_STRESS_TALK><speed:2><sound:SFX_REALIZATION><flash><speed:6>Oooh.<wait:20> <shake>Bad boy!<animation:ANI_APRIL_STRESS_STAND><p>
+
+<animation:ANI_APRIL_STRESS_TALK><speed:2><animation:ANI_APRIL_TALK>Y-<wait:8>you really shouldn't<b>
+pry around in other<b>
+people's rooms,<wait:10> now.<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><speed:5>You wouldn't want to<b>
+make me upset, <shake>would you?<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><speed:2><animation:ANI_APRIL_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Upset!? <wait:15>I thought she<b>
+was going to explode<b>
+for a second there!)<p>
+
+(I wonder what could be<b>
+inside the drawer?)<color:0><p>
+
+<music:MUS_CONGRATULATION_EVERYBODY><!--TODO MENU--><hidetextbox><p>
+
+<!--
+--------------------------
+| SCENE 110
+--------------------------
+-->
+<label:label_2_110><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The flowers are fake,<b>
+as expected.<p>
+
+I know sunflowers and tulips,<wait:15><b>
+but that's about the extent<b>
+of my floral knowledge.<p>
+
+<!--
+--------------------------
+| SCENE 111
+--------------------------
+-->
+<label:label_2_111><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A bottle and two glasses <b>
+are on the table.<p>
+
+Somebody must be<b>
+staying with her.<p>
+
+<!--
+--------------------------
+| SCENE 112
+--------------------------
+-->
+<label:label_2_112><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The late summer sunlight<b>
+streams through the window.<p>
+
+There's the Fey & Co.<b>
+Law Offices building,<wait:10><b>
+of course.<p>
+
+You can see the inside of<b>
+the room pretty clearly <b>
+from here.<p>
+
+I think it would be a little<b>
+difficult to recognize a face<b>
+from this distance,<wait:10> though.<p>
+
+<!--
+--------------------------
+| SCENE 113
+--------------------------
+-->
+<label:label_2_113><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A simple bed.<p>
+
+It's been recently made.<wait:20><b>
+Nothing eye-catching here.<p>
+
+<!--
+--------------------------
+| SCENE 114
+--------------------------
+-->
+<label:label_2_114><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Ah.<wait:20> A still-scene painting.<wait:20><b>
+Wait,<wait:15> should that be<b>
+"still life"?<p>
+
+Whatever.<wait:20> One of those<b>
+is hanging on the wall.<p>
+
+<!--
+--------------------------
+| SCENE 115
+--------------------------
+-->
+<label:label_2_115><fp>
+
+
+
+<!--
+--------------------------
+| SCENE 116
+--------------------------
+-->
+<label:label_2_116><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm...<wait:20> what's inside<b>
+I wonder?)<color:0><p>
+
+<flash><shake><speed:5>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+*cough* <wait:15>*cough*<speed:2><p>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Maybe later...)<color:0><p>
+
+<!--
+--------------------------
+| SCENE 117
+--------------------------
+-->
+<label:label_2_117><fp>
+
+<character:CHR_APRIL><animation:ANI_APRIL_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Do you think you <b>
+could tell me something?<p>
+
+I need you to describe what<b>
+you observed at the time of<b>
+the incident.<p>
+
+<animation:ANI_APRIL_TALK>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Ooh.<wait:20> "Observe,"<wait:15> "incident"!<b>
+You sound just like a lawyer<b>
+in the movies!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><sound:SFX_REALIZATION><flash><speed:6>I like a man with<b>
+a big...<wait:15> vocabulary.<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><speed:2><animation:ANI_APRIL_STAND><flash><shake><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Umm...<wait:15> *gulp*<b>
+Better not encourage her.)<color:0><p>
+
+<speed:4>Er...<wait:15> you know that thing<b>
+that occur...<wait:15> um...<wait:15> happened<b>
+the other day? <wait:20>The bad thing?<p>
+
+What did you see<b>
+when it happened?<p>
+
+I don't suppose you<b>
+could tell me about it?<wait:20><b>
+Pretty please?<p>
+
+<speed:2><animation:ANI_APRIL_TALK><flash>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Let me see...<wait:15><b>
+Um, <wait:15>well...<wait:15><b>
+Dream on!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>If you want to know,<wait:15> you'll<b>
+just have to come to the<b>
+court tomorrow,<wait:10> Mr. Lawyer!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND><speed:6><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Oh boy.)<color:0><p>
+
+<speed:2><p>
+
+<!--
+--------------------------
+| SCENE 118
+--------------------------
+-->
+<label:label_2_118><fp>
+
+<character:CHR_APRIL><animation:ANI_APRIL_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um,<wait:15> could you...<wait:15> just<b>
+who exactly are you?<p>
+
+<animation:ANI_APRIL_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Oooh,<wait:15> Mr. Lawyer!<wait:20><b>
+Are you hitting on me?<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND><speed:3>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+N-<wait:8>n-<wait:8><flash><sound:SFX_STAB><shake>no! <wait:15>Hey!<wait:15> <shake>I'm just<b>
+doing my job here!<p>
+
+<speed:2><animation:ANI_APRIL_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Tee hee!<wait:20> You know, you're<b>
+cute when you blush.<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><speed:2><animation:ANI_APRIL_STAND><sound:SFX_REALIZATION><flash><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Believe me,<wait:15> this is the<b>
+first time in my life I've<b>
+blushed this much...)<color:0><p>
+
+Umm...<wait:15> eh heh.<p>
+
+<shake>Right...<wait:15> can you just tell<b>
+me what it is you do?<p>
+
+<animation:ANI_APRIL_TALK>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Well...<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>No! <wait:20>Tee hee!<wait:20><b>
+And you had your little<b>
+hopes up,<wait:15> didn't you!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND><speed:6><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Oh boy.)<color:0><p>
+
+<speed:2><p>
+
+<!--
+--------------------------
+| SCENE 119
+--------------------------
+-->
+<label:label_2_119><fp>
+
+<character:CHR_APRIL><animation:ANI_APRIL_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I see there are two<b>
+glasses on the table.<p>
+
+Is someone staying<b>
+here with you?<p>
+
+<animation:ANI_APRIL_TALK><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Oooh!<wait:20> What amazing<b>
+powers of observation!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>You must be one of those<b>
+famous detectives,<wait:15> like<b>
+on television!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Oh,<wait:15> no,<wait:15> not me,<wait:15><b>
+I'm,<wait:15> er,<wait:15> just a lawyer!<p>
+
+<animation:ANI_APRIL_TALK><sound:SFX_REALIZATION><flash>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Say,<wait:15> Mr. Big Detective,<wait:15> why<b>
+don't you go look for clues...<wait:20><b>
+in the garbage? <wait:10>Hmm?<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>Miss May doesn't like<b>
+nosey little lawyers...<wait:10><b>
+Hmph!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND><speed:6><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Oh boy.)<color:0><speed:2><p>
+
+<speed:2><p>
+
+<!--
+--------------------------
+| SCENE 120
+--------------------------
+-->
+<label:label_2_120><fp>
+
+<character:CHR_APRIL><animation:ANI_APRIL_TALK>
+
+<name:NAM_APRIL><bip:BIP_NONE>
+Excuse me,<wait:15> but I'm<b>
+a witness? <wait:20>Police<b>
+witness? <wait:20>You understand?<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>How could I possibly give you<b>
+any information in good<b>
+conscience,<wait:10> hmm?<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>Me... <wait:15>"the witness"!<wait:20><b>
+It's just like the movie!<animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK><animation:ANI_APRIL_STAND><p>
+
+<animation:ANI_APRIL_TALK>
+

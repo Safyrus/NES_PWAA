@@ -165,12 +165,6 @@ PPS:<b><wait:60>
 Thanks :)<wait:120><fp>
 
 <wait:255>
-
-<!--####################################################-->
-<!--####################################################-->
-
-
-
 <!--
 --------------------------
   CONSTANTS DECLARATIONS  
@@ -337,8 +331,7 @@ Thanks :)<wait:120><fp>
 <const:BKG_CINDY_MURDER_B,115>
 <const:EDGEWORTH_GUN_A,116>
 <const:EDGEWORTH_GUN_B,117>
-<const:BKG_TINKER_BLOOD_TOP,118>
-<const:BKG_FEY_OFFICE_MURDER_RIGHT,119>
+<const:BKG_FEY_OFFICE_MURDER_RIGHT,118>
 
 <!-- Characters constants -->
 <const:CHR_NONE,0>
@@ -562,32 +555,34 @@ Thanks :)<wait:120><fp>
 
 <!-- Musics constants -->
 <const:MUS_NONE,0>
-<const:MUS_DICK_GUMSHOE,0>
-<const:MUS_CORNERED_1,7>
-<const:MUS_CORNERED_2,8>
+<const:MUS_DICK_GUMSHOE,16>
+<const:MUS_CORNERED_1,8>
+<const:MUS_CORNERED_2,11>
 <const:MUS_OBJECTION,6>
-<const:MUS_LOGIC_AND_TRICK,0>
-<const:MUS_TURNABOUT_SISTER,0>
-<const:MUS_END,0>
+<const:MUS_LOGIC_AND_TRICK,5>
+<const:MUS_TURNABOUT_SISTER,14>
+<const:MUS_END,25>
 <const:MUS_COURTROOM_LOUNGE,2>
 <const:MUS_EXAMINATION_1,4>
-<const:MUS_EXAMINATION_2,5>
-<const:MUS_INVESTIGATION,0>
+<const:MUS_EXAMINATION_2,7>
+<const:MUS_INVESTIGATION,23>
 <const:MUS_TRIAL,3>
-<const:MUS_SUSPENSE,0>
-<const:MUS_TURNABOUT_SISTER_BALLAD,0>
-<const:MUS_WON_THE_CASE,9>
-<const:MUS_THE_STEEL_SAMURIA,0>
-<const:MUS_CONGRATULATION_EVERYBODY,0>
+<const:MUS_SUSPENSE,10>
+<const:MUS_TURNABOUT_SISTER_BALLAD,26>
+<const:MUS_WON_THE_CASE,24>
+<const:MUS_THE_STEEL_SAMURIA,21>
+<const:MUS_CONGRATULATION_EVERYBODY,19>
 <const:MUS_PROLOGUE,1>
-<const:MUS_ANNOUNCING_THE_TRUTH,0>
-<const:MUS_SEARCH,0>
-<const:MUS_AGE_REGRET_RETRIBUTION,0>
-<const:MUS_REMINISCENCE_3,0>
-<const:MUS_REMINISCENCE_1,0>
-<const:MUS_REMINISCENCE_2,0>
+<const:MUS_ANNOUNCING_THE_TRUTH,9>
+<const:MUS_SEARCH,13>
+<const:MUS_AGE_REGRET_RETRIBUTION,18>
+<const:MUS_REMINISCENCE_3,22>
+<const:MUS_REMINISCENCE_1,17>
+<const:MUS_REMINISCENCE_2,20>
 <const:MUS_BIRDS,0>
 <const:MUS_PREVIOUS,0>
+<const:MUS_JINGLE,12>
+<const:MUS_DETENTION_CENTER,15>
 
 <!-- SFX constants -->
 <const:SFX_REALIZATION,7>
@@ -663,20 +658,15 @@ Thanks :)<wait:120><fp>
 <const:FLG_2_78_TALK_THE_DAY_OF_THE_CRIME_2,0>
 <const:FLG_2_78_TALK_YOUR_CELL_PHONE,0>
 <const:FLG_2_78_TALK_YOUR_CELL_PHONE_2,0>
-
-
+Temporary warp<b>
+<act>
+<jump:chapter_1,0,1>Chapter 1<b>
+<jump:chapter_2,0,0>Chapter 2 (not done)<b>
 <!--
 ==========================
 # CHAPTER:FirstTurnabout #
 ==========================
 -->
-
-
-Temporary warp<b>
-<act>
-<jump:chapter_1,0,1>Chapter 1<b>
-<jump:chapter_2,0,0>Chapter 2 (not done)<b>
-
 
 <!--
 --------------------------
@@ -713,7 +703,6 @@ I'll make it look like<wait:30><b>
 HE did it!<wait:120><fp>
 
 <music:MUS_NONE><speed:2><hidetextbox><wait:40><fade><wait:25>
-
 <!--
 --------------------------
 | SCENE 1-2:Lobby         |
@@ -927,7 +916,6 @@ And that's just what I'm<b>
 going to do!<p>
 
 <event:EVT_CR><hidetextbox><wait:65>
-
 <!--
 --------------------------
 | SCENE 1-3: Trial start |
@@ -1040,8 +1028,8 @@ Please state the name of<color:1><b>
 the defendant<color:0> in this case.<animation:ANI_JUDGE_ANGRY_STAND><b>
 <act>
 <jump:q_defendant_name_phoenix,0,1>Phoenix Wright<b>
-<jump:q_defendant_name_mia,0,1>Mia Fey<b>
-<jump:q_defendant_name_larry,0,0>Larry Butz<b>
+<jump:q_defendant_name_larry,0,1>Larry Butz<b>
+<jump:q_defendant_name_mia,0,0>Mia Fey<b>
 
 
 <!--
@@ -1358,8 +1346,8 @@ was the cause of death?<animation:ANI_JUDGE_STAND><p>
 She died because she was...?<animation:ANI_JUDGE_ANGRY_STAND><b>
 <act>
 <jump:q_victim_death_cause_poisoned,0,1>Poisoned<b>
-<jump:q_victim_death_cause_strangled,0,1>Strangled<b>
-<jump:q_victim_death_cause_strucked,0,0>Strucked<b>
+<jump:q_victim_death_cause_strucked,0,1>Hit with a blunt object<b>
+<jump:q_victim_death_cause_strangled,0,0>Strangled<b>
 
 
 <!--
@@ -1711,8 +1699,8 @@ the wrong directions.)<p>
 
 <speed:5>(Should I...?)<speed:2><color:0><b>
 <act>
-<jump:larry_1_intervene,0,1>Intervene<b>
-<jump:larry_1_nop,0,0>Let's see<b>
+<jump:larry_1_nop,0,1>Wait and see what happens<b>
+<jump:larry_1_intervene,0,0>Stop him from answering<b>
 
 
 <!--
@@ -1848,8 +1836,8 @@ I did,<wait:10> and maybe I didn't!<animation:ANI_LARRY_NERVOUS_STAND><p>
 
 (What do I do?)<color:0><speed:2><b>
 <act>
-<jump:larry_2_truth,0,1>Tell the truth<b>
-<jump:larry_2_lie,0,0>Tell a lie<b>
+<jump:larry_2_truth,0,1>Have him answer honestly<b>
+<jump:larry_2_lie,0,0>Stop him from answering<b>
 
 
 <!--
@@ -2017,7 +2005,6 @@ Please bring Mr. Frank Sahwit<b>
 to the stand!<animation:ANI_PAYNE_STAND><p>
 
 <hidetextbox><wait:30><fade><wait:15>
-
 <!--
 --------------------------
 | Subscene : Sahwit 1    |
@@ -3005,7 +2992,6 @@ I remember now!<animation:ANI_SAHWIT_STAND><p>
 <name:NAM_JUDGE><bip:BIP_NORMAL>
 Would you care to give<b>
 your testimony again?<animation:ANI_JUDGE_ANGRY_STAND><p>
-
 <!--
 --------------------------
 | Testimony : Sahwit 2   |
@@ -3541,8 +3527,6 @@ Very well,<wait:15> Mr. Sahwit.<p><animation:ANI_JUDGE_ANGRY_TALK>
 
 Let's hear your testimony<wait:15><b>
 once more please.<animation:ANI_JUDGE_ANGRY_STAND><p>
-
-
 <!--
 --------------------------
 | Testimony : Sahwit 3   |
@@ -3899,8 +3883,8 @@ This is a clock.<animation:ANI_JUDGE_ANGRY_STAND><p><animation:ANI_JUDGE_ANGRY_T
 Do you have any problems<b>
 with his testimony now?<speed:2><b>
 <act>
-<jump:q_addsomething_1_yes,0,1>Yes<b>
-<jump:q_addsomething_1_no,0,0>No<b>
+<jump:q_addsomething_1_no,0,1>No<b>
+<jump:q_addsomething_1_yes,0,0>Yes<b>
 
 
 <!--
@@ -4010,8 +3994,8 @@ Hmm... <wait:15>indeed!<speed:2><p>
 The witness knew it was<b>
 a clock,<wait:15> because he...<speed:2><animation:ANI_PHOENIX_OBJECTION_STAND><b>
 <act>
-<jump:knew_clock_suggar,0,1>Knew the victim<b>
-<jump:knew_clock_lying,0,0>Was inside the building<b>
+<jump:knew_clock_lying,0,1>Went into the apartment<b>
+<jump:knew_clock_suggar,0,0>Knew the victim<b>
 
 
 <!--
@@ -4268,8 +4252,8 @@ was definitely this clock.<animation:ANI_PHOENIX_STAND><p>
 if you simply...<speed:2><animation:ANI_PHOENIX_STAND><b>
 <act>
 <jump:clock_do_battery,0,1>Examine the batteries<b>
-<jump:clock_do_neighbor,0,1>Talk to the neighbors<b>
-<jump:clock_do_ring,0,0>Ring the clock<b>
+<jump:clock_do_neighbor,0,1>Ask the neighbors<b>
+<jump:clock_do_ring,0,0>Try sounding the clock<b>
 
 
 <!--
@@ -5400,8 +5384,6 @@ I wouldn't be able to keep.<speed:2><p>
 
 <bip:BIP_NONE><b>
             THE END<wait:110><wait:120><p>
-
-
 <!--
 ==========================
 # CHAPTER 2
@@ -5415,7 +5397,7 @@ I wouldn't be able to keep.<speed:2><p>
 Brrring...<wait:45><b>
    Brrrrring...<wait:180><fp>
 
-<speed:1><sound:SFX_BIP2>*beep*<color:0><speed:2><p>
+<speed:1><sound:SFX_BIP2><b>           *beep*<color:0><speed:2><p>
 
 <bip:BIP_NONE><color:3><speed:4>
 
@@ -5566,8 +5548,7 @@ I'll be waiting,<wait:20> Maya.<p>
 <bip:BIP_NONE><color:1><speed:1><sound:SFX_LONGBEEP><color:1>
 
 <name:NAM_CELLULAR><bip:BIP_NONE>
-<b>
-*beep*<color:0><speed:2><p>
+<b>           *beep*<color:0><speed:2><p>
 
 <bip:BIP_NONE><speed:5><color:3>[Conversation recorded.<wait:20><b>
 September 5, 9:27 AM]<color:0><wait:30><speed:2><p>
@@ -5575,8 +5556,8 @@ September 5, 9:27 AM]<color:0><wait:30><speed:2><p>
 <music:MUS_NONE><hidetextbox><fade><wait:25><wait:60><background:BKG_FEY_OFFICE_NIGHT><wait:30><speed:10><bip:BIP_TYPEWRITER><color:3><fade><wait:7><hidetextbox><fp>
 
 <name:NAM_NONE><bip:BIP_NONE>
-September 5, 8:57 PM<b>
-Fey & Co. Law Offices<color:0><p>
+    September 5, 8:57 PM<b>
+   Fey & Co. Law Offices<color:0><p>
 
 <speed:2><wait:30>
 
@@ -5641,13 +5622,13 @@ Farewell,<wait:20> Miss Fey.<speed:2><p>
 -->
 <label:label_2_1><fp>
 
-<wait:1><background:BKG_MIA_BEFORE_MURDER><wait:7><flash><wait:5><flash><wait:8><flash><wait:6><flash><wait:40><sound:SFX_BADUM><wait:1><background:BKG_TINKER_WHITE><wait:7><wait:70><flash><background:BKG_MIA_BEFORE_MURDER><wait:20><background:BKG_NONE><wait:16><music:MUS_NONE><sound:SFX_SMACK><wait:1><background:BKG_SLAM><wait:25><wait:180><fade><wait:25><background:BKG_NONE><fade><wait:7><speed:7><bip:BIP_NONE><hidetextbox><fp>
+<wait:1><background:BKG_MIA_BEFORE_MURDER><wait:7><flash><wait:5><flash><wait:8><flash><wait:6><flash><wait:40><sound:SFX_BADUM><wait:1><background:BKG_TINKER_WHITE><wait:7><wait:70><flash><background:BKG_MIA_BEFORE_MURDER><wait:20><background:BKG_NONE><wait:16><music:MUS_NONE><sound:SFX_SMACK><wait:1><background:BKG_SLAM_A><wait:25><wait:180><fade><wait:25><background:BKG_NONE><fade><wait:7><speed:7><bip:BIP_NONE><hidetextbox><fp>
 
 <speed:5>
 
 <name:NAM_NONE><bip:BIP_NONE>
 <b>
-Red...<wait:20> White...<wait:20> Blue...<color:0><wait:80><bip:BIP_NONE><speed:2><shake><sound:SFX_DAMAGE><wait:40><fade><wait:25><color:0><wait:5><fp>
+   Red...<wait:20> White...<wait:20> Blue...<color:0><wait:80><bip:BIP_NONE><speed:2><shake><sound:SFX_DAMAGE><wait:40><fade><wait:25><color:0><wait:5><fp>
 
 <wait:1><wait:32><wait:120><wait:40><wait:1>
 
@@ -5663,8 +5644,8 @@ Red...<wait:20> White...<wait:20> Blue...<color:0><wait:80><bip:BIP_NONE><speed:
 <wait:15><speed:10>
 
 <name:NAM_NONE><bip:BIP_NONE>
-September 5, 9:08 PM<b>
-Fey & Co. Law Offices<color:0><p>
+    September 5, 9:08 PM<b>
+   Fey & Co. Law Offices<color:0><p>
 
 <speed:2><wait:30>
 
@@ -5714,13 +5695,571 @@ all go out for dinner...<p>
 <background:BKG_FEY_OFFICE_NIGHT>
 <event:EVT_CLICK>
 <box:0,0,31,23,1><jump:label_2_13,0,1>
-<box:18,3,5,10,1><jump:label_2_7,0,1>
-<box:0,12,14,12,1><jump:label_2_8,0,1>
-<box:23,11,9,13,1><jump:label_2_9,0,1>
-<box:26,0,6,11,1><jump:label_2_10,0,1>
-<box:5,0,9,9,1><jump:label_2_11,0,1>
-<box:1,8,4,4,0><jump:label_2_12,0,0>
 
+<!--
+--------------------------
+| SCENE 13
+--------------------------
+-->
+<label:label_2_13>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+I smell blood...<b>
+and that can't be good!<p>
+
+I have to check and see if<b>
+Mia... the Chief's okay!<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 52
+--------------------------
+-->
+<label:label_2_52><fp>
+<fade><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade>
+<wait:60><hidetextbox>
+
+<sound:SFX_REALIZATION>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+That smell...<wait:30> Blood!<p>
+
+<speed:10>
+
+<name:NAM_UNKNOW2><bip:BIP_NONE>
+...<p>
+
+<shake><speed:10>*sob*<p>
+
+<speed:10><shake>Sis...<speed:2><p>
+
+<speed:2><sound:SFX_LIGHTBULB><flash><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Someone's <wait:15>there!)<color:0><p>
+
+<hidetextbox><wait:1><sound:SFX_BADUM><background:BKG_MIA_DEAD_SIDE><wait:15><wait:30><hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...!<p>
+
+<speed:8>Chief? <wait:30>Chief...?<p>
+
+<speed:1><shake><sound:SFX_BADUM><flash><b>
+        <speed:2>Chi<flash>ef!!<flash>!<p>
+
+<hidetextbox><wait:120><fade><wait:25><background:BKG_FEY_OFFICE_MURDER_LEFT><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><fade><wait:25><wait:90><hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Who are you?<p>
+
+<speed:9>
+
+<name:NAM_UNKNOW2><bip:BIP_NONE>
+...<p>
+
+<speed:2><hidetextbox><wait:60><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_NONE><animation:ANI_NONE><wait:30><sound:SFX_DAMAGE><shake><wait:60><fade><wait:25><background:BKG_NONE><wait:60><fade><wait:15><hidetextbox><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(The strange girl dropped out<b>
+cold.<wait:25> I left her lying on<b>
+the office sofa.)<p>
+
+(I went back to the chief<b>
+where she lay under the<b>
+window.)<color:0><p>
+
+<hidetextbox><fade><wait:25><background:BKG_MIA_DEAD_FRONT><fade><wait:15><wait:90><hidetextbox><fp>
+
+<speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Her body was still warm...)<p>
+
+(I could feel it when I<b>
+held her shoulder.)<p>
+
+(Then,<wait:10> all too quickly,<wait:15><b>
+it began to fade...)<p>
+
+(Until finally she was cold.)<color:0><p>
+
+<hidetextbox><fade><wait:25><music:MUS_INVESTIGATION><wait:90><background:BKG_FEY_OFFICE_MURDER_LEFT><fade><wait:7><hidetextbox><fp>
+
+<speed:6>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Chief...<speed:2><p>
+
+<hidetextbox>
+<act>
+<jump:menu_2_52_click,0,1>Examine<b>
+<jump:menu_2_52_move,0,0>Move<b>
+
+<label:menu_2_52_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:menu_2_52_move,0,0>TODO<b>
+
+<label:menu_2_52_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_MURDER_LEFT>
+<event:EVT_CLICK>
+<box:15,11,6,5,1><jump:label_2_53,0,1>
+<box:4,0,7,9,1><jump:label_2_54,0,1>
+<box:7,18,6,2,1><jump:label_2_55,0,1>
+<box:26,0,6,11,1><jump:label_2_56,0,1>
+<box:6,10,8,8,0><jump:label_2_57,0,1>
+
+
+<!--
+--------------------------
+| SCENE 53
+--------------------------
+-->
+<label:label_2_53>
+<hidetextbox><fp>
+
+<photo:27>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Some shards of glass are<b>
+scattered on the floor.<p>
+
+They seem to be the remains<b>
+of a glass light stand.<p>
+
+<photo:PHT_NONE><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 54
+--------------------------
+-->
+<label:label_2_54>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+There's a large building<b>
+right across from the office.<p>
+
+The "Gatewater Hotel."<b>
+A nice,<wait:15> luxurious place.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 55
+--------------------------
+-->
+<label:label_2_55>
+<hidetextbox><fp>
+
+<photo:PHT_THINKER>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It's encrusted with<b>
+dried blood.<p>
+
+How ironic that this became<b>
+the murder weapon...<wait:25> again.<p>
+
+<photo:PHT_NONE><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 56
+--------------------------
+-->
+<label:label_2_56>
+<hidetextbox><fp>
+
+<photo:41>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A portable safe.<p>
+
+No way to tell how<b>
+much is inside.<p>
+
+<photo:PHT_NONE>I wonder if someone was<b>
+trying to take it out?<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 57
+--------------------------
+-->
+<label:label_2_57>
+<hidetextbox><fp>
+
+<speed:7>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Chief...<p>
+
+<speed:2>It's hard seeing her like<b>
+this,<wait:20> but if there are any<b>
+clues here...<p>
+
+She was struck on the head<b>
+with a blunt object.<p>
+
+She probably died instantly.<p>
+
+<photo:PHT_THINKER>"The Thinker"<wait:15> lying next<b>
+to her must have been<b>
+the murder weapon.<p>
+
+<photo:PHT_NONE><event:EVT_CR_SET,16412><speed:5><color:2>
+
+<name:NAM_NONE><bip:BIP_NONE>
+The Thinker added<b>
+to the Court Record.<color:0><p>
+
+<speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hmm...<wait:20> there are some glass<b>
+shards near the chief's body.<p>
+
+<photo:27>Must be pieces of the glass<b>
+light stand lying broken in<b>
+the back of the room.<p>
+
+<photo:PHT_NONE><event:EVT_CR_SET,16411><speed:5><color:2>
+
+<name:NAM_NONE><bip:BIP_NONE>
+Glass Shards added<b>
+to the Court Record.<color:0><p>
+
+<speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Nothing else that seems<b>
+like a clue here...<p>
+
+<sound:SFX_LIGHTBULB><flash><speed:5>Hmm...?<wait:20><speed:2><p>
+
+<sound:SFX_REALIZATION><flash><speed:3>A piece of paper! <wait:30>It must<b>
+have fallen from Mia's hand!<p>
+
+<speed:2>What could it be?<p>
+
+<hidetextbox>
+<act>
+<jump:menu_2_57_click,0,1>Examine<b>
+<jump:menu_2_57_move,0,0>Move<b>
+
+<label:menu_2_57_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:menu_2_57_move,0,0>TODO<b>
+
+<label:menu_2_57_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_MURDER_LEFT>
+<event:EVT_CLICK>
+<box:15,11,6,5,1><jump:label_2_53,0,1>
+<box:4,0,7,9,1><jump:label_2_54,0,1>
+<box:7,18,6,2,1><jump:label_2_55,0,1>
+<box:26,0,6,11,1><jump:label_2_56,0,1>
+<box:6,10,8,8,1><jump:label_2_58,0,1>
+<box:5,18,2,2,0><jump:label_2_59,0,1>
+
+
+<!--
+--------------------------
+| SCENE 58
+--------------------------
+-->
+<label:label_2_58>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It's painful to look... <wait:20>but<b>
+I have to,<wait:15> for Mia's sake.<p>
+
+<photo:PHT_THINKER>Looks like she was hit<b>
+in the head with a blunt<b>
+weapon.<p>
+
+<photo:PHT_NONE>She probably died<b>
+instantly.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 59
+--------------------------
+-->
+<label:label_2_59>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+!<p>
+
+<photo:30>A word is written in blood<b>
+on this scrap of paper!<p>
+
+<speed:7>"Maya"...?<wait:15><speed:5><b>
+Did Mia write this?<p>
+
+This piece of paper is a<b>
+receipt from a department<b>
+store,<wait:15> dated yesterday.<p>
+
+<photo:PHT_NONE><music:MUS_NONE><sound:SFX_LIGHTBULB><color:2>(Wait a second!)<p>
+
+<speed:5>("Maya"...!)<speed:2><color:0><p>
+
+<hidetextbox><fade><wait:15><background:BKG_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><fade><wait:15><hidetextbox><fp>
+
+<color:2>(Was Mia trying to tell us<b>
+something about that girl?)<p>
+
+(I think I'd better show<b>
+her this receipt.)<color:0><p>
+
+<wait:120><music:MUS_INVESTIGATION><color:2>(I never thought there'd be a <b>
+use for evidence like this<b>
+outside the courtroom!)<color:0><p>
+
+<hidetextbox><fade><wait:15><background:BKG_FEY_OFFICE_MURDER_LEFT><character:CHR_NONE><animation:ANI_NONE><fade><wait:15><event:EVT_CR_SET,16414><speed:5><color:2><hidetextbox><fp>
+
+<name:NAM_NONE><bip:BIP_NONE>
+Receipt added to<b>
+the Court Record.<p><speed:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I think that's enough<b>
+snooping around for now.)<p>
+
+(I'd better call the police...)<p>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_NONE>(and find out what that<b>
+girl was doing here.)<color:0><p>
+
+<hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade><wait:7>
+
+<hidetextbox>
+<act>
+<jump:menu_2_59_click,0,1>Examine<b>
+<jump:menu_2_59_move,0,0>Move<b>
+
+<label:menu_2_59_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:menu_2_59_move,0,0>TODO<b>
+
+<label:menu_2_59_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_MURDER_RIGHT>
+<event:EVT_CLICK>
+<box:11,7,4,4,1><jump:label_2_62,0,1>
+<box:19,3,5,6,1><jump:label_2_63,0,1>
+<box:18,9,8,5,1><jump:label_2_64,0,1>
+<box:27,0,5,20,1><jump:label_2_65,0,1>
+<box:0,8,4,6,1><jump:label_2_66,0,1>
+<box:12,13,5,3,0><jump:label_2_60,0,1>
+
+<!--
+--------------------------
+| SCENE 60
+--------------------------
+-->
+<label:label_2_60><fp>
+
+<sound:SFX_LIGHTBULB><flash>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Right!<wait:20><b>
+I'd better call the police!<p>
+
+<sound:SFX_REALIZATION><flash><speed:7>...?<speed:2><p>
+
+That's funny...<p>
+
+A few of the screws on the<b>
+receiver are missing...<p>
+
+It looks like someone was<b>
+halfway through taking<b>
+it apart.<p>
+
+<music:MUS_NONE><shake><sound:SFX_SUPERSHOCK><flash><speed:3>
+
+<name:NAM_UNKNOW2><bip:BIP_NONE>
+Police!?<p>
+
+<sound:SFX_SUPERSHOCK><shake><flash>Please,<wait:15><flash> come quick!<speed:2><p>
+
+<speed:2><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Wh-<wait:8><flash><sound:SFX_STAB><shake>what was that!?)<color:0><p>
+
+<hidetextbox><background:BKG_FEY_OFFICE_MURDER_LEFT><fp>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Someone screaming from<b>
+outside the window!?)<color:0><p>
+
+<hidetextbox><flash><sound:SFX_BADUM><background:BKG_APRIL_CALL><wait:60><hidetextbox><fp>
+
+...!<wait:120><music:MUS_INVESTIGATION><p>
+
+<flash><shake>She's staring right at me!<p>
+
+<speed:5>She's holding a phone<b>
+in her hand...<p>
+
+<speed:2><hidetextbox><fade><wait:25><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade><wait:25>
+
+<hidetextbox>
+<act>
+<jump:menu_2_60_click,0,1>Examine<b>
+<jump:menu_2_60_move,0,0>Move<b>
+
+<label:menu_2_60_move>
+<event:EVT_ACT_RETURN>
+<act>
+<jump:label_2_4,0,0>Fey & Co. Law Offices<b>
+
+<label:menu_2_60_click>
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_MURDER_RIGHT>
+<event:EVT_CLICK>
+<box:11,7,4,4,1><jump:label_2_62,0,1>
+<box:19,3,5,6,1><jump:label_2_63,0,1>
+<box:18,9,8,5,1><jump:label_2_64,0,1>
+<box:27,0,5,20,1><jump:label_2_65,0,1>
+<box:0,8,4,6,1><jump:label_2_66,0,1>
+<box:12,13,5,3,0><jump:label_2_61,0,1>
+<!--
+--------------------------
+| SCENE 61
+--------------------------
+-->
+<label:label_2_61>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The phone receiver is missing<b>
+a few screws.<p>
+
+I'd better not use it.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 62
+--------------------------
+-->
+<label:label_2_62>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The Fey & Co. ledger book.<p>
+
+Everything is written in<b>
+the chief's ultra-neat<b>
+handwriting.<p>
+
+It's a small office,<wait:15> but<b>
+it makes a good bit of money.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 63
+--------------------------
+-->
+<label:label_2_63>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Surprisingly,<wait:15> the chief<b>
+was never good with machines.<p>
+
+About all she used this<b>
+PC for was e-mail.<p>
+
+She picked up this ancient<b>
+model at some garage sale<b>
+for practically nothing.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 64
+--------------------------
+-->
+<label:label_2_64>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A perfectly normal office<b>
+desk.<p>
+
+The chief had a very<b>
+particular policy about<b>
+office d{394}cor:<p>
+
+"Spend big on stuff the<b>
+clients use, but keep your<b>
+own stuff simple."<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 65
+--------------------------
+-->
+<label:label_2_65>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+All the chief's important<b>
+documents are packed in here.<p>
+
+This is where she filed <b>
+her case records and<b>
+recent rulings.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 66
+--------------------------
+-->
+<label:label_2_66>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The chief's chair.<p>
+
+A simple,<wait:10> functional design.<wait:15><b>
+Feels pretty good to sit in,<wait:10><b>
+too.<p>
+<return>
 
 <!--
 --------------------------
@@ -5832,8 +6371,6 @@ TODO FORCE CR<p>
 <jump:label_2_18,0,1>Glass shards<b>
 <jump:label_2_19,0,1>The Thinker<b>
 <jump:label_2_20,0,0>Mia's note<b>
-
-
 <!--
 --------------------------
 | SCENE 5
@@ -5994,378 +6531,6 @@ I had to talk to Maya<b>
 as soon as possible.<p>
 
 <wait:7><hidetextbox><jump:label_2_67>
-
-<!--
---------------------------
-| SCENE 6
---------------------------
--->
-<label:label_2_6>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_CRY_STAND><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(I'd better hurry up<b>
-and call the police!)<color:0><p>
-<return>
-
-<!--
---------------------------
-| SCENE 7
---------------------------
--->
-<label:label_2_7>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The door to the chief's<b>
-office.<wait:20> It's slightly open.<p>
-
-I'd better not touch<b>
-the door knob.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 8
---------------------------
--->
-<label:label_2_8>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The reception desk.<wait:20><b>
-I usually sit here.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 9
---------------------------
--->
-<label:label_2_9>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-This sofa is for clients.<wait:20><b>
-It's leather...<wait:20> a real<b>
-luxury model.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 10
---------------------------
--->
-<label:label_2_10>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-A large painting.<wait:20><b>
-I guess you'd call<b>
-this <wait:15>"modern art."<p>
-
-I,<wait:15> on the other hand,<b>
-call it a mistake.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 11
---------------------------
--->
-<label:label_2_11>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-You couldn't cram more legal<b>
-books in here,<wait:15> even if you<b>
-wanted to.<p>
-
-Few can gaze upon the shelves<b>
-without feeling insignificant.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 12
---------------------------
--->
-<label:label_2_12>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-A small writing desk cluttered<b>
-with office supplies.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 13
---------------------------
--->
-<label:label_2_13>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-I smell blood...<b>
-and that can't be good!<p>
-
-I have to check and see if<b>
-Mia... the Chief's okay!<p>
-<return>
-
-<!--
---------------------------
-| SCENE 14
---------------------------
--->
-<label:label_2_14>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Excuse me but,<wait:15> who are you?<p>
-
-<animation:ANI_MAYA_LOOKDOWN_STAND><speed:10>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-...<speed:2><p>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-It's okay.<wait:20> I work here.<p>
-
-<animation:ANI_MAYA_SAD_TALK><speed:6>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-Maya...<animation:ANI_MAYA_SAD_STAND><p>
-
-<animation:ANI_MAYA_SAD_TALK>Maya Fey.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
-
-<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><sound:SFX_REALIZATION><flash><speed:5><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-("Maya"...?)<speed:2><p>
-
-<photo:30>(So Mia was writing<b>
-this girl's name!)<p>
-
-<photo:PHT_NONE>(Maybe I should show<b>
-her the receipt...)<p>
-
-(I never thought there'd be a <b>
-use for evidence like this<b>
-outside the courtroom!)<color:0><p>
-<return>
-
-<!--
---------------------------
-| SCENE 15
---------------------------
--->
-<label:label_2_15>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(She seems to be in shock.<wait:20><b>
-I don't want to disturb her,<wait:15><b>
-but I have to know...)<color:0><p>
-
-<speed:5>Um...<wait:15> excuse me?<speed:2><p>
-
-Can you tell me<b>
-what happened?<p>
-
-<animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-...<speed:2><p>
-
-<animation:ANI_MAYA_LOOKDOWN_TALK><speed:6>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-I came in...<wait:20><b>
-The room was dark.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
-
-<animation:ANI_MAYA_LOOKDOWN_TALK>And Sis...<wait:30> Sis...!<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
-
-<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_STAND><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(So she was already dead.)<color:0><p>
-<return>
-
-<!--
---------------------------
-| SCENE 16
---------------------------
--->
-<label:label_2_16>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-So,<wait:20> you're the chief's...?<p>
-
-<animation:ANI_MAYA_SAD_TALK><speed:5>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-Sister.<wait:25> I'm her<b>
-younger sister.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
-
-<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-And you were here...<wait:20> visiting?<wait:30><b>
-This late at night?<p>
-
-<animation:ANI_MAYA_LOOKDOWN_TALK><speed:5>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-Yes.<wait:20> She said she wanted me<b>
-to keep some evidence for her.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
-
-<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_STAND><sound:SFX_REALIZATION><flash><speed:5>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Evidence...?<speed:2><p>
-
-<animation:ANI_MAYA_SAD_TALK>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-Yes...<wait:20><b>
-I-<wait:8>it was that clock...<animation:ANI_MAYA_SAD_STAND><p>
-
-<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>It was <wait:15>"The Thinker."<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
-<return>
-
-<!--
---------------------------
-| SCENE 17
---------------------------
--->
-<label:label_2_17>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_TALK>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-I'm sorry,<wait:15> I've never<b>
-seen that before.<animation:ANI_MAYA_SAD_STAND><p>
-<return>
-
-<!--
---------------------------
-| SCENE 18
---------------------------
--->
-<label:label_2_18>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:27>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-This was lying next<b>
-to the chief.<p>
-
-<animation:ANI_MAYA_SAD_TALK><speed:5>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-I know.<wait:20> I saw it there too.<animation:ANI_MAYA_SAD_STAND><p>
-
-<animation:ANI_MAYA_SAD_TALK>I thought they might be<b>
-pieces of the light stand.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
-
-<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><speed:5>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Hmm.<wait:20> Maybe.<speed:2><p>
-
-<color:2>(Never heard of a glass<b>
-light stand before...)<color:0><p>
-
-<photo:PHT_NONE>
-<return>
-
-<!--
---------------------------
-| SCENE 19
---------------------------
--->
-<label:label_2_19>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:PHT_THINKER><speed:5>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Um,<wait:25> about <wait:15>"The Thinker"...<speed:2><p>
-
-<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash><shake>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-!<p>
-
-<animation:ANI_MAYA_CRY_TALK><speed:6>The Th-<wait:10><flash><sound:SFX_SMACK><shake>Thinker...<animation:ANI_MAYA_CRY_STAND><p>
-
-<animation:ANI_MAYA_CRY_TALK>That was...<wait:15> <b>
-Oh,<wait:25> Sis!<wait:20> *sob*<speed:2><animation:ANI_MAYA_CRY_STAND><p>
-
-<animation:ANI_MAYA_CRY_TALK><photo:PHT_NONE><animation:ANI_MAYA_CRY_STAND><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Hmm,<wait:15> probably shouldn't have<b>
-asked her about the murder<b>
-weapon...)<color:0><p>
-
-<!--
---------------------------
-| SCENE 20
---------------------------
--->
-<label:label_2_20>
-<hidetextbox><fp>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:30>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Before Mia died,<wait:20> she wrote<b>
-a message with her own blood.<p>
-
-She wrote it on the<b>
-back of this receipt.<p>
-
-<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash><shake>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-!<p>
-
-<animation:ANI_MAYA_SUPRISE_TALK>Th-<wait:8>th-<wait:8>that's <shake><sound:SFX_STAB>MY name!<animation:ANI_MAYA_SUPRISE_STAND><p>
-
-<animation:ANI_MAYA_SUPRISE_TALK>W-<wait:10>why!?<wait:20><speed:5><b>
-Why would she write my name?<speed:2><animation:ANI_MAYA_SUPRISE_STAND><p>
-
-<animation:ANI_MAYA_SUPRISE_TALK><event:EVT_CR_SET,32779><animation:ANI_MAYA_CRY_STAND>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Please, <wait:15>just calm down.<p>
-
-<photo:PHT_NONE><animation:ANI_MAYA_CRY_TALK><speed:5>
-
-<name:NAM_MAYA><bip:BIP_NONE>
-W-<wait:10>why would<b>
-Sis write my name?<speed:2><animation:ANI_MAYA_CRY_STAND><p>
-
-<animation:ANI_MAYA_CRY_TALK><animation:ANI_MAYA_CRY_STAND><shake><speed:5><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Uh-<wait:10>oh.<wait:20> Now I've done it...)<color:0><speed:2><p>
-
-<jump:label_2_5>
 
 <!--
 --------------------------
@@ -6563,6 +6728,92 @@ Maya's lawyer...!)<color:0><p>
 
 <!--
 --------------------------
+| SCENE 28
+--------------------------
+-->
+<label:label_2_28><fp>
+
+
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Mia's favorite potted plant.<p>
+
+I remember it had this<b>
+bizarre name no one<b>
+could ever remember.<p>
+
+<flash><sound:SFX_SMACK><shake>
+
+<name:NAM_UNKNOW><bip:BIP_NONE>
+"Cordyline stricta," <wait:8>pal!<p>
+
+<color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Who was that!?)<color:0><p>
+
+<!--
+--------------------------
+| SCENE 29
+--------------------------
+-->
+<label:label_2_29><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+There's a horrendous amount<b>
+of legal books here.<p>
+
+Scarier still is that Mia<b>
+probably read all of these.<p>
+
+<!--
+--------------------------
+| SCENE 30
+--------------------------
+-->
+<label:label_2_30><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The sky is blue,<b>
+and so am I...<p>
+
+There's that hotel,<wait:15><b>
+right across the way.<p>
+
+<!--
+--------------------------
+| SCENE 31
+--------------------------
+-->
+<label:label_2_31><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Mia's desk.<p>
+
+Perfectly clean,<wait:15> as always.<p>
+
+The only thing it's<b>
+missing is...<wait:8> Mia.<p>
+
+<!--
+--------------------------
+| SCENE 32
+--------------------------
+-->
+<label:label_2_32><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+An old movie poster.<p>
+
+Apparently,<wait:20> this was the<b>
+first movie that made Mia<b>
+cry when she saw it.<p>
+
+I'll have to check it<b>
+out one of these days.<p>
+
+<!--
+--------------------------
 | SCENE 26
 --------------------------
 -->
@@ -6672,109 +6923,7 @@ to Miss May!)<color:0><p>
 
 <wait:28><music:MUS_SEARCH><color:21>
 
-<!--
---------------------------
-| SCENE 27
---------------------------
--->
-<label:label_2_27><fp>
 
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The door to the<b>
-chief's office.<p>
-
-The police are in there<b>
-searching for clues.<p>
-
-I'd better not go in.<p>
-
-<hidetextbox><p>
-
-<!--
---------------------------
-| SCENE 28
---------------------------
--->
-<label:label_2_28><fp>
-
-
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Mia's favorite potted plant.<p>
-
-I remember it had this<b>
-bizarre name no one<b>
-could ever remember.<p>
-
-<flash><sound:SFX_SMACK><shake>
-
-<name:NAM_UNKNOW><bip:BIP_NONE>
-"Cordyline stricta," <wait:8>pal!<p>
-
-<color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Who was that!?)<color:0><p>
-
-<!--
---------------------------
-| SCENE 29
---------------------------
--->
-<label:label_2_29><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-There's a horrendous amount<b>
-of legal books here.<p>
-
-Scarier still is that Mia<b>
-probably read all of these.<p>
-
-<!--
---------------------------
-| SCENE 30
---------------------------
--->
-<label:label_2_30><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The sky is blue,<b>
-and so am I...<p>
-
-There's that hotel,<wait:15><b>
-right across the way.<p>
-
-<!--
---------------------------
-| SCENE 31
---------------------------
--->
-<label:label_2_31><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Mia's desk.<p>
-
-Perfectly clean,<wait:15> as always.<p>
-
-The only thing it's<b>
-missing is...<wait:8> Mia.<p>
-
-<!--
---------------------------
-| SCENE 32
---------------------------
--->
-<label:label_2_32><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-An old movie poster.<p>
-
-Apparently,<wait:20> this was the<b>
-first movie that made Mia<b>
-cry when she saw it.<p>
-
-I'll have to check it<b>
-out one of these days.<p>
 
 <!--
 --------------------------
@@ -7416,591 +7565,6 @@ up like this...)<p>
 
 (It makes Mia's death<b>
 seem so...<wait:15> routine.)<color:0><p>
-
-<!--
---------------------------
-| SCENE 50
---------------------------
--->
-<label:label_2_50><fp>
-
-<character:CHR_NONE><animation:ANI_NONE>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-...<p>
-
-<color:2>(Looks like Detective<b>
-Gumshoe has gone home.)<p>
-
-(The police are still keeping<b>
-themselves busy in the<b>
-chief's office.)<p>
-
-(No one has time to talk<b>
-to me.<wait:20> Guess I'll head out.)<color:0><p>
-
-<!--
---------------------------
-| SCENE 51
---------------------------
--->
-<label:label_2_51><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Mia's favorite potted plant.<p>
-
-I guess I'll have to<b>
-water it now...<p>
-
-<!--
---------------------------
-| SCENE 52
---------------------------
--->
-<label:label_2_52><fp>
-<fade><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade>
-<wait:60><hidetextbox>
-
-<sound:SFX_REALIZATION>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-That smell...<wait:30> Blood!<p>
-
-<speed:10>
-
-<name:NAM_UNKNOW2><bip:BIP_NONE>
-...<p>
-
-<shake><speed:10>*sob*<p>
-
-<speed:10><shake>Sis...<speed:2><p>
-
-<speed:2><sound:SFX_LIGHTBULB><flash><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Someone's <wait:15>there!)<color:0><p>
-
-<hidetextbox><wait:1><sound:SFX_BADUM><background:BKG_MIA_DEAD_SIDE><wait:15><wait:30><hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-...!<p>
-
-<speed:8>Chief? <wait:30>Chief...?<p>
-
-<speed:2><shake><sound:SFX_BADUM><flash><b>
-Chi<flash>ef!!<flash>!<p>
-
-<hidetextbox><wait:120><fade><wait:25><background:BKG_FEY_OFFICE_MURDER_LEFT><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><fade><wait:25><wait:90><hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Who are you?<p>
-
-<speed:9>
-
-<name:NAM_UNKNOW2><bip:BIP_NONE>
-...<p>
-
-<speed:2><hidetextbox><wait:60><character:CHR_NONE><animation:ANI_NONE><wait:16><character:CHR_NONE><animation:ANI_NONE><wait:30><sound:SFX_DAMAGE><shake><wait:60><fade><wait:25><background:BKG_NONE><wait:60><fade><wait:15><hidetextbox><fp>
-
-<color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(The strange girl dropped out<b>
-cold.<wait:25> I left her lying on<b>
-the office sofa.)<p>
-
-(I went back to the chief<b>
-where she lay under the<b>
-window.)<color:0><p>
-
-<hidetextbox><fade><wait:25><background:BKG_MIA_DEAD_FRONT><fade><wait:15><wait:90><hidetextbox><fp>
-
-<speed:5><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Her body was still warm...)<p>
-
-(I could feel it when I<b>
-held her shoulder.)<p>
-
-(Then,<wait:10> all too quickly,<wait:15><b>
-it began to fade...)<p>
-
-(Until finally she was cold.)<color:0><p>
-
-<hidetextbox><fade><wait:25><music:MUS_INVESTIGATION><wait:90><background:BKG_FEY_OFFICE_MURDER_LEFT><fade><wait:7><hidetextbox><fp>
-
-<speed:6>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Chief...<speed:2><p>
-
-<hidetextbox>
-<act>
-<jump:menu_2_52_click,0,1>Examine<b>
-<jump:menu_2_52_move,0,0>Move<b>
-
-<label:menu_2_52_move>
-<event:EVT_ACT_RETURN>
-<act>
-<jump:menu_2_52_move,0,0>TODO<b>
-
-<label:menu_2_52_click>
-<hidetextbox>
-<save>
-<hidetextbox>
-<background:BKG_FEY_OFFICE_MURDER_LEFT>
-<event:EVT_CLICK>
-<box:15,11,6,5,1><jump:label_2_53,0,1>
-<box:4,0,7,9,1><jump:label_2_54,0,1>
-<box:7,18,6,2,1><jump:label_2_55,0,1>
-<box:26,0,6,11,1><jump:label_2_56,0,1>
-<box:6,10,8,8,0><jump:label_2_57,0,1>
-
-
-<!--
---------------------------
-| SCENE 53
---------------------------
--->
-<label:label_2_53>
-<hidetextbox><fp>
-
-<photo:27>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Some shards of glass are<b>
-scattered on the floor.<p>
-
-They seem to be the remains<b>
-of a glass light stand.<p>
-
-<photo:PHT_NONE><p>
-<return>
-
-<!--
---------------------------
-| SCENE 54
---------------------------
--->
-<label:label_2_54>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-There's a large building<b>
-right across from the office.<p>
-
-The "Gatewater Hotel."<b>
-A nice,<wait:15> luxurious place.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 55
---------------------------
--->
-<label:label_2_55>
-<hidetextbox><fp>
-
-<photo:PHT_THINKER>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-It's encrusted with<b>
-dried blood.<p>
-
-How ironic that this became<b>
-the murder weapon...<wait:25> again.<p>
-
-<photo:PHT_NONE><p>
-<return>
-
-<!--
---------------------------
-| SCENE 56
---------------------------
--->
-<label:label_2_56>
-<hidetextbox><fp>
-
-<photo:41>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-A portable safe.<p>
-
-No way to tell how<b>
-much is inside.<p>
-
-<photo:PHT_NONE>I wonder if someone was<b>
-trying to take it out?<p>
-<return>
-
-<!--
---------------------------
-| SCENE 57
---------------------------
--->
-<label:label_2_57>
-<hidetextbox><fp>
-
-<speed:7>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Chief...<p>
-
-<speed:2>It's hard seeing her like<b>
-this,<wait:20> but if there are any<b>
-clues here...<p>
-
-She was struck on the head<b>
-with a blunt object.<p>
-
-She probably died instantly.<p>
-
-<photo:PHT_THINKER>"The Thinker"<wait:15> lying next<b>
-to her must have been<b>
-the murder weapon.<p>
-
-<photo:PHT_NONE><event:EVT_CR_SET,16412><speed:5><color:2>
-
-<name:NAM_NONE><bip:BIP_NONE>
-The Thinker added<b>
-to the Court Record.<color:0><p>
-
-<speed:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Hmm...<wait:20> there are some glass<b>
-shards near the chief's body.<p>
-
-<photo:27>Must be pieces of the glass<b>
-light stand lying broken in<b>
-the back of the room.<p>
-
-<photo:PHT_NONE><event:EVT_CR_SET,16411><speed:5><color:2>
-
-<name:NAM_NONE><bip:BIP_NONE>
-Glass Shards added<b>
-to the Court Record.<color:0><p>
-
-<speed:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Nothing else that seems<b>
-like a clue here...<p>
-
-<sound:SFX_LIGHTBULB><flash><speed:5>Hmm...?<wait:20><speed:2><p>
-
-<sound:SFX_REALIZATION><flash><speed:3>A piece of paper! <wait:30>It must<b>
-have fallen from Mia's hand!<p>
-
-<speed:2>What could it be?<p>
-
-<hidetextbox>
-<act>
-<jump:menu_2_57_click,0,1>Examine<b>
-<jump:menu_2_57_move,0,0>Move<b>
-
-<label:menu_2_57_move>
-<event:EVT_ACT_RETURN>
-<act>
-<jump:menu_2_57_move,0,0>TODO<b>
-
-<label:menu_2_57_click>
-<hidetextbox>
-<save>
-<hidetextbox>
-<background:BKG_FEY_OFFICE_MURDER_LEFT>
-<event:EVT_CLICK>
-<box:15,11,6,5,1><jump:label_2_53,0,1>
-<box:4,0,7,9,1><jump:label_2_54,0,1>
-<box:7,18,6,2,1><jump:label_2_55,0,1>
-<box:26,0,6,11,1><jump:label_2_56,0,1>
-<box:6,10,8,8,1><jump:label_2_58,0,1>
-<box:5,18,2,2,0><jump:label_2_59,0,1>
-
-
-<!--
---------------------------
-| SCENE 58
---------------------------
--->
-<label:label_2_58>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-It's painful to look... <wait:20>but<b>
-I have to,<wait:15> for Mia's sake.<p>
-
-<photo:PHT_THINKER>Looks like she was hit<b>
-in the head with a blunt<b>
-weapon.<p>
-
-<photo:PHT_NONE>She probably died<b>
-instantly.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 59
---------------------------
--->
-<label:label_2_59>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-!<p>
-
-<photo:30>A word is written in blood<b>
-on this scrap of paper!<p>
-
-<speed:7>"Maya"...?<wait:15><speed:5><b>
-Did Mia write this?<p>
-
-This piece of paper is a<b>
-receipt from a department<b>
-store,<wait:15> dated yesterday.<p>
-
-<photo:PHT_NONE><music:MUS_NONE><sound:SFX_LIGHTBULB><color:2>(Wait a second!)<p>
-
-<speed:5>("Maya"...!)<speed:2><color:0><p>
-
-<hidetextbox><fade><wait:15><background:BKG_NONE><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><fade><wait:15><hidetextbox><fp>
-
-<color:2>(Was Mia trying to tell us<b>
-something about that girl?)<p>
-
-(I think I'd better show<b>
-her this receipt.)<color:0><p>
-
-<wait:120><music:MUS_INVESTIGATION><color:2>(I never thought there'd be a <b>
-use for evidence like this<b>
-outside the courtroom!)<color:0><p>
-
-<hidetextbox><fade><wait:15><background:BKG_FEY_OFFICE_MURDER_LEFT><character:CHR_NONE><animation:ANI_NONE><fade><wait:15><event:EVT_CR_SET,16414><speed:5><color:2><hidetextbox><fp>
-
-<name:NAM_NONE><bip:BIP_NONE>
-Receipt added to<b>
-the Court Record.<p><speed:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(I think that's enough<b>
-snooping around for now.)<p>
-
-(I'd better call the police...)<p>
-
-<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><background:BKG_NONE>(and find out what that<b>
-girl was doing here.)<color:0><p>
-
-<hidetextbox><fade><wait:7><character:CHR_NONE><animation:ANI_NONE><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade><wait:7>
-
-<hidetextbox>
-<act>
-<jump:menu_2_59_click,0,1>Examine<b>
-<jump:menu_2_59_move,0,0>Move<b>
-
-<label:menu_2_59_move>
-<event:EVT_ACT_RETURN>
-<act>
-<jump:menu_2_59_move,0,0>TODO<b>
-
-<label:menu_2_59_click>
-<hidetextbox>
-<save>
-<hidetextbox>
-<background:BKG_FEY_OFFICE_MURDER_RIGHT>
-<event:EVT_CLICK>
-<box:11,7,4,4,1><jump:label_2_62,0,1>
-<box:19,3,5,6,1><jump:label_2_63,0,1>
-<box:18,9,8,5,1><jump:label_2_64,0,1>
-<box:27,0,5,20,1><jump:label_2_65,0,1>
-<box:0,8,4,6,1><jump:label_2_66,0,1>
-<box:12,13,5,3,0><jump:label_2_60,0,1>
-
-<!--
---------------------------
-| SCENE 60
---------------------------
--->
-<label:label_2_60><fp>
-
-<sound:SFX_LIGHTBULB><flash>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Right!<wait:20><b>
-I'd better call the police!<p>
-
-<sound:SFX_REALIZATION><flash><speed:7>...?<speed:2><p>
-
-That's funny...<p>
-
-A few of the screws on the<b>
-receiver are missing...<p>
-
-It looks like someone was<b>
-halfway through taking<b>
-it apart.<p>
-
-<music:MUS_NONE><shake><sound:SFX_SUPERSHOCK><flash><speed:3>
-
-<name:NAM_UNKNOW2><bip:BIP_NONE>
-Police!?<p>
-
-<sound:SFX_SUPERSHOCK><shake><flash>Please,<wait:15><flash> come quick!<speed:2><p>
-
-<speed:2><color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Wh-<wait:8><flash><sound:SFX_STAB><shake>what was that!?)<color:0><p>
-
-<hidetextbox><background:BKG_FEY_OFFICE_MURDER_LEFT><fp>
-
-<color:2>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-(Someone screaming from<b>
-outside the window!?)<color:0><p>
-
-<hidetextbox><flash><sound:SFX_BADUM><background:BKG_APRIL_CALL><wait:60><hidetextbox><fp>
-
-...!<wait:120><music:MUS_INVESTIGATION><p>
-
-<flash><shake>She's staring right at me!<p>
-
-<speed:5>She's holding a phone<b>
-in her hand...<p>
-
-<speed:2><hidetextbox><fade><wait:25><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade><wait:25>
-
-<hidetextbox>
-<act>
-<jump:menu_2_60_click,0,1>Examine<b>
-<jump:menu_2_60_move,0,0>Move<b>
-
-<label:menu_2_60_move>
-<event:EVT_ACT_RETURN>
-<act>
-<jump:label_2_4,0,0>Fey & Co. Law Offices<b>
-
-<label:menu_2_60_click>
-<hidetextbox>
-<save>
-<hidetextbox>
-<background:BKG_FEY_OFFICE_MURDER_RIGHT>
-<event:EVT_CLICK>
-<box:11,7,4,4,1><jump:label_2_62,0,1>
-<box:19,3,5,6,1><jump:label_2_63,0,1>
-<box:18,9,8,5,1><jump:label_2_64,0,1>
-<box:27,0,5,20,1><jump:label_2_65,0,1>
-<box:0,8,4,6,1><jump:label_2_66,0,1>
-<box:12,13,5,3,0><jump:label_2_61,0,1>
-<!--
---------------------------
-| SCENE 61
---------------------------
--->
-<label:label_2_61>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The phone receiver is missing<b>
-a few screws.<p>
-
-I'd better not use it.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 62
---------------------------
--->
-<label:label_2_62>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The Fey & Co. ledger book.<p>
-
-Everything is written in<b>
-the chief's ultra-neat<b>
-handwriting.<p>
-
-It's a small office,<wait:15> but<b>
-it makes a good bit of money.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 63
---------------------------
--->
-<label:label_2_63>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-Surprisingly,<wait:15> the chief<b>
-was never good with machines.<p>
-
-About all she used this<b>
-PC for was e-mail.<p>
-
-She picked up this ancient<b>
-model at some garage sale<b>
-for practically nothing.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 64
---------------------------
--->
-<label:label_2_64>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-A perfectly normal office<b>
-desk.<p>
-
-The chief had a very<b>
-particular policy about<b>
-office d{394}cor:<p>
-
-"Spend big on stuff the<b>
-clients use, but keep your<b>
-own stuff simple."<p>
-<return>
-
-<!--
---------------------------
-| SCENE 65
---------------------------
--->
-<label:label_2_65>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-All the chief's important<b>
-documents are packed in here.<p>
-
-This is where she filed <b>
-her case records and<b>
-recent rulings.<p>
-<return>
-
-<!--
---------------------------
-| SCENE 66
---------------------------
--->
-<label:label_2_66>
-<hidetextbox><fp>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-The chief's chair.<p>
-
-A simple,<wait:10> functional design.<wait:15><b>
-Feels pretty good to sit in,<wait:10><b>
-too.<p>
-<return>
-
 <!--
 --------------------------
 | SCENE 67
@@ -11446,7 +11010,444 @@ got nothing to say<b>
 regarding this matter.<animation:ANI_GROSSBERG_STAND><p>
 
 <animation:ANI_GROSSBERG_TALK>
+<!--
+--------------------------
+| SCENE 6
+--------------------------
+-->
+<label:label_2_6>
+<hidetextbox><fp>
 
+<character:CHR_MAYA><animation:ANI_MAYA_CRY_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(I'd better hurry up<b>
+and call the police!)<color:0><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 14
+--------------------------
+-->
+<label:label_2_14>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Excuse me but,<wait:15> who are you?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:10>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+It's okay.<wait:20> I work here.<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Maya...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>Maya Fey.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><sound:SFX_REALIZATION><flash><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+("Maya"...?)<speed:2><p>
+
+<photo:30>(So Mia was writing<b>
+this girl's name!)<p>
+
+<photo:PHT_NONE>(Maybe I should show<b>
+her the receipt...)<p>
+
+(I never thought there'd be a <b>
+use for evidence like this<b>
+outside the courtroom!)<color:0><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 15
+--------------------------
+-->
+<label:label_2_15>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(She seems to be in shock.<wait:20><b>
+I don't want to disturb her,<wait:15><b>
+but I have to know...)<color:0><p>
+
+<speed:5>Um...<wait:15> excuse me?<speed:2><p>
+
+Can you tell me<b>
+what happened?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_STAND><speed:8>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+...<speed:2><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:6>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I came in...<wait:20><b>
+The room was dark.<animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK>And Sis...<wait:30> Sis...!<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(So she was already dead.)<color:0><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 16
+--------------------------
+-->
+<label:label_2_16>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+So,<wait:20> you're the chief's...?<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Sister.<wait:25> I'm her<b>
+younger sister.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+And you were here...<wait:20> visiting?<wait:30><b>
+This late at night?<p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes.<wait:20> She said she wanted me<b>
+to keep some evidence for her.<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+
+<animation:ANI_MAYA_LOOKDOWN_TALK><animation:ANI_MAYA_SAD_STAND><sound:SFX_REALIZATION><flash><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Evidence...?<speed:2><p>
+
+<animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+Yes...<wait:20><b>
+I-<wait:8>it was that clock...<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_LOOKDOWN_TALK>It was <wait:15>"The Thinker."<speed:2><animation:ANI_MAYA_LOOKDOWN_STAND><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 17
+--------------------------
+-->
+<label:label_2_17>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_TALK>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I'm sorry,<wait:15> I've never<b>
+seen that before.<animation:ANI_MAYA_SAD_STAND><p>
+<return>
+
+<!--
+--------------------------
+| SCENE 18
+--------------------------
+-->
+<label:label_2_18>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:27>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+This was lying next<b>
+to the chief.<p>
+
+<animation:ANI_MAYA_SAD_TALK><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+I know.<wait:20> I saw it there too.<animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK>I thought they might be<b>
+pieces of the light stand.<speed:2><animation:ANI_MAYA_SAD_STAND><p>
+
+<animation:ANI_MAYA_SAD_TALK><animation:ANI_MAYA_SAD_STAND><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Hmm.<wait:20> Maybe.<speed:2><p>
+
+<color:2>(Never heard of a glass<b>
+light stand before...)<color:0><p>
+
+<photo:PHT_NONE>
+<return>
+
+<!--
+--------------------------
+| SCENE 19
+--------------------------
+-->
+<label:label_2_19>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:PHT_THINKER><speed:5>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Um,<wait:25> about <wait:15>"The Thinker"...<speed:2><p>
+
+<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+!<p>
+
+<animation:ANI_MAYA_CRY_TALK><speed:6>The Th-<wait:10><flash><sound:SFX_SMACK><shake>Thinker...<animation:ANI_MAYA_CRY_STAND><p>
+
+<animation:ANI_MAYA_CRY_TALK>That was...<wait:15> <b>
+Oh,<wait:25> Sis!<wait:20> *sob*<speed:2><animation:ANI_MAYA_CRY_STAND><p>
+
+<animation:ANI_MAYA_CRY_TALK><photo:PHT_NONE><animation:ANI_MAYA_CRY_STAND><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Hmm,<wait:15> probably shouldn't have<b>
+asked her about the murder<b>
+weapon...)<color:0><p>
+
+<!--
+--------------------------
+| SCENE 20
+--------------------------
+-->
+<label:label_2_20>
+<hidetextbox><fp>
+
+<character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><photo:30>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Before Mia died,<wait:20> she wrote<b>
+a message with her own blood.<p>
+
+She wrote it on the<b>
+back of this receipt.<p>
+
+<animation:ANI_MAYA_SUPRISE_STAND><sound:SFX_LIGHTBULB><flash><shake>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+!<p>
+
+<animation:ANI_MAYA_SUPRISE_TALK>Th-<wait:8>th-<wait:8>that's <shake><sound:SFX_STAB>MY name!<animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK>W-<wait:10>why!?<wait:20><speed:5><b>
+Why would she write my name?<speed:2><animation:ANI_MAYA_SUPRISE_STAND><p>
+
+<animation:ANI_MAYA_SUPRISE_TALK><event:EVT_CR_SET,32779><animation:ANI_MAYA_CRY_STAND>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Please, <wait:15>just calm down.<p>
+
+<photo:PHT_NONE><animation:ANI_MAYA_CRY_TALK><speed:5>
+
+<name:NAM_MAYA><bip:BIP_NONE>
+W-<wait:10>why would<b>
+Sis write my name?<speed:2><animation:ANI_MAYA_CRY_STAND><p>
+
+<animation:ANI_MAYA_CRY_TALK><animation:ANI_MAYA_CRY_STAND><shake><speed:5><color:2>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+(Uh-<wait:10>oh.<wait:20> Now I've done it...)<color:0><speed:2><p>
+
+<jump:label_2_5>
+
+
+<!--
+--------------------------
+| SCENE 27
+--------------------------
+-->
+<label:label_2_27><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The door to the<b>
+chief's office.<p>
+
+The police are in there<b>
+searching for clues.<p>
+
+I'd better not go in.<p>
+
+<hidetextbox><p>
+
+<!--
+--------------------------
+| SCENE 50
+--------------------------
+-->
+<label:label_2_50><fp>
+
+<character:CHR_NONE><animation:ANI_NONE>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+...<p>
+
+<color:2>(Looks like Detective<b>
+Gumshoe has gone home.)<p>
+
+(The police are still keeping<b>
+themselves busy in the<b>
+chief's office.)<p>
+
+(No one has time to talk<b>
+to me.<wait:20> Guess I'll head out.)<color:0><p>
+
+
+<!--
+--------------------------
+| SCENE 51
+--------------------------
+-->
+<label:label_2_51><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+Mia's favorite potted plant.<p>
+
+I guess I'll have to<b>
+water it now...<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hidetextbox>
+<save>
+<hidetextbox>
+<background:BKG_FEY_OFFICE_NIGHT>
+<event:EVT_CLICK>
+<box:18,3,5,10,1><jump:label_2_7,0,1>
+<box:0,12,14,12,1><jump:label_2_8,0,1>
+<box:23,11,9,13,1><jump:label_2_9,0,1>
+<box:26,0,6,11,1><jump:label_2_10,0,1>
+<box:5,0,9,9,1><jump:label_2_11,0,1>
+<box:1,8,4,4,0><jump:label_2_12,0,0>
+
+
+<!--
+--------------------------
+| SCENE 7
+--------------------------
+-->
+<label:label_2_7>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The door to the chief's<b>
+office.<wait:20> It's slightly open.<p>
+
+I'd better not touch<b>
+the door knob.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 8
+--------------------------
+-->
+<label:label_2_8>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+The reception desk.<wait:20><b>
+I usually sit here.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 9
+--------------------------
+-->
+<label:label_2_9>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+This sofa is for clients.<wait:20><b>
+It's leather...<wait:20> a real<b>
+luxury model.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 10
+--------------------------
+-->
+<label:label_2_10>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A large painting.<wait:20><b>
+I guess you'd call<b>
+this <wait:15>"modern art."<p>
+
+I,<wait:15> on the other hand,<b>
+call it a mistake.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 11
+--------------------------
+-->
+<label:label_2_11>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+You couldn't cram more legal<b>
+books in here,<wait:15> even if you<b>
+wanted to.<p>
+
+Few can gaze upon the shelves<b>
+without feeling insignificant.<p>
+<return>
+
+<!--
+--------------------------
+| SCENE 12
+--------------------------
+-->
+<label:label_2_12>
+<hidetextbox><fp>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A small writing desk cluttered<b>
+with office supplies.<p>
+<return>
 <!--
 --------------------------
 |          DEBUG         |
