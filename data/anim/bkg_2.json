@@ -69,6 +69,5 @@
     {"background": "../../data/backgrounds/cutscenes/cutscene_67.png","character": [],"time": [], "idx": 108, "name": "BKG_SCENE_BOAT_1_PERSON", "palettes": [[12,0,16,48], [0,0,0,0,0,0]]},
     {"background": "../../data/backgrounds/cutscenes/cutscene_68.png","character": [],"time": [], "idx": 116, "name": "EDGEWORTH_GUN_A"},
     {"background": "../../data/backgrounds/cutscenes/cutscene_69.png","character": [],"time": [], "idx": 117, "name": "EDGEWORTH_GUN_B"},
-    {"background": "../../data/backgrounds/cutscenes/cutscene_70.png","character": [],"time": [], "idx": 118, "name": "BKG_TINKER_BLOOD_TOP"},
     {"background": "../../data/backgrounds/cutscenes/cutscene_71.png","character": [],"time": [], "idx": 106, "name": "BKG_SCENE_BOAT_2_PEOPLE", "palettes": [[12,0,16,48], [0,0,0,0,0,0]]}
 ]

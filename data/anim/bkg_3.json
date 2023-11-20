@@ -1,7 +1,7 @@
 [
     {"background": "../../data/backgrounds/locations/location_0.png","character": [],"time": [], "idx": 9, "name": "BKG_FEY_OFFICE_NIGHT"},
     {"background": "../../data/backgrounds/locations/location_1.png","character": [],"time": [], "idx": 110, "name": "BKG_FEY_OFFICE_MURDER_LEFT"},
-    {"background": "../../data/backgrounds/locations/location_2.png","character": [],"time": [], "idx": 119, "name": "BKG_FEY_OFFICE_MURDER_RIGHT"},
+    {"background": "../../data/backgrounds/locations/location_2.png","character": [],"time": [], "idx": 118, "name": "BKG_FEY_OFFICE_MURDER_RIGHT"},
     {"background": "../../data/backgrounds/locations/location_3.png","character": [],"time": [], "idx": 30, "name": "BKG_DETENTION_CENTER"},
     {"background": "../../data/backgrounds/locations/location_4.png","character": [],"time": [], "idx": 32, "name": "BKG_GATEWATER_HOTEL"},
     {"background": "../../data/backgrounds/locations/location_5.png","character": [],"time": [], "idx": 39, "name": "BKG_GROSSBERG_OFFICE"},

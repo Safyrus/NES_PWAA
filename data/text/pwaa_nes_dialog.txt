@@ -5718,7 +5718,7 @@ Mia... the Chief's okay!<p>
 --------------------------
 -->
 <label:label_2_52><fp>
-<fade><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade>
+<music:MUS_NONE><fade><background:BKG_FEY_OFFICE_MURDER_RIGHT><fade>
 <wait:60><hidetextbox>
 
 <sound:SFX_REALIZATION>
@@ -5748,7 +5748,7 @@ That smell...<wait:30> Blood!<p>
 <speed:8>Chief? <wait:30>Chief...?<p>
 
 <speed:1><shake><sound:SFX_BADUM><flash><b>
-        <speed:2>Chi<flash>ef!!<flash>!<p>
+          <speed:2>Chi<flash>ef!!<flash>!<p>
 
 <hidetextbox><wait:120><fade><wait:25><background:BKG_FEY_OFFICE_MURDER_LEFT><character:CHR_MAYA><animation:ANI_MAYA_SAD_STAND><fade><wait:25><wait:90><hidetextbox><fp>
 
@@ -5814,7 +5814,8 @@ Chief...<speed:2><p>
 <box:15,11,6,5,1><jump:label_2_53,0,1>
 <box:4,0,7,9,1><jump:label_2_54,0,1>
 <box:7,18,6,2,1><jump:label_2_55,0,1>
-<box:26,0,6,11,1><jump:label_2_56,0,1>
+<!--<box:26,0,6,11,1><jump:label_2_56,0,1>-->
+<box:27,9,5,6,1><jump:label_2_66,0,1>
 <box:6,10,8,8,0><jump:label_2_57,0,1>
 
 
@@ -5872,26 +5873,6 @@ How ironic that this became<b>
 the murder weapon...<wait:25> again.<p>
 
 <photo:PHT_NONE><p>
-<return>
-
-<!--
---------------------------
-| SCENE 56
---------------------------
--->
-<label:label_2_56>
-<hidetextbox><fp>
-
-<photo:41>
-
-<name:NAM_PHOENIX><bip:BIP_NORMAL>
-A portable safe.<p>
-
-No way to tell how<b>
-much is inside.<p>
-
-<photo:PHT_NONE>I wonder if someone was<b>
-trying to take it out?<p>
 <return>
 
 <!--
@@ -11338,6 +11319,26 @@ water it now...<p>
 
 
 
+
+<!--
+--------------------------
+| SCENE 56
+--------------------------
+-->
+<label:label_2_56>
+<hidetextbox><fp>
+
+<photo:41>
+
+<name:NAM_PHOENIX><bip:BIP_NORMAL>
+A portable safe.<p>
+
+No way to tell how<b>
+much is inside.<p>
+
+<photo:PHT_NONE>I wonder if someone was<b>
+trying to take it out?<p>
+<return>
 
 
 

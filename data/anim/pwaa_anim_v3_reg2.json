@@ -538,13 +538,6 @@
         "name": "EDGEWORTH_GUN_B"
     },
     {
-        "background": "../../data/backgrounds/cutscenes/cutscene_70.png",
-        "character": [],
-        "time": [],
-        "idx": 118,
-        "name": "BKG_TINKER_BLOOD_TOP"
-    },
-    {
         "background": "../../data/backgrounds/cutscenes/cutscene_71.png",
         "character": [],
         "time": [],
