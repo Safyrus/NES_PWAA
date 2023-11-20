@@ -31,6 +31,12 @@ MAIN_LOOP:
     LDA effect_flags
     AND #EFFECT_FLAG_DRAW
     bnz :+
+    ; and if the court record or choice is not showned
+    LDA max_choice
+    BNE :+
+    LDA cr_flag
+    AND #CR_FLAG_SHOW
+    BNE :+
         ; then update the scroll position to the correct screen buffer
         JSR update_screen_scroll
     :
@@ -42,12 +48,16 @@ MAIN_LOOP:
     LDA txt_flags
     AND #(TXT_FLAG_BOX + TXT_FLAG_LZ + TXT_FLAG_PRINT)
     BNE :+
-    ; or if we are not in a choice
+    ; and if we are not in a choice
     LDA max_choice
     BNE :+
-    ; or if we are not in the court record
+    ; and if we are not in the court record
     LDA cr_flag
     AND #CR_FLAG_SHOW
+    BNE :+
+    ; and if we are not playing a DPCM sample
+    LDA APU_STATUS
+    AND #%00010000 ; DPCM active flag
     BNE :+
         ; then update graphics
         JSR frame_decode

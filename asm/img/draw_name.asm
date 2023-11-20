@@ -47,9 +47,12 @@ draw_name:
         DEY
         BNE @loop_draw
 
+    ; Y = MAX_NAME_SIZE - name_size
     LDA #MAX_NAME_SIZE
     sub name_size
     TAY
+    ; while Y > 0
+    BEQ @loop_erase_end
     LDA #BOX_TILE_B
     @loop_erase:
         ; send 1 byte
@@ -58,6 +61,7 @@ draw_name:
         ; continue
         DEY
         BNE @loop_erase
+    @loop_erase_end:
 
     ; close packet
     LDA #$00
