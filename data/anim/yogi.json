@@ -1,7 +1,7 @@
 [
   {
-    "name": "YANNI-ANGRY(A)",
-    "idx": 1000,
+    "name": "ANI_YOGI_ANGRY_STAND",
+    "idx": 341,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1306.png",
@@ -61,8 +61,8 @@
     ]
   },
   {
-    "name": "YANNI-ANGRY(B)",
-    "idx": 1000,
+    "name": "ANI_YOGI_ANGRY_TALK",
+    "idx": 342,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1306.png",
@@ -118,8 +118,8 @@
     ]
   },
   {
-    "name": "YANNI-COLLAPSE",
-    "idx": 1000,
+    "name": "ANI_YOGI_FALL",
+    "idx": 343,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1313.png",
@@ -173,45 +173,8 @@
     ]
   },
   {
-    "name": "YANNI-DAMAGE(EXTRA)",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Yogi/1320.png",
-      "../../data/chars/Yogi/1321.png",
-      "../../data/chars/Yogi/1322.png",
-      "../../data/chars/Yogi/1323.png",
-      "../../data/chars/Yogi/1324.png",
-      "../../data/chars/Yogi/1325.png"
-    ],
-    "time": [
-      30,
-      4,
-      2,
-      2,
-      4,
-      30
-    ],
-    "palettes": [
-      [
-        0,
-        15,
-        16,
-        32
-      ],
-      [
-        48,
-        22,
-        38,
-        42,
-        15,
-        15
-      ]
-    ]
-  },
-  {
-    "name": "YANNI-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_YOGI_STAND",
+    "idx": 330,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1326.png",
@@ -255,8 +218,8 @@
     ]
   },
   {
-    "name": "YANNI-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_YOGI_TALK",
+    "idx": 331,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1326.png",
@@ -308,8 +271,8 @@
     ]
   },
   {
-    "name": "YANNI-SAD(A)",
-    "idx": 1000,
+    "name": "ANI_REALYOGI_SAD_STAND",
+    "idx": 347,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1334.png",
@@ -343,8 +306,8 @@
     ]
   },
   {
-    "name": "YANNI-SAD(B)",
-    "idx": 1000,
+    "name": "ANI_REALYOGI_SAD_TALK",
+    "idx": 348,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1334.png",
@@ -396,8 +359,8 @@
     ]
   },
   {
-    "name": "YANNI-SIDE(A)",
-    "idx": 1000,
+    "name": "ANI_YOGI_LOOKLEFT_STAND",
+    "idx": 337,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1340.png",
@@ -441,8 +404,8 @@
     ]
   },
   {
-    "name": "YANNI-SIDE(B)",
-    "idx": 1000,
+    "name": "ANI_YOGI_LOOKLEFT_TALK",
+    "idx": 338,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1340.png",
@@ -494,8 +457,8 @@
     ]
   },
   {
-    "name": "YANNI-SLEEP(A)",
-    "idx": 1000,
+    "name": "ANI_YOGI_SLEEP_START",
+    "idx": 332,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1326.png",
@@ -529,8 +492,8 @@
     ]
   },
   {
-    "name": "YANNI-SLEEP(B)",
-    "idx": 1000,
+    "name": "ANI_YOGI_SLEEP",
+    "idx": 333,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1349.png",
@@ -684,8 +647,8 @@
     ]
   },
   {
-    "name": "YANNI-SLEEP(C)",
-    "idx": 1000,
+    "name": "ANI_YOGI_SLEEP_END",
+    "idx": 334,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1349.png",
@@ -965,8 +928,8 @@
     ]
   },
   {
-    "name": "YANNI-THOUGHTFUL(A)",
-    "idx": 1000,
+    "name": "ANI_YOGI_THINK_STAND",
+    "idx": 339,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1356.png",
@@ -1010,8 +973,8 @@
     ]
   },
   {
-    "name": "YANNI-THOUGHTFUL(B)",
-    "idx": 1000,
+    "name": "ANI_YOGI_THINK_TALK",
+    "idx": 340,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1361.png",
@@ -1063,8 +1026,8 @@
     ]
   },
   {
-    "name": "YANNI-TRUE(A)",
-    "idx": 1000,
+    "name": "ANI_REALYOGI_STAND",
+    "idx": 345,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1367.png",
@@ -1098,8 +1061,8 @@
     ]
   },
   {
-    "name": "YANNI-TRUE(B)",
-    "idx": 1000,
+    "name": "ANI_REALYOGI_TALK",
+    "idx": 346,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Yogi/1367.png",

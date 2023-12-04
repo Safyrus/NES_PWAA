@@ -1,7 +1,7 @@
 [
   {
-    "name": "SAL-DAMAGE",
-    "idx": 1000,
+    "name": "ANI_MANELLA_DAMAGE",
+    "idx": 269,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1236.png",
@@ -155,8 +155,8 @@
     ]
   },
   {
-    "name": "SAL-MAD(A)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_ANGRY_STAND",
+    "idx": 265,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1242.png",
@@ -190,8 +190,8 @@
     ]
   },
   {
-    "name": "SAL-MAD(B)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_ANGRY_TALK",
+    "idx": 266,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1242.png",
@@ -251,8 +251,8 @@
     ]
   },
   {
-    "name": "SAL-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_STAND",
+    "idx": 263,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1249.png",
@@ -286,8 +286,8 @@
     ]
   },
   {
-    "name": "SAL-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_TALK",
+    "idx": 264,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1249.png",
@@ -347,8 +347,8 @@
     ]
   },
   {
-    "name": "SAL-THINKING(A)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_THINK_STAND",
+    "idx": 272,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1256.png",
@@ -382,8 +382,8 @@
     ]
   },
   {
-    "name": "SAL-THINKING(B)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_THINK_TALK",
+    "idx": 273,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1256.png",
@@ -443,8 +443,8 @@
     ]
   },
   {
-    "name": "SAL-WIGGLE(A)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_CREEPY_STAND",
+    "idx": 267,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1263.png",
@@ -496,8 +496,8 @@
     ]
   },
   {
-    "name": "SAL-WIGGLE(B)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_CREEPY_TALK",
+    "idx": 268,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1268.png",
@@ -557,8 +557,8 @@
     ]
   },
   {
-    "name": "SAL-WORRIED(A)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_PANIC_STAND",
+    "idx": 270,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1275.png",
@@ -590,8 +590,8 @@
     ]
   },
   {
-    "name": "SAL-WORRIED(B)",
-    "idx": 1000,
+    "name": "ANI_MANELLA_PANIC_TALK",
+    "idx": 271,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Manella/1278.png",

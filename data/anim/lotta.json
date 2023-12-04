@@ -1,7 +1,7 @@
 [
   {
-    "name": "LOTTA-BADMOOD(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_LOOKASIDE_STAND",
+    "idx": 324,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/664.png",
@@ -51,8 +51,8 @@
     ]
   },
   {
-    "name": "LOTTA-BADMOOD(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_LOOKASIDE_TALK",
+    "idx": 325,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/664.png",
@@ -104,8 +104,8 @@
     ]
   },
   {
-    "name": "LOTTA-CONFIDENT(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_CONFIDENT_STAND",
+    "idx": 322,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/669.png",
@@ -155,8 +155,8 @@
     ]
   },
   {
-    "name": "LOTTA-CONFIDENT(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_CONFIDENT_TALK",
+    "idx": 323,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/669.png",
@@ -208,8 +208,8 @@
     ]
   },
   {
-    "name": "LOTTA-DAMAGE",
-    "idx": 1000,
+    "name": "ANI_LOTTA_DAMAGE",
+    "idx": 318,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/674.png",
@@ -237,8 +237,8 @@
     ]
   },
   {
-    "name": "LOTTA-DISAPPOINTED(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_SAD_STAND",
+    "idx": 320,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/676.png",
@@ -276,8 +276,8 @@
     ]
   },
   {
-    "name": "LOTTA-DISAPPOINTED(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_SAD_TALK",
+    "idx": 321,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/676.png",
@@ -309,8 +309,8 @@
     ]
   },
   {
-    "name": "LOTTA-MAD(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_ANGRY_STAND",
+    "idx": 316,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/680.png",
@@ -360,8 +360,8 @@
     ]
   },
   {
-    "name": "LOTTA-MAD(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_ANGRY_TALK",
+    "idx": 317,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/683.png",
@@ -695,8 +695,8 @@
     ]
   },
   {
-    "name": "LOTTA-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_SMILE_STAND",
+    "idx": 312,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/686.png",
@@ -746,8 +746,8 @@
     ]
   },
   {
-    "name": "LOTTA-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_SMILE_TALK",
+    "idx": 313,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/686.png",
@@ -799,8 +799,8 @@
     ]
   },
   {
-    "name": "LOTTA-SHY(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_OOPS_STAND",
+    "idx": 314,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/691.png",
@@ -850,8 +850,8 @@
     ]
   },
   {
-    "name": "LOTTA-SHY(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_OOPS_TALK",
+    "idx": 315,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/693.png",
@@ -883,8 +883,8 @@
     ]
   },
   {
-    "name": "LOTTA-SMILING(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_HAPPY_STAND",
+    "idx": 328,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/696.png"
@@ -910,8 +910,8 @@
     ]
   },
   {
-    "name": "LOTTA-SMILING(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_HAPPY_TALK",
+    "idx": 329,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/696.png",
@@ -943,8 +943,8 @@
     ]
   },
   {
-    "name": "LOTTA-THINKING(A)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_HEADOWN_STAND",
+    "idx": 326,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/699.png",
@@ -994,8 +994,8 @@
     ]
   },
   {
-    "name": "LOTTA-THINKING(B)",
-    "idx": 1000,
+    "name": "ANI_LOTTA_HEADOWN_TALK",
+    "idx": 327,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Lotta/699.png",

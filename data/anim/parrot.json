@@ -1,7 +1,7 @@
 [
   {
-    "name": "POLLY(A)",
-    "idx": 1000,
+    "name": "ANI_PARROT_STAND",
+    "idx": 253,
     "background": "../../data/empty.png",
     "character": [
       "../../ignore/chars_gif/Sprites-yanni/1302.png",
@@ -209,8 +209,8 @@
     ]
   },
   {
-    "name": "POLLY(B)",
-    "idx": 1000,
+    "name": "ANI_PARROT_TALK",
+    "idx": 254,
     "background": "../../data/empty.png",
     "character": [
       "../../ignore/chars_gif/Sprites-yanni/1302.png",

@@ -1,7 +1,7 @@
 [
   {
-    "name": "APRIL-BOUNCING",
-    "idx": 183,
+    "name": "ANI_APRIL_WINK",
+    "idx": 214,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/0.png",
@@ -39,8 +39,8 @@
     ]
   },
   {
-    "name": "APRIL-BREAK",
-    "idx": 188,
+    "name": "ANI_APRIL_AAAH",
+    "idx": 215,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/3.png",
@@ -1098,8 +1098,8 @@
     ]
   },
   {
-    "name": "APRIL-CRYING(A)",
-    "idx": 179,
+    "name": "ANI_APRIL_SAD_STAND",
+    "idx": 216,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/11.png",
@@ -1147,8 +1147,8 @@
     ]
   },
   {
-    "name": "APRIL-CRYING(B)",
-    "idx": 180,
+    "name": "ANI_APRIL_SAD_TALK",
+    "idx": 217,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/11.png",
@@ -1204,8 +1204,8 @@
     ]
   },
   {
-    "name": "APRIL-DAMAGE",
-    "idx": 188,
+    "name": "ANI_APRIL_JOJO",
+    "idx": 218,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/20.png"
@@ -1231,8 +1231,8 @@
     ]
   },
   {
-    "name": "APRIL-GLARING(A)",
-    "idx": 184,
+    "name": "ANI_APRIL_MAD_STAND",
+    "idx": 219,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/21.png",
@@ -1272,8 +1272,8 @@
     ]
   },
   {
-    "name": "APRIL-GLARING(B)",
-    "idx": 185,
+    "name": "ANI_APRIL_MAD_TALK",
+    "idx": 220,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/24.png",
@@ -1321,8 +1321,8 @@
     ]
   },
   {
-    "name": "APRIL-NORMAL(A)",
-    "idx": 173,
+    "name": "ANI_APRIL_STAND",
+    "idx": 221,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/28.png",
@@ -1370,8 +1370,8 @@
     ]
   },
   {
-    "name": "APRIL-NORMAL(B)",
-    "idx": 174,
+    "name": "ANI_APRIL_TALK",
+    "idx": 222,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/28.png",
@@ -1427,8 +1427,8 @@
     ]
   },
   {
-    "name": "APRIL-SIDE(A)",
-    "idx": 186,
+    "name": "ANI_APRIL_MAD_LOOKLEFT_STAND",
+    "idx": 223,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/37.png",
@@ -1464,8 +1464,8 @@
     ]
   },
   {
-    "name": "APRIL-SIDE(B)",
-    "idx": 187,
+    "name": "ANI_APRIL_MAD_LOOKLEFT_TALK",
+    "idx": 224,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/37.png",
@@ -1521,8 +1521,8 @@
     ]
   },
   {
-    "name": "APRIL-SOBBING",
-    "idx": 182,
+    "name": "ANI_APRIL_CRY",
+    "idx": 225,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/11.png",
@@ -2018,8 +2018,8 @@
     ]
   },
   {
-    "name": "APRIL-STIFF(A)",
-    "idx": 175,
+    "name": "ANI_APRIL_STRESS_STAND",
+    "idx": 226,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/45.png",
@@ -2063,8 +2063,8 @@
     ]
   },
   {
-    "name": "APRIL-STIFF(B)",
-    "idx": 176,
+    "name": "ANI_APRIL_STRESS_TALK",
+    "idx": 227,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/45.png",
@@ -2120,8 +2120,8 @@
     ]
   },
   {
-    "name": "APRIL-THINKING(A)",
-    "idx": 177,
+    "name": "ANI_APRIL_THINK_STAND",
+    "idx": 228,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/54.png",
@@ -2169,8 +2169,8 @@
     ]
   },
   {
-    "name": "APRIL-THINKING(B)",
-    "idx": 178,
+    "name": "ANI_APRIL_THINK_TALK",
+    "idx": 229,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/April/54.png",

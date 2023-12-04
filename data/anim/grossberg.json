@@ -1,7 +1,7 @@
 [
   {
-    "name": "GROSSBERG-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_GROSSBERG_STAND",
+    "idx": 124,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Grossberg/358.png",
@@ -39,8 +39,8 @@
     ]
   },
   {
-    "name": "GROSSBERG-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_GROSSBERG_TALK",
+    "idx": 125,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Grossberg/358.png",
@@ -72,8 +72,8 @@
     ]
   },
   {
-    "name": "GROSSBERG-SWEATING(A)",
-    "idx": 1000,
+    "name": "ANI_GROSSBERG_WORRY_STAND",
+    "idx": 126,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Grossberg/362.png",
@@ -123,8 +123,8 @@
     ]
   },
   {
-    "name": "GROSSBERG-SWEATING(B)",
-    "idx": 1000,
+    "name": "ANI_GROSSBERG_WORRY_TALK",
+    "idx": 127,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Grossberg/362.png",

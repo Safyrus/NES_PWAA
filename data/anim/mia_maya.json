@@ -1,588 +1,18 @@
 [
   {
-    "name": "MIAMAYA-BENCH-FORWARD(A)",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Mia-maya/833.png",
-      "../../data/chars/Mia-maya/834.png",
-      "../../data/chars/Mia-maya/835.png",
-      "../../data/chars/Mia-maya/834.png",
-      "../../data/chars/Mia-maya/833.png",
-      "../../data/chars/Mia-maya/834.png",
-      "../../data/chars/Mia-maya/835.png",
-      "../../data/chars/Mia-maya/834.png",
-      "../../data/chars/Mia-maya/833.png"
-    ],
-    "time": [
-      75,
-      8,
-      8,
-      8,
-      160,
-      8,
-      8,
-      8,
-      140
-    ],
-    "palettes": [
-      [
-        0,
-        15,
-        16,
-        32
-      ],
-      [
-        53,
-        0,
-        55,
-        45,
-        0,
-        28
-      ]
-    ]
-  },
-  {
-    "name": "MIAMAYA-BENCH-FORWARD(B)",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Mia-maya/833.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/837.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/833.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/837.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/834.png",
-      "../../data/chars/Mia-maya/835.png",
-      "../../data/chars/Mia-maya/838.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/837.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/833.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/837.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/833.png",
-      "../../data/chars/Mia-maya/836.png",
-      "../../data/chars/Mia-maya/837.png",
-      "../../data/chars/Mia-maya/836.png"
-    ],
-    "time": [
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      6,
-      4,
-      6,
-      3,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9
-    ],
-    "palettes": [
-      [
-        0,
-        15,
-        16,
-        32
-      ],
-      [
-        53,
-        0,
-        55,
-        45,
-        0,
-        28
-      ]
-    ]
-  },
-  {
-    "name": "MIAMAYA-BENCH-HEADSHAKE",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/841.png",
-      "../../data/chars/Mia-maya/842.png",
-      "../../data/chars/Mia-maya/835.png",
-      "../../data/chars/Mia-maya/842.png",
-      "../../data/chars/Mia-maya/841.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/839.png"
-    ],
-    "time": [
-      10,
-      8,
-      8,
-      12,
-      15,
-      12,
-      12,
-      8,
-      40
-    ],
-    "palettes_each": [
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          16,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          16,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ]
-    ]
-  },
-  {
-    "name": "MIAMAYA-BENCH-NOD",
-    "idx": 1000,
+    "name": "ANI_MAYA_MIA_COURT_SMILL_STAND",
+    "idx": 173,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Mia-maya/827.png",
       "../../data/chars/Mia-maya/828.png",
       "../../data/chars/Mia-maya/829.png",
-      "../../data/chars/Mia-maya/843.png",
-      "../../data/chars/Mia-maya/844.png",
-      "../../data/chars/Mia-maya/843.png",
+      "../../data/chars/Mia-maya/828.png",
+      "../../data/chars/Mia-maya/827.png",
+      "../../data/chars/Mia-maya/828.png",
       "../../data/chars/Mia-maya/829.png",
       "../../data/chars/Mia-maya/828.png",
       "../../data/chars/Mia-maya/827.png"
-    ],
-    "time": [
-      10,
-      8,
-      8,
-      12,
-      18,
-      14,
-      12,
-      10,
-      50
-    ],
-    "palettes_each": [
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          16,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ],
-      [
-        [
-          0,
-          15,
-          16,
-          32
-        ],
-        [
-          53,
-          0,
-          55,
-          45,
-          0,
-          28
-        ]
-      ]
-    ]
-  },
-  {
-    "name": "MIAMAYA-BENCH-SAD(A)",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Mia-maya/845.png",
-      "../../data/chars/Mia-maya/846.png",
-      "../../data/chars/Mia-maya/847.png",
-      "../../data/chars/Mia-maya/846.png",
-      "../../data/chars/Mia-maya/845.png",
-      "../../data/chars/Mia-maya/846.png",
-      "../../data/chars/Mia-maya/847.png",
-      "../../data/chars/Mia-maya/846.png",
-      "../../data/chars/Mia-maya/845.png"
-    ],
-    "time": [
-      75,
-      10,
-      10,
-      10,
-      155,
-      10,
-      10,
-      10,
-      168
-    ],
-    "palettes": [
-      [
-        0,
-        15,
-        16,
-        32
-      ],
-      [
-        53,
-        0,
-        55,
-        45,
-        0,
-        28
-      ]
-    ]
-  },
-  {
-    "name": "MIAMAYA-BENCH-SAD(B)",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Mia-maya/845.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/849.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/845.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/849.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/846.png",
-      "../../data/chars/Mia-maya/847.png",
-      "../../data/chars/Mia-maya/850.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/849.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/845.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/849.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/845.png",
-      "../../data/chars/Mia-maya/848.png",
-      "../../data/chars/Mia-maya/849.png",
-      "../../data/chars/Mia-maya/848.png"
-    ],
-    "time": [
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      7,
-      7,
-      7,
-      7,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11,
-      11
-    ],
-    "palettes": [
-      [
-        0,
-        15,
-        16,
-        32
-      ],
-      [
-        53,
-        0,
-        55,
-        45,
-        0,
-        28
-      ]
-    ]
-  },
-  {
-    "name": "MIAMAYA-BENCH-STRICT(A)",
-    "idx": 1000,
-    "background": "../../data/empty.png",
-    "character": [
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/841.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/841.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/839.png"
     ],
     "time": [
       75,
@@ -613,32 +43,32 @@
     ]
   },
   {
-    "name": "MIAMAYA-BENCH-STRICT(B)",
-    "idx": 1000,
+    "name": "ANI_MAYA_MIA_COURT_SMILL_TALK",
+    "idx": 174,
     "background": "../../data/empty.png",
     "character": [
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/852.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/852.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/840.png",
-      "../../data/chars/Mia-maya/841.png",
-      "../../data/chars/Mia-maya/853.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/852.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/852.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/839.png",
-      "../../data/chars/Mia-maya/851.png",
-      "../../data/chars/Mia-maya/852.png",
-      "../../data/chars/Mia-maya/851.png"
+      "../../data/chars/Mia-maya/827.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/831.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/827.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/831.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/828.png",
+      "../../data/chars/Mia-maya/829.png",
+      "../../data/chars/Mia-maya/832.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/831.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/827.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/831.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/827.png",
+      "../../data/chars/Mia-maya/830.png",
+      "../../data/chars/Mia-maya/831.png",
+      "../../data/chars/Mia-maya/830.png"
     ],
     "time": [
       9,
@@ -674,6 +104,448 @@
       [
         53,
         0,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_HEADSIDE_STAND",
+    "idx": 165,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/854.png",
+      "../../data/chars/Mia-maya/855.png",
+      "../../data/chars/Mia-maya/856.png",
+      "../../data/chars/Mia-maya/855.png",
+      "../../data/chars/Mia-maya/854.png",
+      "../../data/chars/Mia-maya/855.png",
+      "../../data/chars/Mia-maya/856.png",
+      "../../data/chars/Mia-maya/855.png",
+      "../../data/chars/Mia-maya/854.png"
+    ],
+    "time": [
+      75,
+      8,
+      8,
+      8,
+      130,
+      8,
+      8,
+      8,
+      140
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_HEADSIDE_TALK",
+    "idx": 166,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/854.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/858.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/854.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/858.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/855.png",
+      "../../data/chars/Mia-maya/856.png",
+      "../../data/chars/Mia-maya/859.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/858.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/854.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/858.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/854.png",
+      "../../data/chars/Mia-maya/857.png",
+      "../../data/chars/Mia-maya/858.png",
+      "../../data/chars/Mia-maya/857.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      6,
+      4,
+      6,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_STAND",
+    "idx": 167,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/860.png",
+      "../../data/chars/Mia-maya/861.png",
+      "../../data/chars/Mia-maya/861.png",
+      "../../data/chars/Mia-maya/860.png",
+      "../../data/chars/Mia-maya/861.png",
+      "../../data/chars/Mia-maya/861.png",
+      "../../data/chars/Mia-maya/860.png"
+    ],
+    "time": [
+      75,
+      8,
+      8,
+      130,
+      8,
+      8,
+      140
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_TALK",
+    "idx": 168,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/860.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/863.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/860.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/863.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/861.png",
+      "../../data/chars/Mia-maya/864.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/863.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/860.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/863.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/860.png",
+      "../../data/chars/Mia-maya/862.png",
+      "../../data/chars/Mia-maya/863.png",
+      "../../data/chars/Mia-maya/862.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      6,
+      4,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_QUESTION_STAND",
+    "idx": 169,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/865.png",
+      "../../data/chars/Mia-maya/866.png",
+      "../../data/chars/Mia-maya/867.png",
+      "../../data/chars/Mia-maya/866.png",
+      "../../data/chars/Mia-maya/865.png",
+      "../../data/chars/Mia-maya/866.png",
+      "../../data/chars/Mia-maya/867.png",
+      "../../data/chars/Mia-maya/866.png",
+      "../../data/chars/Mia-maya/865.png"
+    ],
+    "time": [
+      75,
+      6,
+      6,
+      6,
+      150,
+      6,
+      6,
+      6,
+      180
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_QUESTION_TALK",
+    "idx": 170,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/865.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/869.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/865.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/869.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/866.png",
+      "../../data/chars/Mia-maya/867.png",
+      "../../data/chars/Mia-maya/870.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/869.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/865.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/869.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/865.png",
+      "../../data/chars/Mia-maya/868.png",
+      "../../data/chars/Mia-maya/869.png",
+      "../../data/chars/Mia-maya/868.png"
+    ],
+    "time": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      5,
+      3,
+      5,
+      3,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_SERIOUS_STAND",
+    "idx": 171,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/871.png",
+      "../../data/chars/Mia-maya/872.png",
+      "../../data/chars/Mia-maya/873.png",
+      "../../data/chars/Mia-maya/872.png",
+      "../../data/chars/Mia-maya/871.png",
+      "../../data/chars/Mia-maya/872.png",
+      "../../data/chars/Mia-maya/873.png",
+      "../../data/chars/Mia-maya/872.png",
+      "../../data/chars/Mia-maya/871.png"
+    ],
+    "time": [
+      75,
+      8,
+      8,
+      8,
+      130,
+      8,
+      8,
+      8,
+      140
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
+        55,
+        45,
+        0,
+        28
+      ]
+    ]
+  },
+  {
+    "name": "ANI_MAYA_MIA_SERIOUS_TALK",
+    "idx": 172,
+    "background": "../../data/empty.png",
+    "character": [
+      "../../data/chars/Mia-maya/871.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/875.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/871.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/875.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/872.png",
+      "../../data/chars/Mia-maya/873.png",
+      "../../data/chars/Mia-maya/876.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/875.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/871.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/875.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/871.png",
+      "../../data/chars/Mia-maya/874.png",
+      "../../data/chars/Mia-maya/875.png",
+      "../../data/chars/Mia-maya/874.png"
+    ],
+    "time": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      6,
+      4,
+      6,
+      3,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "palettes": [
+      [
+        0,
+        15,
+        16,
+        32
+      ],
+      [
+        16,
+        53,
         55,
         45,
         0,

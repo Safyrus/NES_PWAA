@@ -1,7 +1,7 @@
 [
   {
-    "name": "OLDBAG-DAMAGE",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_DAMAGE",
+    "idx": 236,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/923.png",
@@ -65,8 +65,8 @@
     ]
   },
   {
-    "name": "OLDBAG-INLOVE(A)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_BLUSH_STAND",
+    "idx": 239,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/926.png",
@@ -112,8 +112,8 @@
     ]
   },
   {
-    "name": "OLDBAG-INLOVE(B)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_BLUSH_TALK",
+    "idx": 240,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/926.png",
@@ -171,8 +171,8 @@
     ]
   },
   {
-    "name": "OLDBAG-MAD(A)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_ANGRY_STAND",
+    "idx": 232,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/931.png",
@@ -380,8 +380,8 @@
     ]
   },
   {
-    "name": "OLDBAG-MAD(B)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_ANGRY_TALK",
+    "idx": 233,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/931.png",
@@ -441,8 +441,8 @@
     ]
   },
   {
-    "name": "OLDBAG-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_STAND",
+    "idx": 230,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/940.png",
@@ -476,8 +476,8 @@
     ]
   },
   {
-    "name": "OLDBAG-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_TALK",
+    "idx": 231,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/940.png",
@@ -537,8 +537,8 @@
     ]
   },
   {
-    "name": "OLDBAG-TEASING(A)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_CONFIDENT_STAND",
+    "idx": 234,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/947.png",
@@ -572,8 +572,8 @@
     ]
   },
   {
-    "name": "OLDBAG-TEASING(B)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_CONFIDENT_TALK",
+    "idx": 235,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/947.png",
@@ -633,8 +633,8 @@
     ]
   },
   {
-    "name": "OLDBAG-TEEHEE(A)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_SMILE_STAND",
+    "idx": 237,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/953.png",
@@ -878,8 +878,8 @@
     ]
   },
   {
-    "name": "OLDBAG-TEEHEE(B)",
-    "idx": 1000,
+    "name": "ANI_OLDBAG_SMILE_TALK",
+    "idx": 238,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Oldbag/953.png",

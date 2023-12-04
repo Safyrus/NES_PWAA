@@ -1,7 +1,7 @@
 [
     {
         "name": "ANI_BELLBOY_STAND",
-        "idx": 1000,
+        "idx": 122,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/BellBoy/bellboy_4.png",
@@ -14,7 +14,7 @@
     },
     {
         "name": "ANI_BELLBOY_TALK",
-        "idx": 1000,
+        "idx": 123,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/BellBoy/bellboy_4.png",
@@ -27,7 +27,7 @@
     },
     {
         "name": "ANI_BELLBOY_BLUSH_STAND",
-        "idx": 1000,
+        "idx": 120,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/BellBoy/bellboy_24.png",
@@ -40,7 +40,7 @@
     },
     {
         "name": "ANI_BELLBOY_BLUSH_TALK",
-        "idx": 1000,
+        "idx": 121,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/BellBoy/bellboy_24.png",

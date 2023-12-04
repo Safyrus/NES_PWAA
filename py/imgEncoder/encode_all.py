@@ -81,10 +81,15 @@ def ca65_file(frames, ca65_info):
         PRG_size += len(frames[i])
     
     # write animations table
+    anim_idx_counter = min(anims_idx)
     for i, anim in enumerate(anims):
-        ca65_anim += "img_anim_" + str(i) + ":\n.byte $" + "%0.2X" % ((len(anim) << 2)+1) + " ; size\n"
+        while anim_idx_counter < anims_idx[i]:
+            ca65_anim += f"img_anim_{str(anim_idx_counter)}: ;empty anim\n.byte $01 ; size\n"
+            anim_idx_counter += 1
+        ca65_anim += "img_anim_" + str(anim_idx_counter) + ":\n.byte $" + "%0.2X" % ((len(anim) << 2)+1) + " ; size\n"
         for a in anim:
             ca65_anim += ".byte $" + "%0.2X" % a[1] + " ; time\n" + chr_anims[a[0]]
+        anim_idx_counter += 1
 
     # final touch
     ca65 = "; todo a description\n\n" + ca65_inc + "\n.segment \"ANIM_BNK\"\n"

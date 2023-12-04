@@ -171,8 +171,9 @@ anim:
 	../data/anim/judge.json \
 	../data/anim/payne.json \
 	../data/anim/edgeworth.json \
-	../data/anim/mia_maya_court.json \
+	../data/anim/edgeworth_middle.json \
 	../data/anim/mia_maya.json \
+	../data/anim/mia_maya_court.json \
 	../data/anim/white.json \
 	../data/anim/grossberg.json \
 	../data/anim/bellboy.json \
@@ -192,6 +193,7 @@ anim:
 	../data/anim/yogi.json \
 	../data/anim/april.json \
 	../data/anim/gumshoe.json \
+	../data/anim/power.json \
 	../$(ANIM_3)
 
 

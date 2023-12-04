@@ -1,7 +1,7 @@
 [
   {
-    "name": "PENNY-CARDS(A)",
-    "idx": 1000,
+    "name": "ANI_PENNY_CARD_STAND",
+    "idx": 245,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Penny/972.png",
@@ -35,8 +35,8 @@
     ]
   },
   {
-    "name": "PENNY-CARDS(B)",
-    "idx": 1000,
+    "name": "ANI_PENNY_CARD_TALK",
+    "idx": 246,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Penny/972.png",
@@ -92,8 +92,8 @@
     ]
   },
   {
-    "name": "PENNY-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_PENNY_STAND",
+    "idx": 241,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Penny/980.png",
@@ -127,8 +127,8 @@
     ]
   },
   {
-    "name": "PENNY-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_PENNY_TALK",
+    "idx": 242,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Penny/980.png",
@@ -184,8 +184,8 @@
     ]
   },
   {
-    "name": "PENNY-SECRET(A)",
-    "idx": 1000,
+    "name": "ANI_PENNY_SMILE_STAND",
+    "idx": 243,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Penny/988.png",
@@ -219,8 +219,8 @@
     ]
   },
   {
-    "name": "PENNY-SECRET(B)",
-    "idx": 1000,
+    "name": "ANI_PENNY_SMILE_TALK",
+    "idx": 244,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Penny/988.png",

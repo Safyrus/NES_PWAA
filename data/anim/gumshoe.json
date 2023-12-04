@@ -1,7 +1,7 @@
 [
   {
-    "name": "GUMSHOE-CONFIDENT(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_CONFIDENT_STAND",
+    "idx": 181,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/369.png",
@@ -43,8 +43,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-CONFIDENT(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_CONFIDENT_TALK",
+    "idx": 182,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/369.png",
@@ -112,8 +112,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-DISHEARTENED(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_LOOKDOWN_STAND",
+    "idx": 183,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/375.png",
@@ -155,8 +155,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-DISHEARTENED(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_LOOKDOWN_TALK",
+    "idx": 184,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/378.png",
@@ -188,8 +188,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-HEADSCRATCH",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_SCRATCH_HEAD",
+    "idx": 185,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/381.png",
@@ -231,8 +231,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-LAUGHING(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_LAUGHT_STAND",
+    "idx": 186,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/385.png",
@@ -314,8 +314,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-LAUGHING(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_LAUGHT_TALK",
+    "idx": 187,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/385.png",
@@ -369,8 +369,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-MAD(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_ANGRY_STAND",
+    "idx": 188,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/393.png",
@@ -412,8 +412,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-MAN(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_ANGRY_TALK",
+    "idx": 189,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/396.png",
@@ -819,8 +819,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_SAD_STAND",
+    "idx": 190,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/402.png",
@@ -862,8 +862,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_SAD_TALK",
+    "idx": 191,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/402.png",
@@ -931,8 +931,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-PUMPED(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_BREATH_STAND",
+    "idx": 192,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/408.png",
@@ -972,8 +972,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-PUMPED(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_TALK",
+    "idx": 193,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/412.png",
@@ -1035,8 +1035,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-SIDE(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_LOOKRIGHT_STAND",
+    "idx": 194,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/420.png",
@@ -1078,8 +1078,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-SIDE(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_LOOKRIGHT_TALK",
+    "idx": 195,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/420.png",
@@ -1147,8 +1147,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-THINKING(A)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_THINK_STAND",
+    "idx": 196,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/426.png",
@@ -1204,8 +1204,8 @@
     ]
   },
   {
-    "name": "GUMSHOE-THINKING(B)",
-    "idx": 1000,
+    "name": "ANI_GUMSHOE_THINK_TALK",
+    "idx": 197,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Gumshoe/427.png",

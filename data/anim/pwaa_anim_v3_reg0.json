@@ -1684,8 +1684,8 @@
         ]
     },
     {
-        "name": "CODY-COFIDENT(A)",
-        "idx": 294,
+        "name": "ANI_CODY_SMILL_STAND",
+        "idx": 293,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Cody/62.png",
@@ -1857,8 +1857,8 @@
         ]
     },
     {
-        "name": "CODY-CONFIDENT(B)",
-        "idx": 295,
+        "name": "ANI_CODY_SMILL_TALK",
+        "idx": 294,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Cody/62.png",
@@ -1918,7 +1918,7 @@
         ]
     },
     {
-        "name": "CODY-CRYING(A)",
+        "name": "ANI_CODY_CRY_STAND",
         "idx": 297,
         "background": "../../data/empty.png",
         "character": [
@@ -1951,7 +1951,7 @@
         ]
     },
     {
-        "name": "CODY-CRYING(B)",
+        "name": "ANI_CODY_CRY_TALK",
         "idx": 298,
         "background": "../../data/empty.png",
         "character": [
@@ -1984,7 +1984,7 @@
         ]
     },
     {
-        "name": "CODY-DAMAGE",
+        "name": "ANI_CODY_SHOCK_END",
         "idx": 306,
         "background": "../../data/empty.png",
         "character": [
@@ -2031,7 +2031,34 @@
         ]
     },
     {
-        "name": "CODY-MISCHIEF(B)",
+        "name": "ANI_CODY_HAPPY_STAND",
+        "idx": 290,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Cody/79.png"
+        ],
+        "time": [
+            127
+        ],
+        "palettes": [
+            [
+                0,
+                15,
+                16,
+                32
+            ],
+            [
+                54,
+                45,
+                56,
+                38,
+                0,
+                42
+            ]
+        ]
+    },
+    {
+        "name": "ANI_CODY_HAPPY_TALK",
         "idx": 289,
         "background": "../../data/empty.png",
         "character": [
@@ -2186,7 +2213,7 @@
         ]
     },
     {
-        "name": "CODY-MUTTER(A)",
+        "name": "ANI_CODY_ARMCROSS_STAND",
         "idx": 303,
         "background": "../../data/empty.png",
         "character": [
@@ -2287,7 +2314,7 @@
         ]
     },
     {
-        "name": "CODY-MUTTER(B)",
+        "name": "ANI_CODY_ARMCROSS_TALK",
         "idx": 304,
         "background": "../../data/empty.png",
         "character": [
@@ -2622,7 +2649,7 @@
         ]
     },
     {
-        "name": "CODY-NORMAL(A)",
+        "name": "ANI_CODY_STAND",
         "idx": 301,
         "background": "../../data/empty.png",
         "character": [
@@ -2657,7 +2684,7 @@
         ]
     },
     {
-        "name": "CODY-NORMAL(B)",
+        "name": "ANI_CODY_TALK",
         "idx": 302,
         "background": "../../data/empty.png",
         "character": [
@@ -2718,7 +2745,7 @@
         ]
     },
     {
-        "name": "CODY-SHORT",
+        "name": "ANI_CODY_SMALL",
         "idx": 307,
         "background": "../../data/empty.png",
         "character": [
@@ -2745,7 +2772,7 @@
         ]
     },
     {
-        "name": "CODY-SNIFFLING(A)",
+        "name": "ANI_CODY_SAD_STAND",
         "idx": 291,
         "background": "../../data/empty.png",
         "character": [
@@ -2780,7 +2807,7 @@
         ]
     },
     {
-        "name": "CODY-SNIFFLING",
+        "name": "ANI_CODY_SAD_TALK",
         "idx": 292,
         "background": "../../data/empty.png",
         "character": [
@@ -2841,7 +2868,7 @@
         ]
     },
     {
-        "name": "CODY-SOBBING(A)",
+        "name": "ANI_CODY_TEARS",
         "idx": 299,
         "background": "../../data/empty.png",
         "character": [
@@ -3122,7 +3149,7 @@
         ]
     },
     {
-        "name": "CODY-SOBBING(B)",
+        "name": "ANI_CODY_TEARS_2",
         "idx": 300,
         "background": "../../data/empty.png",
         "character": [
@@ -3171,7 +3198,7 @@
         ]
     },
     {
-        "name": "CODY-SWORD(A)",
+        "name": "ANI_CODY_ANGRY_STAND",
         "idx": 295,
         "background": "../../data/empty.png",
         "character": [
@@ -3416,7 +3443,7 @@
         ]
     },
     {
-        "name": "CODY-SWORD(B)",
+        "name": "ANI_CODY_ANGRY_TALK",
         "idx": 296,
         "background": "../../data/empty.png",
         "character": [
@@ -3751,8 +3778,8 @@
         ]
     },
     {
-        "name": "SAL-DAMAGE",
-        "idx": 1000,
+        "name": "ANI_MANELLA_DAMAGE",
+        "idx": 269,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1236.png",
@@ -3906,8 +3933,8 @@
         ]
     },
     {
-        "name": "SAL-MAD(A)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_ANGRY_STAND",
+        "idx": 265,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1242.png",
@@ -3941,8 +3968,8 @@
         ]
     },
     {
-        "name": "SAL-MAD(B)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_ANGRY_TALK",
+        "idx": 266,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1242.png",
@@ -4002,8 +4029,8 @@
         ]
     },
     {
-        "name": "SAL-NORMAL(A)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_STAND",
+        "idx": 263,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1249.png",
@@ -4037,8 +4064,8 @@
         ]
     },
     {
-        "name": "SAL-NORMAL(B)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_TALK",
+        "idx": 264,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1249.png",
@@ -4098,8 +4125,8 @@
         ]
     },
     {
-        "name": "SAL-THINKING(A)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_THINK_STAND",
+        "idx": 272,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1256.png",
@@ -4133,8 +4160,8 @@
         ]
     },
     {
-        "name": "SAL-THINKING(B)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_THINK_TALK",
+        "idx": 273,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1256.png",
@@ -4194,8 +4221,8 @@
         ]
     },
     {
-        "name": "SAL-WIGGLE(A)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_CREEPY_STAND",
+        "idx": 267,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1263.png",
@@ -4247,8 +4274,8 @@
         ]
     },
     {
-        "name": "SAL-WIGGLE(B)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_CREEPY_TALK",
+        "idx": 268,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1268.png",
@@ -4308,8 +4335,8 @@
         ]
     },
     {
-        "name": "SAL-WORRIED(A)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_PANIC_STAND",
+        "idx": 270,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1275.png",
@@ -4341,8 +4368,8 @@
         ]
     },
     {
-        "name": "SAL-WORRIED(B)",
-        "idx": 1000,
+        "name": "ANI_MANELLA_PANIC_TALK",
+        "idx": 271,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Manella/1278.png",
@@ -4382,8 +4409,8 @@
         ]
     },
     {
-        "name": "OLDBAG-DAMAGE",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_DAMAGE",
+        "idx": 236,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/923.png",
@@ -4447,8 +4474,8 @@
         ]
     },
     {
-        "name": "OLDBAG-INLOVE(A)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_BLUSH_STAND",
+        "idx": 239,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/926.png",
@@ -4494,8 +4521,8 @@
         ]
     },
     {
-        "name": "OLDBAG-INLOVE(B)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_BLUSH_TALK",
+        "idx": 240,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/926.png",
@@ -4553,8 +4580,8 @@
         ]
     },
     {
-        "name": "OLDBAG-MAD(A)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_ANGRY_STAND",
+        "idx": 232,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/931.png",
@@ -4762,8 +4789,8 @@
         ]
     },
     {
-        "name": "OLDBAG-MAD(B)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_ANGRY_TALK",
+        "idx": 233,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/931.png",
@@ -4823,8 +4850,8 @@
         ]
     },
     {
-        "name": "OLDBAG-NORMAL(A)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_STAND",
+        "idx": 230,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/940.png",
@@ -4858,8 +4885,8 @@
         ]
     },
     {
-        "name": "OLDBAG-NORMAL(B)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_TALK",
+        "idx": 231,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/940.png",
@@ -4919,8 +4946,8 @@
         ]
     },
     {
-        "name": "OLDBAG-TEASING(A)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_CONFIDENT_STAND",
+        "idx": 234,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/947.png",
@@ -4954,8 +4981,8 @@
         ]
     },
     {
-        "name": "OLDBAG-TEASING(B)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_CONFIDENT_TALK",
+        "idx": 235,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/947.png",
@@ -5015,8 +5042,8 @@
         ]
     },
     {
-        "name": "OLDBAG-TEEHEE(A)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_SMILE_STAND",
+        "idx": 237,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/953.png",
@@ -5260,8 +5287,8 @@
         ]
     },
     {
-        "name": "OLDBAG-TEEHEE(B)",
-        "idx": 1000,
+        "name": "ANI_OLDBAG_SMILE_TALK",
+        "idx": 238,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Oldbag/953.png",
@@ -5321,8 +5348,8 @@
         ]
     },
     {
-        "name": "PENNY-CARDS(A)",
-        "idx": 1000,
+        "name": "ANI_PENNY_CARD_STAND",
+        "idx": 245,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Penny/972.png",
@@ -5356,8 +5383,8 @@
         ]
     },
     {
-        "name": "PENNY-CARDS(B)",
-        "idx": 1000,
+        "name": "ANI_PENNY_CARD_TALK",
+        "idx": 246,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Penny/972.png",
@@ -5413,8 +5440,8 @@
         ]
     },
     {
-        "name": "PENNY-NORMAL(A)",
-        "idx": 1000,
+        "name": "ANI_PENNY_STAND",
+        "idx": 241,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Penny/980.png",
@@ -5448,8 +5475,8 @@
         ]
     },
     {
-        "name": "PENNY-NORMAL(B)",
-        "idx": 1000,
+        "name": "ANI_PENNY_TALK",
+        "idx": 242,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Penny/980.png",
@@ -5505,8 +5532,8 @@
         ]
     },
     {
-        "name": "PENNY-SECRET(A)",
-        "idx": 1000,
+        "name": "ANI_PENNY_SMILE_STAND",
+        "idx": 243,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Penny/988.png",
@@ -5540,8 +5567,8 @@
         ]
     },
     {
-        "name": "PENNY-SECRET(B)",
-        "idx": 1000,
+        "name": "ANI_PENNY_SMILE_TALK",
+        "idx": 244,
         "background": "../../data/empty.png",
         "character": [
             "../../data/chars/Penny/988.png",

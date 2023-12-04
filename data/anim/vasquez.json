@@ -1,7 +1,7 @@
 [
   {
-    "name": "DEE-BREAK(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_DEFEAT",
+    "idx": 284,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/133.png",
@@ -109,8 +109,8 @@
     ]
   },
   {
-    "name": "DEE-COLDSMILE(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_CONFIDENT_STAND",
+    "idx": 278,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/139.png",
@@ -168,8 +168,8 @@
     ]
   },
   {
-    "name": "DEE-COLDSMILE(B)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_CONFIDENT_TALK",
+    "idx": 279,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/139.png",
@@ -227,8 +227,8 @@
     ]
   },
   {
-    "name": "DEE-CONFESSING(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_SMILE_STAND",
+    "idx": 286,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/151.png",
@@ -262,8 +262,8 @@
     ]
   },
   {
-    "name": "DEE-CONFESSING(B)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_SMILE_TALK",
+    "idx": 287,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/151.png",
@@ -323,8 +323,8 @@
     ]
   },
   {
-    "name": "DEE-DAMAGE(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_SHOCK_END",
+    "idx": 280,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/158.png",
@@ -354,8 +354,8 @@
     ]
   },
   {
-    "name": "DEE-DAMAGE(B)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_SHOCK_END_2",
+    "idx": 281,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/160.png"
@@ -381,8 +381,8 @@
     ]
   },
   {
-    "name": "DEE-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_STAND",
+    "idx": 274,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/161.png",
@@ -842,8 +842,8 @@
     ]
   },
   {
-    "name": "DEE-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_TALK",
+    "idx": 275,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/161.png",
@@ -891,8 +891,8 @@
     ]
   },
   {
-    "name": "DEE-SURPRISED(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_DAMAGE",
+    "idx": 276,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/184.png",
@@ -920,8 +920,8 @@
     ]
   },
   {
-    "name": "DEE-SWEATING(A)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_ANGRY_STAND",
+    "idx": 282,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/186.png",
@@ -963,8 +963,8 @@
     ]
   },
   {
-    "name": "DEE-SWEATING(B)",
-    "idx": 1000,
+    "name": "ANI_VASQUEZ_ANGRY_TALK",
+    "idx": 283,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/Vasquez/191.png",

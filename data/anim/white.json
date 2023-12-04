@@ -1,7 +1,7 @@
 [
   {
-    "name": "REDD-BRAGGING",
-    "idx": 1000,
+    "name": "ANI_WHITE_BLING",
+    "idx": 198,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1099.png",
@@ -299,8 +299,8 @@
     ]
   },
   {
-    "name": "REDD-BREAKS",
-    "idx": 1000,
+    "name": "ANI_WHITE_DEFEAT_START",
+    "idx": 199,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1105.png",
@@ -958,8 +958,8 @@
     ]
   },
   {
-    "name": "REDD-DAMAGE",
-    "idx": 1000,
+    "name": "ANI_WHITE_SHOCK_START",
+    "idx": 200,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1105.png",
@@ -1005,8 +1005,8 @@
     ]
   },
   {
-    "name": "REDD-MYMY(A)",
-    "idx": 1000,
+    "name": "ANI_WHITE_WELL_STAND",
+    "idx": 202,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1112.png",
@@ -1056,8 +1056,8 @@
     ]
   },
   {
-    "name": "REDD-MYMY(B)",
-    "idx": 1000,
+    "name": "ANI_WHITE_WELL_TALK",
+    "idx": 203,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1117.png",
@@ -1113,8 +1113,8 @@
     ]
   },
   {
-    "name": "REDD-NORMAL(A)",
-    "idx": 1000,
+    "name": "ANI_WHITE_STAND",
+    "idx": 204,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1123.png",
@@ -1160,8 +1160,8 @@
     ]
   },
   {
-    "name": "REDD-NORMAL(B)",
-    "idx": 1000,
+    "name": "ANI_WHITE_TALK",
+    "idx": 205,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1123.png",
@@ -1217,8 +1217,8 @@
     ]
   },
   {
-    "name": "REDD-SHOUTING(A)",
-    "idx": 1000,
+    "name": "ANI_WHITE_SHOCK_STAND",
+    "idx": 206,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1134.png",
@@ -1268,8 +1268,8 @@
     ]
   },
   {
-    "name": "REDD-SHOUTING(B)",
-    "idx": 1000,
+    "name": "ANI_WHITE_SHOCK_TALK",
+    "idx": 207,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1134.png",
@@ -1325,8 +1325,8 @@
     ]
   },
   {
-    "name": "REDD-SHRUG",
-    "idx": 1000,
+    "name": "ANI_WHITE_POSE",
+    "idx": 208,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1141.png",
@@ -1426,8 +1426,8 @@
     ]
   },
   {
-    "name": "REDD-SWEATING(A)",
-    "idx": 1000,
+    "name": "ANI_WHITE_SWEAT_STAND",
+    "idx": 209,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1146.png",
@@ -1485,8 +1485,8 @@
     ]
   },
   {
-    "name": "REDD-SWEATING(B)",
-    "idx": 1000,
+    "name": "ANI_WHITE_SWEAT_TALK",
+    "idx": 210,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1146.png",
@@ -1534,8 +1534,8 @@
     ]
   },
   {
-    "name": "REDD-THINKING(A)",
-    "idx": 1000,
+    "name": "ANI_WHITE_ARMCROSS_STAND",
+    "idx": 211,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1165.png",
@@ -1585,8 +1585,8 @@
     ]
   },
   {
-    "name": "REDD-THINKING(B)",
-    "idx": 1000,
+    "name": "ANI_WHITE_ARMCROSS_TALK",
+    "idx": 212,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1165.png",
@@ -1642,8 +1642,8 @@
     ]
   },
   {
-    "name": "REDD-TWITCH",
-    "idx": 1000,
+    "name": "ANI_WHITE_DEFEAT_LOOP",
+    "idx": 213,
     "background": "../../data/empty.png",
     "character": [
       "../../data/chars/White/1173.png",
