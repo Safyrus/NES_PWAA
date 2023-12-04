@@ -7,21 +7,11 @@ from tqdm import tqdm
 
 def main(args):
     palette_in = [
-        (49, 49, 57),
-        (74, 82, 82),
-        (112, 81, 121),
-        (155, 107, 170),
-        (218, 175, 164),
-        (247, 229, 223),
+        (0,0,0,255),
     ]
 
     palette_out = [
-        (0,0,0),
-        (60, 60, 60),
-        (117, 33, 148),
-        (206, 109, 241),
-        (241, 199, 194),
-        (254, 255, 255),
+        (1,1,1,255),
     ]
 
     # find all png
@@ -35,7 +25,7 @@ def main(args):
         # replace pixels
         for y in range(img.height):
             for x in range(img.width):
-                p = img.getpixel((x, y))[0:3]
+                p = img.getpixel((x, y))
                 if p in palette_in:
                     idx = palette_in.index(p)
                     img.putpixel((x,y), palette_out[idx])
