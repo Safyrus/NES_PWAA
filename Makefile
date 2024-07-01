@@ -6,7 +6,7 @@ CONFIG = cfg/make_default.cfg
 # ! - - - - - - - - - - - - - - - - ! #
 #  DO NOT CHANGE ANYTHING AFTER THIS  #
 # ! - - - - - - - - - - - - - - - - ! #
-include ${CONFIG}
+include ${CONFI	G}
 
 
 #--------------------------------
@@ -17,7 +17,7 @@ all:
 	make $(GAME_NAME).nes
 	make $(GAME_NAME)_ines1.nes
 
-ressource:
+resource:
 	make clean_data
 	make clean_tmp
 	make text
@@ -118,13 +118,13 @@ run:
 #--------------------------------
 
 text:
-	$(PYTHON) $(PY)/txtEncode/fusionFiles.py data/text/pwaa $(TEXT)
+	$(PYTHON) $(PY)/txtEncode/fusionFiles.py $(TEXT_FOLDER) $(TEXT_OUTPUT)
 # ifeq ($(OS), Windows_NT)
 # 	@-if not exist "$(ASM)/data" ( mkdir "$(ASM)/data" )
 # else
 	mkdir -p "$(ASM)/data"
 # endif
-	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin 1
+	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT_OUTPUT) ./text.bin 1
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
 
@@ -142,7 +142,7 @@ img:
 	cd c && make
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
 	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
-	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr
+	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../$(GAME_NAME).chr
 
 photo:
 	cd $(PY)/imgEncoder && $(PYTHON) encode_photo.py \
@@ -152,49 +152,10 @@ photo:
 	-b 2
 
 anim:
-	cd $(PY) && $(PYTHON) merge_json.py \
-	../data/anim/bkg_0.json \
-	../data/anim/mia.json \
-	../data/anim/larry.json \
-	../data/anim/sahwit.json \
-	../data/anim/larry_santa.json \
-	../data/anim/cody.json \
-	../data/anim/manella.json \
-	../data/anim/oldbag.json \
-	../data/anim/penny.json \
-	../$(ANIM_0)
-
-	cd $(PY) && $(PYTHON) merge_json.py \
-	../data/anim/bkg_1.json \
-	../data/anim/mia_court.json \
-	../data/anim/phoenix.json \
-	../data/anim/judge.json \
-	../data/anim/payne.json \
-	../data/anim/edgeworth.json \
-	../data/anim/edgeworth_middle.json \
-	../data/anim/mia_maya.json \
-	../data/anim/mia_maya_court.json \
-	../data/anim/white.json \
-	../data/anim/grossberg.json \
-	../data/anim/bellboy.json \
-	../$(ANIM_1)
-
-	cd $(PY) && $(PYTHON) merge_json.py \
-	../data/anim/bkg_2.json \
-	../data/anim/vasquez.json \
-	../data/anim/parrot.json \
-	../data/anim/karma.json \
-	../$(ANIM_2)
-
-	cd $(PY) && $(PYTHON) merge_json.py \
-	../data/anim/bkg_3.json \
-	../data/anim/maya.json \
-	../data/anim/lotta.json \
-	../data/anim/yogi.json \
-	../data/anim/april.json \
-	../data/anim/gumshoe.json \
-	../data/anim/power.json \
-	../$(ANIM_3)
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_0) -f ../data/anim/list_0.txt
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_1) -f ../data/anim/list_1.txt
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_2) -f ../data/anim/list_2.txt
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_3) -f ../data/anim/list_3.txt
 
 
 #--------------------------------

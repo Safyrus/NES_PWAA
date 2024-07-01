@@ -8,7 +8,6 @@ __pycache__
 c/imgs
 c/maps
 c/*.chr
-c/*.exe
 
 # Natural Doc
 cfg/nd/Working Data/

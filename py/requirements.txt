@@ -1,0 +1,8 @@
+huffman==0.1.2
+numpy==1.25.0
+opencv_python==4.7.0.72
+Pillow==9.3.0
+Pillow==10.3.0
+scikit_learn==1.2.2
+scipy==1.13.0
+tqdm==4.65.0

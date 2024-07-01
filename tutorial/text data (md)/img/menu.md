@@ -1,0 +1,24 @@
+choice:
+- background
+    - what is it ?
+    - limitation
+        - resolution
+        - colors
+        - png
+- animations
+    - what is it ?
+    - limitation
+        - resolution
+        - colors
+        - multiple png link with json
+    - json
+- evidence
+    - limitation
+        - resolution
+        - colors
+        - png
+    - json
+- export
+- tricky effects
+    - character fade in/out
+- return

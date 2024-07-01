@@ -81,7 +81,7 @@ def ca65_file(frames, ca65_info):
         PRG_size += len(frames[i])
     
     # write animations table
-    anim_idx_counter = min(anims_idx)
+    anim_idx_counter = min(anims_idx) if len(anims_idx) > 0 else 0
     for i, anim in enumerate(anims):
         while anim_idx_counter < anims_idx[i]:
             ca65_anim += f"img_anim_{str(anim_idx_counter)}: ;empty anim\n.byte $01 ; size\n"

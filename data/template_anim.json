@@ -1,0 +1,30 @@
+[
+    {
+        "name": "ANI_PHOENIX_SHOCK",
+        "idx": 39,
+        "background": "../../data/empty.png",
+        "character": [
+            "../../data/chars/Phoenix/phoenix-Slice 28.png",
+            "../../data/chars/Phoenix/phoenix-Slice 29.png",
+            "../../data/chars/Phoenix/phoenix-Slice 30.png",
+            "../../data/chars/Phoenix/phoenix-Slice 31.png",
+            "../../data/chars/Phoenix/phoenix-Slice 32.png",
+            "../../data/chars/Phoenix/phoenix-Slice 28.png",
+            "../../data/chars/Phoenix/phoenix-Slice 33.png",
+            "../../data/chars/Phoenix/phoenix-Slice 32.png",
+            "../../data/chars/Phoenix/phoenix-Slice 34.png"
+        ],
+        "time": [5, 5, 5, 5, 5, 5, 5, 5, 255],
+        "palettes_each": [
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]],
+            [[6, 23, 39, 48], [1, 17, 15, 38, 54, 48]]
+        ]
+    }
+]

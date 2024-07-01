@@ -78,6 +78,7 @@ EXT = 0x1F
 
 verbose = 0
 
+
 def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
     global verbose
     if v > verbose:
@@ -99,7 +100,6 @@ def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
     if "w" in param or "e" in param or "i" in param:
         print("\033[0m", end="", flush=flush)
     print("", end=end)
-    
 
 
 def append_byte(textbin, val, name, i):
@@ -138,6 +138,7 @@ def add_normal_char(textbin, c):
     # return
     return textbin
 
+
 ########
 # MAIN #
 ########
@@ -171,7 +172,7 @@ while i < len(text):
     if c == "<":
         # get tag
         tag_end = text.find(">", i)
-        tag = text[i+1:tag_end]
+        tag = text[i + 1 : tag_end]
         # find tag name and args
         if ":" in tag:
             name, args = tag.split(":")
@@ -194,7 +195,7 @@ while i < len(text):
         elif name == "const":
             consts[args[0]] = args[1]
             printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
-        elif name == "flash": # for now to skip arguments
+        elif name == "flash":  # for now to skip arguments
             textbin.append(0)
         elif name == "box":
             for _ in range(3):
@@ -206,7 +207,7 @@ while i < len(text):
                 textbin.append(0)
 
         # update index
-        i = tag_end+1
+        i = tag_end + 1
     else:
         # add char
         textbin = add_normal_char(textbin, c)
@@ -222,7 +223,7 @@ while i < len(text):
     if c == "<":
         # get tag
         tag_end = text.find(">", i)
-        tag = text[i+1:tag_end]
+        tag = text[i + 1 : tag_end]
         # find tag name and args
         if ":" in tag:
             name, args = tag.split(":")
@@ -352,11 +353,13 @@ while i < len(text):
             textbin.append(b0)
             textbin.append(b1)
             textbin.append(b2)
+        elif name == "<":
+            textbin.append("<")
         else:
             printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
 
         # update index
-        i = tag_end+1
+        i = tag_end + 1
     else:
         # add char
         textbin = add_normal_char(textbin, c)
@@ -364,6 +367,9 @@ while i < len(text):
         i += 1
 
 # check if all char are encoded with 7 bits
+if len(textbin) == 0:
+    print("\nError: Your text file is empty. Give a file with content.\n")
+    exit(1)
 m = max(textbin)
 if m > 127:
     printv("ERROR: some character(s) use more than 7 bits", param="et")
