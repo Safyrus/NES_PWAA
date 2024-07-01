@@ -98,9 +98,10 @@ read_jump:
     ; txt_rd_ptr = adr_lo, adr_hi
     mov_ptr txt_rd_ptr, txt_jump_buf
     ; block = lz_bnk_table[block]
-    LDX txt_jump_buf+2
+    LDA txt_jump_buf+2
     AND #$3F
-    STX txt_jump_buf+2
+    STA txt_jump_buf+2
+    TAX
     JMP lz_check
 
 
