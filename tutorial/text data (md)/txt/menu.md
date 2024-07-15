@@ -8,7 +8,7 @@ _fade from black_
 - tags (page 1)
 - [config](config.md)
 - [font](font.md)
-- return
+- [return](../menu.md)
 
 ## Tags choices, page 1
 

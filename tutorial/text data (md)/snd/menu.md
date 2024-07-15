@@ -1,6 +1,5 @@
-Background choice:
+# Sound MENU
 
-- FamiStudio
-- musics
-- SFX
-- Export
+- [Info](info.md)
+- [Export](export-musics.md)
+- [return](../menu.md)

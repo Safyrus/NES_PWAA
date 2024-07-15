@@ -1,24 +1,8 @@
-choice:
-- background
-    - what is it ?
-    - limitation
-        - resolution
-        - colors
-        - png
-- animations
-    - what is it ?
-    - limitation
-        - resolution
-        - colors
-        - multiple png link with json
-    - json
-- evidence
-    - limitation
-        - resolution
-        - colors
-        - png
-    - json
-- export
-- tricky effects
-    - character fade in/out
-- return
+# Visual menu
+
+- [Info](info.md)
+- [Background](bkg.md)
+- [Character & animations](chr.md)
+- [Photo](photo.md)
+- [Other](other.md)
+- [return](../menu.md)
