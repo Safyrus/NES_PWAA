@@ -6,7 +6,7 @@ CONFIG = cfg/make_default.cfg
 # ! - - - - - - - - - - - - - - - - ! #
 #  DO NOT CHANGE ANYTHING AFTER THIS  #
 # ! - - - - - - - - - - - - - - - - ! #
-include ${CONFI	G}
+include ${CONFIG}
 
 
 #--------------------------------
@@ -22,6 +22,7 @@ resource:
 	make clean_tmp
 	make text
 	make img
+	make audio
 	make clean_tmp
 
 #--------------------------------
@@ -152,10 +153,13 @@ photo:
 	-b 2
 
 anim:
-	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_0) -f ../data/anim/list_0.txt
-	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_1) -f ../data/anim/list_1.txt
-	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_2) -f ../data/anim/list_2.txt
-	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_3) -f ../data/anim/list_3.txt
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_OUT_0) -f ../$(ANIM_LIST_0)
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_OUT_1) -f ../$(ANIM_LIST_1)
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_OUT_2) -f ../$(ANIM_LIST_2)
+	cd $(PY) && $(PYTHON) merge_json.py ../$(ANIM_OUT_3) -f ../$(ANIM_LIST_3)
+
+audio:
+	$(PYTHON) $(PY)/export_fami.py $(MUSIC) $(SFX) -fs $(FAMISTUDIO) -ao "asm/audio/"
 
 
 #--------------------------------
