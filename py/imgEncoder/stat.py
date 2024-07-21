@@ -15,11 +15,11 @@ def check_file(data):
     error = False
     for anim in data:
         if not os.path.exists(anim["background"]):
-            print("ERROR: file", anim["background"], "does not exist")
+            print("ERROR (stat): file", anim["background"], "does not exist")
             error = True
         for c in anim["character"]:
             if not os.path.exists(c):
-                print("ERROR: file", c, "does not exist")
+                print("ERROR (stat): file", c, "does not exist")
                 error = True
     return error
 

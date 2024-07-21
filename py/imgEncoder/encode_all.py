@@ -112,6 +112,7 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     ]
 
     # open and read the json file
+    base_dir = os.path.dirname(jsonfile)
     with open(jsonfile) as f:
         jsondata = json.load(f)
 
@@ -120,13 +121,16 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     error = False
     for anim in jsondata:
         # if background image does not exist
+        anim["background"] = os.path.join(base_dir, anim["background"])
         if not os.path.exists(anim["background"]):
-            print("ERROR: file", anim["background"], "does not exist")
+            print("ERROR (encode all): file", anim["background"], "does not exist")
             error = True
-        for c in anim["character"]:
+        for i, c in enumerate(anim["character"]):
+            c = os.path.join(base_dir, c)
+            anim["character"][i] = c
             # if character image does not exist
             if not os.path.exists(c):
-                print("ERROR: file", c, "does not exist")
+                print("ERROR (encode all): file", c, "does not exist")
                 error = True
     # if a file does not exist, then stop here
     if error:
@@ -242,7 +246,8 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     CHR_rom = bytearray(CHR_rom)
 
     print("CHRrom size before opti:", len(CHR_rom))
-    CHR_rom, frames = opti_chrrom_space(CHR_rom, spr_bank_start, frames)
+    # TODO: fix opti_chrrom_space, cause tiles to be misplace because ??? (maybe when no sprites ?)
+    # CHR_rom, frames = opti_chrrom_space(CHR_rom, spr_bank_start, frames)
 
     # pack ca65 info
     ca65_info = {

@@ -10,12 +10,18 @@ args = parser.parse_args()
 args.input = []
 
 if args.file != "":
+    base_folder = os.path.dirname(args.file)
+
     print(f"read file {args.file}")
     with open(args.file, "r") as f:
         for line in f.readlines():
             line = line[:-1] # remove new line
+            # skip empty line
             if line == "":
                 continue
+            # get path
+            line = os.path.join(base_folder, line)
+            #
             if not os.path.exists(line):
                 print(f"Warning: file {line} does not exist")
                 continue

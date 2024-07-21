@@ -21,6 +21,8 @@ def img2bin(args):
     img_names = []  # list of pairs (path, is_background)
     pal_maps = []
 
+    base_dir = os.path.dirname(args.json)
+
     # open json file
     print("open json")
     with open(args.json) as f:
@@ -30,18 +32,20 @@ def img2bin(args):
     print("check files")
     for anim in json_data:
         # if background image does not exist
-        if not os.path.exists(anim["background"]):
-            print("ERROR: file", anim["background"], "does not exist")
+        path = os.path.join(base_dir, anim["background"])
+        if not os.path.exists(path):
+            print("ERROR (img2bin): file", path, "does not exist")
             error = True
         # add it to the list
-        img_names = add_unique((anim["background"], None), img_names)
+        img_names = add_unique((path, None), img_names)
         for c in anim["character"]:
             # if character image does not exist
-            if not os.path.exists(c):
-                print("ERROR: file", c, "does not exist")
+            path_c = os.path.join(base_dir, c)
+            if not os.path.exists(path_c):
+                print("ERROR (img2bin): file", path_c, "does not exist")
                 error = True
             # add it to the list
-            img_names = add_unique((c, anim["background"]), img_names)
+            img_names = add_unique((path_c, path), img_names)
 
     # if a file does not exist, then stop here
     if error:

@@ -182,11 +182,12 @@ frame_decode:
             @palette_while_chr:
                 ; remove flags
                 AND #$3F
-                ; if X == 0
+                ; if X <= 1
                 LDX palette_counter+1
-                BNE :+
-                    ; palette[2][0] = color
-                    STA img_palette_2
+                CPX #$02
+                bge :+
+                    ; palette[2][X+1] = color
+                    STA img_palette_2+1, X
                 :
                 ; palette[1][X] = color
                 STA img_palette_1, X
@@ -198,9 +199,9 @@ frame_decode:
                 ; palette[0][X] = color
                 LDX palette_counter+0
                 STA img_palette_bkg, X
-                ; if X >= 2
-                CPX #$02
-                blt :+
+                ; if X == 1
+                CPX #$01
+                BNE :+
                     ; palette[2][X-1] = color
                     STA img_palette_2-1, X
                 :

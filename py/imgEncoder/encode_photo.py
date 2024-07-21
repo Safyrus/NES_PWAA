@@ -32,7 +32,7 @@ def main():
     error = False
     for e in evidences:
         if not os.path.exists(e["image"]):
-            print("ERROR: file", e["image"], "does not exist")
+            print("ERROR (encode photo): file", e["image"], "does not exist")
             error = True
     if error:
         exit(1)

@@ -208,6 +208,16 @@ def bkg_col_reduce(imgfile):
 
 def char_col_reduce(imgfile):
     with Image.open(imgfile) as img:
+        # Replace (0,0,0) with (1,1,1)
+        # because converting to RGB will change alpha to (0,0,0)
+        # merging transparant with the actual black
+        img = img.convert("RGBA")
+        pixdata = img.load()
+        for y in range(img.size[1]):
+            for x in range(img.size[0]):
+                if pixdata[x, y] == (0, 0, 0, 255):
+                    pixdata[x, y] = (1, 1, 1, 255)
+        # convert to RGB
         img = img.convert("RGB")
     img = ImageEnhance.Color(img).enhance(SATURATION_CHR)
     img = img.quantize(MAX_COLOR_CHR+1, method=CHR_METHOD)

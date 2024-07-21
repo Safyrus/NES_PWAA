@@ -5,6 +5,7 @@ def find_palettes(character_img):
     palettes = []
 
     colors = character_img.getcolors()  # get character colors
+    print(colors)
     idxs = [v for _, v in colors]  # keep color order before sorting
     colors = colors[1:]  # remove background color
     # sort by color count
@@ -21,9 +22,9 @@ def find_palettes(character_img):
     ])
     palettes.append([  # character/background palette
         0,
+        1,
         idxs.index(colors[0])+3 if len(colors) > 0 else 4,
-        2,
-        3
+        idxs.index(colors[1])+3 if len(colors) > 0 else 4,
     ])
 
     palettes.append([  # character secondary palette
@@ -48,25 +49,37 @@ def merge_image(background_img, character_img):
 def apply_palette(tile_set, palettes):
     pal_map = []
 
+    # for each tile
     for i in range(len(tile_set)):
-        # find color by count
+        # compute histogram
         hist = []
         for j in range(0, 10):
             count = np.count_nonzero(np.where(tile_set[i] == j, 1, 0))
             hist.append(count)
 
-        # find best palette
-        best_idx = 0
-        best_count = 0
-        for j in range(3):
-            count = 0
-            for k in range(4):
-                p = palettes[j][k]
-                count += hist[p]
-            if count > best_count:
-                best_idx = j
-                best_count = count
-        #
+        # # find best palette by sum
+        # best_idx = 0
+        # best_count = 0
+        # # for each background palette (bkg,chr,bkg/chr)
+        # for j in range(3):
+        #     count = 0
+        #     # for each color
+        #     for k in range(4):
+        #         p = palettes[j][k]
+        #         count += hist[p]
+        #     if count > best_count:
+        #         best_idx = j
+        #         best_count = count
+
+        # find best palette by priority
+        if sum(hist[0:3]) == 0:
+            best_idx = 1 # character palette
+        elif sum(hist[4:9+1]) == 0:
+            best_idx = 0 # background palette
+        else:
+            best_idx = 2 # character/background palette
+
+        # assign the best palette to the tile
         pal_map.append(best_idx)
         pal = palettes[best_idx]
 
