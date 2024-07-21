@@ -1,9 +1,14 @@
 import os
 import json
 import var
+from tkinter import messagebox
 
 def cmd_save(event=None):
     print("Command: Save")
+    if not var.project_data:
+        messagebox.showerror(title="Cannot Save", message=f"Cannot save empty project. Try opening or creating a project first.")
+        return
+
     # save main file
     with open(var.project_data["filename"], "w") as f:
         o = {

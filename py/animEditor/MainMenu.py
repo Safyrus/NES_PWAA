@@ -54,7 +54,9 @@ Other Info:
 
 For Me / TODO:
 - [X] background
+- [.] animation
 - [ ] photo
-- [ ] animation
+- [ ] Save warning
+- [ ] Export Config
 - [ ] Better UI (look, rescale, ...)
 """)

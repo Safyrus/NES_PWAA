@@ -62,6 +62,7 @@ class LeftFrame(ttk.Frame):
             for i, a in enumerate(anim):
                 self.animlist.insert(i, a["name"])
             self.window.midframe.grid_forget()
+            self.window.rightframe.grid_forget()
             #
             self.animlabel.config(text=f"Anim List ({data}):")
 
@@ -94,32 +95,26 @@ class LeftFrame(ttk.Frame):
             self.window.midframe.bkgpalv1.set(v[1])
             self.window.midframe.bkgpalv2.set(v[2])
             self.window.midframe.bkgpalv3.set(v[3])
-            # update display
+            # update character palette
+            if "palettes" in anim:
+                v = anim["palettes"][1]
+            else:
+                v = [0, 0, 0, 0, 0, 0]
+            self.window.midframe.chrpalv0.set(v[0])
+            self.window.midframe.chrpalv1.set(v[1])
+            self.window.midframe.chrpalv2.set(v[2])
+            self.window.midframe.chrpalv3.set(v[3])
+            self.window.midframe.chrpalv4.set(v[4])
+            self.window.midframe.chrpalv5.set(v[5])
+            # display midframe
             self.window.midframe.update_type()
             self.window.midframe.grid(row=0, column=1, sticky="nwes")
 
     def popup_json(self, event):
-        self.popup(event, self.callback_add_json, self.callback_remove_json)
+        self.window.popup(event, self.callback_add_json, self.callback_remove_json)
 
     def popup_anim(self, event):
-        self.popup(event, self.callback_add_anim, self.callback_remove_anim)
-
-    def popup(self, event, new_callback, remove_callback):
-        # select with right click
-        event.widget.selection_clear(0, END)
-        event.widget.selection_set(event.widget.nearest(event.y))
-        event.widget.activate(event.widget.nearest(event.y))
-
-        # right click menu
-        m = Menu(self.window, tearoff=0)
-        m.add_command(label="New", command=new_callback)
-        m.add_command(label="Remove", command=remove_callback)
-
-        # display menu
-        try:
-            m.tk_popup(event.x_root, event.y_root)
-        finally:
-            m.grab_release()
+        self.window.popup(event, self.callback_add_anim, self.callback_remove_anim)
 
     def callback_add_json(self):
 
@@ -186,13 +181,14 @@ class LeftFrame(ttk.Frame):
         anim = {
             "name": name,
             "idx": 0,
-            "background": "../../data/empty.png",
+            "background": var.EMPTY_IMG,
             "character": [],
             "time": [],
         }
 
         # add it
         i = self.window.json_2_region[self.last_json_select]
+        print(self.last_json_select, i)
         var.project_data["regions"][i]["data"][self.last_json_select]["data"].append(anim)
         # update UI
         self.jsonlist.selection_set(self.last_json_select)

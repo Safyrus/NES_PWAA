@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 import var
 import os
-from cmd_bkg import *
+from cmd_select_file import *
 
 
 class MidFrame(ttk.Frame):
@@ -82,10 +82,39 @@ class MidFrame(ttk.Frame):
         self.bkgpalremove = Button(self, text="Remove", command=self.callback_remove_pal)
         self.bkgpalremove.grid(row=4, column=2, sticky="w")
 
+        # ---- character palette ----
+        self.chrpallabel = ttk.Label(self, text="Character Palette:")
+        self.chrpalframe = ttk.Frame(self)
+        self.chrpalv0 = IntVar()
+        self.chrpalv1 = IntVar()
+        self.chrpalv2 = IntVar()
+        self.chrpalv3 = IntVar()
+        self.chrpalv4 = IntVar()
+        self.chrpalv5 = IntVar()
+        self.chrpalv0entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv0, width=2)
+        self.chrpalv0entry.grid(row=0, column=0, sticky="w")
+        self.chrpalv0entry.bind("<KeyRelease>", self.callback_chrpal_0)
+        self.chrpalv1entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv1, width=2)
+        self.chrpalv1entry.grid(row=0, column=1, sticky="w")
+        self.chrpalv1entry.bind("<KeyRelease>", self.callback_chrpal_1)
+        self.chrpalv2entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv2, width=2)
+        self.chrpalv2entry.grid(row=0, column=2, sticky="w")
+        self.chrpalv2entry.bind("<KeyRelease>", self.callback_chrpal_2)
+        self.chrpalv3entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv3, width=2)
+        self.chrpalv3entry.grid(row=0, column=3, sticky="w")
+        self.chrpalv3entry.bind("<KeyRelease>", self.callback_chrpal_3)
+        self.chrpalv4entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv4, width=2)
+        self.chrpalv4entry.grid(row=0, column=4, sticky="w")
+        self.chrpalv4entry.bind("<KeyRelease>", self.callback_chrpal_4)
+        self.chrpalv5entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv5, width=2)
+        self.chrpalv5entry.grid(row=0, column=5, sticky="w")
+        self.chrpalv5entry.bind("<KeyRelease>", self.callback_chrpal_5)
+        self.chrpalremove = Button(self, text="Remove", command=self.callback_remove_pal)
+
         #
         self.image = PhotoImage(file="nes_pal_dec.png")
         self.palimg = ttk.Label(self, image=self.image, borderwidth=1, relief=SOLID)
-        self.palimg.grid(row=5, column=0, columnspan=3)
+        self.palimg.grid(row=6, column=0, columnspan=3)
 
     def callback_remove_pal(self, event=None):
         last_json = self.window.leftframe.last_json_select
@@ -105,19 +134,37 @@ class MidFrame(ttk.Frame):
         self.bkgpalv2entry.config(foreground="black")
         self.bkgpalv3entry.config(foreground="black")
 
+    def callback_chrpal_0(self, even=None):
+        self.callback_pal(0, self.chrpalv0, self.chrpalv0entry, 1)
+
+    def callback_chrpal_1(self, even=None):
+        self.callback_pal(1, self.chrpalv1, self.chrpalv1entry, 1)
+
+    def callback_chrpal_2(self, even=None):
+        self.callback_pal(2, self.chrpalv2, self.chrpalv2entry, 1)
+
+    def callback_chrpal_3(self, even=None):
+        self.callback_pal(3, self.chrpalv3, self.chrpalv3entry, 1)
+
+    def callback_chrpal_4(self, even=None):
+        self.callback_pal(4, self.chrpalv4, self.chrpalv4entry, 1)
+
+    def callback_chrpal_5(self, even=None):
+        self.callback_pal(5, self.chrpalv5, self.chrpalv5entry, 1)
+
     def callback_bkgpal_0(self, even=None):
-        self.callback_bkgpal(0, self.bkgpalv0, self.bkgpalv0entry)
+        self.callback_pal(0, self.bkgpalv0, self.bkgpalv0entry, 0)
 
     def callback_bkgpal_1(self, even=None):
-        self.callback_bkgpal(1, self.bkgpalv1, self.bkgpalv1entry)
+        self.callback_pal(1, self.bkgpalv1, self.bkgpalv1entry, 0)
 
     def callback_bkgpal_2(self, even=None):
-        self.callback_bkgpal(2, self.bkgpalv2, self.bkgpalv2entry)
+        self.callback_pal(2, self.bkgpalv2, self.bkgpalv2entry, 0)
 
     def callback_bkgpal_3(self, even=None):
-        self.callback_bkgpal(3, self.bkgpalv3, self.bkgpalv3entry)
+        self.callback_pal(3, self.bkgpalv3, self.bkgpalv3entry, 0)
 
-    def callback_bkgpal(self, n, val, entry):
+    def callback_pal(self, n, val, entry, chr):
         last_json = self.window.leftframe.last_json_select
         last_anim = self.window.leftframe.last_anim_select
         # set new index
@@ -136,7 +183,7 @@ class MidFrame(ttk.Frame):
             anim = var.project_data["regions"][i]["data"][last_json]["data"][last_anim]
             if "palettes" not in anim:
                 anim["palettes"] = [[0, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
-            anim["palettes"][0][n] = v
+            anim["palettes"][chr][n] = v
             entry.config(foreground="black")
 
         except Exception as error:
@@ -144,7 +191,7 @@ class MidFrame(ttk.Frame):
             print("Error:", error)
 
     def callback_bkg(self):
-        fn, ok = cmd_bkg()
+        fn, ok = cmd_select_file()
         if not ok:
             return
         base = var.project_data["filename"]
@@ -205,12 +252,29 @@ class MidFrame(ttk.Frame):
         last_anim = self.window.leftframe.last_anim_select
         i = self.window.json_2_region[last_json]
         anim = var.project_data["regions"][i]["data"][last_json]["data"][last_anim]
+        # background
         if self.typeval.get() == 0:
-            # background
+            # remove data about charcater
             anim["character"] = []
             anim["time"] = []
             if "palettes_each" in anim:
                 del anim["palettes_each"]
+            # undisplay chr palette
+            self.chrpallabel.grid_forget()
+            self.chrpalframe.grid_forget()
+            self.chrpalremove.grid_forget()
+            # undisplay rightframe
+            self.window.rightframe.grid_forget()
+        # animation
         else:
-            # animation
-            pass
+            # create empty anim if none is present
+            if len(anim["character"]) == 0:
+                anim["character"] = ["../../data/empty_chr.png"]
+                anim["time"] = [0]
+            self.window.rightframe.update_list()
+            # display chr palette
+            self.chrpallabel.grid(row=5, column=0, sticky="w")
+            self.chrpalframe.grid(row=5, column=1, sticky="w")
+            self.chrpalremove.grid(row=4, column=2, sticky="w")
+            # display rightframe
+            self.window.rightframe.grid(row=0, column=2, sticky="nwes")
