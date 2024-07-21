@@ -154,6 +154,21 @@ All the resources <color:2>(images,<b>
 text, musics)<color:0> are pretty<b>
 rough at the moment.<p><wait:5>
 
+Also, This version contain<b>
+all the images of the game.<p><wait:5>
+
+But because trying to fit<b>
+all these pixels into 1 MB<b>
+is not easy, quality suffer.<p><wait:5>
+
+That will be fix in the<b>
+future by either having<b>
+better compression<p><wait:5>
+
+Or by cutting the game on<b>
+multiple cartridges if not<b>
+possible.<p><wait:5>
+
 Sorry for that.<p><wait:5>
 
 But I hope you will still<b>

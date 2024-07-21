@@ -18,8 +18,8 @@ doc/html
 ignore/
 bin/
 dump_*.txt
-*.nes
 *.dbg
+*.tags
 EVI.chr
 tmp.chr
 visual.png

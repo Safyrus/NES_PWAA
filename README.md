@@ -6,25 +6,33 @@
 
 ## Table of Contents
 
-+ [About The Project](#about-the-project)
-+ [Compile](#compile)
-  + [Prerequisite](#prerequisite)
-  + [Commands](#commands)
-+ [Download](#downloads)
-+ [Emulators](#emulators)
-+ [Credits / Disclaimer](#credits--disclaimer)
-  + [PWAA](#pwaa)
-  + [NES](#nes)
-  + [Sound](#sound)
-  + [Dialogs](#dialogs)
-  + [Visuals](#visuals)
-  + [Others](#others)
+- [Phoenix Wright: Ace attorney - NES Demake](#phoenix-wright-ace-attorney---nes-demake)
+  - [Table of Contents](#table-of-contents)
+  - [About The Project](#about-the-project)
+  - [Compile](#compile)
+    - [Prerequisite](#prerequisite)
+    - [Commands](#commands)
+  - [Downloads](#downloads)
+    - [Releases build](#releases-build)
+    - [Nightly build](#nightly-build)
+  - [Emulators](#emulators)
+  - [Credits / Disclaimer](#credits--disclaimer)
+    - [PWAA](#pwaa)
+    - [NES](#nes)
+    - [Sound](#sound)
+    - [Dialogs](#dialogs)
+    - [Visuals](#visuals)
+    - [Others](#others)
 
 ## About The Project
 
 This is an attempt to create a Demake of the first "Phoenix Wright: Ace attorney" (PWAA) game for the NES.
 
 This project is also starting to look like a NES engine for visual novels, apparently.
+
+EDIT:
+I am working on a tutorial about using the NES visual novel engine.
+Checkout the [tutorial branch](https://github.com/Safyrus/NES_PWAA/tree/tutorial).
 
 ## Compile
 
@@ -62,6 +70,9 @@ Nightly builds are ""unstable""
 version of the fan demake build with GitHub actions by consequence we can't say if it runs,
 you can find those builds at [GitHub Actions](https://github.com/Safyrus/NES_PWAA/actions/workflows/build-nes.yaml) page.
 
+Also, because GitHub actions builds disappear after a certain time,
+you can download the last manual build in the root folder [here](PWAA.nes)
+(or [here](PWAA_ines1.nes) but with a iNES 1.0 header)
 
 ## Emulators
 
