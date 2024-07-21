@@ -1,1 +1,0 @@
-../data/anim/bkg_1.json

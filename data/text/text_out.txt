@@ -4,5 +4,15 @@ Not done yet.<b>
 Look at .md and .txt files<b>
 for now<p>
 
+Background 0<background:0><p>
+Background 1<background:1><p>
+Background 2<background:2><p>
+Background 3<background:3><p>
+Background 4<background:4><p>
+
+Animation 0<character:0><animation:0><p>
+Animation 1<character:0><animation:1><p>
+Animation 1<character:0><animation:2><p>
+
 <jump:loop>
 

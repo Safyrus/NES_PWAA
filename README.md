@@ -1,12 +1,8 @@
-# Phoenix Wright: Ace attorney - NES Demake
-
-<div align="center">
-  <img src="data/cartridge/cover_front.png" alt="Phoenix Wright: Ace attorney Demake cartridge">
-</div>
+# NES-VN Engine
 
 ## Table of Contents
 
-- [Phoenix Wright: Ace attorney - NES Demake](#phoenix-wright-ace-attorney---nes-demake)
+- [NES-VN Engine](#nes-vn-engine)
   - [Table of Contents](#table-of-contents)
   - [About The Project](#about-the-project)
     - [The Game](#the-game)
@@ -30,7 +26,8 @@
 
 ### The Game
 
-This is an attempt to create a Demake of the first "Phoenix Wright: Ace attorney" (PWAA) game for the NES.
+**NOTE:** This is the tutorial branch. If you want the Ace Attorney Demake, go
+<a href="https://github.com/Safyrus/NES_PWAA">here</a>
 
 ### The Engine
 
@@ -50,7 +47,7 @@ If you want to use the NES visual novel engine (NES-VN) to **make your own visua
   [MinGW](https://sourceforge.net/projects/mingw/files/Installer/mingw-get-setup.exe/download),
   [MinGW64](https://www.mingw-w64.org/) or
   [Cygwin](https://sourceware.org/cygwin/)
-- [**Python**](https://www.python.org/) with [all the necessary packages](py/requirements.txt) (after Python is installed, run `pip install -r requirements.txt` in the `py` folder)
+- [**Python**](https://www.python.org/) with [all the necessary packages](py/requirements.txt) (after Python is installed, run `pip install -r requirements.txt` in the `py` folder) **(TODO: update requirements)**
 - An NES emulator is not needed but recommended (see [Emulator](#emulators))
 
 to test if everything is installed, run in a terminal:
@@ -73,12 +70,14 @@ Note: You may need to change some configs in the "cfg" folder to be able to run 
 
 Note-2: Commands are run from this folder.
 
-| Commands    | Description         |
-|-------------|---------------------|
-| `make`      | Compile the game    |
-| `make text` | Compile the dialogs |
-| `make img`  | Compile the images  |
-| `make run`  | Run the game        |
+| Commands        | Description                                  |
+| --------------- | -------------------------------------------- |
+| `make`          | Compile the game (only the .nes file)        |
+| `make resource` | Compile the resources (dialog, image, audio) |
+| `make text`     | Compile the dialogs                          |
+| `make img`      | Compile the images                           |
+| `make audio`    | Compile the musics and SFX                   |
+| `make run`      | Run the game                                 |
 
 ## Downloads
 

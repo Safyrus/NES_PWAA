@@ -44,8 +44,8 @@ Object fields:
   That means if your index is 259, to use it, you use `<character:2><animation:3>`
   because 259/128 = 2 (character) with a remainder of 3 (animation).
 
-  If the field is not used, the project will assign a valid index.
-  But you should not rely on that.
+  Empty index will be fill with empty image.
+  For example, if you only have a background on index 2 and 4, index 0, 1 and 3 will be fill with empty image.
 - **background**: (Optional)
   File path to the background image that the animation will be display over.
   This help reduces having blocky border around the animation.

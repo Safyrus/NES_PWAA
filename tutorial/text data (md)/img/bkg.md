@@ -26,8 +26,8 @@ Object fields:
 
   For example: if a background have an index of 4, in your text, you use `<background:4>` to display it.
 
-  If the field is not used, the project will assign a valid index.
-  But you should not rely on that.
+  Empty index will be fill with empty image.
+  For example, if you only have a background on index 2 and 4, index 0, 1 and 3 will be fill with empty image.
 - **background**: (Required)
   File path to the actual image.
   PNG files are recommended. Other format may or may not work.

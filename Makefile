@@ -102,6 +102,8 @@ clean_tmp:
 	-rm -f $(DATA)/tmp.chr
 	-rm -f $(C)/a
 	-rm -f $(C)/CHR.chr
+	-rm -rf $(C)/imgs
+	-rm -rf $(C)/maps
 	-rm -f "$(ANIM_0)"
 	-rm -f "$(ANIM_1)"
 	-rm -f "$(ANIM_2)"
@@ -142,7 +144,7 @@ img:
 # endif
 	cd c && make
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
-	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
+	-i ../../$(ANIM_OUT_0) ../../$(ANIM_OUT_1) ../../$(ANIM_OUT_2) ../../$(ANIM_OUT_3) \
 	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../$(GAME_NAME).chr
 
 photo:
@@ -160,6 +162,9 @@ anim:
 
 audio:
 	$(PYTHON) $(PY)/export_fami.py $(MUSIC) $(SFX) -fs $(FAMISTUDIO) -ao "asm/audio/"
+
+editor:
+	cd $(PY)/animEditor && $(PYTHON) editor.py
 
 
 #--------------------------------

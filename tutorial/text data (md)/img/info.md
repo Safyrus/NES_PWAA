@@ -46,6 +46,10 @@ Info about how to [edit the link file](../struct/link.md) is in the project stru
 
 ### CHR limitation
 
+Important: You cannot display multiple image from different region at the same time.
+For example, Displaying a background from region 1 and an animation from region 2 is impossible.
+(well the game will not stop you, but that will result in the screen glitching).
+
 The project will convert your images into tiles and put them into these CHR regions.
 If you have a lot of unique images, tiles may go beyond the 256 KB limitation.
 The project will try to replace tiles with similar tiles to compress them.

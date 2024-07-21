@@ -1,0 +1,53 @@
+[
+  {
+    "name": "SCENE_1",
+    "idx": 4,
+    "background": "..\\img\\scene_1.png",
+    "character": [],
+    "time": [],
+    "palettes": [
+      [
+        33,
+        49,
+        16,
+        32
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "name": "STAR_CASTLE",
+    "idx": 1,
+    "background": "..\\img\\star_sky_castle.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "GREEN_LANDSCAPE",
+    "idx": 2,
+    "background": "..\\img\\green_landscape.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "ORANGE_DUNE",
+    "idx": 3,
+    "background": "..\\img\\orange_dune.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "EMPTY",
+    "idx": 0,
+    "background": "..\\empty.png",
+    "character": [],
+    "time": []
+  }
+]
