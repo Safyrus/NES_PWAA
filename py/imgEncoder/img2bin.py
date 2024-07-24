@@ -33,6 +33,7 @@ def img2bin(args):
     for anim in json_data:
         # if background image does not exist
         path = os.path.join(base_dir, anim["background"])
+        path = os.path.normpath(path)
         if not os.path.exists(path):
             print("ERROR (img2bin): file", path, "does not exist")
             error = True
@@ -41,6 +42,7 @@ def img2bin(args):
         for c in anim["character"]:
             # if character image does not exist
             path_c = os.path.join(base_dir, c)
+            path_c = os.path.normpath(path_c)
             if not os.path.exists(path_c):
                 print("ERROR (img2bin): file", path_c, "does not exist")
                 error = True

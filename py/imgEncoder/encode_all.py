@@ -122,11 +122,13 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     for anim in jsondata:
         # if background image does not exist
         anim["background"] = os.path.join(base_dir, anim["background"])
+        anim["background"] = os.path.normpath(anim["background"])
         if not os.path.exists(anim["background"]):
             print("ERROR (encode all): file", anim["background"], "does not exist")
             error = True
         for i, c in enumerate(anim["character"]):
             c = os.path.join(base_dir, c)
+            c = os.path.normpath(c)
             anim["character"][i] = c
             # if character image does not exist
             if not os.path.exists(c):
@@ -140,18 +142,19 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     print("background encoding")
     for anim in jsondata:
         # if background isn't already encoded
-        if anim["background"] not in frames_name:
+        name = os.path.normpath(anim["background"])
+        if name not in frames_name:
             # encode background as full image
-            print("\033[A\033[2K\rencode background", anim["background"])
+            print("\033[A\033[2K\rencode background", name)
             pal_set = None
             if "palettes" in anim:
                 pal_set = anim["palettes"]
-            tile_map = tile_maps[map_names.index(anim["background"])]
-            frame = encode_frame_bkg(anim["background"], tile_map, pal_bank, pal_set, chr_start_bank=chr_start_bank)
+            tile_map = tile_maps[map_names.index(name)]
+            frame = encode_frame_bkg(name, tile_map, pal_bank, pal_set, chr_start_bank=chr_start_bank)
             # frames += frame
             frames.append(frame)
             frames_ischr.append(False)
-            frames_name.append(anim["background"])
+            frames_name.append(name)
             frames_bkg_name.append(anim["name"] if "name" in anim else f"BKG_{len(frames_bkg_name)}")
             frames_bkg_idx.append(anim["idx"] if "idx" in anim else MAX_FRAME_IDX)
     print("\033[A\033[2K\rencoded all background")
@@ -161,9 +164,9 @@ def encode_all(jsonfile, tile_bank, tile_maps, pal_maps, map_names, pal_bank=[],
     spr_bnk_to_fix = {}
     for anim in jsondata:
         # get animation info
-        chars = anim["character"]
+        chars = [os.path.normpath(n) for n in anim["character"]]
         times = anim["time"]
-        bck = anim["background"]
+        bck = os.path.normpath(anim["background"])
         # skip if not a character
         if not chars:
             continue

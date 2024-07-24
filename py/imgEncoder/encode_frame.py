@@ -5,7 +5,6 @@ def find_palettes(character_img):
     palettes = []
 
     colors = character_img.getcolors()  # get character colors
-    print(colors)
     idxs = [v for _, v in colors]  # keep color order before sorting
     colors = colors[1:]  # remove background color
     # sort by color count

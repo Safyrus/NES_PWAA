@@ -138,6 +138,12 @@ def add_normal_char(textbin, c):
     # return
     return textbin
 
+def add_int(text):
+    try:
+        return int(text)
+    except:
+        printv(f"ERROR: '{text}' is not a number/constant", param="et")
+    return 0
 
 ########
 # MAIN #
@@ -227,6 +233,7 @@ while i < len(text):
         # find tag name and args
         if ":" in tag:
             name, args = tag.split(":")
+            name = name.lower()
             args = args.split(",")
             # replace constants by values
             for j in range(len(args)):
@@ -244,16 +251,16 @@ while i < len(text):
             textbin.append(FDB)
         elif name == "speed":
             textbin.append(SPD)
-            textbin.append(min(127, int(args[0])))
+            textbin.append(min(127, add_int(args[0])))
         elif name == "wait":
             textbin.append(DL)
-            textbin.append(min(127, int(args[0])))
+            textbin.append(min(127, add_int(args[0])))
         elif name == "name":
             textbin.append(NAM)
-            textbin.append(min(127, int(args[0])))
+            textbin.append(min(127, add_int(args[0])))
         elif name == "color":
             textbin.append(COL)
-            col = int(args[0])
+            col = add_int(args[0])
             if col == 0 or col > 4:
                 col = 4
             textbin.append(col)
@@ -267,34 +274,34 @@ while i < len(text):
             textbin.append(FAD)
         elif name == "photo":
             textbin.append(PHT)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "background":
             textbin.append(BKG)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "character":
             textbin.append(CHR)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "animation":
             textbin.append(ANI)
-            textbin.append(int(args[0]) % 128)
+            textbin.append(add_int(args[0]) % 128)
         elif name == "music":
             textbin.append(MUS)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "sound":
             textbin.append(SND)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "bip":
             textbin.append(BIP)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "set":
             textbin.append(SET)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "clear":
             textbin.append(CLR)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "font":
             textbin.append(FNT)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_byte(textbin, add_int(args[0]), name, i)
         elif name == "label":
             pass
         elif name == "const":
@@ -321,13 +328,13 @@ while i < len(text):
             textbin.append(adr & 0x7F)
             textbin.append((adr >> 13) + c)
             if c != 0:
-                textbin.append(int(args[3]))
+                textbin.append(add_int(args[3]))
         elif name == "act":
             textbin.append(ACT)
         elif name == "event":
             textbin.append(EVT)
             for a in args:
-                textbin = append_byte(textbin, int(a), name, i)
+                textbin = append_byte(textbin, add_int(a), name, i)
         elif name == "save":
             textbin.append(SAV)
         elif name == "return":
@@ -342,11 +349,11 @@ while i < len(text):
             #         |+++++----------------------- x position of the hitbox (X=MSB)
             #         +---------------------------- Next flag (1=another data block after this one
             #                                                 0=last data bloack)
-            x = int(args[0])
-            y = int(args[1])
-            w = int(args[2])
-            h = int(args[3])
-            n = int(args[4])
+            x = add_int(args[0])
+            y = add_int(args[1])
+            w = add_int(args[2])
+            h = add_int(args[3])
+            n = add_int(args[4])
             b0 = (x << 1) | ((y & 0x10) >> 4) | n << 6
             b1 = ((y & 0x0F) << 3) | ((w & 0x1C) >> 2)
             b2 = ((w & 0x03) << 5) | h
