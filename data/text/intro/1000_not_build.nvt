@@ -1,0 +1,77 @@
+<!-- ========================== -->
+<!-- Chapter: Introduction      -->
+<!-- Section: Not build by user -->
+<!-- ========================== -->
+
+
+<jump:INTRO_NOT_BUILD_END> <!--skip for now-->
+
+<label:INTRO_NOT_BUILD>
+<!-------- INTRO ANIMATION -------->
+
+<!-- make the screen black -->
+<background:BKG_EMPTY><fade><hidetextbox>
+
+<!-- Prepare drawing the background and Safyrus -->
+<background:BKG_INTRO>
+<character:CHR_ROBOT><animation:ANI_ROBOT_OFF>
+
+<!-- Start the music and fade in -->
+<music:MUS_INTRO><fade>
+
+<!-- Robot booting up animation -->
+<wait:30><sound:SND_BOOT><character:CHR_ROBOT><animation:ANI_ROBOT_BOOTING>
+<wait:255>
+
+
+<!-------- INTRO TEXT -------->
+
+<!-- Setup dialog -->
+<name:NAM_SAFYRUS><bip:BIP_SAFYRUS><hidetextbox>
+<animation:ANI_ROBOT_SMILE_TALK>
+
+Hi!<wait:30>And welcome to the<b>
+next part of the tuto--<b>
+<animation:ANI_ROBOT_NEUTRAL_IDLE><wait:30><animation:ANI_ROBOT_NEUTRAL_TALK>
+Wait...
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+It seems you haven't built<b>
+this version of the game<b>
+yourself.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+Or you have downloaded it<b>
+from a nightly build ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_SIGH_TALK><wait:1>
+
+Well, do what you want.<b>
+I can't really stop you.
+<animation:ANI_ROBOT_SIGH_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+But if you want to build a<b>
+game using this engine
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+I HIGHLY suggest following<b>
+the tutorial on the project<b>
+GitHub first!
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+If you haven't installed<b>
+this project, you will not<b>
+be able to create a game.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+If you still wish to<b>
+learn about how to use this<b>
+engine, then...
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+Let's just pretend you have<b>
+done everything correctly<b>
+at this point, OK ?<p>
+<animation:ANI_ROBOT_SIGH_IDLE><p><wait:1>
+
+<label:INTRO_NOT_BUILD_END>
+<!-- switch to introduction text -->

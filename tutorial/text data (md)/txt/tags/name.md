@@ -9,6 +9,8 @@ It is intended to indicate which character is speaking.
 You don't need to add this tag for every dialog box.
 The name will only change when a new `<name>` tag is encounter.
 
+Note: It seems that changing a name to 0 only take effect at the next dialog box
+
 ## Example
 
 <const:NAME_A,3>

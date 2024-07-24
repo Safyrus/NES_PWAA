@@ -1,0 +1,29 @@
+<fade>
+
+<!--One Time dialog about the cursor-->
+
+<jump:cursor_info_end,1,1,FLAG_CURSOR_INFO>
+<hidetextbox>
+
+You can choose what to learn<b>
+using the cursor<p>
+
+Use the D-pad to move it<b>
+and press A to validate<b>
+your choice.<p>
+
+<set:FLAG_CURSOR_INFO>
+<hidetextbox>
+<label:cursor_info_end>
+
+<!-- 
+_Background image with "main menu", "what do want to know ?" and these choices:_
+
+- [project structure](struct/menu.md)
+- [text](txt/menu.md)
+- [images](img/menu.md)
+- [sounds](snd/menu.md)
+- testing ground (custom dialog for user)
+
+_each choice fade to black and jump to the corresponding section_
+-->

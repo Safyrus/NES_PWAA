@@ -1,0 +1,49 @@
+<!-- ====================== -->
+<!-- Chapter: Introduction  -->
+<!-- Section: Build by user -->
+<!-- ====================== -->
+
+
+<label:INTRO_BUILD>
+<!-------- INTRO ANIMATION -------->
+
+<!-- make the screen black -->
+<background:BKG_EMPTY><hidetextbox><speed:SPD_NORMAL><fade>
+
+<!-- Prepare drawing the background and Safyrus -->
+<background:BKG_INTRO>
+<character:CHR_ROBOT><animation:ANI_ROBOT_OFF>
+
+<!-- Start the music and fade in -->
+<music:MUS_INTRO><fade>
+
+<!-- Robot booting up animation -->
+<wait:30><sound:SND_BOOT><character:CHR_ROBOT><animation:ANI_ROBOT_BOOTING>
+<wait:127><wait:127><wait:100>
+
+
+
+<!-------- INTRO TEXT -------->
+
+<!-- Setup dialog -->
+<name:NAM_SAFYRUS><bip:BIP_SAFYRUS><hidetextbox>
+<animation:ANI_ROBOT_SMILE_TALK>
+
+Hi! <wait:30>And welcome to the<b>
+next part of the tutorial!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+It seems you have built<b>
+the game yourself.<wait:30><b>
+Well done!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+I hope it was without too<b>
+many problems.<b><wait:30><animation:ANI_ROBOT_SAD_TALK>
+(if not,<wait:15>sry I couldn't help)
+<animation:ANI_ROBOT_SAD_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+Anyway,<wait:15> let's now talk about<b>
+what you here for.<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
+
+<!-- switch to introduction text -->

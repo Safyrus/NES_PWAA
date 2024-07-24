@@ -1,0 +1,47 @@
+<!-- ========= -->
+<!-- Constants -->
+<!-- ========= -->
+
+<const:SPD_NORMAL,2>
+<const:FLAG_CURSOR_INFO,0>
+
+<!-------- Colors constants -------->
+<const:WHITE,0>
+<const:RED,1>
+<const:BLUE,2>
+<const:GREEN,3>
+
+<!-------- Background constants -------->
+<const:BKG_EMPTY,0>
+<const:BKG_INTRO,5>
+
+<!-------- Character constants -------->
+<const:CHR_ROBOT,0>
+
+<!-------- "Robot" Animation constants -------->
+<const:ANI_ROBOT_OFF,10>
+<const:ANI_ROBOT_BOOTING,9>
+<const:ANI_ROBOT_SMILE_IDLE,1>
+<const:ANI_ROBOT_SMILE_TALK,2>
+<const:ANI_ROBOT_NEUTRAL_IDLE,3>
+<const:ANI_ROBOT_NEUTRAL_TALK,4>
+<const:ANI_ROBOT_SAD_IDLE,5>
+<const:ANI_ROBOT_SAD_TALK,6>
+<const:ANI_ROBOT_SIGH_IDLE,7>
+<const:ANI_ROBOT_SIGH_TALK,8>
+
+<!-------- Name constants -------->
+<const:NAM_NONE,0>
+<const:NAM_???,1>
+<const:NAM_SAFYRUS,2>
+<const:NAM_A,3>
+<const:NAM_B,4>
+
+<!-------- Music constants -------->
+<const:MUS_INTRO,0>
+
+<!-------- Sound constants -------->
+<const:SND_BOOT,0>
+
+<!-------- Bip constants -------->
+<const:BIP_SAFYRUS,0>

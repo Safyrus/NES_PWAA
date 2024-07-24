@@ -15,7 +15,11 @@ You don't need them, but they are recommended for making your game without takin
 If you have a pc, you should have one.
 But I **recommend strongly** to use something else than the default windows notepad.
 
-I prefer [VS-Code](https://code.visualstudio.com/), but you can use 
+I prefer [VS-Code](https://code.visualstudio.com/),
+Plus, I also made an [extension](./../vscode/) for it
+to have some syntax highlight.
+
+You can also use any text editor like 
 [Notepad++](https://notepad-plus-plus.org/),
 [Sublime Text](https://www.sublimetext.com/),
 [Obsidian](https://obsidian.md/) or any other.

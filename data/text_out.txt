@@ -1,0 +1,387 @@
+<!-- ========= -->
+<!-- Constants -->
+<!-- ========= -->
+
+<const:WHITE,0>
+<const:RED,1>
+<const:BLUE,2>
+<const:GREEN,3>
+
+<const:SPD_NORMAL,2>
+<const:FLAG_CURSOR_INFO,0>
+
+<!-------- Background constants -------->
+<const:BKG_EMPTY,0>
+<const:BKG_INTRO,5>
+
+<!-------- Character constants -------->
+<const:CHR_ROBOT,0>
+
+<!-------- "Robot" Animation constants -------->
+<const:ANI_ROBOT_OFF,10>
+<const:ANI_ROBOT_BOOTING,9>
+<const:ANI_ROBOT_SMILE_IDLE,1>
+<const:ANI_ROBOT_SMILE_TALK,2>
+<const:ANI_ROBOT_NEUTRAL_IDLE,3>
+<const:ANI_ROBOT_NEUTRAL_TALK,4>
+<const:ANI_ROBOT_SAD_IDLE,5>
+<const:ANI_ROBOT_SAD_TALK,6>
+<const:ANI_ROBOT_SIGH_IDLE,7>
+<const:ANI_ROBOT_SIGH_TALK,8>
+
+<!-------- Name constants -------->
+<const:NAM_NONE,0>
+<const:NAM_???,1>
+<const:NAM_SAFYRUS,2>
+<const:NAM_A,3>
+<const:NAM_B,4>
+
+<!-------- Music constants -------->
+<const:MUS_INTRO,0>
+
+<!-------- Sound constants -------->
+<const:SND_BOOT,0>
+
+<!-------- Bip constants -------->
+<const:BIP_SAFYRUS,0>
+<label:START>
+<!-- ====================== -->
+<!-- Chapter: Introduction  -->
+<!-- Section: Build by user -->
+<!-- ====================== -->
+
+
+<label:INTRO_BUILD>
+<!-------- INTRO ANIMATION -------->
+
+<!-- make the screen black -->
+<background:BKG_EMPTY><hidetextbox><speed:SPD_NORMAL><fade>
+
+<!-- Prepare drawing the background and Safyrus -->
+<background:BKG_INTRO>
+<character:CHR_ROBOT><animation:ANI_ROBOT_OFF>
+
+<!-- Start the music and fade in -->
+<music:MUS_INTRO><fade>
+
+<!-- Robot booting up animation -->
+<wait:30><sound:SND_BOOT><character:CHR_ROBOT><animation:ANI_ROBOT_BOOTING>
+<wait:127><wait:127><wait:100>
+
+
+
+<!-------- INTRO TEXT -------->
+
+<!-- Setup dialog -->
+<name:NAM_SAFYRUS><bip:BIP_SAFYRUS><hidetextbox>
+<animation:ANI_ROBOT_SMILE_TALK>
+
+Hi! <wait:30>And welcome to the<b>
+next part of the tutorial!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+It seems you have built<b>
+the game yourself.<wait:30><b>
+Well done!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+I hope it was without too<b>
+many problems.<b><wait:30><animation:ANI_ROBOT_SAD_TALK>
+(if not,<wait:15>sry I couldn't help)
+<animation:ANI_ROBOT_SAD_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+Anyway,<wait:15> let's now talk about<b>
+what you here for.<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
+
+<!-- switch to introduction text -->
+<!-- ========================== -->
+<!-- Chapter: Introduction      -->
+<!-- Section: Not build by user -->
+<!-- ========================== -->
+
+
+<jump:INTRO_NOT_BUILD_END> <!--skip for now-->
+
+<label:INTRO_NOT_BUILD>
+<!-------- INTRO ANIMATION -------->
+
+<!-- make the screen black -->
+<background:BKG_EMPTY><fade><hidetextbox>
+
+<!-- Prepare drawing the background and Safyrus -->
+<background:BKG_INTRO>
+<character:CHR_ROBOT><animation:ANI_ROBOT_OFF>
+
+<!-- Start the music and fade in -->
+<music:MUS_INTRO><fade>
+
+<!-- Robot booting up animation -->
+<wait:30><sound:SND_BOOT><character:CHR_ROBOT><animation:ANI_ROBOT_BOOTING>
+<wait:255>
+
+
+<!-------- INTRO TEXT -------->
+
+<!-- Setup dialog -->
+<name:NAM_SAFYRUS><bip:BIP_SAFYRUS><hidetextbox>
+<animation:ANI_ROBOT_SMILE_TALK>
+
+Hi!<wait:30>And welcome to the<b>
+next part of the tuto--<b>
+<animation:ANI_ROBOT_NEUTRAL_IDLE><wait:30><animation:ANI_ROBOT_NEUTRAL_TALK>
+Wait...
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+It seems you haven't built<b>
+this version of the game<b>
+yourself.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+Or you have downloaded it<b>
+from a nightly build ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_SIGH_TALK><wait:1>
+
+Well, do what you want.<b>
+I can't really stop you.
+<animation:ANI_ROBOT_SIGH_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+But if you want to build a<b>
+game using this engine
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+I HIGHLY suggest following<b>
+the tutorial on the project<b>
+GitHub first!
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+If you haven't installed<b>
+this project, you will not<b>
+be able to create a game.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+If you still wish to<b>
+learn about how to use this<b>
+engine, then...
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><animation:ANI_ROBOT_NEUTRAL_TALK><wait:1>
+
+Let's just pretend you have<b>
+done everything correctly<b>
+at this point, OK ?<p>
+<animation:ANI_ROBOT_SIGH_IDLE><p><wait:1>
+
+<label:INTRO_NOT_BUILD_END>
+<!-- switch to introduction text -->
+<!-- =========================== -->
+<!-- Chapter: Introduction       -->
+<!-- Section: Short Introduction -->
+<!-- =========================== -->
+
+
+<!-------- INTRO TEXT -------->
+
+Welcome to the second part<b>
+of the tutorial!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+This part is about how to<b>
+use the engine.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+But first!<wait:30> A little<b>
+intro about it.<wait:30> Then we<b>
+will learn how to use it.
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE><p><wait:1>
+
+
+
+<!-------- ENGINE PARAGRAPH -------->
+
+<color:RED>
+<b>
+    -==# The engine #==-    <b>
+<p><name:NAM_SAFYRUS><color:WHITE><animation:ANI_ROBOT_SMILE_TALK>
+
+This engine was firstly<b>
+design to demake the first<b>
+ace attorney on the NES.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+(you may already know that)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+And because all the logic of<b>
+the game was dictated by the<b>
+text.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+I design the code to work<b>
+without needing to know what<b>
+the content of the game is.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+(all data still need to<b>
+respect a specific<b>
+structure thought)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+So,<wait:15> with a little of<b>
+extra efforts.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+And by compiling the text,<wait:15><b>
+images<wait:15> & audio<wait:15> in a format<b>
+that the engine understand.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+Once we give all this data<b>
+to the engine,<wait:15> we have<b>
+a working game!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+This engine is,<wait:15> to over-<b>
+simplified things,<wait:15><b>
+RenPy but for the NES.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+Note that we are still on<b>
+the NES and limitations<b>
+still apply.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+(mainly graphical and audio)
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE><p><wait:1>
+
+
+
+<!-------- DISCLAIMER PARAGRAPH -------->
+
+<color:RED>
+<b>
+   /!\ Important Note /!\   <b>
+<p><name:NAM_SAFYRUS><color:WHITE><animation:ANI_ROBOT_SMILE_TALK>
+
+The engine is not fully<b>
+finished yet!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+For example, saves are not<b>
+present yet.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+I'm working on that and<b>
+hope to finished it soon.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+Oh and also, there is still<b>
+a lot of bugs that I also<b>
+hope to patch.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+So you've been warn.
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE><p><wait:1>
+
+
+
+<!-------- TYPE OF GAMES PARAGRAPH -------->
+
+<color:RED>
+<b>
+  -==# Type of games #==-  <b>
+<p><name:NAM_SAFYRUS><color:WHITE><animation:ANI_ROBOT_SMILE_TALK>
+
+Just to be sure,<b>
+what type of game do you<b>
+want to do with this engine?
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
+
+<!-- Choice -->
+<act>
+<jump:act_typeOfGame_1,0,1>A Visual Novel<b>
+<jump:act_typeOfGame_1,0,1>A game around dialogs<b>
+<jump:act_typeOfGame_2,0,0>Another type of game<b>
+
+<!-- Choice 1 or 2 -->
+<label:act_typeOfGame_1><fp><animation:ANI_ROBOT_SMILE_TALK>
+Great!
+<animation:ANI_ROBOT_SMILE_IDLE><p><jump:act_typeOfGame_end>
+
+<!-- Choice 3 -->
+<label:act_typeOfGame_2><fp>
+<animation:ANI_ROBOT_SAD_TALK>Ah.<animation:ANI_ROBOT_SAD_IDLE><wait:20>.<wait:20>.<wait:20><b>
+<animation:ANI_ROBOT_SAD_TALK>Well.<animation:ANI_ROBOT_SAD_IDLE><wait:20>.<wait:20>.<wait:60><b>
+<animation:ANI_ROBOT_SAD_TALK>You may want to reconsider.<animation:ANI_ROBOT_SAD_IDLE><p>
+
+<!-- End of choice -->
+<label:act_typeOfGame_end>
+
+
+This engine was design to<b>
+run visual novels type of<b>
+game (like Ace Attorney).
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:1><animation:ANI_ROBOT_NEUTRAL_TALK>
+
+Making other type of games<b>
+may not be possible
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:1><animation:ANI_ROBOT_NEUTRAL_TALK>
+
+unless you edit the source<b>
+code and make heavy<b>
+modifications.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:1><animation:ANI_ROBOT_NEUTRAL_TALK>
+
+BUT!
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:1><animation:ANI_ROBOT_NEUTRAL_TALK>
+
+Game with a strong focus on<b>
+text and UI may still be<b>
+possible.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:1><animation:ANI_ROBOT_NEUTRAL_TALK>
+
+Maybe a Layton like game<b>
+is possible without or with<b>
+very small modifications.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+
+OK,<wait:15> I think that's<b>
+everything.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1><animation:ANI_ROBOT_SMILE_TALK>
+
+Now let's finally learn how<b>
+to use this 8-bit engine!
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
+
+<!-- TODO: switch to menu -->
+
+<fade>
+
+<!--One Time dialog about the cursor-->
+
+<jump:cursor_info_end,1,1,FLAG_CURSOR_INFO>
+<hidetextbox>
+
+You can choose what to learn<b>
+using the cursor<p>
+
+Use the D-pad to move it<b>
+and press A to validate<b>
+your choice.<p>
+
+<set:FLAG_CURSOR_INFO>
+<hidetextbox>
+<label:cursor_info_end>
+
+<!-- 
+_Background image with "main menu", "what do want to know ?" and these choices:_
+
+- [project structure](struct/menu.md)
+- [text](txt/menu.md)
+- [images](img/menu.md)
+- [sounds](snd/menu.md)
+- testing ground (custom dialog for user)
+
+_each choice fade to black and jump to the corresponding section_
+-->
+<label:END>
+!!!END OF TEXT!!!
+<jump:END>
