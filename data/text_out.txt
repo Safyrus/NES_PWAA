@@ -2,17 +2,18 @@
 <!-- Constants -->
 <!-- ========= -->
 
+<const:SPD_NORMAL,2>
+<const:FLAG_CURSOR_INFO,0>
+
+<!-------- Colors constants -------->
 <const:WHITE,0>
 <const:RED,1>
 <const:BLUE,2>
 <const:GREEN,3>
 
-<const:SPD_NORMAL,2>
-<const:FLAG_CURSOR_INFO,0>
-
 <!-------- Background constants -------->
 <const:BKG_EMPTY,0>
-<const:BKG_INTRO,5>
+<const:BKG_INTRO,4>
 
 <!-------- Character constants -------->
 <const:CHR_ROBOT,0>

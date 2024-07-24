@@ -1,0 +1,82 @@
+[
+  {
+    "name": "BOOTUP",
+    "idx": 9,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\boot\\robot_boot1.png",
+      "..\\img\\robot\\boot\\robot_boot2.png",
+      "..\\img\\robot\\boot\\robot_boot3.png",
+      "..\\img\\robot\\boot\\robot_boot4.png",
+      "..\\img\\robot\\boot\\robot_boot5.png",
+      "..\\img\\robot\\boot\\robot_boot6.png",
+      "..\\img\\robot\\boot\\robot_boot7.png",
+      "..\\img\\robot\\boot\\robot_boot8.png",
+      "..\\img\\robot\\boot\\robot_boot9.png",
+      "..\\img\\robot\\boot\\robot_boot10.png",
+      "..\\img\\robot\\boot\\robot_boot11.png",
+      "..\\img\\robot\\boot\\robot_boot12.png",
+      "..\\img\\robot\\boot\\robot_boot13.png",
+      "..\\img\\robot\\boot\\robot_boot14.png"
+    ],
+    "time": [
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      255
+    ],
+    "palettes": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        15,
+        16,
+        0,
+        39,
+        17,
+        32
+      ]
+    ]
+  },
+  {
+    "name": "OFF",
+    "idx": 10,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\boot\\robot_boot1.png"
+    ],
+    "time": [
+      255
+    ],
+    "palettes": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        15,
+        16,
+        0,
+        39,
+        17,
+        32
+      ]
+    ]
+  }
+]

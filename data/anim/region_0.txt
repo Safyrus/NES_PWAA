@@ -1,2 +1,3 @@
 bkg.json
-chr.json
+robot_stand.json
+robot_anim.json

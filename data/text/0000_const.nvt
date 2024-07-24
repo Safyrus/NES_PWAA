@@ -13,7 +13,7 @@
 
 <!-------- Background constants -------->
 <const:BKG_EMPTY,0>
-<const:BKG_INTRO,5>
+<const:BKG_INTRO,4>
 
 <!-------- Character constants -------->
 <const:CHR_ROBOT,0>

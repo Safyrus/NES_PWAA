@@ -51,16 +51,16 @@
         "time": []
     },
     {
-        "name": "ROBOT_IDLE_SMILE",
+        "name": "SMILE_IDLE",
         "idx": 1,
         "background": "..\\img\\scene_1.png",
         "character": [
-            "..\\img\\robot\\teach\\idle_1.png",
-            "..\\img\\robot\\teach\\idle_2.png"
+            "..\\img\\robot\\stand\\smile1.png",
+            "..\\img\\robot\\stand\\smile2.png"
         ],
         "time": [
-            30,
-            30
+            15,
+            15
         ],
         "palettes": [
             [
@@ -80,16 +80,270 @@
         ]
     },
     {
-        "name": "ROBOT_TALK_SMILE",
+        "name": "SMILE_TALK",
         "idx": 2,
         "background": "..\\img\\scene_1.png",
         "character": [
-            "..\\img\\robot\\teach\\talk_1.png",
-            "..\\img\\robot\\teach\\talk_2.png"
+            "..\\img\\robot\\stand\\smile1.png",
+            "..\\img\\robot\\stand\\smile_talk.png"
         ],
         "time": [
-            30,
-            30
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "NEUTRAL_IDLE",
+        "idx": 3,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\neutral1.png",
+            "..\\img\\robot\\stand\\neutral2.png"
+        ],
+        "time": [
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "NEUTRAL_TALK",
+        "idx": 4,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\neutral1.png",
+            "..\\img\\robot\\stand\\neutral_talk.png"
+        ],
+        "time": [
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "SAD_IDLE",
+        "idx": 5,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\sad1.png",
+            "..\\img\\robot\\stand\\sad2.png"
+        ],
+        "time": [
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "SAD_TALK",
+        "idx": 6,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\sad1.png",
+            "..\\img\\robot\\stand\\sad_talk.png"
+        ],
+        "time": [
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "SIGH_IDLE",
+        "idx": 7,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\sigh1.png",
+            "..\\img\\robot\\stand\\sigh2.png"
+        ],
+        "time": [
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "SIGH_TALK",
+        "idx": 8,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\sigh1.png",
+            "..\\img\\robot\\stand\\sigh_talk.png"
+        ],
+        "time": [
+            15,
+            15
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "BOOTUP",
+        "idx": 9,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\boot\\robot_boot1.png",
+            "..\\img\\robot\\boot\\robot_boot2.png",
+            "..\\img\\robot\\boot\\robot_boot3.png",
+            "..\\img\\robot\\boot\\robot_boot4.png",
+            "..\\img\\robot\\boot\\robot_boot5.png",
+            "..\\img\\robot\\boot\\robot_boot6.png",
+            "..\\img\\robot\\boot\\robot_boot7.png",
+            "..\\img\\robot\\boot\\robot_boot8.png",
+            "..\\img\\robot\\boot\\robot_boot9.png",
+            "..\\img\\robot\\boot\\robot_boot10.png",
+            "..\\img\\robot\\boot\\robot_boot11.png",
+            "..\\img\\robot\\boot\\robot_boot12.png",
+            "..\\img\\robot\\boot\\robot_boot13.png",
+            "..\\img\\robot\\boot\\robot_boot14.png"
+        ],
+        "time": [
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            255
+        ],
+        "palettes": [
+            [
+                0,
+                0,
+                0,
+                0
+            ],
+            [
+                15,
+                16,
+                0,
+                39,
+                17,
+                32
+            ]
+        ]
+    },
+    {
+        "name": "OFF",
+        "idx": 10,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\boot\\robot_boot1.png"
+        ],
+        "time": [
+            255
         ],
         "palettes": [
             [
