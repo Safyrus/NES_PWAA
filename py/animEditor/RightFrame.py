@@ -34,13 +34,118 @@ class RightFrame(ttk.Frame):
 
         # Time
         self.timelabel = ttk.Label(self, text="Time:")
-        self.timelabel.grid(row=3, column=0, sticky="w")
         self.timeval = IntVar()
         self.timeentry = ttk.Entry(self, textvariable=self.timeval, width=3)
         self.timeentry.bind("<KeyRelease>", self.update_time)
 
-        # Palette
-        self.paleachlabel = ttk.Label(self, text="Each Palette:")
+        # ---- character palette each ----
+        self.paleachlabel = ttk.Label(self, text="Character Palette:")
+        self.paleachframe = ttk.Frame(self)
+        self.paleachv0 = IntVar()
+        self.paleachv1 = IntVar()
+        self.paleachv2 = IntVar()
+        self.paleachv3 = IntVar()
+        self.paleachv4 = IntVar()
+        self.paleachv5 = IntVar()
+        self.paleachv0entry = ttk.Entry(self.paleachframe, textvariable=self.paleachv0, width=2)
+        self.paleachv0entry.grid(row=0, column=0, sticky="w")
+        self.paleachv0entry.bind("<KeyRelease>", self.callback_paleach_0)
+        self.paleachv1entry = ttk.Entry(self.paleachframe, textvariable=self.paleachv1, width=2)
+        self.paleachv1entry.grid(row=0, column=1, sticky="w")
+        self.paleachv1entry.bind("<KeyRelease>", self.callback_paleach_1)
+        self.paleachv2entry = ttk.Entry(self.paleachframe, textvariable=self.paleachv2, width=2)
+        self.paleachv2entry.grid(row=0, column=2, sticky="w")
+        self.paleachv2entry.bind("<KeyRelease>", self.callback_paleach_2)
+        self.paleachv3entry = ttk.Entry(self.paleachframe, textvariable=self.paleachv3, width=2)
+        self.paleachv3entry.grid(row=0, column=3, sticky="w")
+        self.paleachv3entry.bind("<KeyRelease>", self.callback_paleach_3)
+        self.paleachv4entry = ttk.Entry(self.paleachframe, textvariable=self.paleachv4, width=2)
+        self.paleachv4entry.grid(row=0, column=4, sticky="w")
+        self.paleachv4entry.bind("<KeyRelease>", self.callback_paleach_4)
+        self.paleachv5entry = ttk.Entry(self.paleachframe, textvariable=self.paleachv5, width=2)
+        self.paleachv5entry.grid(row=0, column=5, sticky="w")
+        self.paleachv5entry.bind("<KeyRelease>", self.callback_paleach_5)
+        self.paleachremove = Button(self, text="Remove", command=self.callback_remove_pal)
+        self.paleachadd = Button(self, text="Add", command=self.callback_add_pal)
+
+    def callback_add_pal(self, event=None):
+        # get anim
+        last_json = self.window.leftframe.last_json_select
+        last_anim = self.window.leftframe.last_anim_select
+        r = self.window.json_2_region[last_json]
+        anim = var.project_data["regions"][r]["data"][last_json]["data"][last_anim]
+        # remove palettes each
+        if "palettes_each" not in anim:
+            anim["palettes_each"] = []
+        # update list UI
+        i = self.last_select
+        self.update_list()
+        self.chrlist.select_set(i)
+        self.select_chr()
+
+    def callback_remove_pal(self, event=None):
+        # get anim
+        last_json = self.window.leftframe.last_json_select
+        last_anim = self.window.leftframe.last_anim_select
+        r = self.window.json_2_region[last_json]
+        anim = var.project_data["regions"][r]["data"][last_json]["data"][last_anim]
+        # remove palettes each
+        if "palettes_each" in anim:
+            del anim["palettes_each"]
+        # update list UI
+        i = self.last_select
+        self.update_list()
+        self.chrlist.select_set(i)
+        self.select_chr()
+
+    def callback_paleach_0(self, event=None):
+        self.callback_pal(0, self.paleachv0, self.paleachv0entry)
+
+    def callback_paleach_1(self, event=None):
+        self.callback_pal(1, self.paleachv1, self.paleachv1entry)
+
+    def callback_paleach_2(self, event=None):
+        self.callback_pal(2, self.paleachv2, self.paleachv2entry)
+
+    def callback_paleach_3(self, event=None):
+        self.callback_pal(3, self.paleachv3, self.paleachv3entry)
+
+    def callback_paleach_4(self, event=None):
+        self.callback_pal(4, self.paleachv4, self.paleachv4entry)
+
+    def callback_paleach_5(self, event=None):
+        self.callback_pal(5, self.paleachv5, self.paleachv5entry)
+
+    def callback_pal(self, n, val, entry):
+        last_json = self.window.leftframe.last_json_select
+        last_anim = self.window.leftframe.last_anim_select
+        # set new index
+        r = self.window.json_2_region[last_json]
+        try:
+            # get val
+            v = val.get()
+
+            # out of bound check
+            if not (0 <= v <= 63):
+                entry.config(foreground="red")
+                print("Palette", n, "out of bound")
+                return
+
+            # get animation
+            anim = var.project_data["regions"][r]["data"][last_json]["data"][last_anim]
+            # add palette each if missing
+            if "palettes_each" not in anim:
+                anim["palettes_each"] = []
+            # add palette for current and previous frames if missing
+            while len(anim["palettes_each"]) <= self.last_select:
+                anim["palettes_each"].append([[0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])
+            # set val
+            anim["palettes_each"][self.last_select][1][n] = v
+            entry.config(foreground="black")
+
+        except Exception as error:
+            entry.config(foreground="red")
+            print("Error:", error)
 
     def update_list(self):
         # get current anim
@@ -60,8 +165,12 @@ class RightFrame(ttk.Frame):
         self.chrimglabel.grid_forget()
         self.chrimgentry.grid_forget()
         self.chrimgbrowse.grid_forget()
+        self.timelabel.grid_forget()
         self.timeentry.grid_forget()
         self.paleachlabel.grid_forget()
+        self.paleachframe.grid_forget()
+        self.paleachremove.grid_forget()
+        self.paleachadd.grid_forget()
 
     def popup_chr(self, event=None):
         self.window.popup(event, self.callback_new, self.callback_remove)
@@ -122,19 +231,18 @@ class RightFrame(ttk.Frame):
         self.update_list()
         self.chrlist.select_set(i)
         self.select_chr()
-    
 
     def select_chr(self, event=None):
-        selection = self.chrlist.selection_get()
+        selection = self.chrlist.curselection()
         if selection:
             # get current anim
             last_json = self.window.leftframe.last_json_select
             last_anim = self.window.leftframe.last_anim_select
             r = self.window.json_2_region[last_json]
             anim = var.project_data["regions"][r]["data"][last_json]["data"][last_anim]
+            # get selection
             s = int(selection[0])
             self.last_select = s
-            print(self.last_select)
             # update fields
             self.chrimg.set(anim["character"][s])
             self.timeval.set(anim["time"][s])
@@ -142,7 +250,24 @@ class RightFrame(ttk.Frame):
             self.chrimglabel.grid(row=2, column=0, sticky="w")
             self.chrimgentry.grid(row=2, column=1, sticky="w")
             self.chrimgbrowse.grid(row=2, column=2, sticky="w")
+            self.timelabel.grid(row=3, column=0, sticky="w")
             self.timeentry.grid(row=3, column=1, sticky="w")
             self.paleachlabel.grid(row=4, column=0, sticky="w")
+            if "palettes_each" in anim:
+                #
+                self.paleachframe.grid(row=4, column=1, sticky="w")
+                self.paleachremove.grid(row=4, column=2, sticky="w")
+                # add palette for current and previous frames if missing
+                while len(anim["palettes_each"]) <= self.last_select:
+                    anim["palettes_each"].append([[0, 0, 0, 0], [0, 0, 0, 0, 0, 0]])
+                #
+                self.paleachv0.set(anim["palettes_each"][s][1][0])
+                self.paleachv1.set(anim["palettes_each"][s][1][1])
+                self.paleachv2.set(anim["palettes_each"][s][1][2])
+                self.paleachv3.set(anim["palettes_each"][s][1][3])
+                self.paleachv4.set(anim["palettes_each"][s][1][4])
+                self.paleachv5.set(anim["palettes_each"][s][1][5])
+            else:
+                self.paleachadd.grid(row=4, column=1, sticky="w")
         else:
             self.hide_field()

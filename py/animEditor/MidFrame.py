@@ -62,7 +62,6 @@ class MidFrame(ttk.Frame):
         self.bkgpallabel = ttk.Label(self, text="Background Palette:")
         self.bkgpallabel.grid(row=4, column=0, sticky="w")
         self.bkgpalframe = ttk.Frame(self)
-        self.bkgpalframe.grid(row=4, column=1, sticky="w")
         self.bkgpalv0 = IntVar()
         self.bkgpalv1 = IntVar()
         self.bkgpalv2 = IntVar()
@@ -79,8 +78,8 @@ class MidFrame(ttk.Frame):
         self.bkgpalv3entry = ttk.Entry(self.bkgpalframe, textvariable=self.bkgpalv3, width=2)
         self.bkgpalv3entry.grid(row=0, column=3, sticky="w")
         self.bkgpalv3entry.bind("<KeyRelease>", self.callback_bkgpal_3)
-        self.bkgpalremove = Button(self, text="Remove", command=self.callback_remove_pal)
-        self.bkgpalremove.grid(row=4, column=2, sticky="w")
+        self.palremove = Button(self, text="Remove", command=self.callback_remove_pal)
+        self.paladd = Button(self, text="Add", command=self.callback_add_pal)
 
         # ---- character palette ----
         self.chrpallabel = ttk.Label(self, text="Character Palette:")
@@ -109,22 +108,37 @@ class MidFrame(ttk.Frame):
         self.chrpalv5entry = ttk.Entry(self.chrpalframe, textvariable=self.chrpalv5, width=2)
         self.chrpalv5entry.grid(row=0, column=5, sticky="w")
         self.chrpalv5entry.bind("<KeyRelease>", self.callback_chrpal_5)
-        self.chrpalremove = Button(self, text="Remove", command=self.callback_remove_pal)
 
         #
         self.image = PhotoImage(file="nes_pal_dec.png")
         self.palimg = ttk.Label(self, image=self.image, borderwidth=1, relief=SOLID)
         self.palimg.grid(row=6, column=0, columnspan=3)
 
-    def callback_remove_pal(self, event=None):
+    def callback_add_pal(self, event=None):
+        # get anim
         last_json = self.window.leftframe.last_json_select
         last_anim = self.window.leftframe.last_anim_select
+        r = self.window.json_2_region[last_json]
+        anim = var.project_data["regions"][r]["data"][last_json]["data"][last_anim]
+        # add val
+        if "palettes" not in anim:
+            anim["palettes"] = [[0, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
+        # update ui
+        self.update_type()
+
+    def callback_remove_pal(self, event=None):
+        # get anim
+        last_json = self.window.leftframe.last_json_select
+        last_anim = self.window.leftframe.last_anim_select
+        r = self.window.json_2_region[last_json]
+        anim = var.project_data["regions"][r]["data"][last_json]["data"][last_anim]
         # remove val
-        i = self.window.json_2_region[last_json]
-        anim = var.project_data["regions"][i]["data"][last_json]["data"][last_anim]
         if "palettes" in anim:
             del anim["palettes"]
+        # update ui
+        self.update_type()
 
+        #
         self.bkgpalv0.set(0)
         self.bkgpalv1.set(0)
         self.bkgpalv2.set(0)
@@ -262,7 +276,6 @@ class MidFrame(ttk.Frame):
             # undisplay chr palette
             self.chrpallabel.grid_forget()
             self.chrpalframe.grid_forget()
-            self.chrpalremove.grid_forget()
             # undisplay rightframe
             self.window.rightframe.grid_forget()
         # animation
@@ -273,8 +286,23 @@ class MidFrame(ttk.Frame):
                 anim["time"] = [0]
             self.window.rightframe.update_list()
             # display chr palette
-            self.chrpallabel.grid(row=5, column=0, sticky="w")
-            self.chrpalframe.grid(row=5, column=1, sticky="w")
-            self.chrpalremove.grid(row=4, column=2, sticky="w")
+            if "palettes" in anim:
+                self.chrpallabel.grid(row=5, column=0, sticky="w")
+                self.chrpalframe.grid(row=5, column=1, sticky="w")
+            else:
+                self.chrpallabel.grid_forget()
+                self.chrpalframe.grid_forget()
             # display rightframe
             self.window.rightframe.grid(row=0, column=2, sticky="nwes")
+
+        # display or not palette
+        if "palettes" in anim:
+            self.palremove.grid(row=4, column=2, sticky="w")
+            self.paladd.grid_forget()
+            self.bkgpalframe.grid(row=4, column=1, sticky="w")
+            self.bkgpallabel.config(text="Background Palette:")
+        else:
+            self.paladd.grid(row=4, column=1, sticky="w")
+            self.palremove.grid_forget()
+            self.bkgpalframe.grid_forget()
+            self.bkgpallabel.config(text="Palette:")
