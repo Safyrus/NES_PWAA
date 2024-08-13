@@ -1,45 +1,59 @@
 from rle_inc import *
 
 
-def find_palettes(character_img):
+def find_palettes(character_img, nes_pal=None):
     palettes = []
 
     colors = character_img.getcolors()  # get character colors
     idxs = [v for _, v in colors]  # keep color order before sorting
     colors = colors[1:]  # remove background color
+    #
+    if not nes_pal:
+        nes_pal = [0] * 7
+    nes_pal = nes_pal[1:]
+    nes_colors = [(colors[i][0], nes_pal[i]) for i in range(len(colors))]
+    nes_colors = sorted(nes_colors, key=lambda tup: tup[0], reverse=True)
+    nes_colors = [v for _, v in nes_colors]  # remove color count from the list
+    while len(nes_colors) < 6:
+        nes_colors.append(15)
     # sort by color count
     colors = sorted(colors, key=lambda tup: tup[0], reverse=True)
     colors = [v for _, v in colors]  # remove color count from the list
 
     # background image in a gray scale, palette already sorted
     palettes.append([0, 1, 2, 3])
-    palettes.append([  # character primary palette
-        0,
-        idxs.index(colors[0])+3 if len(colors) > 0 else 4,
-        idxs.index(colors[1])+3 if len(colors) > 1 else 4,
-        idxs.index(colors[2])+3 if len(colors) > 2 else 4,
-    ])
-    palettes.append([  # character/background palette
-        0,
-        1,
-        idxs.index(colors[0])+3 if len(colors) > 0 else 4,
-        idxs.index(colors[1])+3 if len(colors) > 0 else 4,
-    ])
+    palettes.append(
+        [  # character primary palette
+            0,
+            idxs.index(colors[0]) + 3 if len(colors) > 0 else 4,
+            idxs.index(colors[1]) + 3 if len(colors) > 1 else 4,
+            idxs.index(colors[2]) + 3 if len(colors) > 2 else 4,
+        ]
+    )
+    palettes.append(
+        [  # character/background palette
+            0,
+            1,
+            idxs.index(colors[0]) + 3 if len(colors) > 0 else 4,
+            idxs.index(colors[1]) + 3 if len(colors) > 0 else 4,
+        ]
+    )
+    palettes.append(
+        [  # character secondary palette
+            0,
+            idxs.index(colors[3]) + 3 if len(colors) > 3 else 4,
+            idxs.index(colors[4]) + 3 if len(colors) > 4 else 4,
+            idxs.index(colors[5]) + 3 if len(colors) > 5 else 4,
+        ]
+    )
 
-    palettes.append([  # character secondary palette
-        0,
-        idxs.index(colors[3])+3 if len(colors) > 3 else 4,
-        idxs.index(colors[4])+3 if len(colors) > 4 else 4,
-        idxs.index(colors[5])+3 if len(colors) > 5 else 4,
-    ])
-
-    return palettes
+    return palettes, nes_colors
 
 
 def merge_image(background_img, character_img):
     b = np.array(background_img)
     c = np.array(character_img)
-    c = np.where(c == 0, c-1, c+3)
+    c = np.where(c == 0, c - 1, c + 3)
     c = np.where(c == 3, 0, c)
     frame = np.where(c == 255, b, c)
     return frame
@@ -71,12 +85,23 @@ def apply_palette(tile_set, palettes):
         #         best_count = count
 
         # find best palette by priority
-        if sum(hist[0:3]) == 0:
-            best_idx = 1 # character palette
-        elif sum(hist[4:9+1]) == 0:
-            best_idx = 0 # background palette
+        n_bkg = sum([hist[palettes[0][1]], hist[palettes[0][2]], hist[palettes[0][3]]])
+        n_chr = sum([hist[palettes[1][1]], hist[palettes[1][2]], hist[palettes[1][3]]])
+        if n_bkg == 0:
+            best_idx = 1  # character palette
+        elif n_chr == 0:
+            best_idx = 0  # background palette
         else:
-            best_idx = 2 # character/background palette
+            # n = tile_set[i].size
+            # r_bkg = n_bkg / n
+            # r_chr = n_chr / n
+            # if r_chr > 0.8:
+            #     best_idx = 1  # character palette
+            # elif r_bkg > 0.8:
+            #     best_idx = 0  # background palette
+            # else:
+            #     best_idx = 2  # character/background palette
+            best_idx = 2  # character/background palette
 
         # assign the best palette to the tile
         pal_map.append(best_idx)
@@ -107,9 +132,9 @@ def find_img_box(img):
     w, h = img.shape[0], img.shape[1]
 
     # init variables
-    max_x, max_y = 0, 0,
-    min_x = w-1
-    min_y = h-1
+    max_x, max_y = (0, 0)
+    min_x = w - 1
+    min_y = h - 1
 
     # loop
     for y in range(h):
@@ -129,12 +154,7 @@ def find_img_box(img):
                 max_y = y
 
     # return result dict
-    return {
-        "x": min_y,
-        "y": min_x,
-        "w": max(0, max_y - min_y),
-        "h": max(0, max_x - min_x)
-    }
+    return {"x": min_y, "y": min_x, "w": max(0, max_y - min_y), "h": max(0, max_x - min_x)}
 
 
 def img_2_spr(img):
@@ -142,29 +162,22 @@ def img_2_spr(img):
     box = find_img_box(img)
 
     # save sprite pos and size
-    info = {
-        "x": box["x"],
-        "y": box["y"],
-        "w": box["w"]//SPR_SIZE_W+1,
-        "h": box["h"]//SPR_SIZE_H+1
-    }
+    info = {"x": box["x"], "y": box["y"], "w": box["w"] // SPR_SIZE_W + 1, "h": box["h"] // SPR_SIZE_H + 1}
 
     # transform image to array
     arr = np.array(img)
-    arr = arr[box["y"]:box["y"]+(info["h"]*SPR_SIZE_H),
-              box["x"]:box["x"]+(info["w"]*SPR_SIZE_W)]
+    arr = arr[box["y"] : box["y"] + (info["h"] * SPR_SIZE_H), box["x"] : box["x"] + (info["w"] * SPR_SIZE_W)]
 
     # get tiles
     h, w = arr.shape[0], arr.shape[1]
-    spr_tile = [arr[y:y+SPR_SIZE_H, x:x+SPR_SIZE_W]
-                for y in range(0, h, SPR_SIZE_H) for x in range(0, w, SPR_SIZE_W)]
-    
+    spr_tile = [arr[y : y + SPR_SIZE_H, x : x + SPR_SIZE_W] for y in range(0, h, SPR_SIZE_H) for x in range(0, w, SPR_SIZE_W)]
+
     # pad if needed
     for i in range(len(spr_tile)):
         if spr_tile[i].shape != (SPR_SIZE_H, SPR_SIZE_W):
             shape = np.shape(spr_tile[i])
             pad_spr = np.zeros((SPR_SIZE_H, SPR_SIZE_W), dtype=int)
-            pad_spr[:shape[0],:shape[1]] = spr_tile[i]
+            pad_spr[: shape[0], : shape[1]] = spr_tile[i]
             spr_tile[i] = pad_spr
 
     # get map
@@ -187,7 +200,7 @@ def encode_frame(background_img_path, character_img_path, spr_bank=[]):
     # bp1 = char prim  sp1 = ...
     # bp2 = contour    sp2 = ...
     # bp3 = ...        sp3 = ...
-    palettes = find_palettes(character_img)
+    palettes, pal_chr = find_palettes(character_img, pal_chr)
 
     # merge background and character into 1 image
     frame = merge_image(background_img, character_img)
@@ -209,7 +222,7 @@ def encode_frame(background_img_path, character_img_path, spr_bank=[]):
     # copy tile to bank and remove duplicate
     spr_tile, spr_map, tmp_spr_bank = rm_closest_spr_tiles(spr_tile, spr_map, tmp_spr_bank)
 
-    base_spr_idx = (len(tmp_spr_bank) // SPR_BANK_PAGE_SIZE)*SPR_BANK_PAGE_SIZE
+    base_spr_idx = (len(tmp_spr_bank) // SPR_BANK_PAGE_SIZE) * SPR_BANK_PAGE_SIZE
     nb_spr = sum([1 if s != base_spr_idx else 0 for s in spr_map])
 
     if nb_spr > MAX_SPRITE_COUNT:

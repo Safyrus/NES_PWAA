@@ -339,7 +339,7 @@ def encode_frame_partial(background, character, spr_bank, pal_bank, pal_set, til
     # get character palette
     pal_chr = [
         [pal_bkg[0], pal_chr[0], pal_chr[1], pal_chr[2]],
-        [pal_bkg[0], pal_chr[0], pal_bkg[2], pal_bkg[3]],
+        [pal_bkg[0], pal_bkg[1], pal_chr[0], pal_chr[1]],
         [pal_bkg[0], pal_chr[3], pal_chr[4], pal_chr[5]]
     ]
     for i in range(len(pal_chr)):

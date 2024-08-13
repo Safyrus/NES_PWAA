@@ -56,7 +56,7 @@ def count_chr_tiles(data, alltiles = {}, character_images={}):
 
             img, _ = char_col_reduce(chars[i])
             img = img_2_idx(img)
-            palettes = find_palettes(img)
+            palettes, _ = find_palettes(img)
             for j in range(1, 4):
                 img = np.where(img == palettes[3][j], 0, img)
             tiles, _ = img_2_tile(img)
