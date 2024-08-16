@@ -64,6 +64,7 @@
             STA choice
             JMP @input_end
         @choice_return:
+            ; if ACT_RET_FLAG is set
             LDA input_flags
             AND #ACT_RET_FLAG
             BEQ @choice_end
@@ -71,7 +72,7 @@
                 LDA #$00
                 STA max_choice
                 STA choice
-                ;
+                ; clear ACT_RET_FLAG flag
                 and_adr input_flags, #($FF-ACT_RET_FLAG)
                 ;
                 JSR dec_act_last_ptr

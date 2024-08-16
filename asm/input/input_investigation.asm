@@ -31,37 +31,41 @@
             JSR investigation_click
             JMP @invest_end
         @invest_B:
-            JSR dec_act_ptr
-            JSR act_return
-            JSR investigation_disable
-            JMP @invest_end
+            ; if ACT RET flag is set
+            LDA input_flags
+            AND #ACT_RET_FLAG
+            BEQ @invest_end
+                ; clear ACT_RET_FLAG flag
+                and_adr input_flags, #($FF-ACT_RET_FLAG)
+                ; return to last act
+                JSR dec_act_ptr
+                JSR act_return
+                ; disable investigation
+                JSR investigation_disable
+                JMP @invest_end
         @invest_UP:
             PHA
-            DEC cursor_y
-            LDA #$17
+            LDA #$18
             CMP cursor_y
-            BNE :+
-                INC cursor_y
+            BEQ :+
+                DEC cursor_y
             :
             PLA
             JMP @invest_UP_end
         @invest_DOWN:
             PHA
-            INC cursor_y
-            LDA #$D8
+            LDA #$D2
             CMP cursor_y
-            BNE :+
-                DEC cursor_y
+            BEQ :+
+                INC cursor_y
             :
             PLA
             JMP @invest_DOWN_end
         @invest_LEFT:
             PHA
-            DEC cursor_x
-            LDA #$FF
-            CMP cursor_x
-            BNE :+
-                INC cursor_x
+            LDA cursor_x
+            BEQ :+
+                DEC cursor_x
             :
             PLA
             JMP @invest_LEFT_end
