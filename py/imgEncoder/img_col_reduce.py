@@ -202,8 +202,24 @@ def bkg_col_reduce(imgfile):
         img = img.convert("RGB")
     img = img.quantize(MAX_COLOR_BKG, method=BKG_METHOD, kmeans=1)
     pal = closest_nes_pal(img, MAX_COLOR_BKG)
-    pal = sort_nes_pal(pal)
-    return img.convert("L"), pal
+    # pal = sort_nes_pal(pal)
+
+    # convert to gray scale
+    # and reorder palette (because of conversion)
+    col = img.getcolors()
+    img = img.convert('L')
+    new_col = img.getcolors()
+    new_pal = []
+    for n,_ in new_col:
+        idx = -1
+        for m,i in col:
+            if m == n:
+                idx = i
+                break
+        new_pal.append(pal[idx])
+    pal = new_pal
+
+    return img, pal
 
 
 def char_col_reduce(imgfile):

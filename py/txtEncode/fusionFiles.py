@@ -10,7 +10,7 @@ files = glob(path + '/**/*.*', recursive=True)
 files.sort(key=lambda f: os.path.basename(f))
 
 for fn in files:
-    print(fn)
+    # print(fn)
     with open(fn) as f:
         txt += f.read()
 

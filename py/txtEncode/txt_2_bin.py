@@ -381,8 +381,8 @@ m = max(textbin)
 if m > 127:
     printv("ERROR: some character(s) use more than 7 bits", param="et")
     printv("       largest char found:", m, param="et")
-if 0 in textbin:
-    printv("WARNING: A 0 value has been detected. It may be interpreted has 'END'", param="wt")
+# if 0 in textbin:
+#     printv("WARNING: A 0 value has been detected. It may be interpreted has 'END'", param="wt")
 printv("text size:", len(textbin), param="t")
 
 # outputting results
