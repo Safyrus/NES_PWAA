@@ -1,0 +1,34 @@
+<label:textmenu>
+<background:BKG_TEXT_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Text menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_textmenu_intro,0,1>
+<box:18,8,11,3,1><jump:click_textmenu_tags,0,1>
+<box:3,12,11,3,1><jump:click_textmenu_font,0,1>
+<box:18,12,11,3,1><jump:click_textmenu_cfg_file,0,1>
+<box:3,16,11,3,0><jump:click_textmenu_return,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_textmenu_intro>
+<fade>
+<jump:text_intro>
+
+<label:click_textmenu_tags>
+<fade>
+<jump:text_tags_1>
+
+<label:click_textmenu_font>
+<fade>
+<jump:text_font>
+
+<label:click_textmenu_cfg_file>
+<fade>
+<jump:text_cfg_file>
+
+<label:click_textmenu_return>
+<fade>
+<jump:mainmenu>

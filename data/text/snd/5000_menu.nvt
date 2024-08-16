@@ -1,0 +1,22 @@
+<label:musicmenu>
+<background:BKG_MUSIC_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Music menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:18,8,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:3,12,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:18,12,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:3,16,11,3,0><jump:click_musicmenu_return,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_musicmenu_todo>
+<fade>
+<jump:todo_music>
+
+<label:click_musicmenu_return>
+<fade>
+<jump:mainmenu>

@@ -178,5 +178,6 @@ Now let's finally learn how<b>
 to use this 8-bit engine!
 <animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
 
-<!-- TODO: switch to menu -->
+<!-- switch to menu -->
+<hidetextbox><fade>
 

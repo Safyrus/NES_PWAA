@@ -1,29 +1,76 @@
+<!-- Display Menu -->
+<label:DEBUG>
+<label:mainmenu>
+<background:BKG_MAIN_MENU><character:CHR_NONE><animation:ANI_NONE>
 <fade>
 
-<!--One Time dialog about the cursor-->
+<!-- One Time dialog about the cursor -->
 
 <jump:cursor_info_end,1,1,FLAG_CURSOR_INFO>
-<hidetextbox>
+<hidetextbox><wait:5>
 
+Note:<b>
 You can choose what to learn<b>
-using the cursor<p>
+using the cursor<p><wait:5>
 
 Use the D-pad to move it<b>
 and press A to validate<b>
-your choice.<p>
+your choice.<p><wait:5>
 
 <set:FLAG_CURSOR_INFO>
 <hidetextbox>
 <label:cursor_info_end>
 
-<!-- 
-_Background image with "main menu", "what do want to know ?" and these choices:_
 
-- [project structure](struct/menu.md)
-- [text](txt/menu.md)
-- [images](img/menu.md)
-- [sounds](snd/menu.md)
-- testing ground (custom dialog for user)
+<!-- Main menu with cursor choice -->
 
-_each choice fade to black and jump to the corresponding section_
--->
+<!-- <event:EVT_ACT_RETURN> : use for going back from investigation to last act. No use for it here -->
+<save>
+<event:EVT_CLICK>
+<box:0,20,0,4,1><jump:click_mainmenu_sea,0,1>
+<box:0,0,5,3,1><jump:click_mainmenu_cloud,0,1>
+<box:28,0,4,3,1><jump:click_mainmenu_cloud,0,1>
+<box:6,2,20,4,1><jump:click_mainmenu_text,0,1>
+<box:3,8,11,4,1><jump:click_mainmenu_project,0,1>
+<box:18,8,11,4,1><jump:click_mainmenu_text,0,1>
+<box:3,14,11,4,1><jump:click_mainmenu_image,0,1>
+<box:18,14,11,4,0><jump:click_mainmenu_sound,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_mainmenu_project>
+<fade>
+<jump:projectmenu>
+
+<label:click_mainmenu_text>
+<fade>
+<jump:textmenu>
+
+<label:click_mainmenu_image>
+<fade>
+<jump:imagemenu>
+
+<label:click_mainmenu_sound>
+<fade>
+<jump:musicmenu>
+
+<label:click_mainmenu_sea>
+<hidetextbox>
+Yes,<wait:30><b>
+that's the sea.<p>
+<hidetextbox>
+<return>
+
+<label:click_mainmenu_cloud>
+<hidetextbox>
+Yes,<wait:30><b>
+that's a cloud.<p>
+<hidetextbox>
+<return>
+
+<label:click_mainmenu_text>
+<hidetextbox>
+That's not a button,<wait:30><b>
+It's just a text.<p>
+<hidetextbox>
+<return>

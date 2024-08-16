@@ -1,0 +1,29 @@
+<label:projectmenu>
+<background:BKG_PROJECT_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Project menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_projectmenu_folder,0,1>
+<box:18,8,11,3,1><jump:click_projectmenu_link,0,1>
+<box:3,12,11,3,1><jump:click_projectmenu_return,0,1>
+<box:18,12,11,3,0><jump:click_projectmenu_makefile,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_projectmenu_folder>
+<fade>
+<jump:todo_project>
+
+<label:click_projectmenu_link>
+<fade>
+<jump:todo_project>
+
+<label:click_projectmenu_makefile>
+<fade>
+<jump:todo_project>
+
+<label:click_projectmenu_return>
+<fade>
+<jump:mainmenu>

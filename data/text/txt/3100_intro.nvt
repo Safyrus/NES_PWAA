@@ -1,0 +1,8 @@
+<label:text_intro>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:textmenu>

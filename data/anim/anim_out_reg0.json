@@ -4,23 +4,7 @@
         "idx": 4,
         "background": "..\\img\\scene_1.png",
         "character": [],
-        "time": [],
-        "palettes": [
-            [
-                33,
-                49,
-                16,
-                32
-            ],
-            [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
-            ]
-        ]
+        "time": []
     },
     {
         "name": "STAR_CASTLE",
@@ -47,6 +31,69 @@
         "name": "EMPTY",
         "idx": 0,
         "background": "..\\empty.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "MAIN_MENU",
+        "idx": 5,
+        "background": "..\\img\\menu\\main_menu.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "TEXT_MENU",
+        "idx": 6,
+        "background": "..\\img\\menu\\text_menu.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "IMAGE_MENU",
+        "idx": 7,
+        "background": "..\\img\\menu\\image_menu.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "MUSIC_MENU",
+        "idx": 8,
+        "background": "..\\img\\menu\\music_menu.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_MENU",
+        "idx": 9,
+        "background": "..\\img\\menu\\project_menu.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "TAG_MENU_1",
+        "idx": 10,
+        "background": "..\\img\\menu\\tags_menu_1.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "TAG_MENU_2",
+        "idx": 11,
+        "background": "..\\img\\menu\\tags_menu_2.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "TAG_MENU_3",
+        "idx": 12,
+        "background": "..\\img\\menu\\tags_menu_3.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "TAG_MENU_4",
+        "idx": 13,
+        "background": "..\\img\\menu\\tags_menu_4.png",
         "character": [],
         "time": []
     },

@@ -5,6 +5,10 @@ They can be either set or clear by tag.
 Flag can be used with a `jump` tag to take action based on some condition.
 There are 128 flags, from flag 0 to flag 127.
 
+Note:
+Flag 0, 1 and 2 are clear each time when entering a new dialog.
+There are used in NES-PWAA for "Hold it!" "Objection! (false)", "Objection! (true)" respectively.
+
 
 # Set & Clear Tag
 

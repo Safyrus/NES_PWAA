@@ -14,28 +14,43 @@ Other arguments may be necessary depending on the event trigger.
 
 This is all the event that you can trigger in the NES-PWAA project
 
-### EVT_CR
+### EVT_CR (0)
 
 Toggle access to the court record
 
-### EVT_CR_OBJ
+### EVT_CR_OBJ (1)
 
 Toggle the 'objection!' and 'hold it!' button of the court record
 
-### EVT_CR_SET
+### EVT_CR_SET (2)
 
 Set a court record flag
 
 Argument: flag index
 
-### EVT_CR_CLR
+### EVT_CR_CLR (3)
 
 Clear a court record flag
 
 Argument: flag index
 
-### EVT_CR_IDX
+### EVT_CR_IDX (4)
 
 Set the correct evidence index of the court record
 
 Argument: flag index
+
+### EVT_CLICK (5)
+
+Enable investigation/cursor mode.
+
+<!-- <event:EVT_ACT_RET><event:EVT_CLICK>
+<box:15,11,6,5,1><jump:label_2_53,0,1>
+<box:4,0,7,9,1><jump:label_2_54,0,1>
+<box:7,18,6,2,1><jump:label_2_55,0,1>
+<box:27,9,5,6,1><jump:label_2_66,0,1>
+<box:6,10,8,8,0><jump:label_2_57,0,1> -->
+
+### EVT_ACT_RET (6)
+
+Enable return from a choice/investigation.

@@ -3,7 +3,13 @@
 <!-- ========= -->
 
 <const:SPD_NORMAL,2>
-<const:FLAG_CURSOR_INFO,0>
+
+<!-------- Flag constants -------->
+
+<const:FLAG_SPE_0,0>
+<const:FLAG_SPE_1,1>
+<const:FLAG_SPE_2,2>
+<const:FLAG_CURSOR_INFO,3>
 
 <!-------- Colors constants -------->
 <const:WHITE,0>
@@ -14,8 +20,20 @@
 <!-------- Background constants -------->
 <const:BKG_EMPTY,0>
 <const:BKG_INTRO,4>
+<const:BKG_MAIN_MENU,5>
+<const:BKG_TEXT_MENU,6>
+<const:BKG_IMAGE_MENU,7>
+<const:BKG_MUSIC_MENU,8>
+<const:BKG_PROJECT_MENU,9>
+<const:BKG_TAG_MENU_1,10>
+<const:BKG_TAG_MENU_2,11>
+<const:BKG_TAG_MENU_3,12>
+<const:BKG_TAG_MENU_4,13>
 
 <!-------- Character constants -------->
+<const:CHR_NONE,0>
+<const:ANI_NONE,0>
+
 <const:CHR_ROBOT,0>
 
 <!-------- "Robot" Animation constants -------->
@@ -45,7 +63,40 @@
 
 <!-------- Bip constants -------->
 <const:BIP_SAFYRUS,0>
+
+<!-------- Event constants -------->
+<const:EVT_CLICK,5>
 <label:START>
+
+
+<!-- <background:0>
+Background 0<p>
+<background:1>
+Background 1<p>
+<background:2>
+Background 2<p>
+<background:3>
+Background 3<p>
+<background:4>
+Background 4<p>
+<background:5>
+Background 5<p>
+<background:6>
+Background 6<p>
+<background:7>
+Background 7<p>
+<background:8>
+Background 8<p>
+<background:9>
+Background 9<p>
+<background:10>
+Background 10<p>
+<background:11>
+Background 11<p>
+<background:12>
+Background 12<p>
+<background:13>
+Background 13<p> -->
 <!-- ====================== -->
 <!-- Chapter: Introduction  -->
 <!-- Section: Build by user -->
@@ -57,6 +108,7 @@
 
 <!-- make the screen black -->
 <background:BKG_EMPTY><hidetextbox><speed:SPD_NORMAL><fade>
+<jump:DEBUG>
 
 <!-- Prepare drawing the background and Safyrus -->
 <background:BKG_INTRO>
@@ -352,37 +404,525 @@ Now let's finally learn how<b>
 to use this 8-bit engine!
 <animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
 
-<!-- TODO: switch to menu -->
+<!-- switch to menu -->
+<hidetextbox><fade>
 
+<!-- Display Menu -->
+<label:DEBUG>
+<label:mainmenu>
+<background:BKG_MAIN_MENU><character:CHR_NONE><animation:ANI_NONE>
 <fade>
 
-<!--One Time dialog about the cursor-->
+<!-- One Time dialog about the cursor -->
 
 <jump:cursor_info_end,1,1,FLAG_CURSOR_INFO>
-<hidetextbox>
+<hidetextbox><wait:5>
 
+Note:<b>
 You can choose what to learn<b>
-using the cursor<p>
+using the cursor<p><wait:5>
 
 Use the D-pad to move it<b>
 and press A to validate<b>
-your choice.<p>
+your choice.<p><wait:5>
 
 <set:FLAG_CURSOR_INFO>
 <hidetextbox>
 <label:cursor_info_end>
 
-<!-- 
-_Background image with "main menu", "what do want to know ?" and these choices:_
 
-- [project structure](struct/menu.md)
-- [text](txt/menu.md)
-- [images](img/menu.md)
-- [sounds](snd/menu.md)
-- testing ground (custom dialog for user)
+<!-- Main menu with cursor choice -->
 
-_each choice fade to black and jump to the corresponding section_
--->
+<!-- <event:EVT_ACT_RETURN> : use for going back from investigation to last act. No use for it here -->
+<save>
+<event:EVT_CLICK>
+<box:0,20,0,4,1><jump:click_mainmenu_sea,0,1>
+<box:0,0,5,3,1><jump:click_mainmenu_cloud,0,1>
+<box:28,0,4,3,1><jump:click_mainmenu_cloud,0,1>
+<box:6,2,20,4,1><jump:click_mainmenu_text,0,1>
+<box:3,8,11,4,1><jump:click_mainmenu_project,0,1>
+<box:18,8,11,4,1><jump:click_mainmenu_text,0,1>
+<box:3,14,11,4,1><jump:click_mainmenu_image,0,1>
+<box:18,14,11,4,0><jump:click_mainmenu_sound,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_mainmenu_project>
+<fade>
+<jump:projectmenu>
+
+<label:click_mainmenu_text>
+<fade>
+<jump:textmenu>
+
+<label:click_mainmenu_image>
+<fade>
+<jump:imagemenu>
+
+<label:click_mainmenu_sound>
+<fade>
+<jump:musicmenu>
+
+<label:click_mainmenu_sea>
+<hidetextbox>
+Yes,<wait:30><b>
+that's the sea.<p>
+<hidetextbox>
+<return>
+
+<label:click_mainmenu_cloud>
+<hidetextbox>
+Yes,<wait:30><b>
+that's a cloud.<p>
+<hidetextbox>
+<return>
+
+<label:click_mainmenu_text>
+<hidetextbox>
+That's not a button,<wait:30><b>
+It's just a text.<p>
+<hidetextbox>
+<return>
+<label:projectmenu>
+<background:BKG_PROJECT_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Project menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_projectmenu_folder,0,1>
+<box:18,8,11,3,1><jump:click_projectmenu_link,0,1>
+<box:3,12,11,3,1><jump:click_projectmenu_return,0,1>
+<box:18,12,11,3,0><jump:click_projectmenu_makefile,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_projectmenu_folder>
+<fade>
+<jump:todo_project>
+
+<label:click_projectmenu_link>
+<fade>
+<jump:todo_project>
+
+<label:click_projectmenu_makefile>
+<fade>
+<jump:todo_project>
+
+<label:click_projectmenu_return>
+<fade>
+<jump:mainmenu>
+<label:textmenu>
+<background:BKG_TEXT_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Text menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_textmenu_intro,0,1>
+<box:18,8,11,3,1><jump:click_textmenu_tags,0,1>
+<box:3,12,11,3,1><jump:click_textmenu_font,0,1>
+<box:18,12,11,3,1><jump:click_textmenu_cfg_file,0,1>
+<box:3,16,11,3,0><jump:click_textmenu_return,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_textmenu_intro>
+<fade>
+<jump:text_intro>
+
+<label:click_textmenu_tags>
+<fade>
+<jump:text_tags_1>
+
+<label:click_textmenu_font>
+<fade>
+<jump:text_font>
+
+<label:click_textmenu_cfg_file>
+<fade>
+<jump:text_cfg_file>
+
+<label:click_textmenu_return>
+<fade>
+<jump:mainmenu>
+<label:text_intro>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:textmenu>
+<label:text_cfg_file>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:textmenu>
+<label:text_font>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:textmenu>
+<label:text_tags_1>
+<background:BKG_TAG_MENU_1><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+
+<!-- Tag menu 1 with cursor choice -->
+
+<event:EVT_CLICK>
+<box:2,8,9,3,1><jump:click_tagmenu1_comment,0,1>
+<box:12,8,8,3,1><jump:click_tagmenu1_b,0,1>
+<box:21,8,9,3,1><jump:click_tagmenu1_p_fp,0,1>
+<box:2,12,9,3,1><jump:click_tagmenu1_speed,0,1>
+<box:12,12,8,3,1><jump:click_tagmenu1_wait,0,1>
+<box:21,12,9,3,1><jump:click_tagmenu1_color,0,1>
+<box:2,16,9,3,1><jump:click_tagmenu1_const,0,1>
+<box:12,16,8,3,1><jump:click_tagmenu1_return,0,1>
+<box:21,16,9,3,1><jump:click_tagmenu1_name,0,1>
+<box:2,2,4,4,1><jump:click_tagmenu1_left,0,1>
+<box:26,2,4,4,0><jump:click_tagmenu1_right,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_tagmenu1_comment>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_b>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_p_fp>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_speed>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_wait>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_color>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_const>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_name>
+<fade>
+<jump:tag_todo_1>
+
+<label:click_tagmenu1_left>
+<fade>
+<jump:text_tags_4>
+
+<label:click_tagmenu1_right>
+<fade>
+<jump:text_tags_2>
+
+<label:click_tagmenu1_return>
+<fade>
+<jump:textmenu>
+<label:text_tags_2>
+<background:BKG_TAG_MENU_2><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+
+<!-- Tag menu 2 with cursor choice -->
+
+<event:EVT_CLICK>
+<box:2,8,13,3,1><jump:click_tagmenu2_background,0,1>
+<box:17,8,13,3,1><jump:click_tagmenu2_hidetextbox,0,1>
+<box:2,12,28,3,1><jump:click_tagmenu2_chr_ani,0,1>
+<box:2,16,9,3,1><jump:click_tagmenu2_font,0,1>
+<box:12,16,8,3,1><jump:click_tagmenu2_return,0,1>
+<box:21,16,9,3,1><jump:click_tagmenu2_photo,0,1>
+<box:2,2,4,4,1><jump:click_tagmenu2_left,0,1>
+<box:26,2,4,4,0><jump:click_tagmenu2_right,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_tagmenu2_background>
+<fade>
+<jump:tag_todo_2>
+
+<label:click_tagmenu2_hidetextbox>
+<fade>
+<jump:tag_todo_2>
+
+<label:click_tagmenu2_chr_ani>
+<fade>
+<jump:tag_todo_2>
+
+<label:click_tagmenu2_font>
+<fade>
+<jump:tag_todo_2>
+
+<label:click_tagmenu2_photo>
+<fade>
+<jump:tag_todo_2>
+
+<label:click_tagmenu2_left>
+<fade>
+<jump:text_tags_1>
+
+<label:click_tagmenu2_right>
+<fade>
+<jump:text_tags_3>
+
+<label:click_tagmenu2_return>
+<fade>
+<jump:textmenu>
+<label:text_tags_3>
+<background:BKG_TAG_MENU_3><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+
+<!-- Tag menu 3 with cursor choice -->
+
+<event:EVT_CLICK>
+<box:2,8,9,3,1><jump:click_tagmenu3_music,0,1>
+<box:12,8,8,3,1><jump:click_tagmenu3_bip,0,1>
+<box:21,8,9,3,1><jump:click_tagmenu3_sound,0,1>
+<box:2,12,9,3,1><jump:click_tagmenu3_shake,0,1>
+<box:12,12,8,3,1><jump:click_tagmenu3_fade,0,1>
+<box:21,12,9,3,1><jump:click_tagmenu3_flash,0,1>
+<box:12,16,8,3,1><jump:click_tagmenu3_return,0,1>
+<box:2,2,4,4,1><jump:click_tagmenu3_left,0,1>
+<box:26,2,4,4,0><jump:click_tagmenu3_right,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_tagmenu3_music>
+<fade>
+<jump:tag_todo_3>
+
+<label:click_tagmenu3_bip>
+<fade>
+<jump:tag_todo_3>
+
+<label:click_tagmenu3_sound>
+<fade>
+<jump:tag_todo_3>
+
+<label:click_tagmenu3_shake>
+<fade>
+<jump:tag_todo_3>
+
+<label:click_tagmenu3_fade>
+<fade>
+<jump:tag_todo_3>
+
+<label:click_tagmenu3_flash>
+<fade>
+<jump:tag_todo_3>
+
+<label:click_tagmenu3_left>
+<fade>
+<jump:text_tags_2>
+
+<label:click_tagmenu3_right>
+<fade>
+<jump:text_tags_4>
+
+<label:click_tagmenu3_return>
+<fade>
+<jump:textmenu>
+<label:text_tags_4>
+<background:BKG_TAG_MENU_4><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+
+<!-- Tag menu 4 with cursor choice -->
+
+<event:EVT_CLICK>
+<box:2,8,13,3,1><jump:click_tagmenu4_label_jump,0,1>
+<box:17,8,13,3,1><jump:click_tagmenu4_set_clear,0,1>
+<box:2,12,6,3,1><jump:click_tagmenu4_act,0,1>
+<box:9,12,14,3,1><jump:click_tagmenu4_save_return,0,1>
+<box:24,12,6,3,1><jump:click_tagmenu4_angle,0,1>
+<box:12,12,8,3,1><jump:click_tagmenu4_event,0,1>
+<box:21,12,9,3,1><jump:click_tagmenu4_ext,0,1>
+<box:12,16,8,3,1><jump:click_tagmenu4_return,0,1>
+<box:2,2,4,4,1><jump:click_tagmenu4_left,0,1>
+<box:26,2,4,4,0><jump:click_tagmenu4_right,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_tagmenu4_label_jump>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_set_clear>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_act>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_save_return>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_angle>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_event>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_ext>
+<fade>
+<jump:tag_todo_4>
+
+<label:click_tagmenu4_left>
+<fade>
+<jump:text_tags_3>
+
+<label:click_tagmenu4_right>
+<fade>
+<jump:text_tags_1>
+
+<label:click_tagmenu4_return>
+<fade>
+<jump:textmenu>
+<label:imagemenu>
+<background:BKG_IMAGE_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Image menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_imagemenu_info,0,1>
+<box:18,8,11,3,1><jump:click_imagemenu_bkg,0,1>
+<box:3,12,11,3,1><jump:click_imagemenu_anim,0,1>
+<box:18,12,11,3,1><jump:click_imagemenu_photo,0,1>
+<box:3,16,11,3,1><jump:click_imagemenu_return,0,1>
+<box:18,16,11,3,0><jump:click_imagemenu_other,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_imagemenu_info>
+<fade>
+<jump:todo_image>
+
+<label:click_imagemenu_bkg>
+<fade>
+<jump:todo_image>
+
+<label:click_imagemenu_anim>
+<fade>
+<jump:todo_image>
+
+<label:click_imagemenu_photo>
+<fade>
+<jump:todo_image>
+
+<label:click_imagemenu_other>
+<fade>
+<jump:todo_image>
+
+<label:click_imagemenu_return>
+<fade>
+<jump:mainmenu>
+<label:musicmenu>
+<background:BKG_MUSIC_MENU><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+
+<!-- Music menu with cursor choice -->
+
+<event:EVT_CLICK>
+<box:3,8,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:18,8,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:3,12,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:18,12,11,3,1><jump:click_musicmenu_todo,0,1>
+<box:3,16,11,3,0><jump:click_musicmenu_return,0,1>
+
+<!-- Add fade before any jump -->
+
+<label:click_musicmenu_todo>
+<fade>
+<jump:todo_music>
+
+<label:click_musicmenu_return>
+<fade>
+<jump:mainmenu>
 <label:END>
 !!!END OF TEXT!!!
 <jump:END>
+<label:todo_image>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:imagemenu>
+
+<label:todo_music>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:musicmenu>
+
+<label:todo_project>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:projectmenu>
+
+<label:tag_todo_1>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:text_tags_1>
+
+<label:tag_todo_2>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:text_tags_2>
+
+<label:tag_todo_3>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:text_tags_3>
+
+<label:tag_todo_4>
+<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
+<fade>
+<hidetextbox>
+TODO<p>
+<hidetextbox>
+<fade>
+<jump:text_tags_4>
