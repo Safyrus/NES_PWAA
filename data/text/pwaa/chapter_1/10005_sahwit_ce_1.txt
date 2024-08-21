@@ -196,7 +196,7 @@ There must be a contradiction<b>
 in there somewhere.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
 
 Examine the <color:1>Court Record<color:0><wait:14><b>
-button if something strikes<b>
+if something strikes<b>
 you as being suspicious.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
 
 Then,<wait:16> find the evidence that<b>

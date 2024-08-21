@@ -289,7 +289,7 @@ coming on.<animation:ANI_MIA_SADPOSE_STAND><p>
 Look,<wait:16> the defendant's name is<b>
 listed in the <color:1>Court Record<color:0>.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
 
-Just touch the <color:1>Court Record<color:0><b>
+Just press the <color:1>SELECT<color:0><b>
 button to check it at<b>
 anytime, <wait:12>okay?<animation:ANI_MIA_ANGRY_STAND><p>
 
@@ -347,7 +347,7 @@ popped into my head,<wait:12> and--<p>
 <animation:ANI_MIA_SADPOSE_TALK>
 
 <name:NAM_MIA><bip:BIP_HIGH>
-The <wait:5><color:1>Court Record<color:0> button!<wait:25><animation:ANI_MIA_ANGRY_TALK><b>
+The <wait:5><color:1>Court Record<color:0>!<wait:25><animation:ANI_MIA_ANGRY_TALK><b>
 Remember to use it<b>
 when you are in a pinch.<animation:ANI_MIA_ANGRY_STAND><p>
 
@@ -382,7 +382,7 @@ conceived naming, <wait:10>Mr. Wright.<animation:ANI_JUDGE_ANGRY_STAND><p>
 Wright?<animation:ANI_MIA_SADPOSE_STAND><p><animation:ANI_MIA_SADPOSE_TALK>
 
 If you forget something,<wait:16> just<b>
-touch the <color:1>Court Record<color:0> button<b>
+open the <color:1>Court Record<color:0><b>
 to help you remember.<animation:ANI_MIA_SADPOSE_STAND><p>
 
 <animation:ANI_MIA_ANGRY_TALK><sound:SFX_LIGHTBULB><flash><speed:4>
@@ -458,7 +458,7 @@ Um...<wait:15><speed:2> Chief!<wait:20> Help me out!<p>
 
 <name:NAM_MIA><bip:BIP_HIGH>
 Check the court record.<wait:25><b>
-The <speed:4><color:1>Court Record<color:0> button...<wait:20><speed:2><b>
+The <speed:4><color:1>SELECT<color:0> button...<wait:20><speed:2><b>
 remember?<animation:ANI_MIA_SADPOSE_STAND><p><color:2>
 
 <name:NAM_PHOENIX><bip:BIP_NORMAL>
@@ -587,7 +587,7 @@ the trial.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK>
 That evidence is the only<b>
 ammunition you have in court.<animation:ANI_MIA_ANGRY_STAND><p><animation:ANI_MIA_ANGRY_TALK><speed:5>
 
-Touch the <color:1>Court Record<color:0><b>
+Press the <color:1>SELECT<color:0><b>
 button to check the Court<b>
 Record frequently.<speed:2><animation:ANI_MIA_ANGRY_STAND><p>
 

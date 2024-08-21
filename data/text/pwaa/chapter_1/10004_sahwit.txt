@@ -308,7 +308,7 @@ it in the witness's face!<animation:ANI_MIA_ANGRY_STAND><p><speed:7>
 Um... <wait:25><speed:4>okay.<p><animation:ANI_MIA_ANGRY_TALK>
 
 <name:NAM_MIA><bip:BIP_HIGH>
-Touch the <color:1>Court Record<color:0> button<wait:10><b>
+Open the <color:1>Court Record<color:0><wait:10><b>
 and point out <color:1>contradictions<color:0><b>
 in the testimony!<animation:ANI_MIA_ANGRY_STAND><p>
 
