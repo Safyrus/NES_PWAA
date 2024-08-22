@@ -17,7 +17,7 @@ all:
 	make $(GAME_NAME).nes
 	make $(GAME_NAME)_ines1.nes
 
-ressource:
+resource:
 	make clean_data
 	make clean_tmp
 	make text
