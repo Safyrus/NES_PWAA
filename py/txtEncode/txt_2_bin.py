@@ -181,7 +181,7 @@ while i < len(text):
         tag = text[i + 1 : tag_end]
         # find tag name and args
         if ":" in tag:
-            name, args = tag.split(":")
+            name, args = tag.split(":", maxsplit=1)
             args = args.split(",")
         else:
             name, args = tag, []
@@ -232,7 +232,7 @@ while i < len(text):
         tag = text[i + 1 : tag_end]
         # find tag name and args
         if ":" in tag:
-            name, args = tag.split(":")
+            name, args = tag.split(":", maxsplit=1)
             name = name.lower()
             args = args.split(",")
             # replace constants by values

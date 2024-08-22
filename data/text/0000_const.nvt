@@ -29,6 +29,17 @@
 <const:BKG_TAG_MENU_2,11>
 <const:BKG_TAG_MENU_3,12>
 <const:BKG_TAG_MENU_4,13>
+<const:BKG_PROJECT,14>
+<const:BKG_PROJECT_ASM,15>
+<const:BKG_PROJECT_C,16>
+<const:BKG_PROJECT_CFG,17>
+<const:BKG_PROJECT_DATA,18>
+<const:BKG_PROJECT_DOC,19>
+<const:BKG_PROJECT_LINK,20>
+<const:BKG_PROJECT_LUA,21>
+<const:BKG_PROJECT_MAKE,22>
+<const:BKG_PROJECT_NES,23>
+<const:BKG_PROJECT_PY,24>
 
 <!-------- Character constants -------->
 <const:CHR_NONE,0>
@@ -47,6 +58,12 @@
 <const:ANI_ROBOT_SAD_TALK,6>
 <const:ANI_ROBOT_SIGH_IDLE,7>
 <const:ANI_ROBOT_SIGH_TALK,8>
+<const:ANI_ROBOT_TEACH_SMILE_IDLE,11>
+<const:ANI_ROBOT_TEACH_SMILE_TALK,12>
+<const:ANI_ROBOT_TEACH_NEUTRAL_IDLE,13>
+<const:ANI_ROBOT_TEACH_NEUTRAL_TALK,14>
+<const:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE,15>
+<const:ANI_ROBOT_LOOKRIGHT_SMILE_TALK,16>
 
 <!-------- Name constants -------->
 <const:NAM_NONE,0>

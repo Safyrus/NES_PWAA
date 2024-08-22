@@ -10,7 +10,7 @@ In this case, you have 1 KB of text that does not fit.
 
 There are 2 solutions to this problem:
 1. Remove some of your data (not that good of a solution)
-2. Edit the link.cfg file to tell him that you have enough space
+2. Edit the link.cfg file to tell it that you have enough space
 
 In the case you choose option 2, this is you how to do it:
 

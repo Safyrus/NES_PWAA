@@ -29,6 +29,17 @@
 <const:BKG_TAG_MENU_2,11>
 <const:BKG_TAG_MENU_3,12>
 <const:BKG_TAG_MENU_4,13>
+<const:BKG_PROJECT,14>
+<const:BKG_PROJECT_ASM,15>
+<const:BKG_PROJECT_C,16>
+<const:BKG_PROJECT_CFG,17>
+<const:BKG_PROJECT_DATA,18>
+<const:BKG_PROJECT_DOC,19>
+<const:BKG_PROJECT_LINK,20>
+<const:BKG_PROJECT_LUA,21>
+<const:BKG_PROJECT_MAKE,22>
+<const:BKG_PROJECT_NES,23>
+<const:BKG_PROJECT_PY,24>
 
 <!-------- Character constants -------->
 <const:CHR_NONE,0>
@@ -47,6 +58,12 @@
 <const:ANI_ROBOT_SAD_TALK,6>
 <const:ANI_ROBOT_SIGH_IDLE,7>
 <const:ANI_ROBOT_SIGH_TALK,8>
+<const:ANI_ROBOT_TEACH_SMILE_IDLE,11>
+<const:ANI_ROBOT_TEACH_SMILE_TALK,12>
+<const:ANI_ROBOT_TEACH_NEUTRAL_IDLE,13>
+<const:ANI_ROBOT_TEACH_NEUTRAL_TALK,14>
+<const:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE,15>
+<const:ANI_ROBOT_LOOKRIGHT_SMILE_TALK,16>
 
 <!-------- Name constants -------->
 <const:NAM_NONE,0>
@@ -67,36 +84,6 @@
 <!-------- Event constants -------->
 <const:EVT_CLICK,5>
 <label:START>
-
-
-<!-- <background:0>
-Background 0<p>
-<background:1>
-Background 1<p>
-<background:2>
-Background 2<p>
-<background:3>
-Background 3<p>
-<background:4>
-Background 4<p>
-<background:5>
-Background 5<p>
-<background:6>
-Background 6<p>
-<background:7>
-Background 7<p>
-<background:8>
-Background 8<p>
-<background:9>
-Background 9<p>
-<background:10>
-Background 10<p>
-<background:11>
-Background 11<p>
-<background:12>
-Background 12<p>
-<background:13>
-Background 13<p> -->
 <!-- ====================== -->
 <!-- Chapter: Introduction  -->
 <!-- Section: Build by user -->
@@ -108,7 +95,7 @@ Background 13<p> -->
 
 <!-- make the screen black -->
 <background:BKG_EMPTY><hidetextbox><speed:SPD_NORMAL><fade>
-<jump:DEBUG>
+<!-- <jump:DEBUG> -->
 
 <!-- Prepare drawing the background and Safyrus -->
 <background:BKG_INTRO>
@@ -405,7 +392,7 @@ to use this 8-bit engine!
 <animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
 
 <!-- switch to menu -->
-<hidetextbox><fade>
+<name:NAM_NONE><hidetextbox><fade>
 
 <!-- Display Menu -->
 <label:DEBUG>
@@ -435,13 +422,14 @@ your choice.<p><wait:5>
 
 <!-- <event:EVT_ACT_RETURN> : use for going back from investigation to last act. No use for it here -->
 <save>
+<background:BKG_MAIN_MENU> <!-- Redraw the menu (because when cliking, the game does not redraw stuff ?) -->
 <event:EVT_CLICK>
 <box:0,20,0,4,1><jump:click_mainmenu_sea,0,1>
 <box:0,0,5,3,1><jump:click_mainmenu_cloud,0,1>
 <box:28,0,4,3,1><jump:click_mainmenu_cloud,0,1>
 <box:6,2,20,4,1><jump:click_mainmenu_text,0,1>
 <box:3,8,11,4,1><jump:click_mainmenu_project,0,1>
-<box:18,8,11,4,1><jump:click_mainmenu_text,0,1>
+<box:18,8,11,4,1><jump:click_mainmenu_dialog,0,1>
 <box:3,14,11,4,1><jump:click_mainmenu_image,0,1>
 <box:18,14,11,4,0><jump:click_mainmenu_sound,0,1>
 
@@ -451,7 +439,7 @@ your choice.<p><wait:5>
 <fade>
 <jump:projectmenu>
 
-<label:click_mainmenu_text>
+<label:click_mainmenu_dialog>
 <fade>
 <jump:textmenu>
 
@@ -499,19 +487,583 @@ It's just a text.<p>
 
 <label:click_projectmenu_folder>
 <fade>
-<jump:todo_project>
+<jump:project_folder>
 
 <label:click_projectmenu_link>
 <fade>
-<jump:todo_project>
+<jump:project_link>
 
 <label:click_projectmenu_makefile>
 <fade>
-<jump:todo_project>
+<jump:project_makefile>
 
 <label:click_projectmenu_return>
 <fade>
 <jump:mainmenu>
+<label:project_folder>
+<background:BKG_PROJECT><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It may be important for you<b>
+to know how the project is<b>
+structured
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+And know where to put<b>
+your data
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_ASM>
+<b><color:RED>
+       | asm folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This is where the <color:RED>assembly<b>
+code<color:WHITE> of the game reside.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+You don't need to know<b>
+anything about it unless<b>
+you want to modify it.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+In that case,<b>
+maybe go look at the<b>
+documentation first.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+But!
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+There is 1 line in 1 file<b>
+that may be important.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The last line of the <color:GREEN>cr0.asm<color:WHITE><b>
+file include the CHR file<b>
+<color:BLUE>(graphic data of the game).
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><color:WHITE><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The name of the CHR file<b>
+to include should be<b>
+'your_game_name.chr'.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+With 'your_game_name'<b>
+replaced by the game name<b>
+specified in the .cfg file
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+<animation:ANI_ROBOT_SMILE_IDLE>
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_CFG>
+<b><color:RED>
+       | cfg folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This is where the config<b>
+file is located.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+<color:BLUE>(and also config files for<b>
+the documentation, but we<b>
+don't care about that).
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You may already know<b>
+about it if you have<b>
+compiled the game.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+In short: you can config the<b>
+path of anything necessary<b>
+to compile the game.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_DATA>
+<b><color:RED>
+       | data folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This may be the most<b>
+important folder to you.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+This is where all the<b>
+source data of the game<b>
+are store.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can structure it<b>
+however you want
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+But for that, you need to<b>
+change corresponding paths<b>
+in the config file
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+You must have a folder with<b>
+all of your text data
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+And precise an output file<b>
+for your text,
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+1 JSON file for all photos,<b>
+and 4 JSON files for all<b>
+animations
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+<color:BLUE>(1 file per PRG region).
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+What these files are is<b>
+better explained in their<b>
+own part of the tutorial.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Note that some files must<b>
+remain where there are.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+These files are:<b>
+- 'empty.png'<b>
+- 'empty_chr.png'
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+- 'empty_photo.png'<b>
+- 'FONT.chr' <color:BLUE>(you can edit<b>
+that one)
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Note: music data are stored<b>
+here but need to be<b>
+exported via FamiStudio
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+<color:BLUE>(See the sound part of the<b>
+tutorial for more info)
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE>
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_DOC>
+<b><color:RED>
+       | doc folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This folder contain the<b>
+generated documentation<b>
+about the code
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+and some markdown files<b>
+describing some code aspect.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+If you want more information<b>
+about how the code works,<b>
+it's here.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT>
+<b><color:RED>
+        | py & c folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<background:BKG_PROJECT_PY><animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+The py folder contain all<b>
+Python scripts use to<b>
+convert data into nes data
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<background:BKG_PROJECT_C><animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+The c folder contain a C<b>
+program use by python<b>
+scripts
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You don't need to look at<b>
+those if you don't need to
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_LUA>
+<b><color:RED>
+       | lua folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This folder contain some<b>
+lua scripts that can be<b>
+used by the Mesen emulator
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It add additional info on<b>
+what's going on<b>
+during gameplay.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<background:BKG_PROJECT>
+<animation:ANI_ROBOT_SMILE_TALK>
+And that's all the<b>
+notable folders
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
+<jump:projectmenu>
+<label:project_link>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade>
+<hidetextbox>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_SMILE_TALK>
+The link.cfg is responsible<b>
+for indicating where in the<b>
+cartridge data must be put.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You shouldn't need to edit<b>
+this file in normal cases.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+But if you get a message<b>
+like for example:<b>
+<color:RED>`Warning: link.cfg:20:
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Segment 'TXT_BNK' overflows<b>
+memory area 'BNK_TXT'<b>
+by 1024 bytes`<color:WHITE>
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+That's mean that your data<b>
+are too big to fit inside<b>
+the designated segment.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+In this case, you have 1 KB<b>
+of text that does not fit.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+There are 2 solutions<b>
+to this problem:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+1.Remove some of your data.<b><animation:ANI_ROBOT_TEACH_SMILE_IDLE><wait:60><animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Not that good<b>
+of a solution
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+2.Edit the link.cfg file.<b><animation:ANI_ROBOT_TEACH_SMILE_IDLE><wait:60><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Tell it that<b>
+you have enough space
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+In the case you choose<b>
+option 2, this is you how<b>
+to do it:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+First, go to the line<b>
+indicated<b>
+<color:BLUE>(20 in this case)<color:WHITE>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Then, change the number<b>
+after the <color:GREEN>`size =`<color:WHITE><b>
+to a bigger number.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The number must be written<b>
+in hexadecimal and should<b>
+be a multiple of $2000.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Lets supposed it was $62000,<b>
+and that we add 8 KB<b>
+<color:BLUE>($2000 in hex)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+That will give us $64000.<b>
+Enought space to<b>
+it the data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+But you are not done yet!
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Because now the size of all<b>
+segments add up to more of<b>
+the cartridge space.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+You must now remove the same<b>
+amount of space you added<b>
+from other segment.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Let's suppose than you do<b>
+not have many images
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+and there is still space<b>
+in the BNK_IMG segment.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Then we can replace the old<b>
+value of $84000 by $82000.<b>
+<color:BLUE>(a difference of 8 KB)<color:WHITE>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Of course, if all your data<b>
+does not fit in 1 MB
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+(not counting the CHR space<b>
+of 1 MB that is<b>
+filled for you)
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Then you just out of space<b>
+and must remove something.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And that's the basics<b>
+on the link.cfg file.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
+<jump:projectmenu>
+
+<label:project_makefile>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_SMILE_TALK>
+This file contains commands<b>
+to 'make' this project.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Normally, you should not<b>
+have to edit this file.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+These not much really to say<b>
+apart list the available<b>
+commands.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You should now the 2 most<b>
+important one:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make resource'<color:WHITE><b>
+Convert the resources like<b>
+text & images to data,
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+but not musics<b><color:BLUE>
+(see the sound part of the<b>
+tutorial for that)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make'<color:WHITE><b>
+Make the NES file<b>
+from assembly and data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+There are others less<b>
+important ones but that can<b>
+still be usefull to know:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make (game name).nes'<color:WHITE><b>
+Only make the NES file with<b>
+a NES 2.0 header.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+<animation:ANI_ROBOT_SMILE_TALK>
+The '(game name)' part must<b>
+be replaced by the real game<b>
+name (defined in cfg file).
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make (game name)_ines1.nes'<color:WHITE><b>
+Same as before but make the<b>
+NES file with 1.0 header.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make clean'<color:WHITE><b>
+Do the following<b>
+3 commands.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make clean_bin'<color:WHITE><b>
+Clean the temporary binary<b>
+files generated.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make clean_data'<color:WHITE><b>
+Clean the generated<b>
+assembly data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make clean_tmp'<color:WHITE><b>
+Clean other temporary files.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make run'<color:WHITE><b>
+Shortcut for running<b>
+the game.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make text'<color:WHITE><b>
+Convert your text<b>
+to assembly data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make img'<color:WHITE><b>
+Convert your images<b>
+to assembly data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make photo'<color:WHITE><b>
+Convert your photos/<b>
+evidences to assembly data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make anim'<color:WHITE><b>
+Convert your animations<b>
+to assembly data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make hex'<color:WHITE><b>
+Dump the NES file into<b>
+hexadecimal to a text file.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>make visual'<color:WHITE><b>
+Dump the NES file<b>
+to an image.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:GREEN>'make gendoc'<color:WHITE><b>
+Generate the documentation<b>
+of the code.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And that's it about<b>
+the Makefile.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
+<jump:projectmenu>
+
 <label:textmenu>
 <background:BKG_TEXT_MENU><character:CHR_NONE><animation:ANI_NONE>
 <fade>
@@ -881,15 +1433,6 @@ TODO<p>
 <hidetextbox>
 <fade>
 <jump:musicmenu>
-
-<label:todo_project>
-<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
-<fade>
-<hidetextbox>
-TODO<p>
-<hidetextbox>
-<fade>
-<jump:projectmenu>
 
 <label:tag_todo_1>
 <background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>

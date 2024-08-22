@@ -1,0 +1,149 @@
+<label:project_link>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade>
+<hidetextbox>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_SMILE_TALK>
+The link.cfg is responsible<b>
+for indicating where in the<b>
+cartridge data must be put.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You shouldn't need to edit<b>
+this file in normal cases.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+But if you get a message<b>
+like for example:<b>
+<color:RED>`Warning: link.cfg:20:
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Segment 'TXT_BNK' overflows<b>
+memory area 'BNK_TXT'<b>
+by 1024 bytes`<color:WHITE>
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+That's mean that your data<b>
+are too big to fit inside<b>
+the designated segment.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+In this case, you have 1 KB<b>
+of text that does not fit.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+There are 2 solutions<b>
+to this problem:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+1.Remove some of your data.<b><animation:ANI_ROBOT_TEACH_SMILE_IDLE><wait:60><animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Not that good<b>
+of a solution
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+2.Edit the link.cfg file.<b><animation:ANI_ROBOT_TEACH_SMILE_IDLE><wait:60><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Tell it that<b>
+you have enough space
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+In the case you choose<b>
+option 2, this is you how<b>
+to do it:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+First, go to the line<b>
+indicated<b>
+<color:BLUE>(20 in this case)<color:WHITE>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Then, change the number<b>
+after the <color:GREEN>`size =`<color:WHITE><b>
+to a bigger number.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The number must be written<b>
+in hexadecimal and should<b>
+be a multiple of $2000.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Lets supposed it was $62000,<b>
+and that we add 8 KB<b>
+<color:BLUE>($2000 in hex)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+That will give us $64000.<b>
+Enought space to<b>
+it the data.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+But you are not done yet!
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Because now the size of all<b>
+segments add up to more of<b>
+the cartridge space.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+You must now remove the same<b>
+amount of space you added<b>
+from other segment.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Let's suppose than you do<b>
+not have many images
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+and there is still space<b>
+in the BNK_IMG segment.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Then we can replace the old<b>
+value of $84000 by $82000.<b>
+<color:BLUE>(a difference of 8 KB)<color:WHITE>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Of course, if all your data<b>
+does not fit in 1 MB
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+(not counting the CHR space<b>
+of 1 MB that is<b>
+filled for you)
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Then you just out of space<b>
+and must remove something.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And that's the basics<b>
+on the link.cfg file.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
+<jump:projectmenu>
+

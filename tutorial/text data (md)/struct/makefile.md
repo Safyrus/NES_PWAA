@@ -7,7 +7,7 @@ You should now the 2 most important one:
 'make resource' that convert the resources like text and images to data, but not musics (see the sound part of the tutorial for that)
 'make' that make the NES file from assembly and data
 
-There are others less important ones with some that may be useless for you:
+There are others less important ones but that can still be useful to know:
 
 - 'make (your game name).nes': only make the NES file with a NES 2.0 header
 - 'make (your game name)_ines1.nes': only make the NES file with a NES 1.0 header

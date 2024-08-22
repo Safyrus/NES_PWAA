@@ -26,13 +26,14 @@ your choice.<p><wait:5>
 
 <!-- <event:EVT_ACT_RETURN> : use for going back from investigation to last act. No use for it here -->
 <save>
+<background:BKG_MAIN_MENU> <!-- Redraw the menu (because when cliking, the game does not redraw stuff ?) -->
 <event:EVT_CLICK>
 <box:0,20,0,4,1><jump:click_mainmenu_sea,0,1>
 <box:0,0,5,3,1><jump:click_mainmenu_cloud,0,1>
 <box:28,0,4,3,1><jump:click_mainmenu_cloud,0,1>
 <box:6,2,20,4,1><jump:click_mainmenu_text,0,1>
 <box:3,8,11,4,1><jump:click_mainmenu_project,0,1>
-<box:18,8,11,4,1><jump:click_mainmenu_text,0,1>
+<box:18,8,11,4,1><jump:click_mainmenu_dialog,0,1>
 <box:3,14,11,4,1><jump:click_mainmenu_image,0,1>
 <box:18,14,11,4,0><jump:click_mainmenu_sound,0,1>
 
@@ -42,7 +43,7 @@ your choice.<p><wait:5>
 <fade>
 <jump:projectmenu>
 
-<label:click_mainmenu_text>
+<label:click_mainmenu_dialog>
 <fade>
 <jump:textmenu>
 

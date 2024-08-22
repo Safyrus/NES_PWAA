@@ -96,5 +96,82 @@
     "background": "..\\img\\menu\\tags_menu_4.png",
     "character": [],
     "time": []
+  },
+  {
+    "name": "PROJECT",
+    "idx": 14,
+    "background": "..\\img\\project\\project.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_ASM",
+    "idx": 15,
+    "background": "..\\img\\project\\project_asm.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_C",
+    "idx": 16,
+    "background": "..\\img\\project\\project_c.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_CFG",
+    "idx": 17,
+    "background": "..\\img\\project\\project_cfg.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_DATA",
+    "idx": 18,
+    "background": "..\\img\\project\\project_data.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_DOC",
+    "idx": 19,
+    "background": "..\\img\\project\\project_doc.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_LINK",
+    "idx": 20,
+    "background": "..\\img\\project\\project_link.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_LUA",
+    "idx": 21,
+    "background": "..\\img\\project\\project_lua.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_MAKE",
+    "idx": 22,
+    "background": "..\\img\\project\\project_make.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_NES",
+    "idx": 23,
+    "background": "..\\img\\project\\project_nes.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "PROJECT_PY",
+    "idx": 24,
+    "background": "..\\img\\project\\project_py.png",
+    "character": [],
+    "time": []
   }
 ]

@@ -14,15 +14,15 @@
 
 <label:click_projectmenu_folder>
 <fade>
-<jump:todo_project>
+<jump:project_folder>
 
 <label:click_projectmenu_link>
 <fade>
-<jump:todo_project>
+<jump:project_link>
 
 <label:click_projectmenu_makefile>
 <fade>
-<jump:todo_project>
+<jump:project_makefile>
 
 <label:click_projectmenu_return>
 <fade>

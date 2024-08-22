@@ -179,5 +179,5 @@ to use this 8-bit engine!
 <animation:ANI_ROBOT_SMILE_IDLE><p><wait:1>
 
 <!-- switch to menu -->
-<hidetextbox><fade>
+<name:NAM_NONE><hidetextbox><fade>
 

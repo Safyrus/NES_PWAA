@@ -1,0 +1,54 @@
+[
+  {
+    "name": "TEACH_SMILE_IDLE",
+    "idx": 11,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\teach\\idle_1.png",
+      "..\\img\\robot\\teach\\idle_2.png"
+    ],
+    "time": [
+      15,
+      15
+    ]
+  },
+  {
+    "name": "TEACH_SMILE_TALK",
+    "idx": 12,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\teach\\talk_1.png",
+      "..\\img\\robot\\teach\\talk_2.png"
+    ],
+    "time": [
+      15,
+      15
+    ]
+  },
+  {
+    "name": "TEACH_NEUTRAL_IDLE",
+    "idx": 13,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\teach\\neutral_idle_1.png",
+      "..\\img\\robot\\teach\\neutral_idle_2.png"
+    ],
+    "time": [
+      15,
+      15
+    ]
+  },
+  {
+    "name": "TEACH_NEUTRAL_TALK",
+    "idx": 14,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\teach\\neutral_talk_1.png",
+      "..\\img\\robot\\teach\\neutral_talk_2.png"
+    ],
+    "time": [
+      15,
+      15
+    ]
+  }
+]

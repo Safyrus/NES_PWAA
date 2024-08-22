@@ -98,6 +98,83 @@
         "time": []
     },
     {
+        "name": "PROJECT",
+        "idx": 14,
+        "background": "..\\img\\project\\project.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_ASM",
+        "idx": 15,
+        "background": "..\\img\\project\\project_asm.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_C",
+        "idx": 16,
+        "background": "..\\img\\project\\project_c.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_CFG",
+        "idx": 17,
+        "background": "..\\img\\project\\project_cfg.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_DATA",
+        "idx": 18,
+        "background": "..\\img\\project\\project_data.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_DOC",
+        "idx": 19,
+        "background": "..\\img\\project\\project_doc.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_LINK",
+        "idx": 20,
+        "background": "..\\img\\project\\project_link.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_LUA",
+        "idx": 21,
+        "background": "..\\img\\project\\project_lua.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_MAKE",
+        "idx": 22,
+        "background": "..\\img\\project\\project_make.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_NES",
+        "idx": 23,
+        "background": "..\\img\\project\\project_nes.png",
+        "character": [],
+        "time": []
+    },
+    {
+        "name": "PROJECT_PY",
+        "idx": 24,
+        "background": "..\\img\\project\\project_py.png",
+        "character": [],
+        "time": []
+    },
+    {
         "name": "SMILE_IDLE",
         "idx": 1,
         "background": "..\\img\\scene_1.png",
@@ -202,6 +279,32 @@
         ]
     },
     {
+        "name": "LOOKRIGHT_SMILE_IDLE",
+        "idx": 15,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\lookright_smile_idle_1.png",
+            "..\\img\\robot\\stand\\lookright_smile_idle_2.png"
+        ],
+        "time": [
+            15,
+            15
+        ]
+    },
+    {
+        "name": "LOOKRIGHT_SMILE_TALK",
+        "idx": 16,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\stand\\lookright_smile_talk_1.png",
+            "..\\img\\robot\\stand\\lookright_smile_talk_2.png"
+        ],
+        "time": [
+            15,
+            15
+        ]
+    },
+    {
         "name": "BOOTUP",
         "idx": 9,
         "background": "..\\img\\scene_1.png",
@@ -247,6 +350,58 @@
         ],
         "time": [
             255
+        ]
+    },
+    {
+        "name": "TEACH_SMILE_IDLE",
+        "idx": 11,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\teach\\idle_1.png",
+            "..\\img\\robot\\teach\\idle_2.png"
+        ],
+        "time": [
+            15,
+            15
+        ]
+    },
+    {
+        "name": "TEACH_SMILE_TALK",
+        "idx": 12,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\teach\\talk_1.png",
+            "..\\img\\robot\\teach\\talk_2.png"
+        ],
+        "time": [
+            15,
+            15
+        ]
+    },
+    {
+        "name": "TEACH_NEUTRAL_IDLE",
+        "idx": 13,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\teach\\neutral_idle_1.png",
+            "..\\img\\robot\\teach\\neutral_idle_2.png"
+        ],
+        "time": [
+            15,
+            15
+        ]
+    },
+    {
+        "name": "TEACH_NEUTRAL_TALK",
+        "idx": 14,
+        "background": "..\\img\\scene_1.png",
+        "character": [
+            "..\\img\\robot\\teach\\neutral_talk_1.png",
+            "..\\img\\robot\\teach\\neutral_talk_2.png"
+        ],
+        "time": [
+            15,
+            15
         ]
     }
 ]

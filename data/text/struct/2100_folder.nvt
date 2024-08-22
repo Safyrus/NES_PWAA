@@ -1,0 +1,269 @@
+<label:project_folder>
+<background:BKG_PROJECT><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It may be important for you<b>
+to know how the project is<b>
+structured
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+And know where to put<b>
+your data
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_ASM>
+<b><color:RED>
+       | asm folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This is where the <color:RED>assembly<b>
+code<color:WHITE> of the game reside.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+You don't need to know<b>
+anything about it unless<b>
+you want to modify it.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+In that case,<b>
+maybe go look at the<b>
+documentation first.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+But!
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+There is 1 line in 1 file<b>
+that may be important.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The last line of the <color:GREEN>cr0.asm<color:WHITE><b>
+file include the CHR file<b>
+<color:BLUE>(graphic data of the game).
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><color:WHITE><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The name of the CHR file<b>
+to include should be<b>
+'your_game_name.chr'.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+With 'your_game_name'<b>
+replaced by the game name<b>
+specified in the .cfg file
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+<animation:ANI_ROBOT_SMILE_IDLE>
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_CFG>
+<b><color:RED>
+       | cfg folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This is where the config<b>
+file is located.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+<color:BLUE>(and also config files for<b>
+the documentation, but we<b>
+don't care about that).
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You may already know<b>
+about it if you have<b>
+compiled the game.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+In short: you can config the<b>
+path of anything necessary<b>
+to compile the game.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_DATA>
+<b><color:RED>
+       | data folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This may be the most<b>
+important folder to you.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+This is where all the<b>
+source data of the game<b>
+are store.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can structure it<b>
+however you want
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+But for that, you need to<b>
+change corresponding paths<b>
+in the config file
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+You must have a folder with<b>
+all of your text data
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+And precise an output file<b>
+for your text,
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+1 JSON file for all photos,<b>
+and 4 JSON files for all<b>
+animations
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+<color:BLUE>(1 file per PRG region).
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+What these files are is<b>
+better explained in their<b>
+own part of the tutorial.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Note that some files must<b>
+remain where there are.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+These files are:<b>
+- 'empty.png'<b>
+- 'empty_chr.png'
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+- 'empty_photo.png'<b>
+- 'FONT.chr' <color:BLUE>(you can edit<b>
+that one)
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Note: music data are stored<b>
+here but need to be<b>
+exported via FamiStudio
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+<color:BLUE>(See the sound part of the<b>
+tutorial for more info)
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5><color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE>
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_DOC>
+<b><color:RED>
+       | doc folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This folder contain the<b>
+generated documentation<b>
+about the code
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+and some markdown files<b>
+describing some code aspect.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+If you want more information<b>
+about how the code works,<b>
+it's here.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT>
+<b><color:RED>
+        | py & c folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<background:BKG_PROJECT_PY><animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+The py folder contain all<b>
+Python scripts use to<b>
+convert data into nes data
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<background:BKG_PROJECT_C><animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+The c folder contain a C<b>
+program use by python<b>
+scripts
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You don't need to look at<b>
+those if you don't need to
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<!-------------------------------->
+
+<name:NAM_NONE><background:BKG_PROJECT_LUA>
+<b><color:RED>
+       | lua folder |<b>
+<p><color:WHITE><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+This folder contain some<b>
+lua scripts that can be<b>
+used by the Mesen emulator
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It add additional info on<b>
+what's going on<b>
+during gameplay.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<!-------------------------------->
+
+<background:BKG_PROJECT>
+<animation:ANI_ROBOT_SMILE_TALK>
+And that's all the<b>
+notable folders
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
+<jump:projectmenu>

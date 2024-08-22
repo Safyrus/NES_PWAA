@@ -1,3 +1,4 @@
 bkg.json
 robot_stand.json
 robot_anim.json
+robot_teach.json

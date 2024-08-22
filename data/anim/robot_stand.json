@@ -102,5 +102,31 @@
       15,
       15
     ]
+  },
+  {
+    "name": "LOOKRIGHT_SMILE_IDLE",
+    "idx": 15,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\stand\\lookright_smile_idle_1.png",
+      "..\\img\\robot\\stand\\lookright_smile_idle_2.png"
+    ],
+    "time": [
+      15,
+      15
+    ]
+  },
+  {
+    "name": "LOOKRIGHT_SMILE_TALK",
+    "idx": 16,
+    "background": "..\\img\\scene_1.png",
+    "character": [
+      "..\\img\\robot\\stand\\lookright_smile_talk_1.png",
+      "..\\img\\robot\\stand\\lookright_smile_talk_2.png"
+    ],
+    "time": [
+      15,
+      15
+    ]
   }
 ]

@@ -217,6 +217,8 @@ def bkg_col_reduce(imgfile):
                 idx = i
                 break
         new_pal.append(pal[idx])
+    while len(new_pal) < 4:
+        new_pal.append(15)
     pal = new_pal
 
     return img, pal
