@@ -142,7 +142,10 @@ img:
 	cd c && make
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
 	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
-	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr
+	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr \
+ifneq ($(OS), Windows_NT)
+	-exe a
+endif
 
 photo:
 	cd $(PY)/imgEncoder && $(PYTHON) encode_photo.py \
