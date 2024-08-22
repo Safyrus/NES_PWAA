@@ -148,7 +148,7 @@ else
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
 	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
 	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr \
-	-exe a
+	-exe ./a
 endif
 
 photo:
