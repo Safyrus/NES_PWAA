@@ -445,7 +445,12 @@ def encode_all_constrain(args, json_anim, pal_bank=[]):
         # execute C program to convert binary images to CHR
         if not os.path.exists(args.tile_maps_folder):
             os.mkdir(args.tile_maps_folder)
-        proc_info = subprocess.run([args.c_program, str(len(img_names)), "CHR.chr", str(dif)], cwd=args.cpath)
+        print("="*40)
+        proc_info = subprocess.run(["ls"], cwd=args.cpath)
+        print("="*40)
+        proc_info = subprocess.run(["ls"])
+        print("="*40)
+        proc_info = subprocess.run([args.exe, str(len(img_names)), "CHR.chr", str(dif)], cwd=args.cpath)
         if proc_info.returncode:
             exit(proc_info.returncode)
 
