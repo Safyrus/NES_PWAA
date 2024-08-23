@@ -1832,229 +1832,229 @@ img_913:
 img_914:
 .incbin "imgs/img_914.bin" ;../../data/chars/Edgeworth/edgeworth_122.png;../../data/chars/Edgeworth/edgeworth_117.png
 img_915:
-.incbin "imgs/img_915.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.incbin "imgs/img_915.bin" ;../../data/empty.png;../../data/chars/Edgeworth/216.png
 img_916:
-.incbin "imgs/img_916.bin" ;../../ignore/chars_gif/Sprites-edgeworth/216.png;../../ignore/chars_gif/Sprites-edgeworth/217.png
+.incbin "imgs/img_916.bin" ;../../data/chars/Edgeworth/216.png;../../data/chars/Edgeworth/217.png
 img_917:
-.incbin "imgs/img_917.bin" ;../../ignore/chars_gif/Sprites-edgeworth/217.png;../../ignore/chars_gif/Sprites-edgeworth/218.png
+.incbin "imgs/img_917.bin" ;../../data/chars/Edgeworth/217.png;../../data/chars/Edgeworth/218.png
 img_918:
-.incbin "imgs/img_918.bin" ;../../ignore/chars_gif/Sprites-edgeworth/218.png;../../ignore/chars_gif/Sprites-edgeworth/217.png
+.incbin "imgs/img_918.bin" ;../../data/chars/Edgeworth/218.png;../../data/chars/Edgeworth/217.png
 img_919:
-.incbin "imgs/img_919.bin" ;../../ignore/chars_gif/Sprites-edgeworth/217.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.incbin "imgs/img_919.bin" ;../../data/chars/Edgeworth/217.png;../../data/chars/Edgeworth/216.png
 img_920:
-.incbin "imgs/img_920.bin" ;../../ignore/chars_gif/Sprites-edgeworth/216.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.incbin "imgs/img_920.bin" ;../../data/chars/Edgeworth/216.png;../../data/chars/Edgeworth/216.png
 img_921:
-.incbin "imgs/img_921.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.incbin "imgs/img_921.bin" ;../../data/empty.png;../../data/chars/Edgeworth/219.png
 img_922:
-.incbin "imgs/img_922.bin" ;../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.incbin "imgs/img_922.bin" ;../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/220.png
 img_923:
-.incbin "imgs/img_923.bin" ;../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/221.png
+.incbin "imgs/img_923.bin" ;../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/221.png
 img_924:
-.incbin "imgs/img_924.bin" ;../../ignore/chars_gif/Sprites-edgeworth/221.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.incbin "imgs/img_924.bin" ;../../data/chars/Edgeworth/221.png;../../data/chars/Edgeworth/220.png
 img_925:
-.incbin "imgs/img_925.bin" ;../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.incbin "imgs/img_925.bin" ;../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/219.png
 img_926:
-.incbin "imgs/img_926.bin" ;../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.incbin "imgs/img_926.bin" ;../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/219.png
 img_927:
-.incbin "imgs/img_927.bin" ;../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.incbin "imgs/img_927.bin" ;../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/220.png
 img_928:
-.incbin "imgs/img_928.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.incbin "imgs/img_928.bin" ;../../data/empty.png;../../data/chars/Edgeworth/222.png
 img_929:
-.incbin "imgs/img_929.bin" ;../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.incbin "imgs/img_929.bin" ;../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/223.png
 img_930:
-.incbin "imgs/img_930.bin" ;../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/224.png
+.incbin "imgs/img_930.bin" ;../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/224.png
 img_931:
-.incbin "imgs/img_931.bin" ;../../ignore/chars_gif/Sprites-edgeworth/224.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.incbin "imgs/img_931.bin" ;../../data/chars/Edgeworth/224.png;../../data/chars/Edgeworth/223.png
 img_932:
-.incbin "imgs/img_932.bin" ;../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.incbin "imgs/img_932.bin" ;../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/222.png
 img_933:
-.incbin "imgs/img_933.bin" ;../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.incbin "imgs/img_933.bin" ;../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/222.png
 img_934:
-.incbin "imgs/img_934.bin" ;../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.incbin "imgs/img_934.bin" ;../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/225.png
 img_935:
-.incbin "imgs/img_935.bin" ;../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/226.png
+.incbin "imgs/img_935.bin" ;../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/226.png
 img_936:
-.incbin "imgs/img_936.bin" ;../../ignore/chars_gif/Sprites-edgeworth/226.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.incbin "imgs/img_936.bin" ;../../data/chars/Edgeworth/226.png;../../data/chars/Edgeworth/225.png
 img_937:
-.incbin "imgs/img_937.bin" ;../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.incbin "imgs/img_937.bin" ;../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/222.png
 img_938:
-.incbin "imgs/img_938.bin" ;../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.incbin "imgs/img_938.bin" ;../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/223.png
 img_939:
-.incbin "imgs/img_939.bin" ;../../ignore/chars_gif/Sprites-edgeworth/224.png;../../ignore/chars_gif/Sprites-edgeworth/227.png
+.incbin "imgs/img_939.bin" ;../../data/chars/Edgeworth/224.png;../../data/chars/Edgeworth/227.png
 img_940:
-.incbin "imgs/img_940.bin" ;../../ignore/chars_gif/Sprites-edgeworth/227.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.incbin "imgs/img_940.bin" ;../../data/chars/Edgeworth/227.png;../../data/chars/Edgeworth/225.png
 img_941:
-.incbin "imgs/img_941.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.incbin "imgs/img_941.bin" ;../../data/empty.png;../../data/chars/Edgeworth/234.png
 img_942:
-.incbin "imgs/img_942.bin" ;../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.incbin "imgs/img_942.bin" ;../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/235.png
 img_943:
-.incbin "imgs/img_943.bin" ;../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/236.png
+.incbin "imgs/img_943.bin" ;../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/236.png
 img_944:
-.incbin "imgs/img_944.bin" ;../../ignore/chars_gif/Sprites-edgeworth/236.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.incbin "imgs/img_944.bin" ;../../data/chars/Edgeworth/236.png;../../data/chars/Edgeworth/235.png
 img_945:
-.incbin "imgs/img_945.bin" ;../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.incbin "imgs/img_945.bin" ;../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/234.png
 img_946:
-.incbin "imgs/img_946.bin" ;../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.incbin "imgs/img_946.bin" ;../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/234.png
 img_947:
-.incbin "imgs/img_947.bin" ;../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.incbin "imgs/img_947.bin" ;../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/237.png
 img_948:
-.incbin "imgs/img_948.bin" ;../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/238.png
+.incbin "imgs/img_948.bin" ;../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/238.png
 img_949:
-.incbin "imgs/img_949.bin" ;../../ignore/chars_gif/Sprites-edgeworth/238.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.incbin "imgs/img_949.bin" ;../../data/chars/Edgeworth/238.png;../../data/chars/Edgeworth/237.png
 img_950:
-.incbin "imgs/img_950.bin" ;../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.incbin "imgs/img_950.bin" ;../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/234.png
 img_951:
-.incbin "imgs/img_951.bin" ;../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.incbin "imgs/img_951.bin" ;../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/235.png
 img_952:
-.incbin "imgs/img_952.bin" ;../../ignore/chars_gif/Sprites-edgeworth/236.png;../../ignore/chars_gif/Sprites-edgeworth/239.png
+.incbin "imgs/img_952.bin" ;../../data/chars/Edgeworth/236.png;../../data/chars/Edgeworth/239.png
 img_953:
-.incbin "imgs/img_953.bin" ;../../ignore/chars_gif/Sprites-edgeworth/239.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.incbin "imgs/img_953.bin" ;../../data/chars/Edgeworth/239.png;../../data/chars/Edgeworth/237.png
 img_954:
-.incbin "imgs/img_954.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/240.png
+.incbin "imgs/img_954.bin" ;../../data/empty.png;../../data/chars/Edgeworth/240.png
 img_955:
-.incbin "imgs/img_955.bin" ;../../ignore/chars_gif/Sprites-edgeworth/240.png;../../ignore/chars_gif/Sprites-edgeworth/241.png
+.incbin "imgs/img_955.bin" ;../../data/chars/Edgeworth/240.png;../../data/chars/Edgeworth/241.png
 img_956:
-.incbin "imgs/img_956.bin" ;../../ignore/chars_gif/Sprites-edgeworth/241.png;../../ignore/chars_gif/Sprites-edgeworth/242.png
+.incbin "imgs/img_956.bin" ;../../data/chars/Edgeworth/241.png;../../data/chars/Edgeworth/242.png
 img_957:
-.incbin "imgs/img_957.bin" ;../../ignore/chars_gif/Sprites-edgeworth/242.png;../../ignore/chars_gif/Sprites-edgeworth/243.png
+.incbin "imgs/img_957.bin" ;../../data/chars/Edgeworth/242.png;../../data/chars/Edgeworth/243.png
 img_958:
-.incbin "imgs/img_958.bin" ;../../ignore/chars_gif/Sprites-edgeworth/243.png;../../ignore/chars_gif/Sprites-edgeworth/242.png
+.incbin "imgs/img_958.bin" ;../../data/chars/Edgeworth/243.png;../../data/chars/Edgeworth/242.png
 img_959:
-.incbin "imgs/img_959.bin" ;../../ignore/chars_gif/Sprites-edgeworth/242.png;../../ignore/chars_gif/Sprites-edgeworth/241.png
+.incbin "imgs/img_959.bin" ;../../data/chars/Edgeworth/242.png;../../data/chars/Edgeworth/241.png
 img_960:
-.incbin "imgs/img_960.bin" ;../../ignore/chars_gif/Sprites-edgeworth/241.png;../../ignore/chars_gif/Sprites-edgeworth/240.png
+.incbin "imgs/img_960.bin" ;../../data/chars/Edgeworth/241.png;../../data/chars/Edgeworth/240.png
 img_961:
-.incbin "imgs/img_961.bin" ;../../ignore/chars_gif/Sprites-edgeworth/240.png;../../ignore/chars_gif/Sprites-edgeworth/240.png
+.incbin "imgs/img_961.bin" ;../../data/chars/Edgeworth/240.png;../../data/chars/Edgeworth/240.png
 img_962:
-.incbin "imgs/img_962.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.incbin "imgs/img_962.bin" ;../../data/empty.png;../../data/chars/Edgeworth/244.png
 img_963:
-.incbin "imgs/img_963.bin" ;../../ignore/chars_gif/Sprites-edgeworth/244.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.incbin "imgs/img_963.bin" ;../../data/chars/Edgeworth/244.png;../../data/chars/Edgeworth/245.png
 img_964:
-.incbin "imgs/img_964.bin" ;../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/246.png
+.incbin "imgs/img_964.bin" ;../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/246.png
 img_965:
-.incbin "imgs/img_965.bin" ;../../ignore/chars_gif/Sprites-edgeworth/246.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.incbin "imgs/img_965.bin" ;../../data/chars/Edgeworth/246.png;../../data/chars/Edgeworth/245.png
 img_966:
-.incbin "imgs/img_966.bin" ;../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.incbin "imgs/img_966.bin" ;../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/244.png
 img_967:
-.incbin "imgs/img_967.bin" ;../../ignore/chars_gif/Sprites-edgeworth/244.png;../../ignore/chars_gif/Sprites-edgeworth/247.png
+.incbin "imgs/img_967.bin" ;../../data/chars/Edgeworth/244.png;../../data/chars/Edgeworth/247.png
 img_968:
-.incbin "imgs/img_968.bin" ;../../ignore/chars_gif/Sprites-edgeworth/247.png;../../ignore/chars_gif/Sprites-edgeworth/248.png
+.incbin "imgs/img_968.bin" ;../../data/chars/Edgeworth/247.png;../../data/chars/Edgeworth/248.png
 img_969:
-.incbin "imgs/img_969.bin" ;../../ignore/chars_gif/Sprites-edgeworth/248.png;../../ignore/chars_gif/Sprites-edgeworth/249.png
+.incbin "imgs/img_969.bin" ;../../data/chars/Edgeworth/248.png;../../data/chars/Edgeworth/249.png
 img_970:
-.incbin "imgs/img_970.bin" ;../../ignore/chars_gif/Sprites-edgeworth/249.png;../../ignore/chars_gif/Sprites-edgeworth/246.png
+.incbin "imgs/img_970.bin" ;../../data/chars/Edgeworth/249.png;../../data/chars/Edgeworth/246.png
 img_971:
-.incbin "imgs/img_971.bin" ;../../ignore/chars_gif/Sprites-edgeworth/246.png;../../ignore/chars_gif/Sprites-edgeworth/250.png
+.incbin "imgs/img_971.bin" ;../../data/chars/Edgeworth/246.png;../../data/chars/Edgeworth/250.png
 img_972:
-.incbin "imgs/img_972.bin" ;../../ignore/chars_gif/Sprites-edgeworth/250.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.incbin "imgs/img_972.bin" ;../../data/chars/Edgeworth/250.png;../../data/chars/Edgeworth/251.png
 img_973:
-.incbin "imgs/img_973.bin" ;../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/252.png
+.incbin "imgs/img_973.bin" ;../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/252.png
 img_974:
-.incbin "imgs/img_974.bin" ;../../ignore/chars_gif/Sprites-edgeworth/252.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.incbin "imgs/img_974.bin" ;../../data/chars/Edgeworth/252.png;../../data/chars/Edgeworth/251.png
 img_975:
-.incbin "imgs/img_975.bin" ;../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.incbin "imgs/img_975.bin" ;../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/244.png
 img_976:
-.incbin "imgs/img_976.bin" ;../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/252.png
+.incbin "imgs/img_976.bin" ;../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/252.png
 img_977:
-.incbin "imgs/img_977.bin" ;../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/250.png
+.incbin "imgs/img_977.bin" ;../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/250.png
 img_978:
-.incbin "imgs/img_978.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/263.png
+.incbin "imgs/img_978.bin" ;../../data/empty.png;../../data/chars/Edgeworth/263.png
 img_979:
-.incbin "imgs/img_979.bin" ;../../ignore/chars_gif/Sprites-edgeworth/263.png;../../ignore/chars_gif/Sprites-edgeworth/264.png
+.incbin "imgs/img_979.bin" ;../../data/chars/Edgeworth/263.png;../../data/chars/Edgeworth/264.png
 img_980:
-.incbin "imgs/img_980.bin" ;../../ignore/chars_gif/Sprites-edgeworth/264.png;../../ignore/chars_gif/Sprites-edgeworth/265.png
+.incbin "imgs/img_980.bin" ;../../data/chars/Edgeworth/264.png;../../data/chars/Edgeworth/265.png
 img_981:
-.incbin "imgs/img_981.bin" ;../../ignore/chars_gif/Sprites-edgeworth/265.png;../../ignore/chars_gif/Sprites-edgeworth/266.png
+.incbin "imgs/img_981.bin" ;../../data/chars/Edgeworth/265.png;../../data/chars/Edgeworth/266.png
 img_982:
-.incbin "imgs/img_982.bin" ;../../ignore/chars_gif/Sprites-edgeworth/266.png;../../ignore/chars_gif/Sprites-edgeworth/263.png
+.incbin "imgs/img_982.bin" ;../../data/chars/Edgeworth/266.png;../../data/chars/Edgeworth/263.png
 img_983:
-.incbin "imgs/img_983.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.incbin "imgs/img_983.bin" ;../../data/empty.png;../../data/chars/Edgeworth/278.png
 img_984:
-.incbin "imgs/img_984.bin" ;../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/279.png
+.incbin "imgs/img_984.bin" ;../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/279.png
 img_985:
-.incbin "imgs/img_985.bin" ;../../ignore/chars_gif/Sprites-edgeworth/279.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.incbin "imgs/img_985.bin" ;../../data/chars/Edgeworth/279.png;../../data/chars/Edgeworth/278.png
 img_986:
-.incbin "imgs/img_986.bin" ;../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.incbin "imgs/img_986.bin" ;../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/280.png
 img_987:
-.incbin "imgs/img_987.bin" ;../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.incbin "imgs/img_987.bin" ;../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/278.png
 img_988:
-.incbin "imgs/img_988.bin" ;../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.incbin "imgs/img_988.bin" ;../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/281.png
 img_989:
-.incbin "imgs/img_989.bin" ;../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.incbin "imgs/img_989.bin" ;../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/282.png
 img_990:
-.incbin "imgs/img_990.bin" ;../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.incbin "imgs/img_990.bin" ;../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/283.png
 img_991:
-.incbin "imgs/img_991.bin" ;../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/284.png
+.incbin "imgs/img_991.bin" ;../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/284.png
 img_992:
-.incbin "imgs/img_992.bin" ;../../ignore/chars_gif/Sprites-edgeworth/284.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.incbin "imgs/img_992.bin" ;../../data/chars/Edgeworth/284.png;../../data/chars/Edgeworth/283.png
 img_993:
-.incbin "imgs/img_993.bin" ;../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.incbin "imgs/img_993.bin" ;../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/282.png
 img_994:
-.incbin "imgs/img_994.bin" ;../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.incbin "imgs/img_994.bin" ;../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/281.png
 img_995:
-.incbin "imgs/img_995.bin" ;../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.incbin "imgs/img_995.bin" ;../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/280.png
 img_996:
-.incbin "imgs/img_996.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.incbin "imgs/img_996.bin" ;../../data/empty.png;../../data/chars/Edgeworth/282.png
 img_997:
-.incbin "imgs/img_997.bin" ;../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.incbin "imgs/img_997.bin" ;../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/285.png
 img_998:
-.incbin "imgs/img_998.bin" ;../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/286.png
+.incbin "imgs/img_998.bin" ;../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/286.png
 img_999:
-.incbin "imgs/img_999.bin" ;../../ignore/chars_gif/Sprites-edgeworth/286.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.incbin "imgs/img_999.bin" ;../../data/chars/Edgeworth/286.png;../../data/chars/Edgeworth/285.png
 img_1000:
-.incbin "imgs/img_1000.bin" ;../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.incbin "imgs/img_1000.bin" ;../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/282.png
 img_1001:
-.incbin "imgs/img_1001.bin" ;../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.incbin "imgs/img_1001.bin" ;../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/281.png
 img_1002:
-.incbin "imgs/img_1002.bin" ;../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/287.png
+.incbin "imgs/img_1002.bin" ;../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/287.png
 img_1003:
-.incbin "imgs/img_1003.bin" ;../../ignore/chars_gif/Sprites-edgeworth/287.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.incbin "imgs/img_1003.bin" ;../../data/chars/Edgeworth/287.png;../../data/chars/Edgeworth/285.png
 img_1004:
-.incbin "imgs/img_1004.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.incbin "imgs/img_1004.bin" ;../../data/empty.png;../../data/chars/Edgeworth/293.png
 img_1005:
-.incbin "imgs/img_1005.bin" ;../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.incbin "imgs/img_1005.bin" ;../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/294.png
 img_1006:
-.incbin "imgs/img_1006.bin" ;../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.incbin "imgs/img_1006.bin" ;../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/295.png
 img_1007:
-.incbin "imgs/img_1007.bin" ;../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.incbin "imgs/img_1007.bin" ;../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/294.png
 img_1008:
-.incbin "imgs/img_1008.bin" ;../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.incbin "imgs/img_1008.bin" ;../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/293.png
 img_1009:
-.incbin "imgs/img_1009.bin" ;../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.incbin "imgs/img_1009.bin" ;../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/293.png
 img_1010:
-.incbin "imgs/img_1010.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/296.png
+.incbin "imgs/img_1010.bin" ;../../data/empty.png;../../data/chars/Edgeworth/296.png
 img_1011:
-.incbin "imgs/img_1011.bin" ;../../ignore/chars_gif/Sprites-edgeworth/296.png;../../ignore/chars_gif/Sprites-edgeworth/297.png
+.incbin "imgs/img_1011.bin" ;../../data/chars/Edgeworth/296.png;../../data/chars/Edgeworth/297.png
 img_1012:
-.incbin "imgs/img_1012.bin" ;../../ignore/chars_gif/Sprites-edgeworth/297.png;../../ignore/chars_gif/Sprites-edgeworth/298.png
+.incbin "imgs/img_1012.bin" ;../../data/chars/Edgeworth/297.png;../../data/chars/Edgeworth/298.png
 img_1013:
-.incbin "imgs/img_1013.bin" ;../../ignore/chars_gif/Sprites-edgeworth/298.png;../../ignore/chars_gif/Sprites-edgeworth/297.png
+.incbin "imgs/img_1013.bin" ;../../data/chars/Edgeworth/298.png;../../data/chars/Edgeworth/297.png
 img_1014:
-.incbin "imgs/img_1014.bin" ;../../ignore/chars_gif/Sprites-edgeworth/297.png;../../ignore/chars_gif/Sprites-edgeworth/299.png
+.incbin "imgs/img_1014.bin" ;../../data/chars/Edgeworth/297.png;../../data/chars/Edgeworth/299.png
 img_1015:
-.incbin "imgs/img_1015.bin" ;../../ignore/chars_gif/Sprites-edgeworth/299.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.incbin "imgs/img_1015.bin" ;../../data/chars/Edgeworth/299.png;../../data/chars/Edgeworth/293.png
 img_1016:
-.incbin "imgs/img_1016.bin" ;../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/300.png
+.incbin "imgs/img_1016.bin" ;../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/300.png
 img_1017:
-.incbin "imgs/img_1017.bin" ;../../ignore/chars_gif/Sprites-edgeworth/300.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.incbin "imgs/img_1017.bin" ;../../data/chars/Edgeworth/300.png;../../data/chars/Edgeworth/301.png
 img_1018:
-.incbin "imgs/img_1018.bin" ;../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.incbin "imgs/img_1018.bin" ;../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 img_1019:
-.incbin "imgs/img_1019.bin" ;../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.incbin "imgs/img_1019.bin" ;../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/295.png
 img_1020:
-.incbin "imgs/img_1020.bin" ;../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.incbin "imgs/img_1020.bin" ;../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/301.png
 img_1021:
-.incbin "imgs/img_1021.bin" ;../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.incbin "imgs/img_1021.bin" ;../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/301.png
 img_1022:
-.incbin "imgs/img_1022.bin" ;../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.incbin "imgs/img_1022.bin" ;../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/295.png
 img_1023:
-.incbin "imgs/img_1023.bin" ;../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.incbin "imgs/img_1023.bin" ;../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/294.png
 img_1024:
-.incbin "imgs/img_1024.bin" ;../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/303.png
+.incbin "imgs/img_1024.bin" ;../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/303.png
 img_1025:
-.incbin "imgs/img_1025.bin" ;../../ignore/chars_gif/Sprites-edgeworth/303.png;../../ignore/chars_gif/Sprites-edgeworth/297.png
+.incbin "imgs/img_1025.bin" ;../../data/chars/Edgeworth/303.png;../../data/chars/Edgeworth/297.png
 img_1026:
-.incbin "imgs/img_1026.bin" ;../../ignore/chars_gif/Sprites-edgeworth/298.png;../../ignore/chars_gif/Sprites-edgeworth/296.png
+.incbin "imgs/img_1026.bin" ;../../data/chars/Edgeworth/298.png;../../data/chars/Edgeworth/296.png
 img_1027:
 .incbin "imgs/img_1027.bin" ;../../data/empty.png;../../data/chars/Mia-maya/827.png
 img_1028:
@@ -2956,21 +2956,21 @@ img_1475:
 img_1476:
 .incbin "imgs/img_1476.bin" ;../../data/chars/Vasquez/192.png;../../data/chars/Vasquez/191.png
 img_1477:
-.incbin "imgs/img_1477.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.incbin "imgs/img_1477.bin" ;../../data/empty.png;../../data/chars/Yogi/1302.png
 img_1478:
-.incbin "imgs/img_1478.bin" ;../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1303.png
+.incbin "imgs/img_1478.bin" ;../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1303.png
 img_1479:
-.incbin "imgs/img_1479.bin" ;../../ignore/chars_gif/Sprites-yanni/1303.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.incbin "imgs/img_1479.bin" ;../../data/chars/Yogi/1303.png;../../data/chars/Yogi/1302.png
 img_1480:
-.incbin "imgs/img_1480.bin" ;../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1304.png
+.incbin "imgs/img_1480.bin" ;../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1304.png
 img_1481:
-.incbin "imgs/img_1481.bin" ;../../ignore/chars_gif/Sprites-yanni/1304.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.incbin "imgs/img_1481.bin" ;../../data/chars/Yogi/1304.png;../../data/chars/Yogi/1302.png
 img_1482:
-.incbin "imgs/img_1482.bin" ;../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.incbin "imgs/img_1482.bin" ;../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1302.png
 img_1483:
-.incbin "imgs/img_1483.bin" ;../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1305.png
+.incbin "imgs/img_1483.bin" ;../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1305.png
 img_1484:
-.incbin "imgs/img_1484.bin" ;../../ignore/chars_gif/Sprites-yanni/1305.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.incbin "imgs/img_1484.bin" ;../../data/chars/Yogi/1305.png;../../data/chars/Yogi/1302.png
 img_1485:
 .incbin "imgs/img_1485.bin" ;../../data/empty.png;../../data/chars/Karma/463.png
 img_1486:
@@ -4754,77 +4754,77 @@ img_2374:
 img_2375:
 .incbin "imgs/img_2375.bin" ;../../data/chars/Gumshoe/436.png;../../data/chars/Gumshoe/427.png
 img_2376:
-.incbin "imgs/img_2376.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-will/1284.png
+.incbin "imgs/img_2376.bin" ;../../data/empty.png;../../data/chars/Power/1284.png
 img_2377:
-.incbin "imgs/img_2377.bin" ;../../ignore/chars_gif/Sprites-will/1284.png;../../ignore/chars_gif/Sprites-will/1285.png
+.incbin "imgs/img_2377.bin" ;../../data/chars/Power/1284.png;../../data/chars/Power/1285.png
 img_2378:
-.incbin "imgs/img_2378.bin" ;../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1286.png
+.incbin "imgs/img_2378.bin" ;../../data/chars/Power/1285.png;../../data/chars/Power/1286.png
 img_2379:
-.incbin "imgs/img_2379.bin" ;../../ignore/chars_gif/Sprites-will/1286.png;../../ignore/chars_gif/Sprites-will/1285.png
+.incbin "imgs/img_2379.bin" ;../../data/chars/Power/1286.png;../../data/chars/Power/1285.png
 img_2380:
-.incbin "imgs/img_2380.bin" ;../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1287.png
+.incbin "imgs/img_2380.bin" ;../../data/chars/Power/1285.png;../../data/chars/Power/1287.png
 img_2381:
-.incbin "imgs/img_2381.bin" ;../../ignore/chars_gif/Sprites-will/1287.png;../../ignore/chars_gif/Sprites-will/1285.png
+.incbin "imgs/img_2381.bin" ;../../data/chars/Power/1287.png;../../data/chars/Power/1285.png
 img_2382:
-.incbin "imgs/img_2382.bin" ;../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1288.png
+.incbin "imgs/img_2382.bin" ;../../data/chars/Power/1285.png;../../data/chars/Power/1288.png
 img_2383:
-.incbin "imgs/img_2383.bin" ;../../ignore/chars_gif/Sprites-will/1288.png;../../ignore/chars_gif/Sprites-will/1285.png
+.incbin "imgs/img_2383.bin" ;../../data/chars/Power/1288.png;../../data/chars/Power/1285.png
 img_2384:
-.incbin "imgs/img_2384.bin" ;../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1284.png
+.incbin "imgs/img_2384.bin" ;../../data/chars/Power/1285.png;../../data/chars/Power/1284.png
 img_2385:
-.incbin "imgs/img_2385.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-will/1289.png
+.incbin "imgs/img_2385.bin" ;../../data/empty.png;../../data/chars/Power/1289.png
 img_2386:
-.incbin "imgs/img_2386.bin" ;../../ignore/chars_gif/Sprites-will/1289.png;../../ignore/chars_gif/Sprites-will/1290.png
+.incbin "imgs/img_2386.bin" ;../../data/chars/Power/1289.png;../../data/chars/Power/1290.png
 img_2387:
-.incbin "imgs/img_2387.bin" ;../../ignore/chars_gif/Sprites-will/1290.png;../../ignore/chars_gif/Sprites-will/1291.png
+.incbin "imgs/img_2387.bin" ;../../data/chars/Power/1290.png;../../data/chars/Power/1291.png
 img_2388:
-.incbin "imgs/img_2388.bin" ;../../ignore/chars_gif/Sprites-will/1291.png;../../ignore/chars_gif/Sprites-will/1290.png
+.incbin "imgs/img_2388.bin" ;../../data/chars/Power/1291.png;../../data/chars/Power/1290.png
 img_2389:
-.incbin "imgs/img_2389.bin" ;../../ignore/chars_gif/Sprites-will/1290.png;../../ignore/chars_gif/Sprites-will/1289.png
+.incbin "imgs/img_2389.bin" ;../../data/chars/Power/1290.png;../../data/chars/Power/1289.png
 img_2390:
-.incbin "imgs/img_2390.bin" ;../../ignore/chars_gif/Sprites-will/1289.png;../../ignore/chars_gif/Sprites-will/1289.png
+.incbin "imgs/img_2390.bin" ;../../data/chars/Power/1289.png;../../data/chars/Power/1289.png
 img_2391:
-.incbin "imgs/img_2391.bin" ;../../ignore/chars_gif/Sprites-will/1289.png;../../ignore/chars_gif/Sprites-will/1292.png
+.incbin "imgs/img_2391.bin" ;../../data/chars/Power/1289.png;../../data/chars/Power/1292.png
 img_2392:
-.incbin "imgs/img_2392.bin" ;../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1293.png
+.incbin "imgs/img_2392.bin" ;../../data/chars/Power/1292.png;../../data/chars/Power/1293.png
 img_2393:
-.incbin "imgs/img_2393.bin" ;../../ignore/chars_gif/Sprites-will/1293.png;../../ignore/chars_gif/Sprites-will/1292.png
+.incbin "imgs/img_2393.bin" ;../../data/chars/Power/1293.png;../../data/chars/Power/1292.png
 img_2394:
-.incbin "imgs/img_2394.bin" ;../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1294.png
+.incbin "imgs/img_2394.bin" ;../../data/chars/Power/1292.png;../../data/chars/Power/1294.png
 img_2395:
-.incbin "imgs/img_2395.bin" ;../../ignore/chars_gif/Sprites-will/1294.png;../../ignore/chars_gif/Sprites-will/1292.png
+.incbin "imgs/img_2395.bin" ;../../data/chars/Power/1294.png;../../data/chars/Power/1292.png
 img_2396:
-.incbin "imgs/img_2396.bin" ;../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1290.png
+.incbin "imgs/img_2396.bin" ;../../data/chars/Power/1292.png;../../data/chars/Power/1290.png
 img_2397:
-.incbin "imgs/img_2397.bin" ;../../ignore/chars_gif/Sprites-will/1291.png;../../ignore/chars_gif/Sprites-will/1295.png
+.incbin "imgs/img_2397.bin" ;../../data/chars/Power/1291.png;../../data/chars/Power/1295.png
 img_2398:
-.incbin "imgs/img_2398.bin" ;../../ignore/chars_gif/Sprites-will/1295.png;../../ignore/chars_gif/Sprites-will/1292.png
+.incbin "imgs/img_2398.bin" ;../../data/chars/Power/1295.png;../../data/chars/Power/1292.png
 img_2399:
-.incbin "imgs/img_2399.bin" ;../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1289.png
+.incbin "imgs/img_2399.bin" ;../../data/chars/Power/1292.png;../../data/chars/Power/1289.png
 img_2400:
-.incbin "imgs/img_2400.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-will/1296.png
+.incbin "imgs/img_2400.bin" ;../../data/empty.png;../../data/chars/Power/1296.png
 img_2401:
-.incbin "imgs/img_2401.bin" ;../../ignore/chars_gif/Sprites-will/1296.png;../../ignore/chars_gif/Sprites-will/1297.png
+.incbin "imgs/img_2401.bin" ;../../data/chars/Power/1296.png;../../data/chars/Power/1297.png
 img_2402:
-.incbin "imgs/img_2402.bin" ;../../ignore/chars_gif/Sprites-will/1297.png;../../ignore/chars_gif/Sprites-will/1296.png
+.incbin "imgs/img_2402.bin" ;../../data/chars/Power/1297.png;../../data/chars/Power/1296.png
 img_2403:
-.incbin "imgs/img_2403.bin" ;../../ignore/chars_gif/Sprites-will/1296.png;../../ignore/chars_gif/Sprites-will/1296.png
+.incbin "imgs/img_2403.bin" ;../../data/chars/Power/1296.png;../../data/chars/Power/1296.png
 img_2404:
-.incbin "imgs/img_2404.bin" ;../../data/empty.png;../../ignore/chars_gif/Sprites-will/1298.png
+.incbin "imgs/img_2404.bin" ;../../data/empty.png;../../data/chars/Power/1298.png
 img_2405:
-.incbin "imgs/img_2405.bin" ;../../ignore/chars_gif/Sprites-will/1298.png;../../ignore/chars_gif/Sprites-will/1299.png
+.incbin "imgs/img_2405.bin" ;../../data/chars/Power/1298.png;../../data/chars/Power/1299.png
 img_2406:
-.incbin "imgs/img_2406.bin" ;../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1300.png
+.incbin "imgs/img_2406.bin" ;../../data/chars/Power/1299.png;../../data/chars/Power/1300.png
 img_2407:
-.incbin "imgs/img_2407.bin" ;../../ignore/chars_gif/Sprites-will/1300.png;../../ignore/chars_gif/Sprites-will/1299.png
+.incbin "imgs/img_2407.bin" ;../../data/chars/Power/1300.png;../../data/chars/Power/1299.png
 img_2408:
-.incbin "imgs/img_2408.bin" ;../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1301.png
+.incbin "imgs/img_2408.bin" ;../../data/chars/Power/1299.png;../../data/chars/Power/1301.png
 img_2409:
-.incbin "imgs/img_2409.bin" ;../../ignore/chars_gif/Sprites-will/1301.png;../../ignore/chars_gif/Sprites-will/1299.png
+.incbin "imgs/img_2409.bin" ;../../data/chars/Power/1301.png;../../data/chars/Power/1299.png
 img_2410:
-.incbin "imgs/img_2410.bin" ;../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1298.png
+.incbin "imgs/img_2410.bin" ;../../data/chars/Power/1299.png;../../data/chars/Power/1298.png
 img_2411:
-.incbin "imgs/img_2411.bin" ;../../ignore/chars_gif/Sprites-will/1298.png;../../ignore/chars_gif/Sprites-will/1298.png
+.incbin "imgs/img_2411.bin" ;../../data/chars/Power/1298.png;../../data/chars/Power/1298.png
 
 .segment "ANIM_BNK"
 img_bkg_table:
@@ -5109,7 +5109,7 @@ img_anim_3:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_1319 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Mia/mia-Slice 6.png
-.byte IMG_BNK + $29 ; bank
+.byte IMG_BNK + $2a ; bank
 .byte $0A ; time
 .word (img_1320 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 7.png
 .byte IMG_BNK + $2a ; bank
@@ -5126,7 +5126,7 @@ img_anim_4:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_1319 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Mia/mia-Slice 6.png
-.byte IMG_BNK + $29 ; bank
+.byte IMG_BNK + $2a ; bank
 .byte $0A ; time
 .word (img_1317 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 6.png;../../data/chars/Mia/mia-Slice 9.png
 .byte IMG_BNK + $29 ; bank
@@ -5143,7 +5143,7 @@ img_anim_5:
 .byte $15 ; size
 .byte $3C ; time
 .word (img_1658 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Mia/mia-Slice 11.png
-.byte IMG_BNK + $31 ; bank
+.byte IMG_BNK + $32 ; bank
 .byte $0A ; time
 .word (img_1659 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 12.png
 .byte IMG_BNK + $32 ; bank
@@ -5160,7 +5160,7 @@ img_anim_6:
 .byte $15 ; size
 .byte $0A ; time
 .word (img_1658 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Mia/mia-Slice 11.png
-.byte IMG_BNK + $31 ; bank
+.byte IMG_BNK + $32 ; bank
 .byte $0A ; time
 .word (img_1322 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia/mia-Slice 11.png;../../data/chars/Mia/mia-Slice 14.png
 .byte IMG_BNK + $2a ; bank
@@ -7063,789 +7063,789 @@ img_anim_105:
 img_anim_106:
 .byte $29 ; size
 .byte $46 ; time
-.word (img_928 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_928 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_929 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.word (img_929 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/223.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_930 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/224.png
+.word (img_930 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/224.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_931 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/224.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.word (img_931 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/224.png;../../data/chars/Edgeworth/223.png
 .byte IMG_BNK + $21 ; bank
 .byte $5C ; time
-.word (img_932 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_932 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_929 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.word (img_929 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/223.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_930 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/224.png
+.word (img_930 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/224.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_931 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/224.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.word (img_931 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/224.png;../../data/chars/Edgeworth/223.png
 .byte IMG_BNK + $21 ; bank
 .byte $34 ; time
-.word (img_932 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_932 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $00 ; time
-.word (img_933 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_933 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 img_anim_107:
 .byte $5D ; size
 .byte $0A ; time
-.word (img_928 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_928 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/226.png
+.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/226.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/226.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/226.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/226.png
+.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/226.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/226.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/226.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_938 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/223.png
+.word (img_938 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/223.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_930 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/223.png;../../ignore/chars_gif/Sprites-edgeworth/224.png
+.word (img_930 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/223.png;../../data/chars/Edgeworth/224.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_939 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/224.png;../../ignore/chars_gif/Sprites-edgeworth/227.png
+.word (img_939 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/224.png;../../data/chars/Edgeworth/227.png
 .byte IMG_BNK + $21 ; bank
 .byte $04 ; time
-.word (img_940 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/227.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_940 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/227.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/226.png
+.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/226.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/226.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/226.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/226.png
+.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/226.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/226.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/226.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/222.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_934 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/222.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/226.png
+.word (img_935 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/226.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/226.png;../../ignore/chars_gif/Sprites-edgeworth/225.png
+.word (img_936 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/226.png;../../data/chars/Edgeworth/225.png
 .byte IMG_BNK + $21 ; bank
 .byte $00 ; time
-.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/225.png;../../ignore/chars_gif/Sprites-edgeworth/222.png
+.word (img_937 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/225.png;../../data/chars/Edgeworth/222.png
 .byte IMG_BNK + $21 ; bank
 img_anim_108:
 .byte $29 ; size
 .byte $46 ; time
-.word (img_941 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_941 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_942 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.word (img_942 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/235.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_943 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/236.png
+.word (img_943 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/236.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_944 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/236.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.word (img_944 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/236.png;../../data/chars/Edgeworth/235.png
 .byte IMG_BNK + $21 ; bank
 .byte $5C ; time
-.word (img_945 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_945 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_942 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.word (img_942 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/235.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_943 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/236.png
+.word (img_943 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/236.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_944 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/236.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.word (img_944 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/236.png;../../data/chars/Edgeworth/235.png
 .byte IMG_BNK + $21 ; bank
 .byte $34 ; time
-.word (img_945 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_945 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $00 ; time
-.word (img_946 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_946 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 img_anim_109:
 .byte $5D ; size
 .byte $09 ; time
-.word (img_941 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_941 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/238.png
+.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/238.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/238.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/238.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/238.png
+.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/238.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/238.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/238.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_951 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/235.png
+.word (img_951 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/235.png
 .byte IMG_BNK + $21 ; bank
 .byte $04 ; time
-.word (img_943 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/235.png;../../ignore/chars_gif/Sprites-edgeworth/236.png
+.word (img_943 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/235.png;../../data/chars/Edgeworth/236.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_952 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/236.png;../../ignore/chars_gif/Sprites-edgeworth/239.png
+.word (img_952 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/236.png;../../data/chars/Edgeworth/239.png
 .byte IMG_BNK + $21 ; bank
 .byte $04 ; time
-.word (img_953 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/239.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_953 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/239.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/238.png
+.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/238.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/238.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/238.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/238.png
+.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/238.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/238.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/238.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/234.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_947 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/234.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/238.png
+.word (img_948 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/238.png
 .byte IMG_BNK + $21 ; bank
 .byte $09 ; time
-.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/238.png;../../ignore/chars_gif/Sprites-edgeworth/237.png
+.word (img_949 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/238.png;../../data/chars/Edgeworth/237.png
 .byte IMG_BNK + $21 ; bank
 .byte $00 ; time
-.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/237.png;../../ignore/chars_gif/Sprites-edgeworth/234.png
+.word (img_950 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/237.png;../../data/chars/Edgeworth/234.png
 .byte IMG_BNK + $21 ; bank
 img_anim_110:
 .byte $21 ; size
 .byte $1E ; time
-.word (img_954 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/240.png
+.word (img_954 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/240.png
 .byte IMG_BNK + $21 ; bank
 .byte $20 ; time
-.word (img_955 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/240.png;../../ignore/chars_gif/Sprites-edgeworth/241.png
+.word (img_955 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/240.png;../../data/chars/Edgeworth/241.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_956 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/241.png;../../ignore/chars_gif/Sprites-edgeworth/242.png
+.word (img_956 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/241.png;../../data/chars/Edgeworth/242.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_957 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/242.png;../../ignore/chars_gif/Sprites-edgeworth/243.png
+.word (img_957 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/242.png;../../data/chars/Edgeworth/243.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_958 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/243.png;../../ignore/chars_gif/Sprites-edgeworth/242.png
+.word (img_958 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/243.png;../../data/chars/Edgeworth/242.png
 .byte IMG_BNK + $21 ; bank
 .byte $20 ; time
-.word (img_959 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/242.png;../../ignore/chars_gif/Sprites-edgeworth/241.png
+.word (img_959 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/242.png;../../data/chars/Edgeworth/241.png
 .byte IMG_BNK + $21 ; bank
 .byte $50 ; time
-.word (img_960 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/241.png;../../ignore/chars_gif/Sprites-edgeworth/240.png
-.byte IMG_BNK + $21 ; bank
+.word (img_960 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/241.png;../../data/chars/Edgeworth/240.png
+.byte IMG_BNK + $22 ; bank
 .byte $00 ; time
-.word (img_961 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/240.png;../../ignore/chars_gif/Sprites-edgeworth/240.png
-.byte IMG_BNK + $21 ; bank
+.word (img_961 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/240.png;../../data/chars/Edgeworth/240.png
+.byte IMG_BNK + $22 ; bank
 img_anim_111:
 .byte $69 ; size
 .byte $09 ; time
-.word (img_962 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
-.byte IMG_BNK + $21 ; bank
-.byte $09 ; time
-.word (img_963 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/244.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.word (img_962 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/244.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_964 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/246.png
+.word (img_963 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/244.png;../../data/chars/Edgeworth/245.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_965 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/246.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.word (img_964 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/246.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_966 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.word (img_965 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/246.png;../../data/chars/Edgeworth/245.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_963 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/244.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.word (img_966 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/244.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_964 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/246.png
+.word (img_963 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/244.png;../../data/chars/Edgeworth/245.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_965 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/246.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.word (img_964 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/246.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_966 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.word (img_965 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/246.png;../../data/chars/Edgeworth/245.png
+.byte IMG_BNK + $22 ; bank
+.byte $09 ; time
+.word (img_966 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/244.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_967 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/244.png;../../ignore/chars_gif/Sprites-edgeworth/247.png
+.word (img_967 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/244.png;../../data/chars/Edgeworth/247.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_968 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/247.png;../../ignore/chars_gif/Sprites-edgeworth/248.png
+.word (img_968 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/247.png;../../data/chars/Edgeworth/248.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_969 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/248.png;../../ignore/chars_gif/Sprites-edgeworth/249.png
+.word (img_969 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/248.png;../../data/chars/Edgeworth/249.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_970 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/249.png;../../ignore/chars_gif/Sprites-edgeworth/246.png
+.word (img_970 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/249.png;../../data/chars/Edgeworth/246.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_971 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/246.png;../../ignore/chars_gif/Sprites-edgeworth/250.png
+.word (img_971 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/246.png;../../data/chars/Edgeworth/250.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_972 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/250.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.word (img_972 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/250.png;../../data/chars/Edgeworth/251.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_973 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/252.png
+.word (img_973 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/252.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_974 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/252.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.word (img_974 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/252.png;../../data/chars/Edgeworth/251.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_975 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.word (img_975 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/244.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_963 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/244.png;../../ignore/chars_gif/Sprites-edgeworth/245.png
+.word (img_963 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/244.png;../../data/chars/Edgeworth/245.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_976 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/245.png;../../ignore/chars_gif/Sprites-edgeworth/252.png
+.word (img_976 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/245.png;../../data/chars/Edgeworth/252.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_974 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/252.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.word (img_974 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/252.png;../../data/chars/Edgeworth/251.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_977 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/250.png
+.word (img_977 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/250.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_972 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/250.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.word (img_972 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/250.png;../../data/chars/Edgeworth/251.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_973 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/252.png
+.word (img_973 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/252.png
 .byte IMG_BNK + $22 ; bank
 .byte $09 ; time
-.word (img_974 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/252.png;../../ignore/chars_gif/Sprites-edgeworth/251.png
+.word (img_974 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/252.png;../../data/chars/Edgeworth/251.png
 .byte IMG_BNK + $22 ; bank
 .byte $00 ; time
-.word (img_975 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/251.png;../../ignore/chars_gif/Sprites-edgeworth/244.png
+.word (img_975 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/251.png;../../data/chars/Edgeworth/244.png
 .byte IMG_BNK + $22 ; bank
 img_anim_112:
 .byte $39 ; size
 .byte $2D ; time
-.word (img_1004 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
-.byte IMG_BNK + $22 ; bank
+.word (img_1004 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/293.png
+.byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1005 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1005 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $28 ; time
-.word (img_1006 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1006 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1007 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1007 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1005 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1005 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $14 ; time
-.word (img_1006 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1006 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1007 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1007 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
-.word (img_1005 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1005 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $14 ; time
-.word (img_1006 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1006 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1007 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1007 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 .byte $00 ; time
-.word (img_1009 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1009 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 img_anim_113:
 .byte $95 ; size
 .byte $0A ; time
-.word (img_1010 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/296.png
+.word (img_1010 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/296.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1011 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/296.png;../../ignore/chars_gif/Sprites-edgeworth/297.png
+.word (img_1011 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/296.png;../../data/chars/Edgeworth/297.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1012 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/297.png;../../ignore/chars_gif/Sprites-edgeworth/298.png
+.word (img_1012 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/297.png;../../data/chars/Edgeworth/298.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1013 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/298.png;../../ignore/chars_gif/Sprites-edgeworth/297.png
+.word (img_1013 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/298.png;../../data/chars/Edgeworth/297.png
 .byte IMG_BNK + $23 ; bank
 .byte $05 ; time
-.word (img_1014 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/297.png;../../ignore/chars_gif/Sprites-edgeworth/299.png
+.word (img_1014 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/297.png;../../data/chars/Edgeworth/299.png
 .byte IMG_BNK + $23 ; bank
 .byte $05 ; time
-.word (img_1015 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/299.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1015 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/299.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 .byte $06 ; time
-.word (img_1016 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/300.png
+.word (img_1016 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/300.png
 .byte IMG_BNK + $23 ; bank
 .byte $04 ; time
-.word (img_1017 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/300.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1017 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/300.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1019 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1019 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1022 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1022 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $05 ; time
-.word (img_1023 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1023 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $05 ; time
-.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 .byte $06 ; time
-.word (img_1016 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/300.png
+.word (img_1016 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/300.png
 .byte IMG_BNK + $23 ; bank
 .byte $04 ; time
-.word (img_1017 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/300.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1017 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/300.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1022 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1022 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1022 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/295.png
+.word (img_1022 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/295.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/295.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1020 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/295.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/302.png
+.word (img_1018 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/302.png
 .byte IMG_BNK + $23 ; bank
 .byte $0A ; time
-.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/302.png;../../ignore/chars_gif/Sprites-edgeworth/301.png
+.word (img_1021 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/302.png;../../data/chars/Edgeworth/301.png
 .byte IMG_BNK + $23 ; bank
 .byte $05 ; time
-.word (img_1023 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/301.png;../../ignore/chars_gif/Sprites-edgeworth/294.png
+.word (img_1023 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/301.png;../../data/chars/Edgeworth/294.png
 .byte IMG_BNK + $23 ; bank
 .byte $05 ; time
-.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/294.png;../../ignore/chars_gif/Sprites-edgeworth/293.png
+.word (img_1008 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/294.png;../../data/chars/Edgeworth/293.png
 .byte IMG_BNK + $23 ; bank
 .byte $06 ; time
-.word (img_1024 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/293.png;../../ignore/chars_gif/Sprites-edgeworth/303.png
+.word (img_1024 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/293.png;../../data/chars/Edgeworth/303.png
 .byte IMG_BNK + $23 ; bank
 .byte $04 ; time
-.word (img_1025 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/303.png;../../ignore/chars_gif/Sprites-edgeworth/297.png
+.word (img_1025 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/303.png;../../data/chars/Edgeworth/297.png
 .byte IMG_BNK + $23 ; bank
 .byte $06 ; time
-.word (img_1012 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/297.png;../../ignore/chars_gif/Sprites-edgeworth/298.png
+.word (img_1012 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/297.png;../../data/chars/Edgeworth/298.png
 .byte IMG_BNK + $23 ; bank
 .byte $00 ; time
-.word (img_1026 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/298.png;../../ignore/chars_gif/Sprites-edgeworth/296.png
+.word (img_1026 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/298.png;../../data/chars/Edgeworth/296.png
 .byte IMG_BNK + $23 ; bank
 img_anim_114:
 .byte $29 ; size
 .byte $46 ; time
-.word (img_915 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.word (img_915 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/216.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_916 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/216.png;../../ignore/chars_gif/Sprites-edgeworth/217.png
+.word (img_916 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/216.png;../../data/chars/Edgeworth/217.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_917 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/217.png;../../ignore/chars_gif/Sprites-edgeworth/218.png
+.word (img_917 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/217.png;../../data/chars/Edgeworth/218.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_918 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/218.png;../../ignore/chars_gif/Sprites-edgeworth/217.png
+.word (img_918 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/218.png;../../data/chars/Edgeworth/217.png
 .byte IMG_BNK + $21 ; bank
 .byte $5C ; time
-.word (img_919 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/217.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.word (img_919 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/217.png;../../data/chars/Edgeworth/216.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_916 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/216.png;../../ignore/chars_gif/Sprites-edgeworth/217.png
+.word (img_916 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/216.png;../../data/chars/Edgeworth/217.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_917 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/217.png;../../ignore/chars_gif/Sprites-edgeworth/218.png
+.word (img_917 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/217.png;../../data/chars/Edgeworth/218.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_918 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/218.png;../../ignore/chars_gif/Sprites-edgeworth/217.png
+.word (img_918 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/218.png;../../data/chars/Edgeworth/217.png
 .byte IMG_BNK + $21 ; bank
 .byte $34 ; time
-.word (img_919 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/217.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.word (img_919 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/217.png;../../data/chars/Edgeworth/216.png
 .byte IMG_BNK + $21 ; bank
 .byte $00 ; time
-.word (img_920 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/216.png;../../ignore/chars_gif/Sprites-edgeworth/216.png
+.word (img_920 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/216.png;../../data/chars/Edgeworth/216.png
 .byte IMG_BNK + $21 ; bank
 img_anim_115:
 .byte $5D ; size
 .byte $0A ; time
-.word (img_921 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_921 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/221.png
+.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/221.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/221.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/221.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/221.png
+.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/221.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/221.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/221.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 .byte $05 ; time
-.word (img_926 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_926 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 .byte $06 ; time
-.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $04 ; time
-.word (img_927 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_927 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/221.png
+.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/221.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/221.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/221.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/221.png
+.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/221.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/221.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/221.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/219.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_922 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/219.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/221.png
+.word (img_923 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/221.png
 .byte IMG_BNK + $21 ; bank
 .byte $0A ; time
-.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/221.png;../../ignore/chars_gif/Sprites-edgeworth/220.png
+.word (img_924 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/221.png;../../data/chars/Edgeworth/220.png
 .byte IMG_BNK + $21 ; bank
 .byte $00 ; time
-.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/220.png;../../ignore/chars_gif/Sprites-edgeworth/219.png
+.word (img_925 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/220.png;../../data/chars/Edgeworth/219.png
 .byte IMG_BNK + $21 ; bank
 img_anim_116:
 .byte $A5 ; size
 .byte $08 ; time
-.word (img_983 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_983 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/279.png
+.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/279.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/279.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/279.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/279.png
+.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/279.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/279.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/279.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/279.png
+.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/279.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/279.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/279.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/279.png
+.word (img_984 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/279.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/279.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/279.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 .byte $1E ; time
-.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/278.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/278.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $06 ; time
-.word (img_988 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.word (img_988 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/281.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_989 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_989 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/284.png
+.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/284.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/284.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/284.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/284.png
+.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/284.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/284.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/284.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/284.png
+.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/284.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/284.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/284.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_990 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/284.png
+.word (img_991 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/284.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/284.png;../../ignore/chars_gif/Sprites-edgeworth/283.png
+.word (img_992 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/284.png;../../data/chars/Edgeworth/283.png
 .byte IMG_BNK + $22 ; bank
 .byte $64 ; time
-.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/283.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_993 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/283.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_994 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.word (img_994 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/281.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_995 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_995 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $08 ; time
-.word (img_988 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.word (img_988 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/281.png
 .byte IMG_BNK + $22 ; bank
 .byte $50 ; time
-.word (img_989 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_989 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $07 ; time
-.word (img_994 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.word (img_994 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/281.png
 .byte IMG_BNK + $22 ; bank
 .byte $64 ; time
-.word (img_995 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_995 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $00 ; time
-.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/278.png
+.word (img_987 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/278.png
 .byte IMG_BNK + $22 ; bank
 img_anim_117:
 .byte $5D ; size
 .byte $0A ; time
-.word (img_996 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_996 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/286.png
+.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/286.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/286.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/286.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/286.png
+.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/286.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/286.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/286.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_1001 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/281.png
+.word (img_1001 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/281.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_995 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/281.png;../../ignore/chars_gif/Sprites-edgeworth/280.png
+.word (img_995 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/281.png;../../data/chars/Edgeworth/280.png
 .byte IMG_BNK + $22 ; bank
 .byte $06 ; time
-.word (img_1002 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/280.png;../../ignore/chars_gif/Sprites-edgeworth/287.png
+.word (img_1002 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/280.png;../../data/chars/Edgeworth/287.png
 .byte IMG_BNK + $22 ; bank
 .byte $04 ; time
-.word (img_1003 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/287.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_1003 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/287.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/286.png
+.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/286.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/286.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/286.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/286.png
+.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/286.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/286.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/286.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/282.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_997 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/282.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/286.png
+.word (img_998 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/286.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/286.png;../../ignore/chars_gif/Sprites-edgeworth/285.png
+.word (img_999 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/286.png;../../data/chars/Edgeworth/285.png
 .byte IMG_BNK + $22 ; bank
 .byte $00 ; time
-.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/285.png;../../ignore/chars_gif/Sprites-edgeworth/282.png
+.word (img_1000 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/285.png;../../data/chars/Edgeworth/282.png
 .byte IMG_BNK + $22 ; bank
 img_anim_118: ;empty anim
 .byte $01 ; size
 img_anim_119:
 .byte $15 ; size
 .byte $05 ; time
-.word (img_978 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-edgeworth/263.png
+.word (img_978 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Edgeworth/263.png
 .byte IMG_BNK + $22 ; bank
 .byte $05 ; time
-.word (img_979 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/263.png;../../ignore/chars_gif/Sprites-edgeworth/264.png
+.word (img_979 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/263.png;../../data/chars/Edgeworth/264.png
 .byte IMG_BNK + $22 ; bank
 .byte $0A ; time
-.word (img_980 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/264.png;../../ignore/chars_gif/Sprites-edgeworth/265.png
+.word (img_980 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/264.png;../../data/chars/Edgeworth/265.png
 .byte IMG_BNK + $22 ; bank
 .byte $1E ; time
-.word (img_981 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/265.png;../../ignore/chars_gif/Sprites-edgeworth/266.png
+.word (img_981 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/265.png;../../data/chars/Edgeworth/266.png
 .byte IMG_BNK + $22 ; bank
 .byte $00 ; time
-.word (img_982 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-edgeworth/266.png;../../ignore/chars_gif/Sprites-edgeworth/263.png
+.word (img_982 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Edgeworth/266.png;../../data/chars/Edgeworth/263.png
 .byte IMG_BNK + $22 ; bank
 img_anim_120:
 .byte $15 ; size
@@ -7951,18 +7951,18 @@ img_anim_125:
 .byte IMG_BNK + $28 ; bank
 .byte $0A ; time
 .word (img_1271 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Grossberg/360.png;../../data/chars/Grossberg/361.png
-.byte IMG_BNK + $28 ; bank
+.byte IMG_BNK + $29 ; bank
 .byte $08 ; time
 .word (img_1272 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Grossberg/361.png;../../data/chars/Grossberg/360.png
-.byte IMG_BNK + $28 ; bank
+.byte IMG_BNK + $29 ; bank
 .byte $00 ; time
 .word (img_1273 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Grossberg/360.png;../../data/chars/Grossberg/358.png
-.byte IMG_BNK + $28 ; bank
+.byte IMG_BNK + $29 ; bank
 img_anim_126:
 .byte $39 ; size
 .byte $1E ; time
 .word (img_1274 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Grossberg/362.png
-.byte IMG_BNK + $28 ; bank
+.byte IMG_BNK + $29 ; bank
 .byte $04 ; time
 .word (img_1275 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Grossberg/362.png;../../data/chars/Grossberg/362.png
 .byte IMG_BNK + $29 ; bank
@@ -8006,7 +8006,7 @@ img_anim_127:
 .byte $3D ; size
 .byte $08 ; time
 .word (img_1274 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Grossberg/362.png
-.byte IMG_BNK + $28 ; bank
+.byte IMG_BNK + $29 ; bank
 .byte $08 ; time
 .word (img_1281 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Grossberg/362.png;../../data/chars/Grossberg/365.png
 .byte IMG_BNK + $29 ; bank
@@ -8212,19 +8212,19 @@ img_anim_131:
 .byte IMG_BNK + $32 ; bank
 .byte $06 ; time
 .word (img_1702 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/743.png;../../data/chars/Maya/741.png
-.byte IMG_BNK + $32 ; bank
+.byte IMG_BNK + $33 ; bank
 .byte $03 ; time
 .word (img_1694 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/741.png;../../data/chars/Maya/742.png
 .byte IMG_BNK + $32 ; bank
 .byte $03 ; time
 .word (img_1703 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/742.png;../../data/chars/Maya/745.png
-.byte IMG_BNK + $32 ; bank
+.byte IMG_BNK + $33 ; bank
 .byte $06 ; time
 .word (img_1704 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/745.png;../../data/chars/Maya/746.png
-.byte IMG_BNK + $32 ; bank
+.byte IMG_BNK + $33 ; bank
 .byte $09 ; time
 .word (img_1705 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/746.png;../../data/chars/Maya/744.png
-.byte IMG_BNK + $32 ; bank
+.byte IMG_BNK + $33 ; bank
 .byte $09 ; time
 .word (img_1700 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/744.png;../../data/chars/Maya/743.png
 .byte IMG_BNK + $32 ; bank
@@ -8547,28 +8547,28 @@ img_anim_138:
 .byte IMG_BNK + $33 ; bank
 .byte $09 ; time
 .word (img_1748 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/767.png;../../data/chars/Maya/768.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $09 ; time
 .word (img_1749 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/768.png;../../data/chars/Maya/767.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $46 ; time
 .word (img_1750 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/767.png;../../data/chars/Maya/766.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $06 ; time
 .word (img_1747 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/766.png;../../data/chars/Maya/767.png
 .byte IMG_BNK + $33 ; bank
 .byte $06 ; time
 .word (img_1748 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/767.png;../../data/chars/Maya/768.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $06 ; time
 .word (img_1749 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/768.png;../../data/chars/Maya/767.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $34 ; time
 .word (img_1750 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/767.png;../../data/chars/Maya/766.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $00 ; time
 .word (img_1751 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/766.png;../../data/chars/Maya/766.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 img_anim_139:
 .byte $5D ; size
 .byte $08 ; time
@@ -8600,7 +8600,7 @@ img_anim_139:
 .byte IMG_BNK + $34 ; bank
 .byte $03 ; time
 .word (img_1748 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/767.png;../../data/chars/Maya/768.png
-.byte IMG_BNK + $33 ; bank
+.byte IMG_BNK + $34 ; bank
 .byte $03 ; time
 .word (img_1757 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/768.png;../../data/chars/Maya/771.png
 .byte IMG_BNK + $34 ; bank
@@ -8879,7 +8879,7 @@ img_anim_145:
 .byte IMG_BNK + $34 ; bank
 .byte $09 ; time
 .word (img_1797 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/792.png;../../data/chars/Maya/793.png
-.byte IMG_BNK + $34 ; bank
+.byte IMG_BNK + $35 ; bank
 .byte $50 ; time
 .word (img_1798 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/793.png;../../data/chars/Maya/794.png
 .byte IMG_BNK + $35 ; bank
@@ -8891,7 +8891,7 @@ img_anim_145:
 .byte IMG_BNK + $35 ; bank
 .byte $50 ; time
 .word (img_1797 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/792.png;../../data/chars/Maya/793.png
-.byte IMG_BNK + $34 ; bank
+.byte IMG_BNK + $35 ; bank
 .byte $09 ; time
 .word (img_1798 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/793.png;../../data/chars/Maya/794.png
 .byte IMG_BNK + $35 ; bank
@@ -9122,28 +9122,28 @@ img_anim_151:
 .byte IMG_BNK + $35 ; bank
 .byte $09 ; time
 .word (img_1833 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/813.png;../../data/chars/Maya/814.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $09 ; time
 .word (img_1834 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/814.png;../../data/chars/Maya/815.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $09 ; time
 .word (img_1835 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/815.png;../../data/chars/Maya/814.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $5A ; time
 .word (img_1836 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/814.png;../../data/chars/Maya/813.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $06 ; time
 .word (img_1833 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/813.png;../../data/chars/Maya/814.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $06 ; time
 .word (img_1834 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/814.png;../../data/chars/Maya/815.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $06 ; time
 .word (img_1835 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/815.png;../../data/chars/Maya/814.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $78 ; time
 .word (img_1836 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/814.png;../../data/chars/Maya/813.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $00 ; time
 .word (img_1837 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/813.png;../../data/chars/Maya/813.png
 .byte IMG_BNK + $36 ; bank
@@ -9178,7 +9178,7 @@ img_anim_152:
 .byte IMG_BNK + $36 ; bank
 .byte $04 ; time
 .word (img_1834 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/814.png;../../data/chars/Maya/815.png
-.byte IMG_BNK + $35 ; bank
+.byte IMG_BNK + $36 ; bank
 .byte $04 ; time
 .word (img_1843 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/815.png;../../data/chars/Maya/818.png
 .byte IMG_BNK + $36 ; bank
@@ -9564,7 +9564,7 @@ img_anim_159:
 .byte IMG_BNK + $36 ; bank
 .byte $00 ; time
 .word (img_1895 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/726.png;../../data/chars/Maya/726.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 img_anim_160:
 .byte $5D ; size
 .byte $09 ; time
@@ -9572,25 +9572,25 @@ img_anim_160:
 .byte IMG_BNK + $36 ; bank
 .byte $09 ; time
 .word (img_1896 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/726.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1897 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/730.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1898 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/730.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1899 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/726.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1896 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/726.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1897 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/730.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1898 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/730.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $06 ; time
 .word (img_1900 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/727.png
 .byte IMG_BNK + $37 ; bank
@@ -9608,34 +9608,34 @@ img_anim_160:
 .byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1898 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/730.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1899 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/726.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1896 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/726.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1897 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/730.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1898 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/730.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1899 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/726.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1896 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/726.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1897 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/730.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $09 ; time
 .word (img_1898 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/730.png;../../data/chars/Maya/729.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 .byte $00 ; time
 .word (img_1899 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Maya/729.png;../../data/chars/Maya/726.png
-.byte IMG_BNK + $36 ; bank
+.byte IMG_BNK + $37 ; bank
 img_anim_161:
 .byte $19 ; size
 .byte $19 ; time
@@ -9975,7 +9975,7 @@ img_anim_168:
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
 .word (img_1061 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/862.png;../../data/chars/Mia-maya/860.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $09 ; time
 .word (img_1058 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/860.png;../../data/chars/Mia-maya/862.png
 .byte IMG_BNK + $23 ; bank
@@ -9987,13 +9987,13 @@ img_anim_168:
 .byte IMG_BNK + $23 ; bank
 .byte $06 ; time
 .word (img_1062 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/862.png;../../data/chars/Mia-maya/861.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $04 ; time
 .word (img_1063 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/861.png;../../data/chars/Mia-maya/864.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $03 ; time
 .word (img_1064 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/864.png;../../data/chars/Mia-maya/862.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $09 ; time
 .word (img_1059 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/862.png;../../data/chars/Mia-maya/863.png
 .byte IMG_BNK + $23 ; bank
@@ -10002,7 +10002,7 @@ img_anim_168:
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
 .word (img_1061 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/862.png;../../data/chars/Mia-maya/860.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $09 ; time
 .word (img_1058 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/860.png;../../data/chars/Mia-maya/862.png
 .byte IMG_BNK + $23 ; bank
@@ -10014,7 +10014,7 @@ img_anim_168:
 .byte IMG_BNK + $23 ; bank
 .byte $09 ; time
 .word (img_1061 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/862.png;../../data/chars/Mia-maya/860.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $09 ; time
 .word (img_1058 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/860.png;../../data/chars/Mia-maya/862.png
 .byte IMG_BNK + $23 ; bank
@@ -10026,12 +10026,12 @@ img_anim_168:
 .byte IMG_BNK + $23 ; bank
 .byte $00 ; time
 .word (img_1061 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/862.png;../../data/chars/Mia-maya/860.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 img_anim_169:
 .byte $29 ; size
 .byte $4B ; time
 .word (img_1065 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Mia-maya/865.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $06 ; time
 .word (img_1066 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/865.png;../../data/chars/Mia-maya/866.png
 .byte IMG_BNK + $24 ; bank
@@ -10063,7 +10063,7 @@ img_anim_170:
 .byte $5D ; size
 .byte $08 ; time
 .word (img_1065 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Mia-maya/865.png
-.byte IMG_BNK + $23 ; bank
+.byte IMG_BNK + $24 ; bank
 .byte $08 ; time
 .word (img_1071 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/865.png;../../data/chars/Mia-maya/868.png
 .byte IMG_BNK + $24 ; bank
@@ -10351,7 +10351,7 @@ img_anim_176:
 .byte IMG_BNK + $23 ; bank
 .byte $0C ; time
 .word (img_1114 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/829.png;../../data/chars/Mia-maya/843.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $12 ; time
 .word (img_1115 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/843.png;../../data/chars/Mia-maya/844.png
 .byte IMG_BNK + $25 ; bank
@@ -10486,10 +10486,10 @@ img_anim_179:
 .byte IMG_BNK + $24 ; bank
 .byte $08 ; time
 .word (img_1111 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/841.png;../../data/chars/Mia-maya/840.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $02 ; time
 .word (img_1112 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/840.png;../../data/chars/Mia-maya/839.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $08 ; time
 .word (img_1105 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/839.png;../../data/chars/Mia-maya/840.png
 .byte IMG_BNK + $24 ; bank
@@ -10498,13 +10498,13 @@ img_anim_179:
 .byte IMG_BNK + $24 ; bank
 .byte $08 ; time
 .word (img_1111 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/841.png;../../data/chars/Mia-maya/840.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $0C ; time
 .word (img_1112 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/840.png;../../data/chars/Mia-maya/839.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $00 ; time
 .word (img_1113 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/839.png;../../data/chars/Mia-maya/839.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 img_anim_180:
 .byte $5D ; size
 .byte $09 ; time
@@ -10735,7 +10735,7 @@ img_anim_185:
 .byte IMG_BNK + $3f ; bank
 .byte $06 ; time
 .word (img_2259 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/381.png;../../data/chars/Gumshoe/382.png
-.byte IMG_BNK + $3f ; bank
+.byte IMG_BNK + $40 ; bank
 .byte $07 ; time
 .word (img_2260 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/382.png;../../data/chars/Gumshoe/383.png
 .byte IMG_BNK + $40 ; bank
@@ -11153,13 +11153,13 @@ img_anim_193:
 .byte IMG_BNK + $41 ; bank
 .byte $07 ; time
 .word (img_2323 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/415.png;../../data/chars/Gumshoe/416.png
-.byte IMG_BNK + $41 ; bank
+.byte IMG_BNK + $42 ; bank
 .byte $07 ; time
 .word (img_2324 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/416.png;../../data/chars/Gumshoe/417.png
-.byte IMG_BNK + $41 ; bank
+.byte IMG_BNK + $42 ; bank
 .byte $07 ; time
 .word (img_2325 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/417.png;../../data/chars/Gumshoe/411.png
-.byte IMG_BNK + $41 ; bank
+.byte IMG_BNK + $42 ; bank
 .byte $07 ; time
 .word (img_2326 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/411.png;../../data/chars/Gumshoe/418.png
 .byte IMG_BNK + $42 ; bank
@@ -11177,10 +11177,10 @@ img_anim_193:
 .byte IMG_BNK + $42 ; bank
 .byte $07 ; time
 .word (img_2323 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/415.png;../../data/chars/Gumshoe/416.png
-.byte IMG_BNK + $41 ; bank
+.byte IMG_BNK + $42 ; bank
 .byte $07 ; time
 .word (img_2324 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/416.png;../../data/chars/Gumshoe/417.png
-.byte IMG_BNK + $41 ; bank
+.byte IMG_BNK + $42 ; bank
 .byte $07 ; time
 .word (img_2331 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Gumshoe/417.png;../../data/chars/Gumshoe/418.png
 .byte IMG_BNK + $42 ; bank
@@ -11561,82 +11561,82 @@ img_anim_199:
 .byte IMG_BNK + $25 ; bank
 .byte $03 ; time
 .word (img_1149 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1106.png;../../data/chars/White/1107.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1151 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1107.png
 .byte IMG_BNK + $26 ; bank
 .byte $03 ; time
 .word (img_1150 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1107.png;../../data/chars/White/1108.png
-.byte IMG_BNK + $25 ; bank
+.byte IMG_BNK + $26 ; bank
 .byte $05 ; time
 .word (img_1152 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1108.png;../../data/chars/White/1106.png
 .byte IMG_BNK + $26 ; bank
@@ -11781,7 +11781,7 @@ img_anim_204:
 .byte IMG_BNK + $26 ; bank
 .byte $07 ; time
 .word (img_1181 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1123.png;../../data/chars/White/1124.png
-.byte IMG_BNK + $26 ; bank
+.byte IMG_BNK + $27 ; bank
 .byte $0C ; time
 .word (img_1182 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/White/1124.png;../../data/chars/White/1125.png
 .byte IMG_BNK + $27 ; bank
@@ -12372,7 +12372,7 @@ img_anim_216:
 .byte IMG_BNK + $3d ; bank
 .byte $06 ; time
 .word (img_2141 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/11.png;../../data/chars/April/12.png
-.byte IMG_BNK + $3d ; bank
+.byte IMG_BNK + $3e ; bank
 .byte $06 ; time
 .word (img_2142 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/12.png;../../data/chars/April/13.png
 .byte IMG_BNK + $3e ; bank
@@ -12384,7 +12384,7 @@ img_anim_216:
 .byte IMG_BNK + $3e ; bank
 .byte $06 ; time
 .word (img_2141 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/11.png;../../data/chars/April/12.png
-.byte IMG_BNK + $3d ; bank
+.byte IMG_BNK + $3e ; bank
 .byte $06 ; time
 .word (img_2142 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/12.png;../../data/chars/April/13.png
 .byte IMG_BNK + $3e ; bank
@@ -12396,7 +12396,7 @@ img_anim_216:
 .byte IMG_BNK + $3e ; bank
 .byte $06 ; time
 .word (img_2141 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/11.png;../../data/chars/April/12.png
-.byte IMG_BNK + $3d ; bank
+.byte IMG_BNK + $3e ; bank
 .byte $06 ; time
 .word (img_2142 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/12.png;../../data/chars/April/13.png
 .byte IMG_BNK + $3e ; bank
@@ -12714,7 +12714,7 @@ img_anim_225:
 .byte IMG_BNK + $3d ; bank
 .byte $06 ; time
 .word (img_2141 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/11.png;../../data/chars/April/12.png
-.byte IMG_BNK + $3d ; bank
+.byte IMG_BNK + $3e ; bank
 .byte $19 ; time
 .word (img_2142 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/12.png;../../data/chars/April/13.png
 .byte IMG_BNK + $3e ; bank
@@ -12806,16 +12806,16 @@ img_anim_226:
 .byte IMG_BNK + $3e ; bank
 .byte $06 ; time
 .word (img_2206 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/45.png;../../data/chars/April/47.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $06 ; time
 .word (img_2207 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/47.png;../../data/chars/April/48.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $06 ; time
 .word (img_2208 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/48.png;../../data/chars/April/47.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $1C ; time
 .word (img_2209 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/47.png;../../data/chars/April/45.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $06 ; time
 .word (img_2204 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/45.png;../../data/chars/April/46.png
 .byte IMG_BNK + $3e ; bank
@@ -12835,10 +12835,10 @@ img_anim_227:
 .byte IMG_BNK + $3e ; bank
 .byte $08 ; time
 .word (img_2210 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/45.png;../../data/chars/April/49.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $0A ; time
 .word (img_2211 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/49.png;../../data/chars/April/50.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $08 ; time
 .word (img_2212 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/50.png;../../data/chars/April/49.png
 .byte IMG_BNK + $3f ; bank
@@ -12859,10 +12859,10 @@ img_anim_227:
 .byte IMG_BNK + $3f ; bank
 .byte $08 ; time
 .word (img_2210 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/45.png;../../data/chars/April/49.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $0A ; time
 .word (img_2211 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/49.png;../../data/chars/April/50.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $08 ; time
 .word (img_2212 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/50.png;../../data/chars/April/49.png
 .byte IMG_BNK + $3f ; bank
@@ -12874,7 +12874,7 @@ img_anim_227:
 .byte IMG_BNK + $3f ; bank
 .byte $0A ; time
 .word (img_2211 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/49.png;../../data/chars/April/50.png
-.byte IMG_BNK + $3e ; bank
+.byte IMG_BNK + $3f ; bank
 .byte $08 ; time
 .word (img_2212 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/April/50.png;../../data/chars/April/49.png
 .byte IMG_BNK + $3f ; bank
@@ -13663,264 +13663,264 @@ img_anim_246:
 img_anim_247:
 .byte $11 ; size
 .byte $14 ; time
-.word (img_2400 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-will/1296.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2400 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Power/1296.png
+.byte IMG_BNK + $44 ; bank
 .byte $07 ; time
-.word (img_2401 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1296.png;../../ignore/chars_gif/Sprites-will/1297.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2401 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1296.png;../../data/chars/Power/1297.png
+.byte IMG_BNK + $44 ; bank
 .byte $64 ; time
-.word (img_2402 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1297.png;../../ignore/chars_gif/Sprites-will/1296.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2402 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1297.png;../../data/chars/Power/1296.png
+.byte IMG_BNK + $44 ; bank
 .byte $00 ; time
-.word (img_2403 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1296.png;../../ignore/chars_gif/Sprites-will/1296.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2403 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1296.png;../../data/chars/Power/1296.png
+.byte IMG_BNK + $44 ; bank
 img_anim_248:
 .byte $45 ; size
 .byte $09 ; time
-.word (img_2376 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-will/1284.png
+.word (img_2376 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Power/1284.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2377 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1284.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2377 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1284.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1286.png
+.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1286.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1286.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1286.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2380 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1287.png
+.word (img_2380 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1287.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2381 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1287.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2381 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1287.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1286.png
+.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1286.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1286.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1286.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $07 ; time
-.word (img_2382 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1288.png
+.word (img_2382 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1288.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2383 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1288.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2383 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1288.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1286.png
+.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1286.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1286.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1286.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2380 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1287.png
+.word (img_2380 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1287.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2381 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1287.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2381 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1287.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1286.png
+.word (img_2378 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1286.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1286.png;../../ignore/chars_gif/Sprites-will/1285.png
+.word (img_2379 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1286.png;../../data/chars/Power/1285.png
 .byte IMG_BNK + $43 ; bank
 .byte $00 ; time
-.word (img_2384 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1285.png;../../ignore/chars_gif/Sprites-will/1284.png
+.word (img_2384 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1285.png;../../data/chars/Power/1284.png
 .byte IMG_BNK + $43 ; bank
 img_anim_249:
 .byte $09 ; size
 .byte $7F ; time
-.word (img_2404 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-will/1298.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2404 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Power/1298.png
+.byte IMG_BNK + $44 ; bank
 .byte $00 ; time
-.word (img_2411 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1298.png;../../ignore/chars_gif/Sprites-will/1298.png
+.word (img_2411 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1298.png;../../data/chars/Power/1298.png
 .byte IMG_BNK + $44 ; bank
 img_anim_250:
 .byte $25 ; size
 .byte $09 ; time
-.word (img_2404 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-will/1298.png
-.byte IMG_BNK + $43 ; bank
-.byte $09 ; time
-.word (img_2405 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1298.png;../../ignore/chars_gif/Sprites-will/1299.png
+.word (img_2404 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Power/1298.png
 .byte IMG_BNK + $44 ; bank
 .byte $09 ; time
-.word (img_2406 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1300.png
+.word (img_2405 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1298.png;../../data/chars/Power/1299.png
 .byte IMG_BNK + $44 ; bank
 .byte $09 ; time
-.word (img_2407 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1300.png;../../ignore/chars_gif/Sprites-will/1299.png
+.word (img_2406 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1299.png;../../data/chars/Power/1300.png
 .byte IMG_BNK + $44 ; bank
 .byte $09 ; time
-.word (img_2408 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1301.png
+.word (img_2407 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1300.png;../../data/chars/Power/1299.png
 .byte IMG_BNK + $44 ; bank
 .byte $09 ; time
-.word (img_2409 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1301.png;../../ignore/chars_gif/Sprites-will/1299.png
+.word (img_2408 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1299.png;../../data/chars/Power/1301.png
 .byte IMG_BNK + $44 ; bank
 .byte $09 ; time
-.word (img_2406 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1300.png
+.word (img_2409 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1301.png;../../data/chars/Power/1299.png
 .byte IMG_BNK + $44 ; bank
 .byte $09 ; time
-.word (img_2407 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1300.png;../../ignore/chars_gif/Sprites-will/1299.png
+.word (img_2406 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1299.png;../../data/chars/Power/1300.png
+.byte IMG_BNK + $44 ; bank
+.byte $09 ; time
+.word (img_2407 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1300.png;../../data/chars/Power/1299.png
 .byte IMG_BNK + $44 ; bank
 .byte $00 ; time
-.word (img_2410 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1299.png;../../ignore/chars_gif/Sprites-will/1298.png
+.word (img_2410 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1299.png;../../data/chars/Power/1298.png
 .byte IMG_BNK + $44 ; bank
 img_anim_251:
 .byte $19 ; size
 .byte $14 ; time
-.word (img_2385 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-will/1289.png
+.word (img_2385 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Power/1289.png
 .byte IMG_BNK + $43 ; bank
 .byte $07 ; time
-.word (img_2386 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1289.png;../../ignore/chars_gif/Sprites-will/1290.png
+.word (img_2386 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1289.png;../../data/chars/Power/1290.png
 .byte IMG_BNK + $43 ; bank
 .byte $08 ; time
-.word (img_2387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1290.png;../../ignore/chars_gif/Sprites-will/1291.png
+.word (img_2387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1290.png;../../data/chars/Power/1291.png
 .byte IMG_BNK + $43 ; bank
 .byte $07 ; time
-.word (img_2388 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1291.png;../../ignore/chars_gif/Sprites-will/1290.png
+.word (img_2388 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1291.png;../../data/chars/Power/1290.png
 .byte IMG_BNK + $43 ; bank
 .byte $64 ; time
-.word (img_2389 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1290.png;../../ignore/chars_gif/Sprites-will/1289.png
+.word (img_2389 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1290.png;../../data/chars/Power/1289.png
 .byte IMG_BNK + $43 ; bank
 .byte $00 ; time
-.word (img_2390 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1289.png;../../ignore/chars_gif/Sprites-will/1289.png
+.word (img_2390 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1289.png;../../data/chars/Power/1289.png
 .byte IMG_BNK + $43 ; bank
 img_anim_252:
 .byte $4D ; size
 .byte $09 ; time
-.word (img_2385 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-will/1289.png
+.word (img_2385 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Power/1289.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2391 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1289.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2391 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1289.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1293.png
+.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1293.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1293.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1293.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2394 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1294.png
+.word (img_2394 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1294.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1294.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1294.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1293.png
+.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1293.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1293.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1293.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $05 ; time
-.word (img_2396 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1290.png
+.word (img_2396 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1290.png
 .byte IMG_BNK + $43 ; bank
 .byte $04 ; time
-.word (img_2387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1290.png;../../ignore/chars_gif/Sprites-will/1291.png
+.word (img_2387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1290.png;../../data/chars/Power/1291.png
 .byte IMG_BNK + $43 ; bank
 .byte $05 ; time
-.word (img_2397 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1291.png;../../ignore/chars_gif/Sprites-will/1295.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2397 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1291.png;../../data/chars/Power/1295.png
+.byte IMG_BNK + $44 ; bank
 .byte $04 ; time
-.word (img_2398 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1295.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2398 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1295.png;../../data/chars/Power/1292.png
+.byte IMG_BNK + $44 ; bank
+.byte $09 ; time
+.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1293.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1293.png
+.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1293.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1293.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2394 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1294.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2394 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1294.png
+.word (img_2395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1294.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2395 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1294.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1293.png
 .byte IMG_BNK + $43 ; bank
 .byte $09 ; time
-.word (img_2392 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1293.png
-.byte IMG_BNK + $43 ; bank
-.byte $09 ; time
-.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1293.png;../../ignore/chars_gif/Sprites-will/1292.png
+.word (img_2393 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1293.png;../../data/chars/Power/1292.png
 .byte IMG_BNK + $43 ; bank
 .byte $00 ; time
-.word (img_2399 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-will/1292.png;../../ignore/chars_gif/Sprites-will/1289.png
-.byte IMG_BNK + $43 ; bank
+.word (img_2399 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Power/1292.png;../../data/chars/Power/1289.png
+.byte IMG_BNK + $44 ; bank
 img_anim_253:
 .byte $31 ; size
 .byte $1E ; time
-.word (img_1477 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1477 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2d ; bank
 .byte $1E ; time
-.word (img_1478 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1303.png
+.word (img_1478 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1303.png
 .byte IMG_BNK + $2d ; bank
 .byte $50 ; time
-.word (img_1479 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1303.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1479 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1303.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2d ; bank
 .byte $14 ; time
-.word (img_1480 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1304.png
+.word (img_1480 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1304.png
 .byte IMG_BNK + $2d ; bank
 .byte $1E ; time
-.word (img_1481 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1304.png;../../ignore/chars_gif/Sprites-yanni/1302.png
-.byte IMG_BNK + $2d ; bank
+.word (img_1481 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1304.png;../../data/chars/Yogi/1302.png
+.byte IMG_BNK + $2e ; bank
 .byte $1E ; time
-.word (img_1478 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1303.png
+.word (img_1478 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1303.png
 .byte IMG_BNK + $2d ; bank
 .byte $3C ; time
-.word (img_1479 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1303.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1479 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1303.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2d ; bank
 .byte $1E ; time
-.word (img_1480 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1304.png
+.word (img_1480 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1304.png
 .byte IMG_BNK + $2d ; bank
 .byte $14 ; time
-.word (img_1481 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1304.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1481 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1304.png;../../data/chars/Yogi/1302.png
+.byte IMG_BNK + $2e ; bank
+.byte $14 ; time
+.word (img_1478 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1303.png
 .byte IMG_BNK + $2d ; bank
 .byte $14 ; time
-.word (img_1478 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1303.png
-.byte IMG_BNK + $2d ; bank
-.byte $14 ; time
-.word (img_1479 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1303.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1479 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1303.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2d ; bank
 .byte $00 ; time
-.word (img_1482 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1302.png
-.byte IMG_BNK + $2d ; bank
+.word (img_1482 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1302.png
+.byte IMG_BNK + $2e ; bank
 img_anim_254:
 .byte $35 ; size
 .byte $0A ; time
-.word (img_1477 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1477 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2d ; bank
 .byte $0A ; time
-.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1305.png
+.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1305.png
 .byte IMG_BNK + $2e ; bank
 .byte $0A ; time
-.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1305.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1305.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2e ; bank
 .byte $0A ; time
-.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1305.png
+.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1305.png
 .byte IMG_BNK + $2e ; bank
 .byte $0A ; time
-.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1305.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1305.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2e ; bank
 .byte $0A ; time
-.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1305.png
+.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1305.png
 .byte IMG_BNK + $2e ; bank
 .byte $0A ; time
-.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1305.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1305.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2e ; bank
 .byte $0F ; time
-.word (img_1480 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1304.png
+.word (img_1480 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1304.png
 .byte IMG_BNK + $2d ; bank
 .byte $0A ; time
-.word (img_1481 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1304.png;../../ignore/chars_gif/Sprites-yanni/1302.png
-.byte IMG_BNK + $2d ; bank
-.byte $0A ; time
-.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1305.png
+.word (img_1481 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1304.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2e ; bank
 .byte $0A ; time
-.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1305.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1305.png
+.byte IMG_BNK + $2e ; bank
+.byte $0A ; time
+.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1305.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2e ; bank
 .byte $0F ; time
-.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1302.png;../../ignore/chars_gif/Sprites-yanni/1305.png
+.word (img_1483 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1302.png;../../data/chars/Yogi/1305.png
 .byte IMG_BNK + $2e ; bank
 .byte $00 ; time
-.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../ignore/chars_gif/Sprites-yanni/1305.png;../../ignore/chars_gif/Sprites-yanni/1302.png
+.word (img_1484 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1305.png;../../data/chars/Yogi/1302.png
 .byte IMG_BNK + $2e ; bank
 img_anim_255: ;empty anim
 .byte $01 ; size
@@ -14381,16 +14381,16 @@ img_anim_274:
 .byte IMG_BNK + $2c ; bank
 .byte $0A ; time
 .word (img_1431 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/167.png;../../data/chars/Vasquez/168.png
-.byte IMG_BNK + $2c ; bank
+.byte IMG_BNK + $2d ; bank
 .byte $0A ; time
 .word (img_1432 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/168.png;../../data/chars/Vasquez/169.png
-.byte IMG_BNK + $2c ; bank
+.byte IMG_BNK + $2d ; bank
 .byte $0A ; time
 .word (img_1433 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/169.png;../../data/chars/Vasquez/170.png
-.byte IMG_BNK + $2c ; bank
+.byte IMG_BNK + $2d ; bank
 .byte $0A ; time
 .word (img_1434 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/170.png;../../data/chars/Vasquez/171.png
-.byte IMG_BNK + $2c ; bank
+.byte IMG_BNK + $2d ; bank
 .byte $0A ; time
 .word (img_1435 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/171.png;../../data/chars/Vasquez/172.png
 .byte IMG_BNK + $2d ; bank
@@ -14497,7 +14497,7 @@ img_anim_278:
 .byte IMG_BNK + $2b ; bank
 .byte $0A ; time
 .word (img_1386 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/139.png;../../data/chars/Vasquez/140.png
-.byte IMG_BNK + $2b ; bank
+.byte IMG_BNK + $2c ; bank
 .byte $0A ; time
 .word (img_1387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/140.png;../../data/chars/Vasquez/141.png
 .byte IMG_BNK + $2c ; bank
@@ -14533,7 +14533,7 @@ img_anim_278:
 .byte IMG_BNK + $2c ; bank
 .byte $0A ; time
 .word (img_1386 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/139.png;../../data/chars/Vasquez/140.png
-.byte IMG_BNK + $2b ; bank
+.byte IMG_BNK + $2c ; bank
 .byte $0A ; time
 .word (img_1387 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Vasquez/140.png;../../data/chars/Vasquez/141.png
 .byte IMG_BNK + $2c ; bank
@@ -15690,7 +15690,7 @@ img_anim_315:
 .byte $15 ; size
 .byte $09 ; time
 .word (img_1985 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Lotta/693.png
-.byte IMG_BNK + $38 ; bank
+.byte IMG_BNK + $39 ; bank
 .byte $09 ; time
 .word (img_1986 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/693.png;../../data/chars/Lotta/694.png
 .byte IMG_BNK + $39 ; bank
@@ -15710,37 +15710,37 @@ img_anim_316:
 .byte IMG_BNK + $37 ; bank
 .byte $05 ; time
 .word (img_1955 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/680.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1956 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/682.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1957 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/682.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $78 ; time
 .word (img_1958 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/680.png
 .byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1955 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/680.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1956 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/682.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1957 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/682.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1958 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/680.png
 .byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1955 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/680.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1956 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/682.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $05 ; time
 .word (img_1957 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/682.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $1E ; time
 .word (img_1958 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/680.png
 .byte IMG_BNK + $38 ; bank
@@ -15766,10 +15766,10 @@ img_anim_317:
 .byte IMG_BNK + $38 ; bank
 .byte $03 ; time
 .word (img_1956 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/682.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $03 ; time
 .word (img_1957 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/682.png;../../data/chars/Lotta/681.png
-.byte IMG_BNK + $37 ; bank
+.byte IMG_BNK + $38 ; bank
 .byte $09 ; time
 .word (img_1965 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Lotta/681.png;../../data/chars/Lotta/684.png
 .byte IMG_BNK + $38 ; bank
@@ -16255,7 +16255,7 @@ img_anim_332:
 .byte IMG_BNK + $3a ; bank
 .byte $0F ; time
 .word (img_2076 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1330.png;../../data/chars/Yogi/1348.png
-.byte IMG_BNK + $3b ; bank
+.byte IMG_BNK + $3c ; bank
 .byte $1E ; time
 .word (img_2077 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1348.png;../../data/chars/Yogi/1349.png
 .byte IMG_BNK + $3c ; bank
@@ -16466,7 +16466,7 @@ img_anim_340:
 .byte $3D ; size
 .byte $0D ; time
 .word (img_2100 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Yogi/1361.png
-.byte IMG_BNK + $3c ; bank
+.byte IMG_BNK + $3d ; bank
 .byte $0D ; time
 .word (img_2101 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1361.png;../../data/chars/Yogi/1362.png
 .byte IMG_BNK + $3d ; bank
@@ -16661,7 +16661,7 @@ img_anim_343:
 .byte IMG_BNK + $39 ; bank
 .byte $0F ; time
 .word (img_2026 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1316.png;../../data/chars/Yogi/1317.png
-.byte IMG_BNK + $39 ; bank
+.byte IMG_BNK + $3a ; bank
 .byte $0F ; time
 .word (img_2027 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1317.png;../../data/chars/Yogi/1318.png
 .byte IMG_BNK + $3a ; bank
@@ -16776,16 +16776,16 @@ img_anim_348:
 .byte IMG_BNK + $3a ; bank
 .byte $06 ; time
 .word (img_2055 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1337.png;../../data/chars/Yogi/1335.png
-.byte IMG_BNK + $3a ; bank
+.byte IMG_BNK + $3b ; bank
 .byte $06 ; time
 .word (img_2048 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1335.png;../../data/chars/Yogi/1336.png
 .byte IMG_BNK + $3a ; bank
 .byte $06 ; time
 .word (img_2056 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1336.png;../../data/chars/Yogi/1339.png
-.byte IMG_BNK + $3a ; bank
+.byte IMG_BNK + $3b ; bank
 .byte $06 ; time
 .word (img_2057 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1339.png;../../data/chars/Yogi/1337.png
-.byte IMG_BNK + $3a ; bank
+.byte IMG_BNK + $3b ; bank
 .byte $0C ; time
 .word (img_2053 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1337.png;../../data/chars/Yogi/1338.png
 .byte IMG_BNK + $3a ; bank
@@ -16794,7 +16794,7 @@ img_anim_348:
 .byte IMG_BNK + $3a ; bank
 .byte $0C ; time
 .word (img_2058 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1337.png;../../data/chars/Yogi/1334.png
-.byte IMG_BNK + $3a ; bank
+.byte IMG_BNK + $3b ; bank
 .byte $0C ; time
 .word (img_2052 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1334.png;../../data/chars/Yogi/1337.png
 .byte IMG_BNK + $3a ; bank
@@ -16806,7 +16806,7 @@ img_anim_348:
 .byte IMG_BNK + $3a ; bank
 .byte $00 ; time
 .word (img_2058 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Yogi/1337.png;../../data/chars/Yogi/1334.png
-.byte IMG_BNK + $3a ; bank
+.byte IMG_BNK + $3b ; bank
 img_anim_349:
 .byte $29 ; size
 .byte $64 ; time
@@ -16964,7 +16964,7 @@ img_anim_352:
 .byte IMG_BNK + $2f ; bank
 .byte $0A ; time
 .word (img_1566 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/504.png;../../data/chars/Karma/503.png
-.byte IMG_BNK + $2f ; bank
+.byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1559 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/503.png;../../data/chars/Karma/504.png
 .byte IMG_BNK + $2f ; bank
@@ -16976,7 +16976,7 @@ img_anim_352:
 .byte IMG_BNK + $2f ; bank
 .byte $0A ; time
 .word (img_1566 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/504.png;../../data/chars/Karma/503.png
-.byte IMG_BNK + $2f ; bank
+.byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1559 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/503.png;../../data/chars/Karma/504.png
 .byte IMG_BNK + $2f ; bank
@@ -16988,7 +16988,7 @@ img_anim_352:
 .byte IMG_BNK + $2f ; bank
 .byte $00 ; time
 .word (img_1566 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/504.png;../../data/chars/Karma/503.png
-.byte IMG_BNK + $2f ; bank
+.byte IMG_BNK + $30 ; bank
 img_anim_353:
 .byte $15 ; size
 .byte $1E ; time
@@ -17242,7 +17242,7 @@ img_anim_359:
 .byte $25 ; size
 .byte $3C ; time
 .word (img_1567 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Karma/509.png
-.byte IMG_BNK + $2f ; bank
+.byte IMG_BNK + $30 ; bank
 .byte $05 ; time
 .word (img_1568 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/509.png;../../data/chars/Karma/510.png
 .byte IMG_BNK + $30 ; bank
@@ -17271,7 +17271,7 @@ img_anim_360:
 .byte $4D ; size
 .byte $0A ; time
 .word (img_1567 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/empty.png;../../data/chars/Karma/509.png
-.byte IMG_BNK + $2f ; bank
+.byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1572 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/509.png;../../data/chars/Karma/512.png
 .byte IMG_BNK + $30 ; bank
@@ -17485,28 +17485,28 @@ img_anim_368:
 .byte IMG_BNK + $2e ; bank
 .byte $04 ; time
 .word (img_1511 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/478.png;../../data/chars/Karma/479.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $06 ; time
 .word (img_1512 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/479.png;../../data/chars/Karma/480.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $04 ; time
 .word (img_1513 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/480.png;../../data/chars/Karma/479.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $48 ; time
 .word (img_1514 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/479.png;../../data/chars/Karma/478.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $04 ; time
 .word (img_1511 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/478.png;../../data/chars/Karma/479.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $06 ; time
 .word (img_1512 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/479.png;../../data/chars/Karma/480.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $04 ; time
 .word (img_1513 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/480.png;../../data/chars/Karma/479.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $70 ; time
 .word (img_1514 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/479.png;../../data/chars/Karma/478.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $00 ; time
 .word (img_1515 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/478.png;../../data/chars/Karma/478.png
 .byte IMG_BNK + $2f ; bank
@@ -17529,7 +17529,7 @@ img_anim_369:
 .byte IMG_BNK + $2f ; bank
 .byte $05 ; time
 .word (img_1512 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/479.png;../../data/chars/Karma/480.png
-.byte IMG_BNK + $2e ; bank
+.byte IMG_BNK + $2f ; bank
 .byte $05 ; time
 .word (img_1520 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/480.png;../../data/chars/Karma/483.png
 .byte IMG_BNK + $2f ; bank
@@ -17680,16 +17680,16 @@ img_anim_371:
 .byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1605 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/532.png;../../data/chars/Karma/531.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $05 ; time
 .word (img_1606 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/531.png;../../data/chars/Karma/533.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $05 ; time
 .word (img_1607 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/533.png;../../data/chars/Karma/534.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $05 ; time
 .word (img_1608 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/534.png;../../data/chars/Karma/535.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $04 ; time
 .word (img_1609 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/535.png;../../data/chars/Karma/536.png
 .byte IMG_BNK + $31 ; bank
@@ -17707,7 +17707,7 @@ img_anim_371:
 .byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1605 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/532.png;../../data/chars/Karma/531.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $0A ; time
 .word (img_1613 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/531.png;../../data/chars/Karma/530.png
 .byte IMG_BNK + $31 ; bank
@@ -17719,7 +17719,7 @@ img_anim_371:
 .byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1605 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/532.png;../../data/chars/Karma/531.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $0A ; time
 .word (img_1613 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/531.png;../../data/chars/Karma/530.png
 .byte IMG_BNK + $31 ; bank
@@ -17731,7 +17731,7 @@ img_anim_371:
 .byte IMG_BNK + $30 ; bank
 .byte $0A ; time
 .word (img_1605 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/532.png;../../data/chars/Karma/531.png
-.byte IMG_BNK + $30 ; bank
+.byte IMG_BNK + $31 ; bank
 .byte $0A ; time
 .word (img_1613 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Karma/531.png;../../data/chars/Karma/530.png
 .byte IMG_BNK + $31 ; bank
@@ -19400,11 +19400,11 @@ img_anim_1006:
 .byte IMG_BNK + $24 ; bank
 .byte $08 ; time
 .word (img_1111 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/841.png;../../data/chars/Mia-maya/840.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $28 ; time
 .word (img_1112 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/840.png;../../data/chars/Mia-maya/839.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 .byte $00 ; time
 .word (img_1113 & $1FFF) + SEGMENT_IMGS_START_ADR ; ../../data/chars/Mia-maya/839.png;../../data/chars/Mia-maya/839.png
-.byte IMG_BNK + $24 ; bank
+.byte IMG_BNK + $25 ; bank
 

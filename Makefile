@@ -17,7 +17,7 @@ all:
 	make $(GAME_NAME).nes
 	make $(GAME_NAME)_ines1.nes
 
-ressource:
+resource:
 	make clean_data
 	make clean_tmp
 	make text
@@ -140,9 +140,16 @@ img:
 	mkdir -p "$(ASM)/data"
 # endif
 	cd c && make
+ifeq ($(OS), Windows_NT)
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
 	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
 	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr
+else
+	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
+	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
+	-bc ../../$(DATA)/tmp.chr -cp ../../c/ -oc ../../PWAA.chr \
+	-exe ./a
+endif
 
 photo:
 	cd $(PY)/imgEncoder && $(PYTHON) encode_photo.py \

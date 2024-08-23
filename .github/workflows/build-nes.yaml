@@ -6,22 +6,36 @@ jobs:
     steps:
       # Pull project files
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # Install compiler
       - name: Install CC65
         run: sudo apt install cc65
+      # Install GCC
+      - name: Install GCC
+        run: sudo apt install gcc
+      # Install Python
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r py/requirements.txt
       # Build project
+      - name: Build Resources
+        run: make resource
       - name: Build NES file
         run: make
       # Upload binary file
       - name: Upload NES file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PWAA
           path: PWAA.nes
       # Upload binary file
       - name: Upload NES file (Ines 1.0)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PWAA_ines1
           path: PWAA_ines1.nes
