@@ -139,7 +139,7 @@ img:
 # else
 	mkdir -p "$(ASM)/data"
 # endif
-	cd c && make && ls
+	cd c && make
 ifeq ($(OS), Windows_NT)
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/imgEncoder/encode_region.py \
 	-i ../../$(ANIM_0) ../../$(ANIM_1) ../../$(ANIM_2) ../../$(ANIM_3) \
