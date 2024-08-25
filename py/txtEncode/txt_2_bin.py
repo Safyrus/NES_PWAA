@@ -188,8 +188,11 @@ while i < len(text):
 
         # transform tag to code
         if name == "label":
-            labels[args[0]] = len(textbin)
-            printv(f"label: '{args[0]}' at {hex(labels[args[0]])}", param="it", v=2)
+            if len(args) == 0:
+                printv(f"ERROR: Missing label name", param="et")
+            else:
+                labels[args[0]] = len(textbin)
+                printv(f"label: '{args[0]}' at {hex(labels[args[0]])}", param="it", v=2)
         elif name == "jump":
             # add dummy character to keep the length correct
             if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
@@ -199,8 +202,13 @@ while i < len(text):
             for _ in range(3):
                 textbin.append(0)
         elif name == "const":
-            consts[args[0]] = args[1]
-            printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
+            if len(args) == 0:
+                printv(f"ERROR: Missing constant anem and value", param="et")
+            elif len(args) == 1:
+                printv(f"ERROR: Missing constant value", param="et")
+            else:
+                consts[args[0]] = args[1]
+                printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
         elif name == "flash":  # for now to skip arguments
             textbin.append(0)
         elif name == "box":
@@ -241,6 +249,12 @@ while i < len(text):
                     args[j] = consts[args[j]]
         else:
             name, args = tag, []
+
+        # check for the first missing argument
+        TAG_WITH_ARG = ["speed", "wait", "name", "color", "photo", "background", "character", "animation", "music", "sound", "bip", "set", "clear", "font", "jump", "box", "event"]
+        if name in TAG_WITH_ARG and len(args) == 0:
+            printv(f"ERROR: Missing argument for tag '{name}'. Default to 0", param="et")
+            args.append(0)
 
         # transform tag to code
         if name == "b":
@@ -340,6 +354,11 @@ while i < len(text):
         elif name == "return":
             textbin.append(RET)
         elif name == "box":
+            if len(args) < 5:
+                n = 5-len(args)
+                printv(f"ERROR: Missing {n} argument{'s'if n>1 else ''} for tag '{name}'. Default to 0", param="et")
+                args.extend([0]*n)
+
             # Char:   0         1         2
             # Bits:   6543210   6543210   6543210
             # Name:   nXxxxxY   yyyyWww   wwHhhhh
@@ -361,7 +380,7 @@ while i < len(text):
             textbin.append(b1)
             textbin.append(b2)
         elif name == "<":
-            textbin.append("<")
+            textbin = add_normal_char(textbin, "<")
         else:
             printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
 
