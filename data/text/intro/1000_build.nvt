@@ -9,7 +9,7 @@
 
 <!-- make the screen black -->
 <background:BKG_EMPTY><hidetextbox><speed:SPD_NORMAL><fade>
-<!-- <jump:DEBUG> -->
+<jump:DEBUG>
 
 <!-- Prepare drawing the background and Safyrus -->
 <background:BKG_INTRO>

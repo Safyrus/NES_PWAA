@@ -1,8 +1,329 @@
 <label:text_intro>
-<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
-<fade>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+<color:RED><b>
+   == Write text data ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS>
+<animation:ANI_ROBOT_SMILE_TALK>
+Writing text data for your<b>
+game is not difficult,<b>
+but to explain it...
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Well I think an example<b>
+will better teach you<b>
+how to do it.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Let's say you want to<b>
+write this simple dialog<b>
+between 2 characters:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<character:CHR_NONE><animation:ANI_NONE>
+<background:BKG_TXT_1>
+<hidetextbox><p><wait:5>
 <hidetextbox>
-TODO<p>
+<!--
+A:
+Hey!
+B:
+Ho, hi!
+How you'r doing?
+A:
+Great and you?
+B:
+Great too!
+A:
+Do you still have it?
+B:
+The... Oh this, yeah.
+Here you go.
+Just be careful with it.
+A:
+Nice, I won't bother
+you any longer.
+Good luck!
+B:
+Good luck to you too.
+-->
+
+
+You may start by writing<b>
+this into a plain text file<p><wait:5>
+and indicate the path<b>
+to the folder containing it<b>
+to the project<p><wait:5>
+('data/text' by default).<p><wait:5>
+
+If you feed the project<b>
+with this text data,<p><wait:5>
+it will not complain and<b>
+correctly compile the game.<p><wait:5>
+
+But,<b>
+as soon as the game start<p><wait:5>
+all this plain text<b>
+will be displayed one line<b>
+of the dialog box.<p><wait:5>
+
+And very likely cause bug<b>
+and crash the game<p><wait:5>
+(because the dialog<b>
+go out of the screen).<p><wait:5>
+
+The plain text will look<b>
+something like this:<p><wait:5>
+
+<name:NAM_NONE>
+A: Hey!B: Ho, hi! How you'r doing?A: Great and you?B: Great too!A: Do you still have it?B: The... Oh this, yeah. Here you go.Just be careful with it.A: Nice, I won't bother you any longer.Good luck!B: Good luck to you too.
+<p><wait:5>
+
+<name:NAM_SAFYRUS>
+The project does not know<b>
+anything about our text<b>
+apart from "this is text".<p><wait:5>
+
+To indicate that we want<b>
+new lines, multiple dialog<b>
+box, etc. We need "tags".<p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tags ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS>
+Tags are written by using<b>
+angle bracket like this:<b>
+<color:GREEN><<>tag><color:WHITE><p><wait:5>
+
+Each tag have a specific<b>
+name and purpose.<p><wait:5>
+Each of them is explained<b>
+in the tag section.<p><wait:5>
+
+But for now, let's start by<b>
+adding <color:GREEN><<>b><color:WHITE> tags to the<b>
+text. (b like "break line")<p><wait:5>
+
+This tag act as a<b>
+new line character.<p><wait:5>
+Each time it is encounter<b>
+the text will jump to the<b>
+start of the next line.<p><wait:5>
+
+<background:BKG_TXT_2>
+<hidetextbox><p><wait:5>
 <hidetextbox>
-<fade>
+<!--
+A:
+Hey!
+B:
+Ho, hi!<b>
+How you'r doing?
+A:
+Great and you?
+B:
+Great too!
+A:
+Do you still have it?
+B:
+The... Oh this, yeah.<b>
+Here you go.<b>
+Just be careful with it.
+A:
+Nice, I won't bother<b>
+you any longer.<b>
+Good luck!
+B:
+Good luck to you too.
+-->
+
+We still need multiple<b>
+dialog box and not just<b>
+one with all our text.<p><wait:5>
+
+For that, we will use the<b>
+<color:GREEN><<>p><color:WHITE> tag (like page/press).<p><wait:5>
+
+This tag indicates that we<b>
+have reached the end<b>
+of the dialog box<p><wait:5>
+
+and that the user need to<b>
+press continue to go<b>
+to the next one.<p><wait:5>
+
+Putting them where we want<b>
+to separate our text,<b>
+this look like this:<p><wait:5>
+
+<background:BKG_TXT_3>
+<hidetextbox><p><wait:5>
+<hidetextbox>
+<!--
+A:
+Hey!<p>
+B:
+Ho, hi!<b>
+How you'r doing?<p>
+A:
+Great and you?<p>
+B:
+Great too!<p>
+A:
+Do you still have it?<p>
+B:
+The... Oh this, yeah.<b>
+Here you go.<b>
+Just be careful with it.<p>
+A:
+Nice, I won't bother<b>
+you any longer.<b>
+Good luck!<p>
+B:
+Good luck to you too.<p>
+-->
+
+Now the game will correctly<b>
+display the first dialog box<b>
+and wait for an input.<p><wait:5>
+
+After pressing continue,<b>
+the second dialog box will<b>
+appear and so one.<p><wait:5>
+
+Of course this is only the<b>
+basics. Other tags exist to<b>
+do more complicated stuff.<p><wait:5>
+
+But for now, we will add<b>
+<color:GREEN><<>label:end><<>jump:end><color:WHITE> at<b>
+the end of our text data.<p><wait:5>
+
+If you want details, go to<b>
+the label tag and jump tag<b>
+section,<p><wait:5>
+but for short,<b>
+it soft lock the game<b>
+and make it not crash.<p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+    == Tags arguments ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS>
+Tags can also take<b>
+arguments.<p><wait:5>
+For example, if we want to<b>
+add names to our characters,<b>
+we can use the <color:GREEN><<>name><color:WHITE> tag.<p><wait:5>
+
+<background:BKG_TXT_4>
+<hidetextbox><p><wait:5>
+<hidetextbox>
+<!--
+<name:NAM_A>
+Hey!<p>
+<name:NAM_B>
+Ho, hi!<b>
+How you'r doing?<p>
+<name:NAM_A>
+Great and you?<p>
+<name:NAM_B>
+Great too!<p>
+<name:NAM_A>
+Do you still have it?<p>
+<name:NAM_B>
+The... Oh this, yeah.<b>
+Here you go.<b>
+Just be careful with it.<p>
+<name:NAM_A>
+Nice, I won't bother<b>
+you any longer.<b>
+Good luck!<p>
+<name:NAM_B>
+Good luck to you too.<p>
+-->
+
+This will display a name<b>
+at the bottom left<b>
+of the dialog box.<p><wait:5>
+
+The constant/number<b>
+specified the name<b>
+to use from a list.<p><wait:5>
+See the <color:GREEN><<>name><color:WHITE> tag section<b>
+to learn how to edit them.<p><wait:5>
+
+Now the text when displayed<b>
+look like this:<p><wait:5>
+
+<!---------------->
+<name:NAM_A>
+Hey!<p>
+<name:NAM_B>
+Ho, hi!<b>
+How you'r doing?<p>
+<name:NAM_A>
+Great and you?<p>
+<name:NAM_B>
+Great too!<p>
+<name:NAM_A>
+Do you still have it?<p>
+<name:NAM_B>
+The... Oh this, yeah.<b>
+Here you go.<b>
+Just be careful with it.<p>
+<name:NAM_A>
+Nice, I won't bother<b>
+you any longer.<b>
+Good luck!<p>
+<name:NAM_B>
+Good luck to you too.<p>
+<!---------------->
+
+<wait:5><name:NAM_NONE>
+<color:RED><b>
+       == Comments ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS>
+New lines are ignored,<p><wait:5>
+so don't hesitate to use<b>
+them to add space<b>
+between dialogs<p><wait:5>
+and make it more readable<b>
+for you and others.<p><wait:5>
+
+There is also a special tag<b>
+called a comment.<p><wait:5>
+
+It starts with <color:GREEN><<>!--<color:WHITE><b>
+and end with <color:GREEN>--><color:WHITE>.<p><wait:5>
+Everything in between<b>
+is ignored by the game.<p><wait:5>
+
+It's very useful to annotate<b>
+your text and to tell you or<b>
+other info about your text.<p><wait:5>
+
+For example: "What is this<b>
+section about?", "Why is<b>
+this chain of tag use for?"<p><wait:5>
+or "Things to add there<b>
+in the future".<p><wait:5>
+
+Anyway, that's the basics.<b>
+Don't hesitate to go to each<b>
+tag section to learn more.<p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
 <jump:textmenu>

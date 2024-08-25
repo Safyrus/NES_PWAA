@@ -1,8 +1,106 @@
 <label:text_cfg_file>
-<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
-<fade>
-<hidetextbox>
-TODO<p>
-<hidetextbox>
-<fade>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+<name:NAM_NONE>
+<color:RED><b>
+     == Text config ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+In the config file<b>
+(cfg/make_default.cfg),
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+you only need to specify<b>
+a folder where all<b>
+of your text is located
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+and an output text file<b>
+where all of your text<b>
+will be merged.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+        == Folder ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+For now, all file in the<b>
+input folder will be sorted<b>
+and merge alphabetically.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This mean that if you have<b>
+2 files: <color:GREEN>a.txt<color:WHITE> & <color:GREEN>b.txt<color:WHITE>,
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+the content of <color:GREEN>b.txt<color:WHITE> will<b>
+be put after the<b>
+content of <color:GREEN>a.txt<color:WHITE>.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The order of your text<b>
+matters because the game<b>
+will start at the first one.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Note that the sub folders<b>
+names does not count when<b>
+sorting alphabetically.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+To be sure that all of your<b>
+text files are in the order<b>
+you want,
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+<animation:ANI_ROBOT_SMILE_TALK>
+there are multiple<b>
+solutions:
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+- name all your files with<b>
+a leading number<b>
+(with leading 0)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+- name the first file <color:GREEN>0.txt<color:WHITE><b>
+and use <color:GREEN>label<color:WHITE> and <color:GREEN>jump<color:WHITE><b>
+tags to go to other files
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+- just use one file<b>
+(not recommended)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+        == Output ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+For the output file,<b>
+just choose a file name<b>
+that does not exist.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+If the file exist it will<b>
+be replaced by whatever<b>
+the program output.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE><hidetextbox><fade>
 <jump:textmenu>

@@ -1,8 +1,157 @@
 <label:text_font>
-<background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
-<fade>
-<hidetextbox>
-TODO<p>
-<hidetextbox>
-<fade>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+<color:RED><b>
+         == Font ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+All fonts of the game are<b>
+located in "data/FONT.chr".
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+To edit them, use YYCHR or<b>
+another software than can<b>
+do the same thing.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Char Set ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+All font use the same<b>
+character sets.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+There are 128 unique<b>
+characters.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The first 32 are<b>
+control characters.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The 96 others are<b>
+printable characters.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+ == Alignment and Index ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+1 Bank (256 tiles or 4 KB)<b>
+store 2 fonts.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The first on the upper half<b>
+(128 first tiles)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+and the second on the<b>
+bottom half<b>
+(128 last tiles).
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+When using the `font` tag,<b>
+you must specify<b>
+the index of the font.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The index is the bank number<b>
+times 2, plus 1 if the font<b>
+is store in the bottom half.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+For example, if the FONT.chr<b>
+is the default one,
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+font 0 is ASCII.<b>
+font 2 is Japanese hiragana.<b>
+font 3 is Japanese katakana.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+        == Font 1 ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+Font 1 is special and does<b>
+not represent a font.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It is used to store tiles<b>
+for the dialog box, cursor<b>
+and different names.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+If you use it,<b>
+it will draw these<b>
+graphic tiles.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+   == Adding more font ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+You can add more font by<b>
+adding banks to the<b>
+FONT.chr file.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You can have a maximum<b>
+of 128 font (from 0 to 127).
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Note that if your using<b>
+YYCHR, it cannot increase<b>
+the file size.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+For that, you can either:<b>
+- use another software
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+- use one of the python<b>
+  script found in "py/chr"<b>
+- google it
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<name:NAM_NONE>
+<color:RED><b>
+     == Last Notes ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+Because control character<b>
+will not be print, you can<b>
+draw anything you want here.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE><hidetextbox><fade>
 <jump:textmenu>

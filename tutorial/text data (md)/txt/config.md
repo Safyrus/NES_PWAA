@@ -1,6 +1,6 @@
 # Text config
 
-For text data configs ("cfg/make_default.cfg"),
+In the config file ("cfg/make_default.cfg"),
 you only need to specify a folder where all of your text is located
 and an output text file where all of your text will be merged.
 

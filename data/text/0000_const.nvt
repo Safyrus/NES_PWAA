@@ -40,6 +40,10 @@
 <const:BKG_PROJECT_MAKE,22>
 <const:BKG_PROJECT_NES,23>
 <const:BKG_PROJECT_PY,24>
+<const:BKG_TXT_1,25>
+<const:BKG_TXT_2,26>
+<const:BKG_TXT_3,27>
+<const:BKG_TXT_4,28>
 
 <!-------- Character constants -------->
 <const:CHR_NONE,0>

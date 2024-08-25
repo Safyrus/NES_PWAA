@@ -173,5 +173,33 @@
     "background": "..\\img\\project\\project_py.png",
     "character": [],
     "time": []
+  },
+  {
+    "name": "TXT_1",
+    "idx": 25,
+    "background": "..\\img\\text\\txt_1.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "TXT_2",
+    "idx": 25,
+    "background": "..\\img\\text\\txt_2.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "TXT_3",
+    "idx": 26,
+    "background": "..\\img\\text\\txt_3.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "TXT_4",
+    "idx": 27,
+    "background": "..\\img\\text\\txt_4.png",
+    "character": [],
+    "time": []
   }
 ]
