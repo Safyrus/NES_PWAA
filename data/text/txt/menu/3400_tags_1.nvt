@@ -22,35 +22,35 @@
 
 <label:click_tagmenu1_comment>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_comment>
 
 <label:click_tagmenu1_b>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_b>
 
 <label:click_tagmenu1_p_fp>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_p_fp>
 
 <label:click_tagmenu1_speed>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_speed>
 
 <label:click_tagmenu1_wait>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_wait>
 
 <label:click_tagmenu1_color>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_color>
 
 <label:click_tagmenu1_const>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_const>
 
 <label:click_tagmenu1_name>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_name>
 
 <label:click_tagmenu1_left>
 <fade>

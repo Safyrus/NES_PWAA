@@ -1,0 +1,70 @@
+<label:tag_b>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+        == B tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The <color:GREEN>b<color:WHITE> tag is one<b>
+of the most basic tag.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+When encountered,<b><wait:15>
+the text will go to the<b>
+start of the next line.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Why call it b ?<b><wait:30>
+I Don't remember ?<b><wait:30>
+For "break" maybe ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+This is a dialog<color:GREEN><<>b><color:WHITE><b>
+with multiple lines<color:GREEN><<>b><color:WHITE><b>
+of text.
+<p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The dialog box is 28<b>
+characters wide.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+So try to use the tag before<b>
+having this many characters<b>
+on a line.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Unless you want to go for a<b>
+glitchy effect with the text<b>
+going out of the dialog box.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Be warn that unknow side<b>
+effect (like crashing the<b>
+game) may occure
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

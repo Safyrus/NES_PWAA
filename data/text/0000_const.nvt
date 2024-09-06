@@ -44,6 +44,8 @@
 <const:BKG_TXT_2,26>
 <const:BKG_TXT_3,27>
 <const:BKG_TXT_4,28>
+<const:BKG_NAMELIST,29>
+<const:BKG_1ST_CHR,30>
 
 <!-------- Character constants -------->
 <const:CHR_NONE,0>

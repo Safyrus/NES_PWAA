@@ -1,0 +1,93 @@
+<label:tag_color>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == Color tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The <color:GREEN>color<color:WHITE> tag<b>
+change the text color.<b>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The color will remain the<b>
+same until another <color:GREEN>color<color:WHITE><b>
+tag is encounter.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The argument is the color<b>
+to use. It can only take<b>
+one of these number:
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+<color:RED>0<color:WHITE>: white (default)<b>
+<color:RED>1<color:WHITE>: red      <color:RED>2<color:WHITE>: blue<b>
+<color:RED>3<color:WHITE>: green
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<color:1>RED, <color:2>BLUE,<b>
+<color:3>GREEN<color:0> and<b>
+WHITE! Such colors!<p><wait:5>
+
+
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Use colors to emphasize<b>
+important word or<b>
+way of speaking
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+(For example: Ace Attorney<b>
+use blue text when a<b>
+character is thinking).
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Note: For now, it is<b>
+impossible to change colors<b>
+without editing the code.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+<color:BLUE>Colors are mainly located<b>
+and hard-coded in "asm/vecto<b>
+r/scanline_pal_change.asm"<color:WHITE>
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The reason is that it<b>
+involve complex palette<b>
+change mid-frame
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Which is very technical<b>
+on the NES.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+I may refactor that a little<b>
+in the future to change<b>
+those number easily.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

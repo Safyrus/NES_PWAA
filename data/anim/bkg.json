@@ -183,22 +183,36 @@
   },
   {
     "name": "TXT_2",
-    "idx": 25,
+    "idx": 26,
     "background": "..\\img\\text\\txt_2.png",
     "character": [],
     "time": []
   },
   {
     "name": "TXT_3",
-    "idx": 26,
+    "idx": 27,
     "background": "..\\img\\text\\txt_3.png",
     "character": [],
     "time": []
   },
   {
     "name": "TXT_4",
-    "idx": 27,
+    "idx": 28,
     "background": "..\\img\\text\\txt_4.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "NAMELIST",
+    "idx": 29,
+    "background": "..\\img\\name_list.png",
+    "character": [],
+    "time": []
+  },
+  {
+    "name": "1ST_CHR",
+    "idx": 30,
+    "background": "..\\img\\first_chr_bank.png",
     "character": [],
     "time": []
   }

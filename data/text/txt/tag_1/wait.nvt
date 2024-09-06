@@ -1,0 +1,84 @@
+<label:tag_wait>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Wait tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag wait for<b>
+a number of frames to pass.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It takes 1 number as an<b>
+argument, and it is the<b>
+number of frame to wait.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+So the bigger the value,<b>
+the longer you wait.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The game is normally at 60<b>
+FPS. A wait of 60 mean that<b>
+the game will wait 1 second.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+Wait I'm thinking...<b>
+<wait:40><<>wait:40>OK I'm done<b>
+Wait!<wait:100><<>wait:100>Nothing :)<p>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag is great for<b>
+timing things, obviously.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+But it can also be used to<b>
+add small pauses between<b>
+sentences and clauses.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This give a feel of<b>
+a more natural dialog.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+If you combine a speed of 0<b>
+(with <color:GREEN>speed<color:WHITE>) and add a<b>
+wait time after each word,
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+you can display text<b>
+word by word instead of<b>
+character by character.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This can give a robotic<b>
+feeling to the dialog.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

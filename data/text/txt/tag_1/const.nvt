@@ -1,0 +1,105 @@
+<label:tag_const>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == Const tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag declare a constant<b>
+value that you can use<b>
+anywhere in the script.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It has 2 arguments:<b>
+the 1st is the constant name<b>
+and the 2nd the value.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+To use the new constant,<b>
+just write its name<b>
+somewhere,
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+and it will be replaced by<b>
+its value when you<b>
+compile the script.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It is useful if you want<b>
+to put a name on your value.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Especially if you're using<b>
+this value multiple times.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Because to change it,<wait:15> you<b>
+will need to change all the<b>
+places where it is used too.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+But you can replace them by<b>
+a constant and only change<b>
+the constant value.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<const:_1SEC,60>
+<const:_SMITH,Smith>
+
+<<>const:_1SEC,60><b>
+<<>const:_SMITH,M.Smith><p><wait:5>
+
+Maybe I should tell<b>
+_SMITH about it<b>
+.<wait:_1SEC><<>wait:_1SEC>.<wait:_1SEC><<>wait:_1SEC>.<p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Don't hesitate to use it.<b><wait:30>
+It improves readability<b>
+and make change easier.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:BLUE>(<color:GREEN><<>name:MAIN_CHAR_NAME><color:BLUE> is<b>
+more readable than<b>
+<color:GREEN><<>name:45><color:BLUE>)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Do not choose a name that<b>
+you use in your dialogs<b>
+otherwise it will be replace
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+For example, "player"<b>
+is a bad choice,<animation:ANI_ROBOT_NEUTRAL_IDLE><wait:30><animation:ANI_ROBOT_SMILE_TALK> but<b>
+"CONST_PLAYER" is better.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

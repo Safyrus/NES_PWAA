@@ -44,6 +44,8 @@
 <const:BKG_TXT_2,26>
 <const:BKG_TXT_3,27>
 <const:BKG_TXT_4,28>
+<const:BKG_NAMELIST,29>
+<const:BKG_1ST_CHR,30>
 
 <!-------- Character constants -------->
 <const:CHR_NONE,0>
@@ -1718,35 +1720,35 @@ draw anything you want here.
 
 <label:click_tagmenu1_comment>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_comment>
 
 <label:click_tagmenu1_b>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_b>
 
 <label:click_tagmenu1_p_fp>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_p_fp>
 
 <label:click_tagmenu1_speed>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_speed>
 
 <label:click_tagmenu1_wait>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_wait>
 
 <label:click_tagmenu1_color>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_color>
 
 <label:click_tagmenu1_const>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_const>
 
 <label:click_tagmenu1_name>
 <fade>
-<jump:tag_todo_1>
+<jump:tag_name>
 
 <label:click_tagmenu1_left>
 <fade>
@@ -1988,7 +1990,781 @@ draw anything you want here.
 <label:END>
 !!!END OF TEXT!!!
 <jump:END>
-<label:todo_image>
+<label:tag_b>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+        == B tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The <color:GREEN>b<color:WHITE> tag is one<b>
+of the most basic tag.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+When encountered,<b><wait:15>
+the text will go to the<b>
+start of the next line.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Why call it b ?<b><wait:30>
+I Don't remember ?<b><wait:30>
+For "break" maybe ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+This is a dialog<color:GREEN><<>b><color:WHITE><b>
+with multiple lines<color:GREEN><<>b><color:WHITE><b>
+of text.
+<p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The dialog box is 28<b>
+characters wide.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+So try to use the tag before<b>
+having this many characters<b>
+on a line.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Unless you want to go for a<b>
+glitchy effect with the text<b>
+going out of the dialog box.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Be warn that unknow side<b>
+effect (like crashing the<b>
+game) may occure
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1><label:tag_color>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == Color tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The <color:GREEN>color<color:WHITE> tag<b>
+change the text color.<b>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The color will remain the<b>
+same until another <color:GREEN>color<color:WHITE><b>
+tag is encounter.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The argument is the color<b>
+to use. It can only take<b>
+one of these number:
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+<color:RED>0<color:WHITE>: white (default)<b>
+<color:RED>1<color:WHITE>: red      <color:RED>2<color:WHITE>: blue<b>
+<color:RED>3<color:WHITE>: green
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<color:1>RED, <color:2>BLUE,<b>
+<color:3>GREEN<color:0> and<b>
+WHITE! Such colors!<p><wait:5>
+
+
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Use colors to emphasize<b>
+important word or<b>
+way of speaking
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+(For example: Ace Attorney<b>
+use blue text when a<b>
+character is thinking).
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Note: For now, it is<b>
+impossible to change colors<b>
+without editing the code.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+<color:BLUE>Colors are mainly located<b>
+and hard-coded in "asm/vecto<b>
+r/scanline_pal_change.asm"<color:WHITE>
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The reason is that it<b>
+involve complex palette<b>
+change mid-frame
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Which is very technical<b>
+on the NES.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+I may refactor that a little<b>
+in the future to change<b>
+those number easily.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1><label:tag_comment>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+     == Comment tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+A comment tag start with<b>
+<color:GREEN><<>!--<color:WHITE> and end when<b>
+<color:GREEN>--><color:WHITE> is encountered.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Everything inside a comment<b>
+tag is ignored.<wait:30> They can be<b>
+multiple lines long.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Use it to make part of your<b>
+script more clear to you<b>
+and other people.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+Well, you will need to look<b>
+at the source file to know<b>
+what comment I put in there.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<!-- This is a comment -->
+
+An actual dialog.<p><wait:5>
+
+<!--
+a comment with
+multiple lines
+-->
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+Don't hesitate to use them,<b><wait:30>
+really.<b>
+<color:BLUE>(more than I do at least)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And don't also hesitate to<b>
+space your text<b>
+with newlines.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It make it easier to read.<b>
+Especially when a lot of<b>
+tag is involved.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<hidetextbox><fade>
+<jump:text_tags_1><label:tag_const>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == Const tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag declare a constant<b>
+value that you can use<b>
+anywhere in the script.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It has 2 arguments:<b>
+the 1st is the constant name<b>
+and the 2nd the value.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+To use the new constant,<b>
+just write its name<b>
+somewhere,
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+and it will be replaced by<b>
+its value when you<b>
+compile the script.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It is useful if you want<b>
+to put a name on your value.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Especially if you're using<b>
+this value multiple times.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Because to change it,<wait:15> you<b>
+will need to change all the<b>
+places where it is used too.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+But you can replace them by<b>
+a constant and only change<b>
+the constant value.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<const:_1SEC,60>
+<const:_SMITH,Smith>
+
+<<>const:_1SEC,60><b>
+<<>const:_SMITH,M.Smith><p><wait:5>
+
+Maybe I should tell<b>
+_SMITH about it<b>
+.<wait:_1SEC><<>wait:_1SEC>.<wait:_1SEC><<>wait:_1SEC>.<p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Don't hesitate to use it.<b><wait:30>
+It improves readability<b>
+and make change easier.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+<color:BLUE>(<color:GREEN><<>name:MAIN_CHAR_NAME><color:BLUE> is<b>
+more readable than<b>
+<color:GREEN><<>name:45><color:BLUE>)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Do not choose a name that<b>
+you use in your dialogs<b>
+otherwise it will be replace
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+For example, "player"<b>
+is a bad choice,<animation:ANI_ROBOT_NEUTRAL_IDLE><wait:30><animation:ANI_ROBOT_SMILE_TALK> but<b>
+"CONST_PLAYER" is better.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1><label:tag_name>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Name tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+The <color:GREEN>name<color:WHITE> tag change the<b>
+name at the bottom left<b>
+of the dialog box.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+This tag take an argument<b>
+that specify the new name.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The argument is a number<b>
+that is the n'th name in the<b>
+name list <color:BLUE>(more info after)<color:WHITE>.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It is intended to indicate<b>
+which character is speaking.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You don't need to add this<b>
+tag for every dialog box.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The name will only change<b>
+when a new <color:GREEN><<>name><color:WHITE><b>
+tag is encounter.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Note: It seems that changing<b>
+a name to 0 only take effect<b>
+at the next dialog box
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<const:NAME_A,3>
+<const:NAME_B,4>
+
+<name:NAME_A>
+I am the character A!<p>
+<name:NAME_B>
+And I am the character B!<p>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+   == Editing the list ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_NEUTRAL_TALK>
+Changing the list is quite<b>
+cumbersome for now.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+To edit the list, you must<b>
+change 2 things:<b>
+Name address & Name tiles.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+   == Editing the list ==<b>
+      -- Name tiles --
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Name tiles are located in<b>
+the file "data/FONT.chr".
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<background:BKG_1ST_CHR><hidetextbox><p><wait:5><hidetextbox>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+There are at the<b>
+bottom halves of<b>
+the first bank,
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+without counting the last<b>
+tiles representing the<b>
+cursor & dialog box tiles.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+You can put any graphic you<b>
+want as long as it fit into<b>
+the designed name space.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Note that a name is X tile<b>
+long and names must fit<b>
+entirely into these tiles.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Important note: The first<b>
+name necessary start at the<b>
+1st tile in the name space.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Each name follow<b>
+one after the other.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Also, the order of the names<b>
+are important too for<b>
+the next part.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<background:BKG_INTRO>
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+   == Editing the list ==<b>
+     -- Name Address --
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+You must indicate for<b>
+each name the name tile<b>
+it starts from.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And to do that,<wait:15><b>
+you use the<b>
+name address list.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The name address list<b>
+can be edited at<b>
+"asm/dialog/name.asm".
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<background:BKG_NAMELIST><hidetextbox><p><wait:5><hidetextbox>
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The list start after<b>
+the line 'NAMES_ADR_LO:'<b>
+(At the top of the file).
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Each entry start as '.byte '<b>
+followed by the tile number<b>
+where the name start.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+(You can see this number in<b>
+YYCHR on the bottom left<b>
+when clicking on a tile)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The first entry is<b>
+always '.byte $80',
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+and other entry are always<b>
+'.byte ' + the size in tiles<b>
+of the last name
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+everything after ';' is a<b>
+comment and is therefore<b>
+ignored.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The order of the list<b>
+is important.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+It must be in the same order<b>
+as the name in the CHR bank.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Technical note: Numbers<b>
+should always increase<b>
+and not decrease,
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+otherwise the code<b>
+will not work.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<background:BKG_INTRO>
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You can use a name with<b>
+a value of 0<b>
+to hide the name.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It may also be possible<b>
+to not write a name,<b>
+but graphic instead.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This can be used to draw<b>
+symbols & graphics where the<b>
+name should be displayed.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1><label:tag_p_fp>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == P & FP tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+The <color:GREEN>p<color:WHITE> tag is one<b>
+of the most basic tag.<b>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+When encountered,<b><wait:15>
+it indicates the end<b>
+of a dialog box.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It also waits for the user<b>
+to press A to go<b>
+to the next one.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The <color:GREEN>fp<color:WHITE> tag do the same thing<b>
+but does not wait<b>
+for an input
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Why call it p ?<b><wait:30>
+I don't remember ?<b><wait:30>
+For "page"/"press" maybe ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+And the f in fp<b>
+may be for "force" ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+This is the dialog<b>
+before you press A<color:GREEN><<>p><color:WHITE><p><wait:5>
+
+And This is the dialog<b>
+after you press A<color:GREEN><<>p><color:WHITE><p><wait:5>
+
+This is the dialog for--<color:GREEN><<>fp><color:WHITE><fp><wait:5>
+Nop! No time for that!<color:GREEN><<>p><color:WHITE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can use <color:GREEN>p<color:WHITE> to just wait<b>
+for an input. You don't need<b>
+to have a dialog displayed.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This can be used for some<b>
+effect like displaying<b>
+a background one by one.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Or something more<b>
+interesting that need<b>
+a player input.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can use <color:GREEN>fp<color:WHITE> to create<b>
+an element of surprise,
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+like having a dialog that<b>
+is really fast<b>
+and skip itself,
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+or force the dialog<b>
+to be time with<b>
+something else like music.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Be careful if you want your<b>
+player to read a text<b>
+before this tag.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Make sure to give them<b>
+enough time to do so<b>
+(maybe with <color:GREEN>speed<color:WHITE> or <color:GREEN>wait<color:WHITE>)
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>
+<label:tag_speed>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == Speed tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag change how fast<b>
+the text is displaying.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The text will remain at<b>
+this speed until another<b>
+<color:GREEN>speed<color:WHITE> tag is encounter.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It takes 1 number<b>
+as an argument.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+This number is the number of<b>
+frame to wait between each<b>
+character displayed.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+So the smaller the value,<b>
+the faster the text.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The game is normally at 60<b>
+FPS. A speed of 60=1 second<b>
+between each character.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<speed:8>Slow text<b>
+<speed:4>Normal text<b>
+<speed:2>Fast text<b>
+
+
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Don't hesitate to use this<b>
+tag to pace your dialog.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can also use a slow/fast<b>
+speed to represent a<b>
+character way of speech.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can use a speed of 0 to<b>
+have instant dialog.<b>
+<color:BLUE>(When it will be fix)<color:WHITE>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1><label:todo_image>
 <background:BKG_EMPTY><character:CHR_NONE><animation:ANI_NONE>
 <fade>
 <hidetextbox>
@@ -2041,3 +2817,87 @@ TODO<p>
 <hidetextbox>
 <fade>
 <jump:text_tags_4>
+<label:tag_wait>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Wait tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag wait for<b>
+a number of frames to pass.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It takes 1 number as an<b>
+argument, and it is the<b>
+number of frame to wait.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+So the bigger the value,<b>
+the longer you wait.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The game is normally at 60<b>
+FPS. A wait of 60 mean that<b>
+the game will wait 1 second.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+Wait I'm thinking...<b>
+<wait:40><<>wait:40>OK I'm done<b>
+Wait!<wait:100><<>wait:100>Nothing :)<p>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag is great for<b>
+timing things, obviously.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+But it can also be used to<b>
+add small pauses between<b>
+sentences and clauses.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This give a feel of<b>
+a more natural dialog.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+If you combine a speed of 0<b>
+(with <color:GREEN>speed<color:WHITE>) and add a<b>
+wait time after each word,
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+you can display text<b>
+word by word instead of<b>
+character by character.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This can give a robotic<b>
+feeling to the dialog.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

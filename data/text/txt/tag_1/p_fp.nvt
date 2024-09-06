@@ -1,0 +1,115 @@
+<label:tag_p_fp>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == P & FP tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+The <color:GREEN>p<color:WHITE> tag is one<b>
+of the most basic tag.<b>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+When encountered,<b><wait:15>
+it indicates the end<b>
+of a dialog box.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It also waits for the user<b>
+to press A to go<b>
+to the next one.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The <color:GREEN>fp<color:WHITE> tag do the same thing<b>
+but does not wait<b>
+for an input
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+Why call it p ?<b><wait:30>
+I don't remember ?<b><wait:30>
+For "page"/"press" maybe ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_NEUTRAL_TALK>
+And the f in fp<b>
+may be for "force" ?
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+This is the dialog<b>
+before you press A<color:GREEN><<>p><color:WHITE><p><wait:5>
+
+And This is the dialog<b>
+after you press A<color:GREEN><<>p><color:WHITE><p><wait:5>
+
+This is the dialog for--<color:GREEN><<>fp><color:WHITE><fp><wait:5>
+Nop! No time for that!<color:GREEN><<>p><color:WHITE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can use <color:GREEN>p<color:WHITE> to just wait<b>
+for an input. You don't need<b>
+to have a dialog displayed.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This can be used for some<b>
+effect like displaying<b>
+a background one by one.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+Or something more<b>
+interesting that need<b>
+a player input.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can use <color:GREEN>fp<color:WHITE> to create<b>
+an element of surprise,
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+like having a dialog that<b>
+is really fast<b>
+and skip itself,
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+or force the dialog<b>
+to be time with<b>
+something else like music.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Be careful if you want your<b>
+player to read a text<b>
+before this tag.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Make sure to give them<b>
+enough time to do so<b>
+(maybe with <color:GREEN>speed<color:WHITE> or <color:GREEN>wait<color:WHITE>)
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

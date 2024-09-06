@@ -1,0 +1,245 @@
+<label:tag_name>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Name tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+The <color:GREEN>name<color:WHITE> tag change the<b>
+name at the bottom left<b>
+of the dialog box.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+This tag take an argument<b>
+that specify the new name.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The argument is a number<b>
+that is the n'th name in the<b>
+name list <color:BLUE>(more info after)<color:WHITE>.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It is intended to indicate<b>
+which character is speaking.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You don't need to add this<b>
+tag for every dialog box.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The name will only change<b>
+when a new <color:GREEN><<>name><color:WHITE><b>
+tag is encounter.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Note: It seems that changing<b>
+a name to 0 only take effect<b>
+at the next dialog box
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<const:NAME_A,3>
+<const:NAME_B,4>
+
+<name:NAME_A>
+I am the character A!<p>
+<name:NAME_B>
+And I am the character B!<p>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+   == Editing the list ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_NEUTRAL_TALK>
+Changing the list is quite<b>
+cumbersome for now.
+<animation:ANI_ROBOT_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+To edit the list, you must<b>
+change 2 things:<b>
+Name address & Name tiles.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+   == Editing the list ==<b>
+      -- Name tiles --
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Name tiles are located in<b>
+the file "data/FONT.chr".
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<background:BKG_1ST_CHR><hidetextbox><p><wait:5><hidetextbox>
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+There are at the<b>
+bottom halves of<b>
+the first bank,
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+without counting the last<b>
+tiles representing the<b>
+cursor & dialog box tiles.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_TALK>
+You can put any graphic you<b>
+want as long as it fit into<b>
+the designed name space.
+<animation:ANI_ROBOT_LOOKRIGHT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Note that a name is X tile<b>
+long and names must fit<b>
+entirely into these tiles.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Important note: The first<b>
+name necessary start at the<b>
+1st tile in the name space.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Each name follow<b>
+one after the other.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Also, the order of the names<b>
+are important too for<b>
+the next part.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<background:BKG_INTRO>
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+   == Editing the list ==<b>
+     -- Name Address --
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+You must indicate for<b>
+each name the name tile<b>
+it starts from.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And to do that,<wait:15><b>
+you use the<b>
+name address list.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The name address list<b>
+can be edited at<b>
+"asm/dialog/name.asm".
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<background:BKG_NAMELIST><hidetextbox><p><wait:5><hidetextbox>
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The list start after<b>
+the line 'NAMES_ADR_LO:'<b>
+(At the top of the file).
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Each entry start as '.byte '<b>
+followed by the tile number<b>
+where the name start.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+(You can see this number in<b>
+YYCHR on the bottom left<b>
+when clicking on a tile)
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The first entry is<b>
+always '.byte $80',
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+and other entry are always<b>
+'.byte ' + the size in tiles<b>
+of the last name
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+everything after ';' is a<b>
+comment and is therefore<b>
+ignored.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+The order of the list<b>
+is important.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+It must be in the same order<b>
+as the name in the CHR bank.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+Technical note: Numbers<b>
+should always increase<b>
+and not decrease,
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_NEUTRAL_TALK>
+otherwise the code<b>
+will not work.
+<animation:ANI_ROBOT_TEACH_NEUTRAL_IDLE><p><wait:5>
+
+
+<background:BKG_INTRO>
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+You can use a name with<b>
+a value of 0<b>
+to hide the name.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It may also be possible<b>
+to not write a name,<b>
+but graphic instead.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+This can be used to draw<b>
+symbols & graphics where the<b>
+name should be displayed.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

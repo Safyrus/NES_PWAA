@@ -1,0 +1,78 @@
+<label:tag_speed>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+      == Speed tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+This tag change how fast<b>
+the text is displaying.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+The text will remain at<b>
+this speed until another<b>
+<color:GREEN>speed<color:WHITE> tag is encounter.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+It takes 1 number<b>
+as an argument.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+This number is the number of<b>
+frame to wait between each<b>
+character displayed.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+So the smaller the value,<b>
+the faster the text.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+The game is normally at 60<b>
+FPS. A speed of 60=1 second<b>
+between each character.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<speed:8>Slow text<b>
+<speed:4>Normal text<b>
+<speed:2>Fast text<b>
+
+
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Don't hesitate to use this<b>
+tag to pace your dialog.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can also use a slow/fast<b>
+speed to represent a<b>
+character way of speech.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+You can use a speed of 0 to<b>
+have instant dialog.<b>
+<color:BLUE>(When it will be fix)<color:WHITE>
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+
+<hidetextbox><fade>
+<jump:text_tags_1>

@@ -1,0 +1,74 @@
+<label:tag_comment>
+<background:BKG_INTRO><character:CHR_ROBOT><animation:ANI_ROBOT_SMILE_IDLE>
+<fade><hidetextbox>
+
+
+<name:NAM_NONE>
+<color:RED><b>
+     == Comment tag ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_TEACH_SMILE_TALK>
+A comment tag start with<b>
+<color:GREEN><<>!--<color:WHITE> and end when<b>
+<color:GREEN>--><color:WHITE> is encountered.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Everything inside a comment<b>
+tag is ignored.<wait:30> They can be<b>
+multiple lines long.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_TEACH_SMILE_TALK>
+Use it to make part of your<b>
+script more clear to you<b>
+and other people.
+<animation:ANI_ROBOT_TEACH_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_IDLE><name:NAM_NONE>
+<color:RED><b>
+       == Example ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+Well, you will need to look<b>
+at the source file to know<b>
+what comment I put in there.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<!-- This is a comment -->
+
+An actual dialog.<p><wait:5>
+
+<!--
+a comment with
+multiple lines
+-->
+
+
+<name:NAM_NONE>
+<color:RED><b>
+         == Tips ==<b>
+<color:WHITE><p><wait:5>
+
+<name:NAM_SAFYRUS><animation:ANI_ROBOT_SMILE_TALK>
+Don't hesitate to use them,<b><wait:30>
+really.<b>
+<color:BLUE>(more than I do at least)<color:WHITE>
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+And don't also hesitate to<b>
+space your text<b>
+with newlines.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<animation:ANI_ROBOT_SMILE_TALK>
+It make it easier to read.<b>
+Especially when a lot of<b>
+tag is involved.
+<animation:ANI_ROBOT_SMILE_IDLE><p><wait:5>
+
+<hidetextbox><fade>
+<jump:text_tags_1>
