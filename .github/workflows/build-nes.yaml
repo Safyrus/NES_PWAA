@@ -6,7 +6,7 @@ jobs:
     steps:
       # Pull project files
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # Install compiler
       - name: Install CC65
         run: sudo apt install cc65
@@ -17,11 +17,11 @@ jobs:
       - name: Upload NES file
         uses: actions/upload-artifact@v3
         with:
-          name: PWAA
-          path: PWAA.nes
+          name: tuto
+          path: tuto.nes
       # Upload binary file
       - name: Upload NES file (Ines 1.0)
         uses: actions/upload-artifact@v3
         with:
-          name: PWAA_ines1
-          path: PWAA_ines1.nes
+          name: tuto_ines1
+          path: tuto_ines1.nes
