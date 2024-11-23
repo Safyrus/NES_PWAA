@@ -227,7 +227,7 @@ def remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, 
     return best_spr, best_lines, best_score, best_sprimg
 
 
-def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False):
+def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=6, MAX_SPR_COLOR=9):
     ################
     # Read Image
     ################
@@ -292,6 +292,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False):
     if nb_semi_px > 0:
         print(f"Error: {img_path} has {nb_semi_px} colors with semi-transparency detected. Remove them.")
         exit(1)
+    MAX_COLOR = max(MAX_BKG_COLOR, MAX_SPR_COLOR)
     if nb_color_no_a > MAX_COLOR:
         print(f"Error: {img_path} has too much colors. {nb_color_no_a} detected, must be at most {MAX_COLOR}.")
         exit(1)
@@ -428,117 +429,118 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False):
                 bar.set_description(f"Score={best_score.sum()}")
 
     #
-    if lazy_spr_pal:
-        a = np.append(best_bkg_pal, best_spr_pal, axis=0)
-        while len(a) < MAX_SPR_COLOR:
-            a = np.append(a, [BLACK], axis=0)
-        spr_palettes = np.array([a])
-    elif verbose:
-        print("Find best sprite palettes...")
-    # start with worst score for sprites
-    best_score.sprite_count = w * h
-    best_score.spr_overflow_count = best_score.sprite_count
-    best_score.line_overflow_count = 256
-    best_score.wrong_spr_mask = np.ones((h, w), dtype=np.uint8)
-    # for every sprite palettes
-    emptyspr = Image.new("RGBA", (8, 16))
     best_spr = []
     best_lines = []
-    if verbose:
-        bar = tqdm(spr_palettes, desc=f"Score=???")
-    else:
-        bar = spr_palettes
-    for spr_pal in bar:
-        # setup variables
-        sprimg = best_sprimg.copy()
-        sprimg_final = Image.new("RGBA", (w, h))
-        sprites = []
-        # setup score
-        score = copy.copy(best_score)
-        score.sprite_count = 0
-        score.spr_overflow_count = 0
-        score.line_overflow_count = 0
-        score.wrong_spr_mask = np.zeros((h, w), dtype=np.uint8)
-        # get color of spr_pal
-        spr_pal_no_a = spr_pal if lazy_spr_pal else colors_no_a[spr_pal]
-        spr_pal = np.append(spr_pal_no_a, [[0, 0, 0, 0]], axis=0)
-        # remove pixels already in background
-        sprimg_data = np.array(sprimg)
-        same_idx = np.where(np.all(np.array(best_bkg_img) == sprimg_data, axis=-1))
-        sprimg_data[same_idx] = np.array([0, 0, 0, 0])
-        sprimg = Image.fromarray(sprimg_data)
-        # while pixel left on sprimg
-        while np.sum((np.array(sprimg) == np.array([0, 0, 0, 0])).all(axis=2)) != w * h:
-            # for each sprite grid position
-            for y in range(nb_sprtile_h):
-                for x in range(nb_sprtile_w):
-                    # find sprite with best offset
-                    pos = (x * 8, y * 16, x * 8 + 8, y * 16 + 16)
-                    offset, nb_px = find_offset(sprimg, pos)
-                    # if empty sprite
-                    if nb_px == 0:
-                        continue
-                    # get sprite
-                    spr = sprimg.crop(offset)
-                    spr_colors = [x[1] for x in spr.getcolors()]
-                    # find palette
-                    (ps, ns) = find_palette(spr, spr_pal_no_a, bkg_col=np.array([0, 0, 0, 0]))
-                    # take closest pal
-                    p = ps[np.argmax(ns)]
-                    # copy correct color into new sprite
-                    spr_data = np.array(spr)
-                    new_spr_data = np.zeros(spr_data.shape, dtype=np.uint8)
-                    nb_px = 0
-                    for c in p:
-                        mask = (spr_data == c).all(axis=2)
-                        if np.any(c != [0, 0, 0, 0]):
-                            nb_px += np.sum(mask)
-                        mask = np.where(mask)
-                        new_spr_data[mask] = spr_data[mask]
-                    # replace sprite with new one
-                    spr = Image.fromarray(new_spr_data)
-                    # update images
-                    sprimg_final.paste(spr, offset, spr)
-                    sprimg.paste(emptyspr, offset, spr)
-                    # add sprite to list
-                    sprites.append(list(offset))
-                    border = 0 != sum([x[0] for x in (best_bkg_img.crop(offset)).getcolors() if x[1][3] == 0])
-                    sprites[-1].extend([False, nb_px, spr, border])
-                    # update score
-                    score.sprite_count += 1
+    if MAX_SPR_COLOR > 0:
+        if lazy_spr_pal:
+            a = np.append(best_bkg_pal, best_spr_pal, axis=0)
+            while len(a) < MAX_SPR_COLOR:
+                a = np.append(a, [BLACK], axis=0)
+            spr_palettes = np.array([a])
+        elif verbose:
+            print("Find best sprite palettes...")
+        # start with worst score for sprites
+        best_score.sprite_count = w * h
+        best_score.spr_overflow_count = best_score.sprite_count
+        best_score.line_overflow_count = 256
+        best_score.wrong_spr_mask = np.ones((h, w), dtype=np.uint8)
+        # for every sprite palettes
+        emptyspr = Image.new("RGBA", (8, 16))
+        if verbose:
+            bar = tqdm(spr_palettes, desc=f"Score=???")
+        else:
+            bar = spr_palettes
+        for spr_pal in bar:
+            # setup variables
+            sprimg = best_sprimg.copy()
+            sprimg_final = Image.new("RGBA", (w, h))
+            sprites = []
+            # setup score
+            score = copy.copy(best_score)
+            score.sprite_count = 0
+            score.spr_overflow_count = 0
+            score.line_overflow_count = 0
+            score.wrong_spr_mask = np.zeros((h, w), dtype=np.uint8)
+            # get color of spr_pal
+            spr_pal_no_a = spr_pal if lazy_spr_pal else colors_no_a[spr_pal]
+            spr_pal = np.append(spr_pal_no_a, [[0, 0, 0, 0]], axis=0)
+            # remove pixels already in background
+            sprimg_data = np.array(sprimg)
+            same_idx = np.where(np.all(np.array(best_bkg_img) == sprimg_data, axis=-1))
+            sprimg_data[same_idx] = np.array([0, 0, 0, 0])
+            sprimg = Image.fromarray(sprimg_data)
+            # while pixel left on sprimg
+            while np.sum((np.array(sprimg) == np.array([0, 0, 0, 0])).all(axis=2)) != w * h:
+                # for each sprite grid position
+                for y in range(nb_sprtile_h):
+                    for x in range(nb_sprtile_w):
+                        # find sprite with best offset
+                        pos = (x * 8, y * 16, x * 8 + 8, y * 16 + 16)
+                        offset, nb_px = find_offset(sprimg, pos)
+                        # if empty sprite
+                        if nb_px == 0:
+                            continue
+                        # get sprite
+                        spr = sprimg.crop(offset)
+                        spr_colors = [x[1] for x in spr.getcolors()]
+                        # find palette
+                        (ps, ns) = find_palette(spr, spr_pal_no_a, bkg_col=np.array([0, 0, 0, 0]))
+                        # take closest pal
+                        p = ps[np.argmax(ns)]
+                        # copy correct color into new sprite
+                        spr_data = np.array(spr)
+                        new_spr_data = np.zeros(spr_data.shape, dtype=np.uint8)
+                        nb_px = 0
+                        for c in p:
+                            mask = (spr_data == c).all(axis=2)
+                            if np.any(c != [0, 0, 0, 0]):
+                                nb_px += np.sum(mask)
+                            mask = np.where(mask)
+                            new_spr_data[mask] = spr_data[mask]
+                        # replace sprite with new one
+                        spr = Image.fromarray(new_spr_data)
+                        # update images
+                        sprimg_final.paste(spr, offset, spr)
+                        sprimg.paste(emptyspr, offset, spr)
+                        # add sprite to list
+                        sprites.append(list(offset))
+                        border = 0 != sum([x[0] for x in (best_bkg_img.crop(offset)).getcolors() if x[1][3] == 0])
+                        sprites[-1].extend([False, nb_px, spr, border])
+                        # update score
+                        score.sprite_count += 1
 
-                    # abandon curent solution if already worst
+                        # abandon curent solution if already worst
+                        if score.sum() > best_score.sum():
+                            break
                     if score.sum() > best_score.sum():
                         break
                 if score.sum() > best_score.sum():
                     break
             if score.sum() > best_score.sum():
-                break
-        if score.sum() > best_score.sum():
-            continue
-        sprimg = sprimg_final
+                continue
+            sprimg = sprimg_final
 
-        # update overflow scores
-        score, lines = compute_overflow(h, sprites, score)
+            # update overflow scores
+            score, lines = compute_overflow(h, sprites, score)
 
-        # keep the best found
-        if score.sum() < best_score.sum():
-            best_score = score
-            best_spr = sprites
-            best_sprimg = sprimg
-            best_spr_pal = spr_pal_no_a
-            best_lines = lines
-            if verbose:
-                bar.set_description(f"Score={best_score.sum()}")
+            # keep the best found
+            if score.sum() < best_score.sum():
+                best_score = score
+                best_spr = sprites
+                best_sprimg = sprimg
+                best_spr_pal = spr_pal_no_a
+                best_lines = lines
+                if verbose:
+                    bar.set_description(f"Score={best_score.sum()}")
 
-    #
-    best_spr, best_lines, best_score = remove_useless_sprites(best_spr, best_bkg_img, best_score, h, verbose)
-    if OVERFLOW_BEFOR_SPRITE:
-        best_spr, best_lines, best_score, best_sprimg = remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, emptyspr)
-        best_spr, best_lines, best_score, best_sprimg = remove_sprites(best_spr, best_sprimg, best_bkg_img, best_score, h, verbose, emptyspr)
-    else:
-        best_spr, best_lines, best_score, best_sprimg = remove_sprites(best_spr, best_sprimg, best_bkg_img, best_score, h, verbose, emptyspr)
-        best_spr, best_lines, best_score, best_sprimg = remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, emptyspr)
+        #
+        best_spr, best_lines, best_score = remove_useless_sprites(best_spr, best_bkg_img, best_score, h, verbose)
+        if OVERFLOW_BEFOR_SPRITE:
+            best_spr, best_lines, best_score, best_sprimg = remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, emptyspr)
+            best_spr, best_lines, best_score, best_sprimg = remove_sprites(best_spr, best_sprimg, best_bkg_img, best_score, h, verbose, emptyspr)
+        else:
+            best_spr, best_lines, best_score, best_sprimg = remove_sprites(best_spr, best_sprimg, best_bkg_img, best_score, h, verbose, emptyspr)
+            best_spr, best_lines, best_score, best_sprimg = remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, emptyspr)
 
     if verbose:
         print("Done!")

@@ -14,19 +14,40 @@ class CantFit(Exception):
     pass
 
 
-def find_tile_idx(tile, tiles, firstonly=True, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
+def find_tile_idx(tile, tiles, tile_hashes={}, firstonly=True, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
+    # if empty tile
     if tiles.shape[0] == 0:
+        # return default value
         return -1 if firstonly else []
+
+    # if already seen tile
+    # h = str(hash(tile.tobytes()))
+    # if h in tile_hashes:
+    #     # return its index
+    #     if firstonly:
+    #         return tile_hashes[h]
+    #     return [v for k, v in tile_hashes.items() if h == k]
+
+    # compare to each tile
+    # tmp = np.array(tile == tiles, int)
+    # idx = np.where(np.einsum('...ijk->i...', tmp) >= MIN_PIXEL_EQUALITY)
+    # idx = np.where(compute_tile_dif(tile, tiles, MIN_PIXEL_EQUALITY))
     idx = np.where(np.sum(tile == tiles, axis=(2, 1)) >= MIN_PIXEL_EQUALITY)
+
+    # if not found
     if len(idx[0]) == 0:
+        # return default value
         return -1 if firstonly else []
-    idx = list(np.sort(idx[0]))
+
+    # return found tiles in order of list
+    idx = np.sort(idx[0])
+    # idx = list(np.sort(idx[0]))
     if firstonly:
         return idx[0]
     return idx
 
 
-def test_region_bkg(data, bkg_bnk_tiles, spr_mask, tiles, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
+def test_region_bkg(data, bkg_bnk_tiles, spr_mask, tiles, tile_hashes={}, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
     adrs = data["bkg_adr"]
     nulltile = np.zeros((8, 8), dtype=np.uint8)
 
@@ -37,13 +58,13 @@ def test_region_bkg(data, bkg_bnk_tiles, spr_mask, tiles, MIN_PIXEL_EQUALITY=DEF
         # get the used tile
         t = tiles[a]
         # if tile already in bank
-        i = find_tile_idx(t, bkg_bnk_tiles, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+        i = find_tile_idx(t, bkg_bnk_tiles, tile_hashes, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
         if i >= 0:
             # use this tile instead
             new_adr = np.append(new_adr, i)
             continue
         # if empty tile to replace in bank
-        iz = find_tile_idx(nulltile, bkg_bnk_tiles, firstonly=False, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+        iz = find_tile_idx(nulltile, bkg_bnk_tiles, tile_hashes, False, MIN_PIXEL_EQUALITY)
         iz = [i for i in iz if not spr_mask[i]]
         if len(iz) > 0:
             # use this tile instead
@@ -58,10 +79,10 @@ def test_region_bkg(data, bkg_bnk_tiles, spr_mask, tiles, MIN_PIXEL_EQUALITY=DEF
     return new_adr
 
 
-def spr_inside_bnk(spr, tile_up, tile_down, bnk, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
+def spr_inside_bnk(spr, tile_up, tile_down, bnk, tile_hashes={}, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
     def find_tile(tu, td):
-        tu_i = find_tile_idx(tu, bnk, firstonly=False, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
-        td_i = find_tile_idx(td, bnk, firstonly=False, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+        tu_i = find_tile_idx(tu, bnk, tile_hashes, False, MIN_PIXEL_EQUALITY)
+        td_i = find_tile_idx(td, bnk, tile_hashes, False, MIN_PIXEL_EQUALITY)
         for i in tu_i:
             for j in td_i:
                 if i >= 0 and i % 2 == 0 and i + 1 == j:
@@ -105,13 +126,13 @@ def free_spr_bnk_mask(b, spr_bnk_tiles, spr_mask, nulltile, TPB=SPR_PER_BNK * 2)
     return free_mask
 
 
-def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, MAX_BNK_COMBI=16, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
+def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BNK_COMBI=DEFAULT_MAX_BNK_COMBI, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
     TPB = SPR_PER_BNK * 2  # TPB = TILE PER BANK
 
     spr = data["spr_data"]
     ori_spr = spr.copy()
     if len(spr) == 0:
-        return range(8), []
+        return [], []
     spr_bnk = data["bnk"]
 
     # init arrays
@@ -141,7 +162,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, MAX_BNK_COMBI=16, MIN_
             # get bank
             bnk = bnks[b]
             # if tiles in bank
-            new_s = spr_inside_bnk(s.copy(), tile_up, tile_down, bnk)
+            new_s = spr_inside_bnk(s.copy(), tile_up, tile_down, bnk, tile_hashes, MIN_PIXEL_EQUALITY)
             if new_s:
                 # add new sprite
                 new_spr.append((b, new_s, i))
@@ -230,7 +251,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, MAX_BNK_COMBI=16, MIN_
                 #
                 free_mask = free_spr_bnk_mask(best_bnk[bnk_idx], spr_bnk_tiles, spr_mask, nulltile)
                 # find empty sprite
-                idx = find_tile_idx(nulltile, cur_bnk, firstonly=False, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+                idx = find_tile_idx(nulltile, cur_bnk, tile_hashes, False, MIN_PIXEL_EQUALITY)
                 idx = [idx[j] for j in range(len(idx)) if idx[j] % 2 == 0 and free_mask[idx[j] // 2]]
                 # if found
                 if len(idx) >= 1:
@@ -259,29 +280,31 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, MAX_BNK_COMBI=16, MIN_
     return best_bnk, new_spr
 
 
-def test_region(data, all_tiles, spr_mask, img_tiles, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
+def test_region(data, all_tiles, spr_mask, img_tiles, tile_hashes={}, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
     try:
         ok = 1
         # test to compact background tiles
-        new_adr = test_region_bkg(data, all_tiles, spr_mask, img_tiles, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+        new_adr = test_region_bkg(data, all_tiles, spr_mask, img_tiles, tile_hashes, MIN_PIXEL_EQUALITY)
         ok = 2
         # test to compact sprite tiles
-        new_bnk, new_spr = test_region_spr(data, all_tiles, spr_mask, img_tiles, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+        new_bnk, new_spr = test_region_spr(data, all_tiles, spr_mask, img_tiles, tile_hashes, MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
     except CantFit:
         return False, ()
     return ok, (new_bnk, new_adr, new_spr, all_tiles, spr_mask)
 
 
-def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA, add_size = False):
+def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA, add_size=False, reserved_tiles=2):
     # Variables
     nulltile = np.zeros((8, 8), dtype=np.uint8)
     all_tiles = np.array([[nulltile] * 1024 * 16] * n_region, dtype=np.uint8)
+    all_tiles_hash = {}
     spr_tile_mask = np.zeros((n_region, 1024 * 16), dtype=bool)
-    spr_tile_mask[:, 0:2] = True
+    spr_tile_mask[:, 0:reserved_tiles] = True
     main_snif_file = bytearray()
     images_offset = []
 
-    bar = tqdm(files, desc="Compact Images")
+    bar = files
+    bar = tqdm(files, desc="Compact Images", dynamic_ncols=True)
     for file in bar:
         bar.set_description(f"Compacting ({os.path.basename(file)})")
         # read file
@@ -295,7 +318,8 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
             for r in range(n_region):
                 reg_tiles = all_tiles[r]
                 reg_spr_mask = spr_tile_mask[r]
-                ok, changes = test_region(img_data, reg_tiles, reg_spr_mask, data["chr"], MIN_PIXEL_EQUALITY=MIN_PIXEL_EQUALITY)
+                tile_hashes = dict([(str(hash(x.tobytes())), i) for i, x in enumerate(all_tiles[r])])
+                ok, changes = test_region(img_data, reg_tiles, reg_spr_mask, data["chr"], tile_hashes, MIN_PIXEL_EQUALITY)
                 if ok:
                     inserted = True
                     # unpack changes
@@ -311,16 +335,6 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
                     break
             if not inserted:
                 raise CantFit("No place in any region")
-                # print(f"\nError: cannot fit image {i} in file {file}")
-                # for i in range(n_region):
-                #     main_snif_file.extend(tiles2chr(all_tiles[i]))
-                # print("Write output file for debug")
-                # with open("error.snif", "wb") as f:
-                #     # metadata of file
-                #     metadata = f'{{"version":0,"mapper":5,"nbimg":{len(images_offset)}}}'
-                #     f.write(bytes(metadata, encoding="utf-8"))
-                #     f.write(main_snif_file)
-                # exit(1)
 
             # encode compact image
             img_data = snif_encode_data(img_data)
@@ -331,6 +345,8 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
                 main_snif_file.extend(len(img_data).to_bytes(2, "little"))
             main_snif_file.extend(img_data)
     chr_offset = len(main_snif_file)
+    print("Number of tiles:", [np.sum(nulltile == x, axis=(2, 1)) for x in all_tiles])
+    print("Number of sprite tiles:", [np.sum(x) for x in spr_tile_mask])
     # add CHR to file
     for i in range(n_region):
         main_snif_file.extend(tiles2chr(all_tiles[i]))

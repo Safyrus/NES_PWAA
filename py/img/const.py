@@ -8,7 +8,9 @@ SPR_PER_BNK = 32
 NB_NES_COLOR = 64
 BLACK_NES_COLOR = 15
 PAL_SIZE = 3
-DEFAULT_PX_EQUA = 64
+DEFAULT_PX_EQUA = 48 # how many pixel is needed before a tile is consider 'the same' with another tile
+DEFAULT_MAX_BNK_COMBI = 10 # from 8 to 64. bigger = less sprite tiles but longer compute time
+RES_FIRST_CHR_BYTES = 4096*2
 
 
 ################################
@@ -41,8 +43,5 @@ MIN_IMG_WIDTH = 8
 MIN_IMG_HEIGHT = 16
 MAX_IMG_WIDTH = 256
 MAX_IMG_HEIGHT = 240
-MAX_BKG_COLOR = 6
-MAX_SPR_COLOR = 9
-MAX_COLOR = MAX_SPR_COLOR
 MAX_SPRITE_OVERFLOW = 8
 BLACK = [0, 0, 0, 255]

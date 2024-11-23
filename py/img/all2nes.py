@@ -1,5 +1,4 @@
 import argparse
-import hashlib
 import os
 import re
 import numpy as np
@@ -9,7 +8,6 @@ from img2snif import img2snif
 from compact import compact, CantFit
 from PIL import Image
 from const import *
-from snif_decode import snif_decode_meta
 
 DEFAULT_TIME = 30
 NB_REGION = 4
@@ -28,7 +26,7 @@ def path2name(path, anim_idx=False):
         name = re.sub(ANIM_AFTERIDX_REGEX, "", name)
     else:
         name = re.sub(ANIM_AFTERNAME_REGEX, "", name)
-    name = re.sub(r"[^a-zA-Z0-9-]+", "_", name)
+    name = re.sub(r"[^a-zA-Z0-9]+", "_", name)
     return name.upper()
 
 
@@ -87,7 +85,6 @@ print(f"Found {sum([len(all_files[r]) for r in range(NB_REGION)])} images")
 ################################
 
 anims = []
-all_files_idx = {}
 # for each region
 i = 0
 for r in range(NB_REGION):
@@ -96,7 +93,6 @@ for r in range(NB_REGION):
     fi = 0
     while fi < len(all_files[r]):
         file = all_files[r][fi]
-        all_files_idx[file] = i
         i += 1
         # if end with underscore and numbers
         m = re.match(ANIM_REGEX, file)
@@ -124,7 +120,6 @@ for r in range(NB_REGION):
         else:
             anims[r][name][idx] = (anims[r][name][img_idx][0], time, anims[r][name][img_idx][2])
             # delete this image
-            del all_files_idx[file]
             del all_files[r][fi]
             i -= 1
             fi -= 1
@@ -143,7 +138,7 @@ snif_files = []
 # Convert each file
 for r in range(NB_REGION):
     snif_files.append([])
-    bar = tqdm(all_files[r], desc=f"Converting region {r}...")
+    bar = tqdm(all_files[r], desc=f"Converting region {r}...", dynamic_ncols=True)
     for file in bar:
         bar.set_description(f"Convert region {r} ({os.path.basename(file)})")
         # get output file path
@@ -160,7 +155,6 @@ for r in range(NB_REGION):
             # and is not first frame
             n = int(m.group(2)[1:])
             n = list(anims[r][name].keys()).index(n)
-            is_anim = False
             if n > 0:
                 # get previous image path
                 last = list(anims[r][name].keys())[n - 1]
@@ -179,9 +173,11 @@ for r in range(NB_REGION):
                 #
                 # temporary image convertion
                 img_path = "tmp.png"
-                is_anim = True
         # convertion
-        img2snif(img_path, out)#, force=is_anim)
+        if is_anim:
+            img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=9, bkg_pal_offset=0)
+        else:
+            img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=0, bkg_pal_offset=2)
 
 
 ################################
@@ -198,7 +194,17 @@ for r in range(NB_REGION):
     done = False
     while not done:
         try:
-            main_snif_file, images_offset, chr_offset = compact(snif_files[r], n_region=1, reg_offset=r, MIN_PIXEL_EQUALITY=min_px, add_size=True)
+            reserved_tiles = 2
+            if r == 0:
+                reserved_tiles = max(2, RES_FIRST_CHR_BYTES // 16)
+            main_snif_file, images_offset, chr_offset = compact(
+                snif_files[r],
+                n_region=1,
+                reg_offset=r,
+                MIN_PIXEL_EQUALITY=min_px,
+                add_size=True,
+                reserved_tiles=reserved_tiles,
+            )
             done = True
         except CantFit:
             if min_px < 16:
@@ -233,13 +239,33 @@ for r in range(NB_REGION):
 filepath = os.path.join(args.output_folder, "all.CHR")
 with open(filepath, "wb") as f:
     for r in range(NB_REGION):
-        f.write(main_files[r][chr_offsets[r] :])
+        if r == 0:
+            f.write(main_files[r][chr_offsets[r] + RES_FIRST_CHR_BYTES :])
+        else:
+            f.write(main_files[r][chr_offsets[r] :])
 
 # Write raw image data file
 filepath = os.path.join(args.output_folder, "img_data.bin")
+all_files_idx = {}
 with open(filepath, "wb") as f:
-    for r in range(NB_REGION):
-        f.write(main_files[r][: chr_offsets[r]])
+
+    def write_anim_or_bnk(isanim, idx):
+        for r in range(NB_REGION):
+            for i, file in enumerate(all_files[r]):
+                if (path2name(file) in anims[r]) == isanim:
+                    all_files_idx[file] = idx
+                    idx += 1
+                    start = img_offsets[r][i]
+                    end = chr_offsets[r]
+                    if i + 1 < len(img_offsets[r]):
+                        end = img_offsets[r][i + 1]
+                    f.write(main_files[r][start:end])
+            f.write(main_files[r][start:end])
+        return idx
+
+    idx = 0
+    idx = write_anim_or_bnk(False, idx)
+    idx = write_anim_or_bnk(True, idx)
 
 # Write raw animation data file
 anims_idx = {}

@@ -106,6 +106,8 @@ def snif_encode_data(data):
     # bnk
     banks = data["bnk"]
     mask = [x >= 0 for x in banks]
+    if not mask:
+        mask = 0
     mask = np.packbits(mask, bitorder="little")[0]
     bin_data.append(mask)
     for x in banks:

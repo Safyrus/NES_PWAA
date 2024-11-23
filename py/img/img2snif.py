@@ -150,7 +150,7 @@ def spr2tile(pal, spr, backdrop):
     return tiles
 
 
-def imgdata2snif(img_data, verbose=False):
+def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
     snif_data = bytearray()
 
     ################
@@ -203,7 +203,7 @@ def imgdata2snif(img_data, verbose=False):
     # add background colors
     for i in range(0, len(bkg_pal), PAL_SIZE):
         snif_data.append(0x80 | bkg_pal[i + 0])
-        snif_data.append(((i // PAL_SIZE) << 6) | bkg_pal[i + 1])
+        snif_data.append((((i // PAL_SIZE) + bkg_pal_offset) << 6) | bkg_pal[i + 1])
         snif_data.append(bkg_pal[i + 2])
     # add sprite colors
     for i in range(0, len(spr_pal), PAL_SIZE):
@@ -247,7 +247,7 @@ def imgdata2snif(img_data, verbose=False):
     assert np.all(tile_adr_hi <= 63)
     # merge high address and palette to have MMC5 tiles
     for i in range(len(tile_adr_hi)):
-        tile_adr_hi[i] |= tile_pal[i] << 6
+        tile_adr_hi[i] |= (tile_pal[i]+bkg_pal_offset) << 6
     # add tile address to data
     snif_data.extend(tile_adr_lo)
     snif_data.extend(tile_adr_hi)
@@ -295,7 +295,7 @@ def imgdata2snif(img_data, verbose=False):
     return snif_data
 
 
-def img2snif(imgpath, outpath, verbose=False, force=False):
+def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2, nb_spr_pal=3, bkg_pal_offset=0):
 
     # if output already exist
     if not force and os.path.exists(outpath):
@@ -312,11 +312,11 @@ def img2snif(imgpath, outpath, verbose=False, force=False):
     # convert image to image data
     if verbose:
         print("Convert Image to data")
-    img_data = img2neslimit(imgpath, True)
+    img_data = img2neslimit(imgpath, True, MAX_BKG_COLOR=nb_bkg_pal, MAX_SPR_COLOR=nb_spr_pal)
     # convert image data to SNIF data
     if verbose:
         print("Convert data to SNIF")
-    data = imgdata2snif(img_data, verbose=verbose)
+    data = imgdata2snif(img_data, verbose=verbose, bkg_pal_offset=bkg_pal_offset)
 
     # metadata of file
     metadata = f'{{"version":0,"mapper":5,"nbimg":1,"hashori":"{img_data["hash"]}"}}'
