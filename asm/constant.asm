@@ -196,6 +196,7 @@
     NMI_SPR   = %00000010
     NMI_BKG   = %00000001
 
+    ZP_BACKGROUND_SIZE = $60-1
 
 ;================
 ; Group: MMC5
@@ -558,6 +559,12 @@
     ACT_SPR_TILE            = $FA
     ACT_RET_FLAG            = %00000001
 
+;================
+; Group: Images
+;================
+    PACKET_BUF_MASK = $63
+    IMG_BKG_LO_ADR = $6400
+    IMG_BKG_HI_ADR = $6800
 
 ;================
 ; Group: Special Characters

@@ -163,8 +163,8 @@
     .include "vector/scanline.asm"
 
     ; main file
-    .include "main.asm"
-    .include "joypad.asm"
+    .include "main_test.asm"
+    ; .include "joypad.asm"
     .include "other.asm"
 
     ; FamiStudio Sound Engine
@@ -173,21 +173,24 @@
     .include "audio/data.asm"
 
 .segment "CODE_BNK"
-    .include "dialog/main.asm"
-    .include "choice.asm"
-    .include "img/main.asm"
-    .include "courtrecord/main.asm"
-    .include "investigation/main.asm"
+    ; .include "dialog/main.asm"
+    .include "dialog/lz_init.asm"
+    ; .include "choice.asm"
+    .include "imgv2/main.asm"
+    ; .include "courtrecord/main.asm"
+    ; .include "investigation/main.asm"
 
 .segment "IMGS_BNK"
-    .include "data/imgs.asm"
+    .incbin "data/img/img_data.bin"
+.segment "ANIM_BNK"
+    .incbin "data/img/anim_data.bin"
 
 .segment "TXT_BNK"
     .include "data/txt_data.asm"
 
-.segment "EVI_BNK"
-    evi_imgs:
-    .incbin "data/evidences.bin"
+; .segment "EVI_BNK"
+;     evi_imgs:
+;     .incbin "data/evidences.bin"
 
 ; 6502 vectors
 .segment "VECTORS"

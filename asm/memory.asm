@@ -26,14 +26,21 @@
 ; 
 ; - MMC5 Memory Bank (IMG_BUF_BNK):
 ;--- Text
-;   $0000-$02FF = decoded character image (low)
-;   $0300-$05FF = decoded character image (high)
-;   $0600-$08FF = decoded character sprites
-;   $0900-$0BFF = decoded background image (low)
-;   $0C00-$0EFF = decoded background image (high)
-;   $0F00-$0FFF = HITBOX address
-;   $1000-$12FF = HITBOX map
-;   $1300-$1FFF = unused
+;   $0000-$03FF = Packet buffer
+;   $0400-$06FF = decoded background image (low)
+;   $0700-$07FF = unused
+;   $0800-$0AFF = decoded background image (high)
+;   $0B00-$0BFF = unused
+;   $0C00-$0EFF = decoded character image (low)
+;   $0F00-$0FFF = unused
+;   $1000-$12FF = decoded character image (high)
+;   $1300-$13FF = unused
+;   $1400-$16FF = current image (low)
+;   $1700-$17FF = decoded character sprites
+;   $1800-$1AFF = current image (high)
+;   $1B00-$1BFF = decoded evidence sprites
+;   $1C00-$1EFF = HITBOX map
+;   $1F00-$1FFF = HITBOX address
 ;---
 
 
@@ -118,10 +125,8 @@
     ;----------------
     ; Index for the background data
     ;--- Text
-    ; FIII IIII
-    ; |+++-++++-- Index
-    ; +---------- A flag to tell that you are currently writing to the background buffer.
-    ;             If it is already set, you must wait for it to be cleared.
+    ; .III IIII
+    ;  +++-++++-- Index
     ;---
     background_index: .res 1
 
@@ -131,17 +136,17 @@
     ;
     ; Packet structure:
     ;
-    ; - byte 0   = vsssssss (v= vertical draw, s= size)
+    ; - byte 0   = vsssssss (v= vertical draw, s= size (number of tile bytes))
     ; - byte 1-2 = ppu address (most significant byte, least significant byte)
     ; - byte 3-s = tile data
     ;
     ; A packet of size 0 means there is no more data to draw
-    background: .res $60-1
+    background: .res ZP_BACKGROUND_SIZE
 
     ; Variable: tmp
     ;----------------
     ; temporary variables
-    tmp: .res 13
+    tmp: .res 64
 
 ;****************
 ; OAM SEGMENT
@@ -693,3 +698,11 @@ OAM:
         ; Variables for investigation code
         invest_tmp: .res 5
 
+    ;================
+    ; Group: Renderer variable
+    ;================
+        .segment "ZEROPAGE"
+        packet_buf_read_adr: .res 2
+        packet_buf_write_adr: .res 2
+        .segment "BSS"
+        update_image_arg: .res 4
