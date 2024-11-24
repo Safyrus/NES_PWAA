@@ -1,12 +1,17 @@
-
+    ; --------
+    ; Update some variables
+    ; --------
     ; set nametable mapping to default
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
-
+    ;
     inc_16 frame_counter
-
     ; enable interrupt
     CLI
+
+    ; --------
+    ; Update FamiStudio
+    ; --------
     ; load music banks
     LDX music
     LDA music_bank_table, X
@@ -17,6 +22,13 @@
     ; restore banks
     mov MMC5_RAM_BNK+MUS_BNK_OFF, mmc5_banks+MUS_BNK_OFF
     mov MMC5_RAM_BNK+SFX_BNK_OFF, mmc5_banks+SFX_BNK_OFF
+
+
+    ; --------
+    ; Prepare next frame graphism
+    ; --------
+    JSR draw_packet
+
 
     ; ; read text
     ; JSR read_text

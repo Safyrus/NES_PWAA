@@ -1,6 +1,5 @@
 ; snif_decode(in, bkg_lo, bnk_buf, bkg_hi, spr_buf, palette)
 snif_decode:
-    pushregs
     ; args
     @in = tmp+0
     @bkg_lo = tmp+2
@@ -18,6 +17,10 @@ snif_decode:
     @pos_y = @y
     @pos_x = @mask
     @atr = @n
+
+    pushregs
+    ; enable NMI_FORCE flag
+    ora_adr nmi_flags, #NMI_FORCE
 
     ; --------
     ; byte 0
@@ -358,7 +361,9 @@ snif_decode:
         JMP @spr
     @spr_end:
 
-    ; return
     @return:
+    ; disable NMI_FORCE flag
+    and_adr nmi_flags, #($FF-NMI_FORCE)
+    ; return
     pullregs
     RTS

@@ -1,25 +1,24 @@
 draw_packet:
-    pushregs
-
     ; --------
     ; variables
     ; --------
-    @in = tmp+0
-    @adr_lo = tmp+2
-    @adr_hi = tmp+3
-    @adr = @adr_lo
-    @cur_prio = tmp+4
-    @zp_bkg_size = tmp+5
-    @can_move_read = tmp+6
-    @v = tmp+7
-    @size = tmp+8
-    @i = tmp+9
+    @in = draw_packet_zpvar+0
+    @adr = draw_packet_zpvar+2
+    @adr_lo = @adr+0
+    @adr_hi = @adr+1
+    @cur_prio = draw_packet_var+0
+    @zp_bkg_size = draw_packet_var+1
+    @can_move_read = draw_packet_var+2
+    @v = draw_packet_var+3
+    @size = draw_packet_var+4
+    @i = draw_packet_var+5
 
+    pushregs
     ; --------
     ; init
     ; --------
     ; zp_bkg_size = ZP_BACKGROUND_SIZE - background_index
-    LDA ZP_BACKGROUND_SIZE
+    LDA #ZP_BACKGROUND_SIZE
     sub background_index
     STA @zp_bkg_size
     ; can_move_read = true
@@ -30,6 +29,7 @@ draw_packet:
     LDA packet_buf_read_adr+1
     STA @in+1
 
+    LDY #$00
     @while:
         ; --------
         ; while conditions
@@ -57,11 +57,10 @@ draw_packet:
         ; find packet
         ; --------
         ; if @in[0] == 0
-        LDY #$00
         LDA (@in), Y
         BNE :++
             ; @in++
-            inc_16 @in
+            JSR @inc_in_no_z
             ; if can_move_read
             LDA @can_move_read
             BEQ @search
@@ -70,7 +69,7 @@ draw_packet:
                 BNE :+
                     LDA packet_buf_read_adr+1
                     add #$01
-                    AND #PACKET_BUF_MASK
+                    AND #>(PACKET_BUFFER_ADR+$3FF)
                     STA packet_buf_read_adr+1
                 :
             ; jmp @search
@@ -102,12 +101,13 @@ draw_packet:
             ; can_move_read = 0
             ; jmp @continue
             BNE @skip_packet
-        ; prio = @in[1] & $F0
-        INY
-        LDA (@in), Y
-        AND #$F0
-        ; if prio != @cur_prio
-        CMP @cur_prio
+        ; ; prio = @in[1] & $F0
+        ; ; TODO : fix bug overflow @in+1
+        ; INY
+        ; LDA (@in), Y
+        ; AND #$F0
+        ; ; if prio != @cur_prio
+        ; CMP @cur_prio
         BEQ :+
             @skip_packet:
             ; can_move_read = 0
@@ -116,20 +116,23 @@ draw_packet:
             ; jmp @continue
             BEQ @continue
         :
+        ; DEY
 
         ; --------
         ; copy packet info
         ; --------
         ; background[background_index] = @in[0] & $BF ; remove notready flag
-        DEY
         LDX background_index
         LDA (@in), Y
         AND #$BF
         STA background, X
         ; background_index++
         INX
+        ; zp_bkg_size--
+        DEC @zp_bkg_size
         ; inc_in()
         JSR @inc_in
+
         ; --------
         ; copy packet adr
         ; --------
@@ -142,6 +145,8 @@ draw_packet:
         STA background, X
         ; background_index++
         INX
+        ; zp_bkg_size--
+        DEC @zp_bkg_size
         ; inc_in()
         JSR @inc_in
         ; adr |= MMC5_EXP_RAM
@@ -155,18 +160,21 @@ draw_packet:
         STA background, X
         ; background_index++
         INX
+        ; zp_bkg_size--
+        DEC @zp_bkg_size
         ; inc_in()
         JSR @inc_in
+
         ; --------
         ; copy packet data
         ; --------
+        ; for size
+        LDA @size
+        STA @i
         ; wait in_frame
         @wait_inframe:
             BIT scanline
             BVC @wait_inframe
-        ; for size
-        LDA @size
-        STA @i
         @for:
             ; --------
             ; copy low tile
@@ -182,13 +190,8 @@ draw_packet:
             ; --------
             ; copy high tile
             ; mmc5_tiles[adr] = @in[0]
-            TYA
-            PHA
             LDA (@in), Y
-            LDY #$00
             STA (@adr), Y
-            PLA
-            TAY
             ; if v
             LDA @v
             BEQ :+
@@ -210,10 +213,10 @@ draw_packet:
         ASL
         add #$03
         STA @size
-        ; in += y
-        TYA
-        ; jmp @continue_y
-        JMP @continue_y
+        ; background_index = X
+        STX background_index
+        ; jmp @continue_noadd
+        JMP @continue_noadd
 
         ; --------
         ; continue
@@ -224,9 +227,13 @@ draw_packet:
         ASL
         add #$03
         STA @size
-        @continue_y:
         ; @in += size
-        add_A2ptr @in
+        add @in+0
+        STA @in+0
+        BCC :+
+            JSR @inc_in_overflow
+        :
+        @continue_noadd:
         ; if can_move_read
         LDA @can_move_read
         BEQ :+
@@ -234,7 +241,7 @@ draw_packet:
             LDA @size
             add_A2ptr packet_buf_read_adr
             LDA packet_buf_read_adr+1
-            AND #PACKET_BUF_MASK
+            AND #>(PACKET_BUFFER_ADR+$3FF)
             STA packet_buf_read_adr+1
         :
         ; jmp @while
@@ -250,6 +257,15 @@ draw_packet:
         ; @in[0] = 0
         LDA #$00
         STA (@in), Y
+    @inc_in_no_z:
         ; @in++
-        INY
+        INC @in+0
+        BNE :+
+    @inc_in_overflow:
+            INC @in+1
+            ; loop between $000 and $3FF
+            LDA @in+1
+            AND #>(PACKET_BUFFER_ADR+$3FF)
+            STA @in+1
+        :
         RTS

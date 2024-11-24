@@ -146,7 +146,7 @@
     ; Variable: tmp
     ;----------------
     ; temporary variables
-    tmp: .res 64
+    tmp: .res 32
 
 ;****************
 ; OAM SEGMENT
@@ -704,5 +704,10 @@ OAM:
         .segment "ZEROPAGE"
         packet_buf_read_adr: .res 2
         packet_buf_write_adr: .res 2
+
+        draw_packet_zpvar: .res 4
+
         .segment "BSS"
         update_image_arg: .res 4
+
+        draw_packet_var: .res 6

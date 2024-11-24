@@ -25,6 +25,6 @@ MAIN:
     .include "init.asm"
 
 MAIN_LOOP:
-
+    JSR wait_next_frame
     ; loop back to start of main
     JMP MAIN_LOOP

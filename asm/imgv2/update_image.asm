@@ -1,3 +1,13 @@
+update_all_image:
+    LDA #$00
+    STA update_image_arg+0
+    LDA #$03
+    STA update_image_arg+1
+    LDA #$20
+    STA update_image_arg+2
+    LDA #$18
+    STA update_image_arg+3
+
 update_image:
     @arg_x = update_image_arg+0
     @arg_y = update_image_arg+1
@@ -5,8 +15,6 @@ update_image:
     @arg_h = update_image_arg+3
 
     @adr = tmp+0
-    @adr_lo = @adr+0
-    @adr_hi = @adr+1
     @packet_adr = tmp+2
     @tile = tmp+4
     @tile_lo = @tile+0
@@ -19,6 +27,9 @@ update_image:
     @img_buf_hi = tmp+16
     @size = tmp+18
 
+    ; enable NMI_FORCE flag
+    ora_adr nmi_flags, #NMI_FORCE
+
     ; size = 0
     LDA #$00
     STA @size
@@ -29,20 +40,20 @@ update_image:
     LDA #$20
     STA MMC5_MUL_B
     LDA MMC5_MUL_A
-    STA @adr_lo
+    STA @adr+0
     LDA MMC5_MUL_B
-    STA @adr_hi
+    STA @adr+1
     add_A2ptr @adr, @arg_x
     ; init pointers
-    LDA @adr_lo
+    LDA @adr+0
     STA @img_chr_lo+0
     STA @img_chr_hi+0
     STA @img_bkg_lo+0
     STA @img_bkg_hi+0
     STA @img_buf_lo+0
     STA @img_buf_hi+0
-    LDA @adr_hi
-    ORA #64
+    LDA @adr+1
+    ORA #$64
     STA @img_bkg_lo+1
     CLC
     ADC #$04
@@ -101,23 +112,13 @@ update_image:
             ; if size == 0
             LDA @size
             BNE :+
-                ; adr2ppu(adr)
-                LDA @img_buf_hi
-                AND #$03
-                ORA #>PPU_NAMETABLE_0
-                STA @adr_hi
-                LDA @img_buf_lo
-                STA @adr_lo
                 ; w - i
                 TXA
                 sub @arg_w
                 EOR #$FF
-                add #$01
-                ; packet_adr = packet_buf_res(w - i, adr2ppu(adr))
-                LDA packet_buf_write_adr+0
-                STA @packet_adr+0
-                LDA packet_buf_write_adr+1
-                STA @packet_adr+1
+                TAY
+                INY
+                ; packet_adr = packet_buf_res(w - i, adr)
                 JSR packet_buf_res
             :
             ; packet_adr[(size*2)+3] = tile
@@ -134,8 +135,9 @@ update_image:
             INC @size
             @continue_x:
             ; increase pointers
-            INC @img_bkg_lo+0
+            INC @adr+0
             BNE :+
+                INC @adr+1
                 INC @img_bkg_lo+1
                 INC @img_bkg_hi+1
                 INC @img_chr_lo+1
@@ -143,6 +145,7 @@ update_image:
                 INC @img_buf_lo+1
                 INC @img_buf_hi+1
             :
+            INC @img_bkg_lo+0
             INC @img_bkg_hi+0
             INC @img_chr_lo+0
             INC @img_chr_hi+0
@@ -152,7 +155,7 @@ update_image:
             INX
             CPX @arg_w
             BEQ :+
-            JMP @for_y
+            JMP @for_x
             :
         ; packet_adr[0] = size
         LDY #$00
@@ -160,11 +163,13 @@ update_image:
         STA (@packet_adr), Y
         ; size = 0
         STY @size
-        ; add w to pointers
-        LDA @arg_w
-        CLC
-        ADC @img_bkg_lo+0
+        ; add 32-w to pointers
+        LDA #$20
+        sub @arg_w
+        BEQ :++ ; skip pointers if we add 0
+        add @adr+0
         BCC :+
+            INC @adr+1
             INC @img_bkg_lo+1
             INC @img_bkg_hi+1
             INC @img_chr_lo+1
@@ -172,11 +177,13 @@ update_image:
             INC @img_buf_lo+1
             INC @img_buf_hi+1
         :
+        STA @img_bkg_lo+0
         STA @img_bkg_hi+0
         STA @img_chr_lo+0
         STA @img_chr_hi+0
         STA @img_buf_lo+0
         STA @img_buf_hi+0
+        :
         ; continue
         INC @arg_y
         LDA @arg_y
@@ -184,5 +191,9 @@ update_image:
         BEQ :+
         JMP @for_y
         :
+
+    ; disable NMI_FORCE flag
+    and_adr nmi_flags, #($FF-NMI_FORCE)
+
     ; return
     RTS

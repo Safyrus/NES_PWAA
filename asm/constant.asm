@@ -562,7 +562,7 @@
 ;================
 ; Group: Images
 ;================
-    PACKET_BUF_MASK = $63
+    PACKET_BUFFER_ADR = $6000
     IMG_BKG_LO_ADR = $6400
     IMG_BKG_HI_ADR = $6800
 
