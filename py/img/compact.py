@@ -32,15 +32,21 @@ def find_tile_idx(tile, tiles, tile_hashes={}, firstonly=True, MIN_PIXEL_EQUALIT
     # tmp = np.array(tile == tiles, int)
     # idx = np.where(np.einsum('...ijk->i...', tmp) >= MIN_PIXEL_EQUALITY)
     # idx = np.where(compute_tile_dif(tile, tiles, MIN_PIXEL_EQUALITY))
-    idx = np.where(np.sum(tile == tiles, axis=(2, 1)) >= MIN_PIXEL_EQUALITY)
+    s = np.sum(tile == tiles, axis=(2, 1))
+    idx = np.where(s >= MIN_PIXEL_EQUALITY)
 
     # if not found
     if len(idx[0]) == 0:
         # return default value
         return -1 if firstonly else []
 
-    # return found tiles in order of list
-    idx = np.sort(idx[0])
+    # return found tiles in best order
+    if np.unique(s[idx[0]]).size > 1:
+        s_idx = np.flip(np.argsort(s[idx[0]], kind="stable"))
+        idx = np.take(idx[0], s_idx)
+    else:
+        idx = np.sort(idx[0])
+
     # idx = list(np.sort(idx[0]))
     if firstonly:
         return idx[0]
@@ -132,7 +138,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
     spr = data["spr_data"]
     ori_spr = spr.copy()
     if len(spr) == 0:
-        return [], []
+        return [-1]*8, []
     spr_bnk = data["bnk"]
 
     # init arrays
@@ -342,7 +348,7 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
             images_offset.append(len(main_snif_file))
             # and append it to main file
             if add_size:
-                main_snif_file.extend(len(img_data).to_bytes(2, "little"))
+                main_snif_file.extend((len(img_data)+2).to_bytes(2, "little"))
             main_snif_file.extend(img_data)
     chr_offset = len(main_snif_file)
     print("Number of tiles:", [np.sum(nulltile == x, axis=(2, 1)) for x in all_tiles])

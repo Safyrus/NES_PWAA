@@ -11,9 +11,9 @@ from const import *
 
 DEFAULT_TIME = 30
 NB_REGION = 4
-ANIM_AFTERIDX_REGEX = r"(t[0-9]+).png"
-ANIM_AFTERNAME_REGEX = r"_(i[0-9]+)(t[0-9]+)?.png"
-ANIM_REGEX = r"(.*)_(i[0-9]+)(t[0-9]+)?.png"
+ANIM_AFTERIDX_REGEX = r"(t[0-9]+)\.png"
+ANIM_AFTERNAME_REGEX = r"_(i[0-9]+)(t[0-9]+)?\.png"
+ANIM_REGEX = r"(.*)_(i[0-9]+)(t[0-9]+)?\.png"
 NO_DIRNAME = True
 
 
@@ -26,6 +26,7 @@ def path2name(path, anim_idx=False):
         name = re.sub(ANIM_AFTERIDX_REGEX, "", name)
     else:
         name = re.sub(ANIM_AFTERNAME_REGEX, "", name)
+    name = os.path.splitext(name)[0]
     name = re.sub(r"[^a-zA-Z0-9]+", "_", name)
     return name.upper()
 
@@ -236,7 +237,7 @@ for r in range(NB_REGION):
         f.write(main_files[r])
 
 # Write CHR file
-filepath = os.path.join(args.output_folder, "all.CHR")
+filepath = os.path.join(args.output_folder, "all.chr")
 with open(filepath, "wb") as f:
     for r in range(NB_REGION):
         if r == 0:
@@ -280,12 +281,13 @@ with open(filepath, "wb") as f:
             anims_adr.append(n)
             i += 1
             # write animation bytes
-            f.write(len(idx).to_bytes(1))
+            l = (len(idx)*3)+1
+            f.write(l.to_bytes(1))
             n += 1
             for a in idx.values():
-                f.write(all_files_idx[a[0]].to_bytes(1))
+                f.write(all_files_idx[a[0]].to_bytes(2, "little"))
                 f.write(a[1].to_bytes(1))
-                n += 2
+                n += 3
 
 # Write image constant file
 filepath = os.path.join(args.output_folder, "img_names.asm")
@@ -319,8 +321,8 @@ with open(filepath, "w") as f:
         for img_offset in img_offsets[r]:
             if i % 256 == 0:
                 low_str += f".byte ({img_offset+reg_offset} >> 0) & $FF\n"
-                high_str += f".byte ({img_offset+reg_offset} >> 8) & $1F\n"
-                bnk_str += f".byte ({img_offset+reg_offset} >> 13) & $7F\n"
+                high_str += f".byte (({img_offset+reg_offset} >> 8) & $1F) + $A0\n"
+                bnk_str += f".byte (({img_offset+reg_offset} >> 13) & $7F) + IMG_BNK\n"
             i += 1
         reg_offset += chr_offsets[r]
     # write pointers
@@ -356,12 +358,12 @@ with open(filepath, "w") as f:
     for i, a in enumerate(anims_adr):
         if i % 256 == 0:
             low_str += f".byte ({a} >> 0) & $FF\n"
-            high_str += f".byte ({a} >> 8) & $1F\n"
-            bnk_str += f".byte ({a} >> 13) & $7F\n"
+            high_str += f".byte (({a} >> 8) & $1F) + $A0\n"
+            bnk_str += f".byte (({a} >> 13) & $7F) + ANI_BNK\n"
     # write pointers
-    f.write(f"img_ptr_list_lo:\n{low_str}\n")
-    f.write(f"img_ptr_list_hi:\n{high_str}\n")
-    f.write(f"img_ptr_list_bnk:\n{bnk_str}\n")
+    f.write(f"anim_ptr_list_lo:\n{low_str}\n")
+    f.write(f"anim_ptr_list_hi:\n{high_str}\n")
+    f.write(f"anim_ptr_list_bnk:\n{bnk_str}\n")
 
 
 print("Done!")

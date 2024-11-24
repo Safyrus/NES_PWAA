@@ -250,7 +250,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     nb_sprtile_w = (w // 8) + int(w % 8 != 0)
     nb_sprtile_h = (h // 16) + int(h % 16 != 0)
     # Get color palette
-    colors = np.array([x[1] for x in img.getcolors()])  # only color, not count
+    colors = [x[1] for x in img.getcolors()]  # only color, not count
     colors_no_a = np.array([x for x in colors if x[3] != 0])
     colors_no_ba = np.array([x for x in colors if np.any(x != (0, 0, 0, 255)) and x[3] != 0])
     if colors_no_a.size == 0:
@@ -267,6 +267,17 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
             "backdrop": np.array(BLACK),
             "hash": hash_val,
         }
+    # add to max color
+    # (should help choosing better palette
+    #  when we have less color than the max)
+    i = 0
+    MAX_COLOR = max(MAX_BKG_COLOR, MAX_SPR_COLOR)
+    while len(colors) < MAX_COLOR:
+        colors.append(colors[i])
+        i += 1
+    colors = np.array(colors)
+    colors_no_a = np.array([x for x in colors if x[3] != 0])
+    colors_no_ba = np.array([x for x in colors if np.any(x != (0, 0, 0, 255)) and x[3] != 0])
     # Count color
     nb_color_no_ba = len(colors_no_ba)
     nb_color_no_a = len(colors_no_a)
@@ -292,9 +303,8 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     if nb_semi_px > 0:
         print(f"Error: {img_path} has {nb_semi_px} colors with semi-transparency detected. Remove them.")
         exit(1)
-    MAX_COLOR = max(MAX_BKG_COLOR, MAX_SPR_COLOR)
-    if nb_color_no_a > MAX_COLOR:
-        print(f"Error: {img_path} has too much colors. {nb_color_no_a} detected, must be at most {MAX_COLOR}.")
+    if nb_color_no_ba > MAX_COLOR:
+        print(f"Error: {img_path} has too much colors. {nb_color_no_ba} detected, must be at most {MAX_COLOR}.")
         exit(1)
     if verbose:
         print("Image OK")
@@ -348,7 +358,9 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
         not_bkg_pal = colors_no_ba[mask, ...].copy()
         # get color of bkg_pal
         bkg_pal_no_ba = colors_no_ba[bkg_pal]
-        bkg_pal = np.append(bkg_pal_no_ba, [BLACK], axis=0)
+        bkg_pal = list(bkg_pal_no_ba)
+        bkg_pal.append(BLACK)
+        bkg_pal = np.array(bkg_pal)
         # create score and sprite image
         score = Score(w, h)
         sprimg = Image.new("RGBA", (w, h))
@@ -387,6 +399,10 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
                 # if empty tile
                 if len(tile_colors) == 1 and tile_colors[0] == (0, 0, 0, 0):
                     pass
+                # if black tile
+                if len(tile_colors) == 1 and tile_colors[0] == (0, 0, 0, 255):
+                    bkgimg.paste(tile, pos)
+                # else
                 else:
                     (ps, ns) = find_palette(tile, bkg_pal_no_ba)
                     # if no palette match

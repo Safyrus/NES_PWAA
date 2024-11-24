@@ -12,7 +12,8 @@ def snif_encode_pal(palettes):
     else:
         backdrop = EMPTY_NES_COLOR
 
-    bin_data.append(int(len(palettes) > 0) << 7 | backdrop & 0x3F)
+    have_color = len([1 for x in palettes if x]) > 0
+    bin_data.append(int(have_color) << 7 | backdrop & 0x3F)
     for i, p in enumerate(palettes):
         if not p:
             continue

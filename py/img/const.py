@@ -8,7 +8,7 @@ SPR_PER_BNK = 32
 NB_NES_COLOR = 64
 BLACK_NES_COLOR = 15
 PAL_SIZE = 3
-DEFAULT_PX_EQUA = 48 # how many pixel is needed before a tile is consider 'the same' with another tile
+DEFAULT_PX_EQUA = 64 # how many pixel is needed before a tile is consider 'the same' with another tile
 DEFAULT_MAX_BNK_COMBI = 10 # from 8 to 64. bigger = less sprite tiles but longer compute time
 RES_FIRST_CHR_BYTES = 4096*2
 

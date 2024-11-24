@@ -4,6 +4,7 @@ import numpy as np
 from tile import chr2tiles
 from rle_inc import rleinc_decode
 from const import *
+from nes_pal import NES_PAL
 
 
 def print_nesimg(img):
@@ -132,12 +133,14 @@ def snif_decode_data(data, i):
     }, i
 
 
-def snif_decode(data):
+def snif_decode(data, havesize=False):
     # metadata
     metadata, i = snif_decode_meta(data)
     imgs = []
     # data for each image
     for _ in range(metadata["nbimg"]):
+        if havesize:
+            i += 2
         img_data, i = snif_decode_data(data, i)
         imgs.append(img_data)
     # CHR
@@ -160,7 +163,7 @@ if __name__ == "__main__":
     with open(args.input, "rb") as f:
         data = f.read()
     # decode file
-    data = snif_decode(data)
+    data = snif_decode(data, havesize=True)
     #
     print("Metadata:", data["meta"])
     print("CHR shape:", data["chr"].shape)
@@ -181,3 +184,29 @@ if __name__ == "__main__":
         print("bkg_pal:")
         print_nesimg((img["bkg_pal"]).reshape(h,w))
         print("#"*40)
+
+        nulltile = np.zeros((8, 8), dtype=np.uint8)
+        npimg = np.array([nulltile] * w * h, dtype=np.uint8)
+        for i in range(len(img["bkg_adr"])):
+            a = img["bkg_adr"][i]
+            p = img["bkg_pal"][i]
+            t = data["chr"][a]
+            npimg[i] = t+(p*4)
+        npimg = npimg.reshape(h, w, 8, 8).swapaxes(1, 2).flatten().reshape(h*8,w*8)
+        pilimg = Image.fromarray(npimg, "P")
+        pal = []
+        for i in range(16):
+            for j in NES_PAL[i]:
+                pal.append(min(max(0, j), 255))
+            for j in NES_PAL[i+16]:
+                pal.append(min(max(0, j), 255))
+            for j in NES_PAL[i+32]:
+                pal.append(min(max(0, j), 255))
+            for j in NES_PAL[i+48]:
+                pal.append(min(max(0, j), 255))
+        pilimg.putpalette(pal)
+        pilimg.save("tmp.png")
+        data["chr"]
+        print("save debug render in 'tmp.png'")
+        input("Press to go to next image")
+    print("Done!")
