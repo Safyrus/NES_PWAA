@@ -54,23 +54,21 @@ NMI:
             TAY
             ; is vertical flag off ?
             LDA background, X
-            ASL
-            BCC @background_loop_hor
+            BPL @background_loop_hor
 
             ; tell the ppu to inc by 32
             @background_loop_ver:
             LDA ppu_ctrl_val
             ORA #(PPU_CTRL_INC)
-            STA PPU_CTRL
-            JMP @background_loop_start
+            BNE @background_loop_start ; BNE = JMP because ORA before
 
             ; tell the ppu to inc by 1
             @background_loop_hor:
             LDA ppu_ctrl_val
             AND #($FF-PPU_CTRL_INC)
-            STA PPU_CTRL
 
             @background_loop_start:
+            STA PPU_CTRL
             ; reset latch
             BIT PPU_STATUS
             ; set PPU adr
@@ -91,7 +89,7 @@ NMI:
                 DEY
                 BNE @background_loop_data
             INX
-            JMP @background_loop
+            BNE @background_loop ; BNE = JMP because INX != 0
         @background_loop_end:
         ; restore PPU_CTRL
         LDA ppu_ctrl_val
@@ -160,12 +158,17 @@ NMI:
         ; set PPU address
         LDA #$3F
         STA PPU_ADDR
-        LDX #$01
-        STX PPU_ADDR
-        LDY #$00
+        LDA #$00
+        STA PPU_ADDR
  
+        ; prepare transparent color
+        LDX #$01
+        LDY palettes-1, X
+
         ; send data to PPU
         @palette_loop:
+            ; send transparent
+            STY PPU_DATA
             ; send 3 colors
             LDA palettes, X
             STA PPU_DATA
@@ -176,21 +179,9 @@ NMI:
             LDA palettes, X
             STA PPU_DATA
             INX
-            ; send dummy background color
-            LDA dummy_pal, Y
-            STA PPU_DATA
-            INY
             ; loop
             CPX #25
             BNE @palette_loop
-
-        ; send transparent color
-        LDA #$3F
-        STA PPU_ADDR
-        LDA #$00
-        STA PPU_ADDR
-        LDA palettes
-        STA PPU_DATA
 
         ; restore flags
         PLA
