@@ -1,13 +1,19 @@
+update_all_image_no_db:
+    LDA #$13
+    STA update_image_arg+3
+    JMP update_all_image_no_h
 update_all_image:
+    LDA #$1B
+    STA update_image_arg+3
+update_all_image_no_h:
     LDA #$00
     STA update_image_arg+0
     LDA #$03
     STA update_image_arg+1
     LDA #$20
     STA update_image_arg+2
-    LDA #$18
-    STA update_image_arg+3
 
+; RAM bank should be set before calling
 update_image:
     @arg_x = update_image_arg+0
     @arg_y = update_image_arg+1
@@ -95,8 +101,11 @@ update_image:
             LDA (@img_buf_lo), Y
             CMP @tile_lo
             BNE :+
-                ; packet_adr[0] = size
+                ; if size already zero
                 LDA @size
+                    ; continue
+                    BEQ @continue_x
+                ; packet_adr[0] = size
                 STA (@packet_adr), Y
                 ; size = 0
                 STY @size
@@ -157,10 +166,12 @@ update_image:
             BEQ :+
             JMP @for_x
             :
-        ; packet_adr[0] = size
+        ; packet_adr[0] = size (if not already 0)
         LDY #$00
         LDA @size
-        STA (@packet_adr), Y
+        BEQ :+
+            STA (@packet_adr), Y
+        :
         ; size = 0
         STY @size
         ; add 32-w to pointers

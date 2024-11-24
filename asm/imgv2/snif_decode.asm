@@ -1,19 +1,20 @@
 ; snif_decode(in, bkg_lo, bnk_buf, bkg_hi, spr_buf, palette)
+; RAM bank should be set before calling
 snif_decode:
     ; args
     @in = tmp+0
     @bkg_lo = tmp+2
     @bnk_buf = tmp+4
     @bkg_hi = tmp+6
-    @spr_buf = tmp+6
-    @palette = tmp+8
+    @spr_buf = tmp+8
+    @palette = tmp+10
     ; var
-    @w = tmp+10
-    @h = tmp+11
-    @n = tmp+12
-    @idx = tmp+13
+    @w = tmp+12
+    @h = tmp+13
+    @n = tmp+14
+    @idx = tmp+15
     @mask = @idx
-    @y = tmp+14
+    @y = tmp+16
     @pos_y = @y
     @pos_x = @mask
     @atr = @n
@@ -202,7 +203,6 @@ snif_decode:
     mov tmp+2, @bkg_hi+0
     mov tmp+3, @bkg_hi+1
     JSR rleinc
-    JMP @return ; skip sprites for now
 
     ; --------
     ; spr bytes

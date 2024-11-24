@@ -2,6 +2,9 @@
 ; File: Constants
 ;################
 ; List all constants
+.include "data/img/anim_names.asm"
+.include "data/img/img_names.asm"
+
 
 ;================
 ; Group: PPU

@@ -34,6 +34,13 @@ draw_packet:
         ; --------
         ; while conditions
         ; --------
+        ; if take too long
+        LDA scanline
+        CMP #SCANLINE_DIALOG
+        BNE :+
+            ; return
+            JMP @return
+        :
         ; if zp_bkg_size < 4
         LDA @zp_bkg_size
         CMP #$04
@@ -80,13 +87,15 @@ draw_packet:
         ; check packet
         ; --------
         ; v = @in[0] & $80
-        LDA (@in), Y
-        AND #$80
-        STA @v
-        ; size = @in[0] & $3F
+        ; LDA (@in), Y
+        ; AND #$80
+        ; STA @v
+        ; size, i = @in[0] & $3F
         LDA (@in), Y
         AND #$3F
         STA @size
+        STA @i
+        add #$03
         ; if size > zp_bkg_size
         CMP @zp_bkg_size
             ; can_move_read = 0
@@ -128,8 +137,6 @@ draw_packet:
         STA background, X
         ; background_index++
         INX
-        ; zp_bkg_size--
-        DEC @zp_bkg_size
         ; inc_in()
         JSR @inc_in
 
@@ -145,8 +152,6 @@ draw_packet:
         STA background, X
         ; background_index++
         INX
-        ; zp_bkg_size--
-        DEC @zp_bkg_size
         ; inc_in()
         JSR @inc_in
         ; adr |= MMC5_EXP_RAM
@@ -160,21 +165,17 @@ draw_packet:
         STA background, X
         ; background_index++
         INX
-        ; zp_bkg_size--
-        DEC @zp_bkg_size
         ; inc_in()
         JSR @inc_in
 
         ; --------
         ; copy packet data
         ; --------
-        ; for size
-        LDA @size
-        STA @i
         ; wait in_frame
         @wait_inframe:
             BIT scanline
             BVC @wait_inframe
+        ; for size
         @for:
             ; --------
             ; copy low tile
@@ -183,8 +184,6 @@ draw_packet:
             STA background, X
             ; background_index++
             INX
-            ; zp_bkg_size--
-            DEC @zp_bkg_size
             ; inc_in()
             JSR @inc_in
             ; --------
@@ -193,21 +192,26 @@ draw_packet:
             LDA (@in), Y
             STA (@adr), Y
             ; if v
-            LDA @v
-            BEQ :+
-                ; adr += 32
-                add_A2ptr @adr, #20
-                JMP :++
+            ; LDA @v
+            ; BEQ :+
+            ;     ; adr += 32
+            ;     add_A2ptr @adr, #20
+            ;     JMP :++
             ; else
-            :
+            ; :
                 ; adr++
                 inc_16 @adr
-            :
+            ; :
             ; inc_in()
             JSR @inc_in
             ; continue
             DEC @i
             BNE @for
+        ; zp_bkg_size -= size+3
+        LDA @zp_bkg_size
+        sub @size
+        sub #$03
+        STA @zp_bkg_size
         ; size = (size * 2) + 3
         LDA @size
         ASL
@@ -215,6 +219,8 @@ draw_packet:
         STA @size
         ; background_index = X
         STX background_index
+        LDA #$00
+        STA background, X
         ; jmp @continue_noadd
         JMP @continue_noadd
 

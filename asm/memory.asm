@@ -27,20 +27,16 @@
 ; - MMC5 Memory Bank (IMG_BUF_BNK):
 ;--- Text
 ;   $0000-$03FF = Packet buffer
-;   $0400-$06FF = decoded background image (low)
-;   $0700-$07FF = unused
-;   $0800-$0AFF = decoded background image (high)
-;   $0B00-$0BFF = unused
-;   $0C00-$0EFF = decoded character image (low)
-;   $0F00-$0FFF = unused
-;   $1000-$12FF = decoded character image (high)
-;   $1300-$13FF = unused
-;   $1400-$16FF = current image (low)
-;   $1700-$17FF = decoded character sprites
-;   $1800-$1AFF = current image (high)
-;   $1B00-$1BFF = decoded evidence sprites
-;   $1C00-$1EFF = HITBOX map
-;   $1F00-$1FFF = HITBOX address
+;   $0400-$07FF = decoded background image (low)
+;   $0800-$0BFF = decoded background image (high)
+;   $0C00-$0FFF = decoded character image (low)
+;   $1000-$13FF = decoded character image (high)
+;   $1400-$17FF = current image (low)
+;   $1800-$1BFF = current image (high)
+;   $????-$???? = decoded evidence sprites (1 page)
+;   $????-$???? = HITBOX map (3 page)
+;   $????-$???? = HITBOX address (1 page)
+;   $????-$???? = decoded character sprites (1 page)
 ;---
 
 

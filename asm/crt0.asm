@@ -179,6 +179,8 @@
     .include "imgv2/main.asm"
     ; .include "courtrecord/main.asm"
     ; .include "investigation/main.asm"
+    .include "data/img/anim_ptr.asm"
+    .include "data/img/img_ptr.asm"
 
 .segment "IMGS_BNK"
     .incbin "data/img/img_data.bin"
