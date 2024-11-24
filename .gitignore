@@ -24,3 +24,6 @@ EVI.chr
 tmp.chr
 visual.png
 const_info.txt
+*.snif
+tmp.png
+asm/data/img/all.chr
