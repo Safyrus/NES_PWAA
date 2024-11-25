@@ -42,6 +42,7 @@ snif_decode:
     LSR
     LSR
     ; MMC5_CHR_UPPER = r
+    STA mmc5_upper_chr
     STA MMC5_CHR_UPPER
     ; don't care about compress bit, assume always set
     ; Y++

@@ -40,18 +40,7 @@
     LDA effect_flags
     EOR #EFFECT_FLAG_PAL_SPLIT
     STA effect_flags
-    ; gray palette
-    LDA #$0F
-    STA palettes+0
-    LDA #$10
-    STA palettes+2
-    STA palettes+2+3
-    STA palettes+2+3+3
-    LDA #$20
-    STA palettes+3
-    STA palettes+3+3
-    STA palettes+3+3+3
     ; test display
-    LDX #COURTROOM_0
+    LDX #CUTSCENE_49
     JSR display_bkg
 
