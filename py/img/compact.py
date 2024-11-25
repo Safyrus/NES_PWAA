@@ -299,10 +299,14 @@ def test_region(data, all_tiles, spr_mask, img_tiles, tile_hashes={}, MIN_PIXEL_
     return ok, (new_bnk, new_adr, new_spr, all_tiles, spr_mask)
 
 
-def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA, add_size=False, reserved_tiles=2):
+def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA, add_size=False, reserved_tiles=5):
     # Variables
     nulltile = np.zeros((8, 8), dtype=np.uint8)
     all_tiles = np.array([[nulltile] * 1024 * 16] * n_region, dtype=np.uint8)
+    for r in range(n_region):
+        all_tiles[r][2] = nulltile+1
+        all_tiles[r][3] = nulltile+2
+        all_tiles[r][4] = nulltile+3
     all_tiles_hash = {}
     spr_tile_mask = np.zeros((n_region, 1024 * 16), dtype=bool)
     spr_tile_mask[:, 0:reserved_tiles] = True

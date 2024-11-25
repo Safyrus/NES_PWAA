@@ -195,7 +195,7 @@ for r in range(NB_REGION):
     done = False
     while not done:
         try:
-            reserved_tiles = 2
+            reserved_tiles = 5
             if r == 0:
                 reserved_tiles = max(2, RES_FIRST_CHR_BYTES // 16)
             main_snif_file, images_offset, chr_offset = compact(
@@ -208,9 +208,10 @@ for r in range(NB_REGION):
             )
             done = True
         except CantFit:
-            if min_px < 16:
+            if min_px < 32:
                 print(f"Error: Can't fit all images in region {r} without making pixel porridge.")
-                print(f"       Try to reassign images to other regions.")
+                print(f"       Try to reassign images to other regions,")
+                print(f"       or redesign your images to take less tiles.")
                 exit(1)
             min_px -= 1
             print(f"Can't fit all images in region {r}. Retry with {64-min_px} pixel difference")
@@ -261,7 +262,6 @@ with open(filepath, "wb") as f:
                     if i + 1 < len(img_offsets[r]):
                         end = img_offsets[r][i + 1]
                     f.write(main_files[r][start:end])
-            f.write(main_files[r][start:end])
         return idx
 
     idx = 0

@@ -182,9 +182,9 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
     assert len(bkg_pal) <= PAL_SIZE * 4
     assert len(spr_pal) <= PAL_SIZE * 4
     # pad palette if needed
-    while len(bkg_pal) == 0 or len(bkg_pal) % PAL_SIZE != 0:
+    while len(bkg_pal) % PAL_SIZE != 0:
         bkg_pal.append(BLACK_NES_COLOR)
-    while len(spr_pal) == 0 or len(spr_pal) % PAL_SIZE != 0:
+    while len(spr_pal) % PAL_SIZE != 0:
         spr_pal.append(BLACK_NES_COLOR)
     # assert correct color
     for x in bkg_pal:
