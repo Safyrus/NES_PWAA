@@ -70,8 +70,9 @@ def bkg2tile(img, tw, th, pal, backdrop, w=8, h=8):
             tile_adr[i] = 0
         else:
             # replace tile color by palette index
-            for j, c in enumerate(pals[p]):
-                t[t == c] = j
+            if p < len(pals):
+                for j, c in enumerate(pals[p]):
+                    t[t == c] = j
         # update tile
         tile_data[i] = t
     # convert to numpy array
