@@ -49,7 +49,7 @@ def bkg2tile(img, tw, th, pal, backdrop, w=8, h=8):
     # Create address of each tile.
     # We use range because each tile is consider unique
     # and come one after the other
-    tile_adr = np.arange(1, len(tile_data) + 1, dtype=np.uint16)
+    tile_adr = np.arange(0, len(tile_data) + 0, dtype=np.uint16)
 
     # create NES palettes
     pals = cut_into_pal(pal, backdrop)
@@ -71,8 +71,11 @@ def bkg2tile(img, tw, th, pal, backdrop, w=8, h=8):
         else:
             # replace tile color by palette index
             if p < len(pals):
+                nt = t.copy()
                 for j, c in enumerate(pals[p]):
-                    t[t == c] = j
+                    assert j >= 0 and j < 4
+                    nt[t == c] = j
+                t = nt
         # update tile
         tile_data[i] = t
     # convert to numpy array
@@ -122,7 +125,7 @@ def spr2data(spr, pal, w, h, backdrop):
         y = s[1] % 16
         # add sprite bytes
         data.append(0x80 | (x << 4) | y)
-        data.append(i)
+        data.append(((i*2) & 0xFE) + (1 if i >= 128 else 0))
         cur_pos += 1
     # add END command
     data.append(SPRCMD_END)
@@ -141,8 +144,10 @@ def spr2tile(pal, spr, backdrop):
         # find palette for tile
         p = find_tile_best_pal(t, pals)
         # replace tile color by palette index
+        nt = t.copy()
         for j, c in enumerate(pals[p]):
-            t[t == c] = j
+            nt[t == c] = j
+        t = nt
         # add tiles
         tiles.append(t[0:8, :])
         tiles.append(t[8:16, :])
@@ -260,13 +265,10 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
     if verbose:
         print("Number of sprites:", len(spr))
     snif_data.extend(spr_data)
-    # snif_data.extend([0]*8)
 
     ################
     # BKG CHR
     ################
-    # add empty tile (because adr 0 is not a selectable tile)
-    snif_data.extend(tile2chr(np.zeros((8, 8), dtype=np.uint8)))
     # add background tiles
     tile_chr = tiles2chr(tile_data)
     bkg_chr_size = len(tile_chr)
@@ -296,7 +298,7 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
     return snif_data
 
 
-def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2, nb_spr_pal=3, bkg_pal_offset=0):
+def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_spr_pal=3*3, bkg_pal_offset=0):
 
     # if output already exist
     if not force and os.path.exists(outpath):

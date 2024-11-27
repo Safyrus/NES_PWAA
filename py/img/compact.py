@@ -92,7 +92,7 @@ def spr_inside_bnk(spr, tile_up, tile_down, bnk, tile_hashes={}, MIN_PIXEL_EQUAL
         for i in tu_i:
             for j in td_i:
                 if i >= 0 and i % 2 == 0 and i + 1 == j:
-                    spr[2] = i // 2
+                    spr[2] = i
                     return spr
 
     # TODO: test for offsets
@@ -138,7 +138,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
     spr = data["spr_data"]
     ori_spr = spr.copy()
     if len(spr) == 0:
-        return [-1]*8, []
+        return [-1] * 8, []
     spr_bnk = data["bnk"]
 
     # init arrays
@@ -228,10 +228,6 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
     for i in range(len(spr)):
         # new sprite with old tiles
         if i in new_idxs:
-            # read sprite data
-            ti = spr[i][2]
-            b = spr_bnk[ti >> 5]
-            ti = (ti & 0x1F) * 2
             s = new_spr_with_bnk[new_idxs.index(i)]
         # old sprite with new tiles
         else:
@@ -244,6 +240,14 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
             # get sprite tiles
             tile_up = tiles[b * TPB + ti + 0]
             tile_down = tiles[b * TPB + ti + 1]
+            if b == -1:
+                print(s)
+                print(s[2],( s[2] >> 5), b, ti)
+                print(spr_bnk)
+                print(spr_bnk[0])
+                print(tile_up)
+                print(tile_down)
+                exit(1)
             # find where to put the new tile
             bnk_idx = 0
             tile_idx = -1
@@ -265,7 +269,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
                     tile_idx = idx[0]
                     spr_bnk_tiles[best_bnk[bnk_idx] * TPB + tile_idx + 0] = tile_up
                     spr_bnk_tiles[best_bnk[bnk_idx] * TPB + tile_idx + 1] = tile_down
-                    s[2] = tile_idx // 2
+                    s[2] = tile_idx
                     s = (best_bnk[bnk_idx], s, i)
                     break
                 # continue
@@ -273,6 +277,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
 
         spr_mask[(s[0] * TPB) + s[1][2]] = True
         spr_mask[(s[0] * TPB) + s[1][2] + 1] = True
+        s[1][2] //= 2
         s[1][2] += list(best_bnk).index(s[0]) << 5
         new_spr.append(s[1])
 
@@ -304,9 +309,9 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
     nulltile = np.zeros((8, 8), dtype=np.uint8)
     all_tiles = np.array([[nulltile] * 1024 * 16] * n_region, dtype=np.uint8)
     for r in range(n_region):
-        all_tiles[r][2] = nulltile+1
-        all_tiles[r][3] = nulltile+2
-        all_tiles[r][4] = nulltile+3
+        all_tiles[r][2] = nulltile + 1
+        all_tiles[r][3] = nulltile + 2
+        all_tiles[r][4] = nulltile + 3
     all_tiles_hash = {}
     spr_tile_mask = np.zeros((n_region, 1024 * 16), dtype=bool)
     spr_tile_mask[:, 0:reserved_tiles] = True
@@ -352,7 +357,7 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
             images_offset.append(len(main_snif_file))
             # and append it to main file
             if add_size:
-                main_snif_file.extend((len(img_data)+2).to_bytes(2, "little"))
+                main_snif_file.extend((len(img_data) + 2).to_bytes(2, "little"))
             main_snif_file.extend(img_data)
     chr_offset = len(main_snif_file)
     print("Number of tiles:", [np.sum(nulltile == x, axis=(2, 1)) for x in all_tiles])

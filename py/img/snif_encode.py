@@ -81,7 +81,7 @@ def snif_encode_spr(spr, w, h):
         y = s[1] % 16
         # add sprite bytes
         data.append(0x80 | (x << 4) | y)
-        data.append(s[2])
+        data.append(((s[2]*2) & 0xFE) + (1 if s[2] >= 128 else 0))
         cur_pos += 1
     # add END command
     data.append(SPRCMD_END)

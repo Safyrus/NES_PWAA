@@ -1,5 +1,6 @@
 import numpy as np
-
+from PIL import Image
+from nes_pal import NES_PAL
 
 def tile2chr(tile):
     assert tile.dtype == np.uint8
@@ -40,3 +41,19 @@ def chr2tiles(data):
     for i in range(0, len(data), 16):
         tiles.append(chr2tile(data[i : i + 16]))
     return np.array(tiles, dtype=np.uint8)
+
+def tiles2img(tiles, w, h):
+    tiles = tiles.reshape(h, w, 8, 8).swapaxes(1, 2).flatten().reshape(h*8,w*8)
+    pilimg = Image.fromarray(tiles, "P")
+    pal = []
+    for i in range(16):
+        for j in NES_PAL[i]:
+            pal.append(min(max(0, j), 255))
+        for j in NES_PAL[i+16]:
+            pal.append(min(max(0, j), 255))
+        for j in NES_PAL[i+32]:
+            pal.append(min(max(0, j), 255))
+        for j in NES_PAL[i+48]:
+            pal.append(min(max(0, j), 255))
+    pilimg.putpalette(pal)
+    return pilimg

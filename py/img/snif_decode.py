@@ -1,10 +1,9 @@
 import argparse
 import json
 import numpy as np
-from tile import chr2tiles
+from tile import chr2tiles, tiles2img
 from rle_inc import rleinc_decode
 from const import *
-from nes_pal import NES_PAL
 
 
 def print_nesimg(img):
@@ -53,7 +52,7 @@ def snif_decode_spr(data, i, w, h):
         if b & 0x80:
             spr_y = data[i] & 0x0F
             spr_x = (data[i] >> 4) & 0x07
-            spr_t = data[i + 1]
+            spr_t = (data[i + 1] // 2) + (128 if data[i + 1] % 2 else 0)
             spr = [
                 (cur_pos % w) * 8 + spr_x,
                 ((cur_pos // w) % h) * 16 + spr_y,
@@ -152,7 +151,6 @@ def snif_decode(data, havesize=False):
         "chr": tiles,
     }
 
-
 if __name__ == "__main__":
     # Argmuents
     parser = argparse.ArgumentParser()
@@ -173,7 +171,9 @@ if __name__ == "__main__":
         w, h = img["header"]["w"], img["header"]["h"]
         print("pal:", img["pal"])
         print("bnk:", img["bnk"])
-        print("sprite count:", len(img["spr_data"]))
+        print("sprites:")
+        for s in img["spr_data"]:
+            print(s)
         print("#"*40)
         print("bkg_adr_lo:")
         print_nesimg((img["bkg_adr"] & 0xFF).reshape(h,w))
@@ -192,19 +192,7 @@ if __name__ == "__main__":
             p = img["bkg_pal"][i]
             t = data["chr"][a]
             npimg[i] = t+(p*4)
-        npimg = npimg.reshape(h, w, 8, 8).swapaxes(1, 2).flatten().reshape(h*8,w*8)
-        pilimg = Image.fromarray(npimg, "P")
-        pal = []
-        for i in range(16):
-            for j in NES_PAL[i]:
-                pal.append(min(max(0, j), 255))
-            for j in NES_PAL[i+16]:
-                pal.append(min(max(0, j), 255))
-            for j in NES_PAL[i+32]:
-                pal.append(min(max(0, j), 255))
-            for j in NES_PAL[i+48]:
-                pal.append(min(max(0, j), 255))
-        pilimg.putpalette(pal)
+        pilimg = tiles2img(npimg, w, h)
         pilimg.save("tmp.png")
         data["chr"]
         print("save debug render in 'tmp.png'")
