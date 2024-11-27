@@ -17,23 +17,24 @@
   - [/] ASM
     - [X] pseudo algorithm
     - [X] draw packets
-    - [ ] draw sprites
+    - [X] draw sprites
     - [X] decode snif
     - [X] update image
     - [X] display bkg image
-    - [ ] display chr image
+    - [X] display chr image
     - [X] fetch image
-  - [ ] Test
+    - [ ] animations
+  - [/] Test
     - [X] Test 1 image decode (no spr)
     - [X] Test 1 image display (no spr)
-    - [ ] Test 1 image decode
-    - [ ] Test 1 image display
-    - [/] Test any image display
+    - [X] Test 1 image decode
+    - [X] Test 1 image display
+    - [X] Test any image display
     - [ ] Test any animation
   - [/] Image
-    - [ ] backgrounds
+    - [X] backgrounds
       - [X] courtroom
-      - [ ] location
+      - [X] location
       - [X] cutscenes
     - [ ] evidences ?
     - [/] characters
