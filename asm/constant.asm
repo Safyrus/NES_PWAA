@@ -568,6 +568,14 @@
     PACKET_BUFFER_ADR = $6000
     IMG_BKG_LO_ADR = $6400
     IMG_BKG_HI_ADR = $6800
+    IMG_CHR_LO_ADR = $6C00
+    IMG_CHR_HI_ADR = $7000
+    IMG_BUF_LO_ADR = $7400
+    IMG_BUF_HI_ADR = $7800
+    IMG_CHR_SPR    = $7C00
+    ; ???_ADR = $7D00
+    ; ???_ADR = $7E00
+    ; ???_ADR = $7F00
 
 ;================
 ; Group: Special Characters

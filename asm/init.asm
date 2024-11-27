@@ -41,6 +41,8 @@
     EOR #EFFECT_FLAG_PAL_SPLIT
     STA effect_flags
     ; test display
-    LDX #CUTSCENE_49
+    LDX #COURTROOM_0
     JSR display_bkg
+    LDX #PHOENIX_NORMAL_A_I0
+    JSR display_chr
 

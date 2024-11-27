@@ -1,4 +1,4 @@
-draw_packet:
+draw_packets:
     ; --------
     ; variables
     ; --------
@@ -13,7 +13,6 @@ draw_packet:
     @size = draw_packet_var+4
     @i = draw_packet_var+5
 
-    pushregs
     ; --------
     ; init
     ; --------
@@ -255,7 +254,6 @@ draw_packet:
 
     ; return
     @return:
-    pullregs
     RTS
 
 

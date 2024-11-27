@@ -33,10 +33,10 @@
 ;   $1000-$13FF = decoded character image (high)
 ;   $1400-$17FF = current image (low)
 ;   $1800-$1BFF = current image (high)
+;   $1C00-$1CFF = decoded character sprites (1 page)
 ;   $????-$???? = decoded evidence sprites (1 page)
 ;   $????-$???? = HITBOX map (3 page)
 ;   $????-$???? = HITBOX address (1 page)
-;   $????-$???? = decoded character sprites (1 page)
 ;---
 
 
@@ -645,9 +645,8 @@ OAM:
         last_act_ptr: .res 3
 
     ;================
-    ; Group: Other variables
+    ; Group: MMC5 Banking
     ;================
-
         ; Variable: mmc5_upper_chr
         ;----------------
         ; the upper bits of the MMC5 CHR register
@@ -658,6 +657,9 @@ OAM:
         ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
         mmc5_banks: .res 4
 
+    ;================
+    ; Group: Other variables
+    ;================
         ; Variable: palette_counter
         ;----------------
         ; palette offsets use when decoding palette from an image
@@ -707,3 +709,6 @@ OAM:
         update_image_arg: .res 4
 
         draw_packet_var: .res 6
+
+        draw_sprite_idx: .res 1
+        res_oam: .res 1

@@ -1,29 +1,47 @@
+; X, Y = chr idx
+display_chr:
+    ; bkg_lo
+    ; bkg_hi
+    mov tmp+3, #>(IMG_CHR_LO_ADR+$60)
+    mov tmp+7, #>(IMG_CHR_HI_ADR+$60)
+    JMP display_img
+
 ; X = bkg idx
 display_bkg:
+    ; bkg_lo
+    ; bkg_hi
+    mov tmp+3, #>(IMG_BKG_LO_ADR+$60)
+    mov tmp+7, #>(IMG_BKG_HI_ADR+$60)
+    ; Y = 0
+    LDY #$00
+
+; X, Y = img idx
+; tmp+2 = bkg_lo
+; tmp+6 = bkg_hi
+display_img:
     ; --------
     ; fetch background
     ; --------
     ; in = fetch_img(X)
-    LDY #$00
     JSR fetch_img
 
     ; --------
     ; decode image
     ; --------
     ; in = tmp+0 (already set with fetch)
-    ; bkg_lo
-    ; bkg_hi
+    ; buf_lo  = $??60
     LDA #$60
     STA tmp+2
+    ; buf_hi  = $??60
     STA tmp+6
-    mov tmp+3, #>(IMG_BKG_LO_ADR+$60)
-    mov tmp+7, #>(IMG_BKG_HI_ADR+$60)
     ; bnk_buf
-    mov tmp+4, #<$700
-    mov tmp+5, #>$700
+    mov tmp+4, #<(MMC5_CHR_BNK0-1)
+    mov tmp+5, #>(MMC5_CHR_BNK0-1)
     ; spr_buf
-    mov tmp+8, #<$6C00
-    mov tmp+9, #>$6C00
+    LDA #$00
+    STA tmp+8
+    LDA #$7C
+    STA tmp+9
     ; palette
     mov tmp+10, #<palettes
     mov tmp+11, #>palettes

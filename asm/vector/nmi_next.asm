@@ -27,7 +27,8 @@
     ; --------
     ; Prepare next frame graphism
     ; --------
-    JSR draw_packet
+    JSR draw_packets
+    JSR draw_sprites
 
 
     ; ; read text

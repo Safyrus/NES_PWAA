@@ -1,19 +1,58 @@
-; "
-; OAM_size = from RAM
-; cur_bnk = [0]*8
-; for list in sprite lists
-;     update_cur_bnk()
-;     for s from 0 to 64
-;         if list.spr[s].bnk not in cur_bnk
-;             continue
-;         if list.spr[s].y >= 240
-;             continue
-;         if list.spr[s].y not in displayble line (behind/infront of UI)
-;             continue
-;         OAMpage[OAM_size] = list.spr[s]
-;         OAM_size++
-;         if OAMsize == 64
-;             save list and spr and restore next call
+draw_sprites:
+    ; X = res_oam
+    LDX res_oam
+    ; Y = draw_sprite_idx
+    LDY draw_sprite_idx
+    ; for chr_spr
+    @for:
+        ; s = chr_spr[y]
+        ; if s.y >= $F0
+        LDA IMG_CHR_SPR+0, Y
+        CMP #$F0
+            ; continue
+            bge @continue
+        ; OAM[X] = s
+        STA OAM+0, X
+        LDA IMG_CHR_SPR+1, Y
+        STA OAM+1, X
+        LDA IMG_CHR_SPR+2, Y
+        STA OAM+2, X
+        LDA IMG_CHR_SPR+3, Y
+        STA OAM+3, X
+        ; X++
+        INX
+        INX
+        INX
+        INX
+        ; if X == 0 (overflow/OAM full)
+            ; break
+            BEQ @break
+        @continue:
+        ; Y++
+        INY
+        INY
+        INY
+        INY
+        ; if Y == draw_sprite_idx
+        CPY draw_sprite_idx
+            ; break
+            BNE @for
+    @break:
 
-; Note: OAMsize = nb_reserved_sprite each frame
-; "
+    ; write empty sprite to remaining OAM locations
+    LDA #$FF
+    @while:
+        ; OAM[X].y = $FF
+        STA OAM, X
+        ; X++
+        INX
+        INX
+        INX
+        INX
+        ; continue
+        BNE @while
+
+    ; draw_sprite_idx = Y
+    STY draw_sprite_idx
+    ; return
+    RTS

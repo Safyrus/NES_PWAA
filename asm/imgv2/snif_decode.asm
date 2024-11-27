@@ -159,7 +159,7 @@ snif_decode:
     STY @y
     LDY #$00
     LDA @mask
-    STA (@bnk_buf), Y
+    ; STA (@bnk_buf), Y
     LDY @y
     ; Y++
     INY
@@ -208,7 +208,16 @@ snif_decode:
     ; --------
     ; spr bytes
     ; --------
+    ; clear sprites
     LDY #$00
+    LDA #$FF
+    @clean_spr:
+        STA (@spr_buf), Y
+        INY
+        INY
+        INY
+        INY
+        BNE @clean_spr
     ; pos_x = 0
     STY @pos_x
     ; pos_y = 0
@@ -223,10 +232,9 @@ snif_decode:
         ; in++
         inc_16 @in
         ; if b & $80
-        TXA
         AND #$80
         BEQ :++
-            ; spr_buf[0] = (pos_y << 4) | (b & $0F)
+            ; spr_buf[0] = (pos_y << 4) | (b & $0F) + $03
             TXA
             AND #$0F
             STA (@spr_buf), Y
@@ -236,10 +244,12 @@ snif_decode:
             ASL
             ASL
             ORA (@spr_buf), Y
+            ; spr_buf[0] += 3*8-1
+            add #(3*8)-1
             STA (@spr_buf), Y
-            ; spr_buf[1] = in[1]
-            INY
+            ; spr_buf[1] = in[0]
             LDA (@in), Y
+            INY
             STA (@spr_buf), Y
             ; spr_buf[2] = atr
             INY
@@ -260,8 +270,7 @@ snif_decode:
             ASL
             ORA (@spr_buf), Y
             STA (@spr_buf), Y
-            ; in += 2
-            inc_16 @in
+            ; in++
             inc_16 @in
             ; spr_buf += 4
             add_A2ptr @spr_buf, #$04
@@ -288,8 +297,8 @@ snif_decode:
         :
             TXA
             AND #$0C
-            ; if b & $0C == 3
-            CMP #$03
+            ; if b & $0C == 3 << 2
+            CMP #$0C
             BNE :+
                 ; pos_x = (b & $01) << 4
                 TXA
@@ -322,9 +331,9 @@ snif_decode:
                 ; in++
                 inc_16 @in
                 JMP @continue
-            ; elif b & $0C == 2
+            ; elif b & $0C == 2 << 2
             :
-            CMP #$02
+            CMP #$08
             BNE :+
                 ; atr &= $FC
                 LDA @atr
@@ -336,9 +345,9 @@ snif_decode:
                 ORA @atr
                 STA @atr
                 JMP @continue
-            ; elif b & $0C == 1
+            ; elif b & $0C == 1 << 2
             :
-            CMP #$01
+            CMP #$04
             BNE @spr_end
                 ; atr &= $3F
                 LDA @atr
