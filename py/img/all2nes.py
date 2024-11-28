@@ -8,6 +8,7 @@ from img2snif import img2snif
 from compact import compact, CantFit
 from PIL import Image
 from const import *
+from natsort import natsorted
 
 DEFAULT_TIME = 30
 NB_REGION = 4
@@ -32,15 +33,27 @@ def path2name(path, anim_idx=False):
 
 
 def mask_per_tile(a, b):
-    mask = np.all(a == b, axis=-1)
-    w, h = mask.shape
+    # get mask of equal pixels
+    same_mask = np.all(a == b, axis=-1)
+    # get mask of pixels not equal to 0
+    zero_mask = np.any(a != 0, axis=-1)
+    # get width and height in tile size
+    h, w = same_mask.shape
     w = (w // 8) + (w % 8 != 0)
     h = (h // 8) + (h % 8 != 0)
-    mask = mask.reshape(h, 8, w, 8).swapaxes(1, 2).reshape(h * w, 8, 8)
-    mask = np.all(mask, axis=(-2, -1))
-    mask = np.repeat(mask, 8).reshape(w, 8 * h)
-    mask = np.repeat(mask, 8, axis=0)
-    return mask
+    # reshape into tiles
+    same_mask = same_mask.reshape(h, 8, w, 8).swapaxes(1, 2).reshape(h * w, 8, 8)
+    zero_mask = zero_mask.reshape(h, 8, w, 8).swapaxes(1, 2).reshape(h * w, 8, 8)
+    # compute equality at each tile
+    same_mask = np.all(same_mask, axis=(-2, -1))
+    zero_mask = np.any(zero_mask, axis=(-2, -1))
+    #
+    nochange_mask = np.logical_and(same_mask, zero_mask)
+    # reshape tiles into pixels
+    same_mask_px = np.repeat(same_mask, 8).reshape(w, 8 * h)
+    same_mask_px = np.repeat(same_mask_px, 8, axis=0)
+
+    return same_mask_px, nochange_mask
 
 
 ################################
@@ -71,7 +84,7 @@ for file in other_files:
 
 # sort files
 for r in range(NB_REGION):
-    all_files[r] = sorted(all_files[r])
+    all_files[r] = natsorted(all_files[r])
 
 # Remove output from files if it was found
 for r in range(NB_REGION):
@@ -108,19 +121,35 @@ for r in range(NB_REGION):
         name = path2name(file)
         if name not in anims[r]:
             anims[r][name] = {}
-        #
+        # get image as array
         ori_img = np.array(Image.open(os.path.join(args.folder, file)).convert("RGBA"))
+        # get previous animation image as array
+        prev_img = np.zeros(ori_img.shape)
+        if len(anims[r][name]) > 0:
+            last_idx = max(anims[r][name].keys())
+            if idx > last_idx:
+                prev_img = anims[r][name][last_idx][2]
+        # compute difference between the two
+        dif_img = abs(ori_img - prev_img)
+        # compare to previous image in animation
         img_idx = -1
         for j, a in anims[r][name].items():
-            img = a[2]
-            if np.all(img == ori_img):
+            img = a[3]
+            if np.all(img == dif_img):
                 img_idx = j
                 break
+        # if the image is unique
         if img_idx < 0:
-            anims[r][name][idx] = (file, time, ori_img)
+            # add it to the aniamtion
+            anims[r][name][idx] = (file, time, ori_img, dif_img)
         else:
-            anims[r][name][idx] = (anims[r][name][img_idx][0], time, anims[r][name][img_idx][2])
-            # delete this image
+            # else replace it with found image
+            anims[r][name][idx] = (
+                anims[r][name][img_idx][0],
+                time,
+                anims[r][name][img_idx][2],
+                anims[r][name][img_idx][3],
+            )
             del all_files[r][fi]
             i -= 1
             fi -= 1
@@ -152,6 +181,7 @@ for r in range(NB_REGION):
         name = path2name(file)
         is_anim = name in anims[r]
         m = re.match(ANIM_REGEX, file)
+        nochange_mask = None
         if is_anim and m.group(2):
             # and is not first frame
             n = int(m.group(2)[1:])
@@ -164,19 +194,10 @@ for r in range(NB_REGION):
                 img = np.array(Image.open(os.path.join(args.folder, file)).convert("RGBA"))
                 pre_img = np.array(Image.open(os.path.join(args.folder, pre_file)).convert("RGBA"))
                 # substract image from previous at tile level
-                mask = mask_per_tile(img, pre_img)
-                img[mask] = np.array([0, 0, 0, 0])
-                # save as temporary image
-                tmp_file = open("tmp.png", "wb")
-                Image.fromarray(img).save("tmp.png")
-                tmp_file.flush()
-                tmp_file.close()
-                #
-                # temporary image convertion
-                img_path = "tmp.png"
+                mask, nochange_mask = mask_per_tile(img, pre_img)
         # convertion
         if is_anim:
-            img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=9, bkg_pal_offset=0)
+            img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=9, bkg_pal_offset=0, tile0_mask=nochange_mask)
         else:
             img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=0, bkg_pal_offset=2)
 
@@ -281,7 +302,7 @@ with open(filepath, "wb") as f:
             anims_adr.append(n)
             i += 1
             # write animation bytes
-            l = (len(idx)*3)+1
+            l = (len(idx) * 3) + 1
             f.write(l.to_bytes(1))
             n += 1
             for a in idx.values():

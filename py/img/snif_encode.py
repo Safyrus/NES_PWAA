@@ -64,6 +64,7 @@ def snif_encode_spr(spr, w, h):
             # change current pos
             cur_w = spr_w
             cur_h = spr_h
+            cur_pos = spr_w + (spr_h*w)
         # if palette has changed
         if spr_pal != cur_pal:
             # add PAL command

@@ -156,7 +156,7 @@ def spr2tile(pal, spr, backdrop):
     return tiles
 
 
-def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
+def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None):
     snif_data = bytearray()
 
     ################
@@ -244,13 +244,14 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
     tile_adr, tile_pal, tile_data = bkg2tile(bkg_img, w + 1, h + 1, bkg_pal, backdrop)
     if verbose:
         print("Number of tiles:", len(tile_data))
+    #
+    if np.any(tile0_mask):
+        tile_adr[tile0_mask] = 0x4000
     # cut address in low and high part
     tile_adr_lo = np.array([x & 0xFF for x in tile_adr], dtype=np.uint8)
     tile_adr_hi = np.array([(x >> 8) for x in tile_adr], dtype=np.uint8)
     # assert lenght of arrays
     assert len(tile_pal) == len(tile_adr) == len(tile_data)
-    # and range of addresses
-    assert np.all(tile_adr_hi <= 63)
     # merge high address and palette to have MMC5 tiles
     for i in range(len(tile_adr_hi)):
         tile_adr_hi[i] |= (tile_pal[i]+bkg_pal_offset) << 6
@@ -298,7 +299,7 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0):
     return snif_data
 
 
-def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_spr_pal=3*3, bkg_pal_offset=0):
+def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_spr_pal=3*3, bkg_pal_offset=0, tile0_mask=None):
 
     # if output already exist
     if not force and os.path.exists(outpath):
@@ -319,7 +320,7 @@ def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_sp
     # convert image data to SNIF data
     if verbose:
         print("Convert data to SNIF")
-    data = imgdata2snif(img_data, verbose=verbose, bkg_pal_offset=bkg_pal_offset)
+    data = imgdata2snif(img_data, verbose=verbose, bkg_pal_offset=bkg_pal_offset, tile0_mask=tile0_mask)
 
     # metadata of file
     metadata = f'{{"version":0,"mapper":5,"nbimg":1,"hashori":"{img_data["hash"]}"}}'
