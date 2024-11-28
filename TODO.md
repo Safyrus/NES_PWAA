@@ -14,7 +14,7 @@
     - [X] Have default parameters for NES image conversion for background and character
     - [X] Order background first
     - [X] Remove old scripts and add the new ones
-  - [/] ASM
+  - [X] ASM
     - [X] pseudo algorithm
     - [X] draw packets
     - [X] draw sprites
@@ -23,23 +23,23 @@
     - [X] display bkg image
     - [X] display chr image
     - [X] fetch image
-    - [ ] animations
-  - [/] Test
+    - [X] animations
+  - [X] Test
     - [X] Test 1 image decode (no spr)
     - [X] Test 1 image display (no spr)
     - [X] Test 1 image decode
     - [X] Test 1 image display
     - [X] Test any image display
-    - [ ] Test any animation
+    - [X] Test any animation
   - [/] Image
     - [X] backgrounds
       - [X] courtroom
       - [X] location
       - [X] cutscenes
     - [ ] evidences ?
-    - [/] characters
+    - [X] characters
       - [X] April
-      - [ ] BellBoy
+      - [X] BellBoy
       - [X] Cody
       - [X] Edgeworth
       - [X] Grossberg
@@ -62,6 +62,13 @@
       - [X] Vasquez
       - [X] White
       - [X] Yogi
+  - [ ] Refine / Fix / Idea
+    - [ ] Hide tiles loading
+    - [ ] Hide sprites loading
+    - [ ] Fix remaining unknow bugs
+    - [ ] Better image encoding
+      - [ ] reduce change for images in animations
+      - [ ] better compression
 
 ----------------------------------------------------------------
 
