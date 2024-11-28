@@ -1,7 +1,7 @@
 
 ; arg:
-; X = img idx (lo)
-; Y = img idx (hi)
+; X = anim idx (lo)
+; Y = anim idx (hi)
 ; return:
 ; MMC5_BNK1 = bnk
 ; MMC5_BNK2 = bnk+1
@@ -36,17 +36,13 @@ fetch_anim:
         STA @adr+0
         BCC :+
             INC @adr+1
+            ; if adr overflow
+            JSR fetch_overflow_correction
         :
-        ; if adr overflow
-        JSR fetch_overflow_correction
         ; continue
         DEX
         BNE @while
     @while_end:
-
-    ; skip size info
-    inc_16 @adr
-    JSR fetch_overflow_correction
 
     ; return bnk, adr
     RTS

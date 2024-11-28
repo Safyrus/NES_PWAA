@@ -573,7 +573,7 @@
     IMG_BUF_LO_ADR = $7400
     IMG_BUF_HI_ADR = $7800
     IMG_CHR_SPR    = $7C00
-    ; ???_ADR = $7D00
+    ANIM_BUF_ADR   = $7D00
     ; ???_ADR = $7E00
     ; ???_ADR = $7F00
 

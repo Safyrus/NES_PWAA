@@ -1,4 +1,6 @@
-.include "display_bkg.asm"
+.include "display_anim.asm"
+.include "display_img.asm"
+.include "display.asm"
 .include "draw_packets.asm"
 .include "draw_sprites.asm"
 .include "fetch_anim.asm"
@@ -8,3 +10,4 @@
 .include "rleinc.asm"
 .include "snif_decode.asm"
 .include "update_image.asm"
+.include "update_anim.asm"

@@ -25,6 +25,11 @@ MAIN:
     .include "init.asm"
 
 MAIN_LOOP:
+    ; wait for start of frame / acknowledge nmi
     JSR wait_next_frame
+
+    ; update animation
+    JSR update_anim
+
     ; loop back to start of main
     JMP MAIN_LOOP

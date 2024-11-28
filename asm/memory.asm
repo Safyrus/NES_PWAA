@@ -697,7 +697,7 @@ OAM:
         invest_tmp: .res 5
 
     ;================
-    ; Group: Renderer variable
+    ; Group: Image Render variables
     ;================
         .segment "ZEROPAGE"
         packet_buf_read_adr: .res 2
@@ -712,3 +712,11 @@ OAM:
 
         draw_sprite_idx: .res 1
         res_oam: .res 1
+
+    ;================
+    ; Group: Animation Render variables
+    ;================
+        anim_idx: .res 1
+        anim_timer: .res 1
+        anim_size: .res 1
+        cur_chr: .res 2

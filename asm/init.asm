@@ -43,6 +43,6 @@
     ; test display
     LDX #COURTROOM_0
     JSR display_bkg
-    LDX #PHOENIX_NORMAL_A_I0
-    JSR display_chr
-
+    LDX #<PHOENIX_NORMAL_A_
+    LDY #>PHOENIX_NORMAL_A_
+    JSR display_anim

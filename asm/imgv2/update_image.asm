@@ -1,17 +1,27 @@
+update_image_in_db:
+    LDA #$1B
+    STA update_image_arg+3
+    LDA #$13
+    STA update_image_arg+1
+    JMP update_all_image_no_hy
+
 update_all_image_no_db:
     LDA #$13
     STA update_image_arg+3
     JMP update_all_image_no_h
+
 update_all_image:
     LDA #$1B
     STA update_image_arg+3
 update_all_image_no_h:
-    LDA #$00
-    STA update_image_arg+0
     LDA #$03
     STA update_image_arg+1
+update_all_image_no_hy:
+    LDA #$00
+    STA update_image_arg+0
     LDA #$20
     STA update_image_arg+2
+    ; update_image()
 
 ; RAM bank should be set before calling
 update_image:
@@ -84,10 +94,17 @@ update_image:
             STA @tile_lo
             LDA (@img_chr_hi), Y
             STA @tile_hi
-            ; if tile == 0
+            ; if tile without palette == 0
+            AND #$3F
             BNE :+
             LDA @tile_lo
             BNE :+
+                ; if palette == 1
+                LDA @tile_hi
+                AND #$C0
+                CMP #$40
+                    ; jmp @cut_packet
+                    BEQ @cut_packet
                 ; tile = *img_bkg
                 LDA (@img_bkg_lo), Y
                 STA @tile_lo
@@ -101,6 +118,7 @@ update_image:
             LDA (@img_buf_lo), Y
             CMP @tile_lo
             BNE :+
+                @cut_packet:
                 ; if size already zero
                 LDA @size
                     ; continue
