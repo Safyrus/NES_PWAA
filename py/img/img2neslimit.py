@@ -52,7 +52,7 @@ class Score:
         Score._save_mask(self.wrong_black_mask, prefix + "_blk.png")
 
 
-def move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos):
+def move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score):
     # if tile have color not in bkg_pal
     idxs = [np.where(np.all(tile_data == not_bkg_pal[i], axis=-1)) for i in range(len(not_bkg_pal))]
     if idxs:
@@ -65,16 +65,18 @@ def move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos):
             # add tile with only (not bkg_pal) to spr_img
             sprimg.paste(Image.fromarray(sprpart), pos)
 
-    # fill not bkg_pal with closest color
-    if FILL_BLACK:
-        for i in idxs:
-            tile_data[i] = np.array(BLACK)
-    else:
-        for j, i in enumerate(idxs):
-            dists = np.sqrt(np.sum((bkg_pal - not_bkg_pal[j]) ** 2, axis=1))
-            tile_data[i] = bkg_pal[np.argmin(dists)]
+        # fill not bkg_pal color with closest color
+        if FILL_BLACK:
+            for i in idxs:
+                tile_data[i] = np.array(BLACK)
+                score.wrong_bkg_mask[(i[0]+pos[1]),(i[1]+pos[0])] = 1
+        else:
+            for j, i in enumerate(idxs):
+                dists = np.sqrt(np.sum((bkg_pal - not_bkg_pal[j]) ** 2, axis=1))
+                tile_data[i] = bkg_pal[np.argmin(dists)]
+                score.wrong_bkg_mask[(i[0]+pos[1]),(i[1]+pos[0])] = 1
 
-    return tile_data, sprimg
+    return tile_data, sprimg, score
 
 
 def find_palette(tile: Image.Image, pal_col, bkg_col=np.array(BLACK)):
@@ -133,14 +135,14 @@ def compute_overflow(h, sprites, score):
     score.line_overflow_count = 0
     for s in sprites:
         s[4] = False
-    lines = [0] * h
+    lines = np.zeros(h)
     for y in range(h):
         for s in sprites:
             if s[1] <= y < s[1] + 16:
                 lines[y] += 1
                 if lines[y] > MAX_SPRITE_OVERFLOW:
                     s[4] = True
-    lines = np.array(lines)
+    # lines = np.array(lines)
     score.line_overflow_count = np.sum(lines > MAX_SPRITE_OVERFLOW)
     score.spr_overflow_count = sum([x[4] for x in sprites])
     return score, lines
@@ -348,7 +350,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     best_bkg_img = None
     emptytile = Image.new("RGBA", (8, 8))
     if verbose:
-        bar = tqdm(bkg_palettes, desc=f"Score=???")
+        bar = tqdm(bkg_palettes, desc=f"Score=???", dynamic_ncols=True)
     else:
         bar = bkg_palettes
     for bkg_pal in bar:
@@ -384,7 +386,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
                         # tile = blank
                         tile_data = np.array(emptytile.copy())
                     else:
-                        tile_data, sprimg = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos)
+                        tile_data, sprimg, score = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score)
                         # fill transparency with black
                         i = np.where(tile_data[:, :, 3] == 0)
                         tile_data[i] = (0, 0, 0, 255)
@@ -392,7 +394,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
                         score.wrong_black_mask[i[0] + (y * 8), i[1] + (x * 8)] = 1
                 # elif tile have color not in bkg_pal
                 else:
-                    tile_data, sprimg = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos)
+                    tile_data, sprimg, score = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score)
                 tile = Image.fromarray(tile_data)
                 tile_colors = [x[1] for x in tile.getcolors()]
 
@@ -446,7 +448,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
 
     #
     best_spr = []
-    best_lines = []
+    best_lines = np.array([])
     if MAX_SPR_COLOR > 0:
         if lazy_spr_pal:
             a = np.append(best_bkg_pal, best_spr_pal, axis=0)
@@ -463,7 +465,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
         # for every sprite palettes
         emptyspr = Image.new("RGBA", (8, 16))
         if verbose:
-            bar = tqdm(spr_palettes, desc=f"Score=???")
+            bar = tqdm(spr_palettes, desc=f"Score=???", dynamic_ncols=True)
         else:
             bar = spr_palettes
         for spr_pal in bar:
@@ -568,7 +570,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
         "spr_pal": best_spr_pal,
         "spr": best_spr,
         "score": best_score,
-        "overflow_lines": best_lines,
+        "overflow_lines": np.array(best_lines),
         "w": w,
         "h": h,
         "backdrop": np.array(BLACK),
@@ -588,7 +590,7 @@ if __name__ == "__main__":
     w, h = data["w"], data["h"]
 
     # save line overflow as image
-    line_data = np.repeat(np.ones(h, dtype=np.uint8) * (data["overflow_lines"] > MAX_SPRITE_OVERFLOW) * 255, w).reshape(h, w)
+    line_data = np.repeat(np.ones(h, dtype=np.uint8) * (np.sum(data["overflow_lines"]) > MAX_SPRITE_OVERFLOW) * 255, w).reshape(h, w)
     Image.fromarray(line_data).save("test_line.png")
     # Display score and save images
     data["score"].save_masks("test")
