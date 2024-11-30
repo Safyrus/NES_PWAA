@@ -7,3 +7,4 @@ Pillow==9.3.0
 scikit_learn==1.5.1
 scipy==1.13.0
 tqdm==4.65.0
+natsorted==8.4.0
