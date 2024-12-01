@@ -37,6 +37,7 @@
       - [X] location
       - [X] cutscenes
     - [ ] evidences ?
+    - [ ] background variation
     - [X] characters
       - [X] April
       - [X] BellBoy
@@ -63,12 +64,14 @@
       - [X] White
       - [X] Yogi
   - [ ] Refine / Fix / Idea
-    - [ ] Hide tiles loading
-    - [ ] Hide sprites loading
+    - [X] Hide tiles change
+    - [X] Hide sprites change
     - [ ] Fix remaining unknow bugs
+    - [ ] Increase image draw speed
     - [ ] Better image encoding
       - [ ] reduce change for images in animations
       - [ ] better compression
+      - [X] reduce unnecessary sprite usage
 
 ----------------------------------------------------------------
 

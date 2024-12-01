@@ -199,7 +199,7 @@
     NMI_SPR   = %00000010
     NMI_BKG   = %00000001
 
-    ZP_BACKGROUND_SIZE = $60-1
+    ZP_BACKGROUND_SIZE = 90
 
 ;================
 ; Group: MMC5
@@ -576,6 +576,11 @@
     ANIM_BUF_ADR   = $7D00
     ; ???_ADR = $7E00
     ; ???_ADR = $7F00
+
+    IMG_FLAG_UNSPRITE = $80
+    IMG_FLAG_UNMMC5 = $40
+    IMG_FLAG_OTHERNT = $20
+    IMG_FLAG_FORCE = $10
 
 ;================
 ; Group: Special Characters

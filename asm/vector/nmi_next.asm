@@ -27,8 +27,14 @@
     ; --------
     ; Prepare next frame graphism
     ; --------
+    ; draw_packets()
     JSR draw_packets
-    JSR draw_sprites
+    ; if not img_flag.unsprite
+    BIT img_flag
+    BMI :+
+        ; draw_sprites()
+        JSR draw_sprites
+    :
 
 
     ; ; read text

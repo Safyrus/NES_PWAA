@@ -139,6 +139,9 @@
     ; A packet of size 0 means there is no more data to draw
     background: .res ZP_BACKGROUND_SIZE
 
+    ; padding
+    .res $10 - ((ZP_BACKGROUND_SIZE+1) .MOD $10)
+
     ; Variable: tmp
     ;----------------
     ; temporary variables
@@ -712,6 +715,10 @@ OAM:
 
         draw_sprite_idx: .res 1
         res_oam: .res 1
+
+        img_flag: .res 1
+        spr_bnks: .res 8
+        img_pals: .res 3*8+1
 
     ;================
     ; Group: Animation Render variables

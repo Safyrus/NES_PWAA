@@ -29,35 +29,32 @@ update_screen_scroll:
     PLA
     RTS
 
-
-; X = input page
-; Y = output page
+; tmp+0 = input page
+; tmp+2 = output page
+; do not save registers
 cp_page:
-    push_ay
-    push tmp+0
-    push tmp+1
-    push tmp+2
-    push tmp+3
-
-    @in = tmp+0
-    @out = tmp+2
-
-    STX @in+1
-    STY @out+1
     LDY #$00
-    STY @in+0
-    STY @out+0
     @loop:
-        LDA (@in), Y
-        STA (@out), Y
+        LDA (tmp+0), Y
+        STA (tmp+2), Y
     to_y_inc @loop, #0
-
-    pull tmp+3
-    pull tmp+2
-    pull tmp+1
-    pull tmp+0
-    pull_ay
     RTS
+
+; copy upper tiles from image buffer to MMC5
+; do not save registers
+cp_mmc5:
+    LDA #$60
+    STA tmp+0
+    STA tmp+2
+    mov tmp+1, #>IMG_BUF_HI_ADR
+    mov tmp+3, #>MMC5_EXP_RAM
+    JSR cp_page
+    INC tmp+1
+    INC tmp+3
+    JSR cp_page
+    INC tmp+1
+    INC tmp+3
+    JMP cp_page
 
 
 ; A / tmp

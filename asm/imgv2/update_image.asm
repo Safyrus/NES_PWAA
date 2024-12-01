@@ -60,6 +60,15 @@ update_image:
     LDA MMC5_MUL_B
     STA @adr+1
     add_A2ptr @adr, @arg_x
+    ; if draw in other nametable
+    LDA img_flag
+    AND #IMG_FLAG_OTHERNT
+    BEQ :+
+        ; adr += $400
+        LDA @adr+1
+        add #$04
+        STA @adr+1
+    :
     ; init pointers
     LDA @adr+0
     STA @img_chr_lo+0
@@ -111,7 +120,11 @@ update_image:
                 LDA (@img_bkg_hi), Y
                 STA @tile_hi
             :
-            ; if tile == *img_buf
+            ; if not img.flag.force
+            LDA img_flag
+            AND #IMG_FLAG_FORCE
+            BNE :+
+            ; and if tile == *img_buf
             LDA (@img_buf_hi), Y
             CMP @tile_hi
             BNE :+

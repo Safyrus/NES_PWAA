@@ -16,8 +16,8 @@ draw_packets:
     ; --------
     ; init
     ; --------
-    ; zp_bkg_size = ZP_BACKGROUND_SIZE - background_index
-    LDA #ZP_BACKGROUND_SIZE
+    ; zp_bkg_size = ZP_BACKGROUND_SIZE-1 - background_index
+    LDA #ZP_BACKGROUND_SIZE-1
     sub background_index
     STA @zp_bkg_size
     ; can_move_read = true
@@ -33,13 +33,6 @@ draw_packets:
         ; --------
         ; while conditions
         ; --------
-        ; if take too long
-        LDA scanline
-        CMP #SCANLINE_DIALOG
-        BNE :+
-            ; return
-            JMP @return
-        :
         ; if zp_bkg_size < 4
         LDA @zp_bkg_size
         CMP #$04
@@ -48,6 +41,13 @@ draw_packets:
             JMP @return
         :
         @search:
+        ; if take too long
+        LDA scanline
+        CMP #SCANLINE_DIALOG
+        BNE :+
+            ; return
+            JMP @return
+        :
         ; if @in == packet_buf_write_adr
         LDA @in+1
         CMP packet_buf_write_adr+1
@@ -187,9 +187,13 @@ draw_packets:
             JSR @inc_in
             ; --------
             ; copy high tile
-            ; mmc5_tiles[adr] = @in[0]
-            LDA (@in), Y
-            STA (@adr), Y
+            ; if not img.flag_unmmc5
+            BIT img_flag
+            BVS :+
+                ; mmc5_tiles[adr] = @in[0]
+                LDA (@in), Y
+                STA (@adr), Y
+            :
             ; if v
             ; LDA @v
             ; BEQ :+

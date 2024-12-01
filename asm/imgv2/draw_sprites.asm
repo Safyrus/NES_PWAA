@@ -54,5 +54,13 @@ draw_sprites:
 
     ; draw_sprite_idx = Y
     STY draw_sprite_idx
+
+    LDY #$07
+    @update_bnks:
+        LDA spr_bnks, Y
+        STA MMC5_CHR_BNK0, Y
+        DEY
+        BPL @update_bnks
+
     ; return
     RTS
