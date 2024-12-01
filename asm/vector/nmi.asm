@@ -10,13 +10,18 @@
 ;
 ; Cycles notes:
 ;--- Text
-; 2273 cycles per VBLANK
-; base (before @done) = 13+3+2+3+(2+3)*5
+; ~2273 cycles per VBLANK
+; header (before @background) = 36 cycles
+; NMI flag checks = 20 to 25 cycles
+; @background:
+;   - start/end = 16 cycles
+;   - empty packet = 7 cycles
+;   - packet header+end = 47 cycles (+3 if vertical)
+;   - packet data = 14*(size-1) + 13 cycles
 ; @sprite = 513+ cycles
-; @scroll = 31 cycles
-; @attribute = 821 cycles
-; @palette = 356 cycless
-; @background ~= 16+(56*p+15*p[i].n)
+; @attribute = ??? cycles
+; @palette = 335 cycles
+; @scroll = 21 cycles
 ;---
 ;--------------------------------
 NMI:
@@ -29,9 +34,11 @@ NMI:
     JMP @nmi_end
 
     @start:
+    ; update nametable mapping
     LDA #NT_MAPPING_NT1
     STA MMC5_NAMETABLE
-
+    ; reset latch
+    BIT PPU_STATUS
     ; load NMI flags
     LDA nmi_flags
 
@@ -41,7 +48,7 @@ NMI:
     @background:
         ; save flags
         PHA
-
+        ; for each packet
         LDX #$00
         @background_loop:
             ; read size
@@ -49,28 +56,30 @@ NMI:
             ; if size = 0 then end
             BEQ @background_loop_end
 
-            ; save size to Y
-            AND #$7F
-            TAY
             ; is vertical flag off ?
-            LDA background, X
             BPL @background_loop_hor
 
             ; tell the ppu to inc by 32
             @background_loop_ver:
+            ; save size to Y
+            AND #$7F
+            TAY
+            ; ppu inc by 32
             LDA ppu_ctrl_val
             ORA #(PPU_CTRL_INC)
             BNE @background_loop_start ; BNE = JMP because ORA before
 
             ; tell the ppu to inc by 1
             @background_loop_hor:
+            ; save size to Y
+            AND #$7F
+            TAY
+            ; ppu inc by 1
             LDA ppu_ctrl_val
             AND #($FF-PPU_CTRL_INC)
 
             @background_loop_start:
             STA PPU_CTRL
-            ; reset latch
-            BIT PPU_STATUS
             ; set PPU adr
             INX
             LDA background, X
@@ -94,11 +103,9 @@ NMI:
         ; restore PPU_CTRL
         LDA ppu_ctrl_val
         STA PPU_CTRL
-
         ; restore flags
         PLA
     @background_end:
-
 
     ; is the sprite flag on ? (S flag)
     LSR
@@ -109,42 +116,37 @@ NMI:
         STX OAMDMA
     @sprite_end:
 
-
     ; is the attribute flag on ? (A flag)
     ; /!\ skip this flag because we will never use it
     LSR
     ; BCC @attribute_end
     ; @attribute:
-    ;     ; save flags
-    ;     PHA
-
-    ;     ; reset latch
-    ;     BIT PPU_STATUS
-    ;     ; set PPU address
-    ;     LDA atr_nametable
-    ;     STA PPU_ADDR
-    ;     LDA #$C0
-    ;     STA PPU_ADDR
- 
-    ;     ; send data to PPU
-    ;     LDX #$00
-    ;     @attribute_loop:
-    ;         ; send 1 byte
-    ;         LDA attributes, X
-    ;         STA PPU_DATA
-    ;         INX
-    ;         ; send another byte
-    ;         LDA attributes, X
-    ;         STA PPU_DATA
-    ;         INX
-    ;         ; loop
-    ;         CPX #$40
-    ;         BNE @attribute_loop
- 
-    ;     ; restore flags
-    ;     PLA
+        ; ; save flags
+        ; PHA
+        ; ; reset latch
+        ; BIT PPU_STATUS
+        ; ; set PPU address
+        ; LDA atr_nametable
+        ; STA PPU_ADDR
+        ; LDA #$C0
+        ; STA PPU_ADDR
+        ; ; send data to PPU
+        ; LDX #$00
+        ; @attribute_loop:
+        ;     ; send 1 byte
+        ;     LDA attributes, X
+        ;     STA PPU_DATA
+        ;     INX
+        ;     ; send another byte
+        ;     LDA attributes, X
+        ;     STA PPU_DATA
+        ;     INX
+        ;     ; loop
+        ;     CPX #$40
+        ;     BNE @attribute_loop
+        ; ; restore flags
+        ; PLA
     ; @attribute_end:
-
 
     ; is the palette flag on ? (P flag)
     LSR
@@ -152,19 +154,14 @@ NMI:
     @palette:
         ; save flags
         PHA
-
-        ; reset latch
-        BIT PPU_STATUS
         ; set PPU address
         LDA #$3F
         STA PPU_ADDR
-        LDA #$00
-        STA PPU_ADDR
- 
+        LDX #$00
+        STX PPU_ADDR
         ; prepare transparent color
-        LDX #$01
-        LDY palettes-1, X
-
+        INX ; X = 1
+        LDY palettes
         ; send data to PPU
         @palette_loop:
             ; send transparent
@@ -182,24 +179,19 @@ NMI:
             ; loop
             CPX #25
             BNE @palette_loop
-
         ; restore flags
         PLA
     @palette_end:
-
 
     ; is the scroll flag on ? (R flag)
     LSR
     BCC @scroll_end
     @scroll:
-        ; reset latch
-        BIT PPU_STATUS
         ; set scrolling position to scroll_x, scroll_y
         LDX scroll_x
         STX PPU_SCROLL
         LDX scroll_y
         STX PPU_SCROLL
-
         ; set high order bit of X and Y
         LDA ppu_ctrl_val
         STA PPU_CTRL
