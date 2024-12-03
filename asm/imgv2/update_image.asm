@@ -103,7 +103,7 @@ update_image:
             STA @tile_lo
             LDA (@img_chr_hi), Y
             STA @tile_hi
-            ; if tile without palette == 0
+            ; if tile (without palette) == 0
             AND #$3F
             BNE :+
             LDA @tile_lo
@@ -121,9 +121,8 @@ update_image:
                 STA @tile_hi
             :
             ; if not img.flag.force
-            LDA img_flag
-            AND #IMG_FLAG_FORCE
-            BNE :+
+            BIT img_flag
+            BMI :+
             ; and if tile == *img_buf
             LDA (@img_buf_hi), Y
             CMP @tile_hi

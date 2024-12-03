@@ -8,9 +8,13 @@ packet_buf_res:
     @pack_adr = tmp+2
     ; wait for free space
     @wait:
-        ; dif = packet_buf_write_adr - $400
+        ; if packet_buf_write_adr >= packet_buf_read_adr
         LDA packet_buf_write_adr+1
-        sub #$04
+        CMP packet_buf_read_adr+1
+        blt :+
+            ; dif = packet_buf_write_adr - $400
+            sub #$04
+        :
         ; dif = abs(dif - packet_buf_read_adr)
         sub packet_buf_read_adr+1
         EOR #$FF

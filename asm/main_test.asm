@@ -27,11 +27,12 @@ MAIN:
 MAIN_LOOP:
     ; wait for start of frame / acknowledge nmi
     JSR wait_next_frame
+    @MAIN_LOOP_START:
 
     ; if currently drawing an image
     ; TODO: better flag condition ?
     LDA img_flag
-    AND #$C0
+    AND #(IMG_FLAG_UNSPRITE+IMG_FLAG_UNMMC5)
     BEQ :+
         ; if packet_buf_read_adr == packet_buf_write_adr
         ; (a.k.a nothing left to draw)
@@ -81,6 +82,6 @@ MAIN_LOOP:
     :
     ; update animation
     JSR update_anim
-
+    @MAIN_END:
     ; loop back to start of main
     JMP MAIN_LOOP

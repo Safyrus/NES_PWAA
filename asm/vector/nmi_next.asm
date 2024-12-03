@@ -12,6 +12,7 @@
     ; --------
     ; Update FamiStudio
     ; --------
+    @DEBUG_FAMISTUDIO_UPDATE_START:
     ; load music banks
     LDX music
     LDA music_bank_table, X
@@ -22,6 +23,7 @@
     ; restore banks
     mov MMC5_RAM_BNK+MUS_BNK_OFF, mmc5_banks+MUS_BNK_OFF
     mov MMC5_RAM_BNK+SFX_BNK_OFF, mmc5_banks+SFX_BNK_OFF
+    @DEBUG_FAMISTUDIO_UPDATE_END:
 
 
     ; --------
@@ -30,8 +32,9 @@
     ; draw_packets()
     JSR draw_packets
     ; if not img_flag.unsprite
-    BIT img_flag
-    BMI :+
+    LDA img_flag
+    AND #IMG_FLAG_UNSPRITE
+    BNE :+
         ; draw_sprites()
         JSR draw_sprites
     :

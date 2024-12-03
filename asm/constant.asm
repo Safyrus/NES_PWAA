@@ -577,10 +577,10 @@
     ; ???_ADR = $7E00
     ; ???_ADR = $7F00
 
-    IMG_FLAG_UNSPRITE = $80
+    IMG_FLAG_FORCE = $80
     IMG_FLAG_UNMMC5 = $40
     IMG_FLAG_OTHERNT = $20
-    IMG_FLAG_FORCE = $10
+    IMG_FLAG_UNSPRITE = $10
 
 ;================
 ; Group: Special Characters
