@@ -38,17 +38,13 @@ MAIN_LOOP:
         ; (a.k.a nothing left to draw)
         LDA packet_buf_read_adr+1
         CMP packet_buf_write_adr+1
-        BNE :++
+        BNE :+
         LDA packet_buf_read_adr+0
         CMP packet_buf_write_adr+0
-        BNE :++
+        BNE :+
             ; re-enable sprites and MMC5 tiles update
             LDA img_flag
             AND #$FF-(IMG_FLAG_UNMMC5+IMG_FLAG_UNSPRITE)
-            ; enable force image update
-            ORA #IMG_FLAG_FORCE
-            ; and swap nametable to use
-            EOR #IMG_FLAG_OTHERNT
             STA img_flag
             ; update palettes
             LDY #$3*8
@@ -69,17 +65,12 @@ MAIN_LOOP:
             STA ppu_ctrl_val
             ; copy MMC5 tiles
             JSR cp_mmc5
+            ; swap nametable to use
+            eor_adr img_flag, #IMG_FLAG_OTHERNT
             ; update sprites
             JSR draw_sprites
-            ;
-            mov mmc5_banks+0, IMG_BNK
-            STA MMC5_RAM_BNK
-            JSR update_all_image
-            ;
-            and_adr img_flag, #($FF-IMG_FLAG_FORCE)
     :
-    ; else
-    :
+
     ; update animation
     JSR update_anim
     @MAIN_END:

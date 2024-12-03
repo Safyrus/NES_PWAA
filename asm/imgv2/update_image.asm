@@ -1,35 +1,42 @@
 update_image_in_db:
-    LDA #$1B
+    LDA #24
     STA update_image_arg+3
-    LDA #$13
+    LDA #16
     STA update_image_arg+1
     JMP update_all_image_no_hy
 
 update_all_image_no_db:
-    LDA #$13
+    LDA #16
     STA update_image_arg+3
     JMP update_all_image_no_h
 
 update_all_image:
-    LDA #$1B
+    LDA #24
     STA update_image_arg+3
 update_all_image_no_h:
-    LDA #$03
+    LDA #0
     STA update_image_arg+1
 update_all_image_no_hy:
-    LDA #$00
+    LDA #0
     STA update_image_arg+0
-    LDA #$20
+    LDA #32
     STA update_image_arg+2
     ; update_image()
 
+
 ; RAM bank should be set before calling
 update_image:
+    ; ----------------
+    ; arguments
+    ; ----------------
     @arg_x = update_image_arg+0
     @arg_y = update_image_arg+1
     @arg_w = update_image_arg+2
     @arg_h = update_image_arg+3
 
+    ; ----------------
+    ; variables
+    ; ----------------
     @adr = tmp+0
     @packet_adr = tmp+2
     @tile = tmp+4
@@ -41,7 +48,9 @@ update_image:
     @img_chr_hi = tmp+12
     @img_buf_lo = tmp+14
     @img_buf_hi = tmp+16
-    @size = tmp+18
+    @old_buf_lo = tmp+18
+    @old_buf_hi = tmp+20
+    @size = tmp+22
 
     ; enable NMI_FORCE flag
     ora_adr nmi_flags, #NMI_FORCE
@@ -50,6 +59,9 @@ update_image:
     LDA #$00
     STA @size
 
+    ; ----------------
+    ; compute start address
+    ; ----------------
     ; adr = y*32+x
     LDA @arg_y
     STA MMC5_MUL_A
@@ -60,16 +72,10 @@ update_image:
     LDA MMC5_MUL_B
     STA @adr+1
     add_A2ptr @adr, @arg_x
-    ; if draw in other nametable
-    LDA img_flag
-    AND #IMG_FLAG_OTHERNT
-    BEQ :+
-        ; adr += $400
-        LDA @adr+1
-        add #$04
-        STA @adr+1
-    :
-    ; init pointers
+
+    ; ----------------
+    ; init buffer pointers
+    ; ----------------
     LDA @adr+0
     STA @img_chr_lo+0
     STA @img_chr_hi+0
@@ -78,19 +84,51 @@ update_image:
     STA @img_buf_lo+0
     STA @img_buf_hi+0
     LDA @adr+1
-    ORA #$64
+    ORA #>IMG_BKG_LO_ADR
     STA @img_bkg_lo+1
     CLC
-    ADC #$04
+    ADC #$03
     STA @img_bkg_hi+1
-    ADC #$04
+    ADC #$03
     STA @img_chr_lo+1
-    ADC #$04
+    ADC #$03
     STA @img_chr_hi+1
-    ADC #$04
+    ADC #$03
     STA @img_buf_lo+1
-    ADC #$04
+    ADC #$03
     STA @img_buf_hi+1
+    ADC #$03
+    STA @old_buf_lo+1
+    ADC #$03
+    STA @old_buf_hi+1
+
+    ; ----------------
+    ; init ppu pointer
+    ; and change other pointers if needed
+    ; ----------------
+    ; if draw in other nametable
+    LDA img_flag
+    AND #IMG_FLAG_OTHERNT
+    BEQ :+
+        ; adr += $400
+        LDA @adr+1
+        add #$04
+        STA @adr+1
+        ; img_buf += $600
+        LDA @img_buf_lo+1
+        add #$06
+        STA @img_buf_lo+1
+        ADC #$03
+        STA @img_buf_hi+1
+        ; old_buf -= $600
+        LDA @old_buf_lo+1
+        sub #$06
+        STA @old_buf_lo+1
+        ADC #$02 ; add #3
+        STA @old_buf_hi+1
+    :
+    ; adr += $60
+    add_A2ptr @adr, #$60
 
     ; for j from y to h
     @for_y:
@@ -105,22 +143,28 @@ update_image:
             STA @tile_hi
             ; if tile (without palette) == 0
             AND #$3F
-            BNE :+
+            BNE :++
             LDA @tile_lo
-            BNE :+
+            BNE :++
                 ; if palette == 1
                 LDA @tile_hi
                 AND #$C0
                 CMP #$40
-                    ; jmp @cut_packet
-                    BEQ @cut_packet
+                BNE :+
+                    ; tile = *old_buf
+                    LDA (@old_buf_lo), Y
+                    STA @tile_lo
+                    LDA (@old_buf_hi), Y
+                    STA @tile_hi
+                    JMP :++
+                :
                 ; tile = *img_bkg
                 LDA (@img_bkg_lo), Y
                 STA @tile_lo
                 LDA (@img_bkg_hi), Y
                 STA @tile_hi
             :
-            ; if not img.flag.force
+            ; if not img_flag.force
             BIT img_flag
             BMI :+
             ; and if tile == *img_buf
@@ -174,22 +218,25 @@ update_image:
             INC @size
             @continue_x:
             ; increase pointers
-            INC @adr+0
+            inc_16 @adr
+            INC @img_bkg_lo+0
             BNE :+
-                INC @adr+1
                 INC @img_bkg_lo+1
                 INC @img_bkg_hi+1
                 INC @img_chr_lo+1
                 INC @img_chr_hi+1
                 INC @img_buf_lo+1
                 INC @img_buf_hi+1
+                INC @old_buf_lo+1
+                INC @old_buf_hi+1
             :
-            INC @img_bkg_lo+0
             INC @img_bkg_hi+0
             INC @img_chr_lo+0
             INC @img_chr_hi+0
             INC @img_buf_lo+0
             INC @img_buf_hi+0
+            INC @old_buf_lo+0
+            INC @old_buf_hi+0
             ; continue
             INX
             CPX @arg_w
@@ -208,22 +255,30 @@ update_image:
         LDA #$20
         sub @arg_w
         BEQ :++ ; skip pointers if we add 0
-        add @adr+0
+        ; add to @adr
+        PHA
+        add_A2ptr @adr
+        ; add to other
+        PLA
+        add @img_bkg_lo+0
+        STA @img_bkg_lo+0
         BCC :+
-            INC @adr+1
             INC @img_bkg_lo+1
             INC @img_bkg_hi+1
             INC @img_chr_lo+1
             INC @img_chr_hi+1
             INC @img_buf_lo+1
             INC @img_buf_hi+1
+            INC @old_buf_lo+1
+            INC @old_buf_hi+1
         :
-        STA @img_bkg_lo+0
         STA @img_bkg_hi+0
         STA @img_chr_lo+0
         STA @img_chr_hi+0
         STA @img_buf_lo+0
         STA @img_buf_hi+0
+        STA @old_buf_lo+0
+        STA @old_buf_hi+0
         :
         ; continue
         INC @arg_y

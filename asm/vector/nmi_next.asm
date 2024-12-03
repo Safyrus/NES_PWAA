@@ -39,6 +39,13 @@
         JSR draw_sprites
     :
 
+    ; if anim_timer > 0
+    LDA anim_timer
+    BEQ :+
+        ; anim_timer--
+        DEC anim_timer
+    :
+
 
     ; ; read text
     ; JSR read_text

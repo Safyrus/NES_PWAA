@@ -85,10 +85,6 @@ draw_packets:
         ; --------
         ; check packet
         ; --------
-        ; v = @in[0] & $80
-        ; LDA (@in), Y
-        ; AND #$80
-        ; STA @v
         ; size, i = @in[0] & $3F
         LDA (@in), Y
         AND #$3F
@@ -106,16 +102,6 @@ draw_packets:
         LDA (@in), Y
         AND #$40
         ; if notready
-            ; can_move_read = 0
-            ; jmp @continue
-            BNE @skip_packet
-        ; ; prio = @in[1] & $F0
-        ; ; TODO : fix bug overflow @in+1
-        ; INY
-        ; LDA (@in), Y
-        ; AND #$F0
-        ; ; if prio != @cur_prio
-        ; CMP @cur_prio
         BEQ :+
             @skip_packet:
             ; can_move_read = 0
@@ -124,7 +110,6 @@ draw_packets:
             ; jmp @continue
             BEQ @continue
         :
-        ; DEY
 
         ; --------
         ; copy packet info
@@ -194,17 +179,8 @@ draw_packets:
                 LDA (@in), Y
                 STA (@adr), Y
             :
-            ; if v
-            ; LDA @v
-            ; BEQ :+
-            ;     ; adr += 32
-            ;     add_A2ptr @adr, #20
-            ;     JMP :++
-            ; else
-            ; :
-                ; adr++
-                inc_16 @adr
-            ; :
+            ; adr++
+            inc_16 @adr
             ; inc_in()
             JSR @inc_in
             ; continue

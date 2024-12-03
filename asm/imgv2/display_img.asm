@@ -12,19 +12,18 @@ display_img:
     ; decode image
     ; --------
     ; in = tmp+0 (already set with fetch)
-    ; buf_lo  = $??60
-    LDA #$60
+    ; buf_lo  = $??00
+    LDA #$00
     STA tmp+2
-    ; buf_hi  = $??60
+    ; buf_hi  = $??00
     STA tmp+6
+    ; spr_buf
+    STA tmp+8
+    LDA #>IMG_CHR_SPR
+    STA tmp+9
     ; bnk_buf
     mov tmp+4, #<(spr_bnks-1)
     mov tmp+5, #>(spr_bnks-1)
-    ; spr_buf
-    LDA #$00
-    STA tmp+8
-    LDA #$7C
-    STA tmp+9
     ; palette
     mov tmp+10, #<img_pals
     mov tmp+11, #>img_pals

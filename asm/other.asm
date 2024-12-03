@@ -43,11 +43,20 @@ cp_page:
 ; copy upper tiles from image buffer to MMC5
 ; do not save registers
 cp_mmc5:
-    LDA #$60
-    STA tmp+0
-    STA tmp+2
-    mov tmp+1, #>IMG_BUF_HI_ADR
+    ; output page = MMC5_EXP_RAM+$60
+    mov tmp+2, #$60
     mov tmp+3, #>MMC5_EXP_RAM
+    ; input page = IMG_BUF_HI_ADR
+    mov tmp+0, #$00
+    mov tmp+1, #>IMG_BUF_HI_ADR
+    ; if other nametable
+    LDA img_flag
+    AND #IMG_FLAG_OTHERNT
+    BEQ :+
+        ; input page = IMG_BUF2_HI_ADR
+        mov tmp+1, #>IMG_BUF2_HI_ADR
+    :
+    ; copy 3 pages
     JSR cp_page
     INC tmp+1
     INC tmp+3
