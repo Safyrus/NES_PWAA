@@ -63,15 +63,15 @@
       - [X] Vasquez
       - [X] White
       - [X] Yogi
-  - [ ] Refine / Fix / Idea
+  - [/] Refine / Fix / Idea
     - [X] Hide tiles change
     - [X] Hide sprites change
     - [ ] Fix remaining unknow bugs
-    - [ ] Increase image draw speed
+    - [X] Increase image draw speed
     - [ ] Better image encoding
-      - [ ] reduce change for images in animations
+      - [ ] remove redundant sprite in animations
       - [ ] better compression
-      - [X] reduce unnecessary sprite usage
+      - [X] prefer to use more tiles instead of sprites
 
 ----------------------------------------------------------------
 

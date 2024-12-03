@@ -327,6 +327,22 @@ with open(filepath, "w") as f:
 # Write image pointer file
 filepath = os.path.join(args.output_folder, "img_ptr.asm")
 with open(filepath, "w") as f:
+    def write_anim_or_bnk(isanim, idx, low_str, high_str, bnk_str, size):
+        for r in range(NB_REGION):
+            for i, file in enumerate(all_files[r]):
+                if (path2name(file) in anims[r]) == isanim:
+                    if idx % 256 == 0:
+                        low_str += f".byte ({size} >> 0) & $FF\n"
+                        high_str += f".byte (({size} >> 8) & $1F) + $A0\n"
+                        bnk_str += f".byte (({size} >> 13) & $7F) + IMG_BNK\n"
+                    start = img_offsets[r][i]
+                    end = chr_offsets[r]
+                    if i + 1 < len(img_offsets[r]):
+                        end = img_offsets[r][i + 1]
+                    size += end-start
+                    idx += 1
+        return idx, low_str, high_str, bnk_str, size
+
     # comment header
     f.write("; ################\n")
     f.write("; File: Image Pointers\n")
@@ -336,16 +352,10 @@ with open(filepath, "w") as f:
     low_str = ""
     high_str = ""
     bnk_str = ""
-    reg_offset = 0
-    i = 0
-    for r in range(NB_REGION):
-        for img_offset in img_offsets[r]:
-            if i % 256 == 0:
-                low_str += f".byte ({img_offset+reg_offset} >> 0) & $FF\n"
-                high_str += f".byte (({img_offset+reg_offset} >> 8) & $1F) + $A0\n"
-                bnk_str += f".byte (({img_offset+reg_offset} >> 13) & $7F) + IMG_BNK\n"
-            i += 1
-        reg_offset += chr_offsets[r]
+    size = 0
+    idx = 0
+    idx, low_str, high_str, bnk_str, size = write_anim_or_bnk(False, idx, low_str, high_str, bnk_str, size)
+    idx, low_str, high_str, bnk_str, size = write_anim_or_bnk(True, idx, low_str, high_str, bnk_str, size)
     # write pointers
     f.write(f"img_ptr_list_lo:\n{low_str}\n")
     f.write(f"img_ptr_list_hi:\n{high_str}\n")

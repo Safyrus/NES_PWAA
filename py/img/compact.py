@@ -360,7 +360,7 @@ def compact(files: list, n_region=4, reg_offset=0, MIN_PIXEL_EQUALITY=DEFAULT_PX
                 main_snif_file.extend((len(img_data) + 2).to_bytes(2, "little"))
             main_snif_file.extend(img_data)
     chr_offset = len(main_snif_file)
-    print("Number of tiles:", [np.sum(nulltile == x, axis=(2, 1)) for x in all_tiles])
+    print("Number of tiles:", [np.sum(np.any(nulltile != all_tiles[r], axis=(2, 1))) for r in range(n_region)])
     print("Number of sprite tiles:", [np.sum(x) for x in spr_tile_mask])
     # add CHR to file
     for i in range(n_region):
