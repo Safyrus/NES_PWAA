@@ -1,0 +1,5 @@
+.include "exec_char.asm"
+.include "lz.asm"
+.include "print.asm"
+.include "read_char.asm"
+.include "read.asm"
