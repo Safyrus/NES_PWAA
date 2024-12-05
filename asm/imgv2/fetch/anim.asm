@@ -20,10 +20,10 @@ fetch_anim:
     ; bnk = anim_ptr_list_bnk[y]
     LDA anim_ptr_list_bnk, Y
     ; MMC5_BNK1, MMC5_BNK2 = bnk, bnk+1
-    STA MMC5_PRG_BNK1
     STA mmc5_banks+2
-    STA MMC5_PRG_BNK2
+    STA MMC5_PRG_BNK1
     STA mmc5_banks+3
+    STA MMC5_PRG_BNK2
     ; while X > 0
     LDY #$00
     CPX #$00

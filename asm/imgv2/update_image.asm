@@ -1,22 +1,22 @@
-update_image_in_db:
+; update_db:
+;     LDA #24
+;     STA update_image_arg+3
+;     LDA #16
+;     STA update_image_arg+1
+;     JMP update_all_no_hy
+
+; update_img_no_db:
+;     LDA #16
+;     STA update_image_arg+3
+;     JMP update_all_no_h
+
+update_all:
     LDA #24
     STA update_image_arg+3
-    LDA #16
-    STA update_image_arg+1
-    JMP update_all_image_no_hy
-
-update_all_image_no_db:
-    LDA #16
-    STA update_image_arg+3
-    JMP update_all_image_no_h
-
-update_all_image:
-    LDA #24
-    STA update_image_arg+3
-update_all_image_no_h:
+update_all_no_h:
     LDA #0
     STA update_image_arg+1
-update_all_image_no_hy:
+update_all_no_hy:
     LDA #0
     STA update_image_arg+0
     LDA #32
@@ -56,8 +56,23 @@ update_image:
     ora_adr nmi_flags, #NMI_FORCE
 
     ; size = 0
-    LDA #$00
-    STA @size
+    LDY #$00
+    STY @size
+
+    ; if dialog box is displayed
+    ; BIT effect_flags
+    ; BPL :+
+        ; copy dialog box tiles
+        ; to bottom part of character buffer
+        ; (making it always visible)
+        @copy_db:
+            LDA DB_ADR_LO, Y
+            STA IMG_CHR_LO_ADR+$200, Y
+            LDA DB_ADR_HI, Y
+            STA IMG_CHR_HI_ADR+$200, Y
+            INY
+            BNE @copy_db
+    ; :
 
     ; ----------------
     ; compute start address

@@ -89,6 +89,11 @@ draw_packets:
         LDA (@in), Y
         AND #$3F
         STA @size
+        BNE :+
+            ; packet of size 0 not valid
+            BRK
+            .byte $00
+        :
         STA @i
         add #$03
         ; if size > zp_bkg_size

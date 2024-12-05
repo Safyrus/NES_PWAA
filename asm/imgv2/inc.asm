@@ -1,0 +1,17 @@
+.include "display/anim.asm"
+.include "display/bkg_chr.asm"
+.include "display/dialog.asm"
+.include "display/img.asm"
+
+.include "draw/packet_res.asm"
+.include "draw/packets.asm"
+.include "draw/sprites.asm"
+
+.include "fetch/anim.asm"
+.include "fetch/img.asm"
+.include "fetch/util.asm"
+
+.include "rleinc.asm"
+.include "snif_decode.asm"
+.include "update_image.asm"
+.include "update_anim.asm"

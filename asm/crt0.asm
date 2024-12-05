@@ -62,7 +62,7 @@
     ; If the shift count is zero, there is no PRG-(NV)RAM.
     ; If the shift count is non-zero, the actual size is
     ; "64 << shift count" bytes, i.e. 8192 bytes for a shift count of 7.
-    .byte %10000000
+    .byte %10010000
 
     ; 11: CHR-RAM size
     ; cccc CCCC
@@ -128,7 +128,7 @@
     ; 76543210
     ; ||||||||
     ; ++++++++- PRG RAM size
-    .byte %00000010
+    .byte %00000100
 
     ; Flag 9
     ; 76543210
@@ -164,7 +164,7 @@
 
     ; main file
     .include "main_test.asm"
-    ; .include "joypad.asm"
+    .include "joypad.asm"
     .include "other.asm"
 
     ; FamiStudio Sound Engine
@@ -173,10 +173,9 @@
     .include "audio/data.asm"
 
 .segment "CODE_BNK"
-    ; .include "dialog/main.asm"
-    .include "dialog/lz_init.asm"
     ; .include "choice.asm"
-    .include "imgv2/main.asm"
+    .include "imgv2/inc.asm"
+    .include "text/inc.asm"
     ; .include "courtrecord/main.asm"
     ; .include "investigation/main.asm"
     .include "data/img/anim_ptr.asm"

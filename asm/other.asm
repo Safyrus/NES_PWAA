@@ -4,29 +4,29 @@ wait_next_frame:
     @wait_vblank:
         BIT nmi_flags
         BPL @wait_vblank
-
     ; acknowledge nmi
     and_adr nmi_flags, #($FF-NMI_DONE)
-
+    ; return
     RTS
 
 update_screen_scroll:
-    PHA
-    ; update high scroll
-    and_adr ppu_ctrl_val, #$FE
-    LDA effect_flags
-    AND #EFFECT_FLAG_NT
-    LSR
-    LSR
-    ORA ppu_ctrl_val
-    STA ppu_ctrl_val
-    STA PPU_CTRL
-    ; update mmmc5 high upper chr bits
-    LDA img_header
-    AND #$03
-    STA mmc5_upper_chr
-    ; return
-    PLA
+    ; PHA
+    ; ; update high scroll
+    ; and_adr ppu_ctrl_val, #$FE
+    ; LDA effect_flags
+    ; AND #EFFECT_FLAG_NT
+    ; LSR
+    ; LSR
+    ; ORA ppu_ctrl_val
+    ; STA ppu_ctrl_val
+    ; STA PPU_CTRL
+    ; ; update mmmc5 high upper chr bits
+    ; LDA img_header
+    ; AND #$03
+    ; STA mmc5_upper_chr
+    ; ; return
+    ; PLA
+    BRK
     RTS
 
 ; tmp+0 = input page
@@ -69,32 +69,14 @@ cp_mmc5:
 ; A / tmp
 ; X = result
 ; A = remainder
-div:
-    LDX #$FF
-    @loop:
-        sub tmp
-        INX
-        BCS @loop
-    BNE @end
-        INX
-    @end:
-    ADC tmp
-    RTS
-
-
-
-lz_check:
-    CPX lz_idx
-    STX lz_idx
-    BNE @lz
-    ; if text bank not the same
-    LDA lz_bnk_table, X
-    CMP lz_in_bnk
-    BEQ @end
-    @lz:
-        ; reset lz decoding
-        JSR lz_init
-        ; async lz_decode()
-        ora_adr txt_flags, #TXT_FLAG_LZ
-    @end:
-    RTS
+; div:
+;     LDX #$FF
+;     @loop:
+;         sub tmp
+;         INX
+;         BCS @loop
+;     BNE @end
+;         INX
+;     @end:
+;     ADC tmp
+;     RTS

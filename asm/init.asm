@@ -37,9 +37,7 @@
     ; Game: Debug Image
     ; --------
     ;
-    LDA effect_flags
-    EOR #EFFECT_FLAG_PAL_SPLIT
-    STA effect_flags
+    JSR clear_dialog
     ; test display
     LDX #COURTROOM_0
     JSR display_bkg

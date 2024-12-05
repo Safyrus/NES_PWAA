@@ -323,7 +323,7 @@
 
 
 ;================
-; Group: Game
+; Group: Banks
 ;================
 
     ; Constants: Game ROM Banks
@@ -347,10 +347,14 @@
 
     ; Constants: Game RAM Banks
     ;
-    ; TEXT_BUF_BNK - _$01_ Bank containg decoded text data
-    ; IMG_BUF_BNK  - _$00_ Bank containg decoded image data
-    TEXT_BUF_BNK = $01
-    IMG_BUF_BNK  = $00
+    ; TEXT_BUF_BNK - _$00_ Bank containg decoded text data
+    ; IMG_BUF_BNK  - _$01_ Bank containg decoded image data
+    TEXT_BUF_BNK = $00
+    IMG_BUF_BNK  = $01
+
+;================
+; Group: Game
+;================
 
     ; Constants: Dialog box text flags
     ; See: <txt_flags>
@@ -397,29 +401,6 @@
     BOX_FLAG_HIDE    = %10000000
     BOX_FLAG_NAME    = %00000010
     BOX_FLAG_REFRESH = %00000001
-
-    ; Constants: Dialog box tiles addresses
-    ;
-    ; BOX_TILE_TL - _$00F1_ Top left tile
-    ; BOX_TILE_T  - _$00F2_ Top tile
-    ; BOX_TILE_TR - _$00F3_ Top right tile
-    ; BOX_TILE_L  - _$00F4_ Left tile
-    ; BOX_TILE_M  - _$00F5_ Middle tile
-    ; BOX_TILE_R  - _$00F6_ Right tile
-    ; BOX_TILE_BL - _$00F7_ Bottom left tile
-    ; BOX_TILE_B  - _$00F8_ Bottom tile
-    ; BOX_TILE_BR - _$00F9_ Bottom right tile
-    ; BOX_UPPER_TILE - _$C0_ MMC5 upper CHR bits
-    BOX_TILE_TL = $00F1
-    BOX_TILE_T  = $00F2
-    BOX_TILE_TR = $00F3
-    BOX_TILE_L  = $00F4
-    BOX_TILE_M  = $00F5
-    BOX_TILE_R  = $00F6
-    BOX_TILE_BL = $00F7
-    BOX_TILE_B  = $00F8
-    BOX_TILE_BR = $00F9
-    BOX_UPPER_TILE = $C0
 
     ; Constants: Scanline flags
     ; See: <scanline>
@@ -470,19 +451,6 @@
     NT_MAPPING_EMPTY   = %11111111
     NT_MAPPING_NT1     = %11110100
     DEFAULT_NT_MAPPING = NT_MAPPING_EMPTY
-
-    ; Constants: Image buffers addresses
-    ;
-    ; IMG_CHR_BUF_LO  - _MMC5_RAM+$000_ Buffer for the character low bytes
-    ; IMG_CHR_BUF_HI  - _MMC5_RAM+$300_ Buffer for the character high bytes
-    ; IMG_CHR_BUF_SPR - _MMC5_RAM+$600_ Buffer for the character sprites
-    ; IMG_BKG_BUF_LO  - _MMC5_RAM+$900_ Buffer for the background low bytes
-    ; IMG_BKG_BUF_HI  - _MMC5_RAM+$C00_ Buffer for the background high bytes
-    IMG_CHR_BUF_LO  = MMC5_RAM + $000
-    IMG_CHR_BUF_HI  = MMC5_RAM + $300
-    IMG_CHR_BUF_SPR = MMC5_RAM + $600
-    IMG_BKG_BUF_LO  = MMC5_RAM + $900
-    IMG_BKG_BUF_HI  = MMC5_RAM + $C00
 
     ; Constants: HITBOX buffers addresses
     ;
@@ -566,23 +534,50 @@
 ; Group: Images
 ;================
     PACKET_BUFFER_ADR = $6000
-    IMG_BKG_LO_ADR = $6400
-    IMG_BKG_HI_ADR = $6700
-    IMG_CHR_LO_ADR = $6A00
-    IMG_CHR_HI_ADR = $6D00
-    IMG_BUF_LO_ADR = $7000
-    IMG_BUF_HI_ADR = $7300
-    IMG_BUF2_LO_ADR = $7600
-    IMG_BUF2_HI_ADR = $7900
-    IMG_CHR_SPR    = $7C00
-    ANIM_BUF_ADR   = $7D00
-    ; ???_ADR = $7E00
-    ; ???_ADR = $7F00
+    IMG_BKG_LO_ADR    = $6400
+    IMG_BKG_HI_ADR    = $6700
+    IMG_CHR_LO_ADR    = $6A00
+    IMG_CHR_HI_ADR    = $6D00
+    IMG_BUF_LO_ADR    = $7000
+    IMG_BUF_HI_ADR    = $7300
+    IMG_BUF2_LO_ADR   = $7600
+    IMG_BUF2_HI_ADR   = $7900
+    IMG_CHR_SPR       = $7C00
+    ANIM_BUF_ADR      = $7D00
 
-    IMG_FLAG_FORCE = $80
-    IMG_FLAG_UNMMC5 = $40
-    IMG_FLAG_OTHERNT = $20
+    IMG_FLAG_FORCE    = $80
+    IMG_FLAG_UNMMC5   = $40
+    IMG_FLAG_OTHERNT  = $20
     IMG_FLAG_UNSPRITE = $10
+
+;================
+; Group: Dialog Box
+;================
+    DB_ADR_LO = $7E00
+    DB_ADR_HI = $7F00
+
+    ; Constants: Dialog box tiles addresses
+    ;
+    ; DB_TILE_TL - _$00F1_ Top left tile
+    ; DB_TILE_T  - _$00F2_ Top tile
+    ; DB_TILE_TR - _$00F3_ Top right tile
+    ; DB_TILE_L  - _$00F4_ Left tile
+    ; DB_TILE_M  - _$00F5_ Middle tile
+    ; DB_TILE_R  - _$00F6_ Right tile
+    ; DB_TILE_BL - _$00F7_ Bottom left tile
+    ; DB_TILE_B  - _$00F8_ Bottom tile
+    ; DB_TILE_BR - _$00F9_ Bottom right tile
+    ; DB_UPPER_TILE - _$C0_ MMC5 upper CHR bits
+    DB_TILE_TL = $00F1
+    DB_TILE_T  = $00F2
+    DB_TILE_TR = $00F3
+    DB_TILE_L  = $00F4
+    DB_TILE_M  = $00F5
+    DB_TILE_R  = $00F6
+    DB_TILE_BL = $00F7
+    DB_TILE_B  = $00F8
+    DB_TILE_BR = $00F9
+    DB_UPPER_TILE = $C0
 
 ;================
 ; Group: Special Characters

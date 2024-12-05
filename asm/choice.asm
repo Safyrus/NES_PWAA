@@ -4,8 +4,8 @@ act_display:
     JSR act_return
     ; set text bank
     LDA #TEXT_BUF_BNK
-    STA MMC5_RAM_BNK
     STA mmc5_banks+0
+    STA MMC5_RAM_BNK
 
     JSR draw_court_record_box_only
 

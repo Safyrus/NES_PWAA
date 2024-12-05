@@ -4,8 +4,6 @@
     ; set nametable mapping to default
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
-    ;
-    inc_16 frame_counter
     ; enable interrupt
     CLI
 
@@ -29,6 +27,8 @@
     ; --------
     ; Prepare next frame graphism
     ; --------
+    ; set image bank
+    mov MMC5_RAM_BNK, #IMG_BUF_BNK
     ; draw_packets()
     JSR draw_packets
     ; if not img_flag.unsprite
@@ -38,6 +38,8 @@
         ; draw_sprites()
         JSR draw_sprites
     :
+    ; restore bank
+    mov MMC5_RAM_BNK, mmc5_banks+0
 
     ; if anim_timer > 0
     LDA anim_timer

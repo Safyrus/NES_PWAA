@@ -123,18 +123,18 @@
     LDA #(PPU_MASK_BKG + PPU_MASK_BKG8)
     STA PPU_MASK
     ; wait the next scanline
-    LDX #$14
-    @dialog_wait_5:
-        DEX
-        bnz @dialog_wait_5
+    ; LDX #$14
+    ; @dialog_wait_5:
+    ;     DEX
+    ;     bnz @dialog_wait_5
 
     ; - - - - - - - -
     ; sixth scanline (156)
     ; - - - - - - - -
     ; re-enable rendering with sprites
     ; LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
-    LDA #(PPU_MASK_BKG + PPU_MASK_BKG8)
-    STA PPU_MASK
+    ; LDA #(PPU_MASK_BKG + PPU_MASK_BKG8)
+    ; STA PPU_MASK
     ; set next scanline.
     ; Because we have disabled rendering,
     ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,

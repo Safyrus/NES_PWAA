@@ -63,10 +63,7 @@ scanline_irq_handler:
             LDA ppu_ctrl_val
             AND #$FC
             STA PPU_CTRL
-            ; and update mmmc5 high upper chr bits
-            LDA #$00
-            STA mmc5_upper_chr
-            ; and set chr upper bit to 0
+            ; and set mmc5 high upper chr bits to 0
             LDA #$00
             STA MMC5_CHR_UPPER
         @scanline_irq_top_midbox_end:
@@ -95,31 +92,28 @@ scanline_irq_handler:
         .include "scanline_pal_change.asm"
     @scanline_irq_bot_img:
         ;
-        BIT effect_flags
-        BPL @botimg_next
-            @botimg_palette_change:
-            ; set next scanline.
-            ; Because we have disabled rendering,
-            ; MMC5 scanline counter is now at 0 at the scanline where we re-enabled rendering,
-            ; Therefore, scanline 83 mean scanline when enable (155) + 83 = 238
-            LDA #83
-            STA MMC5_SCNL_VAL
-        @botimg_next:
-        ;
-        LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
-        STA PPU_MASK
-        ;
         LDA #$00
         STA MMC5_CHR_UPPER
         ; change nametable mapping
         LDA #NT_MAPPING_EMPTY
         STA MMC5_NAMETABLE
+        ; enable sprite rendering if disable
+        LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
+        STA PPU_MASK
+        ;
+        BIT effect_flags
+        BPL @botimg_next
+            @botimg_palette_change:
+            ; override next scanline.
+            ; Because we have disabled rendering,
+            ; MMC5 scanline counter is now at 0 at this scanline (where we re-enabled rendering).
+            ; Therefore, scanline 83 mean scanline 238 (155 + 83)
+            LDA #83
+            STA MMC5_SCNL_VAL
+        @botimg_next:
         ; return
         JMP @end
     @scanline_irq_bot:
-        ; change nametable mapping
-        LDA #NT_MAPPING_NT1
-        STA MMC5_NAMETABLE
         ; return
         JMP @end
 

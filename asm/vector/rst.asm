@@ -111,10 +111,14 @@ RST:
     ; setup code
     ; - - - - - - -
 
+    ; disable APU interrupts
+    LDA #$80
+    STA APU_FRAME
+
     ; set code bank
     LDA #CODE_BNK
-    STA MMC5_PRG_BNK0
     STA mmc5_banks+1
+    STA MMC5_PRG_BNK0
 
     ; set fade in flag (image does not refresh when fade in is clear)
     mov effect_flags, #(EFFECT_FLAG_FADE+EFFECT_FLAG_PAL_SPLIT)

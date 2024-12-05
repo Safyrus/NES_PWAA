@@ -19,25 +19,36 @@
 ;   $07  | unused
 ;---
 ; 
-; - MMC5 Memory Bank (TEXT_BUF_BNK):
+; - MMC5 Memory Bank 0 (TEXT_BUF_BNK):
 ;--- Text
 ;   $0000-$1FFF = 8K decoded text buffer
 ;---
 ; 
-; - MMC5 Memory Bank (IMG_BUF_BNK):
+; - MMC5 Memory Bank 1 (IMG_BUF_BNK):
 ;--- Text
 ;   $0000-$03FF = Packet buffer (4 pages)
-;   $0400-$07FF = decoded background image (low) (4 pages)
-;   $0800-$0BFF = decoded background image (high) (4 pages)
-;   $0C00-$0FFF = decoded character image (low) (4 pages)
-;   $1000-$13FF = decoded character image (high) (4 pages)
-;   $1400-$17FF = current image (low) (4 pages)
-;   $1800-$1BFF = current image (high) (4 pages)
+;   $0400-$06FF = decoded background image (low) (3 pages)
+;   $0700-$09FF = decoded background image (high) (3 pages)
+;   $0A00-$0CFF = decoded character image (low) (3 pages)
+;   $0D00-$0FFF = decoded character image (high) (3 pages)
+;   $1000-$12FF = current image (low) (3 pages)
+;   $1300-$17FF = current image (high) (3 pages)
+;   $1600-$18FF = previous image (low) (3 pages)
+;   $1900-$1BFF = previous image (high) (3 pages)
 ;   $1C00-$1CFF = decoded character sprites (1 page)
 ;   $1D00-$1DFF = animation buffer (1 page)
-;   $????-$???? = decoded evidence sprites (1 page)
-;   $????-$???? = HITBOX map (3 page)
-;   $????-$???? = HITBOX address (1 page)
+;   $1E00-$1EFF = dialog box (low) (1 page)
+;   $1F00-$1FFF = dialog box (high) (1 page)
+;---
+;
+; - MMC5 Memory Bank 2 (???):
+;--- Text
+;   $??00-$??FF = decoded evidence sprites (1 page)
+;   $??00-$??FF = HITBOX buffer (1 page)
+;---
+;
+; - MMC5 Memory Bank 3 (???):
+;--- Text
 ;---
 
 
@@ -94,7 +105,8 @@
     ; - $27 = Nametable 2
     ; - $2B = Nametable 3
     ; - $2F = Nametable 4
-    atr_nametable: .res 1
+    ; atr_nametable: .res 1
+    .res 1
     
     ; Variable: ppu_ctrl_val
     ;----------------
@@ -104,7 +116,7 @@
     ; Variable: txt_rd_ptr
     ;----------------
     ; pointer to current text to read
-    txt_rd_ptr: .res 2
+    txt_ptr: .res 2
 
     ; Variable: palettes
     ;----------------
@@ -161,38 +173,8 @@ OAM:
 .segment "BSS"
 
     ;================
-    ; Group: Arrays
+    ; Group: Flags Arrays
     ;================
-
-        ; Variable: buf_photo_lo
-        ;----------------
-        ; buffer for storing the evidence photo (low byte)
-        buf_photo_lo: .res 64
-
-        ; Variable: buf_photo_hi
-        ;----------------
-        ; buffer for storing the evidence photo (high byte)
-        buf_photo_hi: .res 64
-
-        ; Variable: spr_x_buf
-        ;----------------
-        ; buffer for the X position of sprites
-        spr_x_buf: .res 64
-
-        ; Variable: img_partial_buf
-        ;----------------
-        ; data buffer of the partial image to send to PPU
-        img_partial_buf: .res IMG_PARTIAL_MAX_BUF_LEN
-
-        ; Variable: print_ppu_buf
-        ;----------------
-        ; buffer containing text to print to ppu
-        print_ppu_buf: .res 32
-
-        ; Variable: print_ext_buf
-        ;----------------
-        ; buffer containing text to print to ext ram
-        print_ext_buf: .res 32
 
         ; Variable: dialog_flags
         ;----------------
@@ -308,30 +290,38 @@ OAM:
     ; Group: Variables for LZ decoding
     ;================
 
+        .segment "ZEROPAGE"
         ; Variable: lz_in
         ;----------------
         ; pointer to input data
         lz_in: .res 2
 
+        ; Variable: lz_out
+        ;----------------
+        ; pointer to output data
+        lz_out: .res 2
+
+        ; Variable: lz_buf
+        ;----------------
+        ; pointer to decoded text
+        lz_buf: .res 2
+
+        ; Variable: lz_out
+        ;----------------
+        ; size of text block
+        lz_size: .res 2
+
+        .segment "BSS"
+
         ; Variable: lz_in_bnk
         ;----------------
         ; bank to use for input data
-        lz_in_bnk: .res 1
+        lz_bnk: .res 1
 
         ; Variable: lz_idx
         ;----------------
         ; index to use for fetching data in lz tables
         lz_idx: .res 1
-
-        ; Variable: lz_ret
-        ;----------------
-        ; address to jump back to in read_text() when LZ has finish loading
-        lz_ret: .res 2
-
-        ; Variable: lz_ret_chr
-        ;----------------
-        ; char read before setting lz_ret
-        lz_ret_chr: .res 1
 
     ;================
     ; Group: Variables for text reading
@@ -480,7 +470,6 @@ OAM:
     ;================
     ; Group: Image Variables
     ;================
-
         ; Variable: img_photo
         ;----------------
         ; photo/evidence to show,
@@ -492,131 +481,10 @@ OAM:
         ; background image to display
         img_background: .res 1
 
-        ; Variable: img_anim
+        ; Variable: img_character
         ;----------------
-        ; character animation index
-        img_anim:
-
-            ; Variable: img_character
-            ;----------------
-            ; character image to display
-            img_character: .res 1
-
-            ; Variable: img_animation
-            ;----------------
-            ; character animation image to display
-            img_animation: .res 1
-
-        ; Variable: img_partial_buf_len
-        ;----------------
-        ; length of img_partial_buf
-        img_partial_buf_len: .res 1
-
-    ;================
-    ; Group: Animation Variables
-    ;================
-
-        ; Variable: anim_base_adr
-        ;----------------
-        ; pointer to the base of the current animation data
-        anim_base_adr: .res 2
-
-        ; Variable: anim_adr
-        ;----------------
-        ; pointer to the current animation data
-        anim_adr: .res 2
-
-        ; Variable: anim_bnk
-        ;----------------
-        ; bank of the current animation data
-        anim_bnk: .res 1
-
-        ; Variable: anim_img_counter
-        ;----------------
-        ; current animation frame index
-        anim_img_counter: .res 1
-
-        ; Variable: anim_frame_counter
-        ;----------------
-        ; remaining game frame before the next animation frame
-        anim_frame_counter: .res 1
-
-    ;================
-    ; Group: Sprites Variables
-    ;================
-
-        ; Variable: img_header
-        ;----------------
-        ;--- Text
-        ; img_spr_header:
-        ; FPTS ..BB
-        ; ||||   ++-- CHR bits for the MMC5 upper CHR Bank bits
-        ; |||+------- is Sprite map present ?
-        ; ||+-------- is Tile map present ?
-        ; |+--------- is Palette present ?
-        ; +---------- 1 = Full frame
-        ;             0 = partial frame
-        ;---
-        img_header: .res 1
-
-        ; Variable: img_spr_w
-        ;----------------
-        ; width in tiles of the mega sprite
-        img_spr_w: .res 1
-
-        ; Variable: img_spr_b
-        ;----------------
-        ; bank index of the mega sprite
-        img_spr_b: .res 1
-
-        ; Variable: img_spr_x
-        ;----------------
-        ; image mega sprite position offset x
-        img_spr_x: .res 1
-
-        ; Variable: img_spr_y
-        ;----------------
-        ; image mega sprite position offset y
-        img_spr_y: .res 1
-
-        ; Variable: img_spr_count
-        ;----------------
-        ; image number of sprites
-        img_spr_count: .res 1
-
-    ;================
-    ; Group: Palette Variables
-    ;================
-
-        ; Variable: img_palettes
-        ;----------------
-        ; palettes to use for the background and character
-        img_palettes:
-
-            ; Variable: img_palette_bkg
-            ;----------------
-            ; background color
-            img_palette_bkg: .res 1
-
-            ; Variable: img_palette_0
-            ;----------------
-            ; background palette
-            img_palette_0: .res 3
-
-            ; Variable: img_palette_1
-            ;----------------
-            ; character primary/background palette
-            img_palette_1: .res 3
-
-            ; Variable: img_palette_2
-            ;----------------
-            ; character contour palette
-            img_palette_2: .res 3
-
-            ; Variable: img_palette_3
-            ;----------------
-            ; character secondary/sprites palette
-            img_palette_3: .res 3
+        ; character image to display
+        img_character: .res 2
 
     ;================
     ; Group: Player choice variables
@@ -651,6 +519,7 @@ OAM:
     ;================
     ; Group: MMC5 Banking
     ;================
+
         ; Variable: mmc5_upper_chr
         ;----------------
         ; the upper bits of the MMC5 CHR register
@@ -660,19 +529,6 @@ OAM:
         ;----------------
         ; mmc5 banks to restore (ram,bnk0,bnk1,bnk2)
         mmc5_banks: .res 4
-
-    ;================
-    ; Group: Other variables
-    ;================
-        ; Variable: palette_counter
-        ;----------------
-        ; palette offsets use when decoding palette from an image
-        palette_counter: .res 3
-
-        ; Variable: frame_counter
-        ;----------------
-        ; Count the number of frame ellapsed
-        frame_counter: .res 2
 
     ;================
     ; Group: Investigation variables
@@ -728,3 +584,13 @@ OAM:
         anim_timer: .res 1
         anim_size: .res 1
         cur_chr: .res 2
+
+    ;================
+    ; Group: Text variables
+    ;================
+        text_wait_timer: .res 1
+        text_speed_timer: .res 1
+        text_wait: .res 1
+        text_speed: .res 1
+        print_offset: .res 1
+        text_font: .res 1
