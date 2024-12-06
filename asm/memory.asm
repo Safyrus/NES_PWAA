@@ -594,3 +594,4 @@ OAM:
         text_speed: .res 1
         print_offset: .res 1
         text_font: .res 1
+        text_color: .res 1

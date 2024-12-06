@@ -20,7 +20,7 @@ update_anim:
 
     ; --- update ---
     ; mmc5_bnk (for anim_buf)
-    LDA #IMG_BNK
+    LDA #IMG_BUF_BNK
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
     ; img_idx, time = anim_buf[anim_idx]

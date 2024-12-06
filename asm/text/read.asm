@@ -57,8 +57,9 @@ read:
     mov text_wait_timer, text_wait
     ; update speed timer
     LDA text_speed_timer
-    AND #$1F
-    add text_speed
+    AND #$1F ; number of char to display = 0
+    add text_speed ; text_speed_timer += text_speed
+    STA text_speed_timer
 
     ; return
     @return:

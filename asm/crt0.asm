@@ -163,7 +163,7 @@
     .include "vector/scanline.asm"
 
     ; main file
-    .include "main_test.asm"
+    .include "main.asm"
     .include "joypad.asm"
     .include "other.asm"
 

@@ -43,6 +43,10 @@ cp_page:
 ; copy upper tiles from image buffer to MMC5
 ; do not save registers
 cp_mmc5:
+    ; set image buffer bank
+    LDA #IMG_BUF_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
     ; output page = MMC5_EXP_RAM+$60
     mov tmp+2, #$60
     mov tmp+3, #>MMC5_EXP_RAM

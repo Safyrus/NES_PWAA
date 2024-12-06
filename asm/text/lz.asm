@@ -11,17 +11,6 @@ lz_decode:
     ; ----------------
     ; enable NMI_FORCE flag
     ora_adr nmi_flags, #NMI_FORCE
-    ; set output bank
-    LDA #TEXT_BUF_BNK
-    STA mmc5_banks+0
-    STA MMC5_RAM_BNK
-    ; set input bank
-    LDX lz_bnk
-    STX mmc5_banks+2
-    STX MMC5_PRG_BNK1
-    INX
-    STX mmc5_banks+3
-    STX MMC5_PRG_BNK2
 
     ; ----------------
     ; Setup variables
@@ -38,6 +27,17 @@ lz_decode:
     STA lz_in+0
     LDA lz_adr_table_hi, X
     STA lz_in+1
+    ; set output bank
+    LDA #TEXT_BUF_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+    ; set input bank
+    LDX lz_bnk
+    STX mmc5_banks+2
+    STX MMC5_PRG_BNK1
+    INX
+    STX mmc5_banks+3
+    STX MMC5_PRG_BNK2
     ; lz_size = *lz_in
     LDY #$00
     LDA (lz_in), Y

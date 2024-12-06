@@ -12,167 +12,72 @@
 ;   init()
 ;   loop:
 ;     wait_next_frame()
-;     inputs()
-;     effects()
-;     image()
-;     name()
-;     lz()
-;     dialog_box()
-;     photo()
+;     inputs() TODO
+;     effects() TODO
+;     update image
+;     update text
 ;---
 ;--------------------------------
 MAIN:
-    .include "main/init.asm"
+    .include "init.asm"
 
 MAIN_LOOP:
+    ; wait for start of frame / acknowledge nmi
     JSR wait_next_frame
+    @MAIN_LOOP_START:
 
-    ; if we are not drawing the background
-    LDA effect_flags
-    AND #EFFECT_FLAG_DRAW
-    bnz :+
-    ; and if the court record or choice is not showned
-    LDA max_choice
-    BNE :+
-    LDA cr_flag
-    AND #CR_FLAG_SHOW
-    BNE :+
-        ; then update the scroll position to the correct screen buffer
-        JSR update_screen_scroll
-    :
+    ; ----------------
+    ; Update Text
+    ; ----------------
+    ; JSR read
 
-    .include "input/input.asm"
-    .include "effect/main.asm"
-
-    ; if we don't do a lenghty operation
-    LDA txt_flags
-    AND #(TXT_FLAG_BOX + TXT_FLAG_LZ + TXT_FLAG_PRINT)
-    BNE :+
-    ; and if we are not in a choice
-    LDA max_choice
-    BNE :+
-    ; and if we are not in the court record
-    LDA cr_flag
-    AND #CR_FLAG_SHOW
-    BNE :+
-    ; and if we are not playing a DPCM sample
-    LDA APU_STATUS
-    AND #%00010000 ; DPCM active flag
-    BNE :+
-        ; then update graphics
-        JSR frame_decode
-    :
-
-    ; refresh dialog box name if needed
-    LDA box_flags
-    AND #BOX_FLAG_NAME
-    BEQ @name_refresh_end
-    @name_refresh:
-        and_adr box_flags, #($FF-BOX_FLAG_NAME)
-        JSR draw_name
-    @name_refresh_end:
-
-    ; lz decode if needed
-    LDA txt_flags
-    AND #TXT_FLAG_LZ
-    BEQ @lz_end
-        JSR lz_decode
-        and_adr txt_flags, #($FF-TXT_FLAG_LZ)
-    @lz_end:
-
-    ; draw/refresh dialog box if needed
-    LDA txt_flags
-    AND #TXT_FLAG_BOX
-    BEQ @box_end
-        ; if BOX_FLAG_REFRESH
-        LDA box_flags
-        AND #BOX_FLAG_REFRESH
-        BEQ @box_redraw
-        @box_refresh:
-            ; then refresh dialog box
-            JSR draw_dialog_box
-            ; break
-            JMP @box_done
-        @box_redraw:
-            ; if dialog box is switching to on
-            LDA box_flags
-            AND #BOX_FLAG_HIDE
-            BEQ @box_redraw_hide
-            @box_redraw_display:
-                ; then undraw the dialog box (by drawing the bottom image on top)
-                sta_ptr tmp+0, (PPU_NAMETABLE_0+$260)
-                JSR img_draw_bot_lo
-                sta_ptr tmp+0, (MMC5_EXP_RAM+$260)
-                JSR img_draw_bot_hi
-                ; break
-                JMP @box_redraw_end
-            @box_redraw_hide:
-                ; else
-                JSR draw_dialog_box
-            @box_redraw_end:
-            ; flip the midframe split flag
-            eor_adr effect_flags, #EFFECT_FLAG_PAL_SPLIT
-        @box_done:
-        ; clear TXT_FLAG_BOX
-        and_adr txt_flags, #($FF-TXT_FLAG_BOX)
-    @box_end:
-
-    ; display photo if needed
-    BIT img_photo
-    BPL @photo_end
-        ; clear draw flag
-        and_adr img_photo, #$7F
-        ; draw photo
-        LDY #$22
-        LDX #$6C
-        JSR draw_photo
-    @photo_end:
-
-    ;
-    LDA click_flag
-    BEQ @invest_end
-        ;
-        AND #CLICK_INIT
+    ; ----------------
+    ; Update Images
+    ; ----------------
+    ; if currently drawing an image
+    ; TODO: better flag condition ?
+    LDA img_flag
+    AND #(IMG_FLAG_UNSPRITE+IMG_FLAG_UNMMC5)
+    BEQ :+
+        ; if packet_buf_read_adr == packet_buf_write_adr
+        ; (a.k.a nothing left to draw)
+        LDA packet_buf_read_adr+1
+        CMP packet_buf_write_adr+1
         BNE :+
-            JSR investigation_init
-        :
-        ; set cursor sprite palette
-        mov img_palette_3+0, #$0F
-        LDA buttons_1_timer
-        BEQ :+
-            mov img_palette_3+1, #$00
-            mov img_palette_3+2, #$10
-            JMP :++
-        :
-            mov img_palette_3+1, #$10
-            mov img_palette_3+2, #$20
-        :
+        LDA packet_buf_read_adr+0
+        CMP packet_buf_write_adr+0
+        BNE :+
+            ; re-enable sprites and MMC5 tiles update
+            LDA img_flag
+            AND #$FF-(IMG_FLAG_UNMMC5+IMG_FLAG_UNSPRITE)
+            STA img_flag
+            ; update palettes
+            LDY #$3*8
+            @update_pals:
+                LDA img_pals, Y
+                STA palettes, Y
+                DEY
+                BPL @update_pals
+            ; wait to be in frame
+            @wait_inframe:
+                BIT scanline
+                BVC @wait_inframe
+            ; change scroll position to other nametable
+            ; (we need to change scroll before updating MMC5 tiles)
+            LDA ppu_ctrl_val
+            EOR #$01
+            STA PPU_CTRL
+            STA ppu_ctrl_val
+            ; copy MMC5 tiles
+            JSR cp_mmc5
+            ; swap nametable to use
+            eor_adr img_flag, #IMG_FLAG_OTHERNT
+            ; update sprites
+            JSR draw_sprites
+    :
+    ; update animation
+    JSR update_anim
 
-        ; set cursor sprite
-        LDA cursor_y
-        STA OAM+0 ; y
-        STA OAM+4 ; y
-        LDA cursor_x
-        CMP #$F8
-        blt :+
-            LDA #$FF
-            STA OAM+4
-        :
-        LDA cursor_x
-        STA OAM+3 ; x
-        add #$08
-        STA OAM+7 ; x
-        mov MMC5_CHR_BNK7, #CLICK_SPR_BNK
-        LDX #CLICK_SPR_IDX
-        STX OAM+1 ; tile
-        INX
-        INX
-        STX OAM+5 ; tile
-        LDA #$00
-        STA OAM+2 ; atr
-        STA OAM+6 ; atr
-    @invest_end:
-
-
+    @MAIN_END:
     ; loop back to start of main
     JMP MAIN_LOOP

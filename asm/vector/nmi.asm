@@ -160,13 +160,14 @@ NMI:
         STA PPU_ADDR
         LDX #$00
         STX PPU_ADDR
-        ; prepare transparent color
-        INX ; X = 1
-        LDY palettes
         ; send data to PPU
+        INX
+        LDY #$0
         @palette_loop:
-            ; send transparent
-            STY PPU_DATA
+            ; send dummy transparent color
+            LDA dummy_pal, Y
+            STA PPU_DATA
+            INY
             ; send 3 colors
             LDA palettes, X
             STA PPU_DATA
@@ -180,6 +181,13 @@ NMI:
             ; loop
             CPX #25
             BNE @palette_loop
+        ; send real transparent color
+        LDA #$3F
+        STA PPU_ADDR
+        LDA #$00
+        STA PPU_ADDR
+        LDA palettes
+        STA PPU_DATA
         ; restore flags
         PLA
     @palette_end:
@@ -228,9 +236,15 @@ NMI:
     RTI
 
 
-; pal 1-7
-; double because tile background color = sprite background color
-; first background color = [palettes+0]
+; Transparent palette use to choose scanline color
+; during mid-frame palette switch.
+; Data is double because writing a background color
+; is the same as writing a sprite color.
+; First background color = [palettes+0]
 dummy_pal:
-.byte      $30, $0F, $0F
-.byte $0F, $30, $0F, $0F
+; padding because we write 8 palettes
+; and the 4 first color will be overwritten
+.byte $FF, $FF, $FF, $FF
+; first byte will be overwritten by the real transparent color
+; The next three bytes are the real 'fake' transparent color
+.byte $FF, $30, $10, $00

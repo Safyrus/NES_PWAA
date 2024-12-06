@@ -23,7 +23,7 @@ display_anim:
     ; copy(anim_buf,anim_adr)
     ; --------
     ; mmc5_bnk (for anim_buf)
-    LDA #IMG_BNK
+    LDA #IMG_BUF_BNK
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
     ; Y = adr[0] ; anim byte size
