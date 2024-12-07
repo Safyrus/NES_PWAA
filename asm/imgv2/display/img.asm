@@ -44,7 +44,7 @@ display_img:
     BIT effect_flags
     BPL :+
         ; update all except dialog box space
-        JSR update_all
+        JSR update_img_no_db
         JMP :++
     ; else
     :

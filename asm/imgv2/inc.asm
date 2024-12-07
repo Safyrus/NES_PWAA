@@ -13,5 +13,6 @@
 
 .include "rleinc.asm"
 .include "snif_decode.asm"
-.include "update_image.asm"
-.include "update_anim.asm"
+.include "update/anim.asm"
+.include "update/dialog.asm"
+.include "update/image.asm"

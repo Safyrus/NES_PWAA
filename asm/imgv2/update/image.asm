@@ -5,10 +5,10 @@ update_db:
     STA update_image_arg+1
     JMP update_all_no_hy
 
-; update_img_no_db:
-;     LDA #16
-;     STA update_image_arg+3
-;     JMP update_all_no_h
+update_img_no_db:
+    LDA #16
+    STA update_image_arg+3
+    JMP update_all_no_h
 
 update_all:
     LDA #24
@@ -59,21 +59,6 @@ update_image:
     ; size = 0
     LDY #$00
     STY @size
-
-    ; if dialog box is displayed
-    ; BIT effect_flags
-    ; BPL :+
-        ; copy dialog box tiles
-        ; to bottom part of character buffer
-        ; (making it always visible)
-        @copy_db:
-            LDA DB_ADR_LO, Y
-            STA IMG_CHR_LO_ADR+$200, Y
-            LDA DB_ADR_HI, Y
-            STA IMG_CHR_HI_ADR+$200, Y
-            INY
-            BNE @copy_db
-    ; :
 
     ; ----------------
     ; compute start address

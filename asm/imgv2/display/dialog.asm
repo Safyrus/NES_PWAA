@@ -1,7 +1,5 @@
 clear_dialog:
-    ; set bank
-    LDA mmc5_banks+0
-    PHA
+    ; set IMG bank
     LDA #IMG_BUF_BNK
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
@@ -48,9 +46,6 @@ clear_dialog:
     STA DB_ADR_LO+0+(7*32)
     LDA #DB_TILE_BR
     STA DB_ADR_LO+31+(7*32)
-    ; restore bank
-    PLA
-    STA mmc5_banks+0
-    STA MMC5_RAM_BNK
+    ; update dilog box
+    JMP update_dialog
     ; return
-    RTS
