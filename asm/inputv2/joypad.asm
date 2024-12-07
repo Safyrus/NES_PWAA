@@ -52,22 +52,21 @@ readjoy:
 update_input:
     ; if buttons_1_timer > 0
     LDA buttons_1_timer
-    bze @timer_reset
-    ; then
-        ; buttons_1_timer--
-        DEC buttons_1_timer
+    BEQ :+
         ; input = 0
         mov buttons_1, #$00
-        ; end
-        JMP @end
-    ; else
-    @timer_reset:
-        ; read input
-        JSR readjoy
-        ; if input != 0
-        LDA buttons_1
-        bze @end
-            ; buttons_1_timer = BTN_TIMER
-            mov buttons_1_timer, #BTN_TIMER
-    @end:
+        ; return
+        RTS
+    :
+
+    ; read input
+    JSR readjoy
+    ; if input != 0
+    LDA buttons_1
+    BEQ :+
+        ; buttons_1_timer = BTN_TIMER
+        mov buttons_1_timer, #BTN_TIMER
+    :
+
+    ; return
     RTS

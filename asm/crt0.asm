@@ -164,7 +164,7 @@
 
     ; main file
     .include "main.asm"
-    .include "joypad.asm"
+    .include "inputv2/inc.asm"
     .include "other.asm"
 
     ; FamiStudio Sound Engine

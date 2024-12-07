@@ -1,77 +1,90 @@
-## To-do
+## To-do: Image V2
 
-- [/] Image V2
-  - [X] Python
-    - [X] Find wanted format
-    - [X] Transform 1 image 2 other images that respect NES limitation
-    - [X] Transform 1 image into SNIF binary file
-    - [X] Compact (with compression) any SNIF files into 1
-    - [X] Script to convert folders of images into 1 SNIF file
-    - [X] Make tile equality close to X pixel (because CHR is only 1MB)
-    - [X] Have images that can be substract to another (for animation purpose)
-    - [X] Encode animation from file names
-    - [X] Generate real NES files from SNIF (CHR, data.asm, etc.)
-    - [X] Have default parameters for NES image conversion for background and character
-    - [X] Order background first
-    - [X] Remove old scripts and add the new ones
-  - [X] ASM
-    - [X] pseudo algorithm
-    - [X] draw packets
-    - [X] draw sprites
-    - [X] decode snif
-    - [X] update image
-    - [X] display bkg image
-    - [X] display chr image
-    - [X] fetch image
-    - [X] animations
-  - [X] Test
-    - [X] Test 1 image decode (no spr)
-    - [X] Test 1 image display (no spr)
-    - [X] Test 1 image decode
-    - [X] Test 1 image display
-    - [X] Test any image display
-    - [X] Test any animation
-  - [/] Image
-    - [X] backgrounds
-      - [X] courtroom
-      - [X] location
-      - [X] cutscenes
-    - [ ] evidences ?
-    - [ ] background variation
-    - [X] characters
-      - [X] April
-      - [X] BellBoy
-      - [X] Cody
-      - [X] Edgeworth
-      - [X] Grossberg
-      - [X] Gumshoe
-      - [X] Judge
-      - [X] Karma
-      - [X] Larry (Santa)
-      - [X] Larry
-      - [X] Lotta
-      - [X] Manella
-      - [X] Maya
-      - [X] Mia/Maya
-      - [X] Mia
-      - [X] Oldbag
-      - [X] Payne
-      - [X] Penny
-      - [X] Phoenix
-      - [X] Power
-      - [X] Sahwit
-      - [X] Vasquez
-      - [X] White
-      - [X] Yogi
-  - [/] Refine / Fix / Idea
-    - [X] Hide tiles change
-    - [X] Hide sprites change
-    - [ ] Fix remaining unknow bugs
-    - [X] Increase image draw speed
-    - [ ] Better image encoding
-      - [ ] remove redundant sprite in animations
-      - [ ] better compression
-      - [X] prefer to use more tiles instead of sprites
+- [X] Python
+  - [X] Find wanted format
+  - [X] Transform 1 image 2 other images that respect NES limitation
+  - [X] Transform 1 image into SNIF binary file
+  - [X] Compact (with compression) any SNIF files into 1
+  - [X] Script to convert folders of images into 1 SNIF file
+  - [X] Make tile equality close to X pixel (because CHR is only 1MB)
+  - [X] Have images that can be substract to another (for animation purpose)
+  - [X] Encode animation from file names
+  - [X] Generate real NES files from SNIF (CHR, data.asm, etc.)
+  - [X] Have default parameters for NES image conversion for background and character
+  - [X] Order background first
+  - [X] Remove old scripts and add the new ones
+- [X] ASM
+  - [X] pseudo algorithm
+  - [X] draw packets
+  - [X] draw sprites
+  - [X] decode snif
+  - [X] update image
+  - [X] display bkg image
+  - [X] display chr image
+  - [X] fetch image
+  - [X] animations
+- [X] Test
+  - [X] Test 1 image decode (no spr)
+  - [X] Test 1 image display (no spr)
+  - [X] Test 1 image decode
+  - [X] Test 1 image display
+  - [X] Test any image display
+  - [X] Test any animation
+- [/] Image
+  - [X] backgrounds
+    - [X] courtroom
+    - [X] location
+    - [X] cutscenes
+  - [ ] evidences ?
+  - [ ] background variation
+  - [X] characters
+    - [X] April
+    - [X] BellBoy
+    - [X] Cody
+    - [X] Edgeworth
+    - [X] Grossberg
+    - [X] Gumshoe
+    - [X] Judge
+    - [X] Karma
+    - [X] Larry (Santa)
+    - [X] Larry
+    - [X] Lotta
+    - [X] Manella
+    - [X] Maya
+    - [X] Mia/Maya
+    - [X] Mia
+    - [X] Oldbag
+    - [X] Payne
+    - [X] Penny
+    - [X] Phoenix
+    - [X] Power
+    - [X] Sahwit
+    - [X] Vasquez
+    - [X] White
+    - [X] Yogi
+- [/] Refine / Fix / Idea
+  - [X] Hide tiles change
+  - [X] Hide sprites change
+  - [ ] Fix remaining unknow bugs
+  - [X] Increase image draw speed
+  - [ ] Better image encoding
+    - [ ] remove redundant sprite in animations
+    - [ ] better compression
+    - [X] prefer to use more tiles instead of sprites
+
+----------------------------------------------------------------
+
+## To-do: Dialog Box V2
+
+- [/] Display
+  - [X] Mid-Frame palette switch
+  - [X] Update dialog box
+  - [X] Clear dialog box
+  - [X] Print text
+  - [ ] Refactor to read text each frame
+- [/] Logic
+  - [X] Read Text
+  - [ ] Special Chars (3/32)
 
 ----------------------------------------------------------------
 

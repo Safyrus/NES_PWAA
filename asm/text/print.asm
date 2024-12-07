@@ -1,9 +1,16 @@
 ; char (c) = A
 ; clobber A, Y
 print:
+    ; ----------------
+    ; Put char into Dialog box bufer
+    ; ----------------
     ; switch bank
+    ; TODO: check if bug can arise
+    ; if NMI restore banks before the end of the function.
+    ; Normally, we print at the start of the frame,
+    ; so this should not occure, but still.
     LDY #IMG_BUF_BNK
-    STY MMC5_RAM_BNK ; TODO: check if bug can occure if NMI restore bank between
+    STY MMC5_RAM_BNK
     ; Y = print_offset
     LDY print_offset
     ; dialogbox[Y] = c (low)
@@ -23,6 +30,7 @@ print:
     ; restore bank
     LDY mmc5_banks+0
     STY MMC5_RAM_BNK
+
     ; print_offset++
     INC print_offset
     ; return

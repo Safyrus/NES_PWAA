@@ -34,10 +34,22 @@
     STA packet_buf_write_adr+1
 
     ; --------
+    ; Game: Text
+    ; --------
+    ; init text data
+    JSR lz_decode
+    ; init text variables
+    mov text_speed, #$10
+    mov text_font, #$00
+    mov text_color, #$C0
+    ;
+    JSR dialog_reset
+    ; txt_ptr = MMC5_RAM
+    sta_ptr txt_ptr, MMC5_RAM
+
+    ; --------
     ; Game: Debug Image
     ; --------
-    ;
-    JSR clear_dialog
     ; test display
     LDX #COURTROOM_0
     JSR display_bkg

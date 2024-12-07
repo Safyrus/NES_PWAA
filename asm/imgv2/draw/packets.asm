@@ -103,11 +103,11 @@ draw_packets:
             BEQ :+
             BCS @skip_packet
             :
-        ; prio = @in[1] & $F0
+        ; prio = @in[1] & $80
         INY
         LDA (@in), Y
         DEY
-        AND #$F0
+        AND #$80
         ; if prio != current prio
         CMP @cur_prio
             ; can_move_read = 0

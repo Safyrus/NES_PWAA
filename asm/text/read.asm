@@ -61,6 +61,9 @@ read:
     add text_speed ; text_speed_timer += text_speed
     STA text_speed_timer
 
+    ; flush text
+    JSR flush
+
     ; return
     @return:
     pullregs

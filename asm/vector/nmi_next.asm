@@ -29,11 +29,11 @@
     ; --------
     ; set image bank
     mov MMC5_RAM_BNK, #IMG_BUF_BNK
-    ; draw_packets(prio=8)
+    ; draw_packets(prio=true)
     LDA #$80
     STA draw_packet_var+0 ; @cur_prio
     JSR draw_packets
-    ; draw_packets(prio=0)
+    ; draw_packets(prio=false)
     LDA #$00
     STA draw_packet_var+0 ; @cur_prio
     JSR draw_packets
@@ -61,4 +61,10 @@
     BEQ :+
         ; text_wait_timer--
         DEC text_wait_timer
+    :
+    ; if buttons_1_timer > 0
+    LDA buttons_1_timer
+    BEQ :+
+        ; buttons_1_timer--
+        DEC buttons_1_timer
     :

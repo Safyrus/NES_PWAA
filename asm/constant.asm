@@ -580,6 +580,13 @@
     DB_UPPER_TILE = $C0
 
 ;================
+; Group: Text
+;================
+    ; MAX_TXT_SPD is 15 char per frames.
+    ; More than that and text_speed_timer may overflow
+    MAX_TXT_SPD = $F0
+
+;================
 ; Group: Special Characters
 ;================
 

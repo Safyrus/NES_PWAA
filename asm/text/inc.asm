@@ -1,5 +1,12 @@
 .include "exec_char.asm"
+.include "flush.asm"
 .include "lz.asm"
 .include "print.asm"
 .include "read_char.asm"
 .include "read.asm"
+.include "reset.asm"
+.include "save_spd.asm"
+
+.include "char/END.asm"
+.include "char/LB.asm"
+.include "char/DB.asm"

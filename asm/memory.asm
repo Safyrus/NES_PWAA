@@ -588,10 +588,15 @@ OAM:
     ;================
     ; Group: Text variables
     ;================
-        text_wait_timer: .res 1
-        text_speed_timer: .res 1
+        ; parameters that the dialog box can change
         text_wait: .res 1
         text_speed: .res 1
-        print_offset: .res 1
         text_font: .res 1
         text_color: .res 1
+
+        text_wait_timer: .res 1
+        text_speed_timer: .res 1
+        text_prev_speed: .res 1
+        print_offset: .res 1
+        print_start: .res 1
+        text_lb_offset: .res 1

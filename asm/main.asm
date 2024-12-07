@@ -27,9 +27,15 @@ MAIN_LOOP:
     @MAIN_LOOP_START:
 
     ; ----------------
+    ; Update Inputs
+    ; ----------------
+    JSR update_input
+    JSR input_normal
+
+    ; ----------------
     ; Update Text
     ; ----------------
-    ; JSR read
+    JSR read
 
     ; ----------------
     ; Update Images
