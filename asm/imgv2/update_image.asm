@@ -1,9 +1,9 @@
-; update_db:
-;     LDA #24
-;     STA update_image_arg+3
-;     LDA #16
-;     STA update_image_arg+1
-;     JMP update_all_no_hy
+update_db:
+    LDA #24
+    STA update_image_arg+3
+    LDA #16
+    STA update_image_arg+1
+    JMP update_all_no_hy
 
 ; update_img_no_db:
 ;     LDA #16
@@ -51,6 +51,7 @@ update_image:
     @old_buf_lo = tmp+18
     @old_buf_hi = tmp+20
     @size = tmp+22
+    @max_size = tmp+23
 
     ; enable NMI_FORCE flag
     ora_adr nmi_flags, #NMI_FORCE
@@ -194,10 +195,7 @@ update_image:
                 LDA @size
                     ; continue
                     BEQ @continue_x
-                ; packet_adr[0] = size
-                STA (@packet_adr), Y
-                ; size = 0
-                STY @size
+                JSR @reduce_packet
                 ; continue
                 JMP @continue_x
             :
@@ -216,6 +214,7 @@ update_image:
                 EOR #$FF
                 TAY
                 INY
+                STY @max_size
                 ; packet_adr = packet_buf_res(w - i, adr)
                 JSR packet_buf_res
             :
@@ -262,10 +261,8 @@ update_image:
         LDY #$00
         LDA @size
         BEQ :+
-            STA (@packet_adr), Y
+            JSR @reduce_packet
         :
-        ; size = 0
-        STY @size
         ; add 32-w to pointers
         LDA #$20
         sub @arg_w
@@ -308,3 +305,28 @@ update_image:
 
     ; return
     RTS
+
+    @reduce_packet:
+        ; packet_adr[0] = size
+        STA (@packet_adr), Y
+        ; dif = max_size - size
+        sub @max_size
+        EOR #$FF
+        add #$01
+        ; size = dif*2
+        ASL
+        STA @size
+        ; if dif != 0
+        BEQ :++
+            ; @packet_buf_write_adr -= size
+            LDA packet_buf_write_adr+0
+            sub @size
+            STA packet_buf_write_adr+0
+            BCS :+
+                DEC packet_buf_write_adr+1
+            :
+            ; size = 0
+            STY @size
+        :
+        ; return
+        RTS
