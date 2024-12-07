@@ -107,13 +107,12 @@ scanline_irq_handler:
             ; override next scanline.
             ; Because we have disabled rendering,
             ; MMC5 scanline counter is now at 0 at this scanline (where we re-enabled rendering).
-            ; Therefore, scanline 83 mean scanline 238 (155 + 83)
-            LDA #83
+            ; But it seems that doing this strategy only work well one time per frame, becoming unreliable after that.
+            ; This seems to make the MMC5 scanline counter wait for the next frame to take effect.
+            ; Therefore, we will jump a the start of next frame
+            LDA #1
             STA MMC5_SCNL_VAL
         @botimg_next:
-        ; return
-        JMP @end
-    @scanline_irq_bot:
         ; return
         JMP @end
 
@@ -128,7 +127,6 @@ scanline_irq_handler:
         .byte <(@scanline_irq_bot_midbox-1)
         .byte <(@scanline_irq_dialog-1)
         .byte <(@scanline_irq_bot_img-1)
-        .byte <(@scanline_irq_bot-1)
         .byte <(@scanline_irq_top-1)
     @jump_hi:
         .byte >(@scanline_irq_top_img-1)
@@ -136,7 +134,6 @@ scanline_irq_handler:
         .byte >(@scanline_irq_bot_midbox-1)
         .byte >(@scanline_irq_dialog-1)
         .byte >(@scanline_irq_bot_img-1)
-        .byte >(@scanline_irq_bot-1)
         .byte >(@scanline_irq_top-1)
     @next_state:
         .byte SCANLINE_TOP_IMG
@@ -144,13 +141,11 @@ scanline_irq_handler:
         .byte SCANLINE_BOT_MIDBOX
         .byte SCANLINE_DIALOG
         .byte SCANLINE_BOT_IMG
-        .byte SCANLINE_BOT
         .byte SCANLINE_TOP
     @next_line:
         .byte 54
         .byte 118
         .byte 151
         .byte 215 ; not used
-        .byte 238
         .byte 1
         .byte 23

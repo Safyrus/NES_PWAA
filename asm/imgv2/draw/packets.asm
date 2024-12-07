@@ -90,7 +90,7 @@ draw_packets:
         AND #$3F
         STA @size
         BNE :+
-            ; packet of size 0 not valid
+            ; Error: packet of size 0 not valid
             BRK
             .byte $00
         :
@@ -103,6 +103,16 @@ draw_packets:
             BEQ :+
             BCS @skip_packet
             :
+        ; prio = @in[1] & $F0
+        INY
+        LDA (@in), Y
+        DEY
+        AND #$F0
+        ; if prio != current prio
+        CMP @cur_prio
+            ; can_move_read = 0
+            ; jmp @continue
+            BNE @skip_packet
         ; notready = @in[0] & $40
         LDA (@in), Y
         AND #$40

@@ -29,7 +29,13 @@
     ; --------
     ; set image bank
     mov MMC5_RAM_BNK, #IMG_BUF_BNK
-    ; draw_packets()
+    ; draw_packets(prio=8)
+    LDA #$80
+    STA draw_packet_var+0 ; @cur_prio
+    JSR draw_packets
+    ; draw_packets(prio=0)
+    LDA #$00
+    STA draw_packet_var+0 ; @cur_prio
     JSR draw_packets
     ; if not img_flag.unsprite
     LDA img_flag
