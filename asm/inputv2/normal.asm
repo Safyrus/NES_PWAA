@@ -8,6 +8,8 @@ input_normal:
         BNE :+
             ; restore text speed
             JSR restore_text_speed
+            ; and reset dialog box
+            JSR dialog_reset
             JMP :++
         ; else we are skipping dialogs
         :

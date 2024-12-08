@@ -1,4 +1,9 @@
 read_char:
+    ; set text bank
+    push mmc5_banks+0
+    LDA #TEXT_BUF_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
     ; c = *txt_ptr
     LDY #$00
     LDA (txt_ptr), Y
@@ -19,5 +24,12 @@ read_char:
         :
         TYA ; restore read char
     :
+    ; restore bank
+    TAY
+    PLA
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+    TYA
+    LDY #$00
     ; return
     RTS

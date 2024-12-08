@@ -37,6 +37,13 @@ flush:
     ; print_offset - print_start
     LDA print_offset
     sub print_start
+    ; test for bugs
+    CMP #$20
+    bge :+
+    bne :++
+    :
+        BRK
+    :
     PHA
     TAY
     ; reserve packet

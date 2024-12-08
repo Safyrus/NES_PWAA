@@ -30,9 +30,10 @@ read:
     ; --------
     ; read
     ; --------
-    ; for n
-    BEQ @for_end
-    @for:
+    ; while n > 0
+    @while:
+        LDA @n
+        BEQ @while_end
         ; c = read_char()
         JSR read_char
         ; if c printable
@@ -42,19 +43,16 @@ read:
             JSR print
             ; n--
             DEC @n
-            ; if n == 0
-                ; break
-                BEQ @for_end
             ; continue
-            BNE @for
+            JMP @while
         ; else
         :
             ; exec_char(c)
             TAX
             JSR exec_char
             ; continue
-            JMP @for
-    @for_end:
+            JMP @while
+    @while_end:
 
     ; update wait timer
     mov text_wait_timer, text_wait
