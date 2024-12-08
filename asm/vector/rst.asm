@@ -120,17 +120,17 @@ RST:
     STA mmc5_banks+1
     STA MMC5_PRG_BNK0
 
-    ; set fade in flag (image does not refresh when fade in is clear)
-    mov effect_flags, #(EFFECT_FLAG_FADE+EFFECT_FLAG_PAL_SPLIT)
+    ; enable dialog box
+    mov effect_flags, #(EFFECT_FLAG_PAL_SPLIT)
+
+    ; disable text until main init is done
+    ora_adr txt_flags, #TXT_FLAG_BUSY
 
     ; Enable NMI + set background table to $1000
     ; by this time, it is sure that the PPU is initialize
     LDA #%10010000
     STA PPU_CTRL
     STA ppu_ctrl_val
-
-    ; init new line offset
-    mov print_nl_offset, #$42
 
     CLI ; Enable back interrupt
     JMP MAIN ; jump to main function

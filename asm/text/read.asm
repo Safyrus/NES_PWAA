@@ -1,6 +1,6 @@
 read:
     ; variables
-    @n = tmp+0
+    @n = txt_vars+0
 
     pushregs
 
@@ -15,7 +15,10 @@ read:
     ; --------
     ; init
     ; --------
+    ; set busy flag
+    ora_adr txt_flags, #TXT_FLAG_BUSY
     ; set text bank
+    push mmc5_banks+0
     LDA #TEXT_BUF_BNK
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
@@ -63,6 +66,12 @@ read:
 
     ; flush text
     JSR flush
+
+    ; clear busy flag
+    and_adr txt_flags, #($FF-TXT_FLAG_BUSY)
+    ; restore bank
+    pull mmc5_banks+0
+    STA MMC5_RAM_BNK
 
     ; return
     @return:

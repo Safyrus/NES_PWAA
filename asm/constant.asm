@@ -356,91 +356,12 @@
 ; Group: Game
 ;================
 
-    ; Constants: Dialog box text flags
-    ; See: <txt_flags>
-    ;
-    ; TXT_FLAG_WAIT  - _%00000001_ Wait for an user input
-    ; TXT_FLAG_INPUT - _%00000010_ Set if a player input has occured
-    ; TXT_FLAG_FORCE - _%00000100_ Force input
-    ; TXT_FLAG_BOX   - _%00001000_ Wait for dialog box to be draw
-    ; TXT_FLAG_LZ    - _%00010000_ Wait for LZ decoding to finish
-    ; TXT_FLAG_PRINT - _%00100000_ Wait for text to be print
-    ; TXT_FLAG_SKIP  - _%01000000_ Skip certain special characters (SET, CLR, FAD, EVT, TD). Use when reprinting a dialog.
-    ; TXT_FLAG_READY - _%10000000_ Set when the dialog box is ready
-    TXT_FLAG_WAIT  = %00000001
-    TXT_FLAG_INPUT = %00000010
-    TXT_FLAG_FORCE = %00000100
-    TXT_FLAG_BOX   = %00001000
-    TXT_FLAG_LZ    = %00010000
-    TXT_FLAG_PRINT = %00100000
-    TXT_FLAG_SKIP = %01000000
-    TXT_FLAG_READY = %10000000
-
     ; Constants: Effect flags
     ; See: <effect_flags>
     ;
-    ; EFFECT_FLAG_FADE      - _%00000001_
-    ; EFFECT_FLAG_NT        - _%00000100_
-    ; EFFECT_FLAG_BKG       - _%00001000_
-    ; EFFECT_FLAG_DRAW      - _%00010000_
-    ; EFFECT_FLAG_BKG_MMC5  - _%00100000_
     ; EFFECT_FLAG_PAL_SPLIT - _%10000000_
-    EFFECT_FLAG_FADE      = %00000001
-    EFFECT_FLAG_NT        = %00000100
-    EFFECT_FLAG_BKG       = %00001000
-    EFFECT_FLAG_DRAW      = %00010000
-    EFFECT_FLAG_BKG_MMC5  = %00100000
     EFFECT_FLAG_PAL_SPLIT = %10000000
 
-    ; Constants: Dialog box display flags
-    ; See: <box_flags>
-    ;
-    ; BOX_FLAG_HIDE    - _%10000000_
-    ; BOX_FLAG_NAME    - _%00000010_
-    ; BOX_FLAG_REFRESH - _%00000001_
-    BOX_FLAG_HIDE    = %10000000
-    BOX_FLAG_NAME    = %00000010
-    BOX_FLAG_REFRESH = %00000001
-
-    ; Constants: Scanline flags
-    ; See: <scanline>
-    ;
-    ; SCANLINE_FLAG_WAIT  - _%10000000_ Waiting for scanline
-    ; SCANLINE_FLAG_FRAME - _%01000000_ In-frame
-    SCANLINE_FLAG_WAIT  = %10000000
-    SCANLINE_FLAG_FRAME = %01000000
-
-    ; Constants: Scanline states
-    ; See: <scanline>
-    ;
-    ; SCANLINE_TOP        - _%01000000_
-    ; SCANLINE_TOP_IMG    - _%01000001_
-    ; SCANLINE_TOP_MIDBOX - _%01000010_
-    ; SCANLINE_BOT_MIDBOX - _%01000011_
-    ; SCANLINE_DIALOG     - _%01000100_
-    ; SCANLINE_BOT_IMG    - _%00000101_
-    ; SCANLINE_BOT        - _%00000110_
-    SCANLINE_TOP        = %01000000
-    SCANLINE_TOP_IMG    = %01000001
-    SCANLINE_TOP_MIDBOX = %01000010
-    SCANLINE_BOT_MIDBOX = %01000011
-    SCANLINE_DIALOG     = %01000100
-    SCANLINE_BOT_IMG    = %00000101
-    SCANLINE_BOT        = %00000110
-
-    ; Constants: Image header byte flags
-    ; See: <img_header>
-    ;
-    ; IMG_HEADER_CHR  - %00000011 MMC5 CHR upper bits
-    ; IMG_HEADER_SPR  - %00010000 Image contain sprite data
-    ; IMG_HEADER_BKG  - %00100000 Image contain background data
-    ; IMG_HEADER_PAL  - %01000000 Image contain palette data
-    ; IMG_HEADER_FULL - %10000000 Image is a full frame
-    IMG_HEADER_CHR   = %00000011
-    IMG_HEADER_SPR   = %00010000
-    IMG_HEADER_BKG   = %00100000
-    IMG_HEADER_PAL   = %01000000
-    IMG_HEADER_FULL  = %10000000
 
     ; Constants: Nametable mapping
     ; See: <MMC5 Nametable mapping>
@@ -530,6 +451,38 @@
     ACT_SPR_TILE            = $FA
     ACT_RET_FLAG            = %00000001
 
+
+;================
+; Group: Scanline
+;================
+
+    ; Constants: Scanline flags
+    ; See: <scanline>
+    ;
+    ; SCANLINE_FLAG_WAIT  - _%10000000_ Waiting for scanline
+    ; SCANLINE_FLAG_FRAME - _%01000000_ In-frame
+    SCANLINE_FLAG_WAIT  = %10000000
+    SCANLINE_FLAG_FRAME = %01000000
+
+    ; Constants: Scanline states
+    ; See: <scanline>
+    ;
+    ; SCANLINE_TOP        - _%01000000_
+    ; SCANLINE_TOP_IMG    - _%01000001_
+    ; SCANLINE_TOP_MIDBOX - _%01000010_
+    ; SCANLINE_BOT_MIDBOX - _%01000011_
+    ; SCANLINE_DIALOG     - _%01000100_
+    ; SCANLINE_BOT_IMG    - _%00000101_
+    ; SCANLINE_BOT        - _%00000110_
+    SCANLINE_TOP        = %01000000
+    SCANLINE_TOP_IMG    = %01000001
+    SCANLINE_TOP_MIDBOX = %01000010
+    SCANLINE_BOT_MIDBOX = %01000011
+    SCANLINE_DIALOG     = %01000100
+    SCANLINE_BOT_IMG    = %00000101
+    SCANLINE_BOT        = %00000110
+
+
 ;================
 ; Group: Images
 ;================
@@ -585,6 +538,8 @@
     ; MAX_TXT_SPD is 15 char per frames.
     ; More than that and text_speed_timer may overflow
     MAX_TXT_SPD = $F0
+
+    TXT_FLAG_BUSY = $80
 
 ;================
 ; Group: Special Characters

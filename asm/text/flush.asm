@@ -9,6 +9,12 @@ flush:
         ; return
         BEQ @return
 
+    ; save tmps
+    push tmp+0
+    push tmp+1
+    push tmp+2
+    push tmp+3
+
     ; save bank
     LDA mmc5_banks+0
     PHA
@@ -52,8 +58,7 @@ flush:
         BNE @loop
     ; close packet
     PLA
-    LDY #$00
-    STA (@packet), Y
+    JSR close_packet_nodefrag
     ; print_start = print_offset
     mov print_start, print_offset
 
@@ -61,6 +66,12 @@ flush:
     PLA
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
+
+    ; restore tmps
+    pull tmp+3
+    pull tmp+2
+    pull tmp+1
+    pull tmp+0
 
     ; return
     @return:

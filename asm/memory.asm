@@ -55,6 +55,10 @@
 ;****************
 ; ZEROPAGE SEGMENT
 ;****************
+; Contain NMI variables,
+; temporary variables
+; and txt_ptr
+; Note: note all zp variables are declared here
 .segment "ZEROPAGE"
     ;================
     ; Group: Zero Page
@@ -323,75 +327,6 @@ OAM:
         ; index to use for fetching data in lz tables
         lz_idx: .res 1
 
-    ;================
-    ; Group: Variables for text reading
-    ;================
-
-        ; Variable: txt_flags
-        ;----------------
-        ;--- Text
-        ; first byte of flags
-        ; RSPZ BFIW
-        ; |||| |||+-- Wait for user input to continue
-        ; |||| ||+--- Player input
-        ; |||| |+---- Force action (ignore player inputs)
-        ; |||| +----- Wait for dialog box drawing
-        ; |||+------- Wait for LZ decoding
-        ; ||+-------- Wait for print
-        ; |+--------- Skip certain special char (SET, CLR, FAD, EVT, TD)
-        ; +---------- Ready (set to 1 to enable read subroutines)
-        ;---
-        txt_flags: .res 1
-
-        ; Variable: txt_speed
-        ;----------------
-        ; speed of text
-        txt_speed: .res 1
-
-        ; Variable: txt_speed_count
-        ;----------------
-        ; speed counter
-        txt_speed_count: .res 1
-
-        ; Variable: txt_delay
-        ;----------------
-        ; delay to wait
-        txt_delay: .res 1
-
-        ; Variable: txt_font
-        ;----------------
-        ; index of the current font
-        txt_font: .res 1
-
-        ; Variable: txt_bck_color
-        ;----------------
-        ;
-        txt_bck_color: .res 1
-
-        ; Variable: txt_jump_buf
-        ;----------------
-        ;
-        ; - byte 0 = low
-        ; - byte 1 = high
-        ; - byte 2 = bank
-        txt_jump_buf: .res 3
-
-        ; Variable: txt_jump_flag_buf
-        ;----------------
-        ;--- Text
-        ; nc.. ....
-        ;---
-        txt_jump_flag_buf: .res 1
-
-        ; Variable: txt_last_dialog_adr
-        ;----------------
-        ; pointer to the last dialog (0=lo, 1=hi, 2=bnk)
-        txt_last_dialog_adr: .res 3
-
-        ; Variable: txt_save_adr
-        ;----------------
-        ; saved pointer to jump back to when using a RET char
-        txt_save_adr: .res 3
 
     ;================
     ; Group: Variables for name displaying
@@ -438,34 +373,6 @@ OAM:
         ; current evidence selected
         cr_correct_idx: .res 1
 
-    ;================
-    ; Group: Variables for text printing
-    ;================
-
-        ; Variable: print_ext_val
-        ;----------------
-        ; Value to send to MMC5 expansion RAM when printing text
-        print_ext_val: .res 1
-
-        ; Variable: print_ext_ptr
-        ;----------------
-        ; pointer to current printed text in ext ram
-        print_ext_ptr: .res 2
-
-        ; Variable: print_ppu_ptr
-        ;----------------
-        ; pointer to current printed text in ppu
-        print_ppu_ptr: .res 2
-
-        ; Variable: print_counter
-        ;----------------
-        ; number of character to print
-        print_counter: .res 1
-
-        ; Variable: print_nl_offset
-        ;----------------
-        ; offset to add to the text position (ppu+ext) when drawing a new line to the screen
-        print_nl_offset: .res 1
 
     ;================
     ; Group: Image Variables
@@ -570,6 +477,9 @@ OAM:
 
         draw_packet_var: .res 6
 
+        draw_packet_count: .res 1
+        close_packet_var: .res 1
+
         draw_sprite_idx: .res 1
         res_oam: .res 1
 
@@ -597,6 +507,17 @@ OAM:
         text_wait_timer: .res 1
         text_speed_timer: .res 1
         text_prev_speed: .res 1
+        text_lb_offset: .res 1
+
         print_offset: .res 1
         print_start: .res 1
-        text_lb_offset: .res 1
+
+        ; Variable: txt_flags
+        ;----------------
+        ;--- Text
+        ; B... ....
+        ; +---------- Busy, don't call read function until clear
+        ;---
+        txt_flags: .res 1
+
+        txt_vars: .res 1

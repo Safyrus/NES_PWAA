@@ -56,3 +56,6 @@
     LDX #<PHOENIX_DOCUMENT_A_
     LDY #>PHOENIX_DOCUMENT_A_
     JSR display_anim
+
+    ; enable text
+    and_adr txt_flags, #($FF-TXT_FLAG_BUSY)

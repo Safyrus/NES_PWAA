@@ -33,11 +33,6 @@ MAIN_LOOP:
     JSR input_normal
 
     ; ----------------
-    ; Update Text
-    ; ----------------
-    JSR read
-
-    ; ----------------
     ; Update Images
     ; ----------------
     ; if currently drawing an image

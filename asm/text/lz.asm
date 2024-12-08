@@ -2,7 +2,6 @@
 ;   decode a lz encoded text
 ;   and save the result into ram.
 ; /!\ assume to be in bank 0
-; /!\ change bank 1, 2 and ram bank
 lz_decode:
     pushregs
 
@@ -27,6 +26,10 @@ lz_decode:
     STA lz_in+0
     LDA lz_adr_table_hi, X
     STA lz_in+1
+    ; save banks
+    push mmc5_banks+0
+    push mmc5_banks+2
+    push mmc5_banks+3
     ; set output bank
     LDA #TEXT_BUF_BNK
     STA mmc5_banks+0
@@ -127,6 +130,14 @@ lz_decode:
             ;
             JMP @while
     @end:
+
+    ; restore banks
+    pull mmc5_banks+3
+    STA MMC5_PRG_BNK2
+    pull mmc5_banks+2
+    STA MMC5_PRG_BNK1
+    pull mmc5_banks+0
+    STA MMC5_RAM_BNK
 
     ; disable NMI_FORCE flag
     and_adr nmi_flags, #($FF-NMI_FORCE)

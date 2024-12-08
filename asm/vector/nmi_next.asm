@@ -68,3 +68,12 @@
         ; buttons_1_timer--
         DEC buttons_1_timer
     :
+
+    ; ----------------
+    ; Update Text
+    ; ----------------
+    ; if not busy
+    LDA txt_flags
+    BNE :+
+        JSR read
+    :
