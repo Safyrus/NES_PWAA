@@ -3,6 +3,7 @@
 .include "display/dialog.asm"
 .include "display/img.asm"
 
+.include "draw/close_packet.asm"
 .include "draw/packet_res.asm"
 .include "draw/packets.asm"
 .include "draw/sprites.asm"

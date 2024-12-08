@@ -29,10 +29,10 @@ update_dialog:
             CPY #$20*2+3
             BNE @send_data
         ; close packet
-        LDY #$00
         LDA #$20
-        STA (@packet), Y
-        ; adr += $40
+        JSR close_packet_nodefrag
+        ; adr += $20
+        LDA #$20
         add_A2ptr @adr
         ; continue
         CPX #$00

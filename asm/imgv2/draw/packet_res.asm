@@ -38,6 +38,16 @@ packet_buf_res:
         mov packet_buf_write_adr+0, #<PACKET_BUFFER_ADR
         mov packet_buf_write_adr+1, #>PACKET_BUFFER_ADR
     :
+    ; draw_packet_count++
+    LDA draw_packet_count
+    add #$01
+    ; if draw_packet_count >= 2
+    CMP #$02
+    blt :+
+        ; disable defrag
+        ORA #$80
+    :
+    STA draw_packet_count
     ; pack_adr = packet_buf_write_adr
     mov @pack_adr+0, packet_buf_write_adr+0
     mov @pack_adr+1, packet_buf_write_adr+1

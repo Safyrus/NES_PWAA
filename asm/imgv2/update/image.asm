@@ -180,7 +180,11 @@ update_image:
                 LDA @size
                     ; continue
                     BEQ @continue_x
-                JSR @reduce_packet
+                ;
+                JSR close_packet
+                ; size = 0
+                LDY #$00
+                STY @size
                 ; continue
                 JMP @continue_x
             :
@@ -246,7 +250,10 @@ update_image:
         LDY #$00
         LDA @size
         BEQ :+
-            JSR @reduce_packet
+            JSR close_packet
+            ; size = 0
+            LDY #$00
+            STY @size
         :
         ; add 32-w to pointers
         LDA #$20
@@ -290,28 +297,3 @@ update_image:
 
     ; return
     RTS
-
-    @reduce_packet:
-        ; packet_adr[0] = size
-        STA (@packet_adr), Y
-        ; dif = max_size - size
-        sub @max_size
-        EOR #$FF
-        add #$01
-        ; size = dif*2
-        ASL
-        STA @size
-        ; if dif != 0
-        BEQ :++
-            ; @packet_buf_write_adr -= size
-            LDA packet_buf_write_adr+0
-            sub @size
-            STA packet_buf_write_adr+0
-            BCS :+
-                DEC packet_buf_write_adr+1
-            :
-            ; size = 0
-            STY @size
-        :
-        ; return
-        RTS
