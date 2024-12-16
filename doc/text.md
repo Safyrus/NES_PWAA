@@ -1,19 +1,21 @@
 # Text format
 
-All the text data are **cut into blocks** of fix size (default size of 8 KB).
+All the text data are **cut into blocks** of fix size (default size of **8 KB**).
 Each block is compressed with a simple **LZ encoding**.
 
 Default encoding parameters for LZ are: **jump=4096, length=8**
 
-All characters are encoded with 7 bits with a specific [charset](charset.md). There, however, use 8-bit for simplicity.
+All characters are encoded with 7 bits with a specific [charset](charset.md).
+Each LZ character is 1 or 2 bytes (1 for a 'true' character and 2 for a pointer).
 
-To read a dialog, you need to decode the block from the start to the position of your string.
+To read a dialog, you need to decode
+the entire block that contain it.
 
 The first 2 bytes indicate the size of the block. (Low byte then high byte)
 
 ## Pseudo decoding algorithm
 
-```
+```text
 # for the entire block of input data
 while not end_of_block:
     b1 = next_byte() # read next byte from input
@@ -31,7 +33,7 @@ while not end_of_block:
 
 Pointer structure:
 
-```
+```text
 byte 1(first)  byte 0 (second)
 pLll Jjjj      jjjj jjjj
 |||| ||||      |||| ||||

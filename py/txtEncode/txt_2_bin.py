@@ -66,13 +66,15 @@ MUS = 0x11
 SND = 0x12
 PHT = 0x13
 CHR = 0x14
-ANI = 0x15
+R15 = 0x15
 BKG = 0x16
 FNT = 0x17
 JMP = 0x18
 ACT = 0x19
-BP = 0x1A
-SP = 0x1B
+R1A = 0x1A
+R1B = 0x1B
+R1C = 0x1C
+R1D = 0x1D
 EVT = 0x1E
 EXT = 0x1F
 
@@ -103,8 +105,8 @@ def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
 
 
 def append_byte(textbin, val, name, i):
-    if val > 255:
-        printv(f"WARNING: {name} is > 255 (val={val}) at {i}. Replacing by 0", param="tw")
+    if val > 127:
+        printv(f"WARNING: {name} is > 127 (val={val}) at {i}. Replacing by 0", param="tw")
         val = 0
     textbin.append(val)
     return textbin
@@ -243,27 +245,44 @@ while i < len(text):
             textbin.append(FDB)
         elif name == "speed":
             textbin.append(SPD)
-            textbin.append(min(127, int(args[0])))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "wait":
             textbin.append(DL)
-            textbin.append(min(127, int(args[0])))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "name":
             textbin.append(NAM)
-            textbin.append(min(127, int(args[0])))
+            textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "color":
             textbin.append(COL)
-            col = int(args[0])
-            if col == 0 or col > 4:
-                col = 4
-            textbin.append(col)
+            if len(args) > 1:
+                col = int(args[0]) & 0x3F
+                pal_idx = int(args[1]) & 0x0F << 2
+                pal_idx += int(args[2]) & 0x03
+                textbin = append_byte(textbin, col, name, i)
+                textbin = append_byte(textbin, pal_idx, name, i)
+            else:
+                col = int(args[0])
+                if col > 3:
+                    printv(f"Color value of {col} at {i} is too high. replace by 0", param="wt")
+                    col = 0
+                textbin = append_byte(textbin, col, name, i)
         elif name == "hidetextbox":
             textbin.append(TD)
         elif name == "shake":
             textbin.append(SAK)
+            force = int(args[1]) << 5
+            force += int(args[2])
+            textbin = append_byte(textbin, force, name, i)
         elif name == "flash":
             textbin.append(FLH)
+            force = int(args[1]) << 5
+            force += int(args[2])
+            textbin = append_byte(textbin, force, name, i)
         elif name == "fade":
             textbin.append(FAD)
+            force = int(args[1]) << 5
+            force += int(args[2])
+            textbin = append_byte(textbin, force, name, i)
         elif name == "photo":
             textbin.append(PHT)
             textbin = append_byte(textbin, int(args[0]), name, i)
@@ -272,10 +291,8 @@ while i < len(text):
             textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "character":
             textbin.append(CHR)
-            textbin = append_byte(textbin, int(args[0]), name, i)
-        elif name == "animation":
-            textbin.append(ANI)
-            textbin.append(int(args[0]) % 128)
+            textbin = append_byte(textbin, int(args[0] % 128), name, i)
+            textbin = append_byte(textbin, int(args[0] // 128), name, i)
         elif name == "music":
             textbin.append(MUS)
             textbin = append_byte(textbin, int(args[0]), name, i)
@@ -340,7 +357,7 @@ while i < len(text):
             #         ||||||+---++++--------------- y position of the hitbox (Y=MSB)
             #         |+++++----------------------- x position of the hitbox (X=MSB)
             #         +---------------------------- Next flag (1=another data block after this one
-            #                                                 0=last data bloack)
+            #                                                 0=last data block)
             x = int(args[0])
             y = int(args[1])
             w = int(args[2])

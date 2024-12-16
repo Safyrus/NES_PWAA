@@ -160,14 +160,13 @@ high bit of position is implied by command.
 
 ## RLEINC
 
-```text
-This variant of RLEINC is close to the one found on the NesDev wiki (https://www.nesdev.org/wiki/Tile_compression).
-The only change is that the LIT command read bytes forewards instead of backwards.
+This variant of RLEINC is close to the one found on the NesDev wiki (<https://www.nesdev.org/wiki/Tile_compression>).
+The only change is that the LIT command read bytes forwards instead of backwards.
 
-| Value | Meaning
-| 00-3F | LIT: Copy (n+1) bytes from input to output
-| 40    | END: End of stream
-| 41-7F | SEQ: Read next byte b. Put b, (n-0x3F) times; add 1 to b after each iteration
-| 80-9F | DBL: Read next byte b1, and next byte b2. Put b1, (n-0x7D) times; swap b2 and b1 after each iteration
-| A0-FF | RUN: Read byte b. Put b, (0x101-n) times.
-```
+| Value | Meaning                                                                                               |
+| ----- | ----------------------------------------------------------------------------------------------------- |
+| 00-3F | LIT: Copy (n+1) bytes from input to output                                                            |
+| 40    | END: End of stream                                                                                    |
+| 41-7F | SEQ: Read next byte b. Put b, (n-0x3F) times; add 1 to b after each iteration                         |
+| 80-9F | DBL: Read next byte b1, and next byte b2. Put b1, (n-0x7D) times; swap b2 and b1 after each iteration |
+| A0-FF | RUN: Read byte b. Put b, (0x101-n) times.                                                             |
