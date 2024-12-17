@@ -499,7 +499,6 @@
     ANIM_BUF_ADR      = $7D00
 
     IMG_FLAG_FORCE    = $80
-    IMG_FLAG_UNMMC5   = $40
     IMG_FLAG_OTHERNT  = $20
     IMG_FLAG_UNSPRITE = $10
 

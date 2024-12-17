@@ -38,7 +38,7 @@ MAIN_LOOP:
     ; if currently drawing an image
     ; TODO: better flag condition ?
     LDA img_flag
-    AND #(IMG_FLAG_UNSPRITE+IMG_FLAG_UNMMC5)
+    AND #(IMG_FLAG_UNSPRITE)
     BEQ :+
         ; if packet_buf_read_adr == packet_buf_write_adr
         ; (a.k.a nothing left to draw)
@@ -48,9 +48,9 @@ MAIN_LOOP:
         LDA packet_buf_read_adr+0
         CMP packet_buf_write_adr+0
         BNE :+
-            ; re-enable sprites and MMC5 tiles update
+            ; re-enable sprites update
             LDA img_flag
-            AND #$FF-(IMG_FLAG_UNMMC5+IMG_FLAG_UNSPRITE)
+            AND #$FF-(IMG_FLAG_UNSPRITE)
             STA img_flag
             ; update palettes
             LDY #$3*8

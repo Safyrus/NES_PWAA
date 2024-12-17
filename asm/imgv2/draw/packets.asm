@@ -1,3 +1,17 @@
+; packet structure:
+; byte 1:
+;   vrssssss
+;   ||++++++-- size (nb of 16bit tiles in packet)
+;   |+-------- ready
+;   +--------- vertical (not used)
+; byte 2:
+;   pm..aaaa
+;   ||  ++++-- ppu address (high) (relative to start of first nametable)
+;   |+-------- draw mmc5 tiles
+;   +--------- high priority packet
+; byte 3: ppu address (low)
+; rest: 2 bytes tile with ppu tile first and mmc5 tile second
+
 draw_packets:
     ; --------
     ; variables
@@ -9,7 +23,7 @@ draw_packets:
     @cur_prio = draw_packet_var+0
     @zp_bkg_size = draw_packet_var+1
     @can_move_read = draw_packet_var+2
-    @v = draw_packet_var+3
+    @dont_draw_mmc5 = draw_packet_var+3
     @size = draw_packet_var+4
     @i = draw_packet_var+5
 
@@ -103,8 +117,12 @@ draw_packets:
             BEQ :+
             BCS @skip_packet
             :
-        ; prio = @in[1] & $80
+        ; dont_draw_mmc5 = @in[1] & $40
         INY
+        LDA (@in), Y
+        AND #$40
+        STA @dont_draw_mmc5
+        ; prio = @in[1] & $80
         LDA (@in), Y
         DEY
         AND #$80
@@ -187,9 +205,9 @@ draw_packets:
             JSR @inc_in
             ; --------
             ; copy high tile
-            ; if not img.flag_unmmc5
-            BIT img_flag
-            BVS :+
+            ; if not dont_draw_mmc5
+            LDA @dont_draw_mmc5
+            BNE :+
                 ; mmc5_tiles[adr] = @in[0]
                 LDA (@in), Y
                 STA (@adr), Y

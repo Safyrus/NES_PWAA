@@ -2,6 +2,12 @@ update_dialog:
     @adr = tmp+0
     @packet = tmp+2
 
+    ; save tmps
+    push tmp+0
+    push tmp+1
+    push tmp+2
+    push tmp+3
+
     ; adr = $2260
     mov @adr+0, #$60
     mov @adr+1, #$82 ; + high priority
@@ -37,5 +43,12 @@ update_dialog:
         ; continue
         CPX #$00
         BNE @send_packet
+
+    ; restore tmps
+    pull tmp+3
+    pull tmp+2
+    pull tmp+1
+    pull tmp+0
+
     ; return
     RTS

@@ -7,16 +7,17 @@ update_anim:
         ; return
         BEQ @return
     :
+    ; if waiting for a frame to finish drawing
+    LDA img_flag
+    AND #(IMG_FLAG_UNSPRITE)
+        ; return
+        BNE @return
 
     ; --- countdown ---
     ; if anim_timer > 0
     LDA anim_timer
-    BEQ :+
-        ; anim_timer--
-        DEC anim_timer
         ; return
-        JMP @return
-    :
+        BNE @return
 
     ; --- update ---
     ; mmc5_bnk (for anim_buf)

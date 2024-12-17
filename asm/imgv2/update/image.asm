@@ -130,6 +130,8 @@ update_image:
     :
     ; adr += $60
     add_A2ptr @adr, #$60
+    ; adr |= dont draw mmc5 flag
+    ora_adr @adr+1, #$40
 
     ; for j from y to h
     @for_y:

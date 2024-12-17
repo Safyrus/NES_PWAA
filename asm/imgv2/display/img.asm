@@ -38,8 +38,6 @@ display_img:
     ; --------
     ; update
     ; --------
-    ; disable MMC5 tiles updates
-    ora_adr img_flag, #IMG_FLAG_UNMMC5
     ; if dialog box displayed
     BIT effect_flags
     BPL :+
@@ -51,8 +49,6 @@ display_img:
         ; update all
         JSR update_all
     :
-    ; re-enable MMC5 tiles updates
-    and_adr img_flag, #($FF-IMG_FLAG_UNMMC5)
 
     ; return
     RTS
