@@ -18,70 +18,70 @@ exec_char:
     RTS
 
     @switch_lo:
-        .byte <(END-1)
-        .byte <(LB-1)
-        .byte <(DB-1)
-        .byte <(FDB-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
-        .byte <(@ret-1)
+        .byte <(END-1)  ; $00
+        .byte <(LB-1)   ; $01
+        .byte <(DB-1)   ; $02
+        .byte <(FDB-1)  ; $03
+        .byte <(@ret-1) ; $04
+        .byte <(@ret-1) ; $05
+        .byte <(@ret-1) ; $06
+        .byte <(@ret-1) ; $07
+        .byte <(SPD-1)  ; $08
+        .byte <(DL-1)   ; $09
+        .byte <(@ret-1) ; $0A
+        .byte <(@ret-1) ; $0B
+        .byte <(@ret-1) ; $0C
+        .byte <(@ret-1) ; $0D
+        .byte <(@ret-1) ; $0E
+        .byte <(@ret-1) ; $0F
+        .byte <(@ret-1) ; $10
+        .byte <(@ret-1) ; $11
+        .byte <(@ret-1) ; $12
+        .byte <(@ret-1) ; $13
+        .byte <(@ret-1) ; $14
+        .byte <(@ret-1) ; $15
+        .byte <(@ret-1) ; $16
+        .byte <(@ret-1) ; $17
+        .byte <(@ret-1) ; $18
+        .byte <(@ret-1) ; $19
+        .byte <(@ret-1) ; $1A
+        .byte <(@ret-1) ; $1B
+        .byte <(@ret-1) ; $1C
+        .byte <(@ret-1) ; $1D
+        .byte <(@ret-1) ; $1E
+        .byte <(@ret-1) ; $1F
     
     @switch_hi:
-        .byte >(END-1)
-        .byte >(LB-1)
-        .byte >(DB-1)
-        .byte >(FDB-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
-        .byte >(@ret-1)
+        .byte >(END-1)  ; $00
+        .byte >(LB-1)   ; $01
+        .byte >(DB-1)   ; $02
+        .byte >(FDB-1)  ; $03
+        .byte >(@ret-1) ; $04
+        .byte >(@ret-1) ; $05
+        .byte >(@ret-1) ; $06
+        .byte >(@ret-1) ; $07
+        .byte >(SPD-1)  ; $08
+        .byte >(DL-1)   ; $09
+        .byte >(@ret-1) ; $0A
+        .byte >(@ret-1) ; $0B
+        .byte >(@ret-1) ; $0C
+        .byte >(@ret-1) ; $0D
+        .byte >(@ret-1) ; $0E
+        .byte >(@ret-1) ; $0F
+        .byte >(@ret-1) ; $10
+        .byte >(@ret-1) ; $11
+        .byte >(@ret-1) ; $12
+        .byte >(@ret-1) ; $13
+        .byte >(@ret-1) ; $14
+        .byte >(@ret-1) ; $15
+        .byte >(@ret-1) ; $16
+        .byte >(@ret-1) ; $17
+        .byte >(@ret-1) ; $18
+        .byte >(@ret-1) ; $19
+        .byte >(@ret-1) ; $1A
+        .byte >(@ret-1) ; $1B
+        .byte >(@ret-1) ; $1C
+        .byte >(@ret-1) ; $1D
+        .byte >(@ret-1) ; $1E
+        .byte >(@ret-1) ; $1F
 

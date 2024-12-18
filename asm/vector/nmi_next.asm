@@ -56,11 +56,11 @@
         ; anim_timer--
         DEC anim_timer
     :
-    ; if text_wait_timer > 0
-    LDA text_wait_timer
+    ; if text_wait > 0
+    LDA text_wait
     BEQ :+
-        ; text_wait_timer--
-        DEC text_wait_timer
+        ; text_wait--
+        DEC text_wait
     :
     ; if buttons_1_timer > 0
     LDA buttons_1_timer

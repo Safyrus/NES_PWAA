@@ -504,7 +504,6 @@ OAM:
         text_font: .res 1
         text_color: .res 1
 
-        text_wait_timer: .res 1
         text_speed_timer: .res 1
         text_prev_speed: .res 1
         text_lb_offset: .res 1

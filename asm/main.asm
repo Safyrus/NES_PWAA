@@ -63,6 +63,10 @@ MAIN_LOOP:
             @wait_inframe:
                 BIT scanline
                 BVC @wait_inframe
+                LDA scanline
+                AND #$3F
+                CMP #(SCANLINE_DIALOG & $3F)
+                bge @wait_inframe
             ; change scroll position to other nametable
             ; (we need to change scroll before updating MMC5 tiles)
             LDA ppu_ctrl_val

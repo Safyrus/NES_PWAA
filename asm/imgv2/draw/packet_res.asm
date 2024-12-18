@@ -6,6 +6,17 @@
 packet_buf_res:
     @adr = tmp+0
     @pack_adr = tmp+2
+
+    TXA
+    PHA
+
+    ; push values to save them
+    ; from being overwriten by something else
+    push @adr+0
+    push @adr+1
+    push @pack_adr+0
+    push @pack_adr+1
+
     ; wait for free space
     @wait:
         ; if packet_buf_write_adr >= packet_buf_read_adr
@@ -22,6 +33,11 @@ packet_buf_res:
         ; wait if dif < $100
         CMP #$02
         blt @wait
+    ; wait if at the very end of frame
+    :
+        LDA scanline
+        CMP #SCANLINE_BOT_IMG
+        BEQ :-
     ; if packet_buf_write_adr + (size*2+3) >= $400
     LDA packet_buf_write_adr+1
     CMP #$63
@@ -49,24 +65,30 @@ packet_buf_res:
     :
     STA draw_packet_count
     ; pack_adr = packet_buf_write_adr
-    mov @pack_adr+0, packet_buf_write_adr+0
+    PLA
+    STA @pack_adr+1
+    PLA
+    STA @pack_adr+0
     mov @pack_adr+1, packet_buf_write_adr+1
+    mov @pack_adr+0, packet_buf_write_adr+0
     ; packet_buf_write_adr[0] = size | $40
     TYA
-    PHA
+    TAX
     LDY #$00
     ORA #$40
     STA (packet_buf_write_adr), Y
     ; packet_buf_write_adr[1] = adr_hi
     INY
-    LDA @adr+1
+    PLA
+    STA @adr+1
     STA (packet_buf_write_adr), Y
     ; packet_buf_write_adr[2] = adr_lo
     INY
-    LDA @adr+0
+    PLA
+    STA @adr+0
     STA (packet_buf_write_adr), Y
     ; packet_buf_write_adr += (3 + (size * 2))
-    PLA
+    TXA
     ASL
     add #$03
     add_A2ptr packet_buf_write_adr
@@ -75,4 +97,6 @@ packet_buf_res:
     AND #>(PACKET_BUFFER_ADR+$3FF)
     STA packet_buf_write_adr+1
     ; return pack_adr
+    PLA
+    TAX
     RTS

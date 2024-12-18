@@ -480,7 +480,7 @@
     SCANLINE_BOT_MIDBOX = %01000011
     SCANLINE_DIALOG     = %01000100
     SCANLINE_BOT_IMG    = %00000101
-    SCANLINE_BOT        = %00000110
+    ; SCANLINE_BOT        = %00000110
 
 
 ;================
@@ -539,6 +539,10 @@
     MAX_TXT_SPD = $F0
 
     TXT_FLAG_BUSY = $80
+
+    DEFAULT_TEXT_SPEED = $10
+    DEFAULT_TEXT_FONT = $00
+    DEFAULT_TEXT_COLOR = $C0
 
 ;================
 ; Group: Special Characters

@@ -7,8 +7,8 @@ read:
     ; --------
     ; guard
     ; --------
-    ; if text_wait_timer > 0
-    LDA text_wait_timer
+    ; if text_wait > 0
+    LDA text_wait
         ; return
         BNE @return
 
@@ -54,8 +54,6 @@ read:
             JMP @while
     @while_end:
 
-    ; update wait timer
-    mov text_wait_timer, text_wait
     ; update speed timer
     LDA text_speed_timer
     AND #$1F ; number of char to display = 0

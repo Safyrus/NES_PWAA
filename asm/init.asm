@@ -39,9 +39,9 @@
     ; init text data
     JSR lz_decode
     ; init text variables
-    mov text_speed, #$10
-    mov text_font, #$00
-    mov text_color, #$C0
+    mov text_speed, #DEFAULT_TEXT_SPEED
+    mov text_font, #DEFAULT_TEXT_FONT
+    mov text_color, #DEFAULT_TEXT_COLOR
     ;
     JSR dialog_reset
     ; txt_ptr = MMC5_RAM

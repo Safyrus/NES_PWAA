@@ -11,3 +11,5 @@
 .include "char/LB.asm"
 .include "char/DB.asm"
 .include "char/FDB.asm"
+.include "char/SPD.asm"
+.include "char/DL.asm"

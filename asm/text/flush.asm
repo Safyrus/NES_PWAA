@@ -8,6 +8,17 @@ flush:
     CPX print_offset
         ; return
         BEQ @return
+    
+    ; if dialog box is off
+    LDA effect_flags
+    AND #EFFECT_FLAG_PAL_SPLIT
+    BNE :+
+        ; skip these chars
+        ; print_start = print_offset
+        mov print_start, print_offset
+        ; return
+        RTS
+    :
 
     ; save tmps
     push tmp+0
