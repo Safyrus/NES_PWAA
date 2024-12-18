@@ -12,7 +12,7 @@ investigation_init:
     @h = invest_tmp+4
 
     ; enable NMI_FORCE flag
-    ora_adr nmi_flags, #NMI_FORCE
+    ; ora_adr nmi_flags, #NMI_FORCE
 
     ; clear previous collisions
     JSR clear_collisions
@@ -120,7 +120,7 @@ investigation_init:
     ora_adr click_flag, #CLICK_INIT
 
     ; disable NMI_FORCE flag
-    and_adr nmi_flags, #($FF-NMI_FORCE)
+    ; and_adr nmi_flags, #($FF-NMI_FORCE)
 
     pullregs
     RTS

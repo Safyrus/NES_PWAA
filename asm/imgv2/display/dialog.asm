@@ -46,6 +46,6 @@ clear_dialog:
     STA DB_ADR_LO+0+(7*32)
     LDA #DB_TILE_BR
     STA DB_ADR_LO+31+(7*32)
-    ; update dilog box
+    ; update dialog box
     JMP update_dialog
     ; return

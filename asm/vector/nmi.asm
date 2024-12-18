@@ -29,10 +29,10 @@ NMI:
     pushregs
 
     ; do we need to do stuff ? (E flag)
-    BIT nmi_flags
-    BPL @start
-    BVS @start
-    JMP @nmi_end
+    ; BIT nmi_flags
+    ; BPL @start
+    ; BVS @start
+    ; JMP @nmi_end
 
     @start:
     ; update nametable mapping

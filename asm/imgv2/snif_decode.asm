@@ -21,7 +21,7 @@ snif_decode:
 
     pushregs
     ; enable NMI_FORCE flag
-    ora_adr nmi_flags, #NMI_FORCE
+    ; ora_adr nmi_flags, #NMI_FORCE
 
     ; --------
     ; byte 0
@@ -373,7 +373,7 @@ snif_decode:
 
     @return:
     ; disable NMI_FORCE flag
-    and_adr nmi_flags, #($FF-NMI_FORCE)
+    ; and_adr nmi_flags, #($FF-NMI_FORCE)
     ; return
     pullregs
     RTS

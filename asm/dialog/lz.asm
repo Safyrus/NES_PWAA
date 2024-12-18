@@ -11,7 +11,7 @@ lz_decode:
     pushregs
 
     ; enable NMI_FORCE flag
-    ora_adr nmi_flags, #NMI_FORCE
+    ; ora_adr nmi_flags, #NMI_FORCE
 
     ; set output bank
     LDA #TEXT_BUF_BNK
@@ -125,7 +125,7 @@ lz_decode:
 
     @end:
     ; disable NMI_FORCE flag
-    and_adr nmi_flags, #($FF-NMI_FORCE)
+    ; and_adr nmi_flags, #($FF-NMI_FORCE)
 
     pullregs
     RTS

@@ -54,7 +54,7 @@ update_image:
     @max_size = tmp+23
 
     ; enable NMI_FORCE flag
-    ora_adr nmi_flags, #NMI_FORCE
+    ; ora_adr nmi_flags, #NMI_FORCE
 
     ; size = 0
     LDY #$00
@@ -295,7 +295,7 @@ update_image:
         :
 
     ; disable NMI_FORCE flag
-    and_adr nmi_flags, #($FF-NMI_FORCE)
+    ; and_adr nmi_flags, #($FF-NMI_FORCE)
 
     ; return
     RTS
