@@ -11,14 +11,8 @@ update_dialog:
     ; if dialog box off
     LDA effect_flags
     AND #EFFECT_FLAG_PAL_SPLIT
-    BNE :+
-        ; update bottom part of image
-        push nmi_flags
-        JSR update_db
         ; return
-        pull nmi_flags
-        JMP @ret
-    :
+        BEQ @ret
 
     ; adr = $2260
     mov @adr+0, #$60

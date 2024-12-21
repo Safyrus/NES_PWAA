@@ -44,6 +44,7 @@ CHAR_KATAKANA_VOICE_MARKER_OUT = ["カ", "キ", "ク", "ケ", "コ", "サ", "シ
 CHAR_KATAKANA_SEMIVOICE_MARKER_IN = ["パ", "ピ", "プ", "ペ", "ポ"]
 CHAR_KATAKANA_SEMIVOICE_MARKER_OUT = ["ハ", "ヒ", "フ", "ヘ", "ホ"]
 
+TXT_COL_MAP = [3,0,1,2]
 
 END = 0x00
 LB = 0x01
@@ -265,23 +266,24 @@ while i < len(text):
                 if col > 3:
                     printv(f"Color value of {col} at {i} is too high. replace by 0", param="wt")
                     col = 0
+                col = TXT_COL_MAP[col]
                 textbin = append_byte(textbin, col, name, i)
         elif name == "hidetextbox":
             textbin.append(TD)
         elif name == "shake":
             textbin.append(SAK)
-            force = int(args[1]) << 5
-            force += int(args[2])
+            force = int(args[0]) << 5
+            force += int(args[1])
             textbin = append_byte(textbin, force, name, i)
         elif name == "flash":
             textbin.append(FLH)
-            force = int(args[1]) << 5
-            force += int(args[2])
+            force = int(args[0]) << 5
+            force += int(args[1])
             textbin = append_byte(textbin, force, name, i)
         elif name == "fade":
             textbin.append(FAD)
-            force = int(args[1]) << 5
-            force += int(args[2])
+            force = int(args[0]) << 5
+            force += int(args[1])
             textbin = append_byte(textbin, force, name, i)
         elif name == "photo":
             textbin.append(PHT)
