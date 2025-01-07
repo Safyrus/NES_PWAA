@@ -7,7 +7,7 @@
 ; byte 2:
 ;   pm..aaaa
 ;   ||  ++++-- ppu address (high) (relative to start of first nametable)
-;   |+-------- draw mmc5 tiles
+;   |+-------- don't draw mmc5 tiles
 ;   +--------- high priority packet
 ; byte 3: ppu address (low)
 ; rest: 2 bytes tile with ppu tile first and mmc5 tile second

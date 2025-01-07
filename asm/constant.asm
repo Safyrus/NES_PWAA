@@ -489,6 +489,7 @@
     PACKET_BUFFER_ADR = $6000
     IMG_BKG_LO_ADR    = $6400
     IMG_BKG_HI_ADR    = $6700
+    IMG_CHANGE_ADR    = $6A00
     IMG_CHR_LO_ADR    = $6A00
     IMG_CHR_HI_ADR    = $6D00
     IMG_BUF_LO_ADR    = $7000
@@ -499,7 +500,7 @@
     ANIM_BUF_ADR      = $7D00
 
     IMG_FLAG_FORCE    = $80
-    IMG_FLAG_OTHERNT  = $20
+    IMG_FLAG_OTHERNT  = $04
     IMG_FLAG_UNSPRITE = $10
 
 ;================

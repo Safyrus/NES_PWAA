@@ -67,7 +67,7 @@ cp_mmc5:
     JSR cp_page
     INC tmp+1
     INC tmp+3
-    ; or 2 fi dialog box is displayed
+    ; or 2 if dialog box is displayed
     LDA effect_flags
     AND #EFFECT_FLAG_PAL_SPLIT
     BNE :+

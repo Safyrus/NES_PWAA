@@ -17,3 +17,4 @@
 .include "update/anim.asm"
 .include "update/dialog.asm"
 .include "update/image.asm"
+.include "update/image2.asm"

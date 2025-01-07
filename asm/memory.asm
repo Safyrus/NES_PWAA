@@ -487,6 +487,8 @@ OAM:
         spr_bnks: .res 8
         img_pals: .res 3*8+1
 
+        img_simpler_buf: .res 32
+
     ;================
     ; Group: Animation Render variables
     ;================

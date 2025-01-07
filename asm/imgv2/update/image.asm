@@ -22,10 +22,13 @@ update_all_no_hy:
     LDA #32
     STA update_image_arg+2
     ; update_image()
+    LDY update_image_arg+1
+    LDX update_image_arg+3
+    JMP update_image
 
 
 ; RAM bank should be set before calling
-update_image:
+; update_image:
     ; ----------------
     ; arguments
     ; ----------------
