@@ -546,6 +546,11 @@
     DEFAULT_TEXT_COLOR = $C0
 
 ;================
+; Group: Light filter
+;================
+    LF_LIGHT = $F0
+
+;================
 ; Group: Special Characters
 ;================
 

@@ -230,7 +230,7 @@ OAM:
         scanline: .res 1
 
     ;================
-    ; Group: Music and sound variables
+    ; Group: Audio variables
     ;================
 
         ; Variable: music
@@ -249,21 +249,39 @@ OAM:
         bip: .res 1
 
     ;================
-    ; Group: Visual effect variables
+    ; Group: Special variables
     ;================
 
         ; Variable: effect_flags
         ;----------------
         ;--- Text
-        ; P.UD BN.F
-        ; | || || +-- Fade in (1) or out (0)
-        ; | || |+---- current Nametable (0=left, 1=right)
-        ; | || +----- redraw Background
-        ; | |+------- currently Drawing the background
-        ; | +-------- update background Upper tiles when drawing a partial frame
+        ; P... ....
         ; +---------- mid frame Pallette switch for the dialog box (1=active)
         ;---
         effect_flags: .res 1
+
+    ;================
+    ; Group: Light filter variables
+    ;================
+
+        ;        8        0
+        ; LLLLSSSS SSSSSSSS
+        ; ||||++++-++++++++-- current sub Speed
+        ; ++++--------------- Light level, from -8 to 7, dark < 0 = normal < bright
+        ; low endian
+        lf_cur: .res 2
+        ;        8        0
+        ; SSSSSSSS SSSSSSSS
+        ; ++++++++-++++++++-- Speed
+        ; low endian
+        lf_spd: .res 2
+        ; LLLL....
+        ; ++++--------------- Light level, from -8 to 7, dark < 0 = normal < bright
+        lf_obj: .res 1
+
+    ;================
+    ; Group: Effect timers
+    ;================
 
         ; Variable: fade_timer
         ;----------------
@@ -280,18 +298,8 @@ OAM:
         ; time remaining before the end of the shake effect
         shake_timer: .res 1
 
-        ; Variable: box_flags
-        ;----------------
-        ;--- Text
-        ; D... ..NR
-        ; |      |+-- Refresh box (1=refresh, 0=redraw)
-        ; |      +--- refresh box Name
-        ; +---------- Display box (0=show, 1=hidden)
-        ;---
-        box_flags: .res 1
-
     ;================
-    ; Group: Variables for LZ decoding
+    ; Group: LZ decoding variables
     ;================
 
         .segment "ZEROPAGE"
@@ -329,7 +337,7 @@ OAM:
 
 
     ;================
-    ; Group: Variables for name displaying
+    ; Group: Name displaying variables
     ;================
 
         ; Variable: name_idx
@@ -349,7 +357,7 @@ OAM:
 
 
     ;================
-    ; Group: Court Record Variables
+    ; Group: Court Record variables
     ;================
 
         ; Variable: cr_flag
@@ -375,7 +383,7 @@ OAM:
 
 
     ;================
-    ; Group: Image Variables
+    ; Group: Image variables
     ;================
         ; Variable: img_photo
         ;----------------
@@ -464,7 +472,7 @@ OAM:
         invest_tmp: .res 5
 
     ;================
-    ; Group: Image Render variables
+    ; Group: Packet Render variables
     ;================
         .segment "ZEROPAGE"
         packet_buf_read_adr: .res 2
@@ -473,21 +481,27 @@ OAM:
         draw_packet_zpvar: .res 4
 
         .segment "BSS"
-        update_image_arg: .res 4
 
         draw_packet_var: .res 6
 
         draw_packet_count: .res 1
+
         close_packet_var: .res 1
+
+    ;================
+    ; Group: Image Render variables
+    ;================
+        update_image_arg: .res 4
 
         draw_sprite_idx: .res 1
         res_oam: .res 1
 
         img_flag: .res 1
         spr_bnks: .res 8
+        img_tmp_pals: .res 3*8+1
         img_pals: .res 3*8+1
 
-        img_simpler_buf: .res 32
+        img_tmp_buf: .res 32
 
     ;================
     ; Group: Animation Render variables

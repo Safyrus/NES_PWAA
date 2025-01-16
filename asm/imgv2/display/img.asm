@@ -25,8 +25,8 @@ display_img:
     mov tmp+4, #<(spr_bnks-1)
     mov tmp+5, #>(spr_bnks-1)
     ; palette
-    mov tmp+10, #<img_pals
-    mov tmp+11, #>img_pals
+    mov tmp+10, #<img_tmp_pals
+    mov tmp+11, #>img_tmp_pals
     ; set RAM bank
     mov mmc5_banks+0, #IMG_BUF_BNK
     STA MMC5_RAM_BNK

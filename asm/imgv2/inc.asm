@@ -12,9 +12,11 @@
 .include "fetch/img.asm"
 .include "fetch/util.asm"
 
-.include "rleinc.asm"
-.include "snif_decode.asm"
 .include "update/anim.asm"
 .include "update/dialog.asm"
 .include "update/image.asm"
 .include "update/image2.asm"
+
+.include "pal.asm"
+.include "rleinc.asm"
+.include "snif_decode.asm"

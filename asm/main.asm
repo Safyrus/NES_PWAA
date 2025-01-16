@@ -40,46 +40,54 @@ MAIN_LOOP:
     LDA img_flag
     AND #(IMG_FLAG_UNSPRITE)
     BEQ :+
-        ; if packet_buf_read_adr == packet_buf_write_adr
-        ; (a.k.a nothing left to draw)
-        LDA packet_buf_read_adr+1
-        CMP packet_buf_write_adr+1
-        BNE :+
-        LDA packet_buf_read_adr+0
-        CMP packet_buf_write_adr+0
-        BNE :+
-            ; re-enable sprites update
-            LDA img_flag
-            AND #$FF-(IMG_FLAG_UNSPRITE)
-            STA img_flag
-            ; update palettes
-            LDY #$3*8
-            @update_pals:
-                LDA img_pals, Y
-                STA palettes, Y
-                DEY
-                BPL @update_pals
-            ; wait to be in frame
-            @wait_inframe:
-                BIT scanline
-                BVC @wait_inframe
-                LDA scanline
-                AND #$3F
-                CMP #(SCANLINE_BOT_MIDBOX & $3F)
-                bge @wait_inframe
-            ; change scroll position to other nametable
-            ; (we need to change scroll before updating MMC5 tiles)
-            LDA ppu_ctrl_val
-            EOR #$01
-            STA PPU_CTRL
-            STA ppu_ctrl_val
-            ; copy MMC5 tiles
-            JSR cp_mmc5
-            ; swap nametable to use
-            eor_adr img_flag, #IMG_FLAG_OTHERNT
-            ; update sprites
-            JSR draw_sprites
+    ; and if packet_buf_read_adr == packet_buf_write_adr
+    ; (a.k.a nothing left to draw)
+    LDA packet_buf_read_adr+1
+    CMP packet_buf_write_adr+1
+    BNE :+
+    LDA packet_buf_read_adr+0
+    CMP packet_buf_write_adr+0
+    BNE :+
+        ; re-enable sprites update
+        LDA img_flag
+        AND #$FF-(IMG_FLAG_UNSPRITE)
+        STA img_flag
+        ; use new palettes
+        LDY #$3*8
+        @update_pals:
+            LDA img_tmp_pals, Y
+            STA img_pals, Y
+            DEY
+            BPL @update_pals
+        ; update palettes
+        JSR update_palettes
+        ; wait to be in frame
+        @wait_inframe:
+            BIT scanline
+            BVC @wait_inframe
+            LDA scanline
+            AND #$3F
+            CMP #(SCANLINE_BOT_MIDBOX & $3F)
+            bge @wait_inframe
+        ; change scroll position to other nametable
+        ; (we need to change scroll before updating MMC5 tiles)
+        LDA ppu_ctrl_val
+        EOR #$01
+        STA PPU_CTRL
+        STA ppu_ctrl_val
+        ; copy MMC5 tiles
+        JSR cp_mmc5
+        ; swap nametable to use
+        eor_adr img_flag, #IMG_FLAG_OTHERNT
+        ; update sprites
+        JSR draw_sprites
+        JMP:++
+    ; else
     :
+        ; update palettes
+        JSR update_palettes
+    :
+
     ; update animation
     JSR update_anim
 

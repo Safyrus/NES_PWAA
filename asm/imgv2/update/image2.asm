@@ -200,7 +200,7 @@ send_image_buffer:
                 bge @loop_end
                 ; save tile
                 LDA (@new_img), Y
-                STA img_simpler_buf, Y
+                STA img_tmp_buf, Y
                 ; i < n
                 LDA @i+1
                 CMP @n+1
@@ -226,7 +226,7 @@ send_image_buffer:
             TAY
             LDX @size
             @send:
-                LDA img_simpler_buf-1, X
+                LDA img_tmp_buf-1, X
                 STA (@packet), Y
                 ; continue
                 DEY
