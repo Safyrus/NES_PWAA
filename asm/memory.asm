@@ -278,6 +278,8 @@ OAM:
         ; LLLL....
         ; ++++--------------- Light level, from -8 to 7, dark < 0 = normal < bright
         lf_obj: .res 1
+        ;
+        lf_tmp: .res 2
 
     ;================
     ; Group: Effect timers
@@ -487,6 +489,7 @@ OAM:
         draw_packet_count: .res 1
 
         close_packet_var: .res 1
+        packet_max_scanline: .res 1
 
     ;================
     ; Group: Image Render variables

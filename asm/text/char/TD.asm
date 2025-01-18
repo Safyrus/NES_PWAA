@@ -1,4 +1,6 @@
 TD:
+    ; flush text
+    JSR flush
     ; toggle dialog box
     eor_adr effect_flags, #EFFECT_FLAG_PAL_SPLIT
     ; set IMG bank

@@ -32,10 +32,12 @@
     ; draw_packets(prio=true)
     LDA #$80
     STA draw_packet_var+0 ; @cur_prio
+    mov packet_max_scanline, #SCANLINE_TOP_MIDBOX
     JSR draw_packets
     ; draw_packets(prio=false)
     LDA #$00
     STA draw_packet_var+0 ; @cur_prio
+    mov packet_max_scanline, #SCANLINE_DIALOG
     JSR draw_packets
     ; if not img_flag.unsprite
     LDA img_flag

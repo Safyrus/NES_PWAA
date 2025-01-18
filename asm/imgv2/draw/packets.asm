@@ -57,7 +57,7 @@ draw_packets:
         @search:
         ; if take too long
         LDA scanline
-        CMP #SCANLINE_DIALOG
+        CMP packet_max_scanline
         BNE :+
             ; return
             JMP @return
