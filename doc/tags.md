@@ -44,7 +44,7 @@ comment tag syntax is: `<!--`, anything `-->`
 
 ### speed_arg
 
-value = speed
+The value/argument is a integer that indicate the text speed.
 
 The speed is compute as "value / 32"
 and correspond to the number of character to display per frame.
@@ -68,18 +68,18 @@ third value = color index (0-3)
 ### force_arg
 
 2 arguments:
-first value = force (0-3)
-second value = time (0-32)
+first value = force (0-7)
+second value = time in frame
 
 force argument:
-for shake, force is maximum scroll in pixel * 4.
-for flash, force is color change toward white (0=no change, 3=complete white).
-for fade, force is color change toward black (0=no change, 3=complete black).
-Note that color change for fade persist.
+for shake, force is maximum scroll in pixel * 2.
+for flash, force is color change from white to current (0=no change, 4=complete white).
+for fade, force is color change from current toward black (0=no change, 4=complete black).
 
-time argument:
-for shake and flash, time is in frame.
-for fade, time is in frame * 8.
+Note:
+
+- Color change set by using fade persist.
+- The time that will be used will be the closest multiple of 8 round down.
 
 ### index_arg
 

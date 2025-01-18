@@ -14,4 +14,5 @@
 .include "char/TD.asm"
 .include "char/SPD.asm"
 .include "char/DL.asm"
+.include "char/FAD.asm"
 .include "char/COL.asm"

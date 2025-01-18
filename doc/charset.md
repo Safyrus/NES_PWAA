@@ -14,12 +14,12 @@
 |  $04  |  TD   | Toggle Dialog Box display                                    |                                                                                                    |
 |  $05  |  SET  | Set flag                                                     | 1: index                                                                                           |
 |  $06  |  CLR  | Clear flag                                                   | 1: index                                                                                           |
-|  $07  |  SAK  | ShAKe                                                        | 1: `ffttttt` (f=force, t=time)                                                                     |
+|  $07  |  SAK  | ShAKe                                                        | 1: `ffftttt` (f=force, t=time)                                                                     |
 |  $08  |  SPD  | SPeeD                                                        | 1: speed                                                                                           |
 |  $09  |  DL   | DeLay                                                        | 1: delay                                                                                           |
 |  $0A  |  NAM  | change NAMe of dialog box                                    | 1: name (0 = remove)                                                                               |
-|  $0B  |  FLH  | FLasH                                                        | 1: `ffttttt` (f=force, t=time)                                                                     |
-|  $0C  |  FAD  | FADe                                                         | 1: `ffttttt` (f=force, t=time)                                                                     |
+|  $0B  |  FLH  | FLasH                                                        | 1: `ffftttt` (f=force, t=time)                                                                     |
+|  $0C  |  FAD  | FADe                                                         | 1: `ffftttt` (f=force, t=time)                                                                     |
 |  $0D  |  SAV  | Save the current text location                               |                                                                                                    |
 |  $0E  |  COL  | change text COLor                                            | 1: `pcccccc` (c=color,p=on palette), 2:`.ttppii` (t= palette type, p=palette index, i=color index) |
 |  $0F  |  RET  | Return to the previous saved location                        |                                                                                                    |

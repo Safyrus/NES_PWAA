@@ -197,7 +197,7 @@ while i < len(text):
         elif name == "const":
             consts[args[0]] = args[1]
             printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
-        elif name == "flash": # for now to skip arguments
+        elif name == "flash" or name == "fade" or name == "shake": # for now to skip arguments
             textbin.append(0)
         elif name == "box":
             for _ in range(3):
@@ -272,18 +272,18 @@ while i < len(text):
             textbin.append(TD)
         elif name == "shake":
             textbin.append(SAK)
-            force = int(args[0]) << 5
+            force = int(args[0]) << 4
             force += int(args[1])
             textbin = append_byte(textbin, force, name, i)
         elif name == "flash":
             textbin.append(FLH)
-            force = int(args[0]) << 5
+            force = int(args[0]) << 4
             force += int(args[1])
             textbin = append_byte(textbin, force, name, i)
         elif name == "fade":
             textbin.append(FAD)
-            force = int(args[0]) << 5
-            force += int(args[1])
+            force = int(args[0]) << 4
+            force += int(args[1])//8
             textbin = append_byte(textbin, force, name, i)
         elif name == "photo":
             textbin.append(PHT)
