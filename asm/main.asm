@@ -81,11 +81,6 @@ MAIN_LOOP:
         eor_adr img_flag, #IMG_FLAG_OTHERNT
         ; update sprites
         JSR draw_sprites
-        JMP:++
-    ; else
-    :
-        ; update palettes
-        JSR update_palettes
     :
 
     ; update animation

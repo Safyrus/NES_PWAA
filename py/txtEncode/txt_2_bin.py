@@ -273,7 +273,7 @@ while i < len(text):
         elif name == "shake":
             textbin.append(SAK)
             force = int(args[0]) << 4
-            force += int(args[1])
+            force += int(args[1])//8
             textbin = append_byte(textbin, force, name, i)
         elif name == "flash":
             textbin.append(FLH)

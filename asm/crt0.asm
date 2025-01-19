@@ -166,6 +166,7 @@
     .include "main.asm"
     .include "inputv2/inc.asm"
     .include "other.asm"
+    .include "rng.asm"
 
     ; FamiStudio Sound Engine
     .include "audio/famistudio_ca65.s"

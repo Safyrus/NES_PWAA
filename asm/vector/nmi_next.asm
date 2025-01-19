@@ -70,6 +70,12 @@
         ; buttons_1_timer--
         DEC buttons_1_timer
     :
+    ; if shake_timer > 0
+    LDA shake_timer
+    BEQ :+
+        ; shake_timer--
+        DEC shake_timer
+    :
 
     ; ----------------
     ; Update Text
@@ -79,3 +85,8 @@
     BNE :+
         JSR read
     :
+
+    ; update palettes
+    JSR update_palettes
+    ; update shake
+    JSR update_shake

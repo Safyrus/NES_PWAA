@@ -12,12 +12,14 @@ draw_sprites:
             ; continue
             bge @continue
         ; OAM[X] = s
+        sub scroll_y
         STA OAM+0, X
         LDA IMG_CHR_SPR+1, Y
         STA OAM+1, X
         LDA IMG_CHR_SPR+2, Y
         STA OAM+2, X
         LDA IMG_CHR_SPR+3, Y
+        sub scroll_x
         STA OAM+3, X
         ; X++
         INX

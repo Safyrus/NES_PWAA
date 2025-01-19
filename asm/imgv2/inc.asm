@@ -17,6 +17,7 @@
 .include "update/image.asm"
 .include "update/image2.asm"
 
+.include "light.asm"
 .include "pal.asm"
 .include "rleinc.asm"
 .include "snif_decode.asm"

@@ -25,11 +25,11 @@ exec_char:
         .byte <(TD-1)   ; $04
         .byte <(@ret-1) ; $05
         .byte <(@ret-1) ; $06
-        .byte <(@ret-1) ; $07
+        .byte <(SAK-1)  ; $07
         .byte <(SPD-1)  ; $08
         .byte <(DL-1)   ; $09
         .byte <(@ret-1) ; $0A
-        .byte <(@ret-1) ; $0B
+        .byte <(FLH-1)  ; $0B
         .byte <(FAD-1)  ; $0C
         .byte <(@ret-1) ; $0D
         .byte <(COL-1)  ; $0E
@@ -59,11 +59,11 @@ exec_char:
         .byte >(TD-1)   ; $04
         .byte >(@ret-1) ; $05
         .byte >(@ret-1) ; $06
-        .byte >(@ret-1) ; $07
+        .byte >(SAK-1)  ; $07
         .byte >(SPD-1)  ; $08
         .byte >(DL-1)   ; $09
         .byte >(@ret-1) ; $0A
-        .byte >(@ret-1) ; $0B
+        .byte >(FLH-1)  ; $0B
         .byte >(FAD-1)  ; $0C
         .byte >(@ret-1) ; $0D
         .byte >(COL-1)  ; $0E

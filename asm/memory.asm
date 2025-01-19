@@ -156,8 +156,11 @@
     ; A packet of size 0 means there is no more data to draw
     background: .res ZP_BACKGROUND_SIZE
 
+    ; Variable: seed
+    seed: .res 2
+
     ; padding
-    .res $10 - ((ZP_BACKGROUND_SIZE+1) .MOD $10)
+    .res $10 - 2 - ((ZP_BACKGROUND_SIZE+1) .MOD $10)
 
     ; Variable: tmp
     ;----------------
@@ -282,19 +285,13 @@ OAM:
         lf_tmp: .res 2
 
     ;================
-    ; Group: Effect timers
+    ; Group: Shake effect
     ;================
 
-        ; Variable: fade_timer
+        ; Variable: shake_force
         ;----------------
-        ; time remaining before the end of the fade effect
-        fade_timer: .res 1
-
-        ; Variable: flash_timer
-        ;----------------
-        ; time remaining before the end of the flash effect
-        flash_timer: .res 1
-
+        ;
+        shake_force: .res 1
         ; Variable: shake_timer
         ;----------------
         ; time remaining before the end of the shake effect

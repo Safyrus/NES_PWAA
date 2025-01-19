@@ -90,3 +90,34 @@ cp_mmc5:
 ;     @end:
 ;     ADC tmp
 ;     RTS
+
+
+update_shake:
+    ; if shake_timer == 0
+    LDA shake_timer
+    BNE :+
+        ; scroll_x, scroll_y = 0
+        STA scroll_x
+        STA scroll_y
+        ; return
+        RTS
+    :
+
+    ; offset = rng() & $0F
+    JSR rng
+    AND #$0F
+    ; offset *= shake_force
+    STA MMC5_MUL_A
+    LDA shake_force
+    STA MMC5_MUL_B
+    ; offset /= 8
+    LDA MMC5_MUL_A
+    LSR
+    LSR
+    LSR
+    ; scroll_x = offset
+    STA scroll_x
+
+    ; return
+    @ret:
+    RTS

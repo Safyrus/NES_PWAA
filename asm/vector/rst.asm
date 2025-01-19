@@ -115,6 +115,14 @@ RST:
     LDA #$80
     STA APU_FRAME
 
+    ; increase seed if == 0
+    LDA seed+1
+    BNE :+
+    LDA seed+0
+    BNE :+
+        INC seed+0
+    :
+
     ; set code bank
     LDA #CODE_BNK
     STA mmc5_banks+1

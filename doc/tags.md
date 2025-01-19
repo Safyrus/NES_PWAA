@@ -79,7 +79,8 @@ for fade, force is color change from current toward black (0=no change, 4=comple
 Note:
 
 - Color change set by using fade persist.
-- The time that will be used will be the closest multiple of 8 round down.
+- for fade and shake, the time that will be used
+  is the closest multiple of 8 round down.
 
 ### index_arg
 

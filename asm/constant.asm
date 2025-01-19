@@ -545,6 +545,9 @@
     DEFAULT_TEXT_FONT = $00
     DEFAULT_TEXT_COLOR = $C0
 
+    TXTARG_FORCE = $70
+    TXTARG_TIME = $0F
+
 ;================
 ; Group: Light filter
 ;================
