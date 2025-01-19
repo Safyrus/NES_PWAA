@@ -76,15 +76,67 @@
 
 ## To-do: Dialog Box V2
 
-- [/] Display
+- [X] Display
   - [X] Mid-Frame palette switch
   - [X] Update dialog box
   - [X] Clear dialog box
   - [X] Print text
-  - [ ] Refactor to read text each frame
+  - [X] Refactor to read text each frame
+  - [X] Refactor image display to save all last frame in RAM
+  - [X] Light filter
 - [/] Logic
   - [X] Read Text
-  - [ ] Special Chars (3/32)
+  - [/] Special Chars
+    - [X] END
+    - [X] LB
+    - [X] DB
+    - [X] FDB
+    - [X] TD
+    - [ ] SET
+    - [ ] CLR
+    - [X] SAK
+    - [X] SPD
+    - [X] DL
+    - [ ] NAM
+    - [X] FLH
+    - [X] FAD
+    - [ ] SAV
+    - [X] COL (simple)
+    - [ ] RET
+    - [ ] BIP
+    - [ ] MUS
+    - [ ] SND
+    - [ ] PHT
+    - [ ] CHR
+    - [ ] BKG
+    - [ ] FNT
+    - [ ] JMP
+    - [ ] ACT
+    - [ ] EVT
+    - [ ] EXT
+
+----------------------------------------------------------------
+
+## To-do: Court record V2
+
+----------------------------------------------------------------
+
+## To-do: Investigation V2
+
+----------------------------------------------------------------
+
+## To-do: Text
+
+----------------------------------------------------------------
+
+## To-do: Audio V2
+
+- [/] Music
+  - [X] Remake
+  - [ ] Opti
+  - [ ] Export script
+  - [ ] Export data
+- [ ] SFX
 
 ----------------------------------------------------------------
 
