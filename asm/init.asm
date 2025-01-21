@@ -52,6 +52,7 @@
     ; --------
     ; test display
     LDX #COURTROOM_0
+    STX new_bkg
     JSR display_bkg
     LDX #<PHOENIX_DOCUMENT_A_
     LDY #>PHOENIX_DOCUMENT_A_

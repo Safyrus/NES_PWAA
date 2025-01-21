@@ -1,3 +1,25 @@
+update_img_no_db:
+    LDA #16
+    STA update_image_arg+3
+    JMP update_all_no_h
+
+update_all:
+    LDA #24
+    STA update_image_arg+3
+update_all_no_h:
+    LDA #0
+    STA update_image_arg+1
+update_all_no_hy:
+    LDA #0
+    STA update_image_arg+0
+    LDA #32
+    STA update_image_arg+2
+    ; update_image()
+    LDY update_image_arg+1
+    LDX update_image_arg+3
+    JMP update_image
+
+
 ; args: Y=y, X=h
 update_image:
     TYA

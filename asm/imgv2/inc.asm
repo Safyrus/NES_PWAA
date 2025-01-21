@@ -2,6 +2,8 @@
 .include "display/bkg_chr.asm"
 .include "display/dialog.asm"
 .include "display/img.asm"
+.include "display/remove.asm"
+.include "display/util.asm"
 
 .include "draw/close_packet.asm"
 .include "draw/packet_res.asm"
@@ -14,7 +16,6 @@
 
 .include "update/anim.asm"
 .include "update/dialog.asm"
-.include "update/image.asm"
 .include "update/image2.asm"
 
 .include "light.asm"

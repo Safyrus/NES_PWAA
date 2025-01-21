@@ -578,14 +578,14 @@
     MUS ; MUSic
     SND ; SouND effect
     PHT ; show PHoto
-    CHR ; CHaRacter to show
-    ANI ; character ANImation
+    CHR ; change CHaRacter
+    R15 ; Reserved
     BKG ; change BacKGround
     FNT ; Change FoNT to use
     JMP ; JuMP to another dialog
     ACT ; jump to the selected choice (depending on the player ACTion
-    BP  ; Background Palette
-    SP  ; Sprite Palette
+    R1A ; Reserved
+    R1B ; Reserved
     R1C ; Reserved
     R1D ; Reserved
     EVT ; EVenT. Use to add control characters specific to the game

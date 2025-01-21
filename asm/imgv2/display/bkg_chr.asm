@@ -9,6 +9,7 @@ display_chr:
 
 ; X = bkg idx
 display_bkg:
+    STX cur_bkg
     ; bkg_lo
     ; bkg_hi
     mov tmp+3, #>IMG_BKG_LO_ADR

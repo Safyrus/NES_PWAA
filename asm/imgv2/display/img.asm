@@ -35,20 +35,5 @@ display_img:
     ; snif_decode(in, bkg_lo, bnk_buf, bkg_hi, spr_buf, palette)
     JSR snif_decode
 
-    ; --------
-    ; update
-    ; --------
-    ; if dialog box displayed
-    BIT effect_flags
-    BPL :+
-        ; update all except dialog box space
-        JSR update_img_no_db
-        JMP :++
-    ; else
-    :
-        ; update all
-        JSR update_all
-    :
-
-    ; return
-    RTS
+    ; update and return
+    JMP call_update_img

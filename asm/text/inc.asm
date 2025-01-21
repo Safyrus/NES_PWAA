@@ -18,3 +18,5 @@
 .include "char/FLH.asm"
 .include "char/FAD.asm"
 .include "char/COL.asm"
+.include "char/CHR.asm"
+.include "char/BKG.asm"

@@ -509,7 +509,12 @@ OAM:
         anim_idx: .res 1
         anim_timer: .res 1
         anim_size: .res 1
+
         cur_chr: .res 2
+        new_chr: .res 2
+
+        cur_bkg: .res 1
+        new_bkg: .res 1
 
     ;================
     ; Group: Text variables

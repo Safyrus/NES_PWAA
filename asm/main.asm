@@ -39,15 +39,15 @@ MAIN_LOOP:
     ; TODO: better flag condition ?
     LDA img_flag
     AND #(IMG_FLAG_UNSPRITE)
-    BEQ :+
+    BEQ @anim_else
     ; and if packet_buf_read_adr == packet_buf_write_adr
     ; (a.k.a nothing left to draw)
     LDA packet_buf_read_adr+1
     CMP packet_buf_write_adr+1
-    BNE :+
+    BNE @anim_else
     LDA packet_buf_read_adr+0
     CMP packet_buf_write_adr+0
-    BNE :+
+    BNE @anim_else
         ; re-enable sprites update
         LDA img_flag
         AND #$FF-(IMG_FLAG_UNSPRITE)
@@ -81,7 +81,25 @@ MAIN_LOOP:
         eor_adr img_flag, #IMG_FLAG_OTHERNT
         ; update sprites
         JSR draw_sprites
-    :
+        JMP @anim_fi
+    ; else
+    @anim_else:
+        ; if new background
+        LDX new_bkg
+        CPX cur_bkg
+        BEQ :++
+            ; if background < 0
+            LDX new_bkg
+            BPL :+
+                ; remove background
+                JSR remove_bkg
+                JMP :++
+            :
+            ;else
+                ; display background
+                JSR display_bkg
+        :
+    @anim_fi:
 
     ; update animation
     JSR update_anim

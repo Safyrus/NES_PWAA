@@ -293,8 +293,8 @@ while i < len(text):
             textbin = append_byte(textbin, int(args[0]), name, i)
         elif name == "character":
             textbin.append(CHR)
-            textbin = append_byte(textbin, int(args[0] % 128), name, i)
-            textbin = append_byte(textbin, int(args[0] // 128), name, i)
+            textbin = append_byte(textbin, int(args[0]) % 128, name, i)
+            textbin = append_byte(textbin, int(args[0]) // 128, name, i)
         elif name == "music":
             textbin.append(MUS)
             textbin = append_byte(textbin, int(args[0]), name, i)
