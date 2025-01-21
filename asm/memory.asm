@@ -512,6 +512,7 @@ OAM:
 
         cur_chr: .res 2
         new_chr: .res 2
+        tmp_chr: .res 2
 
         cur_bkg: .res 1
         new_bkg: .res 1

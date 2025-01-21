@@ -1,12 +1,10 @@
 update_anim:
     ; --- if anim is playing ---
-    ; if cur_chr == 0
-    LDA cur_chr+0
-    BNE :+
+    ; if cur_chr < 0
     LDA cur_chr+1
-        ; return
-        BEQ @return
-    :
+    ; return
+        BMI @return
+
     ; if waiting for a frame to finish drawing
     LDA img_flag
     AND #(IMG_FLAG_UNSPRITE)

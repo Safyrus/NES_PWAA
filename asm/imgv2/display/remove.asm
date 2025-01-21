@@ -21,3 +21,33 @@ remove_bkg:
 
     ; update and return
     JMP call_update_img
+
+
+remove_chr:
+    ; cur_chr = new_chr
+    mov cur_chr+0, new_chr+0
+    mov cur_chr+1, new_chr+1
+    ; clear character tiles
+    LDA #$00
+    TAX
+    @clear_tiles:
+        STA IMG_CHR_LO_ADR+$000, X
+        STA IMG_CHR_LO_ADR+$100, X
+        STA IMG_CHR_LO_ADR+$200, X
+        STA IMG_CHR_HI_ADR+$000, X
+        STA IMG_CHR_HI_ADR+$100, X
+        STA IMG_CHR_HI_ADR+$200, X
+        ; continue
+        INX
+        BNE @clear_tiles
+    
+    ; clear sprites
+    LDA #$FF
+    @clear_spr:
+        STA IMG_CHR_SPR, X
+        ; continue
+        INX
+        BNE @clear_spr
+
+    ; update and return
+    JMP call_update_img

@@ -5,8 +5,8 @@ display_anim:
     ; --------
     ; stop current anim
     ; --------
-    ; cur_chr = 0
-    mov cur_chr, #$00
+    ; cur_chr = <0
+    mov cur_chr+1, #$FF
     ; save XY
     TYA
     PHA
@@ -50,8 +50,6 @@ display_anim:
     STA cur_chr+0
     PLA
     STA cur_chr+1
-    ; cur_chr++
-    inc_16 cur_chr
     ; anim_timer = 0
     LDA #$00
     STA anim_timer

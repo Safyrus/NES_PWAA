@@ -55,7 +55,9 @@
     STX new_bkg
     JSR display_bkg
     LDX #<PHOENIX_DOCUMENT_A_
+    STX new_chr+0
     LDY #>PHOENIX_DOCUMENT_A_
+    STY new_chr+1
     JSR display_anim
 
     ; enable text

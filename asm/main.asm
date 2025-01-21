@@ -84,10 +84,10 @@ MAIN_LOOP:
         JMP @anim_fi
     ; else
     @anim_else:
-        ; if new background
+        ; if new_bkg != cur_bkg
         LDX new_bkg
         CPX cur_bkg
-        BEQ :++
+        BEQ :+++
             ; if background < 0
             LDX new_bkg
             BPL :+
@@ -98,6 +98,32 @@ MAIN_LOOP:
             ;else
                 ; display background
                 JSR display_bkg
+            :
+            ; display_anim(cur_chr)
+            LDX cur_chr+0
+            LDY cur_chr+1
+            JSR display_anim
+        :
+
+        ; if new_chr != cur_chr
+        LDY new_chr+1
+        LDX new_chr+0
+        CPX cur_chr+0
+        BNE :+
+        CPY cur_chr+1
+        BEQ :++++
+        :
+            ; if new_chr < 0
+            TYA
+            BPL :+
+                ; remove character
+                JSR remove_chr
+                JMP :++
+            :
+            ;else
+                ; display_anim(new_chr)
+                JSR display_anim
+            :
         :
     @anim_fi:
 
