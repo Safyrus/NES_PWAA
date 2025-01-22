@@ -20,3 +20,4 @@
 .include "char/COL.asm"
 .include "char/CHR.asm"
 .include "char/BKG.asm"
+.include "char/FNT.asm"

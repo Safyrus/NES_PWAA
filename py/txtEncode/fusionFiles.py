@@ -11,8 +11,8 @@ files.sort(key=lambda f: os.path.basename(f))
 
 for fn in files:
     print(fn)
-    with open(fn) as f:
+    with open(fn, encoding="utf-8") as f:
         txt += f.read()
 
-with open(out, "w") as f:
+with open(out, "w", encoding="utf-8") as f:
     f.write(txt)
