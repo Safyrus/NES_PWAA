@@ -19,8 +19,8 @@ remove_bkg:
     ; clear background color
     STA img_tmp_pals+0
 
-    ; update and return
-    JMP call_update_img
+    ; return
+    RTS
 
 
 remove_chr:
@@ -49,5 +49,5 @@ remove_chr:
         INX
         BNE @clear_spr
 
-    ; update and return
-    JMP call_update_img
+    ; return
+    RTS

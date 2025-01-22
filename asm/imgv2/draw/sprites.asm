@@ -9,8 +9,16 @@ draw_sprites:
         ; if s.y >= $F0
         LDA IMG_CHR_SPR+0, Y
         CMP #$F0
+        blt :+
+            ; if y == 0
+            TYA
+                ; break
+                BEQ @break
+            ; Y = 0
+            LDY #$00
             ; continue
-            bge @continue
+            BEQ @continue
+        :
         ; OAM[X] = s
         sub scroll_y
         STA OAM+0, X
@@ -22,19 +30,18 @@ draw_sprites:
         sub scroll_x
         STA OAM+3, X
         ; X++
-        INX
-        INX
-        INX
-        INX
+        TXA
+        CLC
+        ADC #$04
+        TAX
         ; if X == 0 (overflow/OAM full)
             ; break
             BEQ @break
-        @continue:
         ; Y++
-        INY
-        INY
-        INY
-        INY
+        TYA
+        ADC #$04
+        TAY
+        @continue:
         ; if Y == draw_sprite_idx
         CPY draw_sprite_idx
             ; break

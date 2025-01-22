@@ -59,6 +59,7 @@
     LDY #>PHOENIX_DOCUMENT_A_
     STY new_chr+1
     JSR display_anim
+    JSR call_update_img
 
     ; enable text
     and_adr txt_flags, #($FF-TXT_FLAG_BUSY)

@@ -35,5 +35,5 @@ display_img:
     ; snif_decode(in, bkg_lo, bnk_buf, bkg_hi, spr_buf, palette)
     JSR snif_decode
 
-    ; update and return
-    JMP call_update_img
+    ; return
+    RTS

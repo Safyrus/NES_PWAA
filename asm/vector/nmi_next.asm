@@ -86,6 +86,9 @@
         JSR read
     :
 
+    ; ----------------
+    ; Update other things
+    ; ----------------
     ; update palettes
     JSR update_palettes
     ; update shake

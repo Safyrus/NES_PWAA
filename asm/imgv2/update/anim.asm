@@ -33,6 +33,7 @@ update_anim:
     LDA ANIM_BUF_ADR+1, Y
     TAY
     JSR display_chr
+    JSR call_update_img
 
     ; --- next anim ---
     ; anim_idx++

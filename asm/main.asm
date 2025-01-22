@@ -48,6 +48,21 @@ MAIN_LOOP:
     LDA packet_buf_read_adr+0
     CMP packet_buf_write_adr+0
     BNE @anim_else
+        ; wait to be at the top of the frame
+        @wait_topframe:
+            LDA scanline
+            CMP #SCANLINE_TOP
+            BNE @wait_topframe
+        ; change scroll position to other nametable
+        ; (we need to change scroll before updating MMC5 tiles)
+        LDA ppu_ctrl_val
+        EOR #$01
+        STA PPU_CTRL
+        STA ppu_ctrl_val
+        ; copy MMC5 tiles
+        JSR cp_mmc5
+        ; swap nametable to use
+        eor_adr img_flag, #IMG_FLAG_OTHERNT
         ; re-enable sprites update
         LDA img_flag
         AND #$FF-(IMG_FLAG_UNSPRITE)
@@ -61,24 +76,6 @@ MAIN_LOOP:
             BPL @update_pals
         ; update palettes
         JSR update_palettes
-        ; wait to be in frame
-        @wait_inframe:
-            BIT scanline
-            BVC @wait_inframe
-            LDA scanline
-            AND #$3F
-            CMP #(SCANLINE_BOT_MIDBOX & $3F)
-            bge @wait_inframe
-        ; change scroll position to other nametable
-        ; (we need to change scroll before updating MMC5 tiles)
-        LDA ppu_ctrl_val
-        EOR #$01
-        STA PPU_CTRL
-        STA ppu_ctrl_val
-        ; copy MMC5 tiles
-        JSR cp_mmc5
-        ; swap nametable to use
-        eor_adr img_flag, #IMG_FLAG_OTHERNT
         ; update sprites
         JSR draw_sprites
         JMP @anim_fi
@@ -87,7 +84,9 @@ MAIN_LOOP:
         ; if new_bkg != cur_bkg
         LDX new_bkg
         CPX cur_bkg
-        BEQ :+++
+        BEQ @new_bkg_end
+            ; remove character
+            JSR remove_chr
             ; if background < 0
             LDX new_bkg
             BPL :+
@@ -103,7 +102,13 @@ MAIN_LOOP:
             LDX cur_chr+0
             LDY cur_chr+1
             JSR display_anim
-        :
+            ; if cur_chr < 0 (no character)
+            LDA cur_chr+1
+            BPL :+
+                ; update image
+                JSR call_update_img
+            :
+        @new_bkg_end:
 
         ; if new_chr != cur_chr
         LDY new_chr+1
@@ -118,6 +123,7 @@ MAIN_LOOP:
             BPL :+
                 ; remove character
                 JSR remove_chr
+                JSR call_update_img
                 JMP :++
             :
             ;else
