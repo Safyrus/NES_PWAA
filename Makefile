@@ -70,12 +70,9 @@ clean_data:
 clean_tmp:
 	-rm -f $(DATA)/EVI.chr
 	-rm -f $(DATA)/tmp.chr
+	-rm -f $(DATA)/FONT.chr
 	-rm -f $(C)/a
 	-rm -f $(C)/CHR.chr
-	-rm -f "$(ANIM_0)"
-	-rm -f "$(ANIM_1)"
-	-rm -f "$(ANIM_2)"
-	-rm -f "$(ANIM_3)"
 	-rm -f "$(ASM)/data/img/all.chr"
 	-rm -f "$(ASM)/data/img/r0.snif"
 	-rm -f "$(ASM)/data/img/r1.snif"
@@ -94,7 +91,7 @@ run:
 #--------------------------------
 
 text:
-	$(PYTHON) $(PY)/txtEncode/fusionFiles.py data/text/pwaa $(TEXT)
+	$(PYTHON) $(PY)/txtEncode/fusionFiles.py $(TEXT_FOLDER) $(TEXT)
 	mkdir -p "$(ASM)/data"
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin 1
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
@@ -105,6 +102,8 @@ text:
 img:
 # make images and anims
 	$(PYTHON) $(PY)/img/all2nes.py -if $(DATA)/img -sf $(DATA)/snif -of $(ASM)/data/img
+# make FONT chr
+	$(PYTHON) $(PY)/img/build_font.py -if $(DATA)/font -in $(DATA)/name -oc $(DATA)/FONT.chr -on $(ASM)/data/name.asm -of $(ASM)/data/font.asm
 # merge FONT and images tiles
 	$(PYTHON) $(PY)/chr/merge_chr.py $(DATA)/FONT.chr $(ASM)/data/img/all.chr -o PWAA.chr
 # make photo

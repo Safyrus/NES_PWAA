@@ -68,23 +68,15 @@ When event:click is read.
 
 Note: each name is precead by `evt-`.
 
-|  Name   | code  | args  | description                           |
-| :-----: | :---: | :---: | :------------------------------------ |
-|   cr    |  $00  |   /   | Toggle court record                   |
-| cr-obj  |  $01  |   /   | Toggle present evidence               |
-| cr-set  |  $02  | flag  | Set evidence flag                     |
-| cr-clr  |  $03  | flag  | Clear evidence flag                   |
-| cr-idx  |  $04  |  idx  | Index of correct evidence to present  |
-|  click  |  $05  |   /   | Switch to examination mode            |
-| act-ret |  $06  |   /   | Return to last ACT                    |
-| swoosh  |  $??  |   /   | Scroll to the other side of the scene |
-| scroll  |  $??  |   /   | Scroll to the other background        |
-| hp-bar  |  $??  |   /   | Toggle life-bar display               |
-| hp-hit  |  $??  |   /   | Life-bar hit effect                   |
-| ce-txt  |  $??  |   /   | Cross-examination top text            |
-|  t-txt  |  $??  |   /   | Testimony top text                    |
-|  t-SCR  |  $??  |   /   | Testimony scroll text effect          |
-|  clue   |  $??  |   /   | New evidence scroll effect            |
+|  Mne  | code  | args  | description                                         |
+| :---: | :---: | :---: | :-------------------------------------------------- |
+|  CR   |  $00  |   /   | Court Record toggle                                 |
+|  CRO  |  $01  |   /   | Court Record Objection (present evidence)           |
+|  CRS  |  $02  | flag  | Court Record : Set evidence flag                    |
+|  CRC  |  $03  | flag  | Court Record : Clear evidence flag                  |
+|  CRI  |  $04  |  idx  | Court Record : Index of correct evidence to present |
+|  CLK  |  $05  |   /   | CLicK : Switch to examination mode                  |
+|  AR   |  $06  |   /   | Act Return : return to last choice                  |
 
 ### Jump addresses format
 

@@ -22,6 +22,7 @@ dump_*.txt
 *.tags
 EVI.chr
 tmp.chr
+FONT.chr
 visual.png
 const_info.txt
 tmp.png

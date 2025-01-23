@@ -84,6 +84,8 @@
   - [X] Refactor to read text each frame
   - [X] Refactor image display to save all last frame in RAM
   - [X] Light filter
+  - [X] Display name as sprites
+- [X] Build fonts and names from images
 - [/] Logic
   - [X] Read Text
   - [/] Special Chars
@@ -97,7 +99,7 @@
     - [X] SAK
     - [X] SPD
     - [X] DL
-    - [ ] NAM
+    - [X] NAM
     - [X] FLH
     - [X] FAD
     - [ ] SAV
@@ -107,13 +109,19 @@
     - [ ] MUS
     - [ ] SND
     - [ ] PHT
-    - [ ] CHR
-    - [ ] BKG
-    - [ ] FNT
+    - [X] CHR
+    - [X] BKG
+    - [X] FNT
     - [ ] JMP
     - [ ] ACT
     - [ ] EVT
-    - [ ] EXT
+      - [ ] CR
+      - [ ] CRO
+      - [ ] CRS
+      - [ ] CRC
+      - [ ] CRI
+      - [ ] CLK
+      - [ ] AR
 
 ----------------------------------------------------------------
 
