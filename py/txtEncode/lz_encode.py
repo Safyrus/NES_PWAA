@@ -9,6 +9,19 @@ LEN_BITS = (LEN_SIZE-1).bit_length()
 BITS_SIZE = JUMP_BITS+LEN_BITS
 MIN_LEN = ((JUMP_BITS+LEN_BITS+1)//8)+1
 
+def from_bit_stream(text):
+    res = bytearray()
+    i = 0
+    while i < len(text)//8:
+        b = int(text[(i*8):(i*8)+8], 2)
+        res.append(b)
+        i += 1
+    remain = len(text) % 8
+    if remain > 0:
+        b = int(text[(i*8):(i*8)+remain], 2) << (7 - remain)
+        res.append(b)
+    return res
+
 def write_bit_stream(text, filename):
     with open(filename, "wb") as f:
         i = 0

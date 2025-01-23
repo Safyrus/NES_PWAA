@@ -44,7 +44,7 @@ CHAR_KATAKANA_VOICE_MARKER_OUT = ["カ", "キ", "ク", "ケ", "コ", "サ", "シ
 CHAR_KATAKANA_SEMIVOICE_MARKER_IN = ["パ", "ピ", "プ", "ペ", "ポ"]
 CHAR_KATAKANA_SEMIVOICE_MARKER_OUT = ["ハ", "ヒ", "フ", "ヘ", "ホ"]
 
-TXT_COL_MAP = [3,0,1,2]
+TXT_COL_MAP = [3, 0, 1, 2]
 
 END = 0x00
 LB = 0x01
@@ -81,6 +81,7 @@ EXT = 0x1F
 
 verbose = 0
 
+
 def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
     global verbose
     if v > verbose:
@@ -102,14 +103,30 @@ def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
     if "w" in param or "e" in param or "i" in param:
         print("\033[0m", end="", flush=flush)
     print("", end=end)
+
+
+def val_2_int(val):
+    global consts
+
+    while val in consts:
+        val = consts[val]
+    if val.isnumeric():
+        val = int(val)
+    else:
+        printv(f"ERROR: cosntant '{val}' is not declared at {i}. Replacing by 0", param="te")
+        val = 0
     
+    return val
 
 
-def append_byte(textbin, val, name, i):
+def append_val(textbin, val, name, i):
+    val = val_2_int(val)
+
     if val > 127:
         printv(f"WARNING: {name} is > 127 (val={val}) at {i}. Replacing by 0", param="tw")
         val = 0
     textbin.append(val)
+
     return textbin
 
 
@@ -143,6 +160,7 @@ def add_normal_char(textbin, c):
     # return
     return textbin
 
+
 ########
 # MAIN #
 ########
@@ -165,61 +183,11 @@ text = re.sub(r"[\x00-\x1E]", "", text)
 # remove comments
 text = re.sub(r"<!--(.*?)-->", "", text)
 
-# find labels
-printv(f"parsing... (labels)", param="t")
-textbin = bytearray()
-i = 0
+# parsing file
+dummy_vals = {}
 labels = {}
 consts = {}
-while i < len(text):
-    c = text[i]
-    if c == "<":
-        # get tag
-        tag_end = text.find(">", i)
-        tag = text[i+1:tag_end]
-        # find tag name and args
-        if ":" in tag:
-            name, args = tag.split(":")
-            args = args.split(",")
-        else:
-            name, args = tag, []
-
-        # transform tag to code
-        if name == "label":
-            labels[args[0]] = len(textbin)
-            printv(f"label: '{args[0]}' at {hex(labels[args[0]])}", param="it", v=2)
-        elif name == "jump":
-            # add dummy character to keep the length correct
-            if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
-                textbin.append(0)
-            if len(args) >= 4:
-                textbin.append(0)
-            for _ in range(3):
-                textbin.append(0)
-        elif name == "const":
-            consts[args[0]] = args[1]
-            printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
-        elif name == "flash" or name == "fade" or name == "shake": # for now to skip arguments
-            textbin.append(0)
-        elif name == "box":
-            for _ in range(3):
-                textbin.append(0)
-        else:
-            # add dummy character to keep the length correct
-            textbin.append(0)
-            for _ in range(len(args)):
-                textbin.append(0)
-
-        # update index
-        i = tag_end+1
-    else:
-        # add char
-        textbin = add_normal_char(textbin, c)
-        # update index
-        i += 1
-
-# parsing file
-printv(f"parsing... (all)", param="t")
+printv(f"parsing...", param="t")
 textbin = bytearray()
 i = 0
 while i < len(text):
@@ -227,15 +195,11 @@ while i < len(text):
     if c == "<":
         # get tag
         tag_end = text.find(">", i)
-        tag = text[i+1:tag_end]
+        tag = text[i + 1 : tag_end]
         # find tag name and args
         if ":" in tag:
             name, args = tag.split(":")
             args = args.split(",")
-            # replace constants by values
-            for j in range(len(args)):
-                if args[j] in consts:
-                    args[j] = consts[args[j]]
         else:
             name, args = tag, []
 
@@ -248,87 +212,120 @@ while i < len(text):
             textbin.append(FDB)
         elif name == "speed":
             textbin.append(SPD)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "wait":
             textbin.append(DL)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "name":
             textbin.append(NAM)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "color":
             textbin.append(COL)
             if len(args) > 1:
-                col = int(args[0]) & 0x3F
-                pal_idx = int(args[1]) & 0x0F << 2
-                pal_idx += int(args[2]) & 0x03
-                textbin = append_byte(textbin, col, name, i)
-                textbin = append_byte(textbin, pal_idx, name, i)
+                col = val_2_int(args[0])
+                if col > 0x3F:
+                    printv(f"Color value of {col} at {i} is too high. replace by 0", param="wt")
+                    col = 0
+                pal_idx = val_2_int(args[1])
+                if pal_idx > 0x0F:
+                    printv(f"Palette index of {pal_idx} at {i} is too high. replace by 0", param="wt")
+                    pal_idx = 0
+                col_idx = val_2_int(args[2])
+                if col_idx > 0x03:
+                    printv(f"Color index of {col_idx} at {i} is too high. replace by 0", param="wt")
+                    col_idx = 0
+
+                pal_idx = (pal_idx << 2) + col_idx
+                col |= 0x40
+                textbin.append(col)
+                textbin.append(pal_idx)
             else:
-                col = int(args[0])
+                col = val_2_int(args[0])
                 if col > 3:
                     printv(f"Color value of {col} at {i} is too high. replace by 0", param="wt")
                     col = 0
                 col = TXT_COL_MAP[col]
-                textbin = append_byte(textbin, col, name, i)
+                textbin.append(col)
         elif name == "hidetextbox":
             textbin.append(TD)
         elif name == "shake":
             textbin.append(SAK)
-            force = int(args[0]) << 4
-            force += int(args[1])//8
-            textbin = append_byte(textbin, force, name, i)
+            force = val_2_int(args[0])
+            if force > 7:
+                printv(f"Force value of {force} at {i} is too high. replace by 0", param="wt")
+                force = 0
+            time = val_2_int(args[1])
+            if time > 120:
+                printv(f"Time value of {time} at {i} is too high. replace by 0", param="wt")
+                time = 0
+            val = (force << 4) + (time // 8)
+            textbin.append(val)
         elif name == "flash":
             textbin.append(FLH)
-            force = int(args[0]) << 4
-            force += int(args[1])
-            textbin = append_byte(textbin, force, name, i)
+            force = val_2_int(args[0])
+            if force > 7:
+                printv(f"Force value of {force} at {i} is too high. replace by 0", param="wt")
+                force = 0
+            time = val_2_int(args[1])
+            if time > 120:
+                printv(f"Time value of {time} at {i} is too high. replace by 0", param="wt")
+                time = 0
+            val = (force << 4) + time
+            textbin.append(val)
         elif name == "fade":
             textbin.append(FAD)
-            force = int(args[0]) << 4
-            force += int(args[1])//8
-            textbin = append_byte(textbin, force, name, i)
+            force = val_2_int(args[0])
+            if force > 7:
+                printv(f"Force value of {force} at {i} is too high. replace by 0", param="wt")
+                force = 0
+            time = val_2_int(args[1])
+            if time > 120:
+                printv(f"Time value of {time} at {i} is too high. replace by 0", param="wt")
+                time = 0
+            val = (force << 4) + (time // 8)
+            textbin.append(val)
         elif name == "photo":
             textbin.append(PHT)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "background":
             textbin.append(BKG)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "character":
             textbin.append(CHR)
-            textbin = append_byte(textbin, int(args[0]) % 128, name, i)
-            textbin = append_byte(textbin, int(args[0]) // 128, name, i)
+            c = val_2_int(args[0])
+            textbin.append(c % 128)
+            textbin.append(c // 128)
         elif name == "music":
             textbin.append(MUS)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "sound":
             textbin.append(SND)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "bip":
             textbin.append(BIP)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "set":
             textbin.append(SET)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "clear":
             textbin.append(CLR)
-            textbin = append_byte(textbin, int(args[0]), name, i)
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "font":
             textbin.append(FNT)
-            textbin = append_byte(textbin, int(args[0]), name, i)
-        elif name == "label":
-            pass
-        elif name == "const":
-            pass
+            textbin = append_val(textbin, args[0], name, i)
         elif name == "jump":
-            if args[0] not in labels:
-                adr = 0xFFFFF
-                printv(f"WARNING: Unknow label '{args[0]}'. address has been replaced by {adr}", param="wt")
+            if args[0].isnumeric():
+                adr = int(args[0])
             else:
-                adr = labels[args[0]]
+                adr = 0
+                dummy_vals[len(textbin)] = args[0]
             c = 0
             n = 0
 
             if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
+                if len(textbin) in dummy_vals:
+                    del dummy_vals[len(textbin)]
+                dummy_vals[len(textbin)+1] = args[0]
                 textbin.append(JMP)
 
             if len(args) >= 3 and args[2] == "1":
@@ -347,7 +344,7 @@ while i < len(text):
         elif name == "event":
             textbin.append(EVT)
             for a in args:
-                textbin = append_byte(textbin, int(a), name, i)
+                textbin = append_val(textbin, a, name, i)
         elif name == "save":
             textbin.append(SAV)
         elif name == "return":
@@ -373,16 +370,32 @@ while i < len(text):
             textbin.append(b0)
             textbin.append(b1)
             textbin.append(b2)
+        elif name == "label":
+            labels[args[0]] = len(textbin)
+            printv(f"label: '{args[0]}' at {hex(len(textbin))}", param="it", v=2)
+        elif name == "const":
+            consts[args[0]] = args[1]
+            printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
         else:
             printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
 
         # update index
-        i = tag_end+1
+        i = tag_end + 1
     else:
         # add char
         textbin = add_normal_char(textbin, c)
         # update index
         i += 1
+
+# replace dummy values
+printv(f"fixing...", param="t")
+for idx, name in dummy_vals.items():
+    if name in labels:
+        textbin[idx+0] |= (labels[name] >> 7) & 0x3F
+        textbin[idx+1] |= labels[name] & 0x7F
+        textbin[idx+2] |= (labels[name] >> 13) & 0x3F
+    else:
+        printv(f"ERROR: undeclared name '{name}' at {idx}", param="et")
 
 # check if all char are encoded with 7 bits
 m = max(textbin)

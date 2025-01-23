@@ -1,6 +1,9 @@
 import sys
 import huffman
+from lz_encode import lz_encode, from_bit_stream
 from math import *
+import numpy as np
+from tqdm import tqdm
 
 txtfile = sys.argv[1]
 wordsfile = "words.txt"
@@ -9,6 +12,7 @@ wordsfile = "words.txt"
 print(f"reading file...")
 with open(txtfile, "r") as f:
     lines = f.readlines()
+text = bytes("".join(lines), encoding="utf-8")
 
 # count words and chars
 print(f"counting chars and words...")
@@ -18,7 +22,7 @@ chr_cnt = 0
 wrd_lst = []
 wrd_cnt = 0
 wrd_cnt_chr = 0
-for l in lines:
+for l in tqdm(lines):
     # count chars
     for c in l:
         if c not in chr_lst:
@@ -41,7 +45,26 @@ print(f"lines count: {len(lines)}")
 print(f"words count: {wrd_cnt}")
 print(f"unique words count: {len(wrd_lst)}")
 
+# lz
+print(f"test lz")
+lz = from_bit_stream(lz_encode(text))
+
+# lz huffman
+print(f"test lz huffman")
+proba = []
+tmp_list = []
+for i in range(256):
+    tmp_list.append(np.sum(np.array(lz) == i))
+    proba.append((i, tmp_list[-1]))
+huff_res = huffman.codebook(proba)
+size_lz_huff = 0
+for k, v in huff_res.items():
+    idx = k
+    size_lz_huff += len(v) * tmp_list[idx]
+size_lz_huff = ceil(size_lz_huff / 8)
+
 # huffman
+print(f"test huffman")
 proba = []
 for i in range(len(chr_lst)):
     proba.append((chr_lst[i], chr_lst_cnt[i]))
@@ -49,23 +72,26 @@ huff_res = huffman.codebook(proba)
 
 # estimate sizes
 size = chr_cnt
-size_ptr = len(lines)*2
+size_lz = len(lz)
+size_ptr = len(lines) * 2
 size_7bit = ceil((size * 7) / 8)
 size_dict = (wrd_cnt * 3) + wrd_cnt_chr + len(wrd_lst)
-size_7dict = ceil((size_dict * 7)/8)
+size_7dict = ceil((size_dict * 7) / 8)
 size_huff = 0
-for k,v in huff_res.items():
+for k, v in huff_res.items():
     idx = chr_lst.index(k)
     size_huff += len(v) * chr_lst_cnt[idx]
 size_huff = ceil(size_huff / 8)
 size_7huff = ceil((size_huff * 7) / 8)
-size_all = (wrd_cnt*3) * (size_huff/size) + wrd_cnt_chr + len(wrd_lst)
+size_all = (wrd_cnt * 3) * (size_huff / size) + wrd_cnt_chr + len(wrd_lst)
 size_all = ceil((size_all * 7) / 8)
 
 # print estimate sizes
 print()
 print(f"size (uncompressed)                     : {size+size_ptr} bytes + ptr size:{size_ptr} bytes")
 print(f"size (7-bit char compression)           : {size_7bit} bytes ({ceil((size_7bit*100)/size)}%)")
+print(f"estimate size (LZ compression)          : {size_lz} bytes ({ceil((size_lz*100)/size)}%)")
+print(f"estimate size (LZ + Huffman compression): {size_lz_huff} bytes ({ceil((size_lz_huff*100)/size)}%)")
 print(f"estimate size (dict compression)        : {size_dict} bytes ({ceil((size_dict*100)/size)}%)")
 print(f"estimate size (7-bit + dict)            : {size_7dict} bytes ({ceil((size_7dict*100)/size)}%)")
 print(f"estimate size (huffman compression)     : {size_huff} bytes ({ceil((size_huff*100)/size)}%)")
@@ -79,4 +105,4 @@ with open(wordsfile, "w") as f:
         f.write(f"{repr(chr_lst[i])}: {chr_lst_cnt[i]} times\n")
     f.write(f"\nwords:\n")
     for w in wrd_lst:
-        f.write(w+"\n")
+        f.write(w + "\n")
