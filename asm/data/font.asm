@@ -1,0 +1,6 @@
+; This file was generated
+
+FONT_ASCII = 0
+FONT_NAMES = 1
+FONT_HIRAGANA = 2
+FONT_KATAKANA = 3

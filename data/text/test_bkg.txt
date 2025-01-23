@@ -1,6 +1,6 @@
    [Background image Test]<b>
 Each dialog change to a<b>
-new background.<p><wait:1>
+new background.<p>
 
 This script test 127 bkg.<b>
 The game may crash if you<b>
