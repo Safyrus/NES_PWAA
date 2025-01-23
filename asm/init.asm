@@ -33,6 +33,17 @@
     STA packet_buf_read_adr+1
     STA packet_buf_write_adr+1
 
+    ; setup name display
+    LDA #$FF
+    STA text_name
+    LDA #NAME_COL_1
+    STA img_tmp_pals+(7*3)+1
+    LDA #NAME_COL_2
+    STA img_tmp_pals+(7*3)+2
+    LDA #NAME_COL_3
+    STA img_tmp_pals+(7*3)+3
+    JSR change_name
+
     ; --------
     ; Game: Text
     ; --------

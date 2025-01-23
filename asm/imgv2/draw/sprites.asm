@@ -19,13 +19,45 @@ draw_sprites:
             ; continue
             BEQ @continue
         :
-        ; OAM[X] = s
+        ; s.y -= scroll_y
         sub scroll_y
+        ; if s.y >= $89
+        PHA
+        CMP #$89
+        blt @name_end
+        ; and if name is displayed
+        LDA text_name
+        BMI @name_end
+            @skip:
+            ; Y++
+            INY
+            INY
+            INY
+            INY
+            ; continue
+            PLA
+            BNE @continue
+        @name_end:
+        ; if s.t >= $C0
+        LDA IMG_CHR_SPR+1, Y
+        CMP #$C0
+        blt :+
+        ; and s.t & $01
+        LSR
+            ; skip this sprite
+            BCS @skip
+        :
+        ; OAM[X] = s
+        ; y
+        PLA
         STA OAM+0, X
+        ; tile
         LDA IMG_CHR_SPR+1, Y
         STA OAM+1, X
+        ; atr
         LDA IMG_CHR_SPR+2, Y
         STA OAM+2, X
+        ; x
         LDA IMG_CHR_SPR+3, Y
         sub scroll_x
         STA OAM+3, X
@@ -64,8 +96,17 @@ draw_sprites:
     ; draw_sprite_idx = Y
     STY draw_sprite_idx
 
+    ; Y = 7
     LDY #$07
+    ; if last bank reserved
+    LDA res_oam
+    BEQ :+
+        ; Y--
+        DEY
+    :
+    ; for Y to 0 (included)
     @update_bnks:
+        ; MMC5_CHR_BNK[Y] = spr_bnks[Y]
         LDA spr_bnks, Y
         STA MMC5_CHR_BNK0, Y
         DEY

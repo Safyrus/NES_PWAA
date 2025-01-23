@@ -471,16 +471,16 @@
     ; SCANLINE_TOP_IMG    - _%01000001_
     ; SCANLINE_TOP_MIDBOX - _%01000010_
     ; SCANLINE_BOT_MIDBOX - _%01000011_
-    ; SCANLINE_DIALOG     - _%01000100_
-    ; SCANLINE_BOT_IMG    - _%00000101_
-    ; SCANLINE_BOT        - _%00000110_
+    ; SCANLINE_NAME       - _%01000100_
+    ; SCANLINE_DIALOG     - _%01000101_
+    ; SCANLINE_BOT_IMG    - _%00000110_
     SCANLINE_TOP        = %01000000
     SCANLINE_TOP_IMG    = %01000001
     SCANLINE_TOP_MIDBOX = %01000010
     SCANLINE_BOT_MIDBOX = %01000011
-    SCANLINE_DIALOG     = %01000100
-    SCANLINE_BOT_IMG    = %00000101
-    ; SCANLINE_BOT        = %00000110
+    SCANLINE_NAME       = %01000100
+    SCANLINE_DIALOG     = %01000101
+    SCANLINE_BOT_IMG    = %00000110
 
 
 ;================
@@ -511,26 +511,26 @@
 
     ; Constants: Dialog box tiles addresses
     ;
-    ; DB_TILE_TL - _$00F1_ Top left tile
-    ; DB_TILE_T  - _$00F2_ Top tile
-    ; DB_TILE_TR - _$00F3_ Top right tile
-    ; DB_TILE_L  - _$00F4_ Left tile
-    ; DB_TILE_M  - _$00F5_ Middle tile
-    ; DB_TILE_R  - _$00F6_ Right tile
-    ; DB_TILE_BL - _$00F7_ Bottom left tile
-    ; DB_TILE_B  - _$00F8_ Bottom tile
-    ; DB_TILE_BR - _$00F9_ Bottom right tile
-    ; DB_UPPER_TILE - _$C0_ MMC5 upper CHR bits
-    DB_TILE_TL = $00F1
-    DB_TILE_T  = $00F2
-    DB_TILE_TR = $00F3
-    DB_TILE_L  = $00F4
-    DB_TILE_M  = $00F5
-    DB_TILE_R  = $00F6
-    DB_TILE_BL = $00F7
-    DB_TILE_B  = $00F8
-    DB_TILE_BR = $00F9
-    DB_UPPER_TILE = $C0
+    ; DB_TILE_TL - _$0011_ Top left tile
+    ; DB_TILE_T  - _$0012_ Top tile
+    ; DB_TILE_TR - _$0013_ Top right tile
+    ; DB_TILE_L  - _$0014_ Left tile
+    ; DB_TILE_M  - _$0015_ Middle tile
+    ; DB_TILE_R  - _$0016_ Right tile
+    ; DB_TILE_BL - _$0017_ Bottom left tile
+    ; DB_TILE_B  - _$0018_ Bottom tile
+    ; DB_TILE_BR - _$0019_ Bottom right tile
+    ; DB_TILE    - _$C001_ Fill tile
+    DB_TILE_TL = $0011
+    DB_TILE_T  = $0012
+    DB_TILE_TR = $0013
+    DB_TILE_L  = $0014
+    DB_TILE_M  = $0015
+    DB_TILE_R  = $0016
+    DB_TILE_BL = $0017
+    DB_TILE_B  = $0018
+    DB_TILE_BR = $0019
+    DB_TILE    = $C001
 
 ;================
 ; Group: Text
@@ -553,6 +553,16 @@
 ;================
     LF_LIGHT = $F0
 
+;================
+; Group: Name
+;================
+    NAME_ATR = $03
+    NAME_X_POS = $08
+    NAME_Y_POS = $8F
+
+    NAME_COL_1 = $01
+    NAME_COL_2 = $21
+    NAME_COL_3 = $20
 ;================
 ; Group: Special Characters
 ;================

@@ -32,11 +32,19 @@ scanline_irq_handler:
     ; jump
     RTS
 
+    @scanline_irq_dialog:
+        .include "scanline_pal_change.asm"
+
     @scanline_irq_top:
         ; nametable mapping change done at the end of NMI
         ; (because we are too late at scanline 1 and we can't interrupt before without eating NMI time)
         LDA #NT_MAPPING_EMPTY
         STA MMC5_NAMETABLE
+        ; change sprite to 8*16
+        LDA ppu_ctrl_val
+        ORA #PPU_CTRL_SPR_SIZE
+        STA ppu_ctrl_val
+        STA PPU_CTRL
         ; return
         JMP @end
     @scanline_irq_top_img:
@@ -88,8 +96,18 @@ scanline_irq_handler:
         @scanline_irq_bot_midbox_end:
         ; return
         JMP @end
-    @scanline_irq_dialog:
-        .include "scanline_pal_change.asm"
+    @scanline_irq_name:
+        ; if name is displayed
+        LDA text_name
+        BMI :+
+            ; change sprite to 8*8
+            LDA ppu_ctrl_val
+            AND #$FF-PPU_CTRL_SPR_SIZE
+            STA ppu_ctrl_val
+            STA PPU_CTRL
+        :
+        ; return
+        JMP @end
     @scanline_irq_bot_img:
         ;
         LDA #$00
@@ -125,6 +143,7 @@ scanline_irq_handler:
         .byte <(@scanline_irq_top_img-1)
         .byte <(@scanline_irq_top_midbox-1)
         .byte <(@scanline_irq_bot_midbox-1)
+        .byte <(@scanline_irq_name-1)
         .byte <(@scanline_irq_dialog-1)
         .byte <(@scanline_irq_bot_img-1)
         .byte <(@scanline_irq_top-1)
@@ -132,6 +151,7 @@ scanline_irq_handler:
         .byte >(@scanline_irq_top_img-1)
         .byte >(@scanline_irq_top_midbox-1)
         .byte >(@scanline_irq_bot_midbox-1)
+        .byte >(@scanline_irq_name-1)
         .byte >(@scanline_irq_dialog-1)
         .byte >(@scanline_irq_bot_img-1)
         .byte >(@scanline_irq_top-1)
@@ -139,12 +159,14 @@ scanline_irq_handler:
         .byte SCANLINE_TOP_IMG
         .byte SCANLINE_TOP_MIDBOX
         .byte SCANLINE_BOT_MIDBOX
+        .byte SCANLINE_NAME
         .byte SCANLINE_DIALOG
         .byte SCANLINE_BOT_IMG
         .byte SCANLINE_TOP
     @next_line:
         .byte 54
         .byte 118
+        .byte 142
         .byte 151
         .byte 215 ; not used
         .byte 1

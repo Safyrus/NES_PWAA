@@ -6,9 +6,9 @@ clear_dialog:
     ; clear all tiles
     LDY #$00
     @clear:
-        LDA #$01
+        LDA #<DB_TILE
         STA DB_ADR_LO, Y
-        LDA #$C0
+        LDA #>DB_TILE
         STA DB_ADR_HI, Y
         INY
         BNE @clear

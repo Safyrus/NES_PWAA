@@ -134,9 +134,9 @@ RST:
     ; disable text until main init is done
     ora_adr txt_flags, #TXT_FLAG_BUSY
 
-    ; Enable NMI + set background table to $1000
+    ; Enable NMI + set sprite table to $1000
     ; by this time, it is sure that the PPU is initialize
-    LDA #%10010000
+    LDA #PPU_CTRL_NMI|PPU_CTRL_SPR
     STA PPU_CTRL
     STA ppu_ctrl_val
 

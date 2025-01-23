@@ -525,6 +525,7 @@ OAM:
         text_speed: .res 1
         text_font: .res 1
         text_color: .res 1
+        text_name: .res 1
 
         text_speed_timer: .res 1
         text_prev_speed: .res 1

@@ -15,6 +15,7 @@
 .include "char/SAK.asm"
 .include "char/SPD.asm"
 .include "char/DL.asm"
+.include "char/NAM.asm"
 .include "char/FLH.asm"
 .include "char/FAD.asm"
 .include "char/COL.asm"

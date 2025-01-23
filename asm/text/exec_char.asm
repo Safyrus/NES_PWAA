@@ -28,7 +28,7 @@ exec_char:
         .byte <(SAK-1)  ; $07
         .byte <(SPD-1)  ; $08
         .byte <(DL-1)   ; $09
-        .byte <(@ret-1) ; $0A
+        .byte <(NAM-1)  ; $0A
         .byte <(FLH-1)  ; $0B
         .byte <(FAD-1)  ; $0C
         .byte <(@ret-1) ; $0D
@@ -62,7 +62,7 @@ exec_char:
         .byte >(SAK-1)  ; $07
         .byte >(SPD-1)  ; $08
         .byte >(DL-1)   ; $09
-        .byte >(@ret-1) ; $0A
+        .byte >(NAM-1)  ; $0A
         .byte >(FLH-1)  ; $0B
         .byte >(FAD-1)  ; $0C
         .byte >(@ret-1) ; $0D

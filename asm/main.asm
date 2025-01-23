@@ -6,17 +6,6 @@
 ; Function: Main
 ;--------------------------------
 ; Main function called just after the reset vector
-;
-; Summary:
-;--- Text
-;   init()
-;   loop:
-;     wait_next_frame()
-;     inputs() TODO
-;     effects() TODO
-;     update image
-;     update text
-;---
 ;--------------------------------
 MAIN:
     .include "init.asm"
