@@ -56,7 +56,6 @@ Change character to 7.<character:7><p>
 Change character to 7 x2.<b>(should remove it)<character:7><p>
 Change character to 7 x3.<b>(should display it again)<character:7><p>
 
-<label:DEBUG>
 Now testing jumps<b>Next dialog should<b>be skipped<p>
 <jump:jmp_test>
 Was the secret <b>"ladder" or "stepladder"?<p>
@@ -67,6 +66,10 @@ So, what was the secret?<p>
 <label:test_flag_clear>The flag is cleared!<wait:8><b>Let me change that.<p>
 <set:10>There!<wait:8>Now we will jump<b>back and try again.<p><jump:test_flag>
 <label:test_flag_set>The flag is set!<wait:8><b>We can continue.<p>
+
+<label:DEBUG>
+<set:11><save><jump:test_sav_ret,1,0,11>
+Returned from end of<b>text data.<p>
 
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>
@@ -81,3 +84,9 @@ Make a choice<p>
 
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>
+
+
+<label:test_sav_ret>
+This dialog is at the end<b>of text data.<p>
+<clear:11>
+<return>

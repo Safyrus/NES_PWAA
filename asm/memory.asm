@@ -545,3 +545,4 @@ OAM:
         txt_vars: .res 1
 
         jmp_buf: .res 3
+        jmp_sav: .res 3

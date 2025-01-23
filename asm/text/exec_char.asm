@@ -31,9 +31,9 @@ exec_char:
         .byte <(NAM-1)  ; $0A
         .byte <(FLH-1)  ; $0B
         .byte <(FAD-1)  ; $0C
-        .byte <(@ret-1) ; $0D
+        .byte <(SAV-1)  ; $0D
         .byte <(COL-1)  ; $0E
-        .byte <(@ret-1) ; $0F
+        .byte <(RET-1)  ; $0F
         .byte <(@ret-1) ; $10
         .byte <(@ret-1) ; $11
         .byte <(@ret-1) ; $12
@@ -65,9 +65,9 @@ exec_char:
         .byte >(NAM-1)  ; $0A
         .byte >(FLH-1)  ; $0B
         .byte >(FAD-1)  ; $0C
-        .byte >(@ret-1) ; $0D
+        .byte >(SAV-1)  ; $0D
         .byte >(COL-1)  ; $0E
-        .byte >(@ret-1) ; $0F
+        .byte >(RET-1)  ; $0F
         .byte >(@ret-1) ; $10
         .byte >(@ret-1) ; $11
         .byte >(@ret-1) ; $12
