@@ -23,8 +23,8 @@ exec_char:
         .byte <(DB-1)   ; $02
         .byte <(FDB-1)  ; $03
         .byte <(TD-1)   ; $04
-        .byte <(@ret-1) ; $05
-        .byte <(@ret-1) ; $06
+        .byte <(SET-1)  ; $05
+        .byte <(CLR-1)  ; $06
         .byte <(SAK-1)  ; $07
         .byte <(SPD-1)  ; $08
         .byte <(DL-1)   ; $09
@@ -42,7 +42,7 @@ exec_char:
         .byte <(@ret-1) ; $15
         .byte <(BKG-1)  ; $16
         .byte <(FNT-1)  ; $17
-        .byte <(@ret-1) ; $18
+        .byte <(JMP_-1) ; $18
         .byte <(@ret-1) ; $19
         .byte <(@ret-1) ; $1A
         .byte <(@ret-1) ; $1B
@@ -57,8 +57,8 @@ exec_char:
         .byte >(DB-1)   ; $02
         .byte >(FDB-1)  ; $03
         .byte >(TD-1)   ; $04
-        .byte >(@ret-1) ; $05
-        .byte >(@ret-1) ; $06
+        .byte >(SET-1)  ; $05
+        .byte >(CLR-1)  ; $06
         .byte >(SAK-1)  ; $07
         .byte >(SPD-1)  ; $08
         .byte >(DL-1)   ; $09
@@ -76,7 +76,7 @@ exec_char:
         .byte >(@ret-1) ; $15
         .byte >(BKG-1)  ; $16
         .byte >(FNT-1)  ; $17
-        .byte >(@ret-1) ; $18
+        .byte >(JMP_-1) ; $18
         .byte >(@ret-1) ; $19
         .byte >(@ret-1) ; $1A
         .byte >(@ret-1) ; $1B

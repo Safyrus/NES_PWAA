@@ -8,12 +8,12 @@ _dialog_flag_start:
     AND #$07
     TAY
     LDA #$01
+    CPY #$00
+    BEQ @loop_end
     @loop:
-        CPY #$00
-        BEQ @loop_end
         ASL
         DEY
-        JMP @loop
+        BNE @loop
     @loop_end:
     RTS
 
@@ -36,7 +36,7 @@ clear_dialog_flag:
 
 ; param:
 ; A = index
-; return: set Z flag of the 6502
+; return: set Z flag if flag clear
 get_dialog_flag:
     PHA
     shift LSR, 3
@@ -45,12 +45,12 @@ get_dialog_flag:
     AND #$07
     TAY
     LDA dialog_flags, X
+    CPY #$00
+    BEQ @loop_end
     @loop:
-        CPY #$00
-        BEQ @loop_end
         LSR
         DEY
-        JMP @loop
+        BNE @loop
     @loop_end:
     AND #$01
     RTS

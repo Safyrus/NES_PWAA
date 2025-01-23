@@ -543,3 +543,5 @@ OAM:
         txt_flags: .res 1
 
         txt_vars: .res 1
+
+        jmp_buf: .res 3

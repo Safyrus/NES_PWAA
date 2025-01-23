@@ -94,8 +94,8 @@
     - [X] DB
     - [X] FDB
     - [X] TD
-    - [ ] SET
-    - [ ] CLR
+    - [X] SET
+    - [X] CLR
     - [X] SAK
     - [X] SPD
     - [X] DL
@@ -112,7 +112,7 @@
     - [X] CHR
     - [X] BKG
     - [X] FNT
-    - [ ] JMP
+    - [X] JMP
     - [ ] ACT
     - [ ] EVT
       - [ ] CR
