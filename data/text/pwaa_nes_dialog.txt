@@ -67,9 +67,14 @@ So, what was the secret?<p>
 <set:10>There!<wait:8>Now we will jump<b>back and try again.<p><jump:test_flag>
 <label:test_flag_set>The flag is set!<wait:8><b>We can continue.<p>
 
-<label:DEBUG>
 <set:11><save><jump:test_sav_ret,1,0,11>
-Returned from end of<b>text data.
+Returned from end of<b>text data.<p>
+
+<label:DEBUG>
+Play music 1<music:1><p>
+Same music<b>should pause<music:1><p>
+Same music<b>paused should resumed<music:1><p>
+Play music 20<music:20><p>
 
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>

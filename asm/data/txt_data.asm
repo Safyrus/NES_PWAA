@@ -11,4 +11,4 @@ lz_adr_table_lo:
 .byte $00
 
 lz_adr_table_hi:
-.byte $A0
+.byte $80
