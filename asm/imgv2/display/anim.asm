@@ -2,6 +2,10 @@
 ; Y = anim idx (hi)
 display_anim:
     @adr = tmp+0
+
+    ; save bnk 0
+    push mmc5_banks+1
+
     ; --------
     ; stop current anim
     ; --------
@@ -55,6 +59,10 @@ display_anim:
     STA anim_timer
     ; anim_idx = 0
     STA anim_idx
+
+    ; restore bnk 0
+    pull mmc5_banks+1
+    STA MMC5_PRG_BNK0
 
     ; return
     RTS

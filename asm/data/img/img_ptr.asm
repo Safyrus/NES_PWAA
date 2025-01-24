@@ -8,8 +8,8 @@ img_ptr_list_lo:
 .byte (124696 >> 0) & $FF
 
 img_ptr_list_hi:
-.byte ((0 >> 8) & $1F) + $A0
-.byte ((124696 >> 8) & $1F) + $A0
+.byte ((0 >> 8) & $1F) + $80
+.byte ((124696 >> 8) & $1F) + $80
 
 img_ptr_list_bnk:
 .byte ((0 >> 13) & $7F) + IMG_BNK

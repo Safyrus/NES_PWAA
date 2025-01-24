@@ -333,7 +333,7 @@ with open(filepath, "w") as f:
                 if (path2name(file) in anims[r]) == isanim:
                     if idx % 256 == 0:
                         low_str += f".byte ({size} >> 0) & $FF\n"
-                        high_str += f".byte (({size} >> 8) & $1F) + $A0\n"
+                        high_str += f".byte (({size} >> 8) & $1F) + $80\n"
                         bnk_str += f".byte (({size} >> 13) & $7F) + IMG_BNK\n"
                     start = img_offsets[r][i]
                     end = chr_offsets[r]
@@ -389,7 +389,7 @@ with open(filepath, "w") as f:
     for i, a in enumerate(anims_adr):
         if i % 256 == 0:
             low_str += f".byte ({a} >> 0) & $FF\n"
-            high_str += f".byte (({a} >> 8) & $1F) + $A0\n"
+            high_str += f".byte (({a} >> 8) & $1F) + $80\n"
             bnk_str += f".byte (({a} >> 13) & $7F) + ANI_BNK\n"
     # write pointers
     f.write(f"anim_ptr_list_lo:\n{low_str}\n")

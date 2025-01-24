@@ -21,11 +21,11 @@ fetch_img:
     LDA img_ptr_list_bnk, Y
     TAY
     ; MMC5_BNK1, MMC5_BNK2 = bnk, bnk+1
-    STA mmc5_banks+2
-    STA MMC5_PRG_BNK1
+    STA mmc5_banks+1
+    STA MMC5_PRG_BNK0
     INY
-    STY mmc5_banks+3
-    STY MMC5_PRG_BNK2
+    STY mmc5_banks+2
+    STY MMC5_PRG_BNK1
     ; while X > 0
     LDY #$00
     CPX #$00

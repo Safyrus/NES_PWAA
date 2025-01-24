@@ -1,7 +1,23 @@
+; ----------------
+.segment "LAST_BNK"
+; ----------------
+.include "snif_decode.asm"
+.include "rleinc.asm"
+
 .include "display/anim.asm"
+.include "display/img.asm"
+
+.include "fetch/anim.asm"
+.include "fetch/img.asm"
+.include "fetch/util.asm"
+
+
+
+; ----------------
+.segment "CODE_BNK"
+; ----------------
 .include "display/bkg_chr.asm"
 .include "display/dialog.asm"
-.include "display/img.asm"
 .include "display/remove.asm"
 .include "display/util.asm"
 
@@ -10,15 +26,9 @@
 .include "draw/packets.asm"
 .include "draw/sprites.asm"
 
-.include "fetch/anim.asm"
-.include "fetch/img.asm"
-.include "fetch/util.asm"
-
 .include "update/anim.asm"
 .include "update/dialog.asm"
 .include "update/image2.asm"
 
 .include "light.asm"
 .include "pal.asm"
-.include "rleinc.asm"
-.include "snif_decode.asm"

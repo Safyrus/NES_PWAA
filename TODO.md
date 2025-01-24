@@ -106,7 +106,7 @@
     - [X] COL (simple)
     - [ ] RET
     - [ ] BIP
-    - [ ] MUS
+    - [X] MUS
     - [ ] SND
     - [ ] PHT
     - [X] CHR
@@ -142,8 +142,12 @@
 - [/] Music
   - [X] Remake
   - [ ] Opti
-  - [ ] Export script
-  - [ ] Export data
+  - [/] Export script
+    - [X] Music
+    - [ ] SFX & bips
+  - [/] Export data
+    - [X] Music
+    - [ ] SFX & bips
 - [ ] SFX
 
 ----------------------------------------------------------------

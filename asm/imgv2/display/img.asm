@@ -2,6 +2,9 @@
 ; tmp+2 = bkg_lo
 ; tmp+6 = bkg_hi
 display_img:
+    ; save bnk 0
+    push mmc5_banks+1
+
     ; --------
     ; fetch background
     ; --------
@@ -34,6 +37,10 @@ display_img:
     ora_adr img_flag, #IMG_FLAG_UNSPRITE
     ; snif_decode(in, bkg_lo, bnk_buf, bkg_hi, spr_buf, palette)
     JSR snif_decode
+
+    ; restore bnk 0
+    pull mmc5_banks+1
+    STA MMC5_PRG_BNK0
 
     ; return
     RTS
