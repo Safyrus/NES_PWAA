@@ -173,8 +173,9 @@
 
     ; FamiStudio Sound Engine
     .include "audio/famistudio_ca65.s"
+    .include "audio/dpcm_callback.asm"
     ; musics
-    .include "audio/data.asm"
+    .include "data/mus/inc.asm"
 
 .segment "CODE_BNK"
     ; .include "choice.asm"

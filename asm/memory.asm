@@ -241,6 +241,8 @@ OAM:
         ; music to play
         music: .res 1
 
+        pause: .res 1
+
         ; Variable: sound
         ;----------------
         ; sound effect to play
@@ -250,6 +252,11 @@ OAM:
         ;----------------
         ; bip sound to play when text is draw
         bip: .res 1
+
+        ; Variable: dpcm_bnk
+        ;----------------
+        ; Current dpcm bank used
+        dpcm_bnk: .res 1
 
     ;================
     ; Group: Special variables
