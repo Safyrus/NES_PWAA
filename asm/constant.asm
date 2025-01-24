@@ -199,7 +199,7 @@
     NMI_SPR   = %00000010
     NMI_BKG   = %00000001
 
-    ZP_BACKGROUND_SIZE = 63
+    ZP_BACKGROUND_SIZE = 77
 
 ;================
 ; Group: MMC5

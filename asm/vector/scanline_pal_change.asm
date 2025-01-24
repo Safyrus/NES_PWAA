@@ -13,12 +13,11 @@
         STA MMC5_SCNL_VAL
         JMP @end
     @palette_change_start:
-    ; skipping 11 cpu cycles
+    ; skipping 8 cpu cycles
     NOP
     NOP
     NOP
     NOP
-    LDA $0
     ; setup registers
     LDX #$16
     LDY #$26
@@ -42,8 +41,7 @@
     LDA #$00
     STA MMC5_CHR_UPPER
     ; wait
-    NOP
-    LDX #$0F
+    LDX #$10
     @dialog_wait_1:
         DEX
         bnz @dialog_wait_1

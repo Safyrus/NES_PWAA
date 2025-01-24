@@ -14,24 +14,18 @@
 ; See Also: <scanline_irq_handler>
 ;--------------------------------
 IRQ:
-    ; clear scanline IRQ
-    BIT MMC5_SCNL_STAT
-    BPL @scanline_irq_end
-        JMP scanline_irq_handler
-    @scanline_irq_end:
-
     ; clear APU interrupt
     BIT APU_STATUS
-
-    PHA
-    ; if DPCM byte remaining == 0
-    LDA APU_STATUS
-    AND #$10
-    BNE @dpcm_end
-        mov APU_DMC_FREQ, #$00 ; clear interrupt flag
-        mov APU_SND_CHN, #%00001111 ; stop DPCM
-    @dpcm_end:
-    PLA
+    ; clear scanline IRQ
+    BIT MMC5_SCNL_STAT
+    ; jump to scanline irq handler
+    ; no matter the interrupt.
+    ; This work because there is only
+    ; the MMC5 scanline interrupt active.
+    ; Plus, it fix a bug when
+    ; DPCM hardware clean the MMC5 interrupt (why?)
+    ; when fetching data right when the interrupt occure
+    JMP scanline_irq_handler
 
     @end:
     ; return
