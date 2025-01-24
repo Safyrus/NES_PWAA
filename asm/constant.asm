@@ -199,7 +199,7 @@
     NMI_SPR   = %00000010
     NMI_BKG   = %00000001
 
-    ZP_BACKGROUND_SIZE = 90
+    ZP_BACKGROUND_SIZE = 63
 
 ;================
 ; Group: MMC5
@@ -331,19 +331,17 @@
     ; CODE_BNK - _$80_ Bank containing game code
     ; SFX_BNK  - _$81_ Bank containing SFX sound data
     ; MUS_BNK  - _$82_ Starting bank containing music data
-    ; DPCM_BNK - _$87_ Bank containing DPCM sound data
-    ; EVI_BNK  - _$88_ Bank containing evidence image data
-    ; ANI_BNK  - _$89_ Bank containing animation table
-    ; IMG_BNK  - _$8C_ Starting bank containing image data
-    ; TXT_BNK  - _$CE_ Starting bank containing text data
+    ; DPCM_BNK - _$88_ Bank containing DPCM sound data
+    ; ANI_BNK  - _$8B_ Bank containing animation table
+    ; IMG_BNK  - _$8E_ Starting bank containing image data
+    ; TXT_BNK  - _$CF_ Starting bank containing text data
     CODE_BNK     = $80
     SFX_BNK      = $81
     MUS_BNK      = $82
-    DPCM_BNK     = $87
-    EVI_BNK      = $88
-    ANI_BNK      = $89
-    IMG_BNK      = $8C
-    TXT_BNK      = $D1
+    DPCM_BNK     = $88
+    ANI_BNK      = $8B
+    IMG_BNK      = $8E
+    TXT_BNK      = $CF
 
     ; Constants: Game RAM Banks
     ;
@@ -386,16 +384,6 @@
     ; NAME_PPU_ADR  - _$2342_
     NAME_CHR_BANK = $C0
     NAME_PPU_ADR  = $2342
-
-    ; Constants: Famistudio bank mapping
-    ; during NMI. Value are index in <mmc5_banks> variable
-    ;
-    ; SFX_BNK_OFF  - _1_ Corrspond to $8000
-    ; MUS_BNK_OFF  - _2_ Corrspond to $A000
-    ; DPCM_BNK_OFF - _3_ Corrspond to $C000
-    SFX_BNK_OFF  = 1 ; $8000
-    MUS_BNK_OFF  = 2 ; $A000
-    DPCM_BNK_OFF = 3 ; $C000
 
     ; Constants: Court record flags
     ; See: <cr_flag>
@@ -563,6 +551,20 @@
     NAME_COL_1 = $01
     NAME_COL_2 = $21
     NAME_COL_3 = $20
+
+;================
+; Group: Famistudio
+;================
+    ; Constants: Famistudio bank mapping
+    ; during NMI. Value are index in <mmc5_banks> variable
+    ;
+    ; SFX_BNK_OFF  - _1_ Corrspond to $8000
+    ; MUS_BNK_OFF  - _2_ Corrspond to $A000
+    ; DPCM_BNK_OFF - _3_ Corrspond to $C000
+    SFX_BNK_OFF  = 1 ; $8000
+    MUS_BNK_OFF  = 2 ; $A000
+    DPCM_BNK_OFF = 3 ; $C000
+
 ;================
 ; Group: Special Characters
 ;================

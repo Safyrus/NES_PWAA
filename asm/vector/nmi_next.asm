@@ -10,19 +10,23 @@
     ; --------
     ; Update FamiStudio
     ; --------
-    @DEBUG_FAMISTUDIO_UPDATE_START:
     ; load music banks
     LDX music
     LDA music_bank_table, X
     STA MMC5_RAM_BNK+MUS_BNK_OFF
     mov MMC5_RAM_BNK+SFX_BNK_OFF, #SFX_BNK
+    mov MMC5_RAM_BNK+DPCM_BNK_OFF, dpcm_bnk
     ; update famistudio
     JSR famistudio_update
     ; restore banks
     mov MMC5_RAM_BNK+MUS_BNK_OFF, mmc5_banks+MUS_BNK_OFF
     mov MMC5_RAM_BNK+SFX_BNK_OFF, mmc5_banks+SFX_BNK_OFF
-    @DEBUG_FAMISTUDIO_UPDATE_END:
+    mov MMC5_RAM_BNK+DPCM_BNK_OFF, mmc5_banks+DPCM_BNK_OFF
+    @DEBUG_FAMISTUDIO:
 
+    ; set code bank
+    LDA #CODE_BNK
+    STA MMC5_PRG_BNK0
 
     ; --------
     ; Prepare next frame graphism
@@ -93,3 +97,7 @@
     JSR update_palettes
     ; update shake
     JSR update_shake
+
+    ; restore first bank
+    LDA mmc5_banks+1
+    STA MMC5_PRG_BNK0

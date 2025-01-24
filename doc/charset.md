@@ -17,14 +17,14 @@
 |  $07  |  SAK  | ShAKe                                                        | 1: `ffftttt` (f=force, t=time)                                                                     |
 |  $08  |  SPD  | SPeeD                                                        | 1: speed                                                                                           |
 |  $09  |  DL   | DeLay                                                        | 1: delay                                                                                           |
-|  $0A  |  NAM  | change NAMe of dialog box                                    | 1: name (0 = remove)                                                                               |
+|  $0A  |  NAM  | change NAMe of dialog box                                    | 1: name (same as last = remove)                                                                               |
 |  $0B  |  FLH  | FLasH                                                        | 1: `ffftttt` (f=force, t=time)                                                                     |
 |  $0C  |  FAD  | FADe                                                         | 1: `ffftttt` (f=force, t=time)                                                                     |
 |  $0D  |  SAV  | Save the current text location                               |                                                                                                    |
 |  $0E  |  COL  | change text COLor                                            | 1: `pcccccc` (c=color,p=on palette), 2:`.ttppii` (t= palette type, p=palette index, i=color index) |
 |  $0F  |  RET  | Return to the previous saved location                        |                                                                                                    |
 |  $10  |  BIP  | change dialog BIP effect                                     | 1: bip (same as last = remove)                                                                     |
-|  $11  |  MUS  | MUSic                                                        | 1: music (0 = remove, same as last = pause)                                                        |
+|  $11  |  MUS  | MUSic                                                        | 1: music (same as last = pause)                                                        |
 |  $12  |  SND  | SouND effect                                                 | 1: sfx                                                                                             |
 |  $13  |  PHT  | show PHoto                                                   | 1: photo (same as last = remove)                                                                   |
 |  $14  |  CHR  | CHaRacter to show                                            | 1: character (low), 2:character (high), (same as last = remove)                                    |

@@ -4,7 +4,7 @@ import os.path
 # const
 BLOCK_SIZE = 8192
 BANK_SIZE = 8192
-STARTING_ADR = 0xA000
+STARTING_ADR = 0x8000
 
 # args
 inputfile = sys.argv[1]

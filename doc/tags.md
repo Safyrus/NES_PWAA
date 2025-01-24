@@ -16,7 +16,7 @@ comment tag syntax is: `<!--`, anything `-->`
 | fp          | force press, match the FDB char                              | /                    |
 | speed       | dialog speed, match the SPD char                             | speed_arg            |
 | wait        | wait a certain time, match the DL char                       | time (in frame)      |
-| name        | change displayed name, match the NAM char                    | name_arg             |
+| name        | change displayed name, match the NAM char                    | index_arg            |
 | color       | change text/palette color, match the COL char                | color_arg            |
 | hidetextbox | toggle the dialog box display, match the TD char             | /                    |
 | shake       | Shake the screen, match the SAK char                         | force_arg            |
@@ -48,12 +48,6 @@ The value/argument is a integer that indicate the text speed.
 
 The speed is compute as "value / 32"
 and correspond to the number of character to display per frame.
-
-### name_arg
-
-value = name to use
-
-0 = remove displayed name.
 
 ### color_arg
 
@@ -97,9 +91,7 @@ same as index_arg but value can range from 0 to 16383.
 
 value = music index
 
-if value = 0, stop music.
-
-if value = last value = pause music.
+if index = last index then pause/resume music.
 
 ### jump_arg
 

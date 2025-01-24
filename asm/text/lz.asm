@@ -1,7 +1,6 @@
 ; description:
 ;   decode a lz encoded text
 ;   and save the result into ram.
-; /!\ assume to be in bank 0
 lz_decode:
     pushregs
 
@@ -28,19 +27,19 @@ lz_decode:
     STA lz_in+1
     ; save banks
     push mmc5_banks+0
+    push mmc5_banks+1
     push mmc5_banks+2
-    push mmc5_banks+3
     ; set output bank
     LDA #TEXT_BUF_BNK
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
     ; set input bank
     LDX lz_bnk
+    STX mmc5_banks+1
+    STX MMC5_PRG_BNK0
+    INX
     STX mmc5_banks+2
     STX MMC5_PRG_BNK1
-    INX
-    STX mmc5_banks+3
-    STX MMC5_PRG_BNK2
     ; lz_size = *lz_in
     LDY #$00
     LDA (lz_in), Y
@@ -132,10 +131,10 @@ lz_decode:
     @end:
 
     ; restore banks
-    pull mmc5_banks+3
-    STA MMC5_PRG_BNK2
     pull mmc5_banks+2
     STA MMC5_PRG_BNK1
+    pull mmc5_banks+1
+    STA MMC5_PRG_BNK0
     pull mmc5_banks+0
     STA MMC5_RAM_BNK
 

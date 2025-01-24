@@ -11,21 +11,6 @@
     STA PPU_CTRL
 
     ; --------
-    ; FamiStudio
-    ; --------
-    ; init famistudio with fake music
-    LDX #<$A000
-    LDY #>$A000
-    mov MMC5_PRG_BNK1, #MUS_BNK
-    JSR famistudio_init
-    ; init famistudio sfx
-    mov MMC5_RAM_BNK+SFX_BNK_OFF, #SFX_BNK
-    LDX #<sounds
-    LDY #>sounds
-    JSR famistudio_sfx_init
-    mov MMC5_RAM_BNK+SFX_BNK_OFF, #CODE_BNK
-
-    ; --------
     ; Game: Image
     ; --------
     ; init packet pointers
