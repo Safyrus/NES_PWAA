@@ -116,6 +116,11 @@ img:
 
 #--------------------------------
 
+music:
+	$(PYTHON) $(PY)/snd/music.py -fs $(FAMISTUDIO) -i $(DATA)/$(MUSIC) -o $(ASM)/data/mus
+
+#--------------------------------
+
 # dump the nes files binary into hex text
 hex:
 	$(HEXDUMP) $(GAME_NAME).nes > dump_$(GAME_NAME).txt
