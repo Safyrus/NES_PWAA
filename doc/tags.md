@@ -26,7 +26,7 @@ comment tag syntax is: `<!--`, anything `-->`
 | background  | change the background, match the BKG char                    | index_arg            |
 | character   | change the character, match the CHR char                     | char_arg             |
 | music       | change the music, match the MUS char                         | music_arg            |
-| sound       | play a sound effect, match the SND char                      | sfx index            |
+| sound       | play a sound effect, match the SND char                      | sfx_arg              |
 | bip         | change the bip effect of the text, match the BIP char        | index_arg            |
 | set         | set a flag, match the SET char                               | flag index           |
 | clear       | clear a flag, match the CLR char                             | flag index           |
@@ -92,6 +92,13 @@ same as index_arg but value can range from 0 to 16383.
 value = music index
 
 if index = last index then pause/resume music.
+
+### sfx_arg
+
+value = sfx/dpcm to play
+
+if value < 64 then it play the sfx with this value
+if value < 64 then it play the dpcm with this value-64
 
 ### jump_arg
 

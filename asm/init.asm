@@ -57,5 +57,27 @@
     JSR display_anim
     JSR call_update_img
 
+    ; --------
+    ; Game: FamiStudio
+    ; --------
+    ; push bank
+    push mmc5_banks+1
+    ; and setup sfx data bank
+    LDA #SFX_BNK
+    STA mmc5_banks+1
+    STA MMC5_PRG_BNK0
+    ; famistudio_init(NTSC, dpcm_data)
+    LDA #$FF
+    LDX #<dpcm_data
+    LDY #>dpcm_data
+    JSR famistudio_init
+    ; famistudio_sfx_init($8000)
+    LDX #<$8000
+    LDY #>$8000
+    JSR famistudio_sfx_init
+    ; restore bank
+    pull mmc5_banks+1
+    STA MMC5_PRG_BNK0
+
     ; enable text
     and_adr txt_flags, #($FF-TXT_FLAG_BUSY)

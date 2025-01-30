@@ -28,6 +28,7 @@
 .include "char/COL.asm"
 .include "char/RET.asm"
 .include "char/MUS.asm"
+.include "char/SND.asm"
 .include "char/CHR.asm"
 .include "char/BKG.asm"
 .include "char/FNT.asm"

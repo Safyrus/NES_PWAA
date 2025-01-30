@@ -24,6 +24,7 @@ MUS:
         ; famistudio_init(NTSC, $A000)
         TXA
         PHA
+        LDA #$FF
         LDX #<$A000
         LDY #>$A000
         JSR famistudio_init

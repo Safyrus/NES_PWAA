@@ -339,8 +339,8 @@
     SFX_BNK      = $81
     MUS_BNK      = $82
     DPCM_BNK     = $88
-    ANI_BNK      = $8B
-    IMG_BNK      = $8E
+    ANI_BNK      = $8E
+    IMG_BNK      = $91
     TXT_BNK      = $CF
 
     ; Constants: Game RAM Banks
