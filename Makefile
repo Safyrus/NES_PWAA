@@ -117,7 +117,7 @@ img:
 #--------------------------------
 
 music:
-	$(PYTHON) $(PY)/snd/music.py -fs $(FAMISTUDIO) -i $(DATA)/$(MUSIC) -o $(ASM)/data/mus
+	$(PYTHON) $(PY)/snd/all.py -fs $(FAMISTUDIO) -i $(DATA)/$(MUSIC) -o $(ASM)/data/mus
 
 #--------------------------------
 
