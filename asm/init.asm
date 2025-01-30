@@ -75,6 +75,9 @@
     LDX #<$8000
     LDY #>$8000
     JSR famistudio_sfx_init
+    ; fs_dpcm_sfx_ptr = famistudio_dpcm_list
+    mov fs_dpcm_sfx_ptr+0, famistudio_dpcm_list_lo
+    mov fs_dpcm_sfx_ptr+1, famistudio_dpcm_list_hi
     ; restore bank
     pull mmc5_banks+1
     STA MMC5_PRG_BNK0

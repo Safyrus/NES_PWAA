@@ -15,13 +15,11 @@
     LDA music_bank_table, X
     STA MMC5_RAM_BNK+MUS_BNK_OFF
     mov MMC5_RAM_BNK+SFX_BNK_OFF, #SFX_BNK
-    mov MMC5_RAM_BNK+DPCM_BNK_OFF, dpcm_bnk
     ; update famistudio
     JSR famistudio_update
     ; restore banks
     mov MMC5_RAM_BNK+MUS_BNK_OFF, mmc5_banks+MUS_BNK_OFF
     mov MMC5_RAM_BNK+SFX_BNK_OFF, mmc5_banks+SFX_BNK_OFF
-    mov MMC5_RAM_BNK+DPCM_BNK_OFF, mmc5_banks+DPCM_BNK_OFF
     @DEBUG_FAMISTUDIO:
 
     ; set code bank

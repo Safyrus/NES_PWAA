@@ -241,6 +241,9 @@ OAM:
         ; music to play
         music: .res 1
 
+        ; Variable: pause
+        ;----------------
+        ; Boolean to know if the music is paused
         pause: .res 1
 
         ; Variable: sound
@@ -253,10 +256,10 @@ OAM:
         ; bip sound to play when text is draw
         bip: .res 1
 
-        ; Variable: dpcm_bnk
+        ; Variable: fs_dpcm_sfx_ptr
         ;----------------
-        ; Current dpcm bank used
-        dpcm_bnk: .res 1
+        ; Pointer to the DPCM list of the SFX bank
+        fs_dpcm_sfx_ptr: .res 2
 
     ;================
     ; Group: Special variables
