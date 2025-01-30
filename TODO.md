@@ -102,12 +102,12 @@
     - [X] NAM
     - [X] FLH
     - [X] FAD
-    - [ ] SAV
+    - [X] SAV
     - [X] COL (simple)
-    - [ ] RET
+    - [X] RET
     - [ ] BIP
     - [X] MUS
-    - [ ] SND
+    - [X] SND
     - [ ] PHT
     - [X] CHR
     - [X] BKG
@@ -142,12 +142,12 @@
 - [/] Music
   - [X] Remake
   - [ ] Opti
-  - [/] Export script
+  - [X] Export script
     - [X] Music
-    - [ ] SFX & bips
+    - [X] SFX & bips
   - [/] Export data
     - [X] Music
-    - [ ] SFX & bips
+    - [/] SFX & bips
 - [ ] SFX
 
 ----------------------------------------------------------------

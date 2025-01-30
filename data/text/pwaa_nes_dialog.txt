@@ -71,10 +71,28 @@ So, what was the secret?<p>
 Returned from end of<b>text data.<p>
 
 <label:DEBUG>
+Play SFX 0<sound:0><p>
+Play SFX 1<sound:1><p>
+Play SFX 2<sound:2><p>
+Play SFX 3<sound:3><p>
+Play SFX 4<sound:4><p>
+Play DPCM 0<sound:64><p>
+Play DPCM 30<sound:94><p>
+Play DPCM 18<sound:82><p>
+Play DPCM 1<sound:65><p>
+Play DPCM 2<sound:66><p>
+Play DPCM 3<sound:67><p>
+Play DPCM 4<sound:68><p>
+Play DPCM 9<sound:73><p>
+Play multiple SFX<sound:7><sound:8><sound:9><p>
+
 Play music 1<music:1><p>
 Same music<b>should pause<music:1><p>
 Same music<b>paused should resumed<music:1><p>
 Play music 20<music:20><p>
+
+Play SFX 1 on top of music<sound:1><p>
+Play DPCM 18 on top of music<sound:82><p>
 
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>
@@ -82,10 +100,6 @@ Make a choice<p>
 <label:choice_1><fp>You choose choice 1<p><jump:choice_end>
 <label:choice_2><fp>You choose choice 2<p><jump:choice_end>
 <label:choice_end>
-
-<music:1>Play first music<p>
-<music:2>Play second music<p>
-<music:0>Stop music<p>
 
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>
