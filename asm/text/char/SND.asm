@@ -3,6 +3,8 @@ SND:
     ; s = read_char()
     JSR read_char
     TAX
+; X = sfx
+play_sfx:
     ; setup sfx data bank
     LDA #SFX_BNK
     STA MMC5_PRG_BNK0
@@ -12,9 +14,9 @@ SND:
     AND #$40
     BNE @dpcm
     @sfx:
-        ; famistudio_sfx_play(s, FAMISTUDIO_SFX_CH0)
+        ; famistudio_sfx_play(s, sfx_chn)
         TXA
-        LDX #FAMISTUDIO_SFX_CH0
+        LDX sfx_chn
         JSR famistudio_sfx_play
         JMP :+
     @dpcm:

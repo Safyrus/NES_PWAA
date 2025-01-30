@@ -58,8 +58,10 @@
     JSR call_update_img
 
     ; --------
-    ; Game: FamiStudio
+    ; FamiStudio
     ; --------
+    ; sfx_chn = FAMISTUDIO_SFX_CH0
+    mov sfx_chn, #FAMISTUDIO_SFX_CH0
     ; push bank
     push mmc5_banks+1
     ; and setup sfx data bank
@@ -81,6 +83,12 @@
     ; restore bank
     pull mmc5_banks+1
     STA MMC5_PRG_BNK0
+    
 
+    ; --------
+    ; Other
+    ; --------
+    ; disable BIP
+    mov bip, #$FF ; should be $FF
     ; enable text
     and_adr txt_flags, #($FF-TXT_FLAG_BUSY)

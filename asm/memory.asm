@@ -261,6 +261,11 @@ OAM:
         ; Pointer to the DPCM list of the SFX bank
         fs_dpcm_sfx_ptr: .res 2
 
+        ; Variable: cur_sfx_chn
+        ;----------------
+        ; SFX channel to use when playing a sound effect
+        sfx_chn: .res 1
+
     ;================
     ; Group: Special variables
     ;================

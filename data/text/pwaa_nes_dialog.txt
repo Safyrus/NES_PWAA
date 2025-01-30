@@ -71,6 +71,10 @@ So, what was the secret?<p>
 Returned from end of<b>text data.<p>
 
 <label:DEBUG>
+Change BIP to 0 <bip:0><wait:30>Now!<b><wait:30>Now this text should<b>make a sound<p>
+Change BIP to 0 again<bip:0><b><wait:30>Same BIP value should<b>stop the bip<p>
+Change BIP to 2<bip:2><p>
+
 Play SFX 0<sound:0><p>
 Play SFX 1<sound:1><p>
 Play SFX 2<sound:2><p>

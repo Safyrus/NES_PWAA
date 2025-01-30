@@ -34,7 +34,7 @@ exec_char:
         .byte <(SAV-1)  ; $0D
         .byte <(COL-1)  ; $0E
         .byte <(RET-1)  ; $0F
-        .byte <(@ret-1) ; $10
+        .byte <(BIP-1)  ; $10
         .byte <(MUS-1)  ; $11
         .byte <(SND-1)  ; $12
         .byte <(@ret-1) ; $13
@@ -68,7 +68,7 @@ exec_char:
         .byte >(SAV-1)  ; $0D
         .byte >(COL-1)  ; $0E
         .byte >(RET-1)  ; $0F
-        .byte >(@ret-1) ; $10
+        .byte >(BIP-1)  ; $10
         .byte >(MUS-1)  ; $11
         .byte >(SND-1)  ; $12
         .byte >(@ret-1) ; $13

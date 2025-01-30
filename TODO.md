@@ -105,7 +105,7 @@
     - [X] SAV
     - [X] COL (simple)
     - [X] RET
-    - [ ] BIP
+    - [X] BIP
     - [X] MUS
     - [X] SND
     - [ ] PHT

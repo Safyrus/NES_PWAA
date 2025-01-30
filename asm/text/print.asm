@@ -1,5 +1,5 @@
 ; char (c) = A
-; clobber A, Y
+; clobber A, X, Y
 print:
     ; ----------------
     ; Put char into Dialog box bufer
@@ -35,5 +35,21 @@ print:
 
     ; print_offset++
     INC print_offset
+
+    ; if a bip is not playing
+    LDX #FAMISTUDIO_SFX_CH1
+    LDA famistudio_sfx_ptr_hi, X
+    BNE :+
+    ; and if a bip is selected
+    LDA bip
+    BMI :+
+        ; sfx_chn = FAMISTUDIO_SFX_CH1
+        STX sfx_chn
+        ; play_sfx(bip, sfx_chn)
+        JSR play_sfx-1
+        ; sfx_chn = FAMISTUDIO_SFX_CH0
+        mov sfx_chn, #FAMISTUDIO_SFX_CH0
+    :
+
     ; return
     RTS
