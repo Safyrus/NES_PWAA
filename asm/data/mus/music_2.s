@@ -82,10 +82,10 @@ music_data_pwaa_music_v2_2:
 	.byte $00,$cf,$ca,$c6,$c3,$c1,$c0,$00,$06
 
 @samples:
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$01 ; 00 impact_ds4 (Pitch:15)
-	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$01 ; 01 impact_e4 (Pitch:15)
-	.byte $44+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0e,$40,$01 ; 02 impact_f4 (Pitch:14)
-	.byte $44+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0f,$40,$01 ; 03 impact_f4 (Pitch:15)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$03 ; 00 impact_ds4 (Pitch:15)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$03 ; 01 impact_e4 (Pitch:15)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0e,$40,$05 ; 02 impact_f4 (Pitch:14)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0f,$40,$05 ; 03 impact_f4 (Pitch:15)
 
 @tempo_env_1_mid:
 	.byte $03,$05,$80

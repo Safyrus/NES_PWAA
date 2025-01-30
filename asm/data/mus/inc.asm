@@ -1,5 +1,9 @@
 ; This file was generated
 
+; Include SFX
+.segment "SFX_BNK"
+.include "sfx.s"
+.include "dpcm.s"
 ; Include music data
 .segment "MUS_BNK0"
 .include "music_0.s"
@@ -20,6 +24,12 @@
 .incbin "music_bank1.dmc"
 .segment "DPCM_BNK2"
 .incbin "music_bank2.dmc"
+.segment "DPCM_BNK3"
+.incbin "music_bank3.dmc"
+.segment "DPCM_BNK4"
+.incbin "music_bank4.dmc"
+.segment "DPCM_BNK5"
+.incbin "music_bank5.dmc"
 
 .segment "LAST_BNK"
 
@@ -35,22 +45,23 @@ music_idx_table:
     .byte $1 ; 8 - Telling the Truth
     .byte $3 ; 9 - Suspense
     .byte $2 ; 10 - Cornered - Variation
-    .byte $4 ; 11 - Jingle
-    .byte $5 ; 12 - Investigation
-    .byte $1 ; 13 - Maya Fey
-    .byte $2 ; 14 - Detention Center
-    .byte $2 ; 15 - Dick Gumshoe
-    .byte $3 ; 16 - Heartbroken Maya
-    .byte $4 ; 17 - Marvin Grossberg
+    .byte $1 ; 11 - Jingle
+    .byte $4 ; 12 - Investigation
+    .byte $2 ; 13 - Maya Fey
+    .byte $0 ; 14 - Detention Center
+    .byte $3 ; 15 - Dick Gumshoe
+    .byte $2 ; 16 - Heartbroken Maya
+    .byte $3 ; 17 - Marvin Grossberg
     .byte $3 ; 18 - Happy People
     .byte $1 ; 19 - Light and Shadow of the Film Studio
-    .byte $0 ; 20 - Steel Samuria
-    .byte $5 ; 21 - The DL-6 Incident
-    .byte $1 ; 22 - Investigation - Core
-    .byte $6 ; 23 - Class Trial
-    .byte $7 ; 24 - Victory
-    .byte $2 ; 25 - Ending
-    .byte $3 ; 26 - Turnabout Sisters Ballad
+    .byte $1 ; 20 - Steel Samuria
+    .byte $4 ; 21 - The DL-6 Incident
+    .byte $2 ; 22 - Investigation - Core
+    .byte $2 ; 23 - Class Trial
+    .byte $5 ; 24 - Victory
+    .byte $3 ; 25 - Ending
+    .byte $6 ; 26 - Turnabout Sisters Ballad
+    .byte $5 ; 27 - dpcm
 
 music_bank_table:
     .byte $3+MUS_BNK ; 0 - Opening (WIP)
@@ -64,10 +75,10 @@ music_bank_table:
     .byte $4+MUS_BNK ; 8 - Telling the Truth
     .byte $3+MUS_BNK ; 9 - Suspense
     .byte $2+MUS_BNK ; 10 - Cornered - Variation
-    .byte $3+MUS_BNK ; 11 - Jingle
+    .byte $0+MUS_BNK ; 11 - Jingle
     .byte $3+MUS_BNK ; 12 - Investigation
     .byte $0+MUS_BNK ; 13 - Maya Fey
-    .byte $4+MUS_BNK ; 14 - Detention Center
+    .byte $1+MUS_BNK ; 14 - Detention Center
     .byte $0+MUS_BNK ; 15 - Dick Gumshoe
     .byte $4+MUS_BNK ; 16 - Heartbroken Maya
     .byte $4+MUS_BNK ; 17 - Marvin Grossberg
@@ -76,7 +87,8 @@ music_bank_table:
     .byte $1+MUS_BNK ; 20 - Steel Samuria
     .byte $4+MUS_BNK ; 21 - The DL-6 Incident
     .byte $1+MUS_BNK ; 22 - Investigation - Core
-    .byte $4+MUS_BNK ; 23 - Class Trial
+    .byte $5+MUS_BNK ; 23 - Class Trial
     .byte $4+MUS_BNK ; 24 - Victory
     .byte $1+MUS_BNK ; 25 - Ending
-    .byte $1+MUS_BNK ; 26 - Turnabout Sisters Ballad
+    .byte $4+MUS_BNK ; 26 - Turnabout Sisters Ballad
+    .byte $3+MUS_BNK ; 27 - dpcm
