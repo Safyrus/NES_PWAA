@@ -69,12 +69,12 @@ def move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score):
         if FILL_BLACK:
             for i in idxs:
                 tile_data[i] = np.array(BLACK)
-                score.wrong_bkg_mask[(i[0]+pos[1]),(i[1]+pos[0])] = 1
+                score.wrong_bkg_mask[(i[0] + pos[1]), (i[1] + pos[0])] = 1
         else:
             for j, i in enumerate(idxs):
                 dists = np.sqrt(np.sum((bkg_pal - not_bkg_pal[j]) ** 2, axis=1))
                 tile_data[i] = bkg_pal[np.argmin(dists)]
-                score.wrong_bkg_mask[(i[0]+pos[1]),(i[1]+pos[0])] = 1
+                score.wrong_bkg_mask[(i[0] + pos[1]), (i[1] + pos[0])] = 1
 
     return tile_data, sprimg, score
 
@@ -110,7 +110,7 @@ def find_palette(tile: Image.Image, pal_col, bkg_col=np.array(BLACK)):
         # return pals, (np.sum(have_pals, axis=-1) / len(tile_col))
 
 
-def find_offset(sprimg: Image.Image, pos: tuple[int, int, int, int]):
+def find_offset(sprimg: Image.Image, pos: tuple[int, int, int, int], take_first=False):
     x, y, xw, yh = pos
     best_off = None
     best_px = 0
@@ -123,10 +123,11 @@ def find_offset(sprimg: Image.Image, pos: tuple[int, int, int, int]):
             if not best_off or best_px < nb_px:
                 best_px = nb_px
                 best_off = opos
-
-            # take first solution and leave for now because it is so slow
-        #     break
-        # break
+            # take first solution and leave
+            if take_first:
+                break
+        if take_first:
+            break
     return best_off, best_px
 
 
@@ -229,7 +230,7 @@ def remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, 
     return best_spr, best_lines, best_score, best_sprimg
 
 
-def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=6, MAX_SPR_COLOR=9):
+def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=6, MAX_SPR_COLOR=9, no_bkg=False, no_offset=False):
     ################
     # Read Image
     ################
@@ -274,9 +275,6 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     #  when we have less color than the max)
     i = 0
     MAX_COLOR = max(MAX_BKG_COLOR, MAX_SPR_COLOR)
-    while len(colors) < MAX_COLOR:
-        colors.append(colors[i])
-        i += 1
     colors = np.array(colors)
     colors_no_a = np.array([x for x in colors if x[3] != 0])
     colors_no_ba = np.array([x for x in colors if np.any(x != (0, 0, 0, 255)) and x[3] != 0])
@@ -316,9 +314,12 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     ################
     if verbose:
         print("Compute possible palettes...")
-    bkg_palettes = list(itertools.permutations(range(nb_color_no_ba)))
-    bkg_palettes = np.unique([np.append(sorted(x[0:3]), sorted(x[3:6])) for x in bkg_palettes], axis=0)
-    bkg_palettes = np.array(bkg_palettes, dtype=int)
+    if no_bkg:
+        bkg_palettes = []
+    else:
+        bkg_palettes = list(itertools.permutations(range(nb_color_no_ba)))
+        bkg_palettes = np.unique([np.append(sorted(x[0:3]), sorted(x[3:6])) for x in bkg_palettes], axis=0)
+        bkg_palettes = np.array(bkg_palettes, dtype=int)
     if lazy_spr_pal:
         spr_palettes = [[0] * MAX_SPR_COLOR]
     else:
@@ -341,118 +342,130 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
         print("Possible palettes count (bkg,spr):", len(bkg_palettes), len(spr_palettes))
 
     #
-    if verbose:
-        print("Find best background palettes...")
-    best_score = None
-    best_sprimg = None
-    best_bkg_pal = None
-    best_spr_pal = None
-    best_bkg_img = None
-    emptytile = Image.new("RGBA", (8, 8))
-    if verbose:
-        bar = tqdm(bkg_palettes, desc=f"Score=???", dynamic_ncols=True)
+    if no_bkg:
+        best_score = Score(w, h)
+        best_score.wrong_bkg_mask = np.ones((h, w), np.uint8)
+        best_score.wrong_black_mask = np.ones((h, w), np.uint8)
+        best_sprimg = img.copy()
+        best_bkg_pal = []
+        best_spr_pal = colors_no_ba.copy()
+        best_bkg_img = Image.new("RGBA", (w, h))
     else:
-        bar = bkg_palettes
-    for bkg_pal in bar:
-        # find invert of bkg_pal
-        mask = np.ones(len(colors_no_ba), dtype=bool)
-        mask[bkg_pal] = False
-        not_bkg_pal = colors_no_ba[mask, ...].copy()
-        # get color of bkg_pal
-        bkg_pal_no_ba = colors_no_ba[bkg_pal]
-        bkg_pal = list(bkg_pal_no_ba)
-        bkg_pal.append(BLACK)
-        bkg_pal = np.array(bkg_pal)
-        # create score and sprite image
-        score = Score(w, h)
-        sprimg = Image.new("RGBA", (w, h))
-        bkgimg = Image.new("RGBA", (w, h))
-        # for every tile
-        for y in range(nb_bkgtile_h):
-            for x in range(nb_bkgtile_w):
-                # get tile
-                pos = (x * 8, y * 8, x * 8 + 8, y * 8 + 8)
-                tile = img.crop(pos)
-                tile_ori = img.crop(pos)
-                tile_data = np.array(tile)
-                tile_colors = tile.getcolors()
-                # if transparent
-                nb_transparent_px = sum([x[0] for x in tile_colors if x[1][3] == 0])
-                if nb_transparent_px:
-                    # if transparent >= MAX_TRANSPARENT_PX
-                    if nb_transparent_px >= MAX_TRANSPARENT_PX:
-                        # add tile to spr_img
-                        sprimg.paste(tile, pos)
-                        # tile = blank
-                        tile_data = np.array(emptytile.copy())
+        if verbose:
+            print("Find best background palettes...")
+        best_score = None
+        best_sprimg = None
+        best_bkg_pal = None
+        best_spr_pal = None
+        best_bkg_img = None
+        emptytile = Image.new("RGBA", (8, 8))
+        if verbose:
+            bar = tqdm(bkg_palettes, desc=f"Score=???", dynamic_ncols=True)
+        else:
+            bar = bkg_palettes
+        for bkg_pal in bar:
+            # find invert of bkg_pal
+            mask = np.ones(len(colors_no_ba), dtype=bool)
+            mask[bkg_pal] = False
+            not_bkg_pal = colors_no_ba[mask, ...].copy()
+            # get color of bkg_pal
+            bkg_pal_no_ba = colors_no_ba[bkg_pal]
+            bkg_pal = list(bkg_pal_no_ba)
+            bkg_pal.append(BLACK)
+            bkg_pal = np.array(bkg_pal)
+            # create score and sprite image
+            score = Score(w, h)
+            sprimg = Image.new("RGBA", (w, h))
+            bkgimg = Image.new("RGBA", (w, h))
+            # for every tile
+            for y in range(nb_bkgtile_h):
+                for x in range(nb_bkgtile_w):
+                    # get tile
+                    pos = (x * 8, y * 8, x * 8 + 8, y * 8 + 8)
+                    tile = img.crop(pos)
+                    tile_ori = img.crop(pos)
+                    tile_data = np.array(tile)
+                    tile_colors = tile.getcolors()
+                    # if transparent
+                    nb_transparent_px = sum([x[0] for x in tile_colors if x[1][3] == 0])
+                    if nb_transparent_px:
+                        # if transparent >= MAX_TRANSPARENT_PX
+                        if nb_transparent_px >= MAX_TRANSPARENT_PX:
+                            # add tile to spr_img
+                            sprimg.paste(tile, pos)
+                            # tile = blank
+                            tile_data = np.array(emptytile.copy())
+                        else:
+                            tile_data, sprimg, score = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score)
+                            # fill transparency with black
+                            i = np.where(tile_data[:, :, 3] == 0)
+                            tile_data[i] = (0, 0, 0, 255)
+                            # update wrong_black_color
+                            score.wrong_black_mask[i[0] + (y * 8), i[1] + (x * 8)] = 1
+                    # elif tile have color not in bkg_pal
                     else:
                         tile_data, sprimg, score = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score)
-                        # fill transparency with black
-                        i = np.where(tile_data[:, :, 3] == 0)
-                        tile_data[i] = (0, 0, 0, 255)
-                        # update wrong_black_color
-                        score.wrong_black_mask[i[0] + (y * 8), i[1] + (x * 8)] = 1
-                # elif tile have color not in bkg_pal
-                else:
-                    tile_data, sprimg, score = move_spr_color(tile_data, not_bkg_pal, sprimg, bkg_pal, pos, score)
-                tile = Image.fromarray(tile_data)
-                tile_colors = [x[1] for x in tile.getcolors()]
+                    tile = Image.fromarray(tile_data)
+                    tile_colors = [x[1] for x in tile.getcolors()]
 
-                # if empty tile
-                if len(tile_colors) == 1 and tile_colors[0] == (0, 0, 0, 0):
-                    pass
-                # if black tile
-                if len(tile_colors) == 1 and tile_colors[0] == (0, 0, 0, 255):
-                    bkgimg.paste(tile, pos)
-                # else
-                else:
-                    (ps, ns) = find_palette(tile, bkg_pal_no_ba)
-                    # if no palette match
-                    if np.all(ns != 1):
-                        # take closest pal
-                        p = ps[np.argmax(ns)]
-                        p_rgb = np.array(np.delete(p, 3, 1).flatten(), dtype=np.uint8)
-                        pal = Image.new("P", (0, 0))
-                        pal.putpalette(p_rgb)
-                        # new_tile = quantize(tile, closest_pal)
-                        new_tile = tile.convert("RGB").quantize(4, QUANTIZE_STRAT, palette=pal, dither=True).convert("RGBA")
-                        # find dif
-                        mask = (np.array(tile) == np.array(new_tile)).all(axis=2)
-                        dif = np.where(mask)
-                        # wrong_bkg_color += dif
-                        score.wrong_bkg_mask[dif[0] + (y * 8), dif[1] + (x * 8)] = 1
-                        # update sprites
-                        sprtile = np.array(tile.copy())
-                        for c in p:
-                            sprtile[(sprtile == c).all(axis=-1)] = np.array([0, 0, 0, 0])
-                        sprtile = Image.fromarray(sprtile)
-                        mask = Image.fromarray(~mask)
-                        sprimg.paste(sprtile, pos, mask)
-                        # update tile
-                        tile = new_tile
-                    bkgimg.paste(tile, pos)
+                    # if empty tile
+                    if len(tile_colors) == 1 and tile_colors[0] == (0, 0, 0, 0):
+                        pass
+                    # if black tile
+                    if len(tile_colors) == 1 and tile_colors[0] == (0, 0, 0, 255):
+                        bkgimg.paste(tile, pos)
+                    # else
+                    else:
+                        (ps, ns) = find_palette(tile, bkg_pal_no_ba)
+                        # if no palette match
+                        if np.all(ns != 1):
+                            # take closest pal
+                            p = ps[np.argmax(ns)]
+                            p_rgb = np.array(np.delete(p, 3, 1).flatten(), dtype=np.uint8)
+                            pal = Image.new("P", (0, 0))
+                            pal.putpalette(p_rgb)
+                            # new_tile = quantize(tile, closest_pal)
+                            new_tile = tile.convert("RGB").quantize(4, QUANTIZE_STRAT, palette=pal, dither=True).convert("RGBA")
+                            # find dif
+                            mask = (np.array(tile) == np.array(new_tile)).all(axis=2)
+                            dif = np.where(mask)
+                            # wrong_bkg_color += dif
+                            score.wrong_bkg_mask[dif[0] + (y * 8), dif[1] + (x * 8)] = 1
+                            # update sprites
+                            sprtile = np.array(tile.copy())
+                            for c in p:
+                                sprtile[(sprtile == c).all(axis=-1)] = np.array([0, 0, 0, 0])
+                            sprtile = Image.fromarray(sprtile)
+                            mask = Image.fromarray(~mask)
+                            sprimg.paste(sprtile, pos, mask)
+                            # update tile
+                            tile = new_tile
+                        bkgimg.paste(tile, pos)
 
-            # abandon curent solution if already worst
-            if best_score and score.sum() > best_score.sum():
-                break
+                # abandon curent solution if already worst
+                if best_score and score.sum() > best_score.sum():
+                    break
 
-        # keep the best found
-        if not best_score or score.sum() < best_score.sum():
-            best_score = score
-            best_bkg_pal = bkg_pal_no_ba
-            best_spr_pal = not_bkg_pal
-            best_sprimg = sprimg
-            best_bkg_img = bkgimg
-            if verbose:
-                bar.set_description(f"Score={best_score.sum()}")
+            # keep the best found
+            if not best_score or score.sum() < best_score.sum():
+                best_score = score
+                best_bkg_pal = bkg_pal_no_ba
+                best_spr_pal = not_bkg_pal
+                best_sprimg = sprimg
+                best_bkg_img = bkgimg
+                if verbose:
+                    bar.set_description(f"Score={best_score.sum()}")
 
     #
     best_spr = []
     best_lines = np.array([])
     if MAX_SPR_COLOR > 0:
         if lazy_spr_pal:
-            a = np.append(best_bkg_pal, best_spr_pal, axis=0)
-            while len(a) < MAX_SPR_COLOR:
+            if no_bkg:
+                a = best_spr_pal.copy()
+            else:
+                a = np.append(best_bkg_pal, best_spr_pal, axis=0)
+            while len(a) < min(len(colors), MAX_SPR_COLOR):
                 a = np.append(a, [BLACK], axis=0)
             spr_palettes = np.array([a])
         elif verbose:
@@ -494,7 +507,7 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
                     for x in range(nb_sprtile_w):
                         # find sprite with best offset
                         pos = (x * 8, y * 16, x * 8 + 8, y * 16 + 16)
-                        offset, nb_px = find_offset(sprimg, pos)
+                        offset, nb_px = find_offset(sprimg, pos, take_first=no_offset)
                         # if empty sprite
                         if nb_px == 0:
                             continue
@@ -587,6 +600,7 @@ if __name__ == "__main__":
     lazy_spr_pal = args.lazy_spr_pal
 
     data = img2neslimit(args.image, lazy_spr_pal, verbose=True)
+    # data = img2neslimit(args.image, lazy_spr_pal, True, 0, 9, True, True) # for evidence
     w, h = data["w"], data["h"]
 
     # save line overflow as image
@@ -607,5 +621,5 @@ if __name__ == "__main__":
     for i, s in enumerate(data["spr"]):
         v = int(255 * (i / len(data["spr"])))
         f = (v, 0, 0, 255) if s[4] else (0, 0, v, 255)
-        draw.rectangle(s[0:4], fill=f)
+        draw.rectangle((s[0], s[1], s[2]-1, s[3]-1), fill=f)
     sprite_img.save("test_overflow.png")

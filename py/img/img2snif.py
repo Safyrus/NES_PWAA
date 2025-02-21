@@ -4,6 +4,7 @@ import os
 import numpy as np
 from img2neslimit import img2neslimit
 from nes_pal import closest_nes_color
+from rle_inc import RLEINC_CMD_END
 from tile import tile2chr, tiles2chr
 from const import *
 from snif_decode import snif_decode_meta
@@ -125,7 +126,7 @@ def spr2data(spr, pal, w, h, backdrop):
         y = s[1] % 16
         # add sprite bytes
         data.append(0x80 | (x << 4) | y)
-        data.append(((i*2) & 0xFE) + (1 if i >= 128 else 0))
+        data.append(((i * 2) & 0xFE) + (1 if i >= 128 else 0))
         cur_pos += 1
     # add END command
     data.append(SPRCMD_END)
@@ -156,7 +157,7 @@ def spr2tile(pal, spr, backdrop):
     return tiles
 
 
-def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None):
+def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None, no_bkg=False):
     snif_data = bytearray()
 
     ################
@@ -165,7 +166,7 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None):
     w = (img_data["w"] // 8) + int(img_data["w"] % 8 != 0) - 1
     assert 0 <= w < 32
     chr_region = 0
-    compress_bkg = 0
+    compress_bkg = no_bkg
     b = w | (chr_region << 5) | (compress_bkg << 7)
     snif_data.append(b)
 
@@ -239,25 +240,29 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None):
     ################
     # BKG data
     ################
-    # convert image to tiles
-    bkg_img = npimg2nes(np.array(img_data["bkg_img"]))
-    tile_adr, tile_pal, tile_data = bkg2tile(bkg_img, w + 1, h + 1, bkg_pal, backdrop)
-    if verbose:
-        print("Number of tiles:", len(tile_data))
-    #
-    if np.any(tile0_mask):
-        tile_adr[tile0_mask] = 0x4000
-    # cut address in low and high part
-    tile_adr_lo = np.array([x & 0xFF for x in tile_adr], dtype=np.uint8)
-    tile_adr_hi = np.array([(x >> 8) for x in tile_adr], dtype=np.uint8)
-    # assert lenght of arrays
-    assert len(tile_pal) == len(tile_adr) == len(tile_data)
-    # merge high address and palette to have MMC5 tiles
-    for i in range(len(tile_adr_hi)):
-        tile_adr_hi[i] |= (tile_pal[i]+bkg_pal_offset) << 6
-    # add tile address to data
-    snif_data.extend(tile_adr_lo)
-    snif_data.extend(tile_adr_hi)
+    if no_bkg:
+        snif_data.append(RLEINC_CMD_END)
+        snif_data.append(RLEINC_CMD_END)
+    else:
+        # convert image to tiles
+        bkg_img = npimg2nes(np.array(img_data["bkg_img"]))
+        tile_adr, tile_pal, tile_data = bkg2tile(bkg_img, w + 1, h + 1, bkg_pal, backdrop)
+        if verbose:
+            print("Number of tiles:", len(tile_data))
+        #
+        if np.any(tile0_mask):
+            tile_adr[tile0_mask] = 0x4000
+        # cut address in low and high part
+        tile_adr_lo = np.array([x & 0xFF for x in tile_adr], dtype=np.uint8)
+        tile_adr_hi = np.array([(x >> 8) for x in tile_adr], dtype=np.uint8)
+        # assert lenght of arrays
+        assert len(tile_pal) == len(tile_adr) == len(tile_data)
+        # merge high address and palette to have MMC5 tiles
+        for i in range(len(tile_adr_hi)):
+            tile_adr_hi[i] |= (tile_pal[i] + bkg_pal_offset) << 6
+        # add tile address to data
+        snif_data.extend(tile_adr_lo)
+        snif_data.extend(tile_adr_hi)
 
     ################
     # SPR data
@@ -270,17 +275,20 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None):
     ################
     # BKG CHR
     ################
-    # add background tiles
-    tile_chr = tiles2chr(tile_data)
-    bkg_chr_size = len(tile_chr)
-    snif_data.extend(tile_chr)
-    # compute padding
-    padding = []
-    if bkg_chr_size % BNK_SIZE:
-        padding = np.zeros(BNK_SIZE - (bkg_chr_size % BNK_SIZE), dtype=np.uint8)
-    # add padding
-    snif_data.extend(padding)
-    bkg_chr_size += len(padding)
+    if no_bkg:
+        bkg_chr_size = 0
+    else:
+        # add background tiles
+        tile_chr = tiles2chr(tile_data)
+        bkg_chr_size = len(tile_chr)
+        snif_data.extend(tile_chr)
+        # compute padding
+        padding = []
+        if bkg_chr_size % BNK_SIZE:
+            padding = np.zeros(BNK_SIZE - (bkg_chr_size % BNK_SIZE), dtype=np.uint8)
+        # add padding
+        snif_data.extend(padding)
+        bkg_chr_size += len(padding)
 
     ################
     # SPR CHR
@@ -299,7 +307,18 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None):
     return snif_data
 
 
-def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_spr_pal=3*3, bkg_pal_offset=0, tile0_mask=None):
+def img2snif(
+    imgpath,
+    outpath,
+    verbose=False,
+    force=False,
+    nb_bkg_pal=2 * 3,
+    nb_spr_pal=3 * 3,
+    bkg_pal_offset=0,
+    tile0_mask=None,
+    no_bkg=False,
+    no_spr_offset=False,
+):
 
     # if output already exist
     if not force and os.path.exists(outpath):
@@ -316,11 +335,18 @@ def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_sp
     # convert image to image data
     if verbose:
         print("Convert Image to data")
-    img_data = img2neslimit(imgpath, True, MAX_BKG_COLOR=nb_bkg_pal, MAX_SPR_COLOR=nb_spr_pal)
+    img_data = img2neslimit(
+        img_path=imgpath,
+        lazy_spr_pal=True,
+        MAX_BKG_COLOR=nb_bkg_pal,
+        MAX_SPR_COLOR=nb_spr_pal,
+        no_bkg=no_bkg,
+        no_offset=no_spr_offset,
+    )
     # convert image data to SNIF data
     if verbose:
         print("Convert data to SNIF")
-    data = imgdata2snif(img_data, verbose=verbose, bkg_pal_offset=bkg_pal_offset, tile0_mask=tile0_mask)
+    data = imgdata2snif(img_data, verbose=verbose, bkg_pal_offset=bkg_pal_offset, tile0_mask=tile0_mask, no_bkg=no_bkg)
 
     # metadata of file
     metadata = f'{{"version":0,"mapper":5,"nbimg":1,"hashori":"{img_data["hash"]}"}}'
@@ -328,7 +354,8 @@ def img2snif(imgpath, outpath, verbose=False, force=False, nb_bkg_pal=2*3, nb_sp
     # Write output file
     if verbose:
         print("Output file")
-    os.makedirs(os.path.dirname(outpath), exist_ok=True)
+    if os.path.dirname(outpath):
+        os.makedirs(os.path.dirname(outpath), exist_ok=True)
     with open(outpath, "wb") as f:
         f.write(bytes(metadata, encoding="utf-8"))
         f.write(data)
@@ -344,4 +371,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--out", default="out.snif")
     args = parser.parse_args()
 
-    img2snif(args.image, args.out, verbose=True)
+    if os.path.exists(args.out):
+        os.remove(args.out)
+
+    img2snif(args.image, args.out, verbose=True, nb_bkg_pal=0, nb_spr_pal=9, no_spr_offset=True, no_bkg=True)

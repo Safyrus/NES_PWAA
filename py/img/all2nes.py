@@ -17,6 +17,9 @@ ANIM_AFTERNAME_REGEX = r"_(i[0-9]+)(t[0-9]+)?\.png"
 ANIM_REGEX = r"(.*)_(i[0-9]+)(t[0-9]+)?\.png"
 NO_DIRNAME = True
 
+MAX_PHOTO_WIDTH = 128
+MAX_PHOTO_HEIGHT = 128
+
 
 def path2name(path, anim_idx=False):
     name = os.path.normcase(path)
@@ -122,7 +125,8 @@ for r in range(NB_REGION):
         if name not in anims[r]:
             anims[r][name] = {}
         # get image as array
-        ori_img = np.array(Image.open(os.path.join(args.folder, file)).convert("RGBA"))
+        img_path = os.path.join(args.folder, file)
+        ori_img = np.array(Image.open(img_path).convert("RGBA"))
         # get previous animation image as array
         prev_img = np.zeros(ori_img.shape)
         if len(anims[r][name]) > 0:
@@ -160,6 +164,27 @@ for r in range(NB_REGION):
     for name in anims[r].keys():
         anims[r][name] = dict(sorted(anims[r][name].items()))
 
+print(f"Found {sum([len(x) for x in anims])} anims")
+
+
+################################
+# Find Photos
+################################
+
+photos = []
+for r in range(NB_REGION):
+    photo_reg = []
+    for i in range(len(all_files[r])):
+        img_path = os.path.join(args.folder, all_files[r][i])
+        img: Image.Image = Image.open(img_path)
+        w, h = img.size
+        if w <= MAX_PHOTO_WIDTH and h <= MAX_PHOTO_HEIGHT:
+            photo_reg.append(all_files[r][i])
+    photos.append(photo_reg)
+
+print(f"Found {sum([len(x) for x in photos])} photos")
+
+
 ################################
 # Convertion
 ################################
@@ -180,6 +205,7 @@ for r in range(NB_REGION):
         # if animation
         name = path2name(file)
         is_anim = name in anims[r]
+        is_photo = file in photos[r]
         m = re.match(ANIM_REGEX, file)
         nochange_mask = None
         if is_anim and m.group(2):
@@ -196,7 +222,9 @@ for r in range(NB_REGION):
                 # substract image from previous at tile level
                 mask, nochange_mask = mask_per_tile(img, pre_img)
         # convertion
-        if is_anim:
+        if is_photo:
+            img2snif(img_path, out, nb_bkg_pal=0, nb_spr_pal=9, no_bkg=True, no_spr_offset=True)
+        elif is_anim:
             img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=9, bkg_pal_offset=0, tile0_mask=nochange_mask)
         else:
             img2snif(img_path, out, nb_bkg_pal=6, nb_spr_pal=0, bkg_pal_offset=2)
@@ -272,10 +300,13 @@ filepath = os.path.join(args.output_folder, "img_data.bin")
 all_files_idx = {}
 with open(filepath, "wb") as f:
 
-    def write_anim_or_bnk(isanim, idx):
+    def write_category(cat, idx):
         for r in range(NB_REGION):
             for i, file in enumerate(all_files[r]):
-                if (path2name(file) in anims[r]) == isanim:
+                is_anim = path2name(file) in anims[r]
+                is_photo = file in photos[r]
+                is_bkg = not is_anim and not is_photo
+                if is_anim and cat == "anim" or is_photo and cat == "photo" or is_bkg and cat == "bkg":
                     all_files_idx[file] = idx
                     idx += 1
                     start = img_offsets[r][i]
@@ -286,8 +317,9 @@ with open(filepath, "wb") as f:
         return idx
 
     idx = 0
-    idx = write_anim_or_bnk(False, idx)
-    idx = write_anim_or_bnk(True, idx)
+    idx = write_category("bkg", idx)
+    idx = write_category("anim", idx)
+    idx = write_category("photo", idx)
 
 # Write raw animation data file
 anims_idx = {}
@@ -327,10 +359,14 @@ with open(filepath, "w") as f:
 # Write image pointer file
 filepath = os.path.join(args.output_folder, "img_ptr.asm")
 with open(filepath, "w") as f:
-    def write_anim_or_bnk(isanim, idx, low_str, high_str, bnk_str, size):
+
+    def write_category(cat, idx, low_str, high_str, bnk_str, size):
         for r in range(NB_REGION):
             for i, file in enumerate(all_files[r]):
-                if (path2name(file) in anims[r]) == isanim:
+                is_anim = path2name(file) in anims[r]
+                is_photo = file in photos[r]
+                is_bkg = not is_anim and not is_photo
+                if is_anim and cat == "anim" or is_photo and cat == "photo" or is_bkg and cat == "bkg":
                     if idx % 256 == 0:
                         low_str += f".byte ({size} >> 0) & $FF\n"
                         high_str += f".byte (({size} >> 8) & $1F) + $80\n"
@@ -339,7 +375,7 @@ with open(filepath, "w") as f:
                     end = chr_offsets[r]
                     if i + 1 < len(img_offsets[r]):
                         end = img_offsets[r][i + 1]
-                    size += end-start
+                    size += end - start
                     idx += 1
         return idx, low_str, high_str, bnk_str, size
 
@@ -354,12 +390,17 @@ with open(filepath, "w") as f:
     bnk_str = ""
     size = 0
     idx = 0
-    idx, low_str, high_str, bnk_str, size = write_anim_or_bnk(False, idx, low_str, high_str, bnk_str, size)
-    idx, low_str, high_str, bnk_str, size = write_anim_or_bnk(True, idx, low_str, high_str, bnk_str, size)
+    idx, low_str, high_str, bnk_str, size = write_category("bkg", idx, low_str, high_str, bnk_str, size)
+    idx, low_str, high_str, bnk_str, size = write_category("anim", idx, low_str, high_str, bnk_str, size)
     # write pointers
     f.write(f"img_ptr_list_lo:\n{low_str}\n")
     f.write(f"img_ptr_list_hi:\n{high_str}\n")
     f.write(f"img_ptr_list_bnk:\n{bnk_str}\n")
+    # photos
+    _, low_str, high_str, bnk_str, size = write_category("photo", 0, "", "", "", size)
+    f.write(f"evi_ptr_list_lo:\n{low_str}\n")
+    f.write(f"evi_ptr_list_hi:\n{high_str}\n")
+    f.write(f"evi_ptr_list_bnk:\n{bnk_str}\n")
 
 # Write animation constant file
 filepath = os.path.join(args.output_folder, "anim_names.asm")

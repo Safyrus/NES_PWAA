@@ -242,7 +242,7 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
             tile_down = tiles[b * TPB + ti + 1]
             if b == -1:
                 print(s)
-                print(s[2],( s[2] >> 5), b, ti)
+                print(s[2], (s[2] >> 5), b, ti)
                 print(spr_bnk)
                 print(spr_bnk[0])
                 print(tile_up)
@@ -282,13 +282,20 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
         new_spr.append(s[1])
 
     # remove unused banks
+    # and reorder bank (and spr) to 'use 1st place first'
     best_bnk = list(best_bnk)
+    selected_bnk = []
     use_bnk = np.unique([x[2] >> 5 for x in new_spr])
     for i in range(8):
-        if i not in use_bnk:
-            best_bnk[i] = -1
+        if i in use_bnk:
+            for j in range(len(new_spr)):
+                if (new_spr[j][2] >> 5) == i:
+                    new_spr[j][2] = (new_spr[j][2] % 32) + (len(selected_bnk) * 32)
+            selected_bnk.append(best_bnk[i])
+    while len(selected_bnk) < 8:
+        selected_bnk.append(-1)
 
-    return best_bnk, new_spr
+    return selected_bnk, new_spr
 
 
 def test_region(data, all_tiles, spr_mask, img_tiles, tile_hashes={}, MIN_PIXEL_EQUALITY=DEFAULT_PX_EQUA):
