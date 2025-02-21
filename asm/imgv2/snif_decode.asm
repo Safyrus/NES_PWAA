@@ -51,10 +51,11 @@ snif_decode:
     ; --------
     ; byte 1
     ; --------
-    ; h = in[Y] & $1F + 1
+    ; h = (in[Y] & $1F + 1) / 2
     LDA (@in), Y
     AND #$1F
     add #$01
+    LSR
     STA @h
     ; Y++
     INY
@@ -156,11 +157,11 @@ snif_decode:
     LDA (@in), Y
     STA @mask
     ; bnk_buf[0] = mask
-    STY @y
-    LDY #$00
-    LDA @mask
+    ; STY @y
+    ; LDY #$00
+    ; LDA @mask
     ; STA (@bnk_buf), Y
-    LDY @y
+    ; LDY @y
     ; Y++
     INY
     ; i = 1
