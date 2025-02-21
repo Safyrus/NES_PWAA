@@ -24,7 +24,7 @@ def find_tile_best_pal(tile, pals):
     # count matching color per palette
     best_pal = []
     for p in pals:
-        s = np.sum([c in u for c in p])
+        s = len(np.unique([c for c in p if c in u]))
         best_pal.append(s)
     # take palette with the most matchs
     if len(best_pal) == 0:
@@ -369,9 +369,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--image", required=True)
     parser.add_argument("-o", "--out", default="out.snif")
+    parser.add_argument("-p", "--photo", action="store_true")
     args = parser.parse_args()
 
     if os.path.exists(args.out):
         os.remove(args.out)
 
-    img2snif(args.image, args.out, verbose=True, nb_bkg_pal=0, nb_spr_pal=9, no_spr_offset=True, no_bkg=True)
+    if args.photo:
+        img2snif(args.image, args.out, verbose=True, nb_bkg_pal=0, nb_spr_pal=9, no_spr_offset=True, no_bkg=True)
+    else:
+        img2snif(args.image, args.out, verbose=True)

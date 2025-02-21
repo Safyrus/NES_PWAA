@@ -596,11 +596,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--image", required=True)
     parser.add_argument("-lsp", "--lazy_spr_pal", action="store_true")
+    parser.add_argument("-p", "--photo", action="store_true")
     args = parser.parse_args()
     lazy_spr_pal = args.lazy_spr_pal
 
-    data = img2neslimit(args.image, lazy_spr_pal, verbose=True)
-    # data = img2neslimit(args.image, lazy_spr_pal, True, 0, 9, True, True) # for evidence
+    if args.photo:
+        data = img2neslimit(args.image, lazy_spr_pal, True, 0, 9, True, True) # for evidence
+    else:
+        data = img2neslimit(args.image, lazy_spr_pal, verbose=True)
     w, h = data["w"], data["h"]
 
     # save line overflow as image
