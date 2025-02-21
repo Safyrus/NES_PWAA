@@ -19,8 +19,7 @@
     STA packet_buf_write_adr+1
 
     ; setup name display
-    LDA #$FF
-    STA text_name
+    DEC text_name ; =$FF
     LDA #NAME_COL_1
     STA img_tmp_pals+(7*3)+1
     LDA #NAME_COL_2
@@ -28,6 +27,10 @@
     LDA #NAME_COL_3
     STA img_tmp_pals+(7*3)+3
     JSR change_name
+
+    ; setup photo
+    DEC cur_photo ; =$FF
+    DEC new_photo ; =$FF
 
     ; --------
     ; Game: Text

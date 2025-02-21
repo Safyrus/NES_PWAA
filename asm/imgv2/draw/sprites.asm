@@ -1,4 +1,16 @@
 draw_sprites:
+    ; if img_flag.evispr
+    LDA img_flag
+    AND #IMG_FLAG_EVISPR
+    BEQ :+
+        ; push current bank
+        push mmc5_banks+0
+        ; change ram bank to the one
+        ; containing evidence sprites
+        mov mmc5_banks+0, #GENERAL_BNK
+        STA MMC5_RAM_BNK
+    :
+
     ; X = res_oam
     LDX res_oam
     ; Y = draw_sprite_idx
@@ -21,6 +33,8 @@ draw_sprites:
         :
         ; s.y -= scroll_y
         sub scroll_y
+        ; s.y += spr_off_y
+        add spr_off_y
         ; if s.y >= $89
         PHA
         CMP #$89
@@ -60,6 +74,7 @@ draw_sprites:
         ; x
         LDA IMG_CHR_SPR+3, Y
         sub scroll_x
+        add spr_off_x
         STA OAM+3, X
         ; X++
         TXA
@@ -106,11 +121,32 @@ draw_sprites:
     :
     ; for Y to 0 (included)
     @update_bnks:
-        ; MMC5_CHR_BNK[Y] = spr_bnks[Y]
-        LDA spr_bnks, Y
+        ; if img_flag.evispr
+        LDA img_flag
+        AND #IMG_FLAG_EVISPR
+        BEQ :+
+            ; A = evi_bnks[Y]
+            LDA evi_bnks, Y
+            JMP :++
+        ; else
+        :
+            ; A = spr_bnks[Y]
+            LDA spr_bnks, Y
+        :
+        ; MMC5_CHR_BNK[Y] = A
         STA MMC5_CHR_BNK0, Y
+        ; continue
         DEY
         BPL @update_bnks
+
+    ; if img_flag.evispr
+    LDA img_flag
+    AND #IMG_FLAG_EVISPR
+    BEQ :+
+        ; restore bank
+        pull mmc5_banks+0
+        STA MMC5_RAM_BNK
+    :
 
     ; return
     RTS

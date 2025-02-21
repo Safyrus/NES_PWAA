@@ -57,13 +57,9 @@ MAIN_LOOP:
         AND #$FF-(IMG_FLAG_UNSPRITE)
         STA img_flag
         ; use new palettes
-        LDY #$3*8
-        @update_pals:
-            LDA img_tmp_pals, Y
-            STA img_pals, Y
-            DEY
-            BPL @update_pals
-        ; update palettes
+        ; copy_palettes()
+        JSR copy_palettes
+        ; update_palettes()
         JSR update_palettes
         ; update sprites
         JSR draw_sprites
@@ -124,6 +120,55 @@ MAIN_LOOP:
 
     ; update animation
     JSR update_anim
+
+    ; if cur_photo != new_photo
+    LDA new_photo
+    CMP cur_photo
+    BEQ :+++
+        ; cur_photo = new_photo
+        STA cur_photo
+        ; if new_photo >= 0
+        TAX
+        BMI :+
+            ; fetch & decode evi
+            ; display_evi(new_photo)
+            JSR display_evi
+            ; offset sprites
+            LDA #$80
+            STA spr_off_x
+            LDA #$10
+            STA spr_off_y
+            ; clear bkg tiles
+            ; set_spr_bkg_tile($10, $10)
+            LDX #$10
+            LDY #$10
+            ; JSR set_spr_bkg_tile
+            ; set img_flag.evispr
+            LDA img_flag
+            ORA #IMG_FLAG_EVISPR
+            STA img_flag
+            JMP :++
+        ; else
+        :
+            ; remove sprites offset
+            LDA #$00
+            STA spr_off_x
+            STA spr_off_y
+            ; clear img_flag.evispr
+            LDA img_flag
+            AND #$FF-IMG_FLAG_EVISPR
+            STA img_flag
+            ; restore bkg tiles
+            ; clear_spr_bkg_tile($10, $10)
+            LDX #$10
+            LDY #$10
+            ; JSR clear_spr_bkg_tile
+        :
+        ; copy_palettes()
+        JSR copy_palettes
+        ; update_palettes()
+        JSR update_palettes
+    :
 
     @MAIN_END:
     ; loop back to start of main

@@ -345,10 +345,12 @@
 
     ; Constants: Game RAM Banks
     ;
-    ; TEXT_BUF_BNK - _$00_ Bank containg decoded text data
-    ; IMG_BUF_BNK  - _$01_ Bank containg decoded image data
+    ; TEXT_BUF_BNK - _$00_ Contain decoded text data
+    ; IMG_BUF_BNK  - _$01_ Contain decoded image data
+    ; GENERAL_BNK  - _$02_ Contain other data
     TEXT_BUF_BNK = $00
     IMG_BUF_BNK  = $01
+    GENERAL_BNK = $02
 
 ;================
 ; Group: Game
@@ -488,6 +490,7 @@
     ANIM_BUF_ADR      = $7D00
 
     IMG_FLAG_FORCE    = $80
+    IMG_FLAG_EVISPR   = $01
     IMG_FLAG_OTHERNT  = $04
     IMG_FLAG_UNSPRITE = $10
 

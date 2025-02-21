@@ -6,8 +6,10 @@
 
 .include "display/anim.asm"
 .include "display/img.asm"
+.include "display/evi.asm"
 
 .include "fetch/anim.asm"
+.include "fetch/evi.asm"
 .include "fetch/img.asm"
 .include "fetch/util.asm"
 
@@ -29,6 +31,7 @@
 .include "update/anim.asm"
 .include "update/dialog.asm"
 .include "update/image2.asm"
+.include "update/light.asm"
+.include "update/pal.asm"
 
-.include "light.asm"
-.include "pal.asm"
+.include "cp_pal.asm"

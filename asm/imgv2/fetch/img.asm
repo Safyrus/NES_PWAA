@@ -20,9 +20,11 @@ fetch_img:
     ; bnk = img_ptr_list_bnk[y]
     LDA img_ptr_list_bnk, Y
     TAY
+fetch_loop:
+    @adr = tmp+0
     ; MMC5_BNK1, MMC5_BNK2 = bnk, bnk+1
-    STA mmc5_banks+1
-    STA MMC5_PRG_BNK0
+    STY mmc5_banks+1
+    STY MMC5_PRG_BNK0
     INY
     STY mmc5_banks+2
     STY MMC5_PRG_BNK1

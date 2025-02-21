@@ -41,10 +41,12 @@
 ;   $1F00-$1FFF = dialog box (high) (1 page)
 ;---
 ;
-; - MMC5 Memory Bank 2 (???):
+; - MMC5 Memory Bank 2 (GENERAL_BNK):
 ;--- Text
-;   $??00-$??FF = decoded evidence sprites (1 page)
 ;   $??00-$??FF = HITBOX buffer (1 page)
+;   $??00-$1BFF = ???
+;   $1C00-$1CFF = decoded evidence sprites (1 page)
+;   $1D00-$1FFF = ???
 ;---
 ;
 ; - MMC5 Memory Bank 3 (???):
@@ -396,24 +398,18 @@ OAM:
         cr_correct_idx: .res 1
 
 
-    ;================
-    ; Group: Image variables
-    ;================
-        ; Variable: img_photo
-        ;----------------
-        ; photo/evidence to show,
-        ; byte 7 = need to be draw
-        img_photo: .res 1
 
-        ; Variable: img_background
-        ;----------------
-        ; background image to display
-        img_background: .res 1
+    ;================
+    ; Group: Photo variables
+    ;================
+        new_photo: .res 1
+        cur_photo: .res 1
 
-        ; Variable: img_character
-        ;----------------
-        ; character image to display
-        img_character: .res 2
+        evi_pals:
+        evi_pals_backdrop: .res 1
+        .res 3*4 ; padding
+        evi_pals_spr: .res 3*3
+        evi_bnks: .res 8
 
     ;================
     ; Group: Player choice variables
@@ -510,6 +506,8 @@ OAM:
 
         draw_sprite_idx: .res 1
         res_oam: .res 1
+        spr_off_x: .res 1
+        spr_off_y: .res 1
 
         img_flag: .res 1
         spr_bnks: .res 8
