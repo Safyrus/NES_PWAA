@@ -70,7 +70,6 @@ So, what was the secret?<p>
 <set:11><save><jump:test_sav_ret,1,0,11>
 Returned from end of<b>text data.<p>
 
-<label:DEBUG>
 Change BIP to 0 <bip:0><wait:30>Now!<b><wait:30>Now this text should<b>make a sound<p>
 Change BIP to 0 again<bip:0><b><wait:30>Same BIP value should<b>stop the bip<p>
 Change BIP to 2<bip:2><p>
@@ -97,6 +96,19 @@ Play music 20<music:20><p>
 
 Play SFX 1 on top of music<sound:1><p>
 Play DPCM 18 on top of music<sound:82><p>
+
+<label:DEBUG>
+Now displaying photo 0.<photo:0><p>
+Now displaying photo 1.<photo:1><p>
+Same photo should remove it.<photo:1><p>
+3rd time should display it.<photo:1><p>
+3<photo:3><p>
+4<photo:4><p>
+5<photo:5><p>
+6<photo:6><p>
+7<photo:7><p>
+8<photo:8><p>
+
 
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>
