@@ -18,8 +18,27 @@ MAIN_LOOP:
     ; ----------------
     ; Update Inputs
     ; ----------------
+    ; get joypad state
     JSR update_input
-    JSR input_normal
+    ; switch(input_mode)
+    LDA input_mode
+    ; case IM_NORMAL:
+    CMP #IM_NORMAL
+    BNE :+
+        ; input_normal()
+        JSR input_normal
+        ; break
+        JMP @input_end
+    :
+    ; case IM_ACT:
+    CMP #IM_ACT
+    BNE :+
+        ; input_act()
+        JSR input_act
+        ; break
+        JMP @input_end
+    :
+    @input_end:
 
     ; ----------------
     ; Update Images
@@ -168,6 +187,13 @@ MAIN_LOOP:
         JSR copy_palettes
         ; update_palettes()
         JSR update_palettes
+    :
+
+    ; if draw act
+    LDA act_flag
+    AND #ACT_FLAG_DRAW
+    BEQ :+
+        ; TODO
     :
 
     @MAIN_END:

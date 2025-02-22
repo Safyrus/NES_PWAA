@@ -1,4 +1,8 @@
-JMP_:
+read_jump:
+    ; jmp_buf_cond = true
+    LDA #$FF
+    STA jmp_buf_cond
+
     ; read address
     JSR read_char
     STA jmp_buf+0
@@ -7,20 +11,21 @@ JMP_:
     JSR read_char
     STA jmp_buf+2
 
-    ; if condition
+    ; if jump contain condition
     ASL
     BPL :+
         ; read condition
         JSR read_char
-        ; if flag clear
+        ; jmp_buf_cond = get_dialog_flag(condition)
         JSR get_dialog_flag
-            ; return
-            BEQ @ret
+        STA jmp_buf_cond
     :
 
-    ; --------
-    ; jump
-    ; --------
+    ; return
+    RTS
+
+
+text_jump:
     ; txt_ptr = jmp_buf.ptr
     LDA jmp_buf+1
     ASL
@@ -43,7 +48,19 @@ JMP_:
     :
     ; lz_idx = jmp_buf.bnk
     STA lz_idx
-
-    @ret:
     ; return
+    RTS
+
+
+JMP_:
+    ; read jump
+    JSR read_jump
+    ; if condition is false
+    LDA jmp_buf_cond
+        ; return
+        BEQ @ret
+    ; jump
+    JSR text_jump
+    ; return
+    @ret:
     RTS

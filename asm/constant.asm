@@ -177,6 +177,9 @@
     BTN_LEFT   = %00000010
     BTN_RIGHT  = %00000001
 
+    ; input modes
+    IM_NORMAL = 0
+    IM_ACT = 1
 
 ;================
 ; Group: NMI
@@ -569,52 +572,64 @@
     DPCM_BNK_OFF = 3 ; $C000
 
 ;================
+; Group: Jump address
+;================
+    JMPADR_POS_NEXT  = 0
+    JMPADR_MASK_NEXT = $40
+
+;================
+; Group: Act
+;================
+    ACT_ONE_CHOICE_SIZE = $20
+    ACT_FLAG_DRAW = %00000001
+
+;================
 ; Group: Special Characters
 ;================
 
-.enum SPE_CHR
-    END ; END of dialog
-    LB  ; Line Break
-    DB  ; Dialog Break
-    FDB ; Force Dialog Break
-    TD  ; Toggle Dialog Box display
-    SET ; Set flag
-    CLR ; Clear flag
-    SAK ; ShAKe
-    SPD ; SPeeD
-    DL  ; DeLay
-    NAM ; change NAMe of dialog box
-    FLH ; FLasH
-    FAD ; FADe in/out
-    SAV ; Save the current text location
-    COL ; change text COLor
-    RET ; Return to the previous saved location
-    BIP ; change dialog BIP effect
-    MUS ; MUSic
-    SND ; SouND effect
-    PHT ; show PHoto
-    CHR ; change CHaRacter
-    R15 ; Reserved
-    BKG ; change BacKGround
-    FNT ; Change FoNT to use
-    JMP ; JuMP to another dialog
-    ACT ; jump to the selected choice (depending on the player ACTion
-    R1A ; Reserved
-    R1B ; Reserved
-    R1C ; Reserved
-    R1D ; Reserved
-    EVT ; EVenT. Use to add control characters specific to the game
-    EXT ; EXTension. Reserved to add more ctrl char to the dialog box
-.endenum
+    .enum SPE_CHR
+        END ; END of dialog
+        LB  ; Line Break
+        DB  ; Dialog Break
+        FDB ; Force Dialog Break
+        TD  ; Toggle Dialog Box display
+        SET ; Set flag
+        CLR ; Clear flag
+        SAK ; ShAKe
+        SPD ; SPeeD
+        DL  ; DeLay
+        NAM ; change NAMe of dialog box
+        FLH ; FLasH
+        FAD ; FADe in/out
+        SAV ; Save the current text location
+        COL ; change text COLor
+        RET ; Return to the previous saved location
+        BIP ; change dialog BIP effect
+        MUS ; MUSic
+        SND ; SouND effect
+        PHT ; show PHoto
+        CHR ; change CHaRacter
+        R15 ; Reserved
+        BKG ; change BacKGround
+        FNT ; Change FoNT to use
+        JMP ; JuMP to another dialog
+        ACT ; jump to the selected choice (depending on the player ACTion
+        R1A ; Reserved
+        R1B ; Reserved
+        R1C ; Reserved
+        R1D ; Reserved
+        EVT ; EVenT. Use to add control characters specific to the game
+        EXT ; EXTension. Reserved to add more ctrl char to the dialog box
+    .endenum
 
 
-.enum EVT_CHR
-    CR     ; 
-    CR_OBJ ; 
-    CR_SET ; 
-    CR_CLR ; 
-    CR_IDX ; 
-    CLICK  ; 
-    ACT_RET; 
-.endenum
+    .enum EVT_CHR
+        CR     ; 
+        CR_OBJ ; 
+        CR_SET ; 
+        CR_CLR ; 
+        CR_IDX ; 
+        CLICK  ; 
+        ACT_RET; 
+    .endenum
 

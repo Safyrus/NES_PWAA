@@ -43,7 +43,7 @@ exec_char:
         .byte <(BKG-1)  ; $16
         .byte <(FNT-1)  ; $17
         .byte <(JMP_-1) ; $18
-        .byte <(@ret-1) ; $19
+        .byte <(ACT-1)  ; $19
         .byte <(@ret-1) ; $1A
         .byte <(@ret-1) ; $1B
         .byte <(@ret-1) ; $1C
@@ -77,7 +77,7 @@ exec_char:
         .byte >(BKG-1)  ; $16
         .byte >(FNT-1)  ; $17
         .byte >(JMP_-1) ; $18
-        .byte >(@ret-1) ; $19
+        .byte >(ACT-1)  ; $19
         .byte >(@ret-1) ; $1A
         .byte >(@ret-1) ; $1B
         .byte >(@ret-1) ; $1C

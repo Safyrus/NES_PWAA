@@ -58,20 +58,13 @@ scanline_irq_handler:
         JMP @end
     @scanline_irq_top_midbox:
         ; if the court record or choice is showned
-        LDA max_choice
+        LDA act_nchoice
         BNE @scanline_irq_top_midbox_change
         LDA cr_flag
         AND #CR_FLAG_SHOW
         BEQ @scanline_irq_top_midbox_end
         @scanline_irq_top_midbox_change:
-            ; then disable sprites
-            LDA #PPU_MASK_BKG+PPU_MASK_BKG8
-            STA PPU_MASK
-            ; and update scrolling
-            LDA ppu_ctrl_val
-            AND #$FC
-            STA PPU_CTRL
-            ; and set mmc5 high upper chr bits to 0
+            ; set mmc5 high upper chr bits to 0
             LDA #$00
             STA MMC5_CHR_UPPER
         @scanline_irq_top_midbox_end:
@@ -79,18 +72,13 @@ scanline_irq_handler:
         JMP @end
     @scanline_irq_bot_midbox:
         ; if the court record or choice is showned
-        LDA max_choice
+        LDA act_nchoice
         BNE @scanline_irq_bot_midbox_change
         LDA cr_flag
         AND #CR_FLAG_SHOW
         BEQ @scanline_irq_bot_midbox_end
         @scanline_irq_bot_midbox_change:
-            ; then enable sprites
-            LDA #PPU_MASK_BKG+PPU_MASK_BKG8+PPU_MASK_SPR+PPU_MASK_SPR8
-            STA PPU_MASK
-            ; and update scrolling
-            JSR update_screen_scroll
-            ; and restore chr upper bit
+            ; restore chr upper bit
             LDA mmc5_upper_chr
             STA MMC5_CHR_UPPER
         @scanline_irq_bot_midbox_end:

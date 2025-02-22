@@ -35,3 +35,4 @@
 .include "char/BKG.asm"
 .include "char/FNT.asm"
 .include "char/JMP.asm"
+.include "char/ACT.asm"

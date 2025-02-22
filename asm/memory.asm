@@ -215,10 +215,7 @@ OAM:
         ;   <update_input>
         buttons_1_timer: .res 1
 
-        ; Variable: inpu_flags
-        ;----------------
-        ;
-        input_flags: .res 1
+        input_mode: .res 1
 
     ;================
     ; Group: Scanline state
@@ -263,7 +260,7 @@ OAM:
         ; Pointer to the DPCM list of the SFX bank
         fs_dpcm_sfx_ptr: .res 2
 
-        ; Variable: cur_sfx_chn
+        ; Variable: sfx_chn
         ;----------------
         ; SFX channel to use when playing a sound effect
         sfx_chn: .res 1
@@ -414,32 +411,12 @@ OAM:
     ;================
     ; Group: Player choice variables
     ;================
+        act_flag: .res 1
+        act_var: .res 2
+        act_nchoice: .res 1
+        act_select: .res 1
 
-        ; Variable: choice
-        ;----------------
-        ; the current choice selected
-        choice: .res 1
-
-        ; Variable: max_choice
-        ;----------------
-        ; the maximum number of choice for this dialog
-        ; bit 7 = flag set when we need to init choice display
-        max_choice: .res 1
-
-        ; Variable: choice_jmp_table
-        ;----------------
-        ; pointers to jump to for each choice
-        choice_jmp_table: .res 3*4
-
-        ; Variable: act_ptr
-        ;----------------
-        ; pointers to the last act character
-        act_ptr: .res 3
-
-        ; Variable: last_act_ptr
-        ;----------------
-        ; pointers to the last previous act character
-        last_act_ptr: .res 3
+        act_choice: .res ACT_ONE_CHOICE_SIZE*4
 
     ;================
     ; Group: MMC5 Banking
@@ -558,4 +535,5 @@ OAM:
         txt_vars: .res 1
 
         jmp_buf: .res 3
+        jmp_buf_cond: .res 1
         jmp_sav: .res 3
