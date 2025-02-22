@@ -1,4 +1,29 @@
 input_act:
+    ; --------
+    ; update choice sprite
+    ; --------
+    ; act_select * 8
+    LDA act_select
+    ASL
+    ASL
+    ASL
+    ; sprite.y = $40 + act_select * 8
+    add #$40
+    LDX res_oam
+    STA OAM, X
+    ; sprite.x = $10
+    LDA #$10
+    STA OAM+3, X
+    ; sprite.t = ACT_SPR_TILE
+    LDA #ACT_SPR_TILE
+    STA OAM+1, X
+    ; sprite.a = $00
+    LDA #$00
+    STA OAM+2
+
+    ; --------
+    ; input
+    ; --------
     ; if left | up
     LDA buttons_1
     AND #BTN_LEFT|BTN_UP
@@ -32,31 +57,37 @@ input_act:
     LDA buttons_1
     AND #BTN_A
     BEQ :+
-        ; input_mode = IM_NORMAL
-        LDA #IM_NORMAL
-        STA input_mode
-        ; undisplay act box (display bkg & chr)
-        LDX cur_bkg
-        JSR display_bkg
-        LDX cur_chr+0
-        LDY cur_chr+1
-        JSR display_anim
-        ; text_jump(act_choice[act_select])
+        ; text_jump(act_buf[act_select])
         LDA act_select
         STA MMC5_MUL_A
         LDA #ACT_ONE_CHOICE_SIZE
         STA MMC5_MUL_B
         LDX MMC5_MUL_A
-        LDA act_choice+0, X
+        LDA act_buf+0, X
         STA jmp_buf+0
-        LDA act_choice+1, X
+        LDA act_buf+1, X
         STA jmp_buf+1
-        LDA act_choice+2, X
+        LDA act_buf+2, X
         STA jmp_buf+2
         JSR text_jump
+        ; input_mode = IM_NORMAL
+        LDA #IM_NORMAL
+        STA input_mode
+        ; disable act
+        LDA #$00
+        STA act_nchoice
+        ; remove sprite
+        LDX res_oam
+        LDA #$FF
+        STA OAM, X
+        ; restore chr
+        mov new_chr+0, sav_chr+0
+        mov new_chr+1, sav_chr+1
+        ; undisplay act box
+        JSR update_midbox
         ; restore text speed
         JSR restore_text_speed
-        ; and reset dialog box
+        ; reset dialog box
         JSR dialog_reset
     :
     ; if B
@@ -67,8 +98,6 @@ input_act:
         ; if act_depth > 0
             ; go back one act before
     :
-
-    ; update choice sprite
 
     ; return
     RTS

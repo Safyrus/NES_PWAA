@@ -73,6 +73,23 @@ cp_mmc5:
     BNE :+
         JMP cp_page
     :
+    ; if act
+    LDA act_nchoice
+    BEQ :+
+        ; set general bank
+        LDA #GENERAL_BNK
+        STA mmc5_banks+0
+        STA MMC5_RAM_BNK
+        ; output page = MMC5_EXP_RAM+$E0
+        mov tmp+2, #<(MMC5_EXP_RAM+$E0)
+        mov tmp+3, #>(MMC5_EXP_RAM+$E0)
+        ; input page = DB_ADR_HI
+        mov tmp+0, #<DB_ADR_HI
+        mov tmp+1, #>DB_ADR_HI
+        ; copy midbox page
+        JSR cp_page
+    :
+
     RTS
 
 

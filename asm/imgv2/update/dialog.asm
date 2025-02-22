@@ -31,24 +31,116 @@ update_dialog:
         ; data = bottom of image of 1st buffer
         mov @data_hi+1, #>(IMG_BUF_HI_ADR+$200)
         mov @data_lo+1, #>(IMG_BUF_LO_ADR+$200)
-        JSR @main
+        JSR send_box_update
         ; adr = $2660
         mov @adr+1, #$86 ; + high priority
         ; data = bottom of image of 2nd buffer
         mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$200)
         mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$200)
-        JSR @main
-        JMP @ret
+        JSR send_box_update
+        JMP :++
     ; else
     :
         ; data = dialog box
         mov @data_hi+1, #>DB_ADR_HI
         mov @data_lo+1, #>DB_ADR_LO
-        JSR @main
-        JMP @ret
+        JSR send_box_update
+    :
+
+    @ret:
+    ; restore tmps
+    pull tmp+8
+    pull tmp+7
+    pull tmp+6
+    pull tmp+5
+    pull tmp+4
+    pull tmp+3
+    pull tmp+2
+    pull tmp+1
+    pull tmp+0
+    ; return
+    RTS
 
 
-    @main:
+update_midbox:
+    @adr = tmp+0
+    @packet = tmp+2
+    @data_hi = tmp+4
+    @data_lo = tmp+6
+    @count = tmp+8
+
+    ; save tmps
+    push tmp+0
+    push tmp+1
+    push tmp+2
+    push tmp+3
+    push tmp+4
+    push tmp+5
+    push tmp+6
+    push tmp+7
+    push tmp+8
+
+    ; adr = $20E0
+    mov @adr+0, #$E0
+    mov @adr+1, #$00
+    ; set banks
+    LDA #IMG_BUF_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+    LDA #GENERAL_BNK
+    STA mmc5_banks+2
+    STA MMC5_PRG_BNK1
+    ; if act is enable
+    LDA act_nchoice
+    BEQ :+
+        ; data = midbox
+        mov @data_hi+1, #>(DB_ADR_HI+$4000)
+        mov @data_lo+1, #>(DB_ADR_LO+$4000)
+        LDA #$00
+        STA @data_lo+0
+        STA @data_hi+0
+        ; send data
+        JSR send_box_update
+        JMP :++
+    ; else
+    :
+        ; data = bottom of image of 1st buffer
+        mov @data_hi+1, #>(IMG_BUF_HI_ADR+$80)
+        mov @data_lo+1, #>(IMG_BUF_LO_ADR+$80)
+        mov @data_hi+0, #<(IMG_BUF_HI_ADR+$80)
+        mov @data_lo+0, #<(IMG_BUF_LO_ADR+$80)
+        JSR send_box_update
+        ; adr = $24E0
+        mov @adr+1, #$84 ; + high priority
+        ; data = bottom of image of 2nd buffer
+        mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$80)
+        mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$80)
+        mov @data_hi+0, #<(IMG_BUF2_HI_ADR+$80)
+        mov @data_lo+0, #<(IMG_BUF2_LO_ADR+$80)
+        JSR send_box_update
+    :
+
+    ; restore tmps
+    pull tmp+8
+    pull tmp+7
+    pull tmp+6
+    pull tmp+5
+    pull tmp+4
+    pull tmp+3
+    pull tmp+2
+    pull tmp+1
+    pull tmp+0
+    ; return
+    RTS
+
+
+send_box_update:
+    @adr = tmp+0
+    @packet = tmp+2
+    @data_hi = tmp+4
+    @data_lo = tmp+6
+    @count = tmp+8
+
     ; for 8 packets
     LDX #0
     mov @count, #$08
@@ -83,19 +175,5 @@ update_dialog:
         ; continue
         DEC @count
         BNE @send_packet
-    RTS
-
-    @ret:
-    ; restore tmps
-    pull tmp+8
-    pull tmp+7
-    pull tmp+6
-    pull tmp+5
-    pull tmp+4
-    pull tmp+3
-    pull tmp+2
-    pull tmp+1
-    pull tmp+0
-
     ; return
     RTS

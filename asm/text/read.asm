@@ -17,7 +17,10 @@ read:
     ; --------
     ; set busy flag
     ora_adr txt_flags, #TXT_FLAG_BUSY
-    ; set text bank
+    ; set banks
+    push mmc5_banks+1
+    LDA #CODE_BNK
+    STA mmc5_banks+1
     push mmc5_banks+0
     LDA #TEXT_BUF_BNK
     STA mmc5_banks+0
@@ -65,9 +68,10 @@ read:
 
     ; clear busy flag
     and_adr txt_flags, #($FF-TXT_FLAG_BUSY)
-    ; restore bank
+    ; restore banks
     pull mmc5_banks+0
     STA MMC5_RAM_BNK
+    pull mmc5_banks+1
 
     ; return
     @return:

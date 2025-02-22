@@ -46,7 +46,9 @@
 ;   $??00-$??FF = HITBOX buffer (1 page)
 ;   $??00-$1BFF = ???
 ;   $1C00-$1CFF = decoded evidence sprites (1 page)
-;   $1D00-$1FFF = ???
+;   $1D00-$1DFF = ???
+;   $1E00-$1EFF = midbox (low) (1 page)
+;   $1F00-$1FFF = midbox (high) (1 page)
 ;---
 ;
 ; - MMC5 Memory Bank 3 (???):
@@ -416,7 +418,7 @@ OAM:
         act_nchoice: .res 1
         act_select: .res 1
 
-        act_choice: .res ACT_ONE_CHOICE_SIZE*4
+        act_buf: .res ACT_ONE_CHOICE_SIZE*4
 
     ;================
     ; Group: MMC5 Banking
@@ -502,6 +504,7 @@ OAM:
 
         cur_chr: .res 2
         new_chr: .res 2
+        sav_chr:
         tmp_chr: .res 2
 
         cur_bkg: .res 1

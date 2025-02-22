@@ -64,6 +64,10 @@ scanline_irq_handler:
         AND #CR_FLAG_SHOW
         BEQ @scanline_irq_top_midbox_end
         @scanline_irq_top_midbox_change:
+            ; scroll to the top left nametable
+            LDA ppu_ctrl_val
+            AND #$FC
+            STA PPU_CTRL
             ; set mmc5 high upper chr bits to 0
             LDA #$00
             STA MMC5_CHR_UPPER
@@ -78,6 +82,9 @@ scanline_irq_handler:
         AND #CR_FLAG_SHOW
         BEQ @scanline_irq_bot_midbox_end
         @scanline_irq_bot_midbox_change:
+            ; restore scroll
+            LDA ppu_ctrl_val
+            STA PPU_CTRL
             ; restore chr upper bit
             LDA mmc5_upper_chr
             STA MMC5_CHR_UPPER

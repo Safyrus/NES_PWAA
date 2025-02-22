@@ -1,8 +1,38 @@
+clear_midbox_no_refresh:
+    ; set GENERAL bank
+    LDA #GENERAL_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+    ; clear box
+    ; return
+    JMP clear_box
+
+
+clear_midbox:
+    ; set GENERAL bank
+    LDA #GENERAL_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+    ; clear box
+    JSR clear_box
+    ; update box
+    ; return
+    JMP update_midbox
+
+
 clear_dialog:
     ; set IMG bank
     LDA #IMG_BUF_BNK
     STA mmc5_banks+0
     STA MMC5_RAM_BNK
+    ; clear dialog box
+    JSR clear_box
+    ; update dialog box
+    ; return
+    JMP update_dialog
+
+
+clear_box:
     ; clear all tiles
     LDY #$00
     @clear:
@@ -46,6 +76,5 @@ clear_dialog:
     STA DB_ADR_LO+0+(7*32)
     LDA #DB_TILE_BR
     STA DB_ADR_LO+31+(7*32)
-    ; update dialog box
-    JMP update_dialog
     ; return
+    RTS

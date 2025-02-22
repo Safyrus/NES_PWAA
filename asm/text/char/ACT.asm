@@ -42,14 +42,14 @@ ACT:
         LDA jmp_buf_cond
             ; continue
             BEQ @while
-        ; act_choice[x].j = j
+        ; act_buf[x].j = j
         LDA jmp_buf+0
-        STA act_choice, X
+        STA act_buf, X
         LDA jmp_buf+1
-        STA act_choice+1, X
+        STA act_buf+1, X
         LDA jmp_buf+2
-        STA act_choice+2, X
-        ; act_choice[x].l = read_line()
+        STA act_buf+2, X
+        ; act_buf[x].l = read_line()
         TXA
         TAY
         @line:
@@ -64,15 +64,15 @@ ACT:
                 ; break
                 blt @line_end
             :
-            ; act_choice[x].l += c
-            STA act_choice+3, Y
+            ; act_buf[x].l += c
+            STA act_buf+3, Y
             INY
             ; continue
             JMP @line
         @line_end:
-        ; act_choice[x].l += LB (close string)
+        ; act_buf[x].l += LB (close string)
         LDA #SPE_CHR::LB
-        STA act_choice+3, Y
+        STA act_buf+3, Y
         ; x++
         TXA
         add #ACT_ONE_CHOICE_SIZE

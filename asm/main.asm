@@ -135,6 +135,40 @@ MAIN_LOOP:
                 JSR display_anim
             :
         :
+
+        ; if draw act
+        LDA act_flag
+        AND #ACT_FLAG_DRAW
+        BEQ :+
+            ; backup chr
+            mov sav_chr+0, cur_chr+0
+            mov sav_chr+1, cur_chr+1
+            ; remove char
+            LDA #$FF
+            STA cur_chr+1
+            STA new_chr+1
+            JSR remove_chr
+            JSR call_update_img
+            ; clear midbox
+            JSR clear_midbox_no_refresh
+            ; draw text
+            JSR draw_act_text
+            ; send buffer
+            JSR update_midbox
+            ; MMC5_CHR_BNK7 = $00
+            STA MMC5_CHR_BNK7
+            ; update sprite palette
+            LDA #ACT_SPR_PAL_0
+            STA img_tmp_pals+13
+            LDA #ACT_SPR_PAL_1
+            STA img_tmp_pals+14
+            LDA #ACT_SPR_PAL_2
+            STA img_tmp_pals+15
+            ; clear act draw flag
+            LDA act_flag
+            AND #$FF-ACT_FLAG_DRAW
+            STA act_flag
+        :
     @anim_fi:
 
     ; update animation
@@ -187,13 +221,6 @@ MAIN_LOOP:
         JSR copy_palettes
         ; update_palettes()
         JSR update_palettes
-    :
-
-    ; if draw act
-    LDA act_flag
-    AND #ACT_FLAG_DRAW
-    BEQ :+
-        ; TODO
     :
 
     @MAIN_END:

@@ -3,6 +3,7 @@
 ; ----------------
 .include "snif_decode.asm"
 .include "rleinc.asm"
+.include "act.asm"
 
 .include "display/anim.asm"
 .include "display/img.asm"
