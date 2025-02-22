@@ -97,19 +97,13 @@ Play music 20<music:20><p>
 Play SFX 1 on top of music<sound:1><p>
 Play DPCM 18 on top of music<sound:82><p>
 
-<label:DEBUG>
 Now displaying photo 0.<photo:0><p>
 Now displaying photo 1.<photo:1><p>
 Same photo should remove it.<photo:1><p>
 3rd time should display it.<photo:1><p>
-3<photo:3><p>
-4<photo:4><p>
-5<photo:5><p>
-6<photo:6><p>
-7<photo:7><p>
-8<photo:8><p>
 
 
+<label:DEBUG>
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>
 <jump:choice_2,0,0>Choice 2<b>

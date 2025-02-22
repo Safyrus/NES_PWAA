@@ -108,12 +108,12 @@
     - [X] BIP
     - [X] MUS
     - [X] SND
-    - [ ] PHT
+    - [X] PHT
     - [X] CHR
     - [X] BKG
     - [X] FNT
     - [X] JMP
-    - [ ] ACT
+    - [X] ACT
     - [ ] EVT
       - [ ] CR
       - [ ] CRO
