@@ -105,27 +105,39 @@ def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
     print("", end=end)
 
 
-def val_2_int(val):
-    global consts
+def val_2_int(val, can_be_label = False):
+    global consts, dummy_vals
 
+    # collapse constant value
     while val in consts:
         val = consts[val]
+    #
     if val.isnumeric():
         val = int(val)
     else:
-        printv(f"ERROR: cosntant '{val}' is not declared at {i}. Replacing by 0", param="te")
-        val = 0
+        if can_be_label:
+            printv(f"WARNING: unknow value for '{val}' at {i}. Supposing label", param="tw")
+            dummy_vals[len(textbin)] = val
+            val = -1
+        else:
+            printv(f"ERROR: constant '{val}' is not declared at {i}. Replacing by 0", param="te")
+            val = 0
     
     return val
 
 
-def append_val(textbin, val, name, i):
-    val = val_2_int(val)
+def append_val(textbin, val, name, i, can_be_label = False):
+    val = val_2_int(val, can_be_label = can_be_label)
 
-    if val > 127:
-        printv(f"WARNING: {name} is > 127 (val={val}) at {i}. Replacing by 0", param="tw")
-        val = 0
-    textbin.append(val)
+    if can_be_label and val < 0:
+        textbin.append(0x00)
+        textbin.append(0x00)
+        textbin.append(0x00)
+    else:
+        if val > 127:
+            printv(f"WARNING: {name} is > 127 (val={val}) at {i}. Replacing by 0", param="tw")
+            val = 0
+        textbin.append(val)
 
     return textbin
 
@@ -338,13 +350,13 @@ while i < len(text):
             textbin.append(adr & 0x7F)
             textbin.append((adr >> 13) + c)
             if c != 0:
-                textbin.append(int(args[3]))
+                textbin = append_val(textbin, args[3], name, i)
         elif name == "act":
             textbin.append(ACT)
         elif name == "event":
             textbin.append(EVT)
             for a in args:
-                textbin = append_val(textbin, a, name, i)
+                textbin = append_val(textbin, a, name, i, can_be_label=True)
         elif name == "save":
             textbin.append(SAV)
         elif name == "return":
