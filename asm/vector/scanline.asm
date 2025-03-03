@@ -61,7 +61,7 @@ scanline_irq_handler:
         LDA act_nchoice
         BNE @scanline_irq_top_midbox_change
         LDA cr_flag
-        AND #CR_FLAG_SHOW
+        AND #CR_FLAG_OPEN
         BEQ @scanline_irq_top_midbox_end
         @scanline_irq_top_midbox_change:
             ; scroll to the top left nametable
@@ -79,7 +79,7 @@ scanline_irq_handler:
         LDA act_nchoice
         BNE @scanline_irq_bot_midbox_change
         LDA cr_flag
-        AND #CR_FLAG_SHOW
+        AND #CR_FLAG_OPEN
         BEQ @scanline_irq_bot_midbox_end
         @scanline_irq_bot_midbox_change:
             ; restore scroll

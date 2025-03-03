@@ -378,11 +378,11 @@ OAM:
         ; Variable: cr_flag
         ;----------------
         ;--- Text
-        ; .... .OAS
+        ; .... .OAD
         ;       |||
-        ;       ||+-- is Show
+        ;       ||+-- is Display
         ;       |+--- can Access
-        ;       +---- can Object/Holdit
+        ;       +---- can Object
         ;---
         cr_flag: .res 1
 
@@ -395,8 +395,6 @@ OAM:
         ;----------------
         ; current evidence selected
         cr_correct_idx: .res 1
-
-
 
     ;================
     ; Group: Photo variables
@@ -540,3 +538,49 @@ OAM:
         jmp_buf: .res 3
         jmp_buf_cond: .res 1
         jmp_sav: .res 3
+
+;****************
+; MMC5 RAM SEGMENT
+;****************
+    ;================
+    ; Group: Bank 0 : Text Bank
+    ;================
+        .segment "MMC5_RAM0"
+        txt_buf: .res $2000
+
+    ;================
+    ; Group: Bank 1 : Image Bank
+    ;================
+        .segment "MMC5_RAM1"
+        packet_buffer: .res $400
+
+        bkg_img_lo: .res $300
+        bkg_img_hi: .res $300
+        chr_img_lo: .res $300
+        chr_img_hi: .res $300
+        cur_img_lo: .res $300
+        cur_img_hi: .res $300
+        pre_img_lo: .res $300
+        pre_img_hi: .res $300
+
+        chr_spr:    .res $100
+        anim_buf:   .res $100
+
+        db_lo:      .res $100
+        db_hi:      .res $100
+
+    ;================
+    ; Group: Bank 2 : General Bank
+    ;================
+        .segment "MMC5_RAM2"
+        evi_jmp_b0: .res $080
+        evi_jmp_b1: .res $080
+        evi_jmp_b2: .res $080
+        .res $080
+
+        .res $1A00
+
+        evi_spr:    .res $100
+        .res $100
+        mb_lo:      .res $100
+        mb_hi:      .res $100

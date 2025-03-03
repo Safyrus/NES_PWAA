@@ -180,6 +180,7 @@
     ; input modes
     IM_NORMAL = 0
     IM_ACT = 1
+    IM_CR = 2
 
 ;================
 ; Group: NMI
@@ -383,32 +384,6 @@
     HITBOX_ADR = MMC5_RAM + $F00
     HITBOX_MAP = MMC5_RAM + $1000
 
-    ; Constants: Names tiles addresses
-    ;
-    ; NAME_CHR_BANK - _$C0_
-    ; NAME_PPU_ADR  - _$2342_
-    NAME_CHR_BANK = $C0
-    NAME_PPU_ADR  = $2342
-
-    ; Constants: Court record flags
-    ; See: <cr_flag>
-    ;
-    ; CR_FLAG_SHOW   - _%00000001_ Is the court recod displayed ?
-    ; CR_FLAG_ACCESS - _%00000010_ Can the court record be accessed ?
-    ; CR_FLAG_OBJ    - _%00000100_ Can we present evidences ?
-    CR_FLAG_SHOW   = %00000001
-    CR_FLAG_ACCESS = %00000010
-    CR_FLAG_OBJ    = %00000100
-
-    ; Constants: Speciel dialog flags
-    ;
-    ; TXT_FLG_HOLDIT - _0_
-    ; TXT_FLG_OBJ    - _1_
-    ; TXT_FLG_OBJ_OK - _2_
-    TXT_FLG_HOLDIT = 0
-    TXT_FLG_OBJ    = 1
-    TXT_FLG_OBJ_OK = 2
-
     ; Constants: Investigation constants
     ;
     ; CLICK_ENA      - _%00000001_ Flag for enabling investigation
@@ -422,25 +397,12 @@
 
     ; Constants: Others constants
     ;
-    ; FADE_TIME               - _$3F_   Time for the fade effect
-    ; FLASH_TIME              - _$04_   Time for the flash effect
-    ; RAM_MAX_BNK             - _1_     Maximum number of RAM banks
+    ; RAM_MAX_BNK             - _2_     Maximum number of RAM banks
     ; BTN_TIMER               - _15_    Time before another player input is process
-    ; RES_SPR                 - _1_     Number of sprites reserved (for high priority)
-    ; IMG_PARTIAL_MAX_BUF_LEN - _$40_   Size of the <img_partial_buf> array
-    ; SEGMENT_IMGS_START_ADR  - _$A000_ Use for image data pointer table
     ; MAX_EVIDENCE_IDX        - _9_     Maximum number of evidences
-    ; MAX_EVENT               - _7_     Maximum number of event chr
-    FADE_TIME               = $3F
-    FLASH_TIME              = $04
-    RAM_MAX_BNK             = 1
+    RAM_MAX_BNK             = 2
     BTN_TIMER               = 15
-    RES_SPR                 = 1
-    IMG_PARTIAL_MAX_BUF_LEN = $40
-    SEGMENT_IMGS_START_ADR  = $A000
     MAX_EVIDENCE_IDX        = 9
-    MAX_EVENT               = 7
-    ACT_RET_FLAG            = %00000001
 
 
 ;================
@@ -586,6 +548,22 @@
     ACT_SPR_PAL_0 = $00
     ACT_SPR_PAL_1 = $10
     ACT_SPR_PAL_2 = $20
+
+;================
+; Group: Court Record
+;================
+    ; Constants: Court record flags
+    ; See: <cr_flag>
+    ;
+    ; CR_FLAG_OPEN   - _%00000001_ Is the court recod displayed ?
+    ; CR_FLAG_ACCESS - _%00000010_ Can the court record be accessed ?
+    ; CR_FLAG_OBJ    - _%00000100_ Can we present evidences ?
+    CR_FLAG_OPEN   = %00000001
+    CR_FLAG_ACCESS = %00000010
+    CR_FLAG_OBJ    = %00000100
+
+    EVI_FLAG_OBJ = 0
+    EVI_FLAG_OKOBJ = 1
 
 ;================
 ; Group: Special Characters

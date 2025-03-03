@@ -36,3 +36,4 @@
 .include "update/pal.asm"
 
 .include "cp_pal.asm"
+.include "cr.asm"

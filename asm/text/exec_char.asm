@@ -48,7 +48,7 @@ exec_char:
         .byte <(@ret-1) ; $1B
         .byte <(@ret-1) ; $1C
         .byte <(@ret-1) ; $1D
-        .byte <(@ret-1) ; $1E
+        .byte <(EVT-1)  ; $1E
         .byte <(@ret-1) ; $1F
     
     @switch_hi:
@@ -82,6 +82,6 @@ exec_char:
         .byte >(@ret-1) ; $1B
         .byte >(@ret-1) ; $1C
         .byte >(@ret-1) ; $1D
-        .byte >(@ret-1) ; $1E
+        .byte >(EVT-1)  ; $1E
         .byte >(@ret-1) ; $1F
 

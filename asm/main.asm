@@ -38,6 +38,14 @@ MAIN_LOOP:
         ; break
         JMP @input_end
     :
+    ; case IM_CR:
+    CMP #IM_CR
+    BNE :+
+        ; input_cr()
+        JSR input_cr
+        ; break
+        JMP @input_end
+    :
     @input_end:
 
     ; ----------------
