@@ -1,5 +1,20 @@
 # Char set
 
+- [Char set](#char-set)
+  - [Info](#info)
+  - [Control chars](#control-chars)
+    - [Events](#events)
+    - [Box format](#box-format)
+    - [Jump addresses format](#jump-addresses-format)
+  - [Fonts / Display char](#fonts--display-char)
+    - [Occidental](#occidental)
+      - [ASCII (0)](#ascii-0)
+    - [Japanese (日本語)](#japanese-日本語)
+      - [Hiragana (平仮名) (2)](#hiragana-平仮名-2)
+      - [Katakana (片仮名) (3)](#katakana-片仮名-3)
+
+## Info
+
 - 00:1F = control char
 - 20:7F = display char
 
@@ -40,7 +55,22 @@
 |  $1E  |  EVT  | EVenT. Use to add control characters specific to the game    | 1: function                                                                                        |
 |  $1F  |  EXT  | EXTension. Reserved to add more ctrl char to the dialog box  | 1: ext command                                                                                     |
 
-### Box
+### Events
+
+|  Mne  | code  |          args          | description                                                                                                                     |
+| :---: | :---: | :--------------------: | :------------------------------------------------------------------------------------------------------------------------------ |
+|  CR   |  $00  |           /            | toggle access to Court Record                                                                                                   |
+|  CRF  |  $01  |           /            | Court Record : Force the court record to open                                                                                   |
+|  CRO  |  $02  |           /            | Court Record : toggle Objection (present evidence)                                                                              |
+|       |  $03  |                        |                                                                                                                                 |
+|  CRS  |  $04  |          flag          | Court Record : Set evidence flag / adding evidence to court record                                                              |
+|  CRC  |  $05  |          flag          | Court Record : Clear evidence flag / removing evidence from court record                                                        |
+|  CRI  |  $06  |          flag          | Court Record : Index/flag of correct evidence to present                                                                        |
+|  CRN  |  $07  |     flag, jmp_adr      | Court Record : add/replace the evidence with index/flag by a New evidence. jmp_adr point to what to display in the court record |
+|  TES  |  $08  |        jmp_adr         | toggle TEStimony mode for this dialog. jmp_adr is where to go when 'hold it'                                                    |
+|  EXA  |  $09  | list of (box, jmp_adr) | configure and switch to EXAmination mode                                                                                        |
+
+### Box format
 
 ```text
 Char:   0         1         2
@@ -55,7 +85,7 @@ Name:   nXxxxxY   yyyyWww   wwHhhhh
 ```
 
 ```text
-When event:click is read.
+When evt:exa is read.
 
 1. read a box
 2. read a jump
@@ -63,20 +93,6 @@ When event:click is read.
 4. wait for a box to be selected
 5. use the jump of the selected box
 ```
-
-### Events
-
-Note: each name is precead by `evt-`.
-
-|  Mne  | code  | args  | description                                         |
-| :---: | :---: | :---: | :-------------------------------------------------- |
-|  CR   |  $00  |   /   | Court Record toggle                                 |
-|  CRO  |  $01  |   /   | Court Record Objection (present evidence)           |
-|  CRS  |  $02  | flag  | Court Record : Set evidence flag                    |
-|  CRC  |  $03  | flag  | Court Record : Clear evidence flag                  |
-|  CRI  |  $04  |  idx  | Court Record : Index of correct evidence to present |
-|  CLK  |  $05  |   /   | CLicK : Switch to examination mode                  |
-|  AR   |  $06  |   /   | Act Return : return to last choice                  |
 
 ### Jump addresses format
 

@@ -1,3 +1,7 @@
+# TO-DOs
+
+----------------------------------------------------------------
+
 ## To-do: Image V2
 
 - [X] Python
@@ -85,6 +89,8 @@
   - [X] Refactor image display to save all last frame in RAM
   - [X] Light filter
   - [X] Display name as sprites
+  - [X] Display photos as sprites
+  - [X] Display ACT box
 - [X] Build fonts and names from images
 - [/] Logic
   - [X] Read Text
@@ -114,18 +120,24 @@
     - [X] FNT
     - [X] JMP
     - [X] ACT
-    - [ ] EVT
-      - [ ] CR
-      - [ ] CRO
-      - [ ] CRS
-      - [ ] CRC
-      - [ ] CRI
-      - [ ] CLK
-      - [ ] AR
+    - [X] EVT
+      - [X] CR
+      - [X] CRF
+      - [X] CRO
+      - [X] CRS
+      - [X] CRC
+      - [X] CRI
+      - [X] CRN
+      - [ ] TES
+      - [ ] EXA
 
 ----------------------------------------------------------------
 
 ## To-do: Court record V2
+
+- [X] Logic
+- [ ] Display
+- [ ] Testimony
 
 ----------------------------------------------------------------
 
@@ -148,7 +160,10 @@
   - [/] Export data
     - [X] Music
     - [/] SFX & bips
-- [ ] SFX
+- [/] SFX
+  - [X] bips
+  - [X] voices
+  - [ ] other
 
 ----------------------------------------------------------------
 

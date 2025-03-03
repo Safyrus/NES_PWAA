@@ -102,8 +102,6 @@ Now displaying photo 1.<photo:1><p>
 Same photo should remove it.<photo:1><p>
 3rd time should display it.<photo:1><p>
 
-
-<label:DEBUG>
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>
 <jump:choice_2,0,0>Choice 2<b>
@@ -111,11 +109,50 @@ Make a choice<p>
 <label:choice_2><fp>You choose choice 2<p><jump:choice_end>
 <label:choice_end>
 
+<label:DEBUG>
+<const:CR,0>
+<const:CRF,1>
+<const:CRO,2>
+<const:CRS,4>
+<const:CRC,5>
+<const:CRI,6>
+<const:CRN,7>
+<const:FLAG_OBJ,0>
+<const:FLAG_OKOBJ,1>
+
+Now adding evidence 0<b>at index 0<event:CRN,0,evi_0><p>
+Also adding evidence 1<b>at index 5<event:CRN,5,evi_1><p>
+Give these evidences.<event:CRS,0><event:CRS,5><p>
+Activate Court Record.<event:CR><p>
+You should open it and see<b>if it is working.<p>
+In any case,<b>I will open it for you :)<wait:30><event:CRF><p>
+
+<event:CRO><event:CRI,5>Choose an evidence to present<p>
+<jump:show_evi,1,0,FLAG_OBJ>
+Very well...<b>I will force you<b>too choose then.<event:CR><event:CRF><p>
+<event:CR>
+<label:show_evi>
+<event:CR><event:CRO><jump:right_evi,1,0,FLAG_OKOBJ>
+<label:wrong_evi>
+Sorry, this is incorrect.<p><jump:end_evi>
+<label:right_evi>
+Good job! this is correct!<p>
+<label:end_evi>
+
+
+
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>
 
+<!--##########################################"-->
 
 <label:test_sav_ret>
 This dialog is at the end<b>of text data.<p>
 <clear:11>
 <return>
+
+
+<label:evi_0>
+<photo:0>This is the first evidence.<b>It's using photo 0.<p>This is the bottom text.<p>
+<label:evi_1>
+<photo:1>This is the second evidence.<b>It's using photo 1.<p>This is the bottom text again.<p>
