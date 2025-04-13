@@ -1,0 +1,18 @@
+#ifndef FILE_UTILS_H
+#define FILE_UTILS_H
+
+#include <stdio.h>
+
+#ifdef _WIN32
+#define SEP '\\'
+#else
+#define SEP '/'
+#endif
+
+void print_stat_error(const char *filename);
+void list_files(const char *dirname, FILE *outputfile, const char recursive);
+char read_byte_strict(FILE *file);
+void write_byte_strict(FILE *file, const char byte);
+int mkdir_rec(char *path, int offset);
+
+#endif

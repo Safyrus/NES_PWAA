@@ -5,10 +5,10 @@
 __pycache__
 
 # C
-c/imgs
-c/maps
 c/*.chr
 c/*.exe
+c/out/
+c/tmp
 
 # Natural Doc
 cfg/nd/Working Data/
