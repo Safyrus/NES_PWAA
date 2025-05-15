@@ -107,7 +107,12 @@ void flush_lit(const uint8_t *data, int idx, uint8_t *out, int *out_len, uint8_t
 {
     if (*n_lit == 0)
         return;
-    printf("LIT\n");
+    // printf("%d LIT: %d\n", idx, (*n_lit));
+    if (RLEINC_CMD_LIT + (*n_lit) - 1 >= 0x40)
+    {
+        fprintf(stderr, "Error: rleinc encode LIT output byte >= 0x40 (END or other commands)\n");
+        exit(1);
+    }
     out[(*out_len)++] = RLEINC_CMD_LIT + (*n_lit) - 1;
     for (; (*n_lit) > 0; (*n_lit)--)
         out[(*out_len)++] = data[idx - (*n_lit)];
@@ -125,7 +130,7 @@ void rleinc_encode(const uint8_t *data, const int len, uint8_t *out, int *out_le
         // get next 2 bytes
         uint8_t b = data[idx];
         uint8_t b1 = data[idx];
-        uint8_t b2 = data[idx + 1] ? idx + 1 < len : 0;
+        uint8_t b2 = idx + 1 < len ? data[idx + 1] : 0;
 
         // try to compress with RUN
         uint8_t n = 1;
@@ -141,8 +146,8 @@ void rleinc_encode(const uint8_t *data, const int len, uint8_t *out, int *out_le
             // flush LIT if needed
             flush_lit(data, idx, out, out_len, &n_lit);
             // use RUN
-            printf("RUN\n");
-            out[(*out_len)++] = RLEINC_CMD_RUN + (0x101 - n);
+            // printf("%d RUN: %d %d\n", idx, n, b);
+            out[(*out_len)++] = (RLEINC_CMD_RUN+0x61) - n;
             out[(*out_len)++] = b;
             idx += n;
             // and continue compression
@@ -151,15 +156,17 @@ void rleinc_encode(const uint8_t *data, const int len, uint8_t *out, int *out_le
 
         // try with DBL
         n = 2;
+        uint8_t tmpb1 = b1;
+        uint8_t tmpb2 = b2;
         for (; n < 34; n++)
         {
             // stop if end of data or not a correct byte for DBL
-            if (idx + n >= len || data[idx + n] != b1)
+            if (idx + n >= len || data[idx + n] != tmpb1)
                 break;
             // swap b1 & b2
-            uint8_t tmp = b1;
-            b1 = b2;
-            b2 = tmp;
+            uint8_t tmp = tmpb1;
+            tmpb1 = tmpb2;
+            tmpb2 = tmp;
         }
         // if successfull
         if (n > 2)
@@ -167,8 +174,8 @@ void rleinc_encode(const uint8_t *data, const int len, uint8_t *out, int *out_le
             // flush LIT if needed
             flush_lit(data, idx, out, out_len, &n_lit);
             // use DBL
-            printf("DBL\n");
-            out[(*out_len)++] = RLEINC_CMD_DBL + (n - 0x7D);
+            // printf("%d DBL: %d %d %d\n", idx, n, b1, b2);
+            out[(*out_len)++] = (RLEINC_CMD_DBL-3) + n;
             out[(*out_len)++] = b1;
             out[(*out_len)++] = b2;
             idx += n;
@@ -192,8 +199,8 @@ void rleinc_encode(const uint8_t *data, const int len, uint8_t *out, int *out_le
             // flush LIT if needed
             flush_lit(data, idx, out, out_len, &n_lit);
             // use SEQ
-            printf("SEQ\n");
-            out[(*out_len)++] = RLEINC_CMD_SEQ + (n - 0x3F);
+            // printf("%d SEQ: %d %d\n", idx, n, b);
+            out[(*out_len)++] = (RLEINC_CMD_SEQ-2) + n;
             out[(*out_len)++] = b;
             idx += n;
             // and continue compression
@@ -210,5 +217,7 @@ void rleinc_encode(const uint8_t *data, const int len, uint8_t *out, int *out_le
         idx++;
     }
     // and END to end of compress data
+    flush_lit(data, idx, out, out_len, &n_lit);
+    // printf("%d END\n", idx);
     out[(*out_len)++] = RLEINC_CMD_END;
 }

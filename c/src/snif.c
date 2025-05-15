@@ -1,14 +1,63 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "snif.h"
 #include "rle_inc.h"
 #include "file_utils.h"
 
+char is_filename_anim(const char *filename, int *idx, int *time)
+{
+    // check for this regex "(.*)_(i[0-9]+)(t[0-9]+)?\."
+    (*idx) = -1;
+    (*time) = -1;
+    int j = 0;
+    while (filename[j])
+    {
+        int i = -1;
+        int t = -1;
+        int offset = j;
+        // check for start pattern
+        if (filename[j++] != '_')
+            continue;
+        if (filename[j++] != 'i')
+            continue;
+        if (filename[j] < '0' || filename[j] > '9')
+        {
+            j++;
+            continue;
+        }
+        // get index info
+        i = 0;
+        while (filename[j] >= '0' && filename[j] <= '9')
+            i = (i * 10) + (filename[j++] - '0');
+        // if contain timing info
+        if (filename[j] == 't' && filename[j+1] >= '0' && filename[j+1] <= '9')
+        {
+            j++;
+            // get timing info
+            t = 0;
+            while (filename[j] >= '0' && filename[j] <= '9')
+                t = (t * 10) + (filename[j++] - '0');
+        }
+        // if end with "."
+        if (filename[j] == '.')
+        {
+            // it is an anim
+            if (t >= 0)
+                (*time) = t;
+            (*idx) = i;
+            return offset;
+        }
+    }
+    // not a anim
+    return 0;
+}
+
 void print_snif(struct SNIFFile *snif)
 {
-    printf("size:%d*%d  region:%d  rleinc:%d\n", snif->w, snif->h, snif->r, snif->is_rleinc);
-    printf("metadata (%d)%s:\n", snif->metadata_len, snif->metadata);
+    printf("size:%d*%d  region:%d  rleinc:%d  type:%d\n", snif->w, snif->h, snif->r, snif->is_rleinc, snif->img_type);
+    printf("metadata (%d):%s\n", snif->metadata_len, snif->metadata);
     printf("nb spr:%d  nb CHR tile:%d\n", snif->n_spr, snif->n_chr_tile);
     printf("palettes:   BKG  SPR\n");
     for (int i = 0; i < 4; i++)
@@ -52,11 +101,7 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     */
 
     // open the file
-    FILE *file = fopen(filename, "rb");
-    if (!file)
-    {
-        fprintf(stderr, "Error (read_snif): cannot open SNIF file '%s'\n", filename);
-    }
+    FILE *file = fopen_strict(filename, "rb");
 
     ////////////////////////
     // read metadata
@@ -144,13 +189,23 @@ void read_snif(const char *filename, struct SNIFFile *snif)
         // read low bytes
         uint8_t tmp_bkg_data[SNIF_MAX_TILE];
         rleinc_fdecode(file, tmp_bkg_data, &snif->bkg_data_len_lo);
+        if (snif->bkg_data_len_lo > snif->w * snif->h)
+        {
+            fprintf(stderr, "Decoding too much data for BKG\n");
+            exit(1);
+        }
         for (int i = 0; i < snif->bkg_data_len_lo; i++)
             snif->bkg_data[i] = tmp_bkg_data[i];
         // read high bytes
         rleinc_fdecode(file, tmp_bkg_data, &snif->bkg_data_len_hi);
+        if (snif->bkg_data_len_hi > snif->w * snif->h)
+        {
+            fprintf(stderr, "Decoding too much data for BKG\n");
+            exit(1);
+        }
         for (int i = 0; i < snif->bkg_data_len_hi; i++)
             snif->bkg_data[i] += tmp_bkg_data[i] << 8;
-        }
+    }
     else
     {
         snif->bkg_data_len_lo = snif->w * snif->h;
@@ -243,6 +298,14 @@ void read_snif(const char *filename, struct SNIFFile *snif)
         exit(1);
     }
 
+    // identify image type
+    if (is_filename_anim(filename, &snif->img_index, &snif->img_time))
+        snif->img_type = IMG_TYPE_CHR;
+    else if (snif->bkg_data_len_lo == 0 || snif->w < 0x20)
+        snif->img_type = IMG_TYPE_PHT;
+    else
+        snif->img_type = IMG_TYPE_BKG;
+
     fclose(file);
 }
 
@@ -256,20 +319,18 @@ void write_snif(const char *filename, struct SNIFFile *snif)
     */
 
     // open the file
-    FILE *file = fopen(filename, "wb");
-    if (!file)
-    {
-        fprintf(stderr, "Error (write_snif): cannot open SNIF file '%s'\n", filename);
-        exit(1);
-    }
+    FILE *file = fopen_strict(filename, "wb");
 
     ////////////////////////
     // write metadata
     ////////////////////////
-    if (fwrite(snif->metadata, snif->metadata_len, 1, file) != 1)
+    if (snif->metadata_len > 0)
     {
-        fprintf(stderr, "Error (write_snif): cannot write metadata in SNIF file '%s'\n", filename);
-        exit(1);
+        if (fwrite(snif->metadata, snif->metadata_len, 1, file) != 1)
+        {
+            fprintf(stderr, "Error (write_snif): cannot write metadata in SNIF file '%s'\n", filename);
+            exit(1);
+        }
     }
 
     ////////////////////////
@@ -305,7 +366,7 @@ void write_snif(const char *filename, struct SNIFFile *snif)
     // write palettes
     for (int i = 0; i < 8; i++)
     {
-        uint8_t n = (pal_mask & 2) << 6;
+        uint8_t n = ((pal_mask & 0xFE) > 0) << 7;
         if (pal_mask & 1)
         {
             write_byte_strict(file, snif->pals[i][0] | n | (i >= 4 ? 0x40 : 0));

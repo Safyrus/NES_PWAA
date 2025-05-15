@@ -91,7 +91,7 @@ void list_files(const char *dirname, FILE *outputfile, const char recursive)
     closedir(dir);
 }
 
-char read_byte_strict(FILE *file)
+uint8_t read_byte_strict(FILE *file)
 {
     char b;
     if (fread(&b, 1, 1, file) != 1)
@@ -102,7 +102,7 @@ char read_byte_strict(FILE *file)
     return b;
 }
 
-void write_byte_strict(FILE *file, const char byte)
+void write_byte_strict(FILE *file, const uint8_t byte)
 {
     if (fwrite(&byte, 1, 1, file) != 1)
     {
@@ -132,5 +132,62 @@ int mkdir_rec(char *path, int offset)
     {
         // suppose last part is a file
         return 0;
+    }
+}
+
+int join_path(char *root, const char *suffix)
+{
+    int root_len = strlen(root);
+    int suffix_len = strlen(suffix);
+    if (root[root_len - 1] != SEP)
+        root[root_len++] = SEP;
+    strcpy(&root[root_len], suffix);
+    return root_len + suffix_len;
+}
+
+FILE *fopen_strict(const char *filename, const char *mode)
+{
+    FILE *f = fopen(filename, mode);
+    if (!f)
+    {
+        fprintf(stderr, "Error: can't open file '%s'\n", filename);
+        exit(1);
+    }
+    return f;
+}
+
+int read_line(FILE *file, char *buf, int buf_len)
+{
+    int i = 0;
+    int c;
+    do
+    {
+        c = fgetc(file);
+        buf[i] = c;
+        i++;
+    } while (c != EOF && c != '\n' && i < buf_len);
+    i--;
+    buf[i] = 0;
+    return i;
+}
+
+void remove_ext(char *str)
+{
+    // start at the end of the string
+    int i = strlen(str);
+    while (i>=0)
+    {
+        // if no extension
+        if (str[i] == SEP)
+            return;
+        // at extention
+        if (str[i] == '.')
+        {
+            // cut there
+            str[i] = 0;
+            return;
+        }
+        // continue
+        i--;
     }
 }

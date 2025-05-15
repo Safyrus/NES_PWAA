@@ -23,6 +23,10 @@ struct Sprite
     char v;
 };
 
+#define IMG_TYPE_BKG 0
+#define IMG_TYPE_CHR 1
+#define IMG_TYPE_PHT 2
+
 struct SNIFFile
 {
     char metadata[SNIF_MAX_METADATA_LEN];
@@ -30,6 +34,9 @@ struct SNIFFile
     char w;
     char h;
     char r;
+    char img_type;
+    int img_index;
+    int img_time;
     char is_rleinc;
     char pal_drop;
     char pals[8][3];
@@ -44,6 +51,7 @@ struct SNIFFile
     uint16_t n_chr_tile;
 };
 
+char is_filename_anim(const char *filename, int *idx, int *time);
 void print_snif(struct SNIFFile *snif);
 void read_snif(const char *filename, struct SNIFFile *snif);
 void write_snif(const char *filename, struct SNIFFile *snif);
