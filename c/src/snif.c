@@ -421,16 +421,25 @@ void write_snif(const char *filename, struct SNIFFile *snif)
     // TODO
     // output each sprite
     short cur_pos = 0;
-    char cur_pal = 0;
-    char cur_flip = 0;
+    uint8_t cur_pal = 0;
+    uint8_t cur_flip = 0;
     for (int i = 0; i < snif->n_spr; i++)
     {
         // output flip
-        char spr_flip = snif->spr_data[i].h | (snif->spr_data[i].v << 1);
+        uint8_t spr_flip = snif->spr_data[i].h | (snif->spr_data[i].v << 1);
         if (spr_flip != cur_flip)
         {
             cur_flip = spr_flip;
             write_byte_strict(file, SPRCMD_FLIP | spr_flip);
+        }
+        // output position
+        uint8_t x_tile = snif->spr_data[i].x / 8;
+        uint8_t y_tile = snif->spr_data[i].y / 16;
+        uint8_t spr_pos = y_tile * snif->w + x_tile;
+        if (spr_pos != cur_pos)
+        {
+            write_byte_strict(file, SPRCMD_POS | (x_tile >> 4) | ((y_tile >> 4) << 1));
+            write_byte_strict(file, ((x_tile & 0xF) << 4) | (y_tile & 0xF));
         }
         // output pallete
         if (cur_pal != snif->spr_data[i].pal)
@@ -438,18 +447,9 @@ void write_snif(const char *filename, struct SNIFFile *snif)
             cur_pal = snif->spr_data[i].pal;
             write_byte_strict(file, SPRCMD_PAL | snif->spr_data[i].pal);
         }
-        // output position
-        char x_tile = snif->spr_data[i].x / 8;
-        char y_tile = snif->spr_data[i].y / 16;
-        char spr_pos = y_tile * snif->w + x_tile;
-        if (spr_pos != cur_pos)
-        {
-            write_byte_strict(file, SPRCMD_POS | (x_tile >> 4) | ((y_tile >> 4) << 1));
-            write_byte_strict(file, ((x_tile & 0xF) << 4) | (y_tile & 0xF));
-        }
         // output tile and offset
-        char x_offset = snif->spr_data[i].x % 8;
-        char y_offset = snif->spr_data[i].y % 16;
+        uint8_t x_offset = snif->spr_data[i].x % 8;
+        uint8_t y_offset = snif->spr_data[i].y % 16;
         write_byte_strict(file, 0x80 | (x_offset << 4) | y_offset);
         uint8_t t = snif->spr_data[i].t;
         t = (t << 1) + (t / 128);

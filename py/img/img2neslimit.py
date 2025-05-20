@@ -230,7 +230,7 @@ def remove_overflows(best_spr, best_lines, best_sprimg, best_score, h, verbose, 
     return best_spr, best_lines, best_score, best_sprimg
 
 
-def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=6, MAX_SPR_COLOR=9, no_bkg=False, no_offset=False):
+def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=6, MAX_SPR_COLOR=9, no_bkg=False, no_offset=False, max_nb_bkg_try=None):
     ################
     # Read Image
     ################
@@ -253,7 +253,8 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     nb_sprtile_w = (w // 8) + int(w % 8 != 0)
     nb_sprtile_h = (h // 16) + int(h % 16 != 0)
     # Get color palette
-    colors = [x[1] for x in img.getcolors()]  # only color, not count
+    colors = sorted(img.getcolors(), key=lambda x:x[0], reverse=True)
+    colors = np.array([x[1] for x in colors])  # only color, not count
     colors_no_a = np.array([x for x in colors if x[3] != 0])
     colors_no_ba = np.array([x for x in colors if np.any(x != (0, 0, 0, 255)) and x[3] != 0])
     if colors_no_a.size == 0:
@@ -275,9 +276,6 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
     #  when we have less color than the max)
     i = 0
     MAX_COLOR = max(MAX_BKG_COLOR, MAX_SPR_COLOR)
-    colors = np.array(colors)
-    colors_no_a = np.array([x for x in colors if x[3] != 0])
-    colors_no_ba = np.array([x for x in colors if np.any(x != (0, 0, 0, 255)) and x[3] != 0])
     # Count color
     nb_color_no_ba = len(colors_no_ba)
     nb_color_no_a = len(colors_no_a)
@@ -363,6 +361,9 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
             bar = tqdm(bkg_palettes, desc=f"Score=???", dynamic_ncols=True)
         else:
             bar = bkg_palettes
+        if max_nb_bkg_try is None:
+            max_nb_bkg_try = 1e100
+        nb_try = 0
         for bkg_pal in bar:
             # find invert of bkg_pal
             mask = np.ones(len(colors_no_ba), dtype=bool)
@@ -455,6 +456,13 @@ def img2neslimit(img_path: str, lazy_spr_pal=True, verbose=False, MAX_BKG_COLOR=
                 best_bkg_img = bkgimg
                 if verbose:
                     bar.set_description(f"Score={best_score.sum()}")
+                nb_try = 0
+            #
+            nb_try += 1
+            if nb_try >= max_nb_bkg_try:
+                if verbose:
+                    print("Cut search for best background palette, too many try.")
+                break
 
     #
     best_spr = []

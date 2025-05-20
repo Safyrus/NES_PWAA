@@ -15,12 +15,12 @@
 
 struct Sprite
 {
-    char x;
-    char y;
-    char t;
-    char pal;
-    char h;
-    char v;
+    uint8_t x;
+    uint8_t y;
+    uint8_t t;
+    uint8_t pal;
+    uint8_t h;
+    uint8_t v;
 };
 
 #define IMG_TYPE_BKG 0

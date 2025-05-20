@@ -2,7 +2,7 @@ import argparse
 import hashlib
 import os
 import numpy as np
-from img2neslimit import img2neslimit
+from img2neslimit_v2 import img2neslimit
 from nes_pal import closest_nes_color
 from rle_inc import RLEINC_CMD_END
 from tile import tile2chr, tiles2chr
@@ -318,6 +318,7 @@ def img2snif(
     tile0_mask=None,
     no_bkg=False,
     no_spr_offset=False,
+    max_nb_bkg_try=32,
 ):
 
     # if output already exist
@@ -337,12 +338,19 @@ def img2snif(
         print("Convert Image to data")
     img_data = img2neslimit(
         img_path=imgpath,
-        lazy_spr_pal=True,
-        MAX_BKG_COLOR=nb_bkg_pal,
-        MAX_SPR_COLOR=nb_spr_pal,
         no_bkg=no_bkg,
-        no_offset=no_spr_offset,
+        no_spr=nb_spr_pal == 0,
+        no_spr_offset=no_spr_offset,
     )
+    # img_data = img2neslimit(
+    #     img_path=imgpath,
+    #     lazy_spr_pal=True,
+    #     MAX_BKG_COLOR=nb_bkg_pal,
+    #     MAX_SPR_COLOR=nb_spr_pal,
+    #     no_bkg=no_bkg,
+    #     no_offset=no_spr_offset,
+    #     max_nb_bkg_try=max_nb_bkg_try,
+    # )
     # convert image data to SNIF data
     if verbose:
         print("Convert data to SNIF")

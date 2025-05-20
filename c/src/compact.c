@@ -262,7 +262,7 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
             for (int i = 0; i < MAX_TILES; i++)
                 n_use_tiles += tile_list[i].type != TILE_TYPE_FREE ? 1 : 0;
             int percent_use = ((float)n_use_tiles / MAX_TILES) * 100;
-            printf("SNIF Merge: merge '%s' (CHR usage: %d%%) \n", filename, percent_use);
+            printf("\e[2K\rSNIF Merge: merge '%s' (CHR usage: %d%%)", filename, percent_use);
         }
         // read SNIF file
         new_tile_list_size = read_sniffile_tiles(filename, new_tile_list, snif);
@@ -315,6 +315,8 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
         mkdir_rec(outname, 0);
         write_snif(outname, snif);
     }
+    if (verbose)
+        printf("\n");
 
     ////////////////////////////////
     // write CHR region
@@ -659,7 +661,7 @@ void asm_snif(const char *final_chr, const char *data_path, const char *tmp_snif
         }
         // add anim in anim_data
         write_byte_strict(anim_data, n*3+1);
-        printf("anim (%d) '%s' size=%d\n", i, name, n);
+        // printf("anim (%d) '%s' size=%d\n", i, name, n);
         for (int j = 0; j < n; j++)
         {
             uint8_t il = anim_table[i * ANIM_BUF_SIZE + 256 + 1 + (j * 4) + 1];
@@ -738,16 +740,21 @@ int main(int argc, char const *argv[])
     // todo: create out folder
     strcpy(path, argv[1]);
     join_path(path, "r0");
+    printf("Merge file from r0\n");
     merge_snif_tiles(path, argv[2], n_res, "out/r0", "out/r0.chr", 1);
     path[len] = 0;
     join_path(path, "r1");
+    printf("Merge file from r1\n");
     merge_snif_tiles(path, null_path, 0, "out/r1", "out/r1.chr", 1);
     path[len] = 0;
     join_path(path, "r2");
+    printf("Merge file from r2\n");
     merge_snif_tiles(path, null_path, 0, "out/r2", "out/r2.chr", 1);
     path[len] = 0;
     join_path(path, "r3");
+    printf("Merge file from r3\n");
     merge_snif_tiles(path, null_path, 0, "out/r3", "out/r3.chr", 1);
+    printf("Output to ASM\n");
     asm_snif(argv[4], argv[5], "out");
     printf("finished\n");
 

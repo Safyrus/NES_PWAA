@@ -137,7 +137,20 @@ NES_PAL_NAM = [
 ]
 
 
-def closest_nes_color(color) -> int:
+def closest_color(colors, color, return_dist=False) -> int:
+    # to numpy array
+    color = np.array(color)
+    colors = np.array(colors)
+    # compute distance
+    dist = np.sqrt(np.sum((colors - color) ** 2, axis=1))
+    # take color with minimum distance
+    idx = np.argmin(dist)
+    if return_dist:
+        return idx, np.min(dist)
+    else:
+        return idx
+
+def closest_nes_color(color, return_dist=False) -> int:
     # to numpy array
     color = np.array(color)
     # remove alpha
@@ -147,4 +160,11 @@ def closest_nes_color(color) -> int:
     dist = np.sqrt(np.sum((NES_PAL - color) ** 2, axis=1))
     # take color with minimum distance
     idx = np.argmin(dist)
-    return idx
+    if return_dist:
+        return idx, np.min(dist)
+    else:
+        return idx
+
+
+if __name__ == "__main__":
+    print(closest_nes_color((2,1,1), return_dist=True))

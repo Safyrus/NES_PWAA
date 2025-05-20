@@ -176,10 +176,10 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
                 bnk_score[b] += 1
 
     # compute possible arrangment of CHR bank for sprites
-    comb_list = np.argsort(bnk_score * -1, kind="stable")[:MAX_BNK_COMBI]
+    comb_list = np.flip(np.argsort(bnk_score, kind="stable"), axis=0)[:MAX_BNK_COMBI]
     bnk_combi = np.array(list(itertools.combinations(comb_list, 8)), dtype=np.uint8)
     # compute score for each arrangment
-    combi_score = np.array([np.sum(bnk_score[x]) for x in bnk_combi]) * -1
+    combi_score = np.array([np.sum(bnk_score[x]) for x in bnk_combi])
     # sort by best to worst
     idxs = np.argsort(combi_score)
     combi_score = np.take(combi_score, idxs)
@@ -257,9 +257,9 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
                     print("Error: That should not have happened. There is a bug somewhere maybe in 'test_region_spr' function")
                     print(best_bnk, bnk_free[best_bnk], sum(bnk_free[best_bnk]), len(new_spr_with_bnk), idx)
                     exit(1)
-                cur_bnk = spr_bnk_tiles[best_bnk[bnk_idx] * TPB : best_bnk[bnk_idx] * TPB + TPB]
+                cur_bnk = spr_bnk_tiles[int(best_bnk[bnk_idx]) * TPB : int(best_bnk[bnk_idx]) * TPB + TPB]
                 #
-                free_mask = free_spr_bnk_mask(best_bnk[bnk_idx], spr_bnk_tiles, spr_mask, nulltile)
+                free_mask = free_spr_bnk_mask(int(best_bnk[bnk_idx]), spr_bnk_tiles, spr_mask, nulltile)
                 # find empty sprite
                 idx = find_tile_idx(nulltile, cur_bnk, tile_hashes, False, MIN_PIXEL_EQUALITY)
                 idx = [idx[j] for j in range(len(idx)) if idx[j] % 2 == 0 and free_mask[idx[j] // 2]]
@@ -267,10 +267,10 @@ def test_region_spr(data, spr_bnk_tiles, spr_mask, tiles, tile_hashes={}, MAX_BN
                 if len(idx) >= 1:
                     # put it there
                     tile_idx = idx[0]
-                    spr_bnk_tiles[best_bnk[bnk_idx] * TPB + tile_idx + 0] = tile_up
-                    spr_bnk_tiles[best_bnk[bnk_idx] * TPB + tile_idx + 1] = tile_down
+                    spr_bnk_tiles[int(best_bnk[bnk_idx]) * TPB + tile_idx + 0] = tile_up
+                    spr_bnk_tiles[int(best_bnk[bnk_idx]) * TPB + tile_idx + 1] = tile_down
                     s[2] = tile_idx
-                    s = (best_bnk[bnk_idx], s, i)
+                    s = (int(best_bnk[bnk_idx]), s, i)
                     break
                 # continue
                 bnk_idx += 1

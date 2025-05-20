@@ -100,18 +100,12 @@ text:
 #--------------------------------
 
 img:
-# make images and anims
-	$(PYTHON) $(PY)/img/all2nes.py -if $(DATA)/img -sf $(DATA)/snif -of $(ASM)/data/img
 # make FONT chr
 	$(PYTHON) $(PY)/img/build_font.py -if $(DATA)/font -in $(DATA)/name -oc $(DATA)/FONT.chr -on $(ASM)/data/name.asm -of $(ASM)/data/font.asm
-# merge FONT and images tiles
-	$(PYTHON) $(PY)/chr/merge_chr.py $(DATA)/FONT.chr $(ASM)/data/img/all.chr -o PWAA.chr
-# make photo
-# 	cd $(PY)/imgEncoder && $(PYTHON) encode_photo.py \
-# 	-i ../../$(EVIDENCE) \
-# 	-o ../../$(ASM)/data/evidences.bin \
-# 	-c ../../$(DATA)/EVI.chr \
-# 	-b 2
+# convert images, anims and photos to snif files
+	$(PYTHON) $(PY)/img/all2snif.py -if $(DATA)/img -sf $(DATA)/snif
+# merge all snif files & CHR into binary files
+	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr 33 ../PWAA.chr ../$(ASM)/data/img
 
 
 #--------------------------------
