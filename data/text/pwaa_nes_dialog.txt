@@ -109,7 +109,6 @@ Make a choice<p>
 <label:choice_2><fp>You choose choice 2<p><jump:choice_end>
 <label:choice_end>
 
-<label:DEBUG>
 <const:CR,0>
 <const:CRF,1>
 <const:CRO,2>
@@ -156,3 +155,157 @@ This dialog is at the end<b>of text data.<p>
 <photo:0>This is the first evidence.<b>It's using photo 0.<p>This is the bottom text.<p>
 <label:evi_1>
 <photo:1>This is the second evidence.<b>It's using photo 1.<p>This is the bottom text again.<p>
+
+<label:DEBUG>
+   [Animation image Test]<b>
+Each dialog change to a<b>
+new animation of a CHR.<p><wait:1>
+
+This script test 127 anim.<b>
+The game may crash if you<b>
+don't have that many anim.<p><wait:1>
+
+<label:loop>
+<character:0>Animation 0<wait:60><hidetextbox><p><hidetextbox>
+<character:1>Animation 1<wait:60><hidetextbox><p><hidetextbox>
+<character:2>Animation 2<wait:60><hidetextbox><p><hidetextbox>
+<character:3>Animation 3<wait:60><hidetextbox><p><hidetextbox>
+<character:4>Animation 4<wait:60><hidetextbox><p><hidetextbox>
+<character:5>Animation 5<wait:60><hidetextbox><p><hidetextbox>
+<character:6>Animation 6<wait:60><hidetextbox><p><hidetextbox>
+<character:7>Animation 7<wait:60><hidetextbox><p><hidetextbox>
+<character:8>Animation 8<wait:60><hidetextbox><p><hidetextbox>
+<character:9>Animation 9<wait:60><hidetextbox><p><hidetextbox>
+
+<character:10>Animation 10<wait:60><hidetextbox><p><hidetextbox>
+<character:11>Animation 11<wait:60><hidetextbox><p><hidetextbox>
+<character:12>Animation 12<wait:60><hidetextbox><p><hidetextbox>
+<character:13>Animation 13<wait:60><hidetextbox><p><hidetextbox>
+<character:14>Animation 14<wait:60><hidetextbox><p><hidetextbox>
+<character:15>Animation 15<wait:60><hidetextbox><p><hidetextbox>
+<character:16>Animation 16<wait:60><hidetextbox><p><hidetextbox>
+<character:17>Animation 17<wait:60><hidetextbox><p><hidetextbox>
+<character:18>Animation 18<wait:60><hidetextbox><p><hidetextbox>
+<character:19>Animation 19<wait:60><hidetextbox><p><hidetextbox>
+
+<character:20>Animation 20<wait:60><hidetextbox><p><hidetextbox>
+<character:21>Animation 21<wait:60><hidetextbox><p><hidetextbox>
+<character:22>Animation 22<wait:60><hidetextbox><p><hidetextbox>
+<character:23>Animation 23<wait:60><hidetextbox><p><hidetextbox>
+<character:24>Animation 24<wait:60><hidetextbox><p><hidetextbox>
+<character:25>Animation 25<wait:60><hidetextbox><p><hidetextbox>
+<character:26>Animation 26<wait:60><hidetextbox><p><hidetextbox>
+<character:27>Animation 27<wait:60><hidetextbox><p><hidetextbox>
+<character:28>Animation 28<wait:60><hidetextbox><p><hidetextbox>
+<character:29>Animation 29<wait:60><hidetextbox><p><hidetextbox>
+
+<character:30>Animation 30<wait:60><hidetextbox><p><hidetextbox>
+<character:31>Animation 31<wait:60><hidetextbox><p><hidetextbox>
+<character:32>Animation 32<wait:60><hidetextbox><p><hidetextbox>
+<character:33>Animation 33<wait:60><hidetextbox><p><hidetextbox>
+<character:34>Animation 34<wait:60><hidetextbox><p><hidetextbox>
+<character:35>Animation 35<wait:60><hidetextbox><p><hidetextbox>
+<character:36>Animation 36<wait:60><hidetextbox><p><hidetextbox>
+<character:37>Animation 37<wait:60><hidetextbox><p><hidetextbox>
+<character:38>Animation 38<wait:60><hidetextbox><p><hidetextbox>
+<character:39>Animation 39<wait:60><hidetextbox><p><hidetextbox>
+
+<character:40>Animation 40<wait:60><hidetextbox><p><hidetextbox>
+<character:41>Animation 41<wait:60><hidetextbox><p><hidetextbox>
+<character:42>Animation 42<wait:60><hidetextbox><p><hidetextbox>
+<character:43>Animation 43<wait:60><hidetextbox><p><hidetextbox>
+<character:44>Animation 44<wait:60><hidetextbox><p><hidetextbox>
+<character:45>Animation 45<wait:60><hidetextbox><p><hidetextbox>
+<character:46>Animation 46<wait:60><hidetextbox><p><hidetextbox>
+<character:47>Animation 47<wait:60><hidetextbox><p><hidetextbox>
+<character:48>Animation 48<wait:60><hidetextbox><p><hidetextbox>
+<character:49>Animation 49<wait:60><hidetextbox><p><hidetextbox>
+
+<character:50>Animation 50<wait:60><hidetextbox><p><hidetextbox>
+<character:51>Animation 51<wait:60><hidetextbox><p><hidetextbox>
+<character:52>Animation 52<wait:60><hidetextbox><p><hidetextbox>
+<character:53>Animation 53<wait:60><hidetextbox><p><hidetextbox>
+<character:54>Animation 54<wait:60><hidetextbox><p><hidetextbox>
+<character:55>Animation 55<wait:60><hidetextbox><p><hidetextbox>
+<character:56>Animation 56<wait:60><hidetextbox><p><hidetextbox>
+<character:57>Animation 57<wait:60><hidetextbox><p><hidetextbox>
+<character:58>Animation 58<wait:60><hidetextbox><p><hidetextbox>
+<character:59>Animation 59<wait:60><hidetextbox><p><hidetextbox>
+
+<character:60>Animation 60<wait:60><hidetextbox><p><hidetextbox>
+<character:61>Animation 61<wait:60><hidetextbox><p><hidetextbox>
+<character:62>Animation 62<wait:60><hidetextbox><p><hidetextbox>
+<character:63>Animation 63<wait:60><hidetextbox><p><hidetextbox>
+<character:64>Animation 64<wait:60><hidetextbox><p><hidetextbox>
+<character:65>Animation 65<wait:60><hidetextbox><p><hidetextbox>
+<character:66>Animation 66<wait:60><hidetextbox><p><hidetextbox>
+<character:67>Animation 67<wait:60><hidetextbox><p><hidetextbox>
+<character:68>Animation 68<wait:60><hidetextbox><p><hidetextbox>
+<character:69>Animation 69<wait:60><hidetextbox><p><hidetextbox>
+
+<character:70>Animation 70<wait:60><hidetextbox><p><hidetextbox>
+<character:71>Animation 71<wait:60><hidetextbox><p><hidetextbox>
+<character:72>Animation 72<wait:60><hidetextbox><p><hidetextbox>
+<character:73>Animation 73<wait:60><hidetextbox><p><hidetextbox>
+<character:74>Animation 74<wait:60><hidetextbox><p><hidetextbox>
+<character:75>Animation 75<wait:60><hidetextbox><p><hidetextbox>
+<character:76>Animation 76<wait:60><hidetextbox><p><hidetextbox>
+<character:77>Animation 77<wait:60><hidetextbox><p><hidetextbox>
+<character:78>Animation 78<wait:60><hidetextbox><p><hidetextbox>
+<character:79>Animation 79<wait:60><hidetextbox><p><hidetextbox>
+
+<character:80>Animation 80<wait:60><hidetextbox><p><hidetextbox>
+<character:81>Animation 81<wait:60><hidetextbox><p><hidetextbox>
+<character:82>Animation 82<wait:60><hidetextbox><p><hidetextbox>
+<character:83>Animation 83<wait:60><hidetextbox><p><hidetextbox>
+<character:84>Animation 84<wait:60><hidetextbox><p><hidetextbox>
+<character:85>Animation 85<wait:60><hidetextbox><p><hidetextbox>
+<character:86>Animation 86<wait:60><hidetextbox><p><hidetextbox>
+<character:87>Animation 87<wait:60><hidetextbox><p><hidetextbox>
+<character:88>Animation 88<wait:60><hidetextbox><p><hidetextbox>
+<character:89>Animation 89<wait:60><hidetextbox><p><hidetextbox>
+
+<character:90>Animation 90<wait:60><hidetextbox><p><hidetextbox>
+<character:91>Animation 91<wait:60><hidetextbox><p><hidetextbox>
+<character:92>Animation 92<wait:60><hidetextbox><p><hidetextbox>
+<character:93>Animation 93<wait:60><hidetextbox><p><hidetextbox>
+<character:94>Animation 94<wait:60><hidetextbox><p><hidetextbox>
+<character:95>Animation 95<wait:60><hidetextbox><p><hidetextbox>
+<character:96>Animation 96<wait:60><hidetextbox><p><hidetextbox>
+<character:97>Animation 97<wait:60><hidetextbox><p><hidetextbox>
+<character:98>Animation 98<wait:60><hidetextbox><p><hidetextbox>
+<character:99>Animation 99<wait:60><hidetextbox><p><hidetextbox>
+
+<character:100>Animation 100<wait:60><hidetextbox><p><hidetextbox>
+<character:101>Animation 101<wait:60><hidetextbox><p><hidetextbox>
+<character:102>Animation 102<wait:60><hidetextbox><p><hidetextbox>
+<character:103>Animation 103<wait:60><hidetextbox><p><hidetextbox>
+<character:104>Animation 104<wait:60><hidetextbox><p><hidetextbox>
+<character:105>Animation 105<wait:60><hidetextbox><p><hidetextbox>
+<character:106>Animation 106<wait:60><hidetextbox><p><hidetextbox>
+<character:107>Animation 107<wait:60><hidetextbox><p><hidetextbox>
+<character:108>Animation 108<wait:60><hidetextbox><p><hidetextbox>
+<character:109>Animation 109<wait:60><hidetextbox><p><hidetextbox>
+
+<character:110>Animation 110<wait:60><hidetextbox><p><hidetextbox>
+<character:111>Animation 111<wait:60><hidetextbox><p><hidetextbox>
+<character:112>Animation 112<wait:60><hidetextbox><p><hidetextbox>
+<character:113>Animation 113<wait:60><hidetextbox><p><hidetextbox>
+<character:114>Animation 114<wait:60><hidetextbox><p><hidetextbox>
+<character:115>Animation 115<wait:60><hidetextbox><p><hidetextbox>
+<character:116>Animation 116<wait:60><hidetextbox><p><hidetextbox>
+<character:117>Animation 117<wait:60><hidetextbox><p><hidetextbox>
+<character:118>Animation 118<wait:60><hidetextbox><p><hidetextbox>
+<character:119>Animation 119<wait:60><hidetextbox><p><hidetextbox>
+
+<character:120>Animation 120<wait:60><hidetextbox><p><hidetextbox>
+<character:121>Animation 121<wait:60><hidetextbox><p><hidetextbox>
+<character:122>Animation 122<wait:60><hidetextbox><p><hidetextbox>
+<character:123>Animation 123<wait:60><hidetextbox><p><hidetextbox>
+<character:124>Animation 124<wait:60><hidetextbox><p><hidetextbox>
+<character:125>Animation 125<wait:60><hidetextbox><p><hidetextbox>
+<character:126>Animation 126<wait:60><hidetextbox><p><hidetextbox>
+<character:127>Animation 127<wait:60><hidetextbox><p><hidetextbox>
+
+Now looping<p><wait:1>
+<jump:loop>

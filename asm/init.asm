@@ -49,15 +49,21 @@
     ; --------
     ; Game: Debug Image
     ; --------
+    ; disable animation
+    mov cur_chr+1, #$FF
+    STA new_chr+1
     ; test display
-    LDX #COURTROOM_0
+    LDX #OUT_R0_COURTROOM_COURTROOM_0
     STX new_bkg
     JSR display_bkg
-    LDX #<PHOENIX_DOCUMENT_A_
-    STX new_chr+0
-    LDY #>PHOENIX_DOCUMENT_A_
-    STY new_chr+1
-    JSR display_anim
+    ; LDX #<OUT_R0_CHAR_PHOENIX_PHOENIX_DOCUMENT_A__I0T8
+    ; LDY #>OUT_R0_CHAR_PHOENIX_PHOENIX_DOCUMENT_A__I0T8
+    ; JSR display_chr
+    ; LDX #<OUT_R0_CHAR_PHOENIX_PHOENIX_CONFIDENT_B_
+    ; STX new_chr+0
+    ; LDY #>OUT_R0_CHAR_PHOENIX_PHOENIX_CONFIDENT_B_
+    ; STY new_chr+1
+    ; JSR display_anim
     JSR call_update_img
 
     ; --------
