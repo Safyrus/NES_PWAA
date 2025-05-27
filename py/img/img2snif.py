@@ -5,7 +5,7 @@ import numpy as np
 from img2neslimit_v2 import img2neslimit
 from nes_pal import closest_nes_color
 from rle_inc import RLEINC_CMD_END
-from tile import tile2chr, tiles2chr
+from tile import tiles2chr
 from const import *
 from snif_decode import snif_decode_meta
 from PIL import Image
@@ -50,7 +50,7 @@ def bkg2tile(img, tw, th, pal, backdrop, w=8, h=8):
     # Create address of each tile.
     # We use range because each tile is consider unique
     # and come one after the other
-    tile_adr = np.arange(0, len(tile_data) + 0, dtype=np.uint16)
+    tile_adr = np.arange(1, len(tile_data) + 1, dtype=np.uint16)
 
     # create NES palettes
     pals = cut_into_pal(pal, backdrop)
@@ -275,12 +275,13 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None, no_
     ################
     # BKG CHR
     ################
+    snif_data.extend(np.zeros(16, dtype=np.uint8)) # empty tile
     if no_bkg:
-        bkg_chr_size = 0
+        bkg_chr_size = 16
     else:
         # add background tiles
         tile_chr = tiles2chr(tile_data)
-        bkg_chr_size = len(tile_chr)
+        bkg_chr_size = len(tile_chr) + 16
         snif_data.extend(tile_chr)
         # compute padding
         padding = []
@@ -318,7 +319,7 @@ def img2snif(
     tile0_mask=None,
     no_bkg=False,
     no_spr_offset=False,
-    max_nb_bkg_try=32,
+    bkg_pal=None,
 ):
 
     # if output already exist
@@ -331,7 +332,7 @@ def img2snif(
         h = hashlib.sha256(Image.open(imgpath).tobytes()).hexdigest()
         if "hashori" in meta and h == meta["hashori"]:
             # then our work has already been done
-            return
+            return False
 
     # convert image to image data
     if verbose:
@@ -341,16 +342,9 @@ def img2snif(
         no_bkg=no_bkg,
         no_spr=nb_spr_pal == 0,
         no_spr_offset=no_spr_offset,
+        bkg_pal=bkg_pal,
+        verbose=verbose,
     )
-    # img_data = img2neslimit(
-    #     img_path=imgpath,
-    #     lazy_spr_pal=True,
-    #     MAX_BKG_COLOR=nb_bkg_pal,
-    #     MAX_SPR_COLOR=nb_spr_pal,
-    #     no_bkg=no_bkg,
-    #     no_offset=no_spr_offset,
-    #     max_nb_bkg_try=max_nb_bkg_try,
-    # )
     # convert image data to SNIF data
     if verbose:
         print("Convert data to SNIF")
@@ -370,6 +364,8 @@ def img2snif(
 
     if verbose:
         print("Done!")
+
+    return True
 
 
 if __name__ == "__main__":
