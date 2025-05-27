@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+#include "meta_param.h"
 #include "tile.h"
 #include "snif.h"
 
@@ -42,13 +43,32 @@ TODO
 int read_sniffile_tiles(const char *filename, struct Tile tile_list[MAX_TILES], struct SNIFFile *snif);
 
 /*
-TODO and move elswhere
-*/
-int strendwith(const char *str, const char *end);
-
-/*
 TODO
 */
-void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n_res_tile, const char *out_snif_folder, const char *out_chr_file, int verbose);
+void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n_res_tile, const char *out_snif_folder, const char *out_chr_file, int verbose, int region);
+
+void init_tiles(struct Tile *tile_list, uint8_t *tile_cmp_matrix);
+
+void merge_chrs(const char *final_chr);
+
+int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type, int *anim_idx, int *anim_time, int *offset);
+
+void asm_snif_img(const char *tmp_snif_dir, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type);
+
+void asm_snif(const char *final_chr, const char *data_path, const char *tmp_snif_dir);
+
+uint16_t replace_spr_tile(
+    uint8_t *tile_cmp_matrix,
+    struct Tile tile_list[MAX_TILES],
+    uint8_t compare_value[4][MAX_SPR_TILES],
+    uint16_t argmin,
+    uint8_t *out_flip);
+
+uint16_t add_spr_tile(
+    uint8_t *tile_cmp_matrix,
+    struct Tile tile_list[MAX_TILES],
+    const struct Tile *tile_lo,
+    const struct Tile *tile_hi,
+    uint8_t *out_flip);
 
 #endif

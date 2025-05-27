@@ -34,7 +34,7 @@ struct SNIFFile
     char w;
     char h;
     char r;
-    char img_type;
+    uint8_t img_type;
     int img_index;
     int img_time;
     char is_rleinc;

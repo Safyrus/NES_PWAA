@@ -273,7 +273,7 @@ void tile_bin2pix(struct Tile *tile)
         }
 }
 
-void print_tile(struct Tile *tile)
+void print_tile(const struct Tile *tile)
 {
     for (int i = 0; i < 8; i++)
     {
@@ -313,11 +313,18 @@ uint8_t compare_tile_px(const struct Tile *t1, const struct Tile *t2)
     return cmp_val;
 }
 
-void compare_tiles(const struct Tile tile_list[MAX_TILES], const struct Tile *tile, uint8_t compare_value[MAX_TILES], int *argmin, int *first_free)
+void compare_tiles(
+    const struct Tile tile_list[MAX_TILES],
+    const struct Tile *tile,
+    uint8_t compare_value[MAX_TILES],
+    int *argmin,
+    int *first_free,
+    int *free_count)
 {
     // init first_same & first_free
     *argmin = 0;
     *first_free = -1;
+    *free_count = 0;
 
     // create empty tile and compare it to the tile
     struct Tile empty_tile;
@@ -325,7 +332,7 @@ void compare_tiles(const struct Tile tile_list[MAX_TILES], const struct Tile *ti
     for (int i = 0; i < TILE_BIN_SIZE; i++)
         empty_tile.binary[i] = 0;
     tile_bin2pix(&empty_tile);
-    int free_cmp_val = compare_tile_bin(&empty_tile, tile);
+    uint8_t free_cmp_val = compare_tile_px(&empty_tile, tile);
 
     // for each tile
     // struct Tile t = tile_list[0];
@@ -341,15 +348,29 @@ void compare_tiles(const struct Tile tile_list[MAX_TILES], const struct Tile *ti
             // update the compare value array
             // with the already computed value
             compare_value[i] = free_cmp_val;
+            (*free_count)++;
         }
         else
         {
             // compare it with the alone tile
             // and update the compare value array
-            compare_value[i] = compare_tile_bin(&t, tile);
+            compare_value[i] = compare_tile_px(&t, tile);
         }
         // update argmin if needed
         if (compare_value[i] < compare_value[*argmin])
             *argmin = i;
     }
+}
+
+uint8_t count_pixels(const struct Tile *t)
+{
+    // init cmp_val
+    uint8_t sum = 0;
+    // for each pixels
+    for (int y = 0; y < TILE_H; y++)
+        for (int x = 0; x < TILE_W; x++)
+            // compare if it is the same or not
+            sum += t->pixels[y][x] > 0;
+    // return the computed compare value
+    return sum;
 }

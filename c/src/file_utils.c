@@ -175,7 +175,7 @@ void remove_ext(char *str)
 {
     // start at the end of the string
     int i = strlen(str);
-    while (i>=0)
+    while (i >= 0)
     {
         // if no extension
         if (str[i] == SEP)
@@ -190,4 +190,66 @@ void remove_ext(char *str)
         // continue
         i--;
     }
+}
+
+int rmdir_rec(const char *dirname, int silence)
+{
+    //
+    int dirname_len = 0;
+    while (dirname[dirname_len])
+        dirname_len++;
+
+    // open directory
+    DIR *dir;
+    if (!(dir = opendir(dirname)))
+    {
+        if (!silence)
+            fprintf(stderr, "Error: can't open dir '%s'\n", dirname);
+        return 1;
+    }
+
+    // list entry in the directory
+    struct dirent *entry;
+    struct stat s;
+    char name[1024];
+    while ((entry = readdir(dir)) != NULL)
+    {
+        // get file path
+        if (dirname[dirname_len - 1] == SEP)
+            sprintf(name, "%s%s", dirname, entry->d_name);
+        else
+            sprintf(name, "%s%c%s", dirname, SEP, entry->d_name);
+        // get entry info
+        if (stat(name, &s))
+        {
+            print_stat_error(name);
+            continue;
+        }
+        // act based on entry type
+        if (s.st_mode & S_IFREG) // file
+        {
+            // delete file
+            remove(name);
+        }
+        else if (s.st_mode & S_IFDIR) // directory
+        {
+            // skip if it is the current or previous directory
+            if (!strcmp(entry->d_name, ".") || !strcmp(entry->d_name, ".."))
+                continue;
+            // search recursively
+            rmdir_rec(name, silence);
+        }
+        else
+        {
+            if (!silence)
+                fprintf(stderr, "Error: unknow entry type for '%s' %d\n", entry->d_name, s.st_mode);
+        }
+    }
+
+    // close the directory
+    closedir(dir);
+
+    // remove now empty directory
+    remove(dirname);
+    return 0;
 }

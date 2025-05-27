@@ -105,7 +105,7 @@ img:
 # convert images, anims and photos to snif files
 	$(PYTHON) $(PY)/img/all2snif.py -if $(DATA)/img -sf $(DATA)/snif
 # merge all snif files & CHR into binary files
-	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr 33 ../PWAA.chr ../$(ASM)/data/img
+	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/EMPTY.chr 33 ../PWAA.chr ../$(ASM)/data/img
 
 
 #--------------------------------

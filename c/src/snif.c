@@ -32,7 +32,7 @@ char is_filename_anim(const char *filename, int *idx, int *time)
         while (filename[j] >= '0' && filename[j] <= '9')
             i = (i * 10) + (filename[j++] - '0');
         // if contain timing info
-        if (filename[j] == 't' && filename[j+1] >= '0' && filename[j+1] <= '9')
+        if (filename[j] == 't' && filename[j + 1] >= '0' && filename[j + 1] <= '9')
         {
             j++;
             // get timing info
@@ -309,6 +309,49 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     fclose(file);
 }
 
+uint8_t compute_spr_change_cost(struct SNIFFile *snif, uint8_t i, uint8_t j)
+{
+    uint8_t val = 0;
+    if (snif->spr_data[j].h != snif->spr_data[i].h || snif->spr_data[j].v != snif->spr_data[i].v)
+        val++;
+    if (snif->spr_data[j].pal != snif->spr_data[i].pal)
+        val++;
+    uint8_t pos_i = (snif->spr_data[i].y / 16) * snif->w + (snif->spr_data[i].x / 8);
+    pos_i = (pos_i + 1) % (snif->w * snif->h);
+    uint8_t pos_j = (snif->spr_data[j].y / 16) * snif->w + (snif->spr_data[j].x / 8);
+    if (pos_j != pos_i)
+        val += 2;
+    return val;
+}
+
+void sort_spr_greedy(struct SNIFFile *snif)
+{
+    // for each sprite
+    for (uint8_t i = 0; i < snif->n_spr - 1; i++)
+    {
+        // compute change cost to each other sprite
+        // that we have not selected yet
+        // and select the sprite with the minimum cost
+        uint8_t min_val = 100; // init with a value that exceed the maximum possible cost
+        uint8_t min_idx = i;
+        for (uint8_t j = i + 1; j < snif->n_spr; j++)
+        {
+            // compute sprite change cost
+            uint8_t val = compute_spr_change_cost(snif, i, j);
+            // if better
+            if (val < min_val)
+            {
+                min_idx = j;
+                min_val = val;
+            }
+        }
+        // swap
+        struct Sprite tmp_spr = snif->spr_data[i + 1];
+        snif->spr_data[i + 1] = snif->spr_data[min_idx];
+        snif->spr_data[min_idx] = tmp_spr;
+    }
+}
+
 void write_snif(const char *filename, struct SNIFFile *snif)
 {
     /*
@@ -418,7 +461,7 @@ void write_snif(const char *filename, struct SNIFFile *snif)
     // write spr data
     ////////////////////////
     // sort sprite for best compression
-    // TODO
+    sort_spr_greedy(snif); // TODO: find a better solution
     // output each sprite
     short cur_pos = 0;
     uint8_t cur_pal = 0;
