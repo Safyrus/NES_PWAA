@@ -275,13 +275,14 @@ def imgdata2snif(img_data, verbose=False, bkg_pal_offset=0, tile0_mask=None, no_
     ################
     # BKG CHR
     ################
-    snif_data.extend(np.zeros(16, dtype=np.uint8)) # empty tile
     if no_bkg:
-        bkg_chr_size = 16
+        bkg_chr_size = 0
     else:
+        # empty/null tile
+        snif_data.extend(np.zeros(16, dtype=np.uint8))
         # add background tiles
         tile_chr = tiles2chr(tile_data)
-        bkg_chr_size = len(tile_chr) + 16
+        bkg_chr_size = len(tile_chr) + 16 # add empty/null tile size
         snif_data.extend(tile_chr)
         # compute padding
         padding = []

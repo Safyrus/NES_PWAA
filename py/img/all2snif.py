@@ -154,9 +154,9 @@ if __name__ == "__main__":
     # Convertion
     ################################
 
-    img2snif_args = []
     # Convert each file
     for r in range(NB_REGION):
+        img2snif_args = []
         bar = tqdm(all_files[r], desc=f"Prepare convertion of region {r}", dynamic_ncols=True)
         for file in bar:
             # get output file path
@@ -248,12 +248,12 @@ if __name__ == "__main__":
     ################################
     # Fix
     ################################
-    # TODO
     # for each file
     for r in range(NB_REGION):
-        bar = tqdm(all_files[r], desc=f"Fixing region {r}", dynamic_ncols=True)
+        img2snif_args = []
+        bar = tqdm(all_files[r], desc=f"Prepare Fixing region {r}", dynamic_ncols=True)
         for file in bar:
-            bar.set_description(f"Fixing region {r} ({os.path.basename(file)})")
+            # bar.set_description(f"Fixing region {r} ({os.path.basename(file)})")
             # get output file path
             snif_file = os.path.splitext(file)[0] + ".snif"
             snif_file = os.path.join(args.snif_folder, snif_file)
@@ -287,14 +287,42 @@ if __name__ == "__main__":
                     # if background paletted have changed
                     if pal != last_pal:
                         # re-encode with pal and no change_mask
-                        img2snif(
-                            img_path,
-                            snif_file,
-                            force=True,
-                            nb_bkg_pal=6,
-                            nb_spr_pal=9,
-                            tile0_mask=None,
-                            bkg_pal=pal,
+                        img2snif_args.append(
+                            (
+                                img_path,
+                                out,
+                                False,
+                                True,
+                                6,
+                                9,
+                                0,
+                                None,
+                                False,
+                                False,
+                                pal,
+                            )
                         )
+                        # img2snif(
+                        #     img_path,
+                        #     snif_file,
+                        #     force=True,
+                        #     nb_bkg_pal=6,
+                        #     nb_spr_pal=9,
+                        #     tile0_mask=None,
+                        #     bkg_pal=pal,
+                        # )
+
+        # multithread conversion
+        with Pool() as p:
+            bar = tqdm(
+                p.imap(img2snif_warp, img2snif_args),
+                total=len(img2snif_args),
+                desc=f"Fixing region {r}",
+                dynamic_ncols=True,
+            )
+            bar.display()
+            for _ in bar:
+                pass
+                # bar.set_description(f"Convert region {r} ({name})")
 
     print("Done!")
