@@ -11,8 +11,9 @@ rleinc_next:
         LDA tmp+1
         AND #$1F
         BNE @ret
-            INC mmc5_banks+2
-            mov MMC5_PRG_BNK1, mmc5_banks+2
+            INC mmc5_banks+1+RLEINC_BANK_IDX
+            LDA mmc5_banks+1+RLEINC_BANK_IDX
+            STA MMC5_PRG_BNK0+RLEINC_BANK_IDX
             LDA tmp+1
             sub #$20
             STA tmp+1

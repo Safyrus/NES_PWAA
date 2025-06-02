@@ -404,6 +404,9 @@
     BTN_TIMER               = 15
     MAX_EVIDENCE_IDX        = 9
 
+    ; MMC5 PRG bank to be in during rleinc decoding
+    RLEINC_BANK_IDX = 0
+
 
 ;================
 ; Group: Scanline
