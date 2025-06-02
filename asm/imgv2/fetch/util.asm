@@ -1,5 +1,5 @@
 fetch_overflow_correction:
-    CMP #$C0
+    CMP #$A0
     blt :+
         ; adr -= $2000
         SBC #$20

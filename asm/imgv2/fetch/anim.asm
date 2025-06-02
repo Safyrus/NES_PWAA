@@ -37,6 +37,7 @@ fetch_anim:
         BCC :+
             INC @adr+1
             ; if adr overflow
+            LDA @adr+1
             JSR fetch_overflow_correction
         :
         ; continue

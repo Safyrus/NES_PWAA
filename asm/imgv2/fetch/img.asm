@@ -58,8 +58,8 @@ fetch_loop:
 
     ; skip size info
     inc_16 @adr
-    JSR fetch_overflow_correction
     inc_16 @adr
+    LDA @adr+1
     JSR fetch_overflow_correction
 
     ; return bnk, adr
