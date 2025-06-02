@@ -28,17 +28,44 @@ update_dialog:
     LDA effect_flags
     AND #EFFECT_FLAG_PAL_SPLIT
     BNE :+
-        ; data = bottom of image of 1st buffer
-        mov @data_hi+1, #>(IMG_BUF_HI_ADR+$200)
-        mov @data_lo+1, #>(IMG_BUF_LO_ADR+$200)
-        JSR send_box_update
-        ; adr = $2660
-        mov @adr+1, #$86 ; + high priority
-        ; data = bottom of image of 2nd buffer
-        mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$200)
-        mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$200)
-        JSR send_box_update
-        JMP :++
+        ; if image is displayed on the 1st buffer
+        LDA img_flag
+        AND #IMG_FLAG_OTHERNT
+        BEQ @other_nt ; inverted but is in fact correct ?
+            ; update 2nd buffer, then the 1st buffer
+            ; (MMC5 upper tiles will be of the last updated buffer)
+            ; adr = $2660
+            mov @adr+1, #$86 ; + high priority
+            ; data = bottom of image of 2nd buffer
+            mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$200)
+            mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$200)
+            JSR send_box_update
+            ; adr = $2260
+            mov @adr+1, #$82 ; + high priority
+            ; data = bottom of image of 1st buffer
+            mov @data_hi+1, #>(IMG_BUF_HI_ADR+$200)
+            mov @data_lo+1, #>(IMG_BUF_LO_ADR+$200)
+            JSR send_box_update
+            ;
+            JMP :++
+        ; else
+        @other_nt:
+            ; update 1st buffer, then the 2nd buffer
+            ; (MMC5 upper tiles will be of the last updated buffer)
+            ; adr = $2260
+            mov @adr+1, #$82 ; + high priority
+            ; data = bottom of image of 1st buffer
+            mov @data_hi+1, #>(IMG_BUF_HI_ADR+$200)
+            mov @data_lo+1, #>(IMG_BUF_LO_ADR+$200)
+            JSR send_box_update
+            ; adr = $2660
+            mov @adr+1, #$86 ; + high priority
+            ; data = bottom of image of 2nd buffer
+            mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$200)
+            mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$200)
+            JSR send_box_update
+            ;
+            JMP :++
     ; else
     :
         ; data = dialog box
