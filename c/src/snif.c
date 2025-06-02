@@ -57,7 +57,7 @@ char is_filename_anim(const char *filename, int *idx, int *time)
 void print_snif(struct SNIFFile *snif)
 {
     printf("size:%d*%d  region:%d  rleinc:%d  type:%d\n", snif->w, snif->h, snif->r, snif->is_rleinc, snif->img_type);
-    printf("metadata (%d):%s\n", snif->metadata_len, snif->metadata);
+    printf("metadata (%u):%s\n", snif->metadata_len, snif->metadata);
     printf("nb spr:%d  nb CHR tile:%d\n", snif->n_spr, snif->n_chr_tile);
     printf("palettes:   BKG  SPR\n");
     for (int i = 0; i < 4; i++)
@@ -129,7 +129,7 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     ////////////////////////
     // read first byte
     ////////////////////////
-    char b = read_byte_strict(file);
+    uint8_t b = read_byte_strict(file);
     snif->w = (b & 0x1F) + 1;
     snif->r = (b & 0x60) >> 5;
     snif->is_rleinc = (b & 0x80) >> 7;
@@ -150,7 +150,7 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     // read palettes
     ////////////////////////
     b = read_byte_strict(file);
-    char next = b & 0x80;
+    uint8_t next = b & 0x80;
     snif->pal_drop = b & 0x3F;
     for (int i = 0; i < 8; i++)
     {
@@ -160,9 +160,9 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     }
     while (next)
     {
-        char b0 = read_byte_strict(file);
-        char b1 = read_byte_strict(file);
-        char b2 = read_byte_strict(file);
+        uint8_t b0 = read_byte_strict(file);
+        uint8_t b1 = read_byte_strict(file);
+        uint8_t b2 = read_byte_strict(file);
 
         next = b0 & 0x80;
         int idx = ((b1 & 0xC0) >> 6) + ((b0 & 0x40) >> 4);
@@ -221,21 +221,21 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     ////////////////////////
     // read SPR data
     ////////////////////////
-    char end = 0;
+    uint8_t end = 0;
     snif->n_spr = 0;
-    short cur_pos = 0;
-    char cur_pal = 0;
-    char cur_h_flip = 0;
-    char cur_v_flip = 0;
+    uint16_t cur_pos = 0;
+    uint8_t cur_pal = 0;
+    uint8_t cur_h_flip = 0;
+    uint8_t cur_v_flip = 0;
     while (!end)
     {
         b = read_byte_strict(file);
         // if sprite
         if (b & 0x80)
         {
-            char b1 = read_byte_strict(file);
-            char y_offset = b & 0x0F;
-            char x_offset = (b >> 4) & 0x07;
+            uint8_t b1 = read_byte_strict(file);
+            uint8_t y_offset = b & 0x0F;
+            uint8_t x_offset = (b >> 4) & 0x07;
             snif->spr_data[snif->n_spr].x = (cur_pos % snif->w) * 8 + x_offset;
             snif->spr_data[snif->n_spr].y = ((cur_pos / snif->w) % snif->h) * 16 + y_offset;
             snif->spr_data[snif->n_spr].t = (b1 / 2) + (b1 % 2 ? 128 : 0);
@@ -255,9 +255,9 @@ void read_snif(const char *filename, struct SNIFFile *snif)
                 cur_pal = b & 0x03;
             else if ((b & 0xFC) == SPRCMD_POS)
             {
-                char b1 = read_byte_strict(file);
-                char x = (b & 0x01) << 4;
-                char y = ((b >> 1) & 0x01) << 4;
+                uint8_t b1 = read_byte_strict(file);
+                uint8_t x = (b & 0x01) << 4;
+                uint8_t y = ((b >> 1) & 0x01) << 4;
                 x += (b1 >> 4) & 0x0F;
                 y += b1 & 0x0F;
                 cur_pos = y * snif->w + x;
@@ -495,6 +495,12 @@ void write_snif(const char *filename, struct SNIFFile *snif)
         uint8_t y_offset = snif->spr_data[i].y % 16;
         write_byte_strict(file, 0x80 | (x_offset << 4) | y_offset);
         uint8_t t = snif->spr_data[i].t;
+        if (!((1 << (t >> 5)) & snif->ppu_mask))
+        {
+            fprintf(stderr, "Error (write_snif): Wrong sprite in '%s'\n", filename);
+            fprintf(stderr, "%d %d (%d %d)\n", snif->ppu_mask, (1 << (t >> 5)), t, i);
+            exit(1);
+        }
         t = (t << 1) + (t / 128);
         write_byte_strict(file, t);
         // go to next pos

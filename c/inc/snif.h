@@ -30,18 +30,18 @@ struct Sprite
 struct SNIFFile
 {
     char metadata[SNIF_MAX_METADATA_LEN];
-    int metadata_len;
-    char w;
-    char h;
-    char r;
+    unsigned int metadata_len;
+    uint8_t w;
+    uint8_t h;
+    uint8_t r;
     uint8_t img_type;
     int img_index;
     int img_time;
-    char is_rleinc;
-    char pal_drop;
-    char pals[8][3];
+    uint8_t is_rleinc;
+    uint8_t pal_drop;
+    uint8_t pals[8][3];
     uint8_t ppu_mask;
-    char ppu_banks[8];
+    uint8_t ppu_banks[8];
     uint16_t bkg_data[SNIF_MAX_TILE];
     uint16_t bkg_data_len_lo;
     uint16_t bkg_data_len_hi;

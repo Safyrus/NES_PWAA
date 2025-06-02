@@ -80,8 +80,8 @@ void merge_one_spr(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
             if (b != banks[bank_to_remove] || !spr_idxs[i])
                 continue;
             // remove the sprite
-            tile_list[spr_idxs[i] * 2 + 0].type &= -(1 + TILE_TYPE_MASK_REPLACE);
-            tile_list[spr_idxs[i] * 2 + 1].type &= -(1 + TILE_TYPE_MASK_REPLACE);
+            tile_list[spr_idxs[i] * 2 + 0].type &= (unsigned)~TILE_TYPE_MASK_REPLACE;
+            tile_list[spr_idxs[i] * 2 + 1].type &= (unsigned)~TILE_TYPE_MASK_REPLACE;
             spr_idxs[i] = 0;
         }
         // recount number of banks
@@ -89,7 +89,7 @@ void merge_one_spr(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
     }
     // apply sprite change
     uint8_t n_spr = 0;
-    for (size_t i = 0; i < snif->n_spr; i++)
+    for (int i = 0; i < snif->n_spr; i++)
     {
         if (!spr_idxs[i])
             continue;
@@ -160,7 +160,7 @@ void merge_sprites(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
         if (!strendwith(filename, ".snif"))
         {
             if (verbose)
-                printf("\e[2K\rSNIF Merge (%d): skip non SNIF file '%s'", img_type, filename);
+                printf("\033[2K\rSNIF Merge (%d): skip non SNIF file '%s'", img_type, filename);
             continue;
         }
         // read SNIF file
@@ -169,7 +169,7 @@ void merge_sprites(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
         if (snif->img_type != img_type)
         {
             if (verbose)
-                printf("\e[2K\rSNIF Merge (%d): skip non wanted SNIF file '%s'", img_type, filename);
+                printf("\033[2K\rSNIF Merge (%d): skip non wanted SNIF file '%s'", img_type, filename);
             continue;
         }
         // print info
@@ -179,7 +179,7 @@ void merge_sprites(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
             for (int i = 0; i < MAX_TILES; i++)
                 n_use_tiles += tile_list[i].type != TILE_TYPE_FREE ? 1 : 0;
             int percent_use = ((float)n_use_tiles / MAX_TILES) * 100;
-            printf("\e[2K\rSNIF Merge (%d): merge SPR from '%s' (CHR usage: %d%%)", img_type, filename, percent_use);
+            printf("\033[2K\rSNIF Merge (%d): merge SPR from '%s' (CHR usage: %d%%)", img_type, filename, percent_use);
         }
         //
         merge_one_spr(tile_cmp_matrix, tile_list, snif);
@@ -188,7 +188,7 @@ void merge_sprites(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
     }
     fclose(filelist);
     if (verbose)
-        printf("\e[2K\rSNIF Merge (%d): merged all SPR tiles\n", img_type);
+        printf("\033[2K\rSNIF Merge (%d): merged all SPR tiles\n", img_type);
 }
 
 void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n_res_tile, const char *out_snif_folder, const char *out_chr_file, int verbose, int region)
@@ -264,7 +264,7 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
         if (!strendwith(filename, ".snif"))
         {
             if (verbose)
-                printf("\e[2KSNIF Merge: skip non SNIF file '%s'\n", filename);
+                printf("\033[2KSNIF Merge: skip non SNIF file '%s'\n", filename);
             continue;
         }
         if (verbose)
@@ -273,7 +273,7 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
             for (int i = 0; i < MAX_TILES; i++)
                 n_use_tiles += tile_list[i].type != TILE_TYPE_FREE ? 1 : 0;
             int percent_use = ((float)n_use_tiles / MAX_TILES) * 100;
-            printf("\e[2K\rSNIF Merge: merge BKG from '%s' (CHR usage: %d%%)", filename, percent_use);
+            printf("\033[2K\rSNIF Merge: merge BKG from '%s' (CHR usage: %d%%)", filename, percent_use);
         }
         // read SNIF file
         new_tile_list_size = read_sniffile_tiles(filename, new_tile_list, snif);
@@ -310,7 +310,7 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
         write_snif(outname, snif);
     }
     if (verbose)
-        printf("\e[2K\rSNIF Merge: merged all BKG tiles\n");
+        printf("\033[2K\rSNIF Merge: merged all BKG tiles\n");
     fclose(filelist);
 
     ////////////////////////////////
@@ -356,14 +356,14 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
         if (!strendwith(filename, ".snif"))
         {
             if (verbose)
-                printf("\e[2K\rSNIF Merge: skip non SNIF file '%s'", filename);
+                printf("\033[2K\rSNIF Merge: skip non SNIF file '%s'", filename);
             continue;
         }
         // read SNIF file
         read_snif(filename, snif);
         // print info
         if (verbose)
-            printf("\e[2K\rSNIF Merge: ouput '%s'", filename);
+            printf("\033[2K\rSNIF Merge: ouput '%s'", filename);
         // change metadata to only be an empty hash
         snif->metadata_len = HASH_SIZE;
         for (int i = 0; i < HASH_SIZE; i++)
@@ -413,7 +413,7 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
     }
     fclose(filelist);
     if (verbose)
-        printf("\e[2K\rSNIF Merge: outputed all images\n");
+        printf("\033[2K\rSNIF Merge: outputed all images\n");
 
     ////////////////////////////////
     // write CHR region

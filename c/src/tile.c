@@ -267,8 +267,8 @@ void tile_bin2pix(struct Tile *tile)
     for (int y = 0; y < 8; y++)
         for (int x = 0; x < 8; x++)
         {
-            char b0 = (tile->binary[y] >> (7 - x)) & 0x01;
-            char b1 = (tile->binary[y + 8] >> (7 - x)) & 0x01;
+            uint8_t b0 = (tile->binary[y] >> (7 - x)) & 0x01;
+            uint8_t b1 = (tile->binary[y + 8] >> (7 - x)) & 0x01;
             tile->pixels[y][x] = b0 | (b1 << 1);
         }
 }

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "tile.h"
 #include "file_utils.h"
 #include "compact.h"
@@ -216,16 +217,6 @@ uint16_t add_spr_tile(
         return 0;
     }
 
-    // // if a tile as a compare value of 0
-    // for (int f = 0; f < 4; f++)
-    //     if (compare_value[f][argmin[f]] == 0)
-    //     {
-    //         // then the tile is already in the list
-    //         // and we return this index
-    //         (*out_flip) = f;
-    //         return argmin[f];
-    //     }
-
     // else if the tile is 'close enought'
     uint8_t best_val = 255;
     int8_t best_flip = -1;
@@ -235,9 +226,14 @@ uint16_t add_spr_tile(
             best_val = compare_value[f][argmin[f]];
             best_flip = f;
         }
+    if (best_flip >= 4)
+    {
+        fprintf(stderr, "Error (add_spr_tile): flip is not valid (%d)\n", best_flip);
+        exit(1);
+    }
     if (best_flip >= 0)
     {
-        (*out_flip) = best_flip;
+        (*out_flip) = (uint8_t)best_flip;
         return argmin[best_flip];
     }
     // else, if there is a free tile in the list

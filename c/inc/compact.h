@@ -12,6 +12,10 @@
 #define FILETYPE_CHR 0
 #define FILETYPE_SNIF 1
 
+#define MAX_ANIM (128 * 128)
+#define MAX_IMG (128 * 128)
+#define ANIM_BUF_SIZE 1024
+
 /*
 TODO
 */
@@ -19,16 +23,16 @@ int replace_bkg_tile(uint8_t *tile_cmp_matrix, struct Tile tile_list[MAX_TILES],
 
 /*
 Description:
-  add the `tile` to the `tile_list` if free space is availible or make space using the `tile_cmp_matrix`.
-  In both case, `tile_cmp_matrix` is updated.
+    add the `tile` to the `tile_list` if free space is availible or make space using the `tile_cmp_matrix`.
+    In both case, `tile_cmp_matrix` is updated.
 
 Arguments:
-  - `tile_list`: a list of tiles.
-  - `tile`: the tile to add to `tile_list`.
-  - `tile_cmp_matrix`: the matrix containing compare values between every tiles in `tile_list`.
+    - `tile_list`: a list of tiles.
+    - `tile`: the tile to add to `tile_list`.
+    - `tile_cmp_matrix`: the matrix containing compare values between every tiles in `tile_list`.
 
 Return:
-  The index where the `tile` was added.
+    The index where the `tile` was added.
 */
 int add_bkg_tile(uint8_t *tile_cmp_matrix, struct Tile tile_list[MAX_TILES], const struct Tile *tile);
 

@@ -18,7 +18,13 @@ int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint
     fread(&w, 1, 1, file);
     w = (w & 0x1F) + 1;
     fseek(file, 0, SEEK_END);
-    long img_size = ftell(file) - HASH_SIZE;
+    long fpos = ftell(file);
+    if (fpos < 0)
+    {
+        fprintf(stderr, "Error (asm_snif_img_one): cannot determine file size\n");
+        exit(1);
+    }
+    size_t img_size = (unsigned long)fpos - HASH_SIZE;
     rewind(file);
     // find image type
     int t = IMG_TYPE_BKG;
@@ -71,7 +77,7 @@ int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint
     // add pointer to img_ptr
     if ((*index) % 256 == 0)
         ptr_adr[(*index) / 256] = (*size);
-    (*size) += img_size + 2;
+    (*size) += (signed)img_size + 2;
     (*index)++;
     // return the added image index
     return (*index) - 1;
@@ -98,9 +104,6 @@ void asm_snif_img(const char *tmp_snif_dir, FILE *img_data, FILE *img_names, uin
 void asm_snif(const char *final_chr, const char *data_path, const char *tmp_snif_dir)
 {
     // malloc
-    const int MAX_ANIM = 128 * 128;
-    const int MAX_IMG = 128 * 128;
-    const int ANIM_BUF_SIZE = 1024;
     uint8_t *anim_table = malloc(MAX_ANIM * ANIM_BUF_SIZE);
     uint8_t *hash_list = malloc(MAX_IMG * HASH_SIZE);
     if (!anim_table || !hash_list)
@@ -175,7 +178,7 @@ void asm_snif(const char *final_chr, const char *data_path, const char *tmp_snif
             f = filename + anim_offset - 255;
         filename2const(f);
         // find the anim idx based on the name
-        int h = hash_str(f) % MAX_ANIM;
+        uint64_t h = hash_str(f) % MAX_ANIM;
         while (1)
         {
             char *name = (char *)(&anim_table[h * ANIM_BUF_SIZE]);

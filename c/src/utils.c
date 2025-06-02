@@ -30,7 +30,7 @@ uint64_t hash_file(const char *filename)
 {
     FILE *f = fopen(filename, "rb");
     if (!f)
-        return -1;
+        return 0;
     uint64_t hash = FNV_OFFSET;
     uint8_t b;
     while (fread(&b, 1, 1, f))

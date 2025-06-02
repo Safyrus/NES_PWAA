@@ -93,7 +93,7 @@ void list_files(const char *dirname, FILE *outputfile, const char recursive)
 
 uint8_t read_byte_strict(FILE *file)
 {
-    char b;
+    uint8_t b;
     if (fread(&b, 1, 1, file) != 1)
     {
         fprintf(stderr, "Error (read_byte_strict): while reading byte from file\n");
