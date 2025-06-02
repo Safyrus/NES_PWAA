@@ -66,8 +66,7 @@ void compare_spr_tiles(
         struct Tile t_lo = tile_list[i * 2];
         struct Tile t_hi = tile_list[i * 2 + 1];
         // if tile is free
-        if ((t_lo.type & -(1 + TILE_TYPE_MASK_REPLACE)) == TILE_TYPE_FREE &&
-            (t_hi.type & -(1 + TILE_TYPE_MASK_REPLACE)) == TILE_TYPE_FREE)
+        if (t_lo.type == TILE_TYPE_FREE && t_hi.type == TILE_TYPE_FREE)
         {
             // update first_free if needed
             if (*first_free < 0)
