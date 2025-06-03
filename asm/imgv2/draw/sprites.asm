@@ -82,8 +82,8 @@ draw_sprites:
         ADC #$04
         TAX
         ; if X == 0 (overflow/OAM full)
-            ; break
-            BEQ @break
+            ; break and skip next while loop
+            BEQ @while_end
         ; Y++
         TYA
         ADC #$04
@@ -107,7 +107,7 @@ draw_sprites:
         INX
         ; continue
         BNE @while
-
+    @while_end:
     ; draw_sprite_idx = Y
     STY draw_sprite_idx
 
