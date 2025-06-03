@@ -16,6 +16,9 @@ update_dialog:
     push tmp+7
     push tmp+8
 
+    ; set busy flag
+    ora_adr txt_flags, #TXT_FLAG_BUSY
+
     ; adr = $2260
     mov @adr+0, #$60
     mov @adr+1, #$82 ; + high priority
@@ -75,6 +78,8 @@ update_dialog:
     :
 
     @ret:
+    ; clear busy flag
+    and_adr txt_flags, #($FF-TXT_FLAG_BUSY)
     ; restore tmps
     pull tmp+8
     pull tmp+7
