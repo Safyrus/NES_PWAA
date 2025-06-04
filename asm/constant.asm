@@ -375,6 +375,7 @@
     ; DEFAULT_NT_MAPPING - _NT_MAPPING_EMPTY_
     NT_MAPPING_EMPTY   = %11111111
     NT_MAPPING_NT1     = %11110100
+    NT_MAPPING_ALL     = %11100100
     DEFAULT_NT_MAPPING = NT_MAPPING_EMPTY
 
     ; Constants: HITBOX buffers addresses
@@ -455,10 +456,12 @@
     IMG_CHR_SPR       = $7C00
     ANIM_BUF_ADR      = $7D00
 
-    IMG_FLAG_FORCE    = $80
-    IMG_FLAG_EVISPR   = $01
-    IMG_FLAG_OTHERNT  = $04
-    IMG_FLAG_UNSPRITE = $10
+    IMG_FLAG_FORCE     = $80
+    IMG_FLAG_EVISPR    = $08
+    IMG_FLAG_REGION    = $03
+    IMG_FLAG_OTHERNT   = $04
+    IMG_FLAG_UNSPRITE  = $10
+    IMG_FLAG_DO_REGION = $20
 
 ;================
 ; Group: Dialog Box

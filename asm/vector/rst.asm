@@ -67,7 +67,7 @@ RST:
     mov MMC5_EXT_RAM, #$01
 
     ; Set fill tile
-    LDA #$20
+    LDA #$00
     STA MMC5_FILL_TILE
     STA MMC5_FILL_COL
 

@@ -38,6 +38,10 @@ update_image:
     PLA
     TAY
     JSR send_image_buffer
+    ; order to update region at next NMI
+    LDA img_flag
+    ORA #IMG_FLAG_DO_REGION
+    STA img_flag
     ; return
     RTS
 

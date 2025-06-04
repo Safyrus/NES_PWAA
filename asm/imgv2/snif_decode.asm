@@ -33,6 +33,10 @@ snif_decode:
     AND #$1F
     add #$01
     STA @w
+    ; clear img_flag.region
+    LDA img_flag
+    AND #($FF-IMG_FLAG_REGION)
+    STA img_flag
     ; r = (in[Y] & $60) >> 5
     LDA (@in), Y
     AND #$60
@@ -41,9 +45,9 @@ snif_decode:
     LSR
     LSR
     LSR
-    ; MMC5_CHR_UPPER = r
-    STA mmc5_upper_chr
-    STA MMC5_CHR_UPPER
+    ; img_flag.region = r
+    ORA img_flag
+    STA img_flag
     ; don't care about compress bit, assume always set
     ; Y++
     INY

@@ -4,6 +4,20 @@
     ; set nametable mapping to default
     LDA #DEFAULT_NT_MAPPING
     STA MMC5_NAMETABLE
+    ; if img_flag.do_region
+    LDA img_flag
+    AND #IMG_FLAG_DO_REGION
+    BEQ :+
+        ; MMC5_CHR_UPPER = img_flag.region
+        LDA img_flag
+        AND #IMG_FLAG_REGION
+        STA mmc5_upper_chr
+        STA MMC5_CHR_UPPER
+        ; clear img_flag.do_region
+        LDA img_flag
+        AND #($FF-IMG_FLAG_DO_REGION)
+        STA img_flag
+    :
     ; enable interrupt
     CLI
 
