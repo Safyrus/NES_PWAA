@@ -19,8 +19,8 @@
     NOP
     NOP
     ; setup registers
-    LDX #$16
-    LDY #$26
+    LDX #SPLIT_PAL0_1
+    LDY #SPLIT_PAL0_2
     ; set high byte of address
     LDA #$3F
     STA PPU_ADDR
@@ -33,7 +33,7 @@
     LDA #$0F
     STA PPU_DATA
     ; send 3 byte
-    LDA #$06
+    LDA #SPLIT_PAL0_0
     STA PPU_DATA
     STX PPU_DATA
     STY PPU_DATA
@@ -49,12 +49,12 @@
     ; - - - - - - - -
     ; second scanline (152)
     ; - - - - - - - -
-    LDX #$12
-    LDY #$22
+    LDX #SPLIT_PAL1_1
+    LDY #SPLIT_PAL1_2
     ; send 4 byte
     LDA #$0F
     STA PPU_DATA
-    LDA #$02
+    LDA #SPLIT_PAL1_0
     STA PPU_DATA
     STX PPU_DATA
     STY PPU_DATA
@@ -67,12 +67,12 @@
     ; - - - - - - - -
     ; third scanline (153)
     ; - - - - - - - -
-    LDX #$1A
-    LDY #$2A
+    LDX #SPLIT_PAL2_1
+    LDY #SPLIT_PAL2_2
     ; send 4 byte
     LDA #$0F
     STA PPU_DATA
-    LDA #$0A
+    LDA #SPLIT_PAL2_0
     STA PPU_DATA
     STX PPU_DATA
     STY PPU_DATA
@@ -85,12 +85,12 @@
     ; - - - - - - - -
     ; fourth scanline (154)
     ; - - - - - - - -
-    LDX #$10
-    LDY #$30
+    LDX #SPLIT_PAL3_1
+    LDY #SPLIT_PAL3_2
     ; send 4 byte
     LDA #$0F
     STA PPU_DATA
-    LDA #$00
+    LDA #SPLIT_PAL3_0
     STA PPU_DATA
     STX PPU_DATA
     STY PPU_DATA

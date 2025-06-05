@@ -31,7 +31,7 @@ draw_act_text:
                 LDA act_buf+3, X
                 INX
                 AND #$3F
-                ORA #$C0
+                ORA #DEFAULT_TEXT_COLOR
                 STA @font
                 ; continue
                 JMP @line
@@ -53,7 +53,7 @@ draw_act_text:
             LDA @font
             LSR
             AND #$3F
-            ORA #$C0
+            ORA #DEFAULT_TEXT_COLOR
             STA DB_ADR_HI+$23, Y
             INY
             ; continue

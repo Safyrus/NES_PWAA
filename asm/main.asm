@@ -163,8 +163,8 @@ MAIN_LOOP:
             JSR draw_act_text
             ; send buffer
             JSR update_midbox
-            ; MMC5_CHR_BNK7 = $00
-            STA MMC5_CHR_BNK7
+            ; cur_bnks[7] = $00
+            STA cur_bnks+7
             ; update sprite palette
             LDA #ACT_SPR_PAL_0
             STA img_tmp_pals+13
@@ -172,6 +172,23 @@ MAIN_LOOP:
             STA img_tmp_pals+14
             LDA #ACT_SPR_PAL_2
             STA img_tmp_pals+15
+            ;
+            LDA #ACT_BKG_PAL_0
+            STA img_tmp_pals+1
+            LDA #ACT_BKG_PAL_1
+            STA img_tmp_pals+2
+            LDA #ACT_BKG_PAL_2
+            STA img_tmp_pals+3
+            LDA #ACT_BKG_PAL_3
+            STA img_tmp_pals+4
+            LDA #ACT_BKG_PAL_4
+            STA img_tmp_pals+5
+            LDA #ACT_BKG_PAL_5
+            STA img_tmp_pals+6
+            ; copy_palettes()
+            JSR copy_palettes
+            ; update_palettes()
+            JSR update_palettes
             ; clear act draw flag
             LDA act_flag
             AND #$FF-ACT_FLAG_DRAW

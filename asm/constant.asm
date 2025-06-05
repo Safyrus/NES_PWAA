@@ -480,7 +480,7 @@
     ; DB_TILE_BL - _$0017_ Bottom left tile
     ; DB_TILE_B  - _$0018_ Bottom tile
     ; DB_TILE_BR - _$0019_ Bottom right tile
-    ; DB_TILE    - _$C001_ Fill tile
+    ; DB_TILE    - _$0001_ Fill tile
     DB_TILE_TL = $0011
     DB_TILE_T  = $0012
     DB_TILE_TR = $0013
@@ -490,7 +490,20 @@
     DB_TILE_BL = $0017
     DB_TILE_B  = $0018
     DB_TILE_BR = $0019
-    DB_TILE    = $C001
+    DB_TILE    = $0001
+
+    SPLIT_PAL0_0 = $00
+    SPLIT_PAL0_1 = $10
+    SPLIT_PAL0_2 = $30
+    SPLIT_PAL1_0 = $06
+    SPLIT_PAL1_1 = $16
+    SPLIT_PAL1_2 = $26
+    SPLIT_PAL2_0 = $02
+    SPLIT_PAL2_1 = $12
+    SPLIT_PAL2_2 = $22
+    SPLIT_PAL3_0 = $0A
+    SPLIT_PAL3_1 = $1A
+    SPLIT_PAL3_2 = $2A
 
 ;================
 ; Group: Text
@@ -503,7 +516,7 @@
 
     DEFAULT_TEXT_SPEED = $10
     DEFAULT_TEXT_FONT = $00
-    DEFAULT_TEXT_COLOR = $C0
+    DEFAULT_TEXT_COLOR = $00
 
     TXTARG_FORCE = $70
     TXTARG_TIME = $0F
@@ -554,6 +567,13 @@
     ACT_SPR_PAL_0 = $00
     ACT_SPR_PAL_1 = $10
     ACT_SPR_PAL_2 = $20
+
+    ACT_BKG_PAL_0 = $00
+    ACT_BKG_PAL_1 = $10
+    ACT_BKG_PAL_2 = $30
+    ACT_BKG_PAL_3 = $06
+    ACT_BKG_PAL_4 = $16
+    ACT_BKG_PAL_5 = $26
 
 ;================
 ; Group: Court Record

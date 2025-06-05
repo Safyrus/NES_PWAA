@@ -44,7 +44,7 @@ CHAR_KATAKANA_VOICE_MARKER_OUT = ["カ", "キ", "ク", "ケ", "コ", "サ", "シ
 CHAR_KATAKANA_SEMIVOICE_MARKER_IN = ["パ", "ピ", "プ", "ペ", "ポ"]
 CHAR_KATAKANA_SEMIVOICE_MARKER_OUT = ["ハ", "ヒ", "フ", "ヘ", "ホ"]
 
-TXT_COL_MAP = [3, 0, 1, 2]
+TXT_COL_MAP = [0, 1, 2, 3]
 
 END = 0x00
 LB = 0x01

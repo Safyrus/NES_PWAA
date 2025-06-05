@@ -18,9 +18,9 @@ change_name:
         BNE @remove
     ; res_oam = 0
     STX res_oam
-    ; MMC5_CHR_BNK[7] = spr_bnks[7]
+    ; cur_bnks[7] = spr_bnks[7]
     LDA spr_bnks+7
-    STA MMC5_CHR_BNK7
+    STA cur_bnks+7
 
     ; if no name to display
     LDA text_name
@@ -44,12 +44,12 @@ change_name:
     ; fetch name tile
     LDA names_list, X
     TAY
-    ; MMC5_CHR_BNK[7] = tile >> 6
+    ; cur_bnks[7] = tile >> 6
     ASL
     ASL
     LDA #$02
     ADC #$00
-    STA MMC5_CHR_BNK7
+    STA cur_bnks+7
     ; tile |= $C0
     TYA
     ORA #$C0
