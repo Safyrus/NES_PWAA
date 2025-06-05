@@ -45,6 +45,20 @@ scanline_irq_handler:
         ORA #PPU_CTRL_SPR_SIZE
         STA ppu_ctrl_val
         STA PPU_CTRL
+        ; update CHR banks & CHR upper bits for every frame
+        ; in frame before any potential palette split
+        ; (reason still unknow why this fix a bug where
+        ;  CHR bank are from region 0 (due to palette split changing it to 0)
+        ;  but not BKG tiles for a noticable number of frames)
+        mov MMC5_CHR_UPPER, mmc5_upper_chr
+        mov MMC5_CHR_BNK0, cur_bnks+0
+        mov MMC5_CHR_BNK1, cur_bnks+1
+        mov MMC5_CHR_BNK2, cur_bnks+2
+        mov MMC5_CHR_BNK3, cur_bnks+3
+        mov MMC5_CHR_BNK4, cur_bnks+4
+        mov MMC5_CHR_BNK5, cur_bnks+5
+        mov MMC5_CHR_BNK6, cur_bnks+6
+        mov MMC5_CHR_BNK7, cur_bnks+7
         ; return
         JMP @end
     @scanline_irq_top_img:
@@ -104,9 +118,6 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_bot_img:
-        ;
-        LDA #$00
-        STA MMC5_CHR_UPPER
         ; change nametable mapping
         LDA #NT_MAPPING_EMPTY
         STA MMC5_NAMETABLE

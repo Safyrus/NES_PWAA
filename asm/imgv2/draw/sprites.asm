@@ -133,8 +133,8 @@ draw_sprites:
             ; A = spr_bnks[Y]
             LDA spr_bnks, Y
         :
-        ; MMC5_CHR_BNK[Y] = A
-        STA MMC5_CHR_BNK0, Y
+        ; cur_bnks[Y] = A
+        STA cur_bnks, Y
         ; continue
         DEY
         BPL @update_bnks

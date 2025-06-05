@@ -493,6 +493,8 @@ OAM:
 
         img_tmp_buf: .res 32
 
+        cur_bnks: .res 8
+
     ;================
     ; Group: Animation Render variables
     ;================
