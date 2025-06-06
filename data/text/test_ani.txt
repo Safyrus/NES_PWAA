@@ -6,6 +6,7 @@ This script test 127 anim.<b>
 The game may crash if you<b>
 don't have that many anim.<p><wait:1>
 
+<label:loop>
 <character:0>Animation 0<wait:60><hidetextbox><p><hidetextbox>
 <character:1>Animation 1<wait:60><hidetextbox><p><hidetextbox>
 <character:2>Animation 2<wait:60><hidetextbox><p><hidetextbox>
