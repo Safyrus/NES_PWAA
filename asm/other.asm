@@ -9,25 +9,6 @@ wait_next_frame:
     ; return
     RTS
 
-update_screen_scroll:
-    ; PHA
-    ; ; update high scroll
-    ; and_adr ppu_ctrl_val, #$FE
-    ; LDA effect_flags
-    ; AND #EFFECT_FLAG_NT
-    ; LSR
-    ; LSR
-    ; ORA ppu_ctrl_val
-    ; STA ppu_ctrl_val
-    ; STA PPU_CTRL
-    ; ; update mmmc5 high upper chr bits
-    ; LDA img_header
-    ; AND #$03
-    ; STA mmc5_upper_chr
-    ; ; return
-    ; PLA
-    BRK
-    RTS
 
 ; tmp+0 = input page
 ; tmp+2 = output page
@@ -39,6 +20,7 @@ cp_page:
         STA (tmp+2), Y
     to_y_inc @loop, #0
     RTS
+
 
 ; copy upper tiles from image buffer to MMC5
 ; do not save registers
@@ -73,9 +55,14 @@ cp_mmc5:
     BNE :+
         JMP cp_page
     :
-    ; if act
-    LDA act_nchoice
+    ; if input mode is act or cr
+    LDA input_mode
+    CMP #IM_ACT
     BEQ :+
+    LDA input_mode
+    CMP #IM_CR
+    BNE :++
+    :
         ; set general bank
         LDA #GENERAL_BNK
         STA mmc5_banks+0
@@ -89,24 +76,8 @@ cp_mmc5:
         ; copy midbox page
         JSR cp_page
     :
-
+    ; return
     RTS
-
-
-; A / tmp
-; X = result
-; A = remainder
-; div:
-;     LDX #$FF
-;     @loop:
-;         sub tmp
-;         INX
-;         BCS @loop
-;     BNE @end
-;         INX
-;     @end:
-;     ADC tmp
-;     RTS
 
 
 update_shake:

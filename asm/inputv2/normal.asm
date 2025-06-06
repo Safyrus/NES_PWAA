@@ -34,6 +34,9 @@ input_normal:
     LDA cr_flag
     AND #CR_FLAG_ACCESS
     BEQ :+
+    ; and dialog is waiting for input
+    LDA text_speed
+    BNE :+
         ; change to court record
         JSR btn_open_cr
     :
@@ -75,6 +78,19 @@ btn_open_cr:
     LDA cr_flag
     ORA #CR_FLAG_OPEN
     STA cr_flag
+    ; save dialog box variables
+    mov saved_text_speed, text_speed
+    mov saved_text_font, text_font
+    mov saved_text_color, text_color
+    mov saved_text_lb_offset, text_lb_offset
+    mov saved_evi_off_x, evi_off_x
+    mov saved_evi_off_y, evi_off_y
+    mov saved_txt_ptr+0, txt_ptr+0
+    mov saved_txt_ptr+1, txt_ptr+1
+    mov saved_txt_bnk, lz_idx
+    ;
+    mov sav_photo, cur_photo
+    mov new_photo, #$FF
     ; display court record
     ; return
     JMP display_cr

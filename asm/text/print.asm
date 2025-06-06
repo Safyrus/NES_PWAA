@@ -9,7 +9,7 @@ print:
     LDA mmc5_banks+0
     PHA
     TYA
-    LDY #IMG_BUF_BNK
+    LDY text_box_bnk
     STY mmc5_banks+0
     STY MMC5_RAM_BNK
     ; Y = print_offset

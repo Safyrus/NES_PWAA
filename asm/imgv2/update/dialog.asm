@@ -112,6 +112,8 @@ update_midbox:
     push tmp+7
     push tmp+8
 
+    ; set busy flag
+    ora_adr txt_flags, #TXT_FLAG_BUSY
     ; adr = $20E0
     mov @adr+0, #$E0
     mov @adr+1, #$00
@@ -122,8 +124,9 @@ update_midbox:
     LDA #GENERAL_BNK
     STA mmc5_banks+2
     STA MMC5_PRG_BNK1
-    ; if act is enable
-    LDA act_nchoice
+    ; if midbox is enable
+    LDA effect_flags
+    AND #EFFECT_FLAG_MIDBOX
     BEQ :+
         ; data = midbox
         mov @data_hi+1, #>(DB_ADR_HI+$4000)
@@ -136,7 +139,7 @@ update_midbox:
         JMP :++
     ; else
     :
-        ; data = bottom of image of 1st buffer
+        ; data = middle of image of 1st buffer
         mov @data_hi+1, #>(IMG_BUF_HI_ADR+$80)
         mov @data_lo+1, #>(IMG_BUF_LO_ADR+$80)
         mov @data_hi+0, #<(IMG_BUF_HI_ADR+$80)
@@ -144,7 +147,7 @@ update_midbox:
         JSR send_box_update
         ; adr = $24E0
         mov @adr+1, #$84 ; + high priority
-        ; data = bottom of image of 2nd buffer
+        ; data = middle of image of 2nd buffer
         mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$80)
         mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$80)
         mov @data_hi+0, #<(IMG_BUF2_HI_ADR+$80)
@@ -152,6 +155,8 @@ update_midbox:
         JSR send_box_update
     :
 
+    ; clear busy flag
+    and_adr txt_flags, #($FF-TXT_FLAG_BUSY)
     ; restore tmps
     pull tmp+8
     pull tmp+7

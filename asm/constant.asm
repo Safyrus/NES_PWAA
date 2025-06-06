@@ -365,6 +365,7 @@
     ;
     ; EFFECT_FLAG_PAL_SPLIT - _%10000000_
     EFFECT_FLAG_PAL_SPLIT = %10000000
+    EFFECT_FLAG_MIDBOX    = %01000000
 
 
     ; Constants: Nametable mapping
@@ -512,7 +513,8 @@
     ; More than that and text_speed_timer may overflow
     MAX_TXT_SPD = $F0
 
-    TXT_FLAG_BUSY = $80
+    TXT_FLAG_BUSY   = %10000000
+    TXT_FLAG_MIDBOX = %01000000
 
     DEFAULT_TEXT_SPEED = $10
     DEFAULT_TEXT_FONT = $00
@@ -520,6 +522,12 @@
 
     TXTARG_FORCE = $70
     TXTARG_TIME = $0F
+
+    ONE_LINE_OFFSET_2_SPACE = $22 ; (1 line + 2 char)
+    ONE_LINE_OFFSET_7_SPACE = $27 ; (1 line + 7 char)
+    TWO_LINE_OFFSET_2_SPACE = $42 ; (2 line + 2 char)
+    DEFAULT_PRINT_OFFSET = $22 ; (1 line + 2 char)
+    CR_PRINT_OFFSET = $27 ; (1 line + 7 char)
 
 ;================
 ; Group: Light filter
@@ -560,7 +568,6 @@
 ; Group: Act
 ;================
     ACT_ONE_CHOICE_SIZE = $20
-    ACT_FLAG_DRAW = %00000001
 
     ACT_SPR_TILE = $DA
 

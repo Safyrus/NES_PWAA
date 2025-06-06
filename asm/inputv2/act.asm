@@ -83,6 +83,8 @@ input_act:
         ; restore chr
         mov new_chr+0, sav_chr+0
         mov new_chr+1, sav_chr+1
+        ; disable midbox
+        and_adr effect_flags, #$FF-EFFECT_FLAG_MIDBOX
         ; undisplay act box
         JSR update_midbox
         ; restore text speed

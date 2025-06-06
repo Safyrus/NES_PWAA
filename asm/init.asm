@@ -31,6 +31,9 @@
     ; setup photo
     DEC cur_photo ; =$FF
     DEC new_photo ; =$FF
+    LDA #$80
+    STA evi_off_x
+    STA evi_off_y
 
     ; --------
     ; Game: Text
@@ -41,6 +44,9 @@
     mov text_speed, #DEFAULT_TEXT_SPEED
     mov text_font, #DEFAULT_TEXT_FONT
     mov text_color, #DEFAULT_TEXT_COLOR
+    mov text_box_bnk, #IMG_BUF_BNK
+    mov text_ppu_start+0, #$60
+    mov text_ppu_start+1, #$82
     ;
     JSR dialog_reset
     ; txt_ptr = MMC5_RAM

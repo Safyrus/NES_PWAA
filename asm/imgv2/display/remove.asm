@@ -3,6 +3,14 @@ remove_bkg:
     STX cur_bkg
     ; disable sprites
     ora_adr img_flag, #IMG_FLAG_UNSPRITE
+    ; save bank
+    LDA mmc5_banks+0
+    PHA
+    ; set image bank
+    LDA #IMG_BUF_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+
     ; clear background tiles
     LDA #$00
     TAX
@@ -19,6 +27,10 @@ remove_bkg:
     ; clear background color
     STA img_tmp_pals+0
 
+    ; restore bank
+    PLA
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
     ; return
     RTS
 
@@ -27,6 +39,14 @@ remove_chr:
     ; cur_chr = new_chr
     mov cur_chr+0, new_chr+0
     mov cur_chr+1, new_chr+1
+    ; save bank
+    LDA mmc5_banks+0
+    PHA
+    ; set image bank
+    LDA #IMG_BUF_BNK
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
+
     ; clear character tiles
     LDA #$00
     TAX
@@ -49,5 +69,9 @@ remove_chr:
         INX
         BNE @clear_spr
 
+    ; restore bank
+    PLA
+    STA mmc5_banks+0
+    STA MMC5_RAM_BNK
     ; return
     RTS

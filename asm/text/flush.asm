@@ -6,12 +6,18 @@ flush:
     ; if don't need to flush
     LDX print_start
     CPX print_offset
+    BNE :+
         ; return
-        BEQ @return
-    
+        RTS
+    :
+
     ; if dialog box is off
     LDA effect_flags
     AND #EFFECT_FLAG_PAL_SPLIT
+    BNE :+
+    ; and input mode is normal
+    LDA input_mode
+    CMP #IM_NORMAL
     BNE :+
         ; skip these chars
         ; print_start = print_offset
@@ -29,6 +35,12 @@ flush:
     ; save bank
     LDA mmc5_banks+0
     PHA
+    LDA mmc5_banks+2
+    PHA
+    ; set box bank
+    LDA text_box_bnk
+    STA mmc5_banks+2
+    STA MMC5_PRG_BNK1
     ; set image bank
     LDA #IMG_BUF_BNK
     STA mmc5_banks+0
@@ -37,9 +49,11 @@ flush:
     ; ----------------
     ; send text as packet
     ; ----------------
-    ; adr = $2260 + print_start
-    mov @adr+1, #$82 ; + high priority
-    LDA #$60
+    ; adr = text_ppu_start (should have high priority)
+    LDA text_ppu_start+1
+    STA @adr+1
+    LDA text_ppu_start+0
+    ; adr += print_start
     add print_start
     STA @adr+0
     BCC :+
@@ -63,11 +77,11 @@ flush:
     ; copy text
     @loop:
         ; low tile
-        LDA DB_ADR_LO, X
+        LDA DB_ADR_LO+$4000, X
         STA (@packet), Y
         INY
         ; high tile
-        LDA DB_ADR_HI, X
+        LDA DB_ADR_HI+$4000, X
         STA (@packet), Y
         INY
         ; continue
@@ -81,6 +95,9 @@ flush:
     mov print_start, print_offset
 
     ; restore bank
+    PLA
+    STA mmc5_banks+2
+    STA MMC5_PRG_BNK1
     PLA
     STA mmc5_banks+0
     STA MMC5_RAM_BNK

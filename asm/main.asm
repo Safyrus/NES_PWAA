@@ -144,10 +144,12 @@ MAIN_LOOP:
             :
         :
 
-        ; if draw act
-        LDA act_flag
-        AND #ACT_FLAG_DRAW
-        BEQ :+
+        ; if draw midbox
+        LDA txt_flags
+        AND #TXT_FLAG_MIDBOX
+        BEQ :++
+            ; enable midbox
+            ora_adr effect_flags, #EFFECT_FLAG_MIDBOX
             ; backup chr
             mov sav_chr+0, cur_chr+0
             mov sav_chr+1, cur_chr+1
@@ -159,8 +161,13 @@ MAIN_LOOP:
             JSR call_update_img
             ; clear midbox
             JSR clear_midbox_no_refresh
-            ; draw text
-            JSR draw_act_text
+            ; if act mode
+            LDA input_mode
+            CMP #IM_ACT
+            BNE :+
+                ; draw act text
+                JSR draw_act_text
+            :
             ; send buffer
             JSR update_midbox
             ; cur_bnks[7] = $00
@@ -189,10 +196,10 @@ MAIN_LOOP:
             JSR copy_palettes
             ; update_palettes()
             JSR update_palettes
-            ; clear act draw flag
-            LDA act_flag
-            AND #$FF-ACT_FLAG_DRAW
-            STA act_flag
+            ; clear midbox draw flag
+            LDA txt_flags
+            AND #$FF-TXT_FLAG_MIDBOX
+            STA txt_flags
         :
     @anim_fi:
 
@@ -212,9 +219,9 @@ MAIN_LOOP:
             ; display_evi(new_photo)
             JSR display_evi
             ; offset sprites
-            LDA #$80
+            LDA evi_off_x
             STA spr_off_x
-            LDA #$10
+            LDA evi_off_y
             STA spr_off_y
             ; clear bkg tiles
             ; set_spr_bkg_tile($10, $10)

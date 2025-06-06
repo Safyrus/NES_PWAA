@@ -1,4 +1,6 @@
 EVT_CRF:
+    ; 
+    JSR DB
     ; if not cr_flag.open
     LDA cr_flag
     AND #CR_FLAG_OPEN

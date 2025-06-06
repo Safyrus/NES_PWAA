@@ -15,10 +15,8 @@ ACT:
     STA act_select
     ; act_nchoice = 0
     STA act_nchoice
-    ; async display act box
-    LDA act_flag
-    ORA #ACT_FLAG_DRAW
-    STA act_flag
+    ; async display midbox
+    ora_adr txt_flags, #TXT_FLAG_MIDBOX
 
     ; --------
     ; Read and buffer choices

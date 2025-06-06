@@ -43,6 +43,7 @@
 ;
 ; - MMC5 Memory Bank 2 (GENERAL_BNK):
 ;--- Text
+;   $0000-$017F = evidences text pointers
 ;   $??00-$??FF = HITBOX buffer (1 page)
 ;   $??00-$1BFF = ???
 ;   $1C00-$1CFF = decoded evidence sprites (1 page)
@@ -274,7 +275,8 @@ OAM:
         ; Variable: effect_flags
         ;----------------
         ;--- Text
-        ; P... ....
+        ; PM.. ....
+        ; |+--------- Midbox on
         ; +---------- mid frame Pallette switch for the dialog box (1=active)
         ;---
         effect_flags: .res 1
@@ -401,6 +403,12 @@ OAM:
     ;================
         new_photo: .res 1
         cur_photo: .res 1
+        sav_photo: .res 1
+
+        evi_off_x: .res 1
+        evi_off_y: .res 1
+        saved_evi_off_x: .res 1
+        saved_evi_off_y: .res 1
 
         evi_pals:
         evi_pals_backdrop: .res 1
@@ -411,7 +419,6 @@ OAM:
     ;================
     ; Group: Player choice variables
     ;================
-        act_flag: .res 1
         act_var: .res 2
         act_nchoice: .res 1
         act_select: .res 1
@@ -519,24 +526,36 @@ OAM:
         text_font: .res 1
         text_color: .res 1
         text_name: .res 1
+        text_lb_offset: .res 1
+        ;
+        saved_text_speed: .res 1
+        saved_text_font: .res 1
+        saved_text_color: .res 1
+        saved_text_lb_offset: .res 1
+        saved_txt_ptr: .res 2
+        saved_txt_bnk: .res 1
 
+        ; control variables of the dialog box
         text_speed_timer: .res 1
         text_prev_speed: .res 1
-        text_lb_offset: .res 1
-
+        text_box_bnk: .res 1
+        text_ppu_start: .res 2
         print_offset: .res 1
         print_start: .res 1
 
         ; Variable: txt_flags
         ;----------------
         ;--- Text
-        ; B... ....
+        ; BM.. ....
+        ; |+--------- Draw midbox async
         ; +---------- Busy, don't call read function until clear
         ;---
         txt_flags: .res 1
 
+        ; temporary text variables
         txt_vars: .res 1
 
+        ; text jump variables
         jmp_buf: .res 3
         jmp_buf_cond: .res 1
         jmp_sav: .res 3
@@ -568,8 +587,8 @@ OAM:
         chr_spr:    .res $100
         anim_buf:   .res $100
 
-        db_lo:      .res $100
-        db_hi:      .res $100
+        db_lo:      .res $100 ; dialog box low tiles
+        db_hi:      .res $100 ; dialog box high tiles
 
     ;================
     ; Group: Bank 2 : General Bank
@@ -584,5 +603,5 @@ OAM:
 
         evi_spr:    .res $100
         .res $100
-        mb_lo:      .res $100
-        mb_hi:      .res $100
+        mb_lo:      .res $100 ; middle box low tiles
+        mb_hi:      .res $100 ; middle box high tiles

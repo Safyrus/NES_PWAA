@@ -1,10 +1,10 @@
 dialog_reset:
-    ; print_offset = $22 (1 line + 2 char)
-    mov print_offset, #$22
+    ; print_offset = DEFAULT_PRINT_OFFSET
+    mov print_offset, #DEFAULT_PRINT_OFFSET
     ; print_start = print_offset
     STA print_start
-    ; text_lb_offset = $40 (2 lines + 2 char)
-    mov text_lb_offset, #$42
+    ; text_lb_offset = TWO_LINE_OFFSET_2_SPACE
+    mov text_lb_offset, #TWO_LINE_OFFSET_2_SPACE
     ; clear dialog box
     JSR clear_dialog
     ; return
