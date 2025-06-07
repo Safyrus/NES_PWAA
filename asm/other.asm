@@ -109,3 +109,38 @@ update_shake:
     ; return
     @ret:
     RTS
+
+
+; A = wanted bank in region
+; return A = CHR bank idx
+; Note: the code kinda cheat and will not work
+;       if we need to reserved more than 2 banks
+get_res_bnk:
+    ; find if the same bank is already reserved
+    PHA
+    CMP res_bnks+7
+    BNE :+
+        @get_7:
+        PLA
+        STA res_bnks+7
+        DEC n_nonres_bnk
+        LDA #$07
+        RTS
+    :
+    CMP res_bnks+6
+    BNE :+
+        @get_6:
+        PLA
+        STA res_bnks+6
+        DEC n_nonres_bnk
+        LDA #$06
+        RTS
+    :
+    ; find the first free one
+    LDA #$FF
+    CMP res_bnks+7
+    BEQ @get_7
+    CMP res_bnks+6
+    BEQ @get_6
+    ; error
+    BRK

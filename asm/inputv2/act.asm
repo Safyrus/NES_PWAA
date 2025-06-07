@@ -2,24 +2,29 @@ input_act:
     ; --------
     ; update choice sprite
     ; --------
+    ; X = res_oam
+    LDX res_oam
+    ; res_oam += 4
+    TXA
+    add #$04
+    STA res_oam
     ; act_select * 8
     LDA act_select
     ASL
     ASL
     ASL
-    ; sprite.y = $40 + act_select * 8
+    ; OAM[X].y = $40 + act_select * 8
     add #$40
-    LDX res_oam
     STA OAM, X
-    ; sprite.x = $10
+    ; OAM[X].x = $10
     LDA #$10
     STA OAM+3, X
-    ; sprite.t = ACT_SPR_TILE
+    ; OAM[X].t = ACT_SPR_TILE
     LDA #ACT_SPR_TILE
     STA OAM+1, X
-    ; sprite.a = $00
+    ; OAM[X].a = $00
     LDA #$00
-    STA OAM+2
+    STA OAM+2, X
 
     ; --------
     ; input
@@ -76,13 +81,10 @@ input_act:
         ; disable act
         LDA #$00
         STA act_nchoice
-        ; remove sprite
-        LDX res_oam
-        LDA #$FF
-        STA OAM, X
         ; restore chr
         mov new_chr+0, sav_chr+0
         mov new_chr+1, sav_chr+1
+        mov sav_chr+1, #$FF
         ; disable midbox
         and_adr effect_flags, #$FF-EFFECT_FLAG_MIDBOX
         ; undisplay act box

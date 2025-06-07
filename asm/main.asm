@@ -16,6 +16,41 @@ MAIN_LOOP:
     @MAIN_LOOP_START:
 
     ; ----------------
+    ; remove reserved sprites
+    ; ----------------
+    ; if there is reserved sprites
+    LDX res_oam
+    BEQ @rm_res_spr_end
+        ; for res_oam
+        LDA #$FF
+        @rm_res_spr:
+            ; X--
+            DEX
+            DEX
+            DEX
+            DEX
+            ; remove OAM[X] sprites
+            STA OAM, X
+            ; continue
+            BNE @rm_res_spr
+        ; res_oam = 0
+        STX res_oam
+        ; for X to 8
+        @rm_res_bnk:
+            ; remove res_bnks[X]
+            STA res_bnks, X
+            ; continue
+            INX
+            CPX #$08
+            BNE @rm_res_bnk
+        ; n_nonres_bnk = 8
+        mov n_nonres_bnk, #$08
+    @rm_res_spr_end:
+
+    ;
+    JSR change_name
+
+    ; ----------------
     ; Update Inputs
     ; ----------------
     ; get joypad state
@@ -147,12 +182,15 @@ MAIN_LOOP:
         ; if draw midbox
         LDA txt_flags
         AND #TXT_FLAG_MIDBOX
-        BEQ :++
+        BEQ :+++
             ; enable midbox
             ora_adr effect_flags, #EFFECT_FLAG_MIDBOX
-            ; backup chr
-            mov sav_chr+0, cur_chr+0
-            mov sav_chr+1, cur_chr+1
+            ; backup chr (if not already)
+            LDA sav_chr+1
+            BPL :+
+                mov sav_chr+0, cur_chr+0
+                mov sav_chr+1, cur_chr+1
+            :
             ; remove char
             LDA #$FF
             STA cur_chr+1

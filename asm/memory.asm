@@ -372,6 +372,8 @@ OAM:
         ; size in CHR tiles of the name
         name_size: .res 1
 
+        name_tmp: .res 1
+
 
     ;================
     ; Group: Court Record variables
@@ -494,13 +496,16 @@ OAM:
         spr_off_y: .res 1
 
         img_flag: .res 1
-        spr_bnks: .res 8
         img_tmp_pals: .res 3*8+1
         img_pals: .res 3*8+1
 
         img_tmp_buf: .res 32
 
+        spr_bnks: .res 8
         cur_bnks: .res 8
+        res_bnks: .res 8
+        n_nonres_bnk: .res 1
+        tmp_draw_spr: .res 1
 
     ;================
     ; Group: Animation Render variables
@@ -511,7 +516,7 @@ OAM:
 
         cur_chr: .res 2
         new_chr: .res 2
-        sav_chr:
+        sav_chr: .res 2
         tmp_chr: .res 2
 
         cur_bkg: .res 1

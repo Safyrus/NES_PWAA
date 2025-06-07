@@ -1,26 +1,5 @@
 change_name:
-    @pos = text_name
-
-    ; --------
-    ; remove last name
-    ; --------
-    ; x = res_oam
-    LDA #$FF
-    LDX res_oam
-    @remove:
-        ; remove sprite[x]
-        STA OAM, X
-        ; continue
-        DEX
-        DEX
-        DEX
-        DEX
-        BNE @remove
-    ; res_oam = 0
-    STX res_oam
-    ; cur_bnks[7] = spr_bnks[7]
-    LDA spr_bnks+7
-    STA cur_bnks+7
+    @pos = name_tmp
 
     ; if no name to display
     LDA text_name
@@ -30,48 +9,59 @@ change_name:
     ; --------
     ; display new name
     ; --------
-    ; push name
-    PHA
-    TAX
-    ; fetch name size
-    LDA names_list+1, X
-    sub names_list, X
-    TAY
-    ; res_oam = size*4
+    ; size = fetch name size
+    LDY text_name
+    LDA names_list+1, Y
+    sub names_list, Y
+    ; spr_idx = res_oam
+    LDX res_oam
+    ; res_oam += size*4
     ASL
     ASL
+    add res_oam
     STA res_oam
-    ; fetch name tile
-    LDA names_list, X
+    ; tile = fetch name tile
+    LDA names_list, Y
+    STA name_tmp
+    ; b = get_res_bnk(tile >> 6)
+    LSR
+    LSR
+    LSR
+    LSR
+    LSR
+    LSR
+    JSR get_res_bnk
     TAY
-    ; cur_bnks[7] = tile >> 6
-    ASL
-    ASL
-    LDA #$02
-    ADC #$00
-    STA cur_bnks+7
-    ; tile |= $C0
+    ; tile |= b << 6
+    LSR
+    CLC
+    ROR
+    ROR
+    ROR
+    ORA name_tmp
+    STA name_tmp
+    ; tile |= b >> 2
     TYA
-    ORA #$C0
+    LSR
+    LSR
+    ORA name_tmp
     TAY
     ; pos = NAME_X_POS
-    LDA #NAME_X_POS
-    STA @pos
-    ; for name size
-    LDX #$00
+    mov @pos, #NAME_X_POS
+    ; for size
     @display:
-        ; sprite.y = NAME_Y_POS
+        ; OAM[spr_idx].y = NAME_Y_POS
         LDA #NAME_Y_POS
         STA OAM+0, X
-        ; sprite.t = tile
+        ; OAM[spr_idx].t = tile
         TYA
         STA OAM+1, X
         ; tile++
         INY
-        ; sprite.a = NAME_ATR
+        ; OAM[spr_idx].a = NAME_ATR
         LDA #NAME_ATR
         STA OAM+2, X
-        ; sprite.x = pos
+        ; OAM[spr_idx].x = pos
         LDA @pos
         STA OAM+3, X
         ; pos += 8
@@ -84,8 +74,6 @@ change_name:
         INX
         CPX res_oam
         BNE @display
-    ;
-    pull text_name
 
     ; return
     @ret:

@@ -52,15 +52,24 @@ draw_sprites:
             PLA
             BNE @continue
         @name_end:
-        ; if s.t >= $C0
+        ; b = s.t to CHR bank idx
+        ; (s.t >> 6 | (s.t & 1) << 2)
         LDA IMG_CHR_SPR+1, Y
-        CMP #$C0
-        blt :+
-        ; and s.t & $01
-        LSR
-            ; skip this sprite
-            BCS @skip
-        :
+        ROL
+        ROL
+        ROL
+        AND #$03
+        STA tmp_draw_spr
+        LDA IMG_CHR_SPR+1, Y
+        AND #$01
+        ASL
+        ASL
+        ORA tmp_draw_spr
+        ; if b in res_bnks (b >= n_nonres_bnk)
+        CMP n_nonres_bnk
+            ; skip sprite
+            bge @skip
+
         ; OAM[X] = s
         ; y
         PLA
@@ -113,15 +122,14 @@ draw_sprites:
 
     ; Y = 7
     LDY #$07
-    ; if last bank reserved
-    LDA res_oam
-    BEQ :+
-        ; Y--
-        DEY
-    :
     ; for Y to 0 (included)
     @update_bnks:
-        ; if img_flag.evispr
+        ; if res_bnk[Y] is set
+        LDA res_bnks, Y
+        CMP #$FF
+            ; A = res_bnk[Y]
+            BNE :++
+        ; else if img_flag.evispr
         LDA img_flag
         AND #IMG_FLAG_EVISPR
         BEQ :+

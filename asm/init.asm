@@ -10,9 +10,19 @@
     STA ppu_ctrl_val
     STA PPU_CTRL
 
+    ; init res_bnk array
+    mov n_nonres_bnk, #$08
+    LDX #$07
+    LDA #$FF
+    @init_res_bnk:
+        STA res_bnks, X
+        DEX
+        BPL @init_res_bnk
+
     ; --------
     ; Game: Image
     ; --------
+    mov sav_chr+1, #$FF
     ; init packet pointers
     LDA #$60
     STA packet_buf_read_adr+1
