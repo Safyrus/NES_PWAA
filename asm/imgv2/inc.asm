@@ -37,3 +37,4 @@
 
 .include "cp_pal.asm"
 .include "cr.asm"
+.include "hp.asm"

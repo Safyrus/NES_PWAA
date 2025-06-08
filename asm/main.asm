@@ -49,6 +49,8 @@ MAIN_LOOP:
 
     ;
     JSR change_name
+    ;
+    JSR draw_hp
 
     ; ----------------
     ; Update Inputs

@@ -22,8 +22,8 @@ input_act:
     ; OAM[X].t = ACT_SPR_TILE
     LDA #ACT_SPR_TILE
     STA OAM+1, X
-    ; OAM[X].a = $00
-    LDA #$00
+    ; OAM[X].a = ACT_SPR_ATR
+    LDA #ACT_SPR_ATR
     STA OAM+2, X
 
     ; --------

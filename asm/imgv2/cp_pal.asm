@@ -5,6 +5,10 @@ copy_palettes:
     LDA img_flag
     AND #IMG_FLAG_EVISPR
     BEQ :+
+        ;
+        mov img_pals+(3*7)+3, img_tmp_pals+(3*7)+3
+        mov img_pals+(3*7)+2, img_tmp_pals+(3*7)+2
+        mov img_pals+(3*7)+1, img_tmp_pals+(3*7)+1
         ; Y = 3*3-1
         LDY #3*3-1
         ; for Y to 0 (included)

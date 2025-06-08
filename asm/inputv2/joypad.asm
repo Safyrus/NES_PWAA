@@ -59,8 +59,15 @@ update_input:
         RTS
     :
 
-    ; read input
+    ; read input (DPCM safe)
+    @reread:
     JSR readjoy
+    LDA buttons_1
+    PHA
+    JSR readjoy
+    PLA
+    CMP buttons_1
+    BNE @reread
     ; if input != 0
     LDA buttons_1
     BEQ :+

@@ -568,6 +568,7 @@
 ; Group: Act
 ;================
     ACT_ONE_CHOICE_SIZE = $20
+    ACT_SPR_ATR = $00
 
     ACT_SPR_TILE = $DA
 
@@ -597,6 +598,42 @@
 
     EVI_FLAG_OBJ = 0
     EVI_FLAG_OKOBJ = 1
+
+;================
+; Group: HP
+;================
+    ;
+    MAX_HP = 8
+    HP_SPR_ATR = $03
+    HP_BAR_SIZE_PX = (8 + PX_BETWEEN_HP) * MAX_HP
+    ;
+    HP_START_TILE = $08
+    HP_POS_Y = 8*3
+    PX_BETWEEN_HP = 6
+    HP_TIMER_STEP = 3
+
+    ;
+    HP_SPR_NORMAL = $08
+    HP_SPR_DANGER = $0A
+    HP_SPR_DAMAGE = $0C
+    HP_SPR_EMPTY  = $0E
+
+    ;
+    HP_TYPE_NORMAL = $00
+    HP_TYPE_DANGER = $02
+    HP_TYPE_DAMAGE = $04
+    HP_TYPE_EMPTY  = $06
+
+    ;
+    HP_STATE_HIDE = $00
+    HP_STATE_ENTER = $01
+    HP_STATE_SHOW = $10
+    HP_STATE_EXIT = $11
+
+    ;
+    HP_PAL_0 = $16
+    HP_PAL_1 = $21
+    HP_PAL_2 = $30
 
 ;================
 ; Group: Special Characters

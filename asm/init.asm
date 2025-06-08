@@ -30,12 +30,6 @@
 
     ; setup name display
     DEC text_name ; =$FF
-    LDA #NAME_COL_1
-    STA img_tmp_pals+(7*3)+1
-    LDA #NAME_COL_2
-    STA img_tmp_pals+(7*3)+2
-    LDA #NAME_COL_3
-    STA img_tmp_pals+(7*3)+3
     JSR change_name
 
     ; setup photo
@@ -43,6 +37,7 @@
     DEC new_photo ; =$FF
     LDA #$80
     STA evi_off_x
+    LDA #$20
     STA evi_off_y
 
     ; --------

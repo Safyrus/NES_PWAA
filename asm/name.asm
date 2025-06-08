@@ -5,6 +5,20 @@ change_name:
     LDA text_name
         ; return
         BMI @ret
+    ; if hp bar displayed
+    LDA hp_state
+    CMP #HP_STATE_HIDE
+        ; return
+        BNE @ret
+
+    ;
+    mov img_tmp_pals+(7*3)+1, #NAME_COL_1
+    mov img_tmp_pals+(7*3)+2, #NAME_COL_2
+    mov img_tmp_pals+(7*3)+3, #NAME_COL_3
+    ; copy_palettes()
+    JSR copy_palettes
+    ; update_palettes()
+    JSR update_palettes
 
     ; --------
     ; display new name
@@ -33,7 +47,7 @@ change_name:
     JSR get_res_bnk
     TAY
     ; tile |= b << 6
-    LSR
+    AND #$03
     CLC
     ROR
     ROR

@@ -565,6 +565,18 @@ OAM:
         jmp_buf_cond: .res 1
         jmp_sav: .res 3
 
+    ;================
+    ; Group: HP variables
+    ;================
+        hp: .res 1
+        hp_danger: .res 1
+        hp_damage: .res 1
+        hp_state: .res 1
+        hp_anim_timer: .res 1
+        hp_jmp: .res 3
+        hp_tmp: .res 4
+
+
 ;****************
 ; MMC5 RAM SEGMENT
 ;****************
