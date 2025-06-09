@@ -102,7 +102,6 @@ Now displaying photo 1.<photo:1><p>
 Same photo should remove it.<photo:1><p>
 3rd time should display it.<photo:1><p>
 
-<label:DEBUG>
 Make a choice<p>
 <act><jump:choice_1,0,1>Choice 1<b>
 <jump:choice_2,0,0>Choice 2<b>
@@ -139,7 +138,21 @@ Sorry, this is incorrect.<p><jump:end_evi>
 Good job! this is correct!<p>
 <label:end_evi>
 
+<label:DEBUG>
+<const:HPT,8><const:HPE,9><const:HPS,10><const:HPA,11>
+<const:HP_NORMAL,0><const:HP_DANGER,1><const:HP_DAMAGE,2>
 
+Setting HP to 7.<event:HPS,HP_NORMAL,7><p>
+Displaying HP bar.<event:HPT><p>
+Hidding HP bar.<event:HPT><p>
+Displaying/hidding quickly!<event:HPT><wait:15><event:HPT><p>
+<event:HPT>Setting HP danger to 2<event:HPS,HP_DANGER,2><b>and damage to 1.<event:HPS,HP_DAMAGE,1><p>
+Adding an HP of each type.<event:HPA,HP_NORMAL,1><event:HPA,HP_DANGER,1><event:HPA,HP_DAMAGE,1><p>
+Removing an HP of each type.<event:HPA,HP_NORMAL,-1><event:HPA,HP_DANGER,-1><event:HPA,HP_DAMAGE,-1><p>
+<event:HPE,HP_NORMAL,2,hp_evt><label:hp_test>
+<event:HPA,HP_NORMAL,-1>Jumping here until HP<b>reach 2. And so removing 1<b>Each time.<p>
+<jump:hp_test><label:hp_evt>
+Received HP event!<b>That means HP is now 2!<b>Continuing.<p>
 
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>
