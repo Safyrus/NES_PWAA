@@ -67,8 +67,12 @@
 |  CRC  |  $05  |          flag          | Court Record : Clear evidence flag / removing evidence from court record                                                        |
 |  CRI  |  $06  |          flag          | Court Record : Index/flag of correct evidence to present                                                                        |
 |  CRN  |  $07  |     flag, jmp_adr      | Court Record : add/replace the evidence with index/flag by a New evidence. jmp_adr point to what to display in the court record |
-|  TES  |  $08  |        jmp_adr         | toggle TEStimony mode for this dialog. jmp_adr is where to go when 'hold it'                                                    |
-|  EXA  |  $09  | list of (box, jmp_adr) | configure and switch to EXAmination mode                                                                                        |
+|  HPT  |  $08  |           /            | HP Toggle: Toggle HP bar display                                                                                                |
+|  HPE  |  $09  |      type,num,adr      | HP Event: Register an event when hp type reach num                                                                              |
+|  HPS  |  $0A  |        type,num        | HP Set: set hp type to num                                                                                                      |
+|  HPA  |  $0B  |        type,num        | HP Add: add num to hp type                                                                                                      |
+|  TES  |  $0?  |        jmp_adr         | toggle TEStimony mode for this dialog. jmp_adr is where to go when 'hold it'                                                    |
+|  EXA  |  $0?  | list of (box, jmp_adr) | configure and switch to EXAmination mode                                                                                        |
 
 ### Box format
 

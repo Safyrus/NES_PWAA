@@ -568,11 +568,14 @@ OAM:
     ;================
     ; Group: HP variables
     ;================
-        hp: .res 1
-        hp_danger: .res 1
-        hp_damage: .res 1
+        hps:
+            hp: .res 1
+            hp_danger: .res 1
+            hp_damage: .res 1
         hp_state: .res 1
         hp_anim_timer: .res 1
+        hp_evt_n: .res 1
+        hp_evt_t: .res 1
         hp_jmp: .res 3
         hp_tmp: .res 4
 

@@ -625,10 +625,10 @@
     HP_TYPE_EMPTY  = $06
 
     ;
-    HP_STATE_HIDE = $00
-    HP_STATE_ENTER = $01
-    HP_STATE_SHOW = $10
-    HP_STATE_EXIT = $11
+    HP_STATE_HIDE = %00
+    HP_STATE_ENTER = %01
+    HP_STATE_SHOW = %10
+    HP_STATE_EXIT = %11
 
     ;
     HP_PAL_0 = $16

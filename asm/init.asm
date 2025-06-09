@@ -19,6 +19,9 @@
         DEX
         BPL @init_res_bnk
 
+    ; setup HP
+    DEC hp_evt_t
+
     ; --------
     ; Game: Image
     ; --------

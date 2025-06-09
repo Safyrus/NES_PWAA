@@ -177,6 +177,7 @@
 
 .segment "CODE_BNK"
     .include "name.asm"
+    .include "hp.asm"
     .include "imgv2/inc.asm"
     .include "text/inc.asm"
 

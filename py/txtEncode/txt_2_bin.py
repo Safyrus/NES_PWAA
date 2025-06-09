@@ -46,6 +46,7 @@ CHAR_KATAKANA_SEMIVOICE_MARKER_OUT = ["ハ", "ヒ", "フ", "ヘ", "ホ"]
 
 TXT_COL_MAP = [0, 1, 2, 3]
 
+# special chars
 END = 0x00
 LB = 0x01
 DB = 0x02
@@ -79,8 +80,13 @@ R1D = 0x1D
 EVT = 0x1E
 EXT = 0x1F
 
-verbose = 0
+# event chars
+HPT = 0x08
+HPE = 0x09
+HPS = 0x0A
+HPA = 0x0B
 
+verbose = 0
 
 def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
     global verbose
@@ -114,6 +120,8 @@ def val_2_int(val, can_be_label = False):
     #
     if val.isnumeric():
         val = int(val)
+    elif val[0] == '-' and val[1:].isnumeric():
+        val = -int(val[1:])
     else:
         if can_be_label:
             printv(f"WARNING: unknow value for '{val}' at {i}. Supposing label", param="tw")
@@ -172,6 +180,52 @@ def add_normal_char(textbin, c):
     # return
     return textbin
 
+
+def append_hp(textbin, args):
+    # read args
+    type = 0
+    hp = 0
+    adr = 0
+    if len(args) > 1:
+        type = val_2_int(args[1])
+        print("type: ", args[1], type)
+    if len(args) > 2:
+        hp = val_2_int(args[2])
+        print("hp: ", args[2], hp)
+    if len(args) > 3:
+        adr = args[3]
+        if adr.isnumeric():
+            adr = int(adr)
+        else:
+            dummy_vals[len(textbin)+2] = adr
+            adr = 0
+
+    #
+    v = val_2_int(args[0])
+    print(args, v, hp, type, adr)
+    if v == HPT:
+        print("HPT")
+        textbin.append(HPT)
+    elif v == HPE:
+        # add bytes
+        print("HPS")
+        textbin.append(HPE)
+        textbin.append((hp & 0x07) | ((type & 0x03) << 3))
+        textbin.append((adr & 0x1F80) >> 7)
+        textbin.append(adr & 0x7F)
+        textbin.append(adr >> 13)
+    elif v == HPS:
+        # add bytes
+        print("HPS", (hp & 0x07), ((type & 0x07) << 3), (hp & 0x07) | ((type & 0x03) << 3))
+        textbin.append(HPS)
+        textbin.append((hp & 0x07) | ((type & 0x03) << 3))
+    elif v == HPA:
+        # add bytes
+        print("HPA")
+        textbin.append(HPA)
+        textbin.append((0 if hp >= 0 else 0x40) | (abs(hp) & 0x07) | ((type & 0x03) << 3))
+    #
+    return textbin
 
 ########
 # MAIN #
@@ -355,8 +409,11 @@ while i < len(text):
             textbin.append(ACT)
         elif name == "event":
             textbin.append(EVT)
-            for a in args:
-                textbin = append_val(textbin, a, name, i, can_be_label=True)
+            if len(args) > 0 and val_2_int(args[0]) in [HPT, HPS, HPA, HPE]:
+                textbin = append_hp(textbin, args)
+            else:
+                for a in args:
+                    textbin = append_val(textbin, a, name, i, can_be_label=True)
         elif name == "save":
             textbin.append(SAV)
         elif name == "return":

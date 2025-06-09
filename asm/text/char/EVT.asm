@@ -28,8 +28,12 @@ EVT:
         .byte <(EVT_CRC-1)  ; $05
         .byte <(EVT_CRI-1)  ; $06
         .byte <(EVT_CRN-1)  ; $07
-        .byte <(EVT_TES-1)  ; $08
-        .byte <(EVT_EXA-1)  ; $09
+        .byte <(EVT_HPT-1)  ; $08
+        .byte <(EVT_HPE-1)  ; $09
+        .byte <(EVT_HPS-1)  ; $0A
+        .byte <(EVT_HPA-1)  ; $0B
+        .byte <(EVT_TES-1)  ; $0?
+        .byte <(EVT_EXA-1)  ; $0?
     @switch_evt_hi:
         .byte >(EVT_CR-1)   ; $00
         .byte >(EVT_CRF-1)  ; $01
@@ -39,5 +43,9 @@ EVT:
         .byte >(EVT_CRC-1)  ; $05
         .byte >(EVT_CRI-1)  ; $06
         .byte >(EVT_CRN-1)  ; $07
-        .byte >(EVT_TES-1)  ; $08
-        .byte >(EVT_EXA-1)  ; $09
+        .byte >(EVT_HPT-1)  ; $08
+        .byte >(EVT_HPE-1)  ; $09
+        .byte >(EVT_HPS-1)  ; $0A
+        .byte >(EVT_HPA-1)  ; $0B
+        .byte >(EVT_TES-1)  ; $0?
+        .byte >(EVT_EXA-1)  ; $0?
