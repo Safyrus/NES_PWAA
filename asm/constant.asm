@@ -592,12 +592,16 @@
     ; CR_FLAG_OPEN   - _%00000001_ Is the court recod displayed ?
     ; CR_FLAG_ACCESS - _%00000010_ Can the court record be accessed ?
     ; CR_FLAG_OBJ    - _%00000100_ Can we present evidences ?
+    ; CR_FLAG_HOLD   - _%00001000_ Can we "Hold it" ?
     CR_FLAG_OPEN   = %00000001
     CR_FLAG_ACCESS = %00000010
     CR_FLAG_OBJ    = %00000100
+    CR_FLAG_HOLD   = %00001000
 
     EVI_FLAG_OBJ = 0
     EVI_FLAG_OKOBJ = 1
+
+    DIALOG_STACK_SIZE = 8
 
 ;================
 ; Group: HP

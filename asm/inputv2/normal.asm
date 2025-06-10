@@ -6,10 +6,12 @@ input_normal:
     ; and dialog is waiting for input
     LDA text_speed
     BNE :+
+        @next_dialog:
         ; restore text speed
         JSR restore_text_speed
         ; and reset dialog box
-        JSR dialog_reset
+        ; return
+        JMP dialog_reset
     :
 
     ; if B is pressed
@@ -38,35 +40,81 @@ input_normal:
     LDA text_speed
     BNE :+
         ; change to court record
-        JSR btn_open_cr
+        ; return
+        JMP btn_open_cr
+    :
+
+
+    ; if testimony not activated
+    LDA cr_flag
+    AND #CR_FLAG_HOLD
+        ; return
+        BEQ @ret
+    ; if dialog is not waiting for input
+    LDA text_speed
+        ; return
+        BNE @ret
+
+    ; if RIGHT is pressed
+    LDA buttons_1
+    AND #BTN_RIGHT
+        ; go to next dialog
+        BNE @next_dialog
+
+    ; if DOWN is pressed
+    LDA buttons_1
+    AND #BTN_DOWN
+    BEQ :+
+        ; jump to 'hold it'
+        mov jmp_buf+0, cr_hold_jmp+0
+        mov jmp_buf+1, cr_hold_jmp+1
+        mov jmp_buf+2, cr_hold_jmp+2
+        JSR text_jump
+        ; next dialog
+        JMP @next_dialog
     :
 
     ; if LEFT is pressed
     LDA buttons_1
-    AND #BTN_SELECT
-    BEQ :+
-    ; and testimony
-        ; go to previous dialog
-    :
-
-    ; if RIGHT is pressed
-    LDA buttons_1
-    AND #BTN_SELECT
-    BEQ :+
-    ; and testimony
-        ; go to next dialog
-    :
-
-    ; if DOWN is pressed
-    LDA buttons_1
-    AND #BTN_SELECT
-    BEQ :+
-    ; and testimony
-    ; and can 'hold it'
-        ; 'hold it'
+    AND #BTN_LEFT
+    BEQ :++++
+    ; and can go back to previous dialog
+    LDA cr_hold_jmp+JMPADR_POS_NEXT
+    AND #JMPADR_MASK_NEXT
+    BNE :++++
+        ; decrease dialog_stack_ptr
+        DEC dialog_stack_ptr
+        BPL :+
+            LDA #DIALOG_STACK_SIZE-1
+            STA dialog_stack_ptr
+        :
+        DEC dialog_stack_ptr
+        BPL :+
+            LDA #DIALOG_STACK_SIZE-1
+            STA dialog_stack_ptr
+        :
+        ; text pointer = previous dialog
+        LDX dialog_stack_ptr
+        LDA dialog_stack_lo, X
+        STA txt_ptr+0
+        LDA dialog_stack_hi, X
+        STA txt_ptr+1
+        LDA dialog_stack_bnk, X
+        LDA saved_txt_bnk
+        CMP lz_idx
+        BEQ :+
+            STA lz_idx
+            JSR lz_decode
+        :
+        ; restore text speed
+        JSR restore_text_speed
+        ; and reset dialog box
+        ; return
+        JMP dialog_reset
     :
 
     ; return
+    @ret:
     RTS
 
 

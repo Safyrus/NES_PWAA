@@ -112,6 +112,7 @@ Make a choice<p>
 <const:CR,0>
 <const:CRF,1>
 <const:CRO,2>
+<const:CRH,3>
 <const:CRS,4>
 <const:CRC,5>
 <const:CRI,6>
@@ -138,7 +139,6 @@ Sorry, this is incorrect.<p><jump:end_evi>
 Good job! this is correct!<p>
 <label:end_evi>
 
-<label:DEBUG>
 <const:HPT,8><const:HPE,9><const:HPS,10><const:HPA,11>
 <const:HP_NORMAL,0><const:HP_DANGER,1><const:HP_DAMAGE,2>
 
@@ -153,6 +153,17 @@ Removing an HP of each type.<event:HPA,HP_NORMAL,-1><event:HPA,HP_DANGER,-1><eve
 <event:HPA,HP_NORMAL,-1>Jumping here until HP<b>reach 2. And so removing 1<b>Each time.<p>
 <jump:hp_test><label:hp_evt>
 Received HP event!<b>That means HP is now 2!<b>Continuing.<p>
+
+<label:DEBUG>
+Dummy dialog<p>
+<label:testimony_1><event:CRH,testimony_down_1,1>Testing testimony 'mode'<p>
+<label:testimony_2><event:CRH,testimony_down_2>You can go left and right<b>in dialogs (but not before<b>this mode was on)<p>
+<label:testimony_3><event:CRH,testimony_down_3>By the way, try pressing<b>down if not already done.<p>
+Well...Too late!<p><jump:testimony_end>
+<label:testimony_down_1>You have pressed down!<b>Returning<p><jump:testimony_2>
+<label:testimony_down_2>You have pressed down!<b>Returning<p><jump:testimony_3>
+<label:testimony_down_3>You have pressed down!<b><p>
+<label:testimony_end>
 
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>

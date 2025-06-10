@@ -23,7 +23,7 @@ EVT:
         .byte <(EVT_CR-1)   ; $00
         .byte <(EVT_CRF-1)  ; $01
         .byte <(EVT_CRO-1)  ; $02
-        .byte <(@ret-1)     ; $03
+        .byte <(EVT_CRH-1)  ; $03
         .byte <(EVT_CRS-1)  ; $04
         .byte <(EVT_CRC-1)  ; $05
         .byte <(EVT_CRI-1)  ; $06
@@ -38,7 +38,7 @@ EVT:
         .byte >(EVT_CR-1)   ; $00
         .byte >(EVT_CRF-1)  ; $01
         .byte >(EVT_CRO-1)  ; $02
-        .byte >(@ret-1)     ; $03
+        .byte >(EVT_CRH-1)  ; $03
         .byte >(EVT_CRS-1)  ; $04
         .byte >(EVT_CRC-1)  ; $05
         .byte >(EVT_CRI-1)  ; $06

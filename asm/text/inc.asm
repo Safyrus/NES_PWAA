@@ -41,6 +41,7 @@
 .include "char/evt/CR.asm"
 .include "char/evt/CRF.asm"
 .include "char/evt/CRO.asm"
+.include "char/evt/CRH.asm"
 .include "char/evt/CRS.asm"
 .include "char/evt/CRC.asm"
 .include "char/evt/CRI.asm"

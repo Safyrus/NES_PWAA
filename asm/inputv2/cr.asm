@@ -93,12 +93,12 @@ close_cr:
     mov evi_off_y, saved_evi_off_y
     mov txt_ptr+0, saved_txt_ptr+0
     mov txt_ptr+1, saved_txt_ptr+1
-    mov lz_idx, saved_txt_bnk
+    LDA saved_txt_bnk
     CMP lz_idx
     BEQ :+
+        STA lz_idx
         JSR lz_decode
     :
-    STA lz_idx
     ; undisplay court record
     ; and redisplay dialog box
     JSR remove_cr

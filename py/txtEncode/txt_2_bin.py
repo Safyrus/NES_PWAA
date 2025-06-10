@@ -81,6 +81,7 @@ EVT = 0x1E
 EXT = 0x1F
 
 # event chars
+CRH = 0x03
 HPT = 0x08
 HPE = 0x09
 HPS = 0x0A
@@ -182,16 +183,15 @@ def add_normal_char(textbin, c):
 
 
 def append_hp(textbin, args):
+    global dummy_vals
     # read args
     type = 0
     hp = 0
     adr = 0
     if len(args) > 1:
         type = val_2_int(args[1])
-        print("type: ", args[1], type)
     if len(args) > 2:
         hp = val_2_int(args[2])
-        print("hp: ", args[2], hp)
     if len(args) > 3:
         adr = args[3]
         if adr.isnumeric():
@@ -202,13 +202,10 @@ def append_hp(textbin, args):
 
     #
     v = val_2_int(args[0])
-    print(args, v, hp, type, adr)
     if v == HPT:
-        print("HPT")
         textbin.append(HPT)
     elif v == HPE:
         # add bytes
-        print("HPS")
         textbin.append(HPE)
         textbin.append((hp & 0x07) | ((type & 0x03) << 3))
         textbin.append((adr & 0x1F80) >> 7)
@@ -216,15 +213,38 @@ def append_hp(textbin, args):
         textbin.append(adr >> 13)
     elif v == HPS:
         # add bytes
-        print("HPS", (hp & 0x07), ((type & 0x07) << 3), (hp & 0x07) | ((type & 0x03) << 3))
         textbin.append(HPS)
         textbin.append((hp & 0x07) | ((type & 0x03) << 3))
     elif v == HPA:
         # add bytes
-        print("HPA")
         textbin.append(HPA)
         textbin.append((0 if hp >= 0 else 0x40) | (abs(hp) & 0x07) | ((type & 0x03) << 3))
     #
+    return textbin
+
+
+def append_crh(textbin, args):
+    global dummy_vals
+    # read args
+    adr = 0
+    n = 0
+    if len(args) > 1:
+        adr = args[1]
+        if adr.isnumeric():
+            adr = int(adr)
+        else:
+            dummy_vals[len(textbin)+1] = adr
+            adr = 0
+    if len(args) > 2:
+        n = val_2_int(args[2])
+        if n > 0:
+            n = 0x40
+
+    textbin.append(CRH)
+    textbin.append(((adr & 0x1F80) >> 7) + n)
+    textbin.append(adr & 0x7F)
+    textbin.append(adr >> 13)
+
     return textbin
 
 ########
@@ -411,6 +431,8 @@ while i < len(text):
             textbin.append(EVT)
             if len(args) > 0 and val_2_int(args[0]) in [HPT, HPS, HPA, HPE]:
                 textbin = append_hp(textbin, args)
+            elif len(args) > 0 and val_2_int(args[0]) == CRH:
+                textbin = append_crh(textbin, args)
             else:
                 for a in args:
                     textbin = append_val(textbin, a, name, i, can_be_label=True)

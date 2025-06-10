@@ -382,11 +382,12 @@ OAM:
         ; Variable: cr_flag
         ;----------------
         ;--- Text
-        ; .... .OAD
-        ;       |||
-        ;       ||+-- is Display
-        ;       |+--- can Access
-        ;       +---- can Object
+        ; .... HOAD
+        ;      ||||
+        ;      |||+-- is Display
+        ;      ||+--- can Access
+        ;      |+---- can Object
+        ;      +----- can "Hold it"
         ;---
         cr_flag: .res 1
 
@@ -399,6 +400,13 @@ OAM:
         ;----------------
         ; current evidence selected
         cr_correct_idx: .res 1
+
+        cr_hold_jmp: .res 3
+
+        dialog_stack_ptr: .res 1
+        dialog_stack_lo: .res DIALOG_STACK_SIZE
+        dialog_stack_hi: .res DIALOG_STACK_SIZE
+        dialog_stack_bnk: .res DIALOG_STACK_SIZE
 
     ;================
     ; Group: Photo variables
