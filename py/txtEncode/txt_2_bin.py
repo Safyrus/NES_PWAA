@@ -1,158 +1,332 @@
-import sys
-import re
-from datetime import datetime
+import argparse
+import os
+from char_maps import *
+from utils import printv
 
-CHAR_MAP_ASCII = [
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    " ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
-    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?",
-    "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
-    "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_",
-    "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
-    "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", ",", "}", "~", " "
+TAG_START = "<"
+TAG_END = ">"
+TAG_PARAM = ":"
+TAG_PARAM_NEXT = ","
+COMMENT_START = "<!--"
+COMMENT_END = "-->"
+IGNORED_CHARS = [
+    "\n",
+    "\t",
 ]
-
-CHAR_MAP_HIRAGANA = [
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "　", "。", "「", "」", "、", "・", "を", "ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "ゃ", "ゅ", "ょ", "っ",
-    "ー", "あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ",
-    "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま",
-    "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ", "ん", "゛", "゜",
-    "￥", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+SPECIAL_CHARS = [
+    TAG_START,
+    TAG_END,
+    TAG_PARAM,
+    TAG_PARAM_NEXT,
 ]
-
-CHAR_MAP_KATAKANA = [
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "ヲ", "ァ", "ィ", "ゥ", "ェ", "ォ", "ャ", "ュ", "ョ", "ッ",
-    "", "ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ",
-    "タ", "チ", "ツ", "テ", "ト", "ナ", "ニ", "ヌ", "ネ", "ノ", "ハ", "ヒ", "フ", "ヘ", "ホ", "マ",
-    "ミ", "ム", "メ", "モ", "ヤ", "ユ", "ヨ", "ラ", "リ", "ル", "レ", "ロ", "ワ", "ン", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+KEYWORDS = [
+    "lt",
+    "b",
+    "p",
+    "fp",
+    "speed",
+    "wait",
+    "name",
+    "color",
+    "hidetextbox",
+    "shake",
+    "flash",
+    "fade",
+    "photo",
+    "background",
+    "character",
+    "music",
+    "sound",
+    "bip",
+    "set",
+    "clear",
+    "font",
+    "jump",
+    "act",
+    "event",
+    "save",
+    "return",
+    "box",
+    "label",
+    "const",
+    "include",
 ]
-
-CHAR_HIRAGANA_VOICE_MARKER_IN = ["が", "ぎ", "ぐ", "げ", "ご", "ざ", "じ", "ず", "ぜ", "ぞ", "だ", "ぢ", "づ", "で", "ど", "ば", "び", "ぶ", "べ", "ぼ"]
-CHAR_HIRAGANA_VOICE_MARKER_OUT = ["か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "は", "ひ", "ふ", "へ", "ほ"]
-CHAR_HIRAGANA_SEMIVOICE_MARKER_IN = ["ぱ", "ぴ", "ぷ", "ぺ", "ぽ"]
-CHAR_HIRAGANA_SEMIVOICE_MARKER_OUT = ["は", "ひ", "ふ", "へ", "ほ"]
-CHAR_KATAKANA_VOICE_MARKER_IN = ["ガ", "ギ", "グ", "ゲ", "ゴ", "ザ", "ジ", "ズ", "ゼ", "ゾ", "ダ", "ヂ", "ヅ", "デ", "ド", "バ", "ビ", "ブ", "ベ", "ボ"]
-CHAR_KATAKANA_VOICE_MARKER_OUT = ["カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト", "ハ", "ヒ", "フ", "ヘ", "ホ"]
-CHAR_KATAKANA_SEMIVOICE_MARKER_IN = ["パ", "ピ", "プ", "ペ", "ポ"]
-CHAR_KATAKANA_SEMIVOICE_MARKER_OUT = ["ハ", "ヒ", "フ", "ヘ", "ホ"]
-
-TXT_COL_MAP = [0, 1, 2, 3]
-
-# special chars
-END = 0x00
-LB = 0x01
-DB = 0x02
-FDB = 0x03
-TD = 0x04
-SET = 0x05
-CLR = 0x06
-SAK = 0x07
-SPD = 0x08
-DL = 0x09
-NAM = 0x0A
-FLH = 0x0B
-FAD = 0x0C
-SAV = 0x0D
-COL = 0x0E
-RET = 0x0F
-BIP = 0x10
-MUS = 0x11
-SND = 0x12
-PHT = 0x13
-CHR = 0x14
-R15 = 0x15
-BKG = 0x16
-FNT = 0x17
-JMP = 0x18
-ACT = 0x19
-R1A = 0x1A
-R1B = 0x1B
-R1C = 0x1C
-R1D = 0x1D
-EVT = 0x1E
-EXT = 0x1F
+KEYWORD_2_BYTE = {
+    "lt": 0x3C,
+    "b": 0x01,
+    "p": 0x02,
+    "fp": 0x03,
+    "hidetextbox": 0x04,
+    "set": 0x05,
+    "clear": 0x06,
+    "shake": 0x07,
+    "speed": 0x08,
+    "wait": 0x09,
+    "name": 0x0A,
+    "flash": 0x0B,
+    "fade": 0x0C,
+    "save": 0x0D,
+    "color": 0x0E,
+    "return": 0x0F,
+    "bip": 0x10,
+    "music": 0x11,
+    "sound": 0x12,
+    "photo": 0x13,
+    "character": 0x14,
+    "background": 0x16,
+    "font": 0x17,
+    "jump": 0x18,
+    "act": 0x19,
+    "event": 0x1E,
+    "box": -1,
+    "label": -1,
+    "const": -1,
+}
+KEYWORD_N_ARG = {
+    "lt": 0,
+    "b": 0,
+    "p": 0,
+    "fp": 0,
+    "hidetextbox": 0,
+    "set": 1,
+    "clear": 1,
+    "shake": 2,
+    "speed": 1,
+    "wait": 1,
+    "name": 1,
+    "flash": 2,
+    "fade": 2,
+    "save": 0,
+    "color": 3,
+    "return": 0,
+    "bip": 1,
+    "music": 1,
+    "sound": 1,
+    "photo": 1,
+    "character": 1,
+    "background": 1,
+    "font": 1,
+    "jump": 4,
+    "act": 0,
+    "event": -1,
+    "box": 5,
+    "label": 1,
+    "const": 2,
+}
+TAG_1_BYTE_SIMPLE_ARG = [
+    "set",
+    "clear",
+    "speed",
+    "wait",
+    "bip",
+    "sound",
+    "music",
+    "photo",
+    "background",
+    "name",
+    "font",
+]
 
 # event chars
+CR = 0x00
+CRF = 0x01
+CRO = 0x02
 CRH = 0x03
+CRS = 0x04
+CRC = 0x05
+CRI = 0x06
+CRN = 0x07
 HPT = 0x08
 HPE = 0x09
 HPS = 0x0A
 HPA = 0x0B
 
+text = ""
+text_idx = 0
+text_line = 0
+text_pos = 0
+cur_filename = ""
+
 verbose = 0
-
-def printv(*str, param="", v=0, sep=" ", end="\n", flush=False):
-    global verbose
-    if v > verbose:
-        return
-
-    if "e" in param:
-        print("\033[31m", end="", flush=flush)
-    if "w" in param:
-        print("\033[33m", end="", flush=flush)
-    if "i" in param:
-        print("\033[34m", end="", flush=flush)
-    if "t" in param:
-        now = datetime.now()
-        print(f"[{now}] ", end="", flush=flush)
-
-    for s in str:
-        print(s, end=sep, flush=flush)
-
-    if "w" in param or "e" in param or "i" in param:
-        print("\033[0m", end="", flush=flush)
-    print("", end=end)
+error = False
 
 
-def val_2_int(val, can_be_label = False):
-    global consts, dummy_vals
+class Token:
+    def __init__(self, type=None, val=None):
+        global text_line, text_pos
+        self.type = type
+        self.val = val
+        self.pos = (text_line, text_pos)
 
-    # collapse constant value
-    while val in consts:
-        val = consts[val]
-    #
-    if val.isnumeric():
-        val = int(val)
-    elif val[0] == '-' and val[1:].isnumeric():
-        val = -int(val[1:])
-    else:
-        if can_be_label:
-            printv(f"WARNING: unknow value for '{val}' at {i}. Supposing label", param="tw")
-            dummy_vals[len(textbin)] = val
-            val = -1
+    def __str__(self):
+        return f"{self.type}={self.val}{self.pos}"
+
+
+class Tag:
+    def __init__(self, type=None, args: list[str] = [], pos=(0, 0)):
+        self.type = type
+        self.args = args
+        self.pos = pos
+
+    def __str__(self):
+        return f"{self.type}{self.args}"
+
+
+def pos2str(pos):
+    global cur_filename
+    return f"({cur_filename}:line {pos[0]}, char ~{pos[1]})"
+
+
+def next_char_raw():
+    global text, text_idx, text_line, text_pos
+
+    if text_idx >= len(text):
+        return None
+
+    c = text[text_idx]
+    text_idx += 1
+    text_pos += 1
+    if c == "\n":
+        text_line += 1
+        text_pos = 1
+    return c
+
+
+def next_char():
+    global text, text_idx, text_line, text_pos
+
+    c = next_char_raw()
+    while c in IGNORED_CHARS:
+        c = next_char_raw()
+    printv(c, text_line, text_pos, text_idx, v=2)
+    return c
+
+
+def skip_n_char(n):
+    global text, text_idx
+    if n <= 0:
+        return text[text_idx]
+    for _ in range(n):
+        c = next_char_raw()
+    return c
+
+
+def lex():
+    global text, text_idx, text_line, text_pos
+
+    tokens: list[Token] = []
+    MAX_KEYWORD_LEN = max([len(k) for k in KEYWORDS])
+
+    c = "dummy char"
+    while c:
+        # check for keywords
+        k_idx = -1
+        for i, k in enumerate(KEYWORDS):
+            if text[text_idx : text_idx + MAX_KEYWORD_LEN].startswith(k):
+                if k_idx < 0 or len(KEYWORDS[k_idx]) < len(KEYWORDS[i]):
+                    k_idx = i
+
+        # read next char
+        c = next_char()
+
+        # special char
+        if c in SPECIAL_CHARS:
+            # if comments
+            if text[text_idx - 1 : text_idx - 1 + len(COMMENT_START)] == COMMENT_START:
+                # skip comment
+                c = skip_n_char(len(COMMENT_START) - 1)
+                while text[text_idx : text_idx + len(COMMENT_END)] != COMMENT_END:
+                    c = next_char()
+                c = skip_n_char(len(COMMENT_END))
+                continue
+            # special char
+            printv("lex: special", v=2)
+            tokens.append(Token(c))
+        # keyword
+        elif k_idx >= 0:
+            printv("lex: keyword", v=2)
+            c = skip_n_char(len(KEYWORDS[k_idx]) - 1)
+            tokens.append(Token("KEYWORD", KEYWORDS[k_idx]))
+        # dialog
         else:
-            printv(f"ERROR: constant '{val}' is not declared at {i}. Replacing by 0", param="te")
-            val = 0
-    
-    return val
+            printv("lex: dialog", v=2)
+            dialog = ""
+            while c and c not in SPECIAL_CHARS:
+                dialog += c
+                c = next_char()
+            tokens.append(Token("DIALOG", dialog))
+            tokens[-1].pos = (tokens[-1].pos[0], tokens[-1].pos[1] - 1)
+            tokens.append(Token(c))
+
+    return tokens
 
 
-def append_val(textbin, val, name, i, can_be_label = False):
-    val = val_2_int(val, can_be_label = can_be_label)
+def parse(tokens: list[Token]):
+    tags: list[Tag] = []
+    t_idx = 0
 
-    if can_be_label and val < 0:
-        textbin.append(0x00)
-        textbin.append(0x00)
-        textbin.append(0x00)
-    else:
-        if val > 127:
-            printv(f"WARNING: {name} is > 127 (val={val}) at {i}. Replacing by 0", param="tw")
-            val = 0
-        textbin.append(val)
+    def next_token():
+        nonlocal t_idx
+        if t_idx >= len(tokens):
+            return None
+        t_idx += 1
+        printv(tokens[t_idx - 1], v=1)
+        return tokens[t_idx - 1]
 
-    return textbin
+    def expect(type):
+        t = next_token()
+        error = False
+        if t is None or (t.type not in type if isinstance(type, list) else t.type != type):
+            printv(f"ERROR {pos2str(t.pos)}: Expected {type}", param="e")
+            error = True
+        return t, error
+
+    t = next_token()
+    while t:
+        if t.type == TAG_START:
+            t, e = expect("KEYWORD")
+            if e:
+                continue
+            tag_type = t.val
+            params = []
+            t = next_token()
+            if t is not None and t.type == TAG_PARAM:
+                while t.type != TAG_END:
+                    t = next_token()
+                    p = ""
+                    while t is not None and t.type in ["DIALOG", "KEYWORD"]:
+                        p += t.val
+                        t = next_token()
+                    params.append(p)
+                    t_idx -= 1
+                    t, e = expect([TAG_END, TAG_PARAM_NEXT])
+                    if e:
+                        continue
+            t_idx -= 1
+            t, e = expect(TAG_END)
+            t = next_token()
+            tags.append(Tag(tag_type, params, t.pos))
+            printv(f"token: {tag_type} {params}", param="i", v=1)
+            if e:
+                continue
+        else:
+            dialog = ""
+            while t and t.type != TAG_START:
+                if t.type in ["DIALOG", "KEYWORD"]:
+                    dialog += t.val
+                elif t.type != None:
+                    dialog += t.type
+                t = next_token()
+            tags.append(Tag("DIALOG", [dialog], t.pos if t is not None else (0, 0)))
+            printv(f"dialog: '{dialog}'", param="i", v=1)
+
+    return tags
 
 
-def add_normal_char(textbin, c):
+def add_normal_char(c, pos=(0, 0)):
+    bytes = bytearray()
     marker = None
+
     # separate marker from character
     if c in CHAR_HIRAGANA_VOICE_MARKER_IN:
         c = CHAR_HIRAGANA_VOICE_MARKER_OUT[CHAR_HIRAGANA_VOICE_MARKER_IN.index(c)]
@@ -166,340 +340,381 @@ def add_normal_char(textbin, c):
     elif c in CHAR_KATAKANA_SEMIVOICE_MARKER_IN:
         c = CHAR_KATAKANA_SEMIVOICE_MARKER_OUT[CHAR_KATAKANA_SEMIVOICE_MARKER_IN.index(c)]
         marker = CHAR_MAP_HIRAGANA.index("゜")
+
     # add character
     if c in CHAR_MAP_ASCII:
-        textbin.append(CHAR_MAP_ASCII.index(c))
+        bytes.append(CHAR_MAP_ASCII.index(c))
     elif c in CHAR_MAP_HIRAGANA:
-        textbin.append(CHAR_MAP_HIRAGANA.index(c))
+        bytes.append(CHAR_MAP_HIRAGANA.index(c))
     elif c in CHAR_MAP_KATAKANA:
-        textbin.append(CHAR_MAP_KATAKANA.index(c))
+        bytes.append(CHAR_MAP_KATAKANA.index(c))
     else:
-        printv(f"unknow encoding for character '{c}'", param="w")
+        printv(f"ERROR {pos2str(pos)}: Unknow encoding for character '{c}'", param="e")
     # add marker if any
     if marker:
-        textbin.append(marker)
+        bytes.append(marker)
     # return
-    return textbin
+    return bytes
 
 
-def append_hp(textbin, args):
-    global dummy_vals
-    # read args
-    type = 0
-    hp = 0
-    adr = 0
-    if len(args) > 1:
-        type = val_2_int(args[1])
-    if len(args) > 2:
-        hp = val_2_int(args[2])
-    if len(args) > 3:
-        adr = args[3]
-        if adr.isnumeric():
-            adr = int(adr)
+def val2int(val, min=0, max=255, pos=(0, 0)):
+    if val.isnumeric() and int(val) >= min and int(val) <= max:
+        val = int(val)
+    elif val[1:].isnumeric() and val[0] == "-" and int(val[1:]) >= min and int(val[1:]) <= max:
+        val = -int(val[1:])
+    else:
+        val = min - 1
+        printv(f"ERROR {pos2str(pos)}: Expected integer in range {min} to {max} (both included)", param="e")
+    return val
+
+
+def convert_event(t: Tag):
+    bin = bytearray()
+    dummy_vals = {}
+
+    v = val2int(t.args[0], max=127, pos=t.pos)
+
+    # add command
+    bin.append(v)
+    # no arg
+    if v in [CR, CRF, CRO, HPT]:
+        # check args
+        if len(t.args) > 1:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+    # flag arg
+    elif v in [CRS, CRC, CRI]:
+        # check args
+        if len(t.args) > 2:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 2:
+            printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
         else:
-            dummy_vals[len(textbin)+2] = adr
-            adr = 0
-
-    #
-    v = val_2_int(args[0])
-    if v == HPT:
-        textbin.append(HPT)
-    elif v == HPE:
-        # add bytes
-        textbin.append(HPE)
-        textbin.append((hp & 0x07) | ((type & 0x03) << 3))
-        textbin.append((adr & 0x1F80) >> 7)
-        textbin.append(adr & 0x7F)
-        textbin.append(adr >> 13)
-    elif v == HPS:
-        # add bytes
-        textbin.append(HPS)
-        textbin.append((hp & 0x07) | ((type & 0x03) << 3))
-    elif v == HPA:
-        # add bytes
-        textbin.append(HPA)
-        textbin.append((0 if hp >= 0 else 0x40) | (abs(hp) & 0x07) | ((type & 0x03) << 3))
-    #
-    return textbin
-
-
-def append_crh(textbin, args):
-    global dummy_vals
-    # read args
-    adr = 0
-    n = 0
-    if len(args) > 1:
-        adr = args[1]
-        if adr.isnumeric():
-            adr = int(adr)
+            bin.append(val2int(t.args[1], max=127, pos=t.pos))
+    # jump+n arg
+    elif v in [CRH]:
+        # check args
+        if len(t.args) > 3:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 2:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
         else:
-            dummy_vals[len(textbin)+1] = adr
-            adr = 0
-    if len(args) > 2:
-        n = val_2_int(args[2])
-        if n > 0:
-            n = 0x40
-
-    textbin.append(CRH)
-    textbin.append(((adr & 0x1F80) >> 7) + n)
-    textbin.append(adr & 0x7F)
-    textbin.append(adr >> 13)
-
-    return textbin
-
-########
-# MAIN #
-########
-
-# arguments
-txtfile = sys.argv[1]
-outputfile = sys.argv[2]
-if len(sys.argv) > 3:
-    verbose = int(sys.argv[3])
-
-# read text file
-printv(f"reading file...", param="t")
-with open(txtfile, "r", encoding="utf-8") as f:
-    text = f.read()
-
-# filtering file
-printv(f"filtering...", param="t")
-# remove control character
-text = re.sub(r"[\x00-\x1E]", "", text)
-# remove comments
-text = re.sub(r"<!--(.*?)-->", "", text)
-
-# parsing file
-dummy_vals = {}
-labels = {}
-consts = {}
-printv(f"parsing...", param="t")
-textbin = bytearray()
-i = 0
-while i < len(text):
-    c = text[i]
-    if c == "<":
-        # get tag
-        tag_end = text.find(">", i)
-        tag = text[i + 1 : tag_end]
-        # find tag name and args
-        if ":" in tag:
-            name, args = tag.split(":")
-            args = args.split(",")
-        else:
-            name, args = tag, []
-
-        # transform tag to code
-        if name == "b":
-            textbin.append(LB)
-        elif name == "p":
-            textbin.append(DB)
-        elif name == "fp":
-            textbin.append(FDB)
-        elif name == "speed":
-            textbin.append(SPD)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "wait":
-            textbin.append(DL)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "name":
-            textbin.append(NAM)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "color":
-            textbin.append(COL)
-            if len(args) > 1:
-                col = val_2_int(args[0])
-                if col > 0x3F:
-                    printv(f"Color value of {col} at {i} is too high. replace by 0", param="wt")
-                    col = 0
-                pal_idx = val_2_int(args[1])
-                if pal_idx > 0x0F:
-                    printv(f"Palette index of {pal_idx} at {i} is too high. replace by 0", param="wt")
-                    pal_idx = 0
-                col_idx = val_2_int(args[2])
-                if col_idx > 0x03:
-                    printv(f"Color index of {col_idx} at {i} is too high. replace by 0", param="wt")
-                    col_idx = 0
-
-                pal_idx = (pal_idx << 2) + col_idx
-                col |= 0x40
-                textbin.append(col)
-                textbin.append(pal_idx)
-            else:
-                col = val_2_int(args[0])
-                if col > 3:
-                    printv(f"Color value of {col} at {i} is too high. replace by 0", param="wt")
-                    col = 0
-                col = TXT_COL_MAP[col]
-                textbin.append(col)
-        elif name == "hidetextbox":
-            textbin.append(TD)
-        elif name == "shake":
-            textbin.append(SAK)
-            force = val_2_int(args[0])
-            if force > 7:
-                printv(f"Force value of {force} at {i} is too high. replace by 0", param="wt")
-                force = 0
-            time = val_2_int(args[1])
-            if time > 120:
-                printv(f"Time value of {time} at {i} is too high. replace by 0", param="wt")
-                time = 0
-            val = (force << 4) + (time // 8)
-            textbin.append(val)
-        elif name == "flash":
-            textbin.append(FLH)
-            force = val_2_int(args[0])
-            if force > 7:
-                printv(f"Force value of {force} at {i} is too high. replace by 0", param="wt")
-                force = 0
-            time = val_2_int(args[1])
-            if time > 120:
-                printv(f"Time value of {time} at {i} is too high. replace by 0", param="wt")
-                time = 0
-            val = (force << 4) + time
-            textbin.append(val)
-        elif name == "fade":
-            textbin.append(FAD)
-            force = val_2_int(args[0])
-            if force > 7:
-                printv(f"Force value of {force} at {i} is too high. replace by 0", param="wt")
-                force = 0
-            time = val_2_int(args[1])
-            if time > 120:
-                printv(f"Time value of {time} at {i} is too high. replace by 0", param="wt")
-                time = 0
-            val = (force << 4) + (time // 8)
-            textbin.append(val)
-        elif name == "photo":
-            textbin.append(PHT)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "background":
-            textbin.append(BKG)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "character":
-            textbin.append(CHR)
-            c = val_2_int(args[0])
-            textbin.append(c % 128)
-            textbin.append(c // 128)
-        elif name == "music":
-            textbin.append(MUS)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "sound":
-            textbin.append(SND)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "bip":
-            textbin.append(BIP)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "set":
-            textbin.append(SET)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "clear":
-            textbin.append(CLR)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "font":
-            textbin.append(FNT)
-            textbin = append_val(textbin, args[0], name, i)
-        elif name == "jump":
-            if args[0].isnumeric():
-                adr = int(args[0])
+            # get address
+            if t.args[1].isnumeric():
+                adr = int(t.args[1])
             else:
                 adr = 0
-                dummy_vals[len(textbin)] = args[0]
-            c = 0
-            n = 0
-
-            if (len(args) >= 2 and args[1] == "1") or len(args) < 2:
-                if len(textbin) in dummy_vals:
-                    del dummy_vals[len(textbin)]
-                dummy_vals[len(textbin)+1] = args[0]
-                textbin.append(JMP)
-
-            if len(args) >= 3 and args[2] == "1":
-                n = 1 << 6
-
-            if len(args) >= 4:
-                c = 1 << 6
-
-            textbin.append(((adr & 0x1F80) >> 7) + n)
-            textbin.append(adr & 0x7F)
-            textbin.append((adr >> 13) + c)
-            if c != 0:
-                textbin = append_val(textbin, args[3], name, i)
-        elif name == "act":
-            textbin.append(ACT)
-        elif name == "event":
-            textbin.append(EVT)
-            if len(args) > 0 and val_2_int(args[0]) in [HPT, HPS, HPA, HPE]:
-                textbin = append_hp(textbin, args)
-            elif len(args) > 0 and val_2_int(args[0]) == CRH:
-                textbin = append_crh(textbin, args)
-            else:
-                for a in args:
-                    textbin = append_val(textbin, a, name, i, can_be_label=True)
-        elif name == "save":
-            textbin.append(SAV)
-        elif name == "return":
-            textbin.append(RET)
-        elif name == "box":
-            # Char:   0         1         2
-            # Bits:   6543210   6543210   6543210
-            # Name:   nXxxxxY   yyyyWww   wwHhhhh
-            #         |||||||   |||||||   ||+++++-- height of the hitbox (W=MSB)
-            #         |||||||   ||||+++---++------- width of the hitbox (W=MSB)
-            #         ||||||+---++++--------------- y position of the hitbox (Y=MSB)
-            #         |+++++----------------------- x position of the hitbox (X=MSB)
-            #         +---------------------------- Next flag (1=another data block after this one
-            #                                                 0=last data block)
-            x = int(args[0])
-            y = int(args[1])
-            w = int(args[2])
-            h = int(args[3])
-            n = int(args[4])
-            b0 = (x << 1) | ((y & 0x10) >> 4) | n << 6
-            b1 = ((y & 0x0F) << 3) | ((w & 0x1C) >> 2)
-            b2 = ((w & 0x03) << 5) | h
-            textbin.append(b0)
-            textbin.append(b1)
-            textbin.append(b2)
-        elif name == "label":
-            labels[args[0]] = len(textbin)
-            printv(f"label: '{args[0]}' at {hex(len(textbin))}", param="it", v=2)
-        elif name == "const":
-            consts[args[0]] = args[1]
-            printv(f"const: '{args[0]}' with value '{args[1]}'", param="it", v=2)
+                dummy_vals[len(bin)] = (t.args[1], t.pos)
+            # get next
+            n = 0x40 if len(t.args) > 2 else 0
+            # add bytes
+            bin.append(((adr & 0x1F80) >> 7) + n)
+            bin.append(adr & 0x7F)
+            bin.append(adr >> 13)
+    # flag+jump arg
+    elif v in [CRN]:
+        # check args
+        if len(t.args) > 3:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 3:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
         else:
-            printv(f"Unknown tag '{name}' at {i}", param="tw", v=1)
-
-        # update index
-        i = tag_end + 1
+            # get address
+            if t.args[2].isnumeric():
+                adr = int(t.args[2])
+            else:
+                adr = 0
+                dummy_vals[len(bin) + 1] = (t.args[2], t.pos)
+            # get flag
+            f = val2int(t.args[1], max=127, pos=t.pos)
+            # add bytes
+            bin.append(f)
+            bin.append((adr & 0x1F80) >> 7)
+            bin.append(adr & 0x7F)
+            bin.append(adr >> 13)
+    # hp arg
+    elif v in [HPS]:
+        # check args
+        if len(t.args) > 3:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 3:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+        # get vals
+        type = val2int(t.args[1], max=3, pos=t.pos)
+        val = val2int(t.args[2], max=7, pos=t.pos)
+        # add them
+        bin.append((type << 3) + val)
+    # hp arg (negative)
+    elif v in [HPA]:
+        # check args
+        if len(t.args) > 3:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 3:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+        # get vals
+        type = val2int(t.args[1], max=3, pos=t.pos)
+        val = val2int(t.args[2], min=-8, max=7, pos=t.pos)
+        # add them
+        bin.append((type << 3) + abs(val) + (0x40 if val < 0 else 0))
+    # hp+jump arg
+    elif v in [HPE]:
+        # check args
+        if len(t.args) > 4:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 4:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+        else:
+            # get address
+            if t.args[3].isnumeric():
+                adr = int(t.args[3])
+            else:
+                adr = 0
+                dummy_vals[len(bin) + 1] = (t.args[3], t.pos)
+            # get hp
+            type = val2int(t.args[1], max=3, pos=t.pos)
+            val = val2int(t.args[2], max=7, pos=t.pos)
+            # add bytes
+            bin.append((type << 3) + val)
+            bin.append((adr & 0x1F80) >> 7)
+            bin.append(adr & 0x7F)
+            bin.append(adr >> 13)
+    # unknow
     else:
-        # add char
-        textbin = add_normal_char(textbin, c)
-        # update index
-        i += 1
+        printv(f"WARNING {pos2str(t.pos)}: Unknow event char", param="w")
+        for a in t.args[1:]:
+            if a.isnumeric():
+                bin.append(val2int(a, max=127, pos=t.pos))
+            else:
+                dummy_vals[len(bin)] = (a, t.pos)
+                bin.extend([0, 0, 0])
 
-# replace dummy values
-printv(f"fixing...", param="t")
-for idx, name in dummy_vals.items():
-    if name in labels:
-        textbin[idx+0] |= (labels[name] >> 7) & 0x3F
-        textbin[idx+1] |= labels[name] & 0x7F
-        textbin[idx+2] |= (labels[name] >> 13) & 0x3F
-    else:
-        printv(f"ERROR: undeclared name '{name}' at {idx}", param="et")
+    return bin, dummy_vals
 
-# check if all char are encoded with 7 bits
-m = max(textbin)
-if m > 127:
-    printv("ERROR: some character(s) use more than 7 bits", param="et")
-    printv("       largest char found:", m, param="et")
-if 0 in textbin:
-    printv("WARNING: A 0 value has been detected. It may be interpreted has 'END'", param="wt")
-printv("text size:", len(textbin), param="t")
 
-# outputting results
-printv(f"writing new file...", param="t")
-with open(outputfile, "wb") as f:
-    f.write(textbin)
+def convert(tags: list[Tag], filename: str):
+    global text, text_idx, text_line, text_pos, cur_filename
+    bin = bytearray()
 
-printv(f"done", param="t")
+    # include pass
+    for i, t in enumerate(tags[:]):
+        # skip non include tag
+        if t.type != "include":
+            continue
+        # check args
+        if len(t.args) > 1:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        if len(t.args) < 1:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+            continue
+        name = t.args[0]
+        # remove tag
+        tags.remove(t)
+        # find relative path
+        d = os.path.dirname(filename)
+        inc_filename = os.path.normpath(os.path.join(d, name))
+        # check file exist
+        if not os.path.exists(inc_filename):
+            printv(f"ERROR {pos2str(t.pos)}: Cannot include file '{name}'", param="e")
+            continue
+        # parse it
+        text_idx = 0
+        text_line = 1
+        text_pos = 1
+        cur_filename = inc_filename
+        with open(inc_filename, "r", encoding="utf-8") as f:
+            text = f.read()
+        inc_tags = parse(lex())
+        cur_filename = filename
+        # extend tags
+        for j in range(len(inc_tags) - 1, -1, -1):
+            tags.insert(i, inc_tags[j])
+
+    # const pass
+    for t in tags[:]:
+        # skip non const tag
+        if t.type != "const":
+            continue
+        # check args
+        if len(t.args) > 2:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        if len(t.args) < 2:
+            printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+            continue
+        name, val = t.args
+        # remove tag
+        tags.remove(t)
+        # replace constant in all tags
+        for t in tags:
+            for i, a in enumerate(t.args):
+                t.args[i] = a.replace(name, val)
+
+    # binary pass
+    labels = {}
+    dummy_vals = {}
+    for t in tags:
+        if t.type == "DIALOG":
+            l = len("".join(t.args))
+            if l > 28:
+                printv(f"WARNING {pos2str(t.pos)}: Text may go beyond dialog box size", param="w")
+            for a in t.args:
+                for c in a:
+                    bin.extend(add_normal_char(c, t.pos))
+        elif t.type == "label":
+            # check args
+            if len(t.args) > 1:
+                printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+            elif len(t.args) < 1:
+                printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+            else:
+                labels[t.args[0]] = len(bin)
+        # no arg tag
+        elif KEYWORD_N_ARG[t.type] == 0:
+            bin.append(KEYWORD_2_BYTE[t.type])
+        # 1 arg tag with 1 to 1 binary
+        elif t.type in TAG_1_BYTE_SIMPLE_ARG:
+            # check args
+            val = 0
+            if len(t.args) > 1:
+                printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+            elif len(t.args) < 1:
+                printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+            else:
+                val = val2int(t.args[0], max=127, pos=t.pos)
+            #
+            bin.append(KEYWORD_2_BYTE[t.type])
+            bin.append(val)
+        elif t.type == "character":
+            # check args
+            val = 0
+            if len(t.args) > 1:
+                printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+            elif len(t.args) < 1:
+                printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+            else:
+                val = val2int(t.args[0], max=16384, pos=t.pos)
+            #
+            bin.append(KEYWORD_2_BYTE[t.type])
+            bin.append(val & 0x7F)
+            bin.append(val >> 7)
+        elif t.type == "jump":
+            # check args
+            val = 0
+            if len(t.args) > 4:
+                printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+            elif len(t.args) < 1:
+                printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+            else:
+                if t.args[0].isnumeric():
+                    adr = int(t.args[0])
+                else:
+                    adr = 0
+                    dummy_vals[len(bin)] = (t.args[0], t.pos)
+                c = 0
+                n = 0
+
+                if (len(t.args) >= 2 and t.args[1] == "1") or len(t.args) < 2:
+                    if len(bin) in dummy_vals:
+                        del dummy_vals[len(bin)]
+                    dummy_vals[len(bin) + 1] = (t.args[0], t.pos)
+                    bin.append(KEYWORD_2_BYTE[t.type])
+
+                if len(t.args) >= 3 and t.args[2] == "1":
+                    n = 1 << 6
+
+                if len(t.args) >= 4:
+                    c = 1 << 6
+
+                bin.append(((adr & 0x1F80) >> 7) + n)
+                bin.append(adr & 0x7F)
+                bin.append((adr >> 13) + c)
+                if c != 0:
+                    val = val2int(t.args[3], max=127, pos=t.pos)
+                    bin.append(val)
+        elif t.type == "event":
+            # add event char
+            bin.append(KEYWORD_2_BYTE[t.type])
+            # convert event args
+            tmp_bin, tmp_dummy = convert_event(t)
+            # add args
+            for k, v in tmp_dummy.items():
+                dummy_vals[k + len(bin)] = v
+            bin.extend(tmp_bin)
+        elif t.type == "flash":
+            # check args
+            if len(t.args) > 2:
+                printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+            elif len(t.args) < 2:
+                printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+            #
+            force = val2int(t.args[0], max=7, pos=t.pos)
+            time = val2int(t.args[1], max=119, pos=t.pos)
+            #
+            bin.append(KEYWORD_2_BYTE[t.type])
+            bin.append((force << 4) + time)
+        elif t.type == "fade" or t.type == "shake":
+            # check args
+            if len(t.args) > 2:
+                printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+            elif len(t.args) < 2:
+                printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
+            #
+            force = val2int(t.args[0], max=7, pos=t.pos)
+            time = val2int(t.args[1], max=119, pos=t.pos)
+            #
+            bin.append(KEYWORD_2_BYTE[t.type])
+            bin.append((force << 4) + (time // 8))
+        elif t.type == "color":
+            if len(t.args) > 1:
+                printv(f"ERROR {pos2str(t.pos)}: TODO {t}", param="e")
+            elif len(t.args) < 1:
+                printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+            else:
+                val = val2int(t.args[0], max=3, pos=t.pos)
+            bin.append(KEYWORD_2_BYTE[t.type])
+            bin.append(val)
+        else:
+            printv(f"ERROR {pos2str(t.pos)}: Unknow tag {t}", param="e")
+
+    # fix pass
+    for idx, (name, pos) in dummy_vals.items():
+        if name in labels:
+            bin[idx + 0] |= (labels[name] >> 7) & 0x3F
+            bin[idx + 1] |= labels[name] & 0x7F
+            bin[idx + 2] |= (labels[name] >> 13) & 0x3F
+        else:
+            printv(f"ERROR {pos2str(pos)}: Undeclared name '{name}'", param="e")
+
+    return bin
+
+
+def main(input_filename, output_filename):
+    global text, text_idx, text_line, text_pos, cur_filename
+    # init global variables
+    text_idx = 0
+    text_line = 1
+    text_pos = 1
+    cur_filename = input_filename
+
+    # read text file
+    with open(input_filename, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    # parse text
+    tags = parse(lex())
+    if error:
+        printv(f"ERROR: Cannot parse file '{input_filename}'", param="e")
+        return
+    # convert text
+    bin = convert(tags, input_filename)
+
+    # write binary file
+    with open(output_filename, "wb") as f:
+        f.write(bin)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--input_file", help="Text file to convert to binary")
+    parser.add_argument("-o", "--output_file", help="Output file to write converted text into")
+    args = parser.parse_args()
+
+    main(args.input_file, args.output_file)

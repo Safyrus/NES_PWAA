@@ -9,49 +9,60 @@ STARTING_ADR = 0x8000
 # args
 inputfile = sys.argv[1]
 outputfile = os.path.splitext(os.path.basename(inputfile))[0] + "_blocks.bin"
-if len(sys.argv) > 2 :
+verbose = False
+if len(sys.argv) > 2:
     outputfile = sys.argv[2]
+if len(sys.argv) > 3:
+    verbose = sys.argv[3]
 asmfile = "txt_data.asm"
 
 #
-print("start")
-print("jump size:", JUMP_SIZE)
-print("len size:", LEN_SIZE)
+if verbose:
+    print("start")
+    print("jump size:", JUMP_SIZE)
+    print("len size:", LEN_SIZE)
 
 # read text from file
-print("read file...")
+if verbose:
+    print("read file...")
 with open(inputfile, "rb") as f:
     text = f.read()
+print("source text size:", len(text), "bytes")
 
 # cut text into blocks
-print("cut text in blocks...")
+if verbose:
+    print("cut text in blocks...")
 blocks = []
 while len(text) > BLOCK_SIZE:
     blocks.append(text[:BLOCK_SIZE])
     text = text[BLOCK_SIZE:]
 # write last block
 blocks.append(text)
-print("number of blocks:", len(blocks))
+if verbose:
+    print("number of blocks:", len(blocks))
 
 # encode blocks
-print("compress blocks...")
+if verbose:
+    print("compress blocks...")
 i = 0
 text = ""
 block_bnk = []
 block_adr = []
 adr_tmp = 0
 for b in blocks:
-    print("encode block", i)
+    if verbose:
+        print("encode block", i)
 
     lt = len(text) // 8
-    bnk_idx = (lt // BANK_SIZE)
+    bnk_idx = lt // BANK_SIZE
     block_bnk.append(bnk_idx)
     block_adr.append((adr_tmp % BANK_SIZE) + STARTING_ADR)
     encode_block = lz_encode(b, outputfile="", do_print=False)
 
     l = len(encode_block) // 8
-    adr_tmp += l+2
-    print(f"block {i} size:{hex(l)} bnk:{hex(block_bnk[-1])} adr:{hex(block_adr[-1])}")
+    adr_tmp += l + 2
+    if verbose:
+        print(f"block {i} size:{hex(l)} bnk:{hex(block_bnk[-1])} adr:{hex(block_adr[-1])}")
     if l > (BLOCK_SIZE - 2):
         print(f"ERROR: block {i} too large !")
 
@@ -60,15 +71,16 @@ for b in blocks:
     text += encode_block
     i += 1
 
-print("number of banks:", (len(text) // 8) // BANK_SIZE)
-print("total size:", len(text) // 8, "bytes")
+if verbose:
+    print("number of banks:", ((len(text) // 8) // BANK_SIZE) + 1)
+print("compressed text size:", len(text) // 8, "bytes")
 
 # write results
 write_bit_stream(text, outputfile)
 with open(asmfile, "w") as f:
     f.write("; TODO description\n")
-    f.write("\n.segment \"TXT_BNK\"\n.incbin \"" + outputfile + "\"\n")
-    f.write("\n.segment \"CODE_BNK\"\n")
+    f.write('\n.segment "TXT_BNK"\n.incbin "' + outputfile + '"\n')
+    f.write('\n.segment "CODE_BNK"\n')
     f.write("lz_bnk_table:\n")
     for b in block_bnk:
         f.write(".byte TXT_BNK + $" + "%0.2X" % b + "\n")

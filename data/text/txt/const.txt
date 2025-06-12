@@ -1,0 +1,13 @@
+<const:CR,0>
+<const:CRF,1>
+<const:CRO,2>
+<const:CRH,3>
+<const:CRS,4>
+<const:CRC,5>
+<const:CRI,6>
+<const:CRN,7>
+<const:FLAG_OBJ,0>
+<const:FLAG_OKOBJ,1>
+
+<const:HPT,8><const:HPE,9><const:HPS,10><const:HPA,11>
+<const:HP_NORMAL,0><const:HP_DANGER,1><const:HP_DAMAGE,2>

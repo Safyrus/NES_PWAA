@@ -91,9 +91,8 @@ run:
 #--------------------------------
 
 text:
-	$(PYTHON) $(PY)/txtEncode/fusionFiles.py $(TEXT_FOLDER) $(TEXT)
 	mkdir -p "$(ASM)/data"
-	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/txt_2_bin.py ../../$(TEXT) ./text.bin 1
+	$(PYTHON) $(PY)/txtEncode/txt_2_bin.py -i $(TEXT) -o $(ASM)/data/text.bin
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
 
