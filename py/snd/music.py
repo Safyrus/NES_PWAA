@@ -5,6 +5,7 @@ from glob import glob
 
 
 TOTAL_SIZE_STR = "Info: Total assembly file size: "
+SAMPLE_STR = "lobyte(FAMISTUDIO_DPCM_PTR)"
 SONG_STR = "Info: Song "
 
 
@@ -83,10 +84,16 @@ def export_mus(fs, file, folder, name_idx, indexes):
         os.remove(dpcm_file)
 
     #
+    sample_size = 0
+    with open(asm_filepath, "r") as f:
+        asm_file = f.read()
+    for line in asm_file.split("\n"):
+        if SAMPLE_STR in line:
+            sample_size += 5
+
+    #
     if name_idx:
         # edit asm file label name
-        with open(asm_filepath, "r") as f:
-            asm_file = f.read()
         project_name = ""
         for line in asm_file.split("\n"):
             if line.startswith("music_data_"):
@@ -101,6 +108,7 @@ def export_mus(fs, file, folder, name_idx, indexes):
         for dpcm in dpcms:
             os.remove(os.path.join(folder, dpcm))
 
+    total_size += sample_size
     return musics, total_size
 
 

@@ -1,4 +1,5 @@
 import argparse
+import math
 import os
 import binpacking
 from music import export_all, export_mus, export_mus_asm
@@ -6,25 +7,56 @@ from sfx import export_sfxbip
 
 
 def export_music(fs, fm_file, out_folder, music_idx):
-    # export all musics to each music
+    # remove dpcm files
+    i = 0
+    while os.path.exists(os.path.join(out_folder, f"music_bank{i}.dmc")):
+        os.remove(os.path.join(out_folder, f"music_bank{i}.dmc"))
+        i += 1
+
+    # export all music to get their sizes
     indexes = [str(x) for x in music_idx.values()]
     musics, total_size = export_mus(fs, fm_file, out_folder, "", indexes)
-    # find header size
-    header_size = total_size - sum([x for x in musics.values()])
-    # remoe temporary files
-    os.remove(os.path.join(out_folder, "music.s"))
+    print("number of music:", len(musics))
 
     # find best banks
-    max_size = (1024 * 8) - header_size
-    bins = binpacking.to_constant_volume(musics, max_size)
+    ok = False
+    n_bin = math.ceil(total_size / (1024 * 8))
+    bins = []
+    MARGIN = 0
+    while not ok:
+        print("try to fit all in", n_bin, "banks")
+        bins = binpacking.to_constant_bin_number(musics, n_bin)
+        ok = True
+        for i, b in enumerate(bins):
+            indexes = [str(music_idx[name]) for name in b.keys()]
+            _, s = export_mus(fs, fm_file, out_folder, str(i), indexes)
+            if s > ((1024 * 8) - MARGIN):
+                ok = False
+                n_bin += 1
+                break
+
+    # remove temporary files
+    os.remove(os.path.join(out_folder, "music.s"))
+    i = 0
+    while os.path.exists(os.path.join(out_folder, f"music_{i}.s")):
+        os.remove(os.path.join(out_folder, f"music_{i}.s"))
+        i += 1
 
     # export music
+    music_size = 0
+    total_size = 0
     for i, b in enumerate(bins):
         print(f"export music bank {i} ({b.keys()})")
         indexes = []
         for name in b.keys():
             indexes.append(str(music_idx[name]))
-        export_mus(fs, fm_file, out_folder, str(i), indexes)
+        m, size = export_mus(fs, fm_file, out_folder, str(i), indexes)
+        h = size - sum([x for x in m.values()])
+        music_size += sum(b.values())
+        total_size += size
+        print(f"size: {size} (music={sum(b.values())},header={h})")
+    print("music size:", music_size, "bytes")
+    print("total size (without dpcm):", total_size, "bytes")
 
     # export asm
     export_mus_asm(bins, list(music_idx.keys()), out_folder)
@@ -67,7 +99,6 @@ def sound_2_asm(fs, fm_file, out_folder):
                     f.write(line + "\n")
             else:
                 break
-
 
     # sort mus, sfx, bip
     musics = {}
