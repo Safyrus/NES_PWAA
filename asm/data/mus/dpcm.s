@@ -4,10 +4,10 @@
 ; Volume slides are used, you must set FAMISTUDIO_USE_VOLUME_SLIDES = 1.
 ; Fine pitch track is used, you must set FAMISTUDIO_USE_PITCH_TRACK = 1.
 ; Slide notes are used, you must set FAMISTUDIO_USE_SLIDE_NOTES = 1.
+; Slide notes are used on the noise channel, you must set FAMISTUDIO_USE_NOISE_SLIDE_NOTES = 1.
 ; Vibrato effect is used, you must set FAMISTUDIO_USE_VIBRATO = 1.
 ; Duty Cycle effect is used, you must set FAMISTUDIO_USE_DUTYCYCLE_EFFECT = 1.
 ; DPCM Delta Counter effect is used, you must set FAMISTUDIO_USE_DELTA_COUNTER = 1.
-; Phase Reset effect is used, you must set FAMISTUDIO_USE_PHASE_RESET = 1.
 ; Project has DPCM bank-switching enabled in the project settings, you must set FAMISTUDIO_USE_DPCM_BANKSWITCHING = 1 and implement bank switching.
 
 .if FAMISTUDIO_CFG_C_BINDINGS
@@ -20,35 +20,36 @@ dpcm_data:
     .word @samples
 
 @samples:
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$20,$0f,$40,$00 ; 00 boing (Pitch:15)
+	.byte $36+.lobyte(FAMISTUDIO_DPCM_PTR),$15,$0d,$40,$01 ; 00 boing (Pitch:13)
 	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0b,$40,$02 ; 01 choir_cs6 (Pitch:11)
 	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0c,$40,$02 ; 02 choir_cs6 (Pitch:12)
 	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0d,$40,$02 ; 03 choir_cs6 (Pitch:13)
-	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0b,$40,$05 ; 04 choir_gs5 (Pitch:11)
-	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0c,$40,$05 ; 05 choir_gs5 (Pitch:12)
-	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0d,$40,$05 ; 06 choir_gs5 (Pitch:13)
-	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0e,$40,$05 ; 07 choir_gs5 (Pitch:14)
-	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0f,$40,$05 ; 08 choir_gs5 (Pitch:15)
-	.byte $31+.lobyte(FAMISTUDIO_DPCM_PTR),$40,$0d,$40,$05 ; 09 dog (Pitch:13)
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0d,$40,$04 ; 0a drum_d2 (Pitch:13)
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0f,$40,$04 ; 0b drum_d2 (Pitch:15)
-	.byte $08+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0c,$40,$00 ; 0c drum_ds2 (Pitch:12)
-	.byte $08+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0d,$40,$00 ; 0d drum_ds2 (Pitch:13)
-	.byte $08+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0f,$40,$00 ; 0e drum_ds2 (Pitch:15)
-	.byte $29+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0b,$40,$00 ; 0f drum_gs2 (Pitch:11)
-	.byte $29+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0c,$40,$00 ; 10 drum_gs2 (Pitch:12)
-	.byte $29+.lobyte(FAMISTUDIO_DPCM_PTR),$82,$0d,$40,$00 ; 11 drum_gs2 (Pitch:13)
-	.byte $21+.lobyte(FAMISTUDIO_DPCM_PTR),$c7,$0f,$40,$04 ; 12 edgeworth hold it (Pitch:15)
-	.byte $4a+.lobyte(FAMISTUDIO_DPCM_PTR),$d7,$0f,$40,$00 ; 13 edgeworth objection (Pitch:15)
-	.byte $14+.lobyte(FAMISTUDIO_DPCM_PTR),$dc,$0f,$40,$02 ; 14 edgeworth take that (Pitch:15)
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$62,$0d,$40,$01 ; 15 hit (Pitch:13)
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$03 ; 16 impact_ds4 (Pitch:15)
-	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$03 ; 17 impact_e4 (Pitch:15)
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0e,$40,$05 ; 18 impact_f4 (Pitch:14)
-	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0f,$40,$05 ; 19 impact_f4 (Pitch:15)
-	.byte $47+.lobyte(FAMISTUDIO_DPCM_PTR),$da,$0f,$40,$01 ; 1a karma objection (Pitch:15)
-	.byte $44+.lobyte(FAMISTUDIO_DPCM_PTR),$ed,$0f,$40,$03 ; 1b payne objection (Pitch:15)
-	.byte $53+.lobyte(FAMISTUDIO_DPCM_PTR),$b3,$0f,$40,$04 ; 1c phoenix hold it (Pitch:15)
-	.byte $4b+.lobyte(FAMISTUDIO_DPCM_PTR),$ca,$0f,$40,$02 ; 1d phoenix objection (Pitch:15)
-	.byte $19+.lobyte(FAMISTUDIO_DPCM_PTR),$b7,$0f,$40,$01 ; 1e phoenix take that (Pitch:15)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0b,$40,$01 ; 04 choir_gs5 (Pitch:11)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0c,$40,$01 ; 05 choir_gs5 (Pitch:12)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0d,$40,$01 ; 06 choir_gs5 (Pitch:13)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0e,$40,$01 ; 07 choir_gs5 (Pitch:14)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$4e,$0f,$40,$01 ; 08 choir_gs5 (Pitch:15)
+	.byte $69+.lobyte(FAMISTUDIO_DPCM_PTR),$40,$0d,$40,$04 ; 09 dog (Pitch:13)
+	.byte $3c+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$07,$40,$01 ; 0a drum_d2 (Pitch:7)
+	.byte $3c+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$08,$40,$01 ; 0b drum_d2 (Pitch:8)
+	.byte $3c+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$09,$40,$01 ; 0c drum_d2 (Pitch:9)
+	.byte $3c+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$0a,$40,$01 ; 0d drum_d2 (Pitch:10)
+	.byte $3c+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$0b,$40,$01 ; 0e drum_d2 (Pitch:11)
+	.byte $36+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$08,$40,$00 ; 0f drum_ds2 (Pitch:8)
+	.byte $36+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$09,$40,$00 ; 10 drum_ds2 (Pitch:9)
+	.byte $36+.lobyte(FAMISTUDIO_DPCM_PTR),$37,$0b,$40,$00 ; 11 drum_ds2 (Pitch:11)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$c7,$0f,$40,$04 ; 12 edgeworth hold it (Pitch:15)
+	.byte $4a+.lobyte(FAMISTUDIO_DPCM_PTR),$d7,$0f,$40,$01 ; 13 edgeworth objection (Pitch:15)
+	.byte $32+.lobyte(FAMISTUDIO_DPCM_PTR),$dc,$0f,$40,$04 ; 14 edgeworth take that (Pitch:15)
+	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$62,$0d,$40,$00 ; 15 hit (Pitch:13)
+	.byte $1d+.lobyte(FAMISTUDIO_DPCM_PTR),$62,$0e,$40,$00 ; 16 hit (Pitch:14)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$01 ; 17 impact_ds4 (Pitch:15)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$87,$0f,$40,$03 ; 18 impact_e4 (Pitch:15)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0e,$40,$00 ; 19 impact_f4 (Pitch:14)
+	.byte $00+.lobyte(FAMISTUDIO_DPCM_PTR),$74,$0f,$40,$00 ; 1a impact_f4 (Pitch:15)
+	.byte $47+.lobyte(FAMISTUDIO_DPCM_PTR),$da,$0f,$40,$02 ; 1b karma objection (Pitch:15)
+	.byte $44+.lobyte(FAMISTUDIO_DPCM_PTR),$ed,$0f,$40,$00 ; 1c payne objection (Pitch:15)
+	.byte $22+.lobyte(FAMISTUDIO_DPCM_PTR),$b3,$0f,$40,$03 ; 1d phoenix hold it (Pitch:15)
+	.byte $14+.lobyte(FAMISTUDIO_DPCM_PTR),$ca,$0f,$40,$02 ; 1e phoenix objection (Pitch:15)
+	.byte $4f+.lobyte(FAMISTUDIO_DPCM_PTR),$b7,$0f,$40,$03 ; 1f phoenix take that (Pitch:15)
 
