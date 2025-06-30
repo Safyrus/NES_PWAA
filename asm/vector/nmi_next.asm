@@ -86,8 +86,9 @@
         ; buttons_1_timer--
         DEC buttons_1_timer
     :
-    ; if shake_timer > 0
+    ; if shake_timer > 0 and positive
     LDA shake_timer
+    BMI :+
     BEQ :+
         ; shake_timer--
         DEC shake_timer

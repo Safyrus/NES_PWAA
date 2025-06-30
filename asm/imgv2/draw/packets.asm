@@ -3,7 +3,7 @@
 ;   vrssssss
 ;   ||++++++-- size (nb of 16bit tiles in packet)
 ;   |+-------- ready
-;   +--------- vertical (not used)
+;   +--------- vertical
 ; byte 2:
 ;   pm..aaaa
 ;   ||  ++++-- ppu address (high) (relative to start of first nametable)
@@ -26,6 +26,7 @@ draw_packets:
     @dont_draw_mmc5 = draw_packet_var+3
     @size = draw_packet_var+4
     @i = draw_packet_var+5
+    @v = draw_packet_var+6
 
     ; --------
     ; init
@@ -117,6 +118,10 @@ draw_packets:
             BEQ :+
             BCS @skip_packet
             :
+        ; v = @in[0] & $80
+        LDA (@in), Y
+        AND #$80
+        STA @v
         ; dont_draw_mmc5 = @in[1] & $40
         INY
         LDA (@in), Y
@@ -141,7 +146,7 @@ draw_packets:
             LDA #$00
             STA @can_move_read
             ; jmp @continue
-            BEQ @continue
+            JMP @continue
         :
 
         ; --------
@@ -207,13 +212,22 @@ draw_packets:
             ; copy high tile
             ; if not dont_draw_mmc5
             LDA @dont_draw_mmc5
-            BNE :+
+            BNE :+++
                 ; mmc5_tiles[adr] = @in[0]
                 LDA (@in), Y
                 STA (@adr), Y
+                ; if v
+                LDA @v
+                BEQ :+
+                    ; adr += 32
+                    add_A2ptr @adr, #32
+                    JMP :++
+                ; else
+                :
+                    ; adr++
+                    inc_16 @adr
+                :
             :
-            ; adr++
-            inc_16 @adr
             ; inc_in()
             JSR @inc_in
             ; continue

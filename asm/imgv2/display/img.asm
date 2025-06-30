@@ -1,6 +1,10 @@
 ; X, Y = img idx
 ; tmp+2 = bkg_lo
+; tmp+4 = spr_bnk
 ; tmp+6 = bkg_hi
+; tmp+8 = spr
+; tmp+10 = pals
+; tmp+12 = ram_bnk
 display_img:
     ; save bnk 0
     push mmc5_banks+1
@@ -22,16 +26,8 @@ display_img:
     STA tmp+6
     ; spr_buf
     STA tmp+8
-    LDA #>IMG_CHR_SPR
-    STA tmp+9
-    ; bnk_buf
-    mov tmp+4, #<(spr_bnks-1)
-    mov tmp+5, #>(spr_bnks-1)
-    ; palette
-    mov tmp+10, #<img_tmp_pals
-    mov tmp+11, #>img_tmp_pals
     ; set RAM bank
-    mov mmc5_banks+0, #IMG_BUF_BNK
+    mov mmc5_banks+0, tmp+12
     STA MMC5_RAM_BNK
     ; disable sprites
     ora_adr img_flag, #IMG_FLAG_UNSPRITE

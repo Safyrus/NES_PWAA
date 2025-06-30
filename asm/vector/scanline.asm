@@ -66,7 +66,7 @@ scanline_irq_handler:
         LDA mmc5_upper_chr
         STA MMC5_CHR_UPPER
         ; change nametable mapping
-        LDA #NT_MAPPING_NT1
+        LDA #NT_MAPPING_NT12
         STA MMC5_NAMETABLE
         ; return
         JMP @end

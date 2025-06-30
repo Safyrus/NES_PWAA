@@ -51,6 +51,11 @@ MAIN_LOOP:
     JSR change_name
     ;
     JSR draw_hp
+    ; set bank
+    mov mmc5_banks+0, #IMG_BUF_BNK
+    STA MMC5_RAM_BNK
+    ;
+    JSR scroll_main
 
     ; ----------------
     ; Update Inputs
@@ -90,8 +95,8 @@ MAIN_LOOP:
     ; ----------------
     ; if currently drawing an image
     ; TODO: better flag condition ?
-    LDA img_flag
-    AND #(IMG_FLAG_UNSPRITE)
+    LDA effect_flags
+    AND #EFFECT_FLAG_IMAGE
     BEQ @anim_else
     ; and if packet_buf_read_adr == packet_buf_write_adr
     ; (a.k.a nothing left to draw)
@@ -109,6 +114,7 @@ MAIN_LOOP:
         ; change scroll position to other nametable
         ; (we need to change scroll before updating MMC5 tiles)
         LDA ppu_ctrl_val
+        AND #$FD
         EOR #$01
         STA PPU_CTRL
         STA ppu_ctrl_val
@@ -116,6 +122,8 @@ MAIN_LOOP:
         JSR cp_mmc5
         ; swap nametable to use
         eor_adr img_flag, #IMG_FLAG_OTHERNT
+        ; disable image drawing flag
+        and_adr effect_flags, #($FF-EFFECT_FLAG_IMAGE)
         ; re-enable sprites update
         LDA img_flag
         AND #$FF-(IMG_FLAG_UNSPRITE)

@@ -6,8 +6,8 @@ update_anim:
         BMI @return
 
     ; if waiting for a frame to finish drawing
-    LDA img_flag
-    AND #(IMG_FLAG_UNSPRITE)
+    LDA effect_flags
+    AND #EFFECT_FLAG_IMAGE
         ; return
         BNE @return
 

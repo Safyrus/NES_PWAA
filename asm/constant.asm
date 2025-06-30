@@ -68,6 +68,8 @@
     PPU_CTRL_SPR_SIZE = %00100000
     PPU_CTRL_SEL      = %01000000
     PPU_CTRL_NMI      = %10000000
+    PPU_CTRL_X        = %00000001
+    PPU_CTRL_Y        = %00000010
 
     ; Constants: PPU Nametable addresses
     ;
@@ -181,6 +183,7 @@
     IM_NORMAL = 0
     IM_ACT = 1
     IM_CR = 2
+    IM_NONE = $FF
 
 ;================
 ; Group: NMI
@@ -366,16 +369,17 @@
     ; EFFECT_FLAG_PAL_SPLIT - _%10000000_
     EFFECT_FLAG_PAL_SPLIT = %10000000
     EFFECT_FLAG_MIDBOX    = %01000000
+    EFFECT_FLAG_IMAGE     = %00000001
 
 
     ; Constants: Nametable mapping
     ; See: <MMC5 Nametable mapping>
     ;
     ; NT_MAPPING_EMPTY   - _%11111111_
-    ; NT_MAPPING_NT1     - _%11110100_
+    ; NT_MAPPING_NT12     - _%11110100_
     ; DEFAULT_NT_MAPPING - _NT_MAPPING_EMPTY_
     NT_MAPPING_EMPTY   = %11111111
-    NT_MAPPING_NT1     = %11110100
+    NT_MAPPING_NT12    = %00010100
     NT_MAPPING_ALL     = %11100100
     DEFAULT_NT_MAPPING = NT_MAPPING_EMPTY
 
@@ -638,6 +642,24 @@
     HP_PAL_0 = $16
     HP_PAL_1 = $21
     HP_PAL_2 = $30
+
+;================
+; Group: Scroll Effect
+;================
+    SCROLL_DIR_LEFT  = $00
+    SCROLL_DIR_RIGHT = $01
+    SCROLL_DIR_UP    = $02
+    SCROLL_DIR_DOWN  = $03
+
+    SCROLL_STATE_NONE  = 0
+    SCROLL_STATE_LOAD  = 1
+    SCROLL_STATE_START = 2
+    SCROLL_STATE_STEP  = 3
+    SCROLL_STATE_END   = 4
+
+    SCROLL_IMG_BUFFERS_LO = $6200
+    SCROLL_IMG_BUFFERS_HI = $6800
+    SCROLL_IMG_PALS_BUF   = $6180
 
 ;================
 ; Group: Special Characters

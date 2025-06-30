@@ -28,6 +28,8 @@ display_evi:
     ; set RAM bank
     mov mmc5_banks+0, #GENERAL_BNK
     STA MMC5_RAM_BNK
+    ; set image drawing flag
+    ora_adr effect_flags, #EFFECT_FLAG_IMAGE
     ; disable sprites
     ora_adr img_flag, #IMG_FLAG_UNSPRITE
     ; snif_decode(in, bkg_lo, bnk_buf, bkg_hi, spr_buf, palette)

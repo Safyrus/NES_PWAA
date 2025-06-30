@@ -1,6 +1,8 @@
 ; X = negative index
 remove_bkg:
     STX cur_bkg
+    ; set image drawing flag
+    ora_adr effect_flags, #EFFECT_FLAG_IMAGE
     ; disable sprites
     ora_adr img_flag, #IMG_FLAG_UNSPRITE
     ; save bank

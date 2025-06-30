@@ -275,7 +275,8 @@ OAM:
         ; Variable: effect_flags
         ;----------------
         ;--- Text
-        ; PM.. ....
+        ; PM.. ...I
+        ; ||      +-- Image drawing
         ; |+--------- Midbox on
         ; +---------- mid frame Pallette switch for the dialog box (1=active)
         ;---
@@ -486,7 +487,7 @@ OAM:
 
         .segment "BSS"
 
-        draw_packet_var: .res 6
+        draw_packet_var: .res 7
 
         draw_packet_count: .res 1
 
@@ -587,6 +588,20 @@ OAM:
         hp_jmp: .res 3
         hp_tmp: .res 4
 
+    ;================
+    ; Group: Scroll variables
+    ;================
+
+    scroll_img: .res 2
+    scroll_n_img: .res 1
+    scroll_spd: .res 1
+    scroll_dir: .res 1
+    scroll_state: .res 1
+    scroll_px_remain: .res 2
+    scroll_pal_flip: .res 1
+    nt_offset: .res 1
+    tile_offset: .res 1
+    scroll_ppu_adr: .res 2
 
 ;****************
 ; MMC5 RAM SEGMENT

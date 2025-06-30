@@ -81,12 +81,19 @@ cp_mmc5:
 
 
 update_shake:
+    ; if shake_timer < 0
+    LDA shake_timer
+        ; return
+        BMI @ret
+
     ; if shake_timer == 0
     LDA shake_timer
     BNE :+
         ; scroll_x, scroll_y = 0
         STA scroll_x
         STA scroll_y
+        ; shake_timer = -1
+        mov shake_timer, #$FF
         ; return
         RTS
     :

@@ -36,7 +36,7 @@ NMI:
 
     @start:
     ; update nametable mapping
-    LDA #NT_MAPPING_NT1
+    LDA #NT_MAPPING_NT12
     STA MMC5_NAMETABLE
     ; reset latch
     BIT PPU_STATUS

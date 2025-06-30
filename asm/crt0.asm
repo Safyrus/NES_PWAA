@@ -164,10 +164,8 @@
 
     ; main file
     .include "main.asm"
-    .include "inputv2/inc.asm"
     .include "other.asm"
     .include "rng.asm"
-    ;
 
     ; FamiStudio Sound Engine
     .include "audio/famistudio_ca65.s"
@@ -176,6 +174,8 @@
     .include "data/mus/inc.asm"
 
 .segment "CODE_BNK"
+    .include "scroll/inc.asm"
+    .include "inputv2/inc.asm"
     .include "name.asm"
     .include "hp.asm"
     .include "imgv2/inc.asm"
