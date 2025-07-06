@@ -91,45 +91,69 @@ scroll_step_ppu:
     ; if dir == "UP":
     LDA scroll_dir
     CMP #SCROLL_DIR_UP
-    BNE :+
+    BNE :+++
         ; scroll_ppu_adr -= 32
         LDA scroll_ppu_adr+0
         sub #$20
         STA scroll_ppu_adr+0
         ; if scroll_ppu_adr overflow nametable:
-        BCS @ret
+        BCC :+
+            JMP @ret
+        :
+        DEC scroll_ppu_adr+1
+        LDA scroll_ppu_adr+1
+        AND #$03
+        CMP #$03
+        BNE :+
             ; scroll_ppu_adr -= 0x0400
             LDA scroll_ppu_adr+1
-            SBC #$03
+            sub #$04
             ; scroll_ppu_adr &= 0x0FFF
             AND #$0F
             ; scroll_ppu_adr |= 0x2000
             ORA #$20
             STA scroll_ppu_adr+1
-            JMP @ret
+            ; scroll_ppu_adr -= 0x40
+            LDA scroll_ppu_adr+0
+            sub #$40
+            STA scroll_ppu_adr+0
+            BCS :+
+                DEC scroll_ppu_adr+1
+            :
+        ; return
+        JMP @ret
     :
     ; elif dir == "DOWN":
-    LDA scroll_dir
     CMP #SCROLL_DIR_DOWN
-    BNE :+
+    BNE :++
         ; scroll_ppu_adr += 32
         LDA scroll_ppu_adr+0
         add #$20
         STA scroll_ppu_adr+0
+        BCC :+
+            INC scroll_ppu_adr+1
+        :
         ; if scroll_ppu_adr overflow nametable:
-        BCC @ret
-            ; scroll_ppu_adr += 0x0400
+        CMP #$C0
+        blt @ret
+        LDA scroll_ppu_adr+1
+        AND #$03
+        CMP #$03
+        BNE @ret
+            ; scroll_ppu_adr += 0x0800
             LDA scroll_ppu_adr+1
-            ADC #$03
-            ; scroll_ppu_adr &= 0x0FFF
-            AND #$0F
+            ADC #$07
+            ; scroll_ppu_adr &= 0x0C00
+            AND #$0C
             ; scroll_ppu_adr |= 0x2000
             ORA #$20
             STA scroll_ppu_adr+1
-            JMP @ret
+            LDA #$00
+            STA scroll_ppu_adr+0
+        ; return
+        JMP @ret
     :
     ; elif dir == "LEFT":
-    LDA scroll_dir
     CMP #SCROLL_DIR_LEFT
     BNE :+
         ; scroll_ppu_adr -= 1
@@ -148,7 +172,8 @@ scroll_step_ppu:
             AND #$04
             ORA #$20
             STA scroll_ppu_adr+1
-            JMP @ret
+        ; return
+        JMP @ret
     :
     ; elif dir == "RIGHT":
         ; scroll_ppu_adr += 1

@@ -113,20 +113,29 @@ MAIN_LOOP:
             BNE @wait_topframe
         ; change scroll position to other nametable
         ; (we need to change scroll before updating MMC5 tiles)
+        LDA img_flag
+        AND #IMG_FLAG_OTHERNT
+        LSR
+        LSR
+        STA tmp
         LDA ppu_ctrl_val
-        AND #$FD
-        EOR #$01
+        AND #$FC
+        ORA tmp
         STA PPU_CTRL
         STA ppu_ctrl_val
+        ;
+        LDA #$00
+        STA scroll_x
+        STA scroll_y
         ; copy MMC5 tiles
         JSR cp_mmc5
-        ; swap nametable to use
-        eor_adr img_flag, #IMG_FLAG_OTHERNT
         ; disable image drawing flag
         and_adr effect_flags, #($FF-EFFECT_FLAG_IMAGE)
-        ; re-enable sprites update
+        ; swap nametable to use
         LDA img_flag
-        AND #$FF-(IMG_FLAG_UNSPRITE)
+        EOR #IMG_FLAG_OTHERNT
+        ; re-enable sprites update
+        AND #($FF-IMG_FLAG_UNSPRITE)
         STA img_flag
         ; use new palettes
         ; copy_palettes()

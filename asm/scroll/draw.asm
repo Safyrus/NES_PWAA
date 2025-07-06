@@ -8,7 +8,8 @@ scroll_draw:
     @size = tmp+9
     @adr_step = tmp+10
     @n = tmp+11
-    @cur_img = tmp+12
+    @cur_img = @adr+1
+    @tmp_adr = @packet
 
     ; n = A >> 3
     LSR
@@ -74,8 +75,7 @@ scroll_draw:
             LDA @adr+1
             add #$03
             STA @adr+1
-            ; adr -= ((tile_offset % 24) + 1) * 32
-            ; break
+            ; A = (tile_offset % 24) + 1
             LDA tile_offset
             AND #$1F
             CMP #23
@@ -83,7 +83,30 @@ scroll_draw:
                 sub #24
             :
             add #$01
-            JMP :++
+            ; tmp_adr = A * 32
+            STA @tmp_adr+0
+            LSR
+            LSR
+            LSR
+            STA @tmp_adr+1
+            LDA @tmp_adr+0
+            ASL
+            ASL
+            ASL
+            ASL
+            ASL
+            STA @tmp_adr+0
+            ; adr -= tmp_adr
+            ; break
+            LDA @adr+1
+            sub @tmp_adr+1
+            STA @adr+1
+            LDA @adr+0
+            sub @tmp_adr+0
+            STA @adr+0
+            BCS @break
+            DEC @adr+1
+            JMP @break
         :
         ; if direction down
         CMP #SCROLL_DIR_DOWN
@@ -136,10 +159,10 @@ scroll_draw:
         STA @tile_lo+0
         STA @tile_hi+0
         LDA @adr+1
-        ORA #>SCROLL_IMG_BUFFERS_LO+$40
+        add #>SCROLL_IMG_BUFFERS_LO+$40
         STA @tile_lo+1
         LDA @adr+1
-        ORA #>SCROLL_IMG_BUFFERS_HI+$40
+        add #>SCROLL_IMG_BUFFERS_HI+$40
         STA @tile_hi+1
 
         ; ppu_adr = scroll_ppu_adr

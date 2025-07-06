@@ -10,8 +10,8 @@ scroll_add:
             ; scroll_x += X
             ADC scroll_x
             STA scroll_x
-            BCS :++
             ; if scroll_x overflow
+            BCS :++
                 ; flip high x scroll
                 LDA ppu_ctrl_val
                 EOR #PPU_CTRL_X
@@ -22,8 +22,8 @@ scroll_add:
             ; scroll_x += X
             ADC scroll_x
             STA scroll_x
-            BCC :+
             ; if scroll_x overflow
+            BCC :+
                 ; flip high x scroll
                 LDA ppu_ctrl_val
                 EOR #PPU_CTRL_X
@@ -38,8 +38,11 @@ scroll_add:
             ; scroll_y += Y
             ADC scroll_y
             STA scroll_y
-            BCS :++
             ; if scroll_y overflow
+            BCS :++
+                ; scroll_y += $F0
+                ADC #$F0
+                STA scroll_y
                 ; flip high y scroll
                 LDA ppu_ctrl_val
                 EOR #PPU_CTRL_Y
@@ -50,8 +53,12 @@ scroll_add:
             ; scroll_y += Y
             ADC scroll_y
             STA scroll_y
-            BCC :+
             ; if scroll_y overflow
+            CMP #$F0
+            blt :+
+                ; scroll_y -= $F0
+                sub #$F0
+                STA scroll_y
                 ; flip high y scroll
                 LDA ppu_ctrl_val
                 EOR #PPU_CTRL_Y
