@@ -70,17 +70,18 @@ scroll_draw:
         ; if direction up
         LDA scroll_dir
         CMP #SCROLL_DIR_UP
-        BNE :++
+        BNE :+++
             ; adr += 256 * 3
             LDA @adr+1
             add #$03
             STA @adr+1
             ; A = (tile_offset % 24) + 1
             LDA tile_offset
-            AND #$1F
-            CMP #23
+            :
+            CMP #24
             blt :+
                 sub #24
+                JMP :-
             :
             add #$01
             ; tmp_adr = A * 32
@@ -110,14 +111,16 @@ scroll_draw:
         :
         ; if direction down
         CMP #SCROLL_DIR_DOWN
-        BNE :++
-            ; adr += (tile_offset % 24) * 32
+        BNE :+++
+            ; A = tile_offset % 24
             LDA tile_offset
-            AND #$1F
-            CMP #23
+            :
+            CMP #24
             blt :+
                 sub #24
+                JMP :-
             :
+            ; adr += A * 32
             STA @adr+0
             LSR
             LSR

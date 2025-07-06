@@ -140,6 +140,9 @@ HPT = 0x08
 HPE = 0x09
 HPS = 0x0A
 HPA = 0x0B
+SL1 = 0x0C
+SL2 = 0x0D
+SA = 0x0E
 
 text = ""
 text_idx = 0
@@ -381,8 +384,9 @@ def convert_event(t: Tag):
         # check args
         if len(t.args) > 1:
             printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+    # 1 arg or
     # flag arg
-    elif v in [CRS, CRC, CRI]:
+    elif v in [CRS, CRC, CRI, SL1]:
         # check args
         if len(t.args) > 2:
             printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
@@ -390,6 +394,27 @@ def convert_event(t: Tag):
             printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
         else:
             bin.append(val2int(t.args[1], max=127, pos=t.pos))
+    # 2 args
+    elif v in [SL2]:
+        # check args
+        if len(t.args) > 3:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 3:
+            printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+        else:
+            bin.append(val2int(t.args[1], max=127, pos=t.pos))
+            bin.append(val2int(t.args[2], max=127, pos=t.pos))
+    # scroll activate
+    elif v in [SA]:
+        # check args
+        if len(t.args) > 3:
+            printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
+        elif len(t.args) < 3:
+            printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
+        else:
+            d = val2int(t.args[1], max=127, pos=t.pos)
+            s = val2int(t.args[2], max=127, pos=t.pos)
+            bin.append((d & 0x03) | ((s & 0x1F) << 2))
     # jump+n arg
     elif v in [CRH]:
         # check args

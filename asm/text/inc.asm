@@ -51,4 +51,7 @@
 .include "char/evt/HPS.asm"
 .include "char/evt/HPA.asm"
 .include "char/evt/TES.asm"
+.include "char/evt/SL1.asm"
+.include "char/evt/SL2.asm"
+.include "char/evt/SA.asm"
 .include "char/evt/EXA.asm"

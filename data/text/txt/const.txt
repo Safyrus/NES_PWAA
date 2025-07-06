@@ -11,3 +11,12 @@
 
 <const:HPT,8><const:HPE,9><const:HPS,10><const:HPA,11>
 <const:HP_NORMAL,0><const:HP_DANGER,1><const:HP_DAMAGE,2>
+
+<const:SL1,12>
+<const:SL2,13>
+<const:SA,14>
+
+<const:SCROLL_DIR_LEFT,0>
+<const:SCROLL_DIR_RIGHT,1>
+<const:SCROLL_DIR_UP,2>
+<const:SCROLL_DIR_DOWN,3>

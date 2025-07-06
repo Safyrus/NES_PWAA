@@ -653,9 +653,11 @@
 
     SCROLL_STATE_NONE  = 0
     SCROLL_STATE_LOAD  = 1
-    SCROLL_STATE_START = 2
-    SCROLL_STATE_STEP  = 3
-    SCROLL_STATE_END   = 4
+    SCROLL_STATE_LOAD1 = 2
+    SCROLL_STATE_LOAD2 = 3
+    SCROLL_STATE_START = 4
+    SCROLL_STATE_STEP  = 5
+    SCROLL_STATE_END   = 6
 
     SCROLL_IMG_BUFFERS_LO = $6200
     SCROLL_IMG_BUFFERS_HI = $6800
@@ -699,15 +701,3 @@
         EVT ; EVenT. Use to add control characters specific to the game
         EXT ; EXTension. Reserved to add more ctrl char to the dialog box
     .endenum
-
-
-    .enum EVT_CHR
-        CR     ; 
-        CR_OBJ ; 
-        CR_SET ; 
-        CR_CLR ; 
-        CR_IDX ; 
-        CLICK  ; 
-        ACT_RET; 
-    .endenum
-

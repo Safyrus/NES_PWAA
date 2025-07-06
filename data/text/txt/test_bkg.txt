@@ -1,5 +1,4 @@
 <jump:DEBUG>
-<label:DEBUG>
 
 <!-- comment -->
 
@@ -154,6 +153,20 @@ Well...Too late!<p><jump:testimony_end>
 <label:testimony_down_2>You have pressed down!<b>Returning<p><jump:testimony_3>
 <label:testimony_down_3>You have pressed down!<b><p>
 <label:testimony_end>
+
+<label:DEBUG>
+
+Testing Scroll<b>
+Now loading 1 Image<event:SL1,2><p>
+<hidetextbox><event:SA,SCROLL_DIR_RIGHT,4><wait:100><hidetextbox>
+1 Scroll to the right!<event:SL2,1,5><p>
+<hidetextbox><event:SA,SCROLL_DIR_LEFT,8><wait:100><hidetextbox>
+2 Scrolls to the left!<event:SL1,3><p>
+<hidetextbox><event:SA,SCROLL_DIR_UP,1><wait:127><wait:127><hidetextbox>
+1 Scroll up!<event:SL1,1><p>
+<hidetextbox><event:SA,SCROLL_DIR_DOWN,2><wait:127><hidetextbox>
+1 Scrolls down!<p>
+
 
 <label:end>This is the end of<b>the dialog data<b>jump forever here<p><jump:end>
 <label:bug>oh no !<b>Bug Incoming !<p>

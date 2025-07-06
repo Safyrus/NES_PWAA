@@ -6,6 +6,7 @@
     - [Events](#events)
     - [Box format](#box-format)
     - [Jump addresses format](#jump-addresses-format)
+  - [HP format](#hp-format)
   - [Fonts / Display char](#fonts--display-char)
     - [Occidental](#occidental)
       - [ASCII (0)](#ascii-0)
@@ -71,7 +72,10 @@
 |  HPE  |  $09  |     hp_val,jmp_adr     | HP Event: Register an event when hp hp_val.type reach hp_val.num. When trigger, jump to jmp_adr                                                  |
 |  HPS  |  $0A  |         hp_val         | HP Set: set hp hp_val.type to hp_val.num                                                                                                         |
 |  HPA  |  $0B  |         hp_val         | HP Add: add hp_val.num to hp hp_val.type                                                                                                         |
-|  EXA  |  $0?  | list of (box, jmp_adr) | configure and switch to EXAmination mode                                                                                                         |
+|  SL1  |  $0C  |       background       | Scroll: Load 1 background image                                                                                                                  |
+|  SL2  |  $0D  | background, background | Scroll: Load 2 background images                                                                                                                 |
+|  SA   |  $0E  |    direction&speed     | Scroll: Activate scroll with direction (bit 0-1) and speed (bit 2-6)                                                                             |
+|  EXA  |  $0F  | list of (box, jmp_adr) | configure and switch to EXAmination mode                                                                                                         |
 
 ### Box format
 
@@ -118,6 +122,15 @@ ccccccc
 
 other_data:
 can be a line of text when using ACT
+```
+
+## HP format
+
+```text
+n.ttvvv
+| ||+++-- Value
+| ++----- Type (0= normal, 1=danger, 2=damage, 3=empty (dot not use))
++-------- Negate value
 ```
 
 ## Fonts / Display char
