@@ -36,10 +36,10 @@ scanline_irq_handler:
         .include "scanline_pal_change.asm"
 
     @scanline_irq_top:
-        ; nametable mapping change done at the end of NMI
-        ; (because we are too late at scanline 1 and we can't interrupt before without eating NMI time)
-        LDA #NT_MAPPING_EMPTY
-        STA MMC5_NAMETABLE
+        ; disable background (to kind of disable rendering)
+        ; (because we suppose no sprite at these scanlines)
+        LDA #PPU_MASK_SPR | PPU_MASK_SPR8
+        STA PPU_MASK
         ; change sprite to 8*16
         LDA ppu_ctrl_val
         ORA #PPU_CTRL_SPR_SIZE
@@ -68,6 +68,9 @@ scanline_irq_handler:
         ; change nametable mapping
         LDA #NT_MAPPING_NT12
         STA MMC5_NAMETABLE
+        ; enable background
+        LDA #PPU_MASK_BKG | PPU_MASK_BKG8 | PPU_MASK_SPR | PPU_MASK_SPR8
+        STA PPU_MASK
         ; return
         JMP @end
     @scanline_irq_top_midbox:
@@ -118,11 +121,10 @@ scanline_irq_handler:
         ; return
         JMP @end
     @scanline_irq_bot_img:
-        ; change nametable mapping
-        LDA #NT_MAPPING_EMPTY
-        STA MMC5_NAMETABLE
         ; enable sprite rendering if disable
-        LDA #(PPU_MASK_BKG + PPU_MASK_BKG8 + PPU_MASK_SPR + PPU_MASK_SPR8)
+        ; alse disable background (to kind of disable rendering)
+        ; (because we suppose no sprite at these scanlines)
+        LDA #PPU_MASK_SPR | PPU_MASK_SPR8
         STA PPU_MASK
         ;
         BIT effect_flags
