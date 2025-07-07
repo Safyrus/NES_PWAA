@@ -225,9 +225,11 @@ def lex():
         # check for keywords
         k_idx = -1
         for i, k in enumerate(KEYWORDS):
-            if text[text_idx : text_idx + MAX_KEYWORD_LEN].startswith(k):
-                if k_idx < 0 or len(KEYWORDS[k_idx]) < len(KEYWORDS[i]):
-                    k_idx = i
+            subtxt = text[text_idx : text_idx + MAX_KEYWORD_LEN + 1]
+            if not (subtxt.startswith(k + ">") or subtxt.startswith(k + ":")):
+                continue
+            if k_idx < 0 or len(KEYWORDS[k_idx]) < len(KEYWORDS[i]):
+                k_idx = i
 
         # read next char
         c = next_char()
@@ -239,7 +241,10 @@ def lex():
                 # skip comment
                 c = skip_n_char(len(COMMENT_START) - 1)
                 while text[text_idx : text_idx + len(COMMENT_END)] != COMMENT_END:
-                    c = next_char()
+                    c = next_char_raw()
+                    if c == None:
+                        printv(f"ERROR {pos2str(Token().pos)}: Comment not closed", param="e")
+                        exit(1)
                 c = skip_n_char(len(COMMENT_END))
                 continue
             # special char
@@ -366,8 +371,11 @@ def val2int(val, min=0, max=255, pos=(0, 0)):
     elif val[1:].isnumeric() and val[0] == "-" and int(val[1:]) >= min and int(val[1:]) <= max:
         val = -int(val[1:])
     else:
-        val = min - 1
-        printv(f"ERROR {pos2str(pos)}: Expected integer in range {min} to {max} (both included)", param="e")
+        if val.isnumeric():
+            printv(f"ERROR {pos2str(pos)}: Expected integer in range {min} to {max} (both included)", param="e")
+        else:
+            printv(f"ERROR {pos2str(pos)}: Unknow value '{val}' .Expected integer in range {min} to {max} (both included)", param="e")
+        val = min
     return val
 
 
@@ -520,9 +528,16 @@ def convert(tags: list[Tag], filename: str):
     bin = bytearray()
 
     # include pass
-    for i, t in enumerate(tags[:]):
+    i = 0
+    while i < len(tags):
+        t = tags[i]
+        if t.type == "CHANGE_FILENAME":
+            filename = t.args[0]
+            tags.remove(t)
+            continue
         # skip non include tag
         if t.type != "include":
+            i += 1
             continue
         # check args
         if len(t.args) > 1:
@@ -531,15 +546,19 @@ def convert(tags: list[Tag], filename: str):
             printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
             continue
         name = t.args[0]
-        # remove tag
-        tags.remove(t)
         # find relative path
         d = os.path.dirname(filename)
         inc_filename = os.path.normpath(os.path.join(d, name))
         # check file exist
         if not os.path.exists(inc_filename):
-            printv(f"ERROR {pos2str(t.pos)}: Cannot include file '{name}'", param="e")
+            printv(f"ERROR {pos2str(t.pos)}: Cannot include file '{name}' (file not found)", param="e")
+            i += 1
             continue
+        # change tag
+        tags[i].type = "CHANGE_FILENAME"
+        tags[i].args = [filename]
+        #
+        filename = inc_filename
         # parse it
         text_idx = 0
         text_line = 1
@@ -592,7 +611,7 @@ def convert(tags: list[Tag], filename: str):
             else:
                 labels[t.args[0]] = len(bin)
         # no arg tag
-        elif KEYWORD_N_ARG[t.type] == 0:
+        elif t.type in KEYWORD_N_ARG and KEYWORD_N_ARG[t.type] == 0:
             bin.append(KEYWORD_2_BYTE[t.type])
         # 1 arg tag with 1 to 1 binary
         elif t.type in TAG_1_BYTE_SIMPLE_ARG:
@@ -665,13 +684,15 @@ def convert(tags: list[Tag], filename: str):
             bin.extend(tmp_bin)
         elif t.type == "flash":
             # check args
+            force = 0
+            time = 0
             if len(t.args) > 2:
                 printv(f"WARNING {pos2str(t.pos)}: Garbadge arguments", param="w")
             elif len(t.args) < 2:
                 printv(f"ERROR {pos2str(t.pos)}: Missing arguments", param="e")
-            #
-            force = val2int(t.args[0], max=7, pos=t.pos)
-            time = val2int(t.args[1], max=119, pos=t.pos)
+            else:
+                force = val2int(t.args[0], max=7, pos=t.pos)
+                time = val2int(t.args[1], max=119, pos=t.pos)
             #
             bin.append(KEYWORD_2_BYTE[t.type])
             bin.append((force << 4) + time)

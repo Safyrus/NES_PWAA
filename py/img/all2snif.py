@@ -290,7 +290,7 @@ if __name__ == "__main__":
                         img2snif_args.append(
                             (
                                 img_path,
-                                out,
+                                snif_file,
                                 False,
                                 True,
                                 6,
