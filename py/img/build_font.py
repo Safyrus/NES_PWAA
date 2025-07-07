@@ -118,7 +118,7 @@ def add_imgarray(chr_tiles, img):
     return img_tiles
 
 
-def build_font(font_folder, name_folder, out_chr, out_font, out_name):
+def build_font(font_folder, name_folder, out_chr, out_font, out_name, out_text):
     # names
     names = get_names(name_folder)
     output_names_asm(names, out_name)
@@ -153,6 +153,22 @@ def build_font(font_folder, name_folder, out_chr, out_font, out_name):
             const_name = "FONT_" + os.path.splitext(font)[0].upper()
             f.write(f"{const_name} = {str(i+2)}\n")
 
+    # output names & fonts as text
+    with open(out_text, "w", encoding="utf-8") as f:
+        f.write("<!--\nThis file was generated\n-->\n")
+        # output names
+        f.write("\n<!-- name constants-->\n")
+        for i, (name, _) in enumerate(names.items()):
+            const_name = "NAME_" + os.path.splitext(name)[0].upper()
+            f.write(f"<const:{const_name},{i}>\n")
+        # output fonts
+        f.write("\n<!-- font constants-->\n")
+        f.write(f"<const:FONT_ASCII,0>\n")
+        f.write(f"<const:FONT_NAMES,1>\n")
+        for i, font in enumerate(font_imgs):
+            const_name = "FONT_" + os.path.splitext(font)[0].upper()
+            f.write(f"<const:{const_name},{i+2}>\n")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -161,6 +177,7 @@ if __name__ == "__main__":
     parser.add_argument("-oc", "--output_chr_path", default="FONT.chr")
     parser.add_argument("-of", "--output_font_path", default="font.asm")
     parser.add_argument("-on", "--output_name_path", default="name.asm")
+    parser.add_argument("-ot", "--output_text", default="name.txt")
     args = parser.parse_args()
 
     build_font(
@@ -169,4 +186,5 @@ if __name__ == "__main__":
         args.output_chr_path,
         args.output_font_path,
         args.output_name_path,
+        args.output_text,
     )

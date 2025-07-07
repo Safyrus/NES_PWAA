@@ -92,25 +92,33 @@ run:
 
 text:
 	mkdir -p "$(ASM)/data"
-	$(PYTHON) $(PY)/txtEncode/txt_2_bin.py -i $(TEXT) -o $(ASM)/data/text.bin
+	$(PYTHON) $(PY)/txtEncode/txt_2_bin.py -i $(TEXT_MAIN) -o $(ASM)/data/text.bin
 	cd $(ASM)/data && $(PYTHON) ../../$(PY)/txtEncode/lz_encode_block.py ./text.bin ./text.bin
 
 
 #--------------------------------
 
-img:
+font:
 # make FONT chr
-	$(PYTHON) $(PY)/img/build_font.py -if $(DATA)/font -in $(DATA)/name -oc $(DATA)/FONT.chr -on $(ASM)/data/name.asm -of $(ASM)/data/font.asm
+	$(PYTHON) $(PY)/img/build_font.py -if $(DATA)/font -in $(DATA)/name -oc $(DATA)/FONT.chr -on $(ASM)/data/name.asm -of $(ASM)/data/font.asm -ot $(TEXT)/name.txt
+
+img:
+	make font
 # convert images, anims and photos to snif files
 	$(PYTHON) $(PY)/img/all2snif.py -if $(DATA)/img -sf $(DATA)/snif
 # merge all snif files & CHR into binary files
+	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/EMPTY.chr 33 ../PWAA.chr ../$(ASM)/data/img
+#
+	$(PYTHON) $(PY)/img/img_name.py -i $(ASM)/data/img -o $(TEXT)
+
+img_c:
 	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/EMPTY.chr 33 ../PWAA.chr ../$(ASM)/data/img
 
 
 #--------------------------------
 
 music:
-	$(PYTHON) $(PY)/snd/all.py -fs $(FAMISTUDIO) -i $(DATA)/$(MUSIC) -o $(ASM)/data/mus
+	$(PYTHON) $(PY)/snd/all.py -fs $(FAMISTUDIO) -i $(DATA)/$(MUSIC) -o $(ASM)/data/mus -mt $(TEXT)/music.txt -st $(TEXT)/sfx.txt
 
 #--------------------------------
 

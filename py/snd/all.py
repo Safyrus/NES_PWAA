@@ -2,11 +2,11 @@ import argparse
 import math
 import os
 import binpacking
-from music import export_all, export_mus, export_mus_asm
+from music import export_all, export_mus, export_mus_asm, export_mus_txt
 from sfx import export_sfxbip
 
 
-def export_music(fs, fm_file, out_folder, music_idx):
+def export_music(fs, fm_file, out_folder, music_idx, out_text_file):
     # remove dpcm files
     i = 0
     while os.path.exists(os.path.join(out_folder, f"music_bank{i}.dmc")):
@@ -58,11 +58,12 @@ def export_music(fs, fm_file, out_folder, music_idx):
     print("music size:", music_size, "bytes")
     print("total size (without dpcm):", total_size, "bytes")
 
-    # export asm
+    # export asm and text
     export_mus_asm(bins, list(music_idx.keys()), out_folder)
+    export_mus_txt(list(music_idx.keys()), out_text_file)
 
 
-def sound_2_asm(fs, fm_file, out_folder):
+def sound_2_asm(fs, fm_file, out_folder, mus_text_file, sfx_text_file):
     # get music titles
     names, _ = export_all(fs, fm_file, out_folder)
     names = list(names)
@@ -110,9 +111,9 @@ def sound_2_asm(fs, fm_file, out_folder):
             musics[n] = i
 
     # export music
-    export_music(fs, fm_file, out_folder, musics)
+    export_music(fs, fm_file, out_folder, musics, mus_text_file)
     # export sfx & bip
-    export_sfxbip(fs, fm_file, out_folder, sfxs)
+    export_sfxbip(fs, fm_file, out_folder, sfxs, sfx_text_file)
 
 
 if __name__ == "__main__":
@@ -120,6 +121,14 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--input_file")
     parser.add_argument("-fs", "--famistudio")
     parser.add_argument("-o", "--output_folder")
+    parser.add_argument("-mt", "--output_music_text_file")
+    parser.add_argument("-st", "--output_sfx_text_file")
     args = parser.parse_args()
 
-    sound_2_asm(args.famistudio, args.input_file, args.output_folder)
+    sound_2_asm(
+        args.famistudio,
+        args.input_file,
+        args.output_folder,
+        args.output_music_text_file,
+        args.output_sfx_text_file,
+    )

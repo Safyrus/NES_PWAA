@@ -1,4 +1,4 @@
-import argparse
+import re
 import os
 import subprocess
 from glob import glob
@@ -153,3 +153,13 @@ def export_mus_asm(bins, music_names, out_folder):
                 if name in b.keys():
                     f.write(f"    .byte ${hex(i)[2:]}+MUS_BNK ; {n} - {name}\n")
                     break
+
+def export_mus_txt(music_names, out_file):
+    # export asm
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write("<!--\nThis file was generated\n-->\n\n")
+        # write music list
+        for n, name in enumerate(music_names):
+            name_filter = re.sub(r"[^a-zA-Z0-9]", "_", name).upper()
+            name_filter = re.sub(r"\_+", "_", name_filter)
+            f.write(f"<const:MUS_{name_filter},{n}>\n")
