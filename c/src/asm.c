@@ -73,6 +73,13 @@ int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint
     char constname[MAX_FILENAME_LEN];
     strcpy(constname, filename);
     filename2const(constname);
+    if (t == IMG_TYPE_BKG)
+        fprintf(img_names, "BKG_");
+    else if (t == IMG_TYPE_CHR)
+        fprintf(img_names, "CHR_");
+    else if (t == IMG_TYPE_PHT)
+        fprintf(img_names, "PHT_");
+
     fprintf(img_names, "%s = %d\n", constname, (*index));
     // add pointer to img_ptr
     if ((*index) % 256 == 0)

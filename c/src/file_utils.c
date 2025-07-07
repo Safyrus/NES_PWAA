@@ -106,7 +106,7 @@ void write_byte_strict(FILE *file, const uint8_t byte)
 {
     if (fwrite(&byte, 1, 1, file) != 1)
     {
-        fprintf(stderr, "Error (write_byte_strict): while weiting byte from file\n");
+        fprintf(stderr, "Error (write_byte_strict): while writing byte from file\n");
         exit(1);
     }
 }
@@ -185,6 +185,27 @@ void remove_ext(char *str)
         {
             // cut there
             str[i] = 0;
+            return;
+        }
+        // continue
+        i--;
+    }
+}
+
+void remove_dir_path(char *str)
+{
+    // start at the end of the string
+    int l = strlen(str);
+    int i = l;
+    while (i >= 0)
+    {
+        // if at extension
+        if (str[i] == SEP)
+        {
+            // cut there
+            i++;
+            for (int j = 0; i <= l;)
+                str[j++] = str[i++];
             return;
         }
         // continue

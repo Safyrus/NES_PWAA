@@ -67,6 +67,9 @@ int compare_hash(uint8_t *hash_list, int size, uint8_t *hash)
 void filename2const(char *filename)
 {
     remove_ext(filename);
+    #ifndef FULL_CONST_NAME
+    remove_dir_path(filename);
+    #endif
     int i = 0;
     while (filename[i])
     {

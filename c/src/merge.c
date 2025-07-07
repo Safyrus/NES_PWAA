@@ -375,7 +375,7 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
         // compute hash from file
         uint64_t h = hash_file(filename);
         // update hash of snif file
-        FILE *f = fopen(filename, "r+");
+        FILE *f = fopen(filename, "rb+");
         for (int i = 0; i < HASH_SIZE; i++)
             write_byte_strict(f, (h >> (i * 8)) & 0xFF);
         fclose(f);

@@ -175,10 +175,10 @@ void read_snif(const char *filename, struct SNIFFile *snif)
     // read PPU CHR banks
     ////////////////////////
     b = read_byte_strict(file);
-    for (int i = 0; i < 8; i++)
+    for (uint8_t i = 0; i < 8; i++)
         snif->ppu_banks[i] = 0;
     snif->ppu_mask = b;
-    for (int i = 0; i < BITCOUNT[snif->ppu_mask]; i++)
+    for (uint8_t i = 0; i < BITCOUNT[snif->ppu_mask]; i++)
         snif->ppu_banks[i] = read_byte_strict(file);
 
     ////////////////////////

@@ -20,6 +20,7 @@ int join_path(char *root, const char *suffix);
 FILE *fopen_strict(const char *filename, const char *mode);
 int read_line(FILE *file, char *buf, int buf_len);
 void remove_ext(char *str);
+void remove_dir_path(char *str);
 int rmdir_rec(const char *dirname, int silence);
 
 #endif
