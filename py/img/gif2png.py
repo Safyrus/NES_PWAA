@@ -6,17 +6,20 @@ from tqdm import tqdm
 import numpy as np
 
 def gif2png(gif : Image.Image, FPS=60, savepath="") -> list[int]:
+    n = 0
     for i in range(gif.n_frames):
         try:
             gif.seek(i) # set gif to frame i
             duration = gif.info["duration"]
             duration = round(duration/(1000/FPS)) # millisecond -> frame count
             if savepath:
-                outpath = os.path.splitext(savepath)[0] + f"_i{i}t{duration}.png"
-                outpath = os.path.join(args.output, outpath)
-                os.makedirs(os.path.dirname(outpath), exist_ok=True)
-                gif.save(outpath)
-                gif.save("tmp.png")
+                while duration > 0:
+                    outpath = os.path.splitext(savepath)[0] + f"_i{n}t{duration if duration < 256 else 255}.png"
+                    outpath = os.path.join(args.output, outpath)
+                    os.makedirs(os.path.dirname(outpath), exist_ok=True)
+                    gif.save(outpath)
+                    duration -= 255
+                    n += 1
         # because some gif are not well encoded
         except Exception as e:
             print(e)
