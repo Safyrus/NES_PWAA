@@ -132,7 +132,7 @@ RST:
     mov effect_flags, #(EFFECT_FLAG_PAL_SPLIT)
 
     ; disable text until main init is done
-    ora_adr txt_flags, #TXT_FLAG_BUSY
+    ora_adr txt_flags, #$01
 
     ; Enable NMI + set sprite table to $1000
     ; by this time, it is sure that the PPU is initialize

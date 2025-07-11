@@ -26,19 +26,25 @@ scroll_nt:
     LSR
     ORA #$07
     TAY
-    ; img_pals[X:X+6] = SCROLL_IMG_PALS_BUF[Y:Y+6]
+    ; img_pals[X:X+6], img_tmp_pals[X:X+6] = SCROLL_IMG_PALS_BUF[Y:Y+6]
     LDA SCROLL_IMG_PALS_BUF+$4000+0, Y
     STA img_pals+0, X
+    STA img_tmp_pals+0, X
     LDA SCROLL_IMG_PALS_BUF+$4000+1, Y
     STA img_pals+1, X
+    STA img_tmp_pals+1, X
     LDA SCROLL_IMG_PALS_BUF+$4000+2, Y
     STA img_pals+2, X
+    STA img_tmp_pals+2, X
     LDA SCROLL_IMG_PALS_BUF+$4000+3, Y
     STA img_pals+3, X
+    STA img_tmp_pals+3, X
     LDA SCROLL_IMG_PALS_BUF+$4000+4, Y
     STA img_pals+4, X
+    STA img_tmp_pals+4, X
     LDA SCROLL_IMG_PALS_BUF+$4000+5, Y
     STA img_pals+5, X
+    STA img_tmp_pals+5, X
 
     ; restore bank
     pull mmc5_banks+2

@@ -4,16 +4,16 @@ MUS:
     ; if m == music
     CMP music
     STA music
-    BNE :+
+    BNE play_music
         ; pause = !pause
         LDA pause
         EOR #$FF
         STA pause
         ; famistudio_music_pause(pause)
         JSR famistudio_music_pause
-        JMP :++
+        JMP :+
     ; else
-    :
+    play_music:
         TAX
         ; push bank
         push mmc5_banks+2
@@ -33,6 +33,8 @@ MUS:
         TAX
         LDA music_idx_table, X
         JSR famistudio_music_play
+        ; disable pause
+        mov pause, #$00
         ; restore bank
         pull mmc5_banks+2
         STA MMC5_PRG_BNK1

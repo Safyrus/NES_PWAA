@@ -67,7 +67,7 @@
     mov cur_chr+1, #$FF
     STA new_chr+1
     ; test display
-    LDX #OUT_R0_COURTROOM_COURTROOM_0
+    LDX #BKG_EMPTY
     STX new_bkg
     JSR display_bkg
     ; LDX #<OUT_R0_CHAR_PHOENIX_PHOENIX_DOCUMENT_A__I0T8
@@ -106,12 +106,23 @@
     ; restore bank
     pull mmc5_banks+1
     STA MMC5_PRG_BNK0
-    
+
+
+    ; --------
+    ; Sound
+    ; --------
+    ; setup music
+    LDA #$00
+    JSR play_music
+    LDA #$FF
+    STA pause
+    JSR famistudio_music_pause
+    ; disable BIP
+    mov bip, #$FF ; should be $FF
+
 
     ; --------
     ; Other
     ; --------
-    ; disable BIP
-    mov bip, #$FF ; should be $FF
     ; enable text
-    and_adr txt_flags, #($FF-TXT_FLAG_BUSY)
+    and_adr txt_flags, #($FF-$01)
