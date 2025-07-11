@@ -1,0 +1,12 @@
+<!-- #### Constants #### -->
+<include:const.txt>
+<include:name.txt>
+<include:music.txt>
+<include:sfx.txt>
+<include:image.txt>
+<include:anim.txt>
+
+<!-- #### Main text #### -->
+<include:chapter_1/inc.txt>
+
+<label:end><p><jump:end>

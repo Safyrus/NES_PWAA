@@ -1,0 +1,27 @@
+<!--
+This file was generated
+-->
+
+<!-- sfx constants -->
+<const:SFX_BADUM,0>
+<const:SFX_BIP2,1>
+<const:SFX_DAMAGE2,2>
+<const:SFX_DESKSLAM,3>
+<const:SFX_DOG,4>
+<const:SFX_DRAMAPOUND,5>
+<const:SFX_GAVEL,6>
+<const:SFX_LIGHTBULB,7>
+<const:SFX_REALISATION_MMC5,8>
+<const:SFX_REALISATION,9>
+<const:SFX_SMACK,10>
+<const:SFX_STAB,11>
+<const:SFX_STAB2,12>
+<const:SFX_SUPERSHOCK,13>
+<const:SFX_THUD4,14>
+<const:SFX_WHOOPS,15>
+
+<!-- bip constants -->
+<const:BIP_FEMALE,0>
+<const:BIP_MALE,1>
+<const:BIP_TYPEWRITTER,2>
+<const:BIP_LOW,3>

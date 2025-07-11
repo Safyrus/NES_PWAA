@@ -1,0 +1,44 @@
+<!--
+This file was generated
+-->
+
+<!-- name constants-->
+<const:NAME_APRIL,0>
+<const:NAME_BELLBOY,1>
+<const:NAME_BUTZ,2>
+<const:NAME_CELLULAR,3>
+<const:NAME_CLOCK,4>
+<const:NAME_CODY,5>
+<const:NAME_EDGEWORTH,6>
+<const:NAME_GROSSBERG,7>
+<const:NAME_GUARD,8>
+<const:NAME_GUMSHOE,9>
+<const:NAME_JUDGE,10>
+<const:NAME_KARMA,11>
+<const:NAME_LOTTA,12>
+<const:NAME_MANELLA,13>
+<const:NAME_MAYA,14>
+<const:NAME_MIA,15>
+<const:NAME_MISSILE,16>
+<const:NAME_OLDBAG,17>
+<const:NAME_PARROT,18>
+<const:NAME_PAYNE,19>
+<const:NAME_PENNY,20>
+<const:NAME_PHOENIX,21>
+<const:NAME_PHONE,22>
+<const:NAME_POLICE,23>
+<const:NAME_QUESTION,24>
+<const:NAME_SAHWIT,25>
+<const:NAME_TEACHER,26>
+<const:NAME_TV,27>
+<const:NAME_UNCLE,28>
+<const:NAME_VASQUEZ,29>
+<const:NAME_WHITE,30>
+<const:NAME_WILL,31>
+<const:NAME_YOGI,32>
+
+<!-- font constants-->
+<const:FONT_ASCII,0>
+<const:FONT_NAMES,1>
+<const:FONT_HIRAGANA,2>
+<const:FONT_KATAKANA,3>

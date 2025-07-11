@@ -1,0 +1,55 @@
+<!--
+--------------------------
+| SCENE 1-1:Intro Scene  |
+--------------------------
+-->
+<label:chapter_1_1>
+
+<!-- Play opening music and display intro animation (tinker blood drops) -->
+<wait:1><music:MUS_OPENING><hidetextbox><background:BKG_TINKER_INTRO_2><character:TINKER_INTRO_ANIM><wait:120><wait:120>
+
+<!-- Setup dialog box -->
+<hidetextbox><speed:10>
+<name:0><name:0><bip:0><bip:0>
+
+*gasp*...<wait:28> *gasp*... <wait:60><fp>
+
+<!-- hide dialog box and sroll up -->
+<hidetextbox><character:TINKER_INTRO_ANIM><wait:20><event:EVT_SL1,BKG_TINKER_INTRO_1><wait:20><event:EVT_SA,SCROLL_DIR_UP,1><wait:120><wait:120>
+<!-- Fade in/out to cindy background with blood animation -->
+<background:BKG_CINDY_INTRO><character:CINDY_INTRO_ANIM><fade:4,7><wait:7><fade:0,100><wait:100><wait:113>
+
+<!-- Re-display dialog box -->
+<hidetextbox><flash:4,4><shake:1,30><speed:32>
+
+Dammit!<wait:34> <speed:10>...Why me?<wait:70><hidetextbox><fade:4,45><wait:45><fp>
+
+<!-- Fade to black without dialog box -->
+<speed:12><wait:7><hidetextbox>
+
+I can't get caught... <wait:35><shake:1,30><speed:32><b>
+Not like this!<event:EVT_SL1,BKG_CS_SAHWIT_MURDER_1><character:CINDY_INTRO_ANIM><background:BKG_CS_SAHWIT_MURDER_2><wait:70><wait:7><fp>
+
+<!-- Fade in to Sahwit in front of the body and scrolling up
+    The scroll is faster because we can't display the dialog box during a scroll -->
+<speed:16><hidetextbox><event:EVT_SA,SCROLL_DIR_UP,2><fade:0,45><wait:45><wait:80><hidetextbox>
+
+I-I've gotta find someone<b>
+to pin this on... <wait:49><fp>
+
+<!-- Flash and change image to Sawhit 3 times -->
+<hidetextbox><background:BKG_CS_SAHWIT_ZOOM_1><wait:10><flash:4,4><wait:25>
+<background:BKG_CS_SAHWIT_ZOOM_2><wait:10><flash:4,4><wait:40>
+<background:BKG_CS_SAHWIT_ZOOM_3><wait:10><flash:4,4><wait:10><speed:8><hidetextbox>
+
+Someone like... <wait:35><speed:32>him!<wait:60><fp>
+
+<!-- Qucik fade in/out to Sahwit seing Larry -->
+<background:BKG_CS_SAHWIT_LARRY><wait:20><hidetextbox><flash:4,4><fade:4,45><wait:45><background:BKG_CS_SAHWIT_ZOOM_3><wait:15>
+<fade:0,7><wait:75><speed:8><hidetextbox>
+
+I'll make it look like<wait:30><b>
+HE did it!<wait:120><fp>
+
+<!-- Fade to black -->
+<speed:SPD_DEFAULT><hidetextbox><wait:40><fade:4,100><wait:100>

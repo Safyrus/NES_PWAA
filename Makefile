@@ -106,13 +106,13 @@ img:
 	make font
 # convert images, anims and photos to snif files
 	$(PYTHON) $(PY)/img/all2snif.py -if $(DATA)/img -sf $(DATA)/snif
+	make img_c
+
+img_c:
 # merge all snif files & CHR into binary files
 	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/EMPTY.chr 33 ../PWAA.chr ../$(ASM)/data/img
 #
 	$(PYTHON) $(PY)/img/img_name.py -i $(ASM)/data/img -o $(TEXT)
-
-img_c:
-	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/EMPTY.chr 33 ../PWAA.chr ../$(ASM)/data/img
 
 
 #--------------------------------

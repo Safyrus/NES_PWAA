@@ -1,0 +1,24 @@
+<!-- Event special chars -->
+<const:EVT_CR,0>
+<const:EVT_CRF,1>
+<const:EVT_CRO,2>
+<const:EVT_CRH,3>
+<const:EVT_CRS,4>
+<const:EVT_CRC,5>
+<const:EVT_CRI,6>
+<const:EVT_CRN,7>
+<const:EVT_HPT,8>
+<const:EVT_HPE,9>
+<const:EVT_HPS,10>
+<const:EVT_HPA,11>
+<const:EVT_SL1,12>
+<const:EVT_SL2,13>
+<const:EVT_SA,14>
+
+<!-- Other -->
+<const:SCROLL_DIR_LEFT,0>
+<const:SCROLL_DIR_RIGHT,1>
+<const:SCROLL_DIR_UP,2>
+<const:SCROLL_DIR_DOWN,3>
+
+<const:SPD_DEFAULT,8>
