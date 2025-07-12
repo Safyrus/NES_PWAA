@@ -16,10 +16,6 @@ scroll_draw:
     LSR
     LSR
     STA @n
-    ; set bank
-    push mmc5_banks+2
-    mov mmc5_banks+2, #GENERAL_BNK
-    STA MMC5_PRG_BNK1
 
     ; for n
     @for:
@@ -219,9 +215,6 @@ scroll_draw:
 
     ; return
     @ret:
-    ; restore bank
-    pull mmc5_banks+2
-    STA MMC5_PRG_BNK1
     RTS
 
 

@@ -7,6 +7,10 @@
 .include "nt.asm"
 
 scroll_main:
+    ; set bank
+    push mmc5_banks+2
+    mov mmc5_banks+2, #GENERAL_BNK
+    STA MMC5_PRG_BNK1
     ; switch(scroll_state)
     ; case SCROLL_STATE_LOAD1
     LDA scroll_state
@@ -94,5 +98,8 @@ scroll_main:
         ; JMP @break
     :
     @break:
+    ; restore bank
+    pull mmc5_banks+2
+    STA MMC5_PRG_BNK1
     ; return
     RTS

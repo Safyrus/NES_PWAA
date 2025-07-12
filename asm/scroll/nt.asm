@@ -14,11 +14,6 @@ scroll_nt:
         LDX #$07
     :
 
-    ; set bank
-    push mmc5_banks+2
-    mov mmc5_banks+2, #GENERAL_BNK
-    STA MMC5_PRG_BNK1
-
     ; img_idx = ???
     ; Y = (img_idx*32)+7
     LDA scroll_pal_flip
@@ -45,10 +40,6 @@ scroll_nt:
     LDA SCROLL_IMG_PALS_BUF+$4000+5, Y
     STA img_pals+5, X
     STA img_tmp_pals+5, X
-
-    ; restore bank
-    pull mmc5_banks+2
-    STA MMC5_PRG_BNK1
 
     ; return
     RTS
