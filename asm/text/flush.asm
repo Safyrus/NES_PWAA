@@ -13,7 +13,7 @@ flush:
 
     ; if dialog box is off
     LDA effect_flags
-    AND #EFFECT_FLAG_PAL_SPLIT
+    AND #EFFECT_FLAG_DIALOG
     BNE :+
     ; and input mode is normal
     LDA input_mode

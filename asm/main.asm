@@ -106,44 +106,7 @@ MAIN_LOOP:
     LDA packet_buf_read_adr+0
     CMP packet_buf_write_adr+0
     BNE @anim_else
-        ; wait to be at the top of the frame
-        @wait_topframe:
-            LDA scanline
-            CMP #SCANLINE_TOP
-            BNE @wait_topframe
-        ; change scroll position to other nametable
-        ; (we need to change scroll before updating MMC5 tiles)
-        LDA img_flag
-        AND #IMG_FLAG_OTHERNT
-        LSR
-        LSR
-        STA tmp
-        LDA ppu_ctrl_val
-        AND #$FC
-        ORA tmp
-        STA PPU_CTRL
-        STA ppu_ctrl_val
-        ;
-        LDA #$00
-        STA scroll_x
-        STA scroll_y
-        ; copy MMC5 tiles
-        JSR cp_mmc5
-        ; disable image drawing flag
-        and_adr effect_flags, #($FF-EFFECT_FLAG_IMAGE)
-        ; swap nametable to use
-        LDA img_flag
-        EOR #IMG_FLAG_OTHERNT
-        ; re-enable sprites update
-        AND #($FF-IMG_FLAG_UNSPRITE)
-        STA img_flag
-        ; use new palettes
-        ; copy_palettes()
-        JSR copy_palettes
-        ; update_palettes()
-        JSR update_palettes
-        ; update sprites
-        JSR draw_sprites
+        JSR update_visual
         JMP @anim_fi
     ; else
     @anim_else:
@@ -312,6 +275,57 @@ MAIN_LOOP:
         JSR update_palettes
     :
 
+    ; if dialog box transition
+    LDA effect_flags
+    AND #EFFECT_FLAG_DB_ANIM
+    BEQ @dn_anim_end
+        JSR do_db_transistion
+    @dn_anim_end:
+
     @MAIN_END:
     ; loop back to start of main
     JMP MAIN_LOOP
+
+
+update_visual:
+    ; wait to be at the top of the frame
+    @wait_topframe:
+        LDA scanline
+        CMP #SCANLINE_TOP
+        BNE @wait_topframe
+update_visual_now:
+    ; change scroll position to other nametable
+    ; (we need to change scroll before updating MMC5 tiles)
+    LDA img_flag
+    AND #IMG_FLAG_OTHERNT
+    LSR
+    LSR
+    STA tmp
+    LDA ppu_ctrl_val
+    AND #$FC
+    ORA tmp
+    STA PPU_CTRL
+    STA ppu_ctrl_val
+    ;
+    LDA #$00
+    STA scroll_x
+    STA scroll_y
+    ; copy MMC5 tiles
+    JSR cp_mmc5
+    ; disable image drawing flag
+    and_adr effect_flags, #($FF-EFFECT_FLAG_IMAGE)
+    ; swap nametable to use
+    LDA img_flag
+    EOR #IMG_FLAG_OTHERNT
+    ; re-enable sprites update
+    AND #($FF-IMG_FLAG_UNSPRITE)
+    STA img_flag
+    ; use new palettes
+    ; copy_palettes()
+    JSR copy_palettes
+    ; update_palettes()
+    JSR update_palettes
+    ; update sprites
+    JSR draw_sprites
+    ; return
+    RTS

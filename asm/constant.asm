@@ -370,7 +370,8 @@
     EFFECT_FLAG_PAL_SPLIT = %10000000
     EFFECT_FLAG_MIDBOX    = %01000000
     EFFECT_FLAG_IMAGE     = %00000001
-
+    EFFECT_FLAG_DIALOG    = %00000010
+    EFFECT_FLAG_DB_ANIM   = %00000100
 
     ; Constants: Nametable mapping
     ; See: <MMC5 Nametable mapping>

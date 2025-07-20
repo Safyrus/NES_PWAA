@@ -29,7 +29,7 @@ update_dialog:
     STA @data_hi+0
     ; if dialog box off
     LDA effect_flags
-    AND #EFFECT_FLAG_PAL_SPLIT
+    AND #EFFECT_FLAG_DIALOG
     BNE :+
         ; if image is displayed on the 1st buffer
         LDA img_flag
@@ -179,8 +179,15 @@ send_box_update:
     @count = tmp+8
 
     ; for 8 packets
-    LDX #0
     mov @count, #$08
+send_box_update_n:
+    @adr = tmp+0
+    @packet = tmp+2
+    @data_hi = tmp+4
+    @data_lo = tmp+6
+    @count = tmp+8
+
+    LDX #0
     @send_packet:
         ; reserve packet
         LDY #$20

@@ -51,7 +51,7 @@ cp_mmc5:
     INC tmp+3
     ; or 2 if dialog box is displayed
     LDA effect_flags
-    AND #EFFECT_FLAG_PAL_SPLIT
+    AND #EFFECT_FLAG_DIALOG
     BNE :+
         JMP cp_page
     :

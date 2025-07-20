@@ -129,7 +129,7 @@ RST:
     STA MMC5_PRG_BNK0
 
     ; enable dialog box
-    mov effect_flags, #(EFFECT_FLAG_PAL_SPLIT)
+    mov effect_flags, #EFFECT_FLAG_DIALOG
 
     ; disable text until main init is done
     ora_adr txt_flags, #$01

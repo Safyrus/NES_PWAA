@@ -275,8 +275,10 @@ OAM:
         ; Variable: effect_flags
         ;----------------
         ;--- Text
-        ; PM.. ...I
-        ; ||      +-- Image drawing
+        ; PM.. .TDI
+        ; ||    ||+-- Image drawing
+        ; ||    |+--- Dialog on
+        ; ||    +---- dialog Transition
         ; |+--------- Midbox on
         ; +---------- mid frame Pallette switch for the dialog box (1=active)
         ;---
@@ -560,7 +562,8 @@ OAM:
         ; Variable: txt_flags
         ;----------------
         ;--- Text
-        ; BM.. ....
+        ; BM.. ...b
+        ; ||      +-- reset busy flag
         ; |+--------- Draw midbox async
         ; +---------- Busy, don't call read function until clear
         ;---
@@ -592,16 +595,16 @@ OAM:
     ; Group: Scroll variables
     ;================
 
-    scroll_img: .res 2
-    scroll_n_img: .res 1
-    scroll_spd: .res 1
-    scroll_dir: .res 1
-    scroll_state: .res 1
-    scroll_px_remain: .res 2
-    scroll_pal_flip: .res 1
-    nt_offset: .res 1
-    tile_offset: .res 1
-    scroll_ppu_adr: .res 2
+        scroll_img: .res 2
+        scroll_n_img: .res 1
+        scroll_spd: .res 1
+        scroll_dir: .res 1
+        scroll_state: .res 1
+        scroll_px_remain: .res 2
+        scroll_pal_flip: .res 1
+        nt_offset: .res 1
+        tile_offset: .res 1
+        scroll_ppu_adr: .res 2
 
 ;****************
 ; MMC5 RAM SEGMENT
