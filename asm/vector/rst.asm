@@ -86,6 +86,10 @@ RST:
     LDA #$03
     STA MMC5_CHR_MODE
 
+    ; update nametable mapping
+    LDA #NT_MAPPING_NT12
+    STA MMC5_NAMETABLE
+
     ; Clean PRG RAM
     mov tmp+2, #RAM_MAX_BNK ; loop counter
     @clean_prgram:
@@ -127,6 +131,22 @@ RST:
     LDA #CODE_BNK
     STA mmc5_banks+1
     STA MMC5_PRG_BNK0
+
+    ; clean PPU
+    LDA #$20
+    STA PPU_ADDR
+    LDA #$00
+    STA PPU_ADDR
+    TAX
+    LDY #$08
+    @rst_ppu_y:
+        @rst_ppu_x:
+            STA PPU_DATA
+            INX
+            BNE @rst_ppu_x
+        DEY
+        BNE @rst_ppu_y
+
 
     ; enable dialog box
     mov effect_flags, #EFFECT_FLAG_DIALOG

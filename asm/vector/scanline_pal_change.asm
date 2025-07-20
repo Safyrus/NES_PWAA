@@ -95,7 +95,7 @@
     STX PPU_DATA
     STY PPU_DATA
     ; wait
-    LDX #$11
+    LDX #$10
     @dialog_wait_4:
         DEX
         bnz @dialog_wait_4
@@ -103,6 +103,11 @@
     ; - - - - - - - -
     ; fifth scanline (155)
     ; - - - - - - - -
+    ; change first CHR bank to fix wrong left pixels at the end of palette split
+    ; (for the first line of a few tile, the PPU don't see the dialog box tiles
+    ; but the ones in the first sprite bank, so we need to update it)
+    LDA #$00
+    STA MMC5_CHR_BNK0
     ; setup registers (scroll position)
     ; see NesDev wiki for explaination (https://www.nesdev.org/wiki/PPU_scrolling)
     ;    First      Second
