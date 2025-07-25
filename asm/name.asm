@@ -3,13 +3,20 @@ change_name:
 
     ; if no name to display
     LDA text_name
+    BPL :+
         ; return
-        BMI @ret
+        RTS
+    :
     ; if hp bar displayed
     LDA hp_state
     CMP #HP_STATE_HIDE
         ; return
         BNE @ret
+    ; if dialog box hidden
+    LDA effect_flags
+    AND #EFFECT_FLAG_DIALOG
+        ; return
+        BEQ @ret
 
     ;
     mov img_tmp_pals+(7*3)+1, #NAME_COL_1
@@ -38,26 +45,17 @@ change_name:
     LDA names_list, Y
     STA name_tmp
     ; b = get_res_bnk(tile >> 6)
-    LSR
-    LSR
-    LSR
-    LSR
-    LSR
-    LSR
+    ROL
+    ROL
+    ROL
+    AND #$03
     JSR get_res_bnk
     TAY
     ; tile |= b << 6
-    AND #$03
-    CLC
     ROR
     ROR
     ROR
-    ORA name_tmp
-    STA name_tmp
-    ; tile |= b >> 2
-    TYA
-    LSR
-    LSR
+    AND #$C0
     ORA name_tmp
     TAY
     ; pos = NAME_X_POS
@@ -66,6 +64,7 @@ change_name:
     @display:
         ; OAM[spr_idx].y = NAME_Y_POS
         LDA #NAME_Y_POS
+        sub scroll_y
         STA OAM+0, X
         ; OAM[spr_idx].t = tile
         TYA
@@ -77,8 +76,10 @@ change_name:
         STA OAM+2, X
         ; OAM[spr_idx].x = pos
         LDA @pos
+        sub scroll_x
         STA OAM+3, X
         ; pos += 8
+        LDA @pos
         add #$08
         STA @pos
         ; continue

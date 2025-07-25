@@ -94,22 +94,19 @@ MAIN_LOOP:
     ; Update Images
     ; ----------------
     ; if currently drawing an image
-    ; TODO: better flag condition ?
     LDA effect_flags
     AND #EFFECT_FLAG_IMAGE
-    BEQ @anim_else
+    BEQ @call_img_updates
     ; and if packet_buf_read_adr == packet_buf_write_adr
     ; (a.k.a nothing left to draw)
     LDA packet_buf_read_adr+1
     CMP packet_buf_write_adr+1
-    BNE @anim_else
+    BNE @call_img_updates
     LDA packet_buf_read_adr+0
     CMP packet_buf_write_adr+0
-    BNE @anim_else
+    BNE @call_img_updates
         JSR update_visual
-        JMP @anim_fi
-    ; else
-    @anim_else:
+    @call_img_updates:
         ; if new_bkg != cur_bkg
         LDX new_bkg
         CPX cur_bkg
@@ -221,7 +218,6 @@ MAIN_LOOP:
             AND #$FF-TXT_FLAG_MIDBOX
             STA txt_flags
         :
-    @anim_fi:
 
     ; update animation
     JSR update_anim
@@ -278,10 +274,12 @@ MAIN_LOOP:
     ; if dialog box transition
     LDA effect_flags
     AND #EFFECT_FLAG_DB_ANIM
-    BEQ @dn_anim_end
+    BEQ :+
         JSR do_db_transistion
-    @dn_anim_end:
+    :
 
+    ; Note: don't put a named label just before this one
+    ; it is used by the lua script and may get replaced and broke the script
     @MAIN_END:
     ; loop back to start of main
     JMP MAIN_LOOP
@@ -292,6 +290,8 @@ update_visual:
     @wait_topframe:
         LDA scanline
         CMP #SCANLINE_TOP
+        BEQ update_visual_now
+        CMP #SCANLINE_TOP_IMG
         BNE @wait_topframe
 update_visual_now:
     ; change scroll position to other nametable
