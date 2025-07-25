@@ -4,4 +4,12 @@
 ==========================
 -->
 
+<!--
+<background:1>
+Jumping<p>
+<hidetextbox><music:MUS_OPENING><fade:4,10><wait:10>
+<jump:chapter_1_2>
+-->
+
 <include:intro.txt>
+<include:lobby.txt>

@@ -1,0 +1,231 @@
+<!--
+--------------------------
+| SCENE 1-2:Lobby Scene  |
+--------------------------
+-->
+<label:chapter_1_2>
+
+<!-- Stop music from intro and change color to green -->
+<hidetextbox><music:MUS_OPENING><wait:30><color:COL_GREEN>
+
+<!-- Display text centered with typewriter bip and speed 6 and 'ignoring' spaces -->
+<speed:96>     <speed:6><bip:BIP_TYPEWRITER>August 3, 9:47 AM<bip:BIP_TYPEWRITER><speed:127>  <b>
+      <speed:6><bip:BIP_TYPEWRITER>District Court<bip:BIP_TYPEWRITER><speed:96><b>
+   <speed:6><bip:BIP_TYPEWRITER>Defendant Lobby No. 2<p>
+
+<!-- fade in to courtroom lobby with music and no dialog box with a little waiting and shake at the end -->
+<hidetextbox><speed:SPD_DEFAULT><music:MUS_COURTROOM_LOUNGE><background:BKG_COURTROOM_LOBBY><wait:37>
+<fade:0,45><wait:75><hidetextbox><shake:0,30>
+
+<!-- display blue text as Phoenix -->
+<name:NAME_PHOENIX><bip:BIP_MALE><color:COL_BLUE>
+(Boy am I nervous!)<color:COL_WHITE><p>
+
+<!-- hide dialog box for less than a sec and flash -->
+<hidetextbox><wait:45><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<!-- text as Mia -->
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright!<p>
+
+<!-- Display Mia without dialog box with a SFX and flash at the end -->
+<hidetextbox><wait:35><character:MIA_NORMAL_A_><wait:67><hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Oh, <wait:10>h-<wait:8>hiya, <shake:0,30>Chief.<p>
+
+<name:NAME_MIA><bip:BIP_FEMALE><character:MIA_NORMAL_B_>
+Whew,<wait:25><b>
+I'm glad I made it on time.<character:MIA_NORMAL_A_><p>
+
+<character:MIA_NORMAL_B_>
+Well,<wait:16> I have to say Phoenix,<wait:16><b>
+I'm impressed!<character:MIA_NORMAL_A_><p>
+
+<character:MIA_GRINNING_B_>
+Not everyone takes on a<b>
+murder trial right off<b>
+the bat like this.<character:MIA_GRINNING_A_><p>
+
+<character:MIA_GRINNING_B_>It says a lot about<wait:25><b>
+you... and your client<b>
+as well.<character:MIA_GRINNING_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Um... thanks.<p>
+
+<wait:30>Actually, it's because<wait:5><b>
+I owe him a favor.<p>
+
+						<!-- lightbulb sfx and flash -->
+<character:MIA_OHMY_A_><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+A favor?<p>
+
+<character:MIA_OHMY_B_>You mean, you knew the<b>
+defendant before this case?<character:MIA_OHMY_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Yes.<p>
+
+Actually, I kind of owe <b>
+my current job to him.<p>
+
+He's one of the reasons<wait:5><b>
+I became an attorney.<p>
+
+<name:NAME_MIA><bip:BIP_FEMALE><character:MIA_GRINNING_B_>
+Well, that's news to me!<character:MIA_GRINNING_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+I want to help him out<b>
+any way I can!<p>
+
+I just...<b>
+really want to help him.<b>
+I owe him that much.<p>
+
+<wait:15><character:MIA_OHMY_A_><shake:1,30><music:MUS_COURTROOM_LOUNGE><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_QUESTION><bip:BIP_MALE>
+<color:COL_GREEN>(It's over!)<p>
+
+<shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+(My life, everything,<b>
+it's all over!)<p>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+<color:COL_WHITE>...<p>
+
+<character:MIA_OHMY_B_>Isn't that your client<wait:15><b>
+screaming over there?<character:MIA_OHMY_A_><p>
+
+<character:MIA_NORMAL_A_>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Yeah... <shake:0,30>that's him.<p>
+
+<shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><color:COL_GREEN>
+
+<name:NAME_QUESTION><bip:BIP_MALE>
+(Death! Despair! Ohhhh!)<p>
+
+<character:MIA_OHMY_A_>
+
+<shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+(I'm gonna do it,<wait:10><shake:2,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><b>
+I'm gonna <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>die!!!)<color:COL_WHITE><p>
+
+<character:MIA_OHMY_B_>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+It sounds like<b>
+he wants to die...<character:MIA_OHMY_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE><character:MIA_GRINNING_A_>
+Um,<wait:12><speed:10> yeah. *sigh*<speed:SPD_DEFAULT><p>
+
+<hidetextbox><character:MIA_GRINNING_A_><wait:16><character:LARRY_NERVOUS_A_><wait:16><sound:SFX_REALIZATION>
+<character:LARRY_NERVOUS_B_><hidetextbox>
+
+<name:NAME_BUTZ>
+Nick!!!<wait:60><music:MUS_COURTROOM_LOUNGE><character:LARRY_NERVOUS_A_><p>
+
+<name:NAME_PHOENIX>
+Hey.<wait:15><b>
+Hey <shake:0,30>there, Larry.<p>
+
+<character:LARRY_THUMPS_UP_B_><shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:32>
+
+<name:NAME_BUTZ>
+Dude,<wait:17> I'm so guilty!!<wait:20><b>
+Tell them I'm guilty!!!<character:LARRY_THUMBS_UP_A_><p>
+
+<character:LARRY_THUMPS_UP_B_><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+Gimme the death sentence!<wait:20><b>
+I ain't afraid to die!<character:LARRY_THUMBS_UP_A_><p>
+
+<speed:21>
+
+<name:NAME_PHOENIX>
+What!?<wait:25><b>
+What's wrong,<wait:12> Larry?<p>
+
+<character:LARRY_NERVOUS_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12>
+
+<name:NAME_BUTZ>
+Oh,<wait:16> it's all over... <wait:25><speed:8><b>
+I...<wait:16> <speed:12>I'm finished. <wait:25><speed:32>Finished!<character:LARRY_NERVOUS_A_><p>
+
+<character:LARRY_NERVOUS_B_>I can't live in a world<b>
+without her!<wait:20> I can't!<character:LARRY_NERVOUS_A_><p>
+
+<character:LARRY_NERVOUS_B_><speed:8>Who... <wait:25><speed:SPD_DEFAULT>who took her away<b>
+from me, Nick? <wait:20>Who did this!?<character:LARRY_NERVOUS_A_><p>
+
+<character:LARRY_NERVOUS_B_><shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+Aww,<wait:10> Nick,<wait:16> ya gotta tell me!<wait:25><b>
+Who took my baby away!?<character:LARRY_NERVOUS_A_><p>
+
+<speed:8><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Hmm... <wait:30><speed:10>The person<b>
+responsible for your<b>
+girlfriend's death?)<p>
+
+<speed:12>(The newspapers say<wait:20><b>
+it was<wait:16> <color:COL_RED><sound:SFX_REALIZATION>you<color:COL_BLUE>...)<speed:SPD_DEFAULT><color:COL_WHITE><p>
+
+<hidetextbox><wait:35><fade:4,100><wait:120><music:MUS_COURTROOM_LOUNGE><!--TODO: fade music-->
+<character:LARRY_NERVOUS_A_><background:BKG_EMPTY><wait:30><fade:0,7><wait:7><hidetextbox>
+
+<name:NAME_PHOENIX>
+My name is Phoenix Wright.<p>
+
+Here's the story:<p>
+
+My first case is<b>
+a fairly simple one.<p>
+
+<hidetextbox><fade:4,7><wait:7><background:BKG_CINDY_INTRO><character:CINDY_INTRO_ANIM><fade:0,45><wait:45><wait:90><hidetextbox>
+A young woman was killed<b>
+in her apartment.<wait:5><character:CINDY_INTRO_ANIM_PAUSE><p>
+
+The guy they arrested was<b>
+the unlucky sap dating her:<p>
+
+<hidetextbox><fade:4,7><wait:7><background:BKG_EMPTY><character:LARRY_THUMBS_UP_A_><fade:0,1><wait:1><hidetextbox><speed:8>
+Larry Butz...<wait:45><speed:SPD_DEFAULT> my best<b>
+friend since grade school.<p>
+
+Our school had a saying:<wait:25><speed:12><b>
+"<color:COL_RED>When something smells,<wait:15><b>
+it's usually the Butz.<color:COL_WHITE>"<speed:SPD_DEFAULT><p>
+
+<character:LARRY_NERVOUS_A_>In the 23 years I've known<b>
+him, it's usually been true.<p>
+
+He has a knack for getting<b>
+himself in trouble.<p>
+
+One thing I can say though:<wait:30><b>
+it's usually not his fault.<b>
+He just has terrible luck.<p>
+
+<character:LARRY_NERVOUS_A_><wait:32>
+But I know better<b>
+than anyone, that he's<b>
+a good guy at heart.<p>
+
+That and I owe him one.<b>
+Which is why I took the<b>
+case... to clear his name.<p>
+
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+And that's just what I'm<b>
+going to do!<p>
+
+<hidetextbox><wait:100>

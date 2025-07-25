@@ -21,4 +21,12 @@
 <const:SCROLL_DIR_UP,2>
 <const:SCROLL_DIR_DOWN,3>
 
-<const:SPD_DEFAULT,8>
+<const:SPD_DEFAULT,16>
+
+<const:COL_WHITE,0>
+<const:COL_RED,1>
+<const:COL_BLUE,2>
+<const:COL_GREEN,3>
+
+<const:FLASH_DEFAULT_FORCE,4>
+<const:FLASH_DEFAULT_TIME,8>

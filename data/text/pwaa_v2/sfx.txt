@@ -4,24 +4,24 @@ This file was generated
 
 <!-- sfx constants -->
 <const:SFX_BADUM,0>
-<const:SFX_BIP2,1>
-<const:SFX_DAMAGE2,2>
-<const:SFX_DESKSLAM,3>
-<const:SFX_DOG,4>
-<const:SFX_DRAMAPOUND,5>
-<const:SFX_GAVEL,6>
-<const:SFX_LIGHTBULB,7>
-<const:SFX_REALISATION_MMC5,8>
-<const:SFX_REALISATION,9>
-<const:SFX_SMACK,10>
-<const:SFX_STAB,11>
-<const:SFX_STAB2,12>
-<const:SFX_SUPERSHOCK,13>
-<const:SFX_THUD4,14>
-<const:SFX_WHOOPS,15>
+<const:SFX_BIP2,5>
+<const:SFX_DAMAGE2,6>
+<const:SFX_DESKSLAM,7>
+<const:SFX_DOG,8>
+<const:SFX_DRAMAPOUND,9>
+<const:SFX_GAVEL,10>
+<const:SFX_LIGHTBULB,11>
+<const:SFX_REALIZATION_MMC5,12>
+<const:SFX_REALIZATION,13>
+<const:SFX_SMACK,14>
+<const:SFX_STAB,15>
+<const:SFX_STAB2,16>
+<const:SFX_SUPERSHOCK,17>
+<const:SFX_THUD4,18>
+<const:SFX_WHOOPS,19>
 
 <!-- bip constants -->
-<const:BIP_FEMALE,0>
-<const:BIP_MALE,1>
-<const:BIP_TYPEWRITTER,2>
-<const:BIP_LOW,3>
+<const:BIP_FEMALE,1>
+<const:BIP_MALE,2>
+<const:BIP_TYPEWRITER,3>
+<const:BIP_LOW,4>
