@@ -12,7 +12,7 @@ sounds:
 	.word @sfx_ntsc_sfx_badum
 	.word @sfx_ntsc_bip_female
 	.word @sfx_ntsc_bip_male
-	.word @sfx_ntsc_bip_typewritter
+	.word @sfx_ntsc_bip_typewriter
 	.word @sfx_ntsc_bip_low
 	.word @sfx_ntsc_sfx_bip2
 	.word @sfx_ntsc_sfx_damage2
@@ -21,8 +21,8 @@ sounds:
 	.word @sfx_ntsc_sfx_dramapound
 	.word @sfx_ntsc_sfx_gavel
 	.word @sfx_ntsc_sfx_lightbulb
-	.word @sfx_ntsc_sfx_realisation_mmc5
-	.word @sfx_ntsc_sfx_realisation
+	.word @sfx_ntsc_sfx_realization_mmc5
+	.word @sfx_ntsc_sfx_realization
 	.word @sfx_ntsc_sfx_smack
 	.word @sfx_ntsc_sfx_stab
 	.word @sfx_ntsc_sfx_stab2
@@ -51,7 +51,7 @@ sounds:
 	.byte $81,$7e,$82,$00,$80,$b8,$89,$f0,$01,$81,$1f,$01,$81,$25,$01,$00
 @sfx_ntsc_bip_male:
 	.byte $81,$8e,$82,$00,$80,$b8,$89,$f0,$01,$81,$23,$01,$81,$29,$01,$00
-@sfx_ntsc_bip_typewritter:
+@sfx_ntsc_bip_typewriter:
 	.byte $8a,$89,$89,$38,$01,$8a,$8b,$89,$34,$01,$8a,$89,$89,$32,$01,$8a
 	.byte $87,$89,$38,$01,$00
 @sfx_ntsc_bip_low:
@@ -79,7 +79,7 @@ sounds:
 	.byte $84,$46,$85,$00,$83,$b8,$89,$f0,$02,$81,$23,$82,$00,$80,$b8,$83
 	.byte $b4,$01,$80,$b4,$07,$83,$b3,$01,$80,$b3,$0f,$83,$b2,$01,$80,$b2
 	.byte $0f,$83,$b1,$01,$80,$b1,$0d,$80,$b0,$00
-@sfx_ntsc_sfx_realisation_mmc5:
+@sfx_ntsc_sfx_realization_mmc5:
 	.byte $89,$f0,$06,$84,$c9,$85,$00,$83,$b4,$01,$83,$b8,$01,$83,$b6,$01
 	.byte $81,$a9,$82,$00,$80,$b4,$83,$b5,$01,$80,$b7,$83,$b4,$01,$80,$b6
 	.byte $83,$b3,$01,$80,$b5,$83,$b2,$01,$80,$b4,$83,$b1,$01,$80,$b3,$01
@@ -92,7 +92,7 @@ sounds:
 	.byte $b2,$01,$80,$b1,$83,$b1,$03,$80,$b0,$02,$83,$b2,$01,$80,$b1,$02
 	.byte $83,$b3,$02,$80,$b2,$01,$80,$b1,$83,$b2,$02,$80,$b0,$83,$b1,$02
 	.byte $83,$b0,$01,$80,$b1,$02,$83,$b1,$0c,$00
-@sfx_ntsc_sfx_realisation:
+@sfx_ntsc_sfx_realization:
 	.byte $84,$1c,$85,$01,$83,$b5,$89,$f0,$01,$83,$b6,$01,$81,$ef,$82,$00
 	.byte $80,$b4,$83,$b8,$01,$80,$b8,$83,$b5,$01,$83,$b3,$01,$80,$b4,$83
 	.byte $b1,$01,$80,$b1,$84,$c9,$85,$00,$83,$b4,$01,$80,$b2,$83,$b8,$01
