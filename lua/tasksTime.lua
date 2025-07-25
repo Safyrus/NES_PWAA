@@ -94,7 +94,7 @@ function nextFrame()
   time[1] = MAX_SCANLINE
   fpsArray[1] = 0
   timeNMI[1] = MAX_SCANLINE
-  timeFami[i] = MAX_SCANLINE
+  timeFami[1] = MAX_SCANLINE
   timeCrit[1] = MAX_SCANLINE
 end
 
