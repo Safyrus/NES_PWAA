@@ -116,17 +116,17 @@ int main(int argc, char const *argv[])
     path[len] = 0;
     join_path(path, "r1");
     printf("Merge file from r1\n");
-    merge_snif_tiles(path, argv[3], -1, "out/r1", "out/r1.chr", 1, 1);
+    merge_snif_tiles(path, argv[3], 2, "out/r1", "out/r1.chr", 1, 1);
     // merge file from r2
     path[len] = 0;
     join_path(path, "r2");
     printf("Merge file from r2\n");
-    merge_snif_tiles(path, argv[3], -1, "out/r2", "out/r2.chr", 1, 2);
+    merge_snif_tiles(path, argv[3], 2, "out/r2", "out/r2.chr", 1, 2);
     // merge file from r3
     path[len] = 0;
     join_path(path, "r3");
     printf("Merge file from r3\n");
-    merge_snif_tiles(path, argv[3], -1, "out/r3", "out/r3.chr", 1, 3);
+    merge_snif_tiles(path, argv[3], 2, "out/r3", "out/r3.chr", 1, 3);
     // output asm files
     printf("Output to ASM\n");
     asm_snif(argv[5], argv[6], "out");

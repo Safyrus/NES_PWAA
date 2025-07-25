@@ -17,22 +17,23 @@ NAME_MANELLA = 13
 NAME_MAYA = 14
 NAME_MIA = 15
 NAME_MISSILE = 16
-NAME_OLDBAG = 17
-NAME_PARROT = 18
-NAME_PAYNE = 19
-NAME_PENNY = 20
-NAME_PHOENIX = 21
-NAME_PHONE = 22
-NAME_POLICE = 23
-NAME_QUESTION = 24
-NAME_SAHWIT = 25
-NAME_TEACHER = 26
-NAME_TV = 27
-NAME_UNCLE = 28
-NAME_VASQUEZ = 29
-NAME_WHITE = 30
-NAME_WILL = 31
-NAME_YOGI = 32
+NAME_PAYNE = 17
+NAME_PADDING_18 = 18
+NAME_OLDBAG = 19
+NAME_PARROT = 20
+NAME_PENNY = 21
+NAME_PHOENIX = 22
+NAME_PHONE = 23
+NAME_POLICE = 24
+NAME_QUESTION = 25
+NAME_SAHWIT = 26
+NAME_TEACHER = 27
+NAME_TV = 28
+NAME_UNCLE = 29
+NAME_VASQUEZ = 30
+NAME_WHITE = 31
+NAME_WILL = 32
+NAME_YOGI = 33
 
 names_list:
     .byte $80 ; april
@@ -52,20 +53,21 @@ names_list:
     .byte $B3 ; maya
     .byte $B6 ; mia
     .byte $B8 ; missile
-    .byte $BC ; oldbag
-    .byte $C0 ; parrot
-    .byte $C4 ; payne
-    .byte $C7 ; penny
-    .byte $CA ; phoenix
-    .byte $CE ; phone
-    .byte $D1 ; police
-    .byte $D5 ; question
-    .byte $D7 ; sahwit
-    .byte $DB ; teacher
-    .byte $DF ; tv
-    .byte $E1 ; uncle
-    .byte $E4 ; vasquez
-    .byte $E8 ; white
-    .byte $EB ; will
-    .byte $EE ; yogi
-    .byte $F1 ; END
+    .byte $BC ; payne
+    .byte $BF ; padding_18
+    .byte $C0 ; oldbag
+    .byte $C4 ; parrot
+    .byte $C8 ; penny
+    .byte $CB ; phoenix
+    .byte $CF ; phone
+    .byte $D2 ; police
+    .byte $D6 ; question
+    .byte $D8 ; sahwit
+    .byte $DC ; teacher
+    .byte $E0 ; tv
+    .byte $E2 ; uncle
+    .byte $E5 ; vasquez
+    .byte $E9 ; white
+    .byte $EC ; will
+    .byte $EF ; yogi
+    .byte $EF ; END

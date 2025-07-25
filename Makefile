@@ -100,7 +100,7 @@ text:
 
 font:
 # make FONT chr
-	$(PYTHON) $(PY)/img/build_font.py -if $(DATA)/font -in $(DATA)/name -oc $(DATA)/FONT.chr -on $(ASM)/data/name.asm -of $(ASM)/data/font.asm -ot $(TEXT)/name.txt
+	$(PYTHON) $(PY)/img/build_font.py -if $(DATA)/font -in $(DATA)/name -oc $(DATA)/FONT.chr -on $(ASM)/data/name.asm -of $(ASM)/data/font.asm -ot $(TEXT)/name.txt -or $(DATA)/BASE.chr
 
 img:
 	make font
@@ -110,7 +110,7 @@ img:
 
 img_c:
 # merge all snif files & CHR into binary files
-	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/EMPTY.chr 33 ../PWAA.chr ../$(ASM)/data/img
+	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/BASE.chr 33 ../PWAA.chr ../$(ASM)/data/img
 #
 	$(PYTHON) $(PY)/img/img_name.py -i $(ASM)/data/img -o $(TEXT)
 

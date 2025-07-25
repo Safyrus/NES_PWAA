@@ -27,15 +27,17 @@ def export_sfxbip(fs, fm_file, out_folder, sfxs, out_file):
     # parse command output to get sfx names
     sfx_names = []
     bip_names = []
+    i = 0
     SFX_STR = "Info: Effect ("
     export_text = cmd.stdout.decode("utf-8")
     for line in export_text.split("\n"):
         if SFX_STR in line:
             n = line.split(SFX_STR)[1].split("): ")[0]
             if n.lower().startswith("sfx"):
-                sfx_names.append(n)
+                sfx_names.append((n, i))
             else:
-                bip_names.append(n)
+                bip_names.append((n, i))
+            i += 1
 
     # export asm
     with open(out_file, "w", encoding="utf-8") as f:
@@ -43,14 +45,14 @@ def export_sfxbip(fs, fm_file, out_folder, sfxs, out_file):
 
         # write sfx list
         f.write(f"\n<!-- sfx constants -->\n")
-        for n, name in enumerate(sfx_names):
+        for (name, n) in sfx_names:
             name_filter = re.sub(r"[^a-zA-Z0-9]", "_", name).upper()
             name_filter = re.sub(r"\_+", "_", name_filter)
             f.write(f"<const:{name_filter},{n}>\n")
 
         # write bip list
         f.write(f"\n<!-- bip constants -->\n")
-        for n, name in enumerate(bip_names):
+        for (name, n) in bip_names:
             name_filter = re.sub(r"[^a-zA-Z0-9]", "_", name).upper()
             name_filter = re.sub(r"\_+", "_", name_filter)
             f.write(f"<const:{name_filter},{n}>\n")

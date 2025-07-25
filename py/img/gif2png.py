@@ -5,7 +5,7 @@ from PIL import Image
 from tqdm import tqdm
 import numpy as np
 
-def gif2png(gif : Image.Image, FPS=60, savepath="") -> list[int]:
+def gif2png(gif : Image.Image, FPS=60, savepath="", MAX_FRAME=85) -> list[int]:
     n = 0
     for i in range(gif.n_frames):
         try:
@@ -24,6 +24,8 @@ def gif2png(gif : Image.Image, FPS=60, savepath="") -> list[int]:
         except Exception as e:
             print(e)
             print("error with frame", i)
+    if n >= MAX_FRAME:
+        print(f"\033[31mERROR: Too Many frames! {n} frames found, should be below {MAX_FRAME}.\033[0m")
 
 
 parser = argparse.ArgumentParser()

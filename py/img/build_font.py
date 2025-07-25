@@ -47,18 +47,32 @@ def output_names_asm(names, out_asm_path):
     with open(out_asm_path, "w", encoding="utf-8") as f:
         f.write("; This file was generated\n\n")
 
-        for i, (name, data) in enumerate(names.items()):
+        sorted_names = dict(sorted(names.items(), key=lambda x:x[1][1]))
+        new_sorted_names = {}
+
+        next_pos = 0
+        i = 0
+        for name,(size,pos) in sorted_names.items():
             const_name = "NAME_" + os.path.splitext(name)[0].upper()
+            if next_pos != pos:
+                f.write(f"NAME_PADDING_{i} = {i}\n")
+                new_sorted_names[f"padding_{i}"] = (i, 0x80 + next_pos)
+                i += 1
+                next_pos = pos
             f.write(f"{const_name} = {i}\n")
+            new_sorted_names[name] = (i, 0x80 + pos)
+            i += 1
+            next_pos += size
+
+        if next_pos > 0x80:
+            print(f"\033[33mWARNING: Names take too much space ({next_pos-0x80} tile overflow). Remove or make some shorter\033[0m")
 
         f.write("\nnames_list:\n")
-        total_size = 0x80
-        for name, data in names.items():
-            f.write(f"    .byte ${hex(total_size)[2:].upper()} ; {os.path.splitext(name)[0]}\n")
-            total_size += data[0]
-        f.write(f"    .byte ${hex(total_size)[2:].upper()} ; END\n")
-        if total_size > 0xFF:
-            print(f"\033[33mWARNING: Names take too much space ({total_size-0xFF} tile overflow). Remove or make some shorter\033[0m")
+        for name, (i, pos) in new_sorted_names.items():
+            f.write(f"    .byte ${hex(pos)[2:].upper()} ; {os.path.splitext(name)[0]}\n")
+        f.write(f"    .byte ${hex(pos)[2:].upper()} ; END\n")
+
+    return new_sorted_names
 
 
 def add_font(chr_tiles, name, font_folder):
@@ -92,15 +106,18 @@ def add_names(chr_tiles, names):
 
     x1 = 0
     x2 = 512
-    for _, data in names.items():
-        if data[0] * 8 + x1 < 512:
-            img.paste(Image.fromarray(data[1]), (x1, 0))
-            x1 += data[0] * 8
+    names_pos = {}
+    for n, (size, name_img) in names.items():
+        if size * 8 + x1 < 512:
+            img.paste(Image.fromarray(name_img), (x1, 0))
+            names_pos[n] = (size, x1 // 8)
+            x1 += size * 8
         else:
-            img.paste(Image.fromarray(data[1]), (x2, 0))
-            x2 += data[0] * 8
+            img.paste(Image.fromarray(name_img), (x2, 0))
+            names_pos[n] = (size, x2 // 8)
+            x2 += size * 8
 
-    return add_imgarray(chr_tiles, np.array(img, dtype=np.uint8))
+    return add_imgarray(chr_tiles, np.array(img, dtype=np.uint8)), names_pos
 
 
 def add_imgarray(chr_tiles, img):
@@ -118,10 +135,9 @@ def add_imgarray(chr_tiles, img):
     return img_tiles
 
 
-def build_font(font_folder, name_folder, out_chr, out_font, out_name, out_text):
+def build_font(font_folder, name_folder, out_chr, out_font, out_name, out_text, out_region_chr):
     # names
     names = get_names(name_folder)
-    output_names_asm(names, out_name)
 
     # get all font images
     font_imgs = glob("*.png", root_dir=font_folder)
@@ -135,7 +151,8 @@ def build_font(font_folder, name_folder, out_chr, out_font, out_name, out_text):
     # output ascii.png
     tiles = add_font(tiles, "ascii.png", font_folder)
     # output names
-    tiles = add_names(tiles, names)
+    tiles, names_pos = add_names(tiles, names)
+    sorted_names = output_names_asm(names_pos, out_name)
     # for x font
     for font in font_imgs:
         # output font
@@ -158,7 +175,7 @@ def build_font(font_folder, name_folder, out_chr, out_font, out_name, out_text):
         f.write("<!--\nThis file was generated\n-->\n")
         # output names
         f.write("\n<!-- name constants-->\n")
-        for i, (name, _) in enumerate(names.items()):
+        for name, (i, pos) in sorted_names.items():
             const_name = "NAME_" + os.path.splitext(name)[0].upper()
             f.write(f"<const:{const_name},{i}>\n")
         # output fonts
@@ -169,6 +186,16 @@ def build_font(font_folder, name_folder, out_chr, out_font, out_name, out_text):
             const_name = "FONT_" + os.path.splitext(font)[0].upper()
             f.write(f"<const:{const_name},{i+2}>\n")
 
+    #
+    tiles = np.zeros((128,8,8), dtype=np.uint8)
+    tiles[2] = np.full((8,8), 1)
+    tiles[3] = np.full((8,8), 2)
+    tiles[4] = np.full((8,8), 3)
+    tiles, _ = add_names(tiles, names)
+    chr_data = tiles2chr(tiles)
+    with open(out_region_chr, "wb") as f:
+        f.write(chr_data)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -178,6 +205,7 @@ if __name__ == "__main__":
     parser.add_argument("-of", "--output_font_path", default="font.asm")
     parser.add_argument("-on", "--output_name_path", default="name.asm")
     parser.add_argument("-ot", "--output_text", default="name.txt")
+    parser.add_argument("-or", "--output_region_chr", default="BASE.chr")
     args = parser.parse_args()
 
     build_font(
@@ -187,4 +215,5 @@ if __name__ == "__main__":
         args.output_font_path,
         args.output_name_path,
         args.output_text,
+        args.output_region_chr,
     )
