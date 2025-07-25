@@ -54,7 +54,7 @@
     mov text_color, #DEFAULT_TEXT_COLOR
     mov text_box_bnk, #IMG_BUF_BNK
     mov text_ppu_start+0, #$60
-    mov text_ppu_start+1, #$82
+    mov text_ppu_start+1, #$02
     ;
     JSR dialog_reset
     ; txt_ptr = MMC5_RAM

@@ -104,6 +104,7 @@ update_shake:
     ; offset *= shake_force
     STA MMC5_MUL_A
     LDA shake_force
+    add #$01
     STA MMC5_MUL_B
     ; offset /= 8
     LDA MMC5_MUL_A
@@ -112,6 +113,21 @@ update_shake:
     LSR
     ; scroll_x = offset
     STA scroll_x
+
+    ; offset = rng() & $0F
+    JSR rng
+    AND #$0F
+    ; offset *= shake_force
+    STA MMC5_MUL_A
+    LDA shake_force
+    STA MMC5_MUL_B
+    ; offset /= 8
+    LDA MMC5_MUL_A
+    LSR
+    LSR
+    LSR
+    ; scroll_y = offset
+    STA scroll_y
 
     ; return
     @ret:

@@ -21,7 +21,7 @@ update_dialog:
 
     ; adr = $2260
     mov @adr+0, #$60
-    mov @adr+1, #$82 ; + high priority
+    mov @adr+1, #$02
     ; data_lo.l = 0
     ; data_hi.l = 0
     LDA #$00
@@ -38,13 +38,13 @@ update_dialog:
             ; update 2nd buffer, then the 1st buffer
             ; (MMC5 upper tiles will be of the last updated buffer)
             ; adr = $2660
-            mov @adr+1, #$86 ; + high priority
+            mov @adr+1, #$06
             ; data = bottom of image of 2nd buffer
             mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$200)
             mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$200)
             JSR send_box_update
             ; adr = $2260
-            mov @adr+1, #$82 ; + high priority
+            mov @adr+1, #$02
             ; data = bottom of image of 1st buffer
             mov @data_hi+1, #>(IMG_BUF_HI_ADR+$200)
             mov @data_lo+1, #>(IMG_BUF_LO_ADR+$200)
@@ -56,13 +56,13 @@ update_dialog:
             ; update 1st buffer, then the 2nd buffer
             ; (MMC5 upper tiles will be of the last updated buffer)
             ; adr = $2260
-            mov @adr+1, #$82 ; + high priority
+            mov @adr+1, #$02
             ; data = bottom of image of 1st buffer
             mov @data_hi+1, #>(IMG_BUF_HI_ADR+$200)
             mov @data_lo+1, #>(IMG_BUF_LO_ADR+$200)
             JSR send_box_update
             ; adr = $2660
-            mov @adr+1, #$86 ; + high priority
+            mov @adr+1, #$06
             ; data = bottom of image of 2nd buffer
             mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$200)
             mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$200)
@@ -146,7 +146,7 @@ update_midbox:
         mov @data_lo+0, #<(IMG_BUF_LO_ADR+$80)
         JSR send_box_update
         ; adr = $24E0
-        mov @adr+1, #$84 ; + high priority
+        mov @adr+1, #$04
         ; data = middle of image of 2nd buffer
         mov @data_hi+1, #>(IMG_BUF2_HI_ADR+$80)
         mov @data_lo+1, #>(IMG_BUF2_LO_ADR+$80)

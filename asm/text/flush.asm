@@ -49,7 +49,7 @@ flush:
     ; ----------------
     ; send text as packet
     ; ----------------
-    ; adr = text_ppu_start (should have high priority)
+    ; adr = text_ppu_start
     LDA text_ppu_start+1
     STA @adr+1
     LDA text_ppu_start+0

@@ -25,7 +25,7 @@ do_db_transistion:
 
     ; adr = $2260
     mov tmp+0, #$60
-    mov tmp+1, #$C2 ; + high priority + no mmc5
+    mov tmp+1, #$42 ; no mmc5
     ; data_lo.l = 0
     ; data_hi.l = 0
     LDA #$00
@@ -35,7 +35,7 @@ do_db_transistion:
     LDA effect_flags
     AND #EFFECT_FLAG_DIALOG
     BNE :+
-        mov tmp+1, #$82 ; + high priority
+        mov tmp+1, #$02
         ; disable pal split
         and_adr effect_flags, #$FF-EFFECT_FLAG_PAL_SPLIT
         ; data_lo.h = IMG_BUF_LO_ADR+$200
