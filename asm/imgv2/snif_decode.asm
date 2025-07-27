@@ -33,10 +33,14 @@ snif_decode:
     AND #$1F
     add #$01
     STA @w
-    ; clear img_flag.region
-    LDA img_flag
-    AND #($FF-IMG_FLAG_REGION)
-    STA img_flag
+    ; if image is not photo (width == $20)
+    CMP #$20
+    BNE :+
+        ; clear img_flag.region
+        LDA img_flag
+        AND #($FF-IMG_FLAG_REGION)
+        STA img_flag
+    :
     ; r = (in[Y] & $60) >> 5
     LDA (@in), Y
     AND #$60

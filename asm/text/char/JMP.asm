@@ -43,11 +43,11 @@ text_jump:
     AND #$3F
     CMP lz_idx
     BEQ :+
+        ; lz_idx = jmp_buf.bnk
+        STA lz_idx
         ; lz_decode()
         JSR lz_decode
     :
-    ; lz_idx = jmp_buf.bnk
-    STA lz_idx
     ; return
     RTS
 

@@ -51,6 +51,7 @@ scanline_irq_handler:
         ;  CHR bank are from region 0 (due to palette split changing it to 0)
         ;  but not BKG tiles for a noticable number of frames)
         mov MMC5_CHR_UPPER, mmc5_upper_chr
+        @update_chr_banks:
         mov MMC5_CHR_BNK0, cur_bnks+0
         mov MMC5_CHR_BNK1, cur_bnks+1
         mov MMC5_CHR_BNK2, cur_bnks+2
@@ -88,6 +89,9 @@ scanline_irq_handler:
             ; set mmc5 high upper chr bits to 0
             LDA #$00
             STA MMC5_CHR_UPPER
+            ; re-update chr banks because
+            ; changing region mid frame still keep the previous region for sprites ?
+            JMP @update_chr_banks
         @scanline_irq_top_midbox_end:
         ; return
         JMP @end

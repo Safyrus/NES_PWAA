@@ -6,7 +6,7 @@
 #include "file_utils.h"
 #include "utils.h"
 
-int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type, int *anim_idx, int *anim_time, int *offset)
+int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type, int *anim_idx, int *anim_time, int *offset, int *photo_index)
 {
     // skip if file is not a snif file
     if (!strendwith(filename, ".snif"))
@@ -74,13 +74,15 @@ int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint
     strcpy(constname, filename);
     filename2const(constname);
     if (t == IMG_TYPE_BKG)
-        fprintf(img_names, "BKG_");
+        fprintf(img_names, "BKG_%s = %d\n", constname, (*index));
     else if (t == IMG_TYPE_CHR)
-        fprintf(img_names, "CHR_");
+        fprintf(img_names, "CHR_%s = %d\n", constname, (*index));
     else if (t == IMG_TYPE_PHT)
-        fprintf(img_names, "PHT_");
+    {
+        fprintf(img_names, "PHT_%s = %d\n", constname, (*photo_index));
+        (*photo_index)++;
+    }
 
-    fprintf(img_names, "%s = %d\n", constname, (*index));
     // add pointer to img_ptr
     if ((*index) % 256 == 0)
         ptr_adr[(*index) / 256] = (*size);
@@ -96,6 +98,7 @@ void asm_snif_img(const char *tmp_snif_dir, FILE *img_data, FILE *img_names, uin
     FILE *filelist = fopen_strict("tmp", "wb+");
     list_files(tmp_snif_dir, filelist, 1);
     rewind(filelist);
+    int photo_index = 0;
     while (1)
     {
         // get next filename and stop if list of files is empty
@@ -104,7 +107,7 @@ void asm_snif_img(const char *tmp_snif_dir, FILE *img_data, FILE *img_names, uin
             break;
         // add it to image asm/bin files
         int _dontcare;
-        asm_snif_img_one(filename, img_data, img_names, hash_list, index, size, ptr_adr, img_type, &_dontcare, &_dontcare, &_dontcare);
+        asm_snif_img_one(filename, img_data, img_names, hash_list, index, size, ptr_adr, img_type, &_dontcare, &_dontcare, &_dontcare, &photo_index);
     }
 }
 
@@ -172,8 +175,8 @@ void asm_snif(const char *final_chr, const char *data_path, const char *tmp_snif
         if (!read_line(filelist, filename, MAX_FILENAME_LEN))
             break;
         // add it to image asm/bin files
-        int anim_idx, anim_time, anim_offset;
-        int img_idx = asm_snif_img_one(filename, img_data, img_names, hash_list, &index, &size, ptr_adr, IMG_TYPE_CHR, &anim_idx, &anim_time, &anim_offset);
+        int anim_idx, anim_time, anim_offset, _dontcare;
+        int img_idx = asm_snif_img_one(filename, img_data, img_names, hash_list, &index, &size, ptr_adr, IMG_TYPE_CHR, &anim_idx, &anim_time, &anim_offset, &_dontcare);
         // stop if was not a chr type
         if (img_idx < 0)
             continue;

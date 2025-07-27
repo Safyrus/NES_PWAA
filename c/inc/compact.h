@@ -55,7 +55,7 @@ void init_tiles(struct Tile *tile_list, uint8_t *tile_cmp_matrix);
 
 void merge_chrs(const char *final_chr);
 
-int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type, int *anim_idx, int *anim_time, int *offset);
+int asm_snif_img_one(const char *filename, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type, int *anim_idx, int *anim_time, int *offset, int *photo_index);
 
 void asm_snif_img(const char *tmp_snif_dir, FILE *img_data, FILE *img_names, uint8_t *hash_list, int *index, int *size, int *ptr_adr, char img_type);
 
