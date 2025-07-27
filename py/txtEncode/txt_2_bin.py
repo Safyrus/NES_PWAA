@@ -156,17 +156,17 @@ error = False
 
 class Token:
     def __init__(self, type=None, val=None):
-        global text_line, text_pos
+        global text_line, text_pos, cur_filename
         self.type = type
         self.val = val
-        self.pos = (text_line, text_pos)
+        self.pos = (text_line, text_pos, cur_filename)
 
     def __str__(self):
         return f"{self.type}={self.val}{self.pos}"
 
 
 class Tag:
-    def __init__(self, type=None, args: list[str] = [], pos=(0, 0)):
+    def __init__(self, type=None, args: list[str] = [], pos=(0, 0, "")):
         self.type = type
         self.args = args
         self.pos = pos
@@ -176,8 +176,7 @@ class Tag:
 
 
 def pos2str(pos):
-    global cur_filename
-    return f"({cur_filename}:line {pos[0]}, char ~{pos[1]})"
+    return f"({pos[2]}:line {pos[0]}, char ~{pos[1]})"
 
 
 def next_char_raw():
@@ -215,7 +214,7 @@ def skip_n_char(n):
 
 
 def lex():
-    global text, text_idx, text_line, text_pos
+    global text, text_idx, text_line, text_pos, cur_filename
 
     tokens: list[Token] = []
     MAX_KEYWORD_LEN = max([len(k) for k in KEYWORDS])
@@ -263,7 +262,7 @@ def lex():
                 dialog += c
                 c = next_char()
             tokens.append(Token("DIALOG", dialog))
-            tokens[-1].pos = (tokens[-1].pos[0], tokens[-1].pos[1] - 1)
+            tokens[-1].pos = (tokens[-1].pos[0], tokens[-1].pos[1] - 1, cur_filename)
             tokens.append(Token(c))
 
     return tokens
@@ -285,7 +284,7 @@ def parse(tokens: list[Token]):
         t = next_token()
         error = False
         if t is None or (t.type not in type if isinstance(type, list) else t.type != type):
-            printv(f"ERROR {pos2str(t.pos)}: Expected {type}", param="e")
+            printv(f"ERROR {pos2str(t.pos)}: Expected {type}, was {t.type} ({t.val})", param="e")
             error = True
         return t, error
 
@@ -374,7 +373,7 @@ def val2int(val, min=0, max=255, pos=(0, 0)):
         if val.isnumeric():
             printv(f"ERROR {pos2str(pos)}: Expected integer in range {min} to {max} (both included)", param="e")
         else:
-            printv(f"ERROR {pos2str(pos)}: Unknow value '{val}' .Expected integer in range {min} to {max} (both included)", param="e")
+            printv(f"ERROR {pos2str(pos)}: Unknow value '{val}'. Expected integer in range {min} to {max} (both included)", param="e")
         val = min
     return val
 

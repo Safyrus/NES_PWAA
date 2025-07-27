@@ -188,7 +188,7 @@ if __name__ == "__main__":
                     (
                         img_path,
                         out,
-                        True,
+                        False,
                         False,
                         0,
                         9,
