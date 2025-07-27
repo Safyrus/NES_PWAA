@@ -50,12 +50,8 @@ change_name:
     ROL
     AND #$03
     JSR get_res_bnk
-    TAY
-    ; tile |= b << 6
-    ROR
-    ROR
-    ROR
-    AND #$C0
+    ; tile |= ???(b)
+    AND #$FE
     ORA name_tmp
     TAY
     ; pos = NAME_X_POS

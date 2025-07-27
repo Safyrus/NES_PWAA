@@ -87,18 +87,7 @@ draw_hp_spr:
     ; b = get_res_bnk(HP_START_TILE >> 5)
     LDA #(HP_START_TILE >> 5)
     JSR get_res_bnk
-    ; chr_offset = (b << 6 | b >> 2)
-    PHA
-    AND #$03
-    CLC
-    ROR
-    ROR
-    ROR
-    STA @chr_offset
-    PLA
-    LSR
-    LSR
-    ORA @chr_offset
+    ; chr_offset = b
     STA @chr_offset
     ; for X from MAX_HP-1 to -1
     LDX #MAX_HP-1

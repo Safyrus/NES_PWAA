@@ -349,6 +349,7 @@
     ANI_BNK      = $8E
     IMG_BNK      = $91
     TXT_BNK      = $CF
+    SPE_BNK      = $00
 
     ; Constants: Game RAM Banks
     ;
@@ -575,7 +576,7 @@
     ACT_ONE_CHOICE_SIZE = $20
     ACT_SPR_ATR = $00
 
-    ACT_SPR_TILE = $DA
+    ACT_SPR_TILE = $1A
 
     ACT_SPR_PAL_0 = $00
     ACT_SPR_PAL_1 = $10

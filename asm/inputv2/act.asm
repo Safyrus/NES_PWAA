@@ -19,8 +19,10 @@ input_act:
     ; OAM[X].x = $10
     LDA #$10
     STA OAM+3, X
-    ; OAM[X].t = ACT_SPR_TILE
-    LDA #ACT_SPR_TILE
+    ; OAM[X].t = ACT_SPR_TILE + get_res_bnk(SPE_BNK)
+    LDA #SPE_BNK
+    JSR get_res_bnk
+    ORA #ACT_SPR_TILE
     STA OAM+1, X
     ; OAM[X].a = ACT_SPR_ATR
     LDA #ACT_SPR_ATR

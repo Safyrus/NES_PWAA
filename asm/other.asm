@@ -135,9 +135,9 @@ update_shake:
 
 
 ; A = wanted bank in region
-; return A = CHR bank idx
+; return A = first tile of res CHR bank (in 16px sprite mode)
 ; Note: the code kinda cheat and will not work
-;       if we need to reserved more than 2 banks
+;       if we need to reserved more than 3 banks
 get_res_bnk:
     ; find if the same bank is already reserved
     PHA
@@ -147,7 +147,7 @@ get_res_bnk:
         PLA
         STA res_bnks+7
         DEC n_nonres_bnk
-        LDA #$07
+        LDA #$C1
         RTS
     :
     CMP res_bnks+6
@@ -156,7 +156,16 @@ get_res_bnk:
         PLA
         STA res_bnks+6
         DEC n_nonres_bnk
-        LDA #$06
+        LDA #$81
+        RTS
+    :
+    CMP res_bnks+5
+    BNE :+
+        @get_5:
+        PLA
+        STA res_bnks+5
+        DEC n_nonres_bnk
+        LDA #$41
         RTS
     :
     ; find the first free one
@@ -165,5 +174,7 @@ get_res_bnk:
     BEQ @get_7
     CMP res_bnks+6
     BEQ @get_6
+    CMP res_bnks+5
+    BEQ @get_5
     ; error
     BRK
