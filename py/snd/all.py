@@ -1,6 +1,7 @@
 import argparse
 import math
 import os
+import re
 import binpacking
 from music import export_all, export_mus, export_mus_asm, export_mus_txt
 from sfx import export_sfxbip
@@ -75,6 +76,7 @@ def sound_2_asm(fs, fm_file, out_folder, mus_text_file, sfx_text_file):
     project_name = [x[:-1] for x in dpcm_file.split("\n") if x.startswith("music_data_")][0]
     dpcm_file = dpcm_file.replace(project_name, "dpcm_data")
     project_name = "dpcm_data"
+    dpcms = {}
     with open(f"{out_folder}/dpcm.s", "w") as f:
         state = "header"
         for line in dpcm_file.split("\n"):
@@ -97,6 +99,8 @@ def sound_2_asm(fs, fm_file, out_folder, mus_text_file, sfx_text_file):
                     sample = line.split(",")
                     sample[2] = sample[2].replace("$4", "$0")
                     line = ",".join(sample)
+                    dpcm_name = line.split(";")[1]
+                    dpcms["dpcm_" + dpcm_name[4:]] = int(dpcm_name[1:3], base=16)+64
                     f.write(line + "\n")
             else:
                 break
@@ -114,6 +118,15 @@ def sound_2_asm(fs, fm_file, out_folder, mus_text_file, sfx_text_file):
     export_music(fs, fm_file, out_folder, musics, mus_text_file)
     # export sfx & bip
     export_sfxbip(fs, fm_file, out_folder, sfxs, sfx_text_file)
+
+    # export dpcm asm
+    with open(sfx_text_file, "a", encoding="utf-8") as f:
+        # write bip list
+        f.write(f"\n<!-- dpcm constants -->\n")
+        for name, n in dpcms.items():
+            name_filter = re.sub(r"[^a-zA-Z0-9]", "_", name).upper()
+            name_filter = re.sub(r"\_+", "_", name_filter)
+            f.write(f"<const:{name_filter},{n}>\n")
 
 
 if __name__ == "__main__":

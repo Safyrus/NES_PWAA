@@ -324,7 +324,7 @@ def parse(tokens: list[Token]):
                 elif t.type != None:
                     dialog += t.type
                 t = next_token()
-            tags.append(Tag("DIALOG", [dialog], t.pos if t is not None else (0, 0)))
+            tags.append(Tag("DIALOG", [dialog], t.pos if t is not None else (0, 0, "")))
             printv(f"dialog: '{dialog}'", param="i", v=1)
 
     return tags
@@ -437,7 +437,7 @@ def convert_event(t: Tag):
                 adr = 0
                 dummy_vals[len(bin)] = (t.args[1], t.pos)
             # get next
-            n = 0x40 if len(t.args) > 2 else 0
+            n = 0x40 if len(t.args) > 2 and t.args[2] != 0 else 0
             # add bytes
             bin.append(((adr & 0x1F80) >> 7) + n)
             bin.append(adr & 0x7F)
@@ -590,17 +590,23 @@ def convert(tags: list[Tag], filename: str):
             for i, a in enumerate(t.args):
                 t.args[i] = a.replace(name, val)
 
+    line_size = 0
+
     # binary pass
     labels = {}
     dummy_vals = {}
     for t in tags:
         if t.type == "DIALOG":
             l = len("".join(t.args))
-            if l > 28:
+            line_size += l
+            if line_size > 28:
                 printv(f"WARNING {pos2str(t.pos)}: Text may go beyond dialog box size", param="w")
             for a in t.args:
                 for c in a:
                     bin.extend(add_normal_char(c, t.pos))
+        elif t.type in ["p", "fp", "b", "act"]:
+            line_size = 0
+            bin.append(KEYWORD_2_BYTE[t.type])
         elif t.type == "label":
             # check args
             if len(t.args) > 1:
@@ -608,6 +614,8 @@ def convert(tags: list[Tag], filename: str):
             elif len(t.args) < 1:
                 printv(f"ERROR {pos2str(t.pos)}: Missing argument", param="e")
             else:
+                if t.args[0] in labels:
+                    printv(f"WARNING {pos2str(t.pos)}: Label {t.args[0]} already declared", param="w")
                 labels[t.args[0]] = len(bin)
         # no arg tag
         elif t.type in KEYWORD_N_ARG and KEYWORD_N_ARG[t.type] == 0:
