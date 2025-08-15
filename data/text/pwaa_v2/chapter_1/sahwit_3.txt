@@ -1,0 +1,1662 @@
+<!--
+--------------------------
+| SCENE 77
+--------------------------
+-->
+<label:label_1_77>
+
+<background:BKG_COURTROOM_MIDDLE><fade:0,7><wait:7>
+<hidetextbox><character:WITNESS_TESTIMONY><wait:20><speed:32><color:COL_RED>
+
+<name:NAME_JUDGE><bip:BIP_MALE><!--remove name-->
+<b>
+   -- Hearing the Time --<color:COL_WHITE><wait:100><character:SAHWIT_TWITCHING_A_><p>
+
+<speed:SPD_NORMAL><wait:30><music:MUS_QUESTIONING_MODERATO><photo:PHT_TESTIMONY_PHOTO><!-- TODO : blink photo -->
+
+<!--
+--------------------------
+| SCENE 78
+--------------------------
+-->
+<label:label_1_78>
+
+<character:SAHWIT_TWITCHING_B_>
+
+<name:NAME_SAHWIT><bip:BIP_MALE>
+Actually,<wait:15> I didn't "hear"<b>
+the time...<wait:20><speed:21> I "saw" it!<speed:SPD_NORMAL><character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_>
+There was a table clock in<b>
+the apartment,<wait:15> wasn't there!<character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:21>
+Yeah,<wait:20> the murder weapon!<wait:20><b>
+The killer used it to<b>
+hit the victim!<speed:SPD_NORMAL><character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_>
+That must have<b>
+been what I saw.<character:SAHWIT_TWITCHING_A_><p>
+
+<photo:PHT_TESTIMONY_PHOTO><!-- TODO unblink photo --><!--fademusic:0,60--><hidetextbox><fade:4,100><wait:30><music:MUS_QUESTIONING_MODERATO><wait:70>
+<character:JUDGE_THINKING><background:BKG_COURTROOM_JUDGE><fade:0,45><wait:45><hidetextbox>
+
+<name:NAME_JUDGE>
+You saw a clock?<wait:20><character:JUDGE_WARNING_B_><b>
+I guess that would<b>
+explain it.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_NODDING><wait:58><character:JUDGE_WARNING_B_>
+The defense may cross-<b>
+examine the witness.<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX>
+Gladly.<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><p>
+
+<!--
+--------------------------
+| SCENE 79
+--------------------------
+-->
+<label:label_1_79>
+
+<wait:30><hidetextbox><fade:4,45><wait:45>
+<background:BKG_COURTROOM_MIDDLE><fade:0,7><wait:7>
+<hidetextbox><character:CROSS_EXAMINATION><wait:20><speed:32><color:COL_RED>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+<b>
+   -- Hearing the Time --<color:COL_WHITE><wait:100><character:SAHWIT_TWITCHING_A_><p>
+
+<speed:SPD_NORMAL><wait:30><music:MUS_QUESTIONING_ALLEGRO>
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT><bip:BIP_MALE>
+
+<!--
+--------------------------
+| SCENE 80
+--------------------------
+-->
+<label:label_1_80>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_85,0>
+<character:SAHWIT_TWITCHING_B_><color:COL_GREEN>
+
+Actually, I didn't "hear"<b>
+the time... I "saw" it!<color:COL_WHITE><character:SAHWIT_TWITCHING_A_><p>
+
+<save><jump:obj_sawhit_3_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 81
+--------------------------
+-->
+<label:label_1_81>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_86,0>
+<character:SAHWIT_TWITCHING_B_><color:COL_GREEN>
+
+There was a table clock in<b>
+the apartment, wasn't there!<color:COL_WHITE><character:SAHWIT_TWITCHING_A_><p>
+
+<save><jump:obj_sawhit_3_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 82
+--------------------------
+-->
+<label:label_1_82>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_87,0>
+<character:SAHWIT_TWITCHING_B_><color:COL_GREEN>
+
+Yeah, the murder weapon!<b>
+The killer used it to<b>
+hit the victim!<color:COL_WHITE><character:SAHWIT_TWITCHING_A_><p>
+
+<save><jump:obj_sawhit_3_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 83
+--------------------------
+-->
+<label:label_1_83>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_88,0>
+<character:SAHWIT_TWITCHING_B_><color:COL_GREEN>
+
+That must have<b>
+been what I saw.<color:COL_WHITE><character:SAHWIT_TWITCHING_A_><p>
+
+<save><jump:obj_sawhit_3_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 84
+--------------------------
+-->
+<label:label_1_84>
+
+<event:EVT_CRO><event:EVT_HPT>
+
+<character:MIA_BENCH_STERN_B_><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+<b>
+Now,<wait:20> find the contradiction!<character:MIA_BENCH_STERN_A_><p>
+
+<hidetextbox><fade:4,45><wait:45>
+<character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<name:NAME_SAHWIT><bip:BIP_MALE>
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_80>
+
+<!--
+--------------------------
+| SCENE 85
+--------------------------
+-->
+<label:label_1_85>
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+That strikes me as a very<b>
+suspicious mistake.<character:PHOENIX_THINKING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_><background:BKG_COURTROOM_MIDDLE>
+
+<name:NAME_SAHWIT>
+Yes,<wait:15> I can see how you'd<b>
+be a little doubtful...<wait:15><character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_>
+I'm really sorry.<wait:20> I only<b>
+just remembered that<b>
+table clock!<character:SAHWIT_TWITCHING_A_><p>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE>
+A "table clock"?<speed:SPD_NORMAL><character:JUDGE_SURPRISED><p>
+
+<character:JUDGE_SURPRISED_B_><hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<name:NAME_SAHWIT>
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_81>
+
+<!--
+--------------------------
+| SCENE 86
+--------------------------
+-->
+<label:label_1_86>
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+A "table clock"?<wait:25><speed:SPD_NORMAL><b>
+Was there a clock<b>
+at the scene?<character:PHOENIX_THINKING_A_><p>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE><speed:16>
+
+<name:NAME_JUDGE>
+This is the first<b>
+I've heard of it!<speed:SPD_NORMAL><character:JUDGE_SURPRISED><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<name:NAME_SAHWIT>
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_82>
+
+<!--
+--------------------------
+| SCENE 87
+--------------------------
+-->
+<label:label_1_87>
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+The...<wait:20> murder weapon?<character:PHOENIX_THINKING_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,right_dir,CHR_SAHWIT,SAHWIT_TWITCHING_A_--><wait:30>
+<character:SAHWIT_TWITCHING_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox>
+
+<name:NAME_SAHWIT>
+Yes,<wait:15> the table clock that<b>
+was used as a weapon!<character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_NORMAL_B_>
+That's what I just said.<character:SAHWIT_NORMAL_A_><p><!--wait:20-->
+
+<character:SAHWIT_NORMAL_B_>
+Did you doze off<b>
+in the middle of my<b>
+testimony or something?<character:SAHWIT_NORMAL_A_><p>
+
+<character:PHOENIX_THINKING_A_><background:BKG_COURTROOM_LEFT>
+<sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Something's fishy here...)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<name:NAME_SAHWIT>
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_83>
+
+<!--
+--------------------------
+| SCENE 88
+--------------------------
+-->
+<label:label_1_88>
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_HANDSONDESK_B_><background:BKG_COURTROOM_LEFT><speed:21>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Why didn't you tell us<b>
+that in the first place?<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,right_dir,CHR_SAHWIT,SAHWIT_TWITCHING_A_--><wait:30>
+<character:SAHWIT_TWITCHING_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><speed:21>
+
+<name:NAME_SAHWIT>
+I guess it just<b>
+slipped my mind!<speed:SPD_NORMAL><character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_NORMAL_B_>
+I'm not really sure how it<b>
+happened myself...<character:SAHWIT_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+The witness says he saw the<b>
+table clock.<wait:20> End of story.<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:MIA_BENCH_STERN_A_><background:BKG_COURTROOM_DEFENSE><fade:0,15><wait:15>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+<b>
+Now,<wait:20> find the contradiction!<character:MIA_BENCH_STERN_A_><p>
+
+<hidetextbox><fade:4,45><wait:45>
+<character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<name:NAME_SAHWIT><bip:BIP_MALE>
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_80>
+
+<!--
+--------------------------
+| SCENE 89
+--------------------------
+-->
+<label:label_1_89>
+<event:EVT_CRO><event:EVT_HPT><music:MUS_QUESTIONING_MODERATO><!--fademusic:0,30-->
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_OBJECTION_PITCH_15_><background:BKG_EXCLAMATION_OBJ><wait:60><hidetextbox>
+
+<character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT><wait:10><speed:21>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Wait just a moment!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<!--photo_on_right--><photo:PHT_EVIDENCE_THINKER><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
+<hidetextbox><character:PHOENIX_HANDSONDESK_B_><speed:12>
+
+<name:NAME_PHOENIX>
+The murder weapon wasn't <wait:15><b>
+a clock.<wait:25> <sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:32><b>
+It was this statue!<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_HANDSONDESK_B_><speed:12>
+Now <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>how is this <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>supposed<b>
+to be a<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME> clock?<speed:SPD_NORMAL><music:MUS_CORNERED><character:PHOENIX_HANDSONDESK_A_><p>
+
+<background:BKG_COURTROOM_MIDDLE><character:SAHWIT_DAMAGE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB2><shake:2,30><speed:32>
+
+<name:NAME_SAHWIT>
+Wh<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>aa!<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>?<wait:15><fp>
+
+<character:SAHWIT_GLARING_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:10>
+Y-<wait:15>you with your "objections"<speed:SPD_NORMAL><b>
+and your "evidence"...<wait:20> Just<b>
+who do you think you are!?<character:SAHWIT_GLARING_A_><p>
+
+<character:PHOENIX_HANDSONDESK_B_><background:BKG_COURTROOM_LEFT><speed:21>
+
+<name:NAME_PHOENIX>
+Just answer the question,<wait:15><b>
+Mr. Sahwit.<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:SAHWIT_GLARING_B_><background:BKG_COURTROOM_MIDDLE>
+
+<name:NAME_SAHWIT>
+Hey,<speed:12><wait:15> I...<wait:20> <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+I saw it there,<wait:15><speed:32> okay!<wait:20><speed:SPD_NORMAL><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><b>
+That's a clock!<speed:SPD_NORMAL><character:SAHWIT_GLARING_A_><p>
+
+<hidetextbox><!--swoosh:middle_right,left_dir,CHR_PAYNE,PAYNE_SWEATING_A_--><wait:30>
+<character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:21>
+
+<name:NAME_PAYNE>
+Your Honor!<wait:20><speed:SPD_NORMAL><b>
+If I may...<character:PAYNE_SWEATING_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE>
+Yes,<wait:15> Mr. Payne?<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<character:PAYNE_SWEATING_A_><background:BKG_COURTROOM_RIGHT><photo:PHT_EVIDENCE_THINKER><character:PAYNE_SWEATING_B_>
+
+<name:NAME_PAYNE>
+As the witness stated,<wait:15> <speed:12>this<b>
+statue is indeed a clock.<speed:SPD_NORMAL><character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_>
+The neck is a switch.<wait:15> You<b>
+just tilt it,<wait:10> and it says<b>
+the time out loud.<character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_>
+As it doesn't look like a<b>
+clock,<wait:10> I submitted it as a<b>
+statue.<wait:25> My apologies.<character:PAYNE_SWEATING_A_><p>
+
+<hidetextbox><character:JUDGE_NODDING><background:BKG_COURTROOM_JUDGE><wait:34><hidetextbox><speed:12>
+
+<name:NAME_JUDGE>
+I see.<speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
+
+<speed:16><character:JUDGE_THINKING>
+So <wait:8>the murder weapon was a<b>
+table clock <wait:8>after all.<p>
+
+<wait:10><character:JUDGE_WARNING_B_><speed:SPD_NORMAL>
+Well,<wait:15> Mr. Wright?<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+It appears that the<b>
+witness's testimony was<b>
+correct.<wait:20> This is a clock.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:16>
+Do you have any problems<b>
+with his testimony now?<speed:SPD_NORMAL><wait:1><character:JUDGE_WARNING_A_>
+
+<act><jump:label_1_90,0,1>TODO1<b>
+<jump:label_1_91,0,0>TODO2<b>
+
+<!--
+--------------------------
+| SCENE 90
+--------------------------
+-->
+<label:label_1_90>
+
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX>
+I guess not.<speed:SPD_NORMAL><character:PHOENIX_THINKING_A_><p>
+
+<character:PHOENIX_THINKING_B_>
+There was a clock on the<b>
+scene,<wait:10> so,<wait:10> no problem.<character:PHOENIX_THINKING_A_><p>
+
+<character:MIA_BENCH_SAD_B_><background:BKG_COURTROOM_DEFENSE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><shake:1,30><speed:32>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright! <wait:20><speed:21>Are you out<b>
+of your mind!?<character:MIA_BENCH_SAD_A_><p>
+
+<character:MIA_BENCH_SAD_B_>
+That clock doesn't look<b>
+like a clock at all!<speed:SPD_NORMAL><character:MIA_BENCH_SAD_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+The witness couldn't have<b>
+possibly known it was a<b>
+clock just by seeing it!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+He said himself,<wait:15> he never<b>
+entered the apartment!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+It was in his testimony!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_GEEZ_A_><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Hey!<wait:30><b>
+You're right!<p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Is something the matter? <wait:20><b>
+Does the defense have<b>
+anything to add?<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_SWEATING_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Yes...<wait:15><shake:0,30><b>
+Yes I do!<fp>
+
+<jump:label_1_92>
+
+<!--
+--------------------------
+| SCENE 91
+--------------------------
+-->
+<label:label_1_91>
+
+<character:PHOENIX_HANDSONDESK_B_><background:BKG_COURTROOM_LEFT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12>
+
+<name:NAME_PHOENIX>
+Your Honor,<wait:20> <speed:21>there is<b>
+a gaping hole in the<b>
+witness's testimony!<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<!--
+--------------------------
+| SCENE 92
+--------------------------
+-->
+<label:label_1_92>
+
+<character:PHOENIX_NORMAL_B_>
+
+<name:NAME_PHOENIX>
+The only way <wait:8>he could have<b>
+known the weapon was a clock<b>
+is <wait:8>to hold it in his hand.<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_DOCUMENT_B_><speed:21>
+Yet <wait:8>the witness testified<b>
+that <wait:8>he never entered the<b>
+apartment!<speed:SPD_NORMAL><character:PHOENIX_DOCUMENT_A_><p>
+
+<hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
+<hidetextbox><character:PHOENIX_HANDSONDESK_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:32>
+
+<name:NAME_PHOENIX>
+Clearly,<wait:15> a <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>contradiction!<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:JUDGE_THINKING><background:BKG_COURTROOM_JUDGE><speed:21>
+
+<name:NAME_JUDGE>
+Hmm... <wait:15>indeed!<speed:SPD_NORMAL><p>
+
+<background:BKG_COURTROOM_LEFT><name:NAME_PHOENIX>
+
+<!--
+--------------------------
+| SCENE 93
+--------------------------
+-->
+<label:label_1_93>
+
+<character:PHOENIX_POINTING_B_><speed:16>
+
+The witness knew it was<b>
+a clock,<wait:15> because he...<speed:SPD_NORMAL><wait:1><character:PHOENIX_POINTING_A_>
+
+<act><jump:label_1_95,0,1>TODO1<b>
+<jump:label_1_94,0,0>TODO2<b>
+
+<!--
+--------------------------
+| SCENE 94
+--------------------------
+-->
+<label:label_1_94>
+
+<character:PHOENIX_POINTING_B_>
+
+<name:NAME_PHOENIX>
+Tell me,<wait:15> isn't it true that<b>
+you knew the victim?<character:PHOENIX_POINTING_A_><p>
+
+<character:PHOENIX_POINTING_B_><shake:1,30><!--sound:SFX_OBJECTION--><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+In fact,<wait:10> you were <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>one of her<b>
+"<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>sugar daddies"! <wait:20><speed:12>Be frank<b>
+with us,<wait:15> Mr. Sahwit!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,right_dir,CHR_SAHWIT,SAHWIT_TWITCHING_A_--><wait:30>
+<character:SAHWIT_TWITCHING_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12>
+
+<name:NAME_SAHWIT>
+Hmph.<character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_>
+"Frank"? <wait:25><speed:32>I'm always "Frank"!<speed:SPD_NORMAL><wait:15><character:SAHWIT_TWITCHING_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><speed:12>
+
+<name:NAME_PAYNE>
+Your Honor.<speed:SPD_NORMAL><character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+We have complete records of<b>
+the victim's relationships.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+Mr. Frank Sahwit does<b>
+not appear anywhere.<character:PAYNE_NORMAL_A_><p>
+
+<character:PHOENIX_SWEATING_B_><background:BKG_COURTROOM_LEFT><sound:SFX_WHOOPS><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12>
+
+<name:NAME_PHOENIX>
+Huh?<wait:25><b>
+Oh, really?<speed:SPD_NORMAL><character:PHOENIX_SWEATING_A_><p>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Please,<wait:8> Mr. Wright...<wait:20><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><b>
+Is "Huh" the best response<b>
+you can muster up?<character:JUDGE_SURPRISED><p>
+
+<character:JUDGE_WARNING_B_>
+Try to refrain from making<b>
+off-the-cuff accusations<b>
+in the future.<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX>
+Y-<wait:8>yes,<wait:10> Your Honor.<speed:SPD_NORMAL><shake:0,30><b>
+Let me think this over.<p>
+
+<jump:label_1_93>
+
+<!--
+--------------------------
+| SCENE 95
+--------------------------
+-->
+<label:label_1_95>
+
+<character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:32>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+You're lying!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<character:PHOENIX_POINTING_B_><speed:21>
+You were <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>inside<b>
+the apartment on the day<b>
+of the murder!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30><character:SAHWIT_DAMAGE><sound:SFX_STAB><wait:20>
+<character:SAHWIT_GLARING_B_><speed:16>
+
+<name:NAME_SAHWIT>
+Oh yeah? <wait:25><speed:32>Prove it!<wait:25><shake:0,30><b>
+Prove I went in there!<speed:SPD_NORMAL><character:SAHWIT_GLARING_A_><p>
+
+<character:PHOENIX_DESKSLAM><background:BKG_COURTROOM_LEFT><hidetextbox><wait:70>
+<hidetextbox><character:PHOENIX_HANDSONDESK_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_PHOENIX>
+I'll do better than that!<wait:15><speed:21><b>
+I can prove <wait:8>you were the one<b>
+who killed her!<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:SAHWIT_GLARING_A_><background:BKG_COURTROOM_MIDDLE>
+
+<name:NAME_PHOENIX>
+You struck her<b>
+with the clock,<!--wait:12--><p>
+
+and the shock of the blow<b>
+triggered the clock's voice!<speed:SPD_NORMAL><p>
+
+<character:PHOENIX_ZOOM_B_><background:BKG_ACTION_LINES><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><!--sound:SFX_OBJECTION--><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30><speed:32>
+
+<name:NAME_PHOENIX>
+That <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>was the sound<b>
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>you heard!<speed:SPD_NORMAL><character:PHOENIX_ZOOM_A_><p>
+
+<character:CR_PHOENIX_MIA_PAYNE_SAHWIT><background:BKG_COURTROOM_ALL><hidetextbox><!--sound:SFX_PUBLIC--><wait:120>
+<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:21>
+
+<name:NAME_JUDGE>
+Order in the court!<speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_>
+Intriguing.<wait:20><b>
+Please continue,<wait:10> Mr. Wright.<character:JUDGE_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Yes,<wait:10> Your Honor.<character:PHOENIX_NORMAL_A_><event:EVT_SL1,BKG_CS_SAHWIT_MURDER_1><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:PHOENIX_NORMAL_A_><background:BKG_CS_SAHWIT_MURDER_2><event:EVT_SA,SCROLL_DIR_UP,3><fade:0,100><wait:100>
+<hidetextbox><speed:12>
+
+Mr. Sahwit.<p>
+
+<speed:16>The sound must have left<b>
+quite an impression on you.<speed:SPD_NORMAL><event:EVT_SL1,BKG_TINKER_INTRO_1><p>
+
+<background:BKG_CS_SAHWIT_MURDER_2><hidetextbox><fade:4,7><wait:7>
+<background:BKG_TINKER_INTRO_2><event:EVT_SA,SCROLL_DIR_UP,3><fade:0,100><wait:100>
+<hidetextbox><speed:16>
+
+Understandable,<wait:20> since the<b>
+murder weapon spoke just as<b>
+you hit the victim!<p>
+
+That voice was burned<b>
+into your mind.<speed:SPD_NORMAL><p>
+
+<speed:SPD_NORMAL><character:SAHWIT_GLARING_A_><background:BKG_COURTROOM_MIDDLE>
+
+That's why <wait:8>you were so<b>
+certain about the time!<p>
+
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><background:BKG_EXCLAMATION_OBJ><sound:DPCM_PAYNE_OBJECTION_PITCH_15_><wait:60>
+<!--swoosh:middle_right,left_dir,CHR_PAYNE,PAYNE_NORMAL_A_--><wait:30>
+<hidetextbox><character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT><speed:12>
+
+<name:NAME_PAYNE>
+W-<wait:10>w-<wait:8><speed:SPD_NORMAL><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>what's the meaning<b>
+of this?<character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:21>
+This is all baseless<b>
+conjecture!<speed:SPD_NORMAL><character:PAYNE_SWEATING_A_><p>
+
+<hidetextbox><!--swoosh:left_right,right_dir,CHR_PHOENIX,PHOENIX_HANDSONDESK_A_--><wait:30>
+<character:PHOENIX_HANDSONDESK_B_><background:BKG_COURTROOM_LEFT><hidetextbox><speed:10>
+
+<name:NAME_PHOENIX>
+Baseless...?<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_POINTING_B_><sound:SFX_DRAMAPOUND><shake:0,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:21>
+Just look at the<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><b>
+witness's face!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<character:SAHWIT_GLARING_A_><background:BKG_COURTROOM_MIDDLE><speed:9>
+
+<name:NAME_SAHWIT>
+Ngh<shake:0,30>...<wait:25> g<shake:0,30>rrrah!<speed:SPD_NORMAL><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE>
+Would the witness<b>
+care to elaborate?<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Did you strike the<b>
+victim with the clock?<character:JUDGE_WARNING_A_><p>
+
+<character:SAHWIT_GLARING_B_><background:BKG_COURTROOM_MIDDLE><speed:16>
+
+<name:NAME_SAHWIT>
+I...<wait:10> <shake:0,30>I...<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>!<background:BKG_CS_SAHWIT_2><wait:1><b>
+That...<wait:10> <shake:0,30>that day...<wait:10><background:BKG_COURTROOM_MIDDLE><wait:1><b>
+I...<wait:10> I never!<character:SAHWIT_GLARING_A_><p>
+
+<character:SAHWIT_GLARING_B_>
+Look...<wait:10> <shake:0,30>I...<wait:10> the clock...<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><background:BKG_CS_SAHWIT_2><wait:1><b>
+I heard, <background:BKG_COURTROOM_MIDDLE><wait:1>no!<b>
+I mean,<wait:10> I <shake:0,30>saw...<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><background:BKG_CINDY_INTRO><wait:1>
+Saw...<wait:10><shake:0,30> nggg!<background:BKG_COURTROOM_MIDDLE><wait:30><!--fademusic:0,30--><wait:30><music:MUS_CORNERED_VARIATION><fp>
+
+<speed:SPD_NORMAL><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:10>
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_TOSS><music:MUS_CORNERED><sound:SFX_SUPERSHOCK>
+Gwa<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>aaa<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+aa<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>aaa<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>aaa<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>ah!<wait:27><fp>
+
+<hidetextbox><background:BKG_COURTROOM_LEFT><character:PHOENIX_WITHTOUPEE><wait:120><wait:33><fp>
+<hidetextbox><character:SAHWIT_BALD_B_><background:BKG_COURTROOM_MIDDLE><sound:SFX_DAMAGE2><shake:2,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:32>
+
+<name:NAME_SAHWIT>
+Shutup<wait:5>shutup<wait:5>shutup!<wait:20><speed:21><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><b>
+I hate you!<speed:SPD_NORMAL><character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_>
+I-<wait:8>it was him,<wait:15> I tell you!<wait:20><shake:1,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><b>
+I saw him!<character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_><speed:12>
+H-<wait:8><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>he killed her and he<b>
+should burn!<speed:SPD_NORMAL> <wait:20>Burn!<wait:20><speed:32><b>
+Give him death!<character:SAHWIT_BALD_A_><p>
+
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_SAHWIT><background:BKG_COURTROOM_ALL><!--sound:SFX_PUBLIC--><wait:120>
+<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:12>
+
+<name:NAME_JUDGE>
+Order!<wait:15><b>
+Order in the court I say!<speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
+
+<character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+Your Honor,<wait:20><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+a-<wait:8>a moment please!<character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_>
+There isn't a shred of<b>
+evidence supporting the<b>
+defense's claims!<character:PAYNE_SWEATING_A_><p>
+
+<wait:120><character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>
+
+<name:NAME_JUDGE>
+Mr. Wright!<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Your Honor?<character:PHOENIX_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+You claim the sound the<b>
+witness heard came from<b>
+the clock...<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:12>
+Do you have any evidence?<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<background:BKG_COURTROOM_LEFT><name:NAME_PHOENIX>
+
+<!--
+--------------------------
+| SCENE 96
+--------------------------
+-->
+<label:label_1_96>
+
+<character:PHOENIX_NORMAL_A_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><color:COL_BLUE>
+
+(The whole case is riding<b>
+on this!<wait:20> I'd better think<b>
+it through carefully!)<color:COL_WHITE><p>
+
+<character:PHOENIX_NORMAL_B_>
+Yes,<wait:10> Your Honor.<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_>
+The sound Mr. Sahwit heard<b>
+was definitely this clock.<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_><event:EVT_HPT><speed:16>
+A fact which is clear<b>
+if you simply...<speed:SPD_NORMAL><wait:1><character:PHOENIX_NORMAL_A_>
+
+<act><jump:label_1_97,0,1>TODO1<b>
+<jump:label_1_99,0,1>TODO2<b>
+<jump:label_1_101,0,0>TODO3<b>
+
+<!--
+--------------------------
+| SCENE 97
+--------------------------
+-->
+<label:label_1_97>
+
+<event:EVT_HPT><character:PHOENIX_POINTING_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+All you have to do<b>
+is examine the batteries!<character:PHOENIX_POINTING_A_><p>
+
+<hidetextbox><fade:4,45><wait:45>
+<character:JUDGE_NORMAL_A_><background:BKG_COURTROOM_JUDGE><fade:0,45><wait:45>
+<photo:PHT_EVIDENCE_THINKER><character:JUDGE_NORMAL_B_><hidetextbox>
+
+<name:NAME_JUDGE>
+Indeed? <wait:20>The batteries are...<wait:25><b>
+in the right way.<wait:15> The clock<b>
+seems to be working fine.<character:JUDGE_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><character:JUDGE_WARNING_B_>
+What exactly did<b>
+you mean,<wait:15> Mr. Wright?<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Yes,<wait:8> the clock was<b>
+working fine!<character:PHOENIX_NORMAL_A_><p>
+
+<hidetextbox><!--swoosh:left_right,left_dir,CHR_PAYNE,PAYNE_NORMAL_A_--><wait:30>
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox><speed:12>
+
+<name:NAME_PAYNE>
+Yes,<wait:10> and...?<speed:SPD_NORMAL><character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><!--swoosh:left_right,right_dir,CHR_PHOENIX,PHOENIX_THINKING_A_--><wait:30>
+<character:PHOENIX_THINKING_A_><background:BKG_COURTROOM_LEFT><hidetextbox><speed:12>
+
+<name:NAME_PHOENIX>
+...<p>
+
+<character:PHOENIX_SWEATING_B_><sound:SFX_WHOOPS><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+Umm,<wait:20> I'm sorry,<wait:15> I think<b>
+I got confused back there<b>
+with all those testimonies.<speed:SPD_NORMAL><character:PHOENIX_SWEATING_A_><p>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:21>
+
+<name:NAME_JUDGE>
+Mr. Wright!<speed:SPD_NORMAL><character:JUDGE_SURPRISED><p>
+
+<character:JUDGE_SURPRISED_B_><event:EVT_HPT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+I expect more from a lawyer<b>
+in this court.<wait:20> Even if it<b>
+is your first day.<character:JUDGE_SURPRISED><p>
+
+<character:JUDGE_WARNING_B_>
+I'm afraid I have to pena-<b>
+lize you!<wait:20><speed:12>Try to think things<b>
+through more carefully.<speed:SPD_NORMAL><character:JUDGE_NORMAL_A_>
+<event:EVT_HPS,HP_DAMAGE,1><wait:30><event:EVT_HPS,HP_DAMAGE,0><event:EVT_HPA,HP_NORMAL,-1><wait:30><event:EVT_HPT><p>
+
+<!--
+--------------------------
+| SCENE 98
+--------------------------
+-->
+<label:label_1_98>
+
+<background:BKG_COURTROOM_LEFT><character:PHOENIX_OHSHIT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_PHOENIX>
+Y-<wait:8>yes,<wait:10> Your Honor.<wait:15><b>
+As I was saying...<wait:65><character:PHOENIX_SWEATING_A_><p>
+
+<jump:label_1_96>
+
+<!--
+--------------------------
+| SCENE 99
+--------------------------
+-->
+<label:label_1_99>
+
+<event:EVT_HPT><character:PHOENIX_NORMAL_B_>
+
+All you have to do is talk<b>
+to the victim's neighbors!<character:PHOENIX_NORMAL_A_><p>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE>
+Talk to the neighbors...?<speed:SPD_NORMAL><character:JUDGE_SURPRISED><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+I'm sure one of them heard<b>
+the clock tell the time when<b>
+the incident occurred!<character:PHOENIX_NORMAL_A_><p>
+
+<character:JUDGE_THINKING><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+I see...<p>
+
+<speed:SPD_NORMAL><character:JUDGE_WARNING_B_>
+Does the prosecution have<b>
+anything to say,<wait:20> Mr. Payne?<character:JUDGE_WARNING_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+We have already made all<b>
+the necessary inquiries.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+Everyone living near the<b>
+victim's apartment was out<b>
+at the time of the murder.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+Furthermore,<wait:15> even if a<b>
+neighbor had heard<b>
+the clock,<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+that would not prove that<b>
+Mr. Sahwit had<b>
+heard anything.<character:PAYNE_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE>
+Hmm...<wait:20><b>
+That is true.<speed:SPD_NORMAL><character:JUDGE_SURPRISED><p>
+
+<character:JUDGE_WARNING_B_><event:EVT_HPT>
+I believe you may be wrong,<wait:20><b>
+Mr. Wright.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+You'll receive a penalty<speed:SPD_NORMAL><b>
+for that,<wait:15> unfortunately.<character:JUDGE_WARNING_A_>
+<event:EVT_HPS,HP_DAMAGE,1><wait:30><event:EVT_HPS,HP_DAMAGE,0><event:EVT_HPA,HP_NORMAL,-1><wait:30><event:EVT_HPT><p>
+
+<!--
+--------------------------
+| SCENE 100
+--------------------------
+-->
+<label:label_1_100>
+
+<character:PHOENIX_NORMAL_A_><background:BKG_COURTROOM_LEFT><character:PHOENIX_OHSHIT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:10>
+
+<name:NAME_PHOENIX>
+I-<wait:10><speed:21>I'm sorry,<wait:10> Your Honor!<wait:10><b>
+Let me think about it again!<wait:5><speed:SPD_NORMAL><character:PHOENIX_SWEATING_A_><p>
+
+<jump:label_1_96>
+
+<!--
+--------------------------
+| SCENE 101
+--------------------------
+-->
+<label:label_1_101>
+
+<event:EVT_HPT><character:PHOENIX_NORMAL_B_>
+
+Let's sound the clock<b>
+now, here in this court.<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT>
+Your Honor,<wait:20> may I<b>
+have the clock?<character:PHOENIX_POINTING_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:PHOENIX_POINTING_A_><background:BKG_EMPTY><fade:0,7><wait:7><hidetextbox><!--fademusic:0,90>--><music:MUS_CORNERED><speed:12>
+
+<name:NAME_PHOENIX>
+I ask the court to<b>
+listen very carefully...<speed:SPD_NORMAL><p>
+
+<photo:PHT_EVIDENCE_THINKER><speed:64><color:COL_RED>
+
+<name:NAME_CLOCK><bip:BIP_MALE>
+<b>
+        ...<sound:SFX_BIP2>*beep*...<p>
+
+<color:COL_WHITE><speed:8><color:COL_GREEN><bip:BIP_FEMALE><b>
+       [I think it's<wait:30><b>
+           8:25.]<color:COL_WHITE><speed:SPD_NORMAL><wait:20><music:MUS_CORNERED_VARIATION><wait:40><fp>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+<sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+That certainly is a strange<b>
+way to announce the time.<character:JUDGE_SURPRISED><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Well,<speed:12><wait:15> he is "The Thinker,"<b>
+after all.<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+So,<wait:20> we've heard the clock.<wait:15><b>
+What are your conclusions,<wait:15> <b>
+Mr. Wright?<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Mr. Payne...<wait:15><speed:10> can you tell me<b>
+what time it is now?<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><p>
+
+<hidetextbox><!--swoosh:left_right,left_dir,CHR_PAYNE,PAYNE_SWEATING_A_--><wait:30>
+<character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT><hidetextbox><speed:8>
+
+<name:NAME_PAYNE>
+It's 11:25...<speed:SPD_NORMAL><character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_><shake:1,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><speed:32>
+Ac<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>k!<wait:30><character:PAYNE_SWEATING_A_><p>
+
+<hidetextbox><!--swoosh:left_right,right_dir,CHR_PHOENIX,PHOENIX_HANDSONDESK_A_--><wait:30>
+<character:PHOENIX_HANDSONDESK_A_><background:BKG_COURTROOM_LEFT><hidetextbox>
+<!--photo_on_right--><photo:PHT_EVIDENCE_THINKER><character:PHOENIX_HANDSONDESK_B_><speed:12>
+
+<name:NAME_PHOENIX>
+As you can see,<wait:15><speed:21> this clock<b>
+is exactly three hours slow!<character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_HANDSONDESK_B_>
+Precisely the discrepancy<b>
+between what Mr. Sahwit<b>
+heard<character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_HANDSONDESK_B_>
+and the actual<b>
+time of death!<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<speed:SPD_NORMAL><character:SAHWIT_BALD_A_><background:BKG_COURTROOM_MIDDLE><sound:SFX_THUD4><shake:1,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:12>
+
+<name:NAME_PHOENIX>
+So,<wait:15> Mr. Sahwit...<p>
+
+<speed:21>
+Try to talk your<b>
+way out of this one!<p>
+
+<speed:10>
+
+<name:NAME_SAHWIT>
+...<p>
+
+<character:SAHWIT_BALD_B_><speed:10>
+
+<name:NAME_SAHWIT>
+...Hah!<shake:0,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME> <wait:15>Hah <wait:15>hah!<character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_>
+You forgot one thing!<character:SAHWIT_BALD_A_><p>
+
+<character:PHOENIX_SWEATING_A_><background:BKG_COURTROOM_LEFT><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:16><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Uh oh...<wait:15> what's he<wait:20><b>
+talking about...?)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<background:BKG_COURTROOM_MIDDLE><photo:PHT_EVIDENCE_THINKER><character:SAHWIT_BALD_B_><speed:12>
+
+<name:NAME_SAHWIT>
+While it may seem like<b>
+that clock IS running three<b>
+hours slow...<speed:SPD_NORMAL><character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_><speed:21>
+It proves nothing!<speed:SPD_NORMAL><character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_>
+How do you know it was<b>
+running three hours slow<b>
+on <color:COL_RED>the day of the murder<color:COL_WHITE>!?<character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_><speed:21>
+If you can't prove that,<wait:15><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+you don't have a case!<speed:SPD_NORMAL><character:SAHWIT_BALD_A_><p>
+
+<speed:SPD_NORMAL><hidetextbox><!--swoosh:left_middle,left_dir,CHR_PHOENIX,PHOENIX_NORMAL_A_--><wait:30>
+<character:PHOENIX_NORMAL_A_><background:BKG_COURTROOM_LEFT><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_LIGHTBULB>
+
+<name:NAME_PHOENIX>
+...!<p>
+
+<character:PHOENIX_SWEATING_A_><color:COL_BLUE>
+(He's right! <wait:20><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><shake:1,30>How am I<b>
+going to prove that!?)<p>
+
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:21>
+(Dammit! <speed:12><wait:20>I was so close!)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<speed:SPD_NORMAL><character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Mr. Wright?<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:12>
+It seems you lack the<b>
+critical evidence to<b>
+support your claim.<character:JUDGE_WARNING_A_><p>
+
+<speed:SPD_NORMAL><character:PHOENIX_SWEATING_A_><background:BKG_COURTROOM_LEFT><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30>
+
+<name:NAME_PHOENIX>
+...!<p>
+
+<character:PHOENIX_SWEATING_B_><speed:12>
+Yes,<wait:20> Your Honor.<speed:SPD_NORMAL><character:PHOENIX_SWEATING_A_><p>
+
+<speed:SPD_NORMAL><character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+This means I cannot let<b>
+you indict the witness.<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_HEADSHAKE><speed:9>
+Unfortunately...<wait:10><speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><!--fademusic:0,40--><music:MUS_CORNERED_VARIATION><hidetextbox><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
+
+<name:NAME_JUDGE>
+This ends the<b>
+cross-examination<b>
+of Mr. Frank Sahwit.<character:JUDGE_NORMAL_A_><p>
+
+<character:SAHWIT_BALD_B_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:16>
+
+<name:NAME_SAHWIT>
+I come all the way down here<b>
+to testify,<wait:15> and look<b>
+what happens!<character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_><speed:16>
+They treat me like a<b>
+criminal! <wait:20>A criminal!<speed:SPD_NORMAL><character:SAHWIT_BALD_A_><p>
+
+<character:SAHWIT_BALD_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+You lawyers are all slime!<character:SAHWIT_BALD_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,left_dir,CHR_PHOENIX,PHOENIX_HANDSONDESK_A_--><wait:30>
+<character:PHOENIX_HANDSONDESK_A_><background:BKG_COURTROOM_LEFT><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Grr! <wait:20>I almost had him!)<speed:SPD_NORMAL><p>
+
+<hidetextbox><character:PHOENIX_DESKSLAM><wait:70><hidetextbox><character:PHOENIX_HANDSONDESK_A_><shake:0,30><speed:10>
+
+<name:NAME_PHOENIX>
+(Sorry,<wait:10> Larry...<wait:25><b>
+I failed you.)<p>
+
+<speed:10>
+(There's nothing I can<wait:25><b>
+do about it now...)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<speed:SPD_NORMAL><hidetextbox><wait:40><fade:4,100><wait:100>
+<character:PHOENIX_HANDSONDESK_A_><background:BKG_EMPTY><wait:30><fade:0,1><wait:1>
+<hidetextbox><!--sound:SFX_OBJECTION--><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:64>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Not so fast,<wait:10> Mr. Sahwit!<speed:SPD_NORMAL><music:MUS_CORNERED_VARIATION><p>
+
+<hidetextbox>
+<sound:SFX_BADUM><character:SAHWIT_BALD_A_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:30>
+<sound:SFX_BADUM><character:PAYNE_SWEATING_A_><background:BKG_COURTROOM_RIGHT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:30>
+<sound:SFX_BADUM><character:JUDGE_SURPRISED><background:BKG_COURTROOM_JUDGE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:30>
+<sound:SFX_BADUM><character:MIA_BENCH_STERN_A_><background:BKG_COURTROOM_DEFENSE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:5>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Mia! <wait:25>I mean,<wait:10> Chief!<p>
+
+<character:MIA_BENCH_WUT_B_>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Listen up,<wait:15> Wright!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:12>
+Don't throw this one away,<wait:20><b>
+not like this! <wait:20><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+Think!<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_A_>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+But,<wait:8> Chief,<wait:20> <speed:9><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>it's over.<speed:SPD_NORMAL><p>
+
+<speed:12>
+I can't prove the clock was<b>
+slow the day of the murder!<speed:SPD_NORMAL><p>
+
+Nobody can prove that!<p>
+
+<character:MIA_BENCH_STERN_B_><shake:0,30><speed:9>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Um...<wait:15> well,<wait:8> yes.<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:16>
+But that doesn't mean you<b>
+can't still win! <wait:20>Try<b>
+thinking out of the box!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:16>
+Don't waste time doubting<b>
+the facts.<wait:15> Assume the clock<b>
+was three hours slow and...<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:SPD_NORMAL><speed:21>
+Think through it!<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:12>
+Ask yourself, <speed:10><wait:20><color:COL_RED>"why was <b>
+the clock three hours slow"<color:COL_WHITE>?<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:SPD_NORMAL>
+Figure out the reason,<wait:15><b>
+and you'll have your proof!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:9>
+Right,<wait:15> Wright?<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:16>
+Can you think of a reason as<b>
+to why the clock would be<b>
+three hours slow?<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_>
+
+<act><jump:label_1_105,0,1>TODO1<b>
+<jump:label_1_102,0,0>TODO2<b>
+
+<!--
+--------------------------
+| SCENE 102
+--------------------------
+-->
+<label:label_1_102>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+H-<wait:10><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>how am I supposed<b>
+to know that!?<p>
+
+<character:MIA_BENCH_STERN_B_><speed:12>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+I know you can<b>
+figure it out!<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><speed:16>
+There must be some evidence<b>
+in the Court Record...<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+Something that can show<b>
+why that clock was three<b>
+hours slow!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+Find it,<wait:10> and he won't have a<b>
+foot to stand on!<character:MIA_BENCH_STERN_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+Mr. Wright?<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX>
+Y-<wait:8>y-<wait:8><shake:0,30>yes,<wait:10> Your Honor!<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+You say the clock was<b>
+already running slow on the<b>
+day of the murder...<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Do you have evidence<b>
+to prove this?<character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_THINKING_A_><background:BKG_COURTROOM_LEFT><color:COL_BLUE><speed:12>
+
+<name:NAME_PHOENIX>
+(This is it...<wait:30><b>
+all or nothing!)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<character:PHOENIX_NORMAL_B_>
+Yes,<wait:20> Your Honor.<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_><speed:SPD_NORMAL><speed:16>
+I believe I have the<b>
+evidence that can prove<b>
+my claim!<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><p>
+
+<character:SAHWIT_BALD_B_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:10>
+
+<name:NAME_SAHWIT>
+Hah <wait:10>hah! <speed:SPD_NORMAL><wait:20><b>
+I'd like to see THAT!<character:SAHWIT_BALD_A_><p>
+
+<background:BKG_COURTROOM_JUDGE>
+<name:NAME_JUDGE>
+
+<!--
+--------------------------
+| SCENE 103
+--------------------------
+-->
+<label:label_1_103>
+
+<character:JUDGE_NORMAL_B_><speed:16>
+
+Let's see this evidence that<b>
+proves why the clock was<b>
+running slow!<speed:SPD_NORMAL><event:EVT_CR><event:EVT_CRI,EVI_INDEX_PASSPORT><event:EVT_CRF>
+
+<event:EVT_CR>
+<jump:label_1_106,1,0,EVI_FLAG_OKOBJ>
+
+<!--
+--------------------------
+| SCENE 104
+--------------------------
+-->
+<label:label_1_104>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Um, <wait:15>excuse me.<wait:20><b><speed:12>
+This proves your claim...<wait:20><b>
+how?<character:JUDGE_SURPRISED><p>
+
+<character:JUDGE_SURPRISED_B_>
+I can't see what that<b>
+evidence has to do with<b>
+the clock.<character:JUDGE_SURPRISED><p>
+
+<speed:SPD_NORMAL><background:BKG_COURTROOM_LEFT><character:PHOENIX_OHSHIT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB2><shake:2,30><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(D'oh! <wait:20>That wasn't it!)<color:COL_WHITE><character:PHOENIX_SWEATING_A_><p>
+
+<character:PHOENIX_SWEATING_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12>
+One more chance...<wait:20><speed:SPD_NORMAL><b>
+Give me just<b>
+one more chance!<character:PHOENIX_SWEATING_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Alright,<wait:15> Mr. Wright,<wait:20> but<b>
+time is not on your side.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:21>
+Be quick about it.<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<jump:label_1_103>
+
+<!--
+--------------------------
+| SCENE 105
+--------------------------
+-->
+<label:label_1_105>
+
+<speed:8>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+...<p>
+
+<sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30><speed:21>Wait!<speed:SPD_NORMAL><p>
+
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+Maybe I can prove it!<p>
+
+<character:MIA_BENCH_STERN_B_>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+You must have evidence<b>
+somewhere that can<b>
+prove it,<wait:15> Wright!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+Find it and<b>
+let them have it!<character:MIA_BENCH_STERN_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+Well,<wait:15> Mr. Wright?<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+You say the clock was<b>
+already running slow on the<b>
+day of the murder...<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:12>
+Have you found evidence<b>
+to support this claim?<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT><speed:10>
+
+<name:NAME_PHOENIX>
+Of course.<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_>
+There is a piece of evidence<b>
+in the Court Record,<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_>
+that can prove my claim<b>
+beyond a doubt!<character:PHOENIX_NORMAL_A_><p>
+
+<character:SAHWIT_BALD_B_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:10>
+
+<name:NAME_SAHWIT>
+Hah!<speed:SPD_NORMAL><wait:20> Tough words!<wait:20> Let's see<b>
+you pull this one off!<fp>
+
+<background:BKG_COURTROOM_JUDGE>
+<name:NAME_JUDGE>
+
+<jump:label_1_103>
+
+<!--
+--------------------------
+| SCENE 106
+--------------------------
+-->
+<label:label_1_106>
+
+<background:BKG_COURTROOM_LEFT><!--photo_on_right--><photo:PHT_EVIDENCE_PASSPORT><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
+<hidetextbox><character:PHOENIX_HANDSONDESK_B_>
+
+<name:NAME_PHOENIX>
+The victim had just returned<b>
+home from abroad the day<b>
+before the murder.<character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_HANDSONDESK_B_>
+As we all know,<wait:15> the time<b>
+difference between here and<b>
+Paris is nine hours!<character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_HANDSONDESK_B_><photo:PHT_EVIDENCE_PASSPORT>
+When it's 4:00 PM here,<wait:12><b>
+it's 1:00 AM the next day<b>
+there.<character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_POINTING_B_><speed:10>
+The clock wasn't<b>
+three hours slow,<wait:20><b><speed:32>
+it was <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>nine hours fast!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<character:SAHWIT_BALD_A_><background:BKG_COURTROOM_MIDDLE><speed:12>
+
+<name:NAME_PHOENIX>
+The victim hadn't reset her<b>
+clock since returning home!<p>
+
+That's why the time you hea-<b>
+rd when you struck her dead<color:COL_WHITE><b>
+in her apartment was wrong!<speed:SPD_NORMAL><p>
+
+<background:BKG_COURTROOM_LEFT><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
+<hidetextbox><character:PHOENIX_HANDSONDESK_B_>
+
+<name:NAME_PHOENIX>
+Proof enough for you,<wait:15><b>
+Mr. Sahwit? <wait:25><speed:12>Or should<b>
+I say...<wait:15><speed:21> Mr. Did It!<speed:SPD_NORMAL><character:PHOENIX_HANDSONDESK_A_><p>
+
+<!--fademusic:0,60--><music:MUS_CORNERED_VARIATION><character:SAHWIT_BALD_A_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_SAHWIT>
+Ngh!<character:SAHWIT_BREAK><wait:50><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:12> .<shake:0,30>..!<wait:50><hidetextbox:1><wait:100>
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><wait:50><speed:SPD_NORMAL><fp>
+
+<wait:80><hidetextbox><character:CR_PHOENIX_MIA_PAYNE><background:BKG_COURTROOM_ALL><!--sound:SFX_PUBLIC--><wait:120>
+<character:GAVEL_3><wait:40><background:BKG_COURTROOM_JUDGE><character:JUDGE_NORMAL_B_><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_JUDGE>
+O-<wait:8>order! <wait:20>Order,<wait:15> I say!<character:JUDGE_NORMAL_A_><p>
+
+<wait:30><hidetextbox><fade:4,100><wait:100>
+<character:JUDGE_NORMAL_A_><background:BKG_COURTROOM_JUDGE><fade:0,100><wait:100>
+<music:MUS_TRIAL><character:JUDGE_NORMAL_B_><hidetextbox>
+
+<name:NAME_JUDGE>
+Well...<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_>
+This case has certainly<b>
+turned out differently<b>
+than we all expected.<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Mr. Payne...<wait:15> your client?<character:JUDGE_WARNING_A_><p>
+
+<character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:9>
+
+<name:NAME_PAYNE>
+He...<wait:15> er...<wait:15> <speed:16>he was arrested<b>
+and has been taken away,<wait:15> <b>
+Your Honor.<speed:SPD_NORMAL><character:PAYNE_SWEATING_A_><p>
+
+<hidetextbox><character:JUDGE_NODDING><background:BKG_COURTROOM_JUDGE><wait:43><hidetextbox>
+
+<name:NAME_JUDGE>
+Very well.<character:JUDGE_NORMAL_A_><p>
+
+<wait:10><character:JUDGE_SURPRISED_B_>
+Mr. Wright?<character:JUDGE_SURPRISED><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Yes, Your Honor.<character:PHOENIX_NORMAL_A_><p>
+
+<name:NAME_JUDGE>
+I have to say,<wait:15><b>
+I'm impressed.<p>
+
+I don't think I've ever seen<b>
+someone complete a defense<b>
+so quickly...<p>
+
+and find the true culprit<b>
+at the same time!<p>
+
+<character:PHOENIX_NORMAL_B_>
+
+<name:NAME_PHOENIX>
+Thank you,<wait:15> Your Honor.<character:PHOENIX_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+At this point,<wait:15> this is<b>
+only a formality,<wait:15> but...<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_>
+This court finds the<b>
+defendant,<wait:20> <speed:12>Mr. Larry Butz...<speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
+
+<!--fademusic:0,60--><music:MUS_TRIAL><character:JUDGE_WARNING_A_><hidetextbox><wait:60>
+<!--guilty:0-->
+<character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL>
+<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
+
+<name:NAME_JUDGE>
+<b>
+And with that...<wait:25><speed:12><b>
+The court is adjourned.<speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
+
+<hidetextbox><wait:60><fade:4,100><wait:100>
+
+<!--
+--------------------------
+| SCENE 107
+--------------------------
+-->
+<label:label_1_107>
+
+<character:JUDGE_NORMAL_A_><background:BKG_EMPTY><fade:0,100><wait:100><hidetextbox>
+
+<name:NAME_PHOENIX>
+It turns out that Frank<b>
+Sahwit was a common burglar!<p>
+
+He posed as a<b>
+newspaper salesman<p>
+
+to check and see when<b>
+people were out<b>
+of the house!<p>
+
+<speed:9>That day...<speed:SPD_NORMAL><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<background:BKG_CS_SAHWIT_LARRY><fade:0,100><wait:100>
+<hidetextbox>
+When Larry went to her<b>
+apartment,<wait:15> the victim<b>
+wasn't home.<p>
+
+After he left,<wait:20> Mr. Sahwit<b>
+let himself in to do his<b>
+dirty work!<p>
+
+<hidetextbox><fade:4,7><wait:7>
+<background:BKG_CS_SAHWIT_2><fade:0,100><wait:100>
+<hidetextbox>
+While he was searching her<b>
+place,<wait:15> the victim returned!<p>
+
+Flustered,<wait:15> Mr. Sahwit<b>
+grabbed the nearest blunt<b>
+object he could find...<p>
+
+<hidetextbox><fade:4,7><wait:7>
+<background:BKG_CS_SAHWIT_MURDER_2><fade:0,7><wait:7>
+<wait:30><fade:4,7><wait:7>
+<background:BKG_CINDY_INTRO><character:CINDY_INTRO_ANIM><fade:0,7><wait:7>
+<wait:120><character:CINDY_INTRO_ANIM_PAUSE><fade:4,100><wait:100>

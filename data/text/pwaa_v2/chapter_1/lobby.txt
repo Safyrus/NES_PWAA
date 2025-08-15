@@ -17,6 +17,21 @@
 <hidetextbox><speed:SPD_DEFAULT><music:MUS_COURTROOM_LOUNGE><background:BKG_COURTROOM_LOBBY><wait:37>
 <fade:0,45><wait:75><hidetextbox><shake:0,30>
 
+<!-- Give badge and autopsy report as evidence -->
+<event:EVT_CRN,EVI_INDEX_BADGE,evi_badge><event:EVT_CRS,EVI_INDEX_BADGE>
+<event:EVT_CRN,EVI_INDEX_AUTOPSY_CINDY,evi_autopsy_cindy><event:EVT_CRS,EVI_INDEX_AUTOPSY_CINDY>
+<!-- Give Mia, Larry & Cindy as profile -->
+<event:EVT_CRN,EVI_INDEX_MIA,evi_mia><event:EVT_CRS,EVI_INDEX_MIA>
+<event:EVT_CRN,EVI_INDEX_LARRY,evi_larry><event:EVT_CRS,EVI_INDEX_LARRY>
+<event:EVT_CRN,EVI_INDEX_CINDY,evi_cindy><event:EVT_CRS,EVI_INDEX_CINDY>
+<!-- Enable court record access -->
+<event:EVT_CR>
+<!-- Set HP -->
+<event:EVT_HPS,HP_NORMAL,5>
+<event:EVT_HPS,HP_DANGER,0>
+<event:EVT_HPS,HP_DAMAGE,0>
+<event:EVT_HPE,HP_NORMAL,0,c1_game_over>
+
 <!-- display blue text as Phoenix -->
 <name:NAME_PHOENIX><bip:BIP_MALE><color:COL_BLUE>
 (Boy am I nervous!)<color:COL_WHITE><p>
@@ -163,7 +178,8 @@ I...<wait:16> <speed:12>I'm finished. <wait:25><speed:32>Finished!<character:LAR
 without her!<wait:20> I can't!<character:LARRY_NERVOUS_A_><p>
 
 <character:LARRY_NERVOUS_B_><speed:8>Who... <wait:25><speed:SPD_DEFAULT>who took her away<b>
-from me, Nick? <wait:20>Who did this!?<character:LARRY_NERVOUS_A_><p>
+from me, Nick?<b><wait:20>
+Who did this!?<character:LARRY_NERVOUS_A_><p>
 
 <character:LARRY_NERVOUS_B_><shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
 Aww,<wait:10> Nick,<wait:16> ya gotta tell me!<wait:25><b>
@@ -182,7 +198,6 @@ it was<wait:16> <color:COL_RED><sound:SFX_REALIZATION>you<color:COL_BLUE>...)<sp
 <hidetextbox><wait:35><fade:4,100><wait:120><music:MUS_COURTROOM_LOUNGE><!--TODO: fade music-->
 <character:LARRY_NERVOUS_A_><background:BKG_EMPTY><wait:30><fade:0,7><wait:7><hidetextbox>
 
-<name:NAME_PHOENIX>
 My name is Phoenix Wright.<p>
 
 Here's the story:<p>
@@ -205,8 +220,9 @@ Our school had a saying:<wait:25><speed:12><b>
 "<color:COL_RED>When something smells,<wait:15><b>
 it's usually the Butz.<color:COL_WHITE>"<speed:SPD_DEFAULT><p>
 
-<character:LARRY_NERVOUS_A_>In the 23 years I've known<b>
-him, it's usually been true.<p>
+<character:LARRY_NERVOUS_A_>In the 23 years<b>
+I've known him,<b>
+it's usually been true.<p>
 
 He has a knack for getting<b>
 himself in trouble.<p>
@@ -227,5 +243,9 @@ case... to clear his name.<p>
 <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
 And that's just what I'm<b>
 going to do!<p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+<!-- Disable court record access -->
+<event:EVT_CR>
 
 <hidetextbox><wait:100>

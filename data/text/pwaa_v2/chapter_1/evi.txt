@@ -1,0 +1,81 @@
+<!-- Note: index 0 and 1 are used for objection -->
+<const:EVI_INDEX_BADGE,2>
+<const:EVI_INDEX_AUTOPSY_CINDY,3>
+<const:EVI_INDEX_THINKER,4>
+<const:EVI_INDEX_PASSPORT,5>
+<const:EVI_INDEX_PERMISSION,6>
+<const:EVI_INDEX_MIA,64>
+<const:EVI_INDEX_LARRY,65>
+<const:EVI_INDEX_CINDY,66>
+<const:EVI_INDEX_PAYNE,67>
+<const:EVI_INDEX_SAHWIT,68>
+<const:EVI_INDEX_NONE,127>
+
+<label:evi_badge>
+<photo:PHT_EVIDENCE_BADGE>
+<color:COL_RED>Attorney's Badge<color:COL_WHITE><b>
+No One Would believe I<b>
+was a defense attorney<b>
+if I didn't carry this.<p>
+
+<label:evi_autopsy_cindy>
+<photo:PHT_EVIDENCE_REPORT>
+<color:COL_RED>Cindy's Autopsy Report<color:COL_WHITE><b>
+Time of death:<b>
+7/31, 4PM-5PM<b>
+Cause of death: loss of<b>
+blood due to<b>
+blunt trauma.<p>
+
+<label:evi_thinker>
+<photo:PHT_EVIDENCE_THINKER>
+<color:COL_RED>Statue<color:COL_WHITE><b>
+A statue in the shape<b>
+of "The thinker."<b>
+It's rather heavy.<p>
+
+<label:evi_passport>
+<photo:PHT_EVIDENCE_PASSPORT>
+<color:COL_RED>TODO<color:COL_WHITE><b>
+TODO<p>
+
+<label:evi_blackout_record>
+<photo:PHT_EVIDENCE_PERMISSION>
+<color:COL_RED>TODO<color:COL_WHITE><b>
+TODO<p>
+
+<label:evi_mia>
+<photo:PHT_EVIDENCE_MIA>
+<color:COL_RED>Mia Fey (27)<color:COL_WHITE><b>
+Chief Attorney at<b>
+Fey & Co..<b>
+My boss, and a very<b>
+good defnse attorney.<p>
+
+<label:evi_larry>
+<photo:PHT_EVIDENCE_LARRY>
+<color:COL_RED>Larry Butz (23)<color:COL_WHITE><b>
+The defendant in this<b>
+case. A likeable guy<b>
+who was my friend<b>
+in grade school.<p>
+
+<label:evi_cindy>
+<photo:PHT_EVIDENCE_CINDY>
+<color:COL_RED>Cindy Stone (22)<color:COL_WHITE><b>
+The victim in this case.<b>
+A model, she lived in an<b>
+apartment by herself.<p>
+
+<label:evi_payne>
+<photo:PHT_EVIDENCE_PAYNE>
+<color:COL_RED>Winston Payne (52)<color:COL_WHITE><b>
+The prosecutor for this<b>
+case. Lacks presence.<b>
+Generally bad at getting<b>
+his points across.<p>
+
+<label:evi_sahwit>
+<photo:PHT_EVIDENCE_SAHWIT>
+<color:COL_RED>Frank Sahwit (??)<color:COL_WHITE><b>
+TODO<p>

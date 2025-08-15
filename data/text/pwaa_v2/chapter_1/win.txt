@@ -1,0 +1,546 @@
+<!--
+--------------------------
+| SCENE 108
+--------------------------
+-->
+<label:label_1_108>
+
+<character:CINDY_INTRO_ANIM_PAUSE><background:BKG_EMPTY><hidetextbox><fade:0,7><wait:7>
+<speed:6><color:COL_GREEN>
+
+<name:NAME_PHOENIX><bip:BIP_TYPEWRITER>
+     August 3, 2:32 PM<b>
+       District Court<b>
+   Defendant Lobby No. 2<color:COL_WHITE><p>
+
+<music:MUS_VICTORY><speed:SPD_NORMAL><wait:30>
+<background:BKG_COURTROOM_LOBBY><shake:0,30><speed:10><color:COL_BLUE>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+(Whew...<wait:15> I still can't<b>
+believe we won!)<color:COL_WHITE><p>
+
+<hidetextbox><!--person_fade:in,spd_normal--><character:MIA_SMILING><wait:16>
+<hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright!<wait:20><b>
+Good job in there!<wait:20><p>
+
+<character:MIA_GRINNING_B_>
+Congratulations!<character:MIA_GRINNING_A_><p>
+
+<character:MIA_GRINNING_A_>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Th-<wait:8>thanks,<wait:15> Chief.<wait:20><b>
+I owe it all to you.<p>
+
+<character:MIA_GRINNING_B_><speed:16>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Not at all,<wait:18> not at all!<wait:20><b>
+You fought your own battles<b>
+in there.<character:MIA_GRINNING_A_><p>
+
+<character:MIA_SMILING><wait:22><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+It's been a while since I've<b>
+seen a trial end on such a<b>
+satisfying note!<p>
+
+<character:MIA_GRINNING_A_><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+(I've never seen the chief<wait:12><b>
+looking this happy...)<speed:SPD_NORMAL><p>
+
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:12>
+(If she's this glad,<wait:10> imagine<b>
+how Larry must feel!)<speed:SPD_NORMAL><color:COL_WHITE><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<!--person_fade:in,spd_normal--><character:LARRY_NERVOUS_A_><wait:16>
+<music:MUS_VICTORY><sound:SFX_REALIZATION><character:LARRY_NERVOUS_B_><hidetextbox><speed:9>
+
+<name:NAME_BUTZ>
+My life is over...<speed:SPD_NORMAL><character:LARRY_NERVOUS_A_><p>
+
+<speed:SPD_NORMAL><character:LARRY_NERVOUS_A_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><shake:1,30><speed:21>
+
+<name:NAME_PHOENIX>
+Larry!<speed:SPD_NORMAL><wait:20> You're supposed to<b>
+be happy!<wait:20> What's wrong now!?<p>
+
+<character:LARRY_NERVOUS_B_><speed:8>
+
+<name:NAME_BUTZ>
+Aww,<wait:15> Nick...<speed:SPD_NORMAL><character:LARRY_NERVOUS_A_><p>
+
+<character:LARRY_THUMPS_UP_B_><speed:21>
+Don't worry 'bout me!<wait:15><b>
+I'll be dead and gone soon!<speed:SPD_NORMAL><character:LARRY_THUMBS_UP_A_><p>
+
+<name:NAME_PHOENIX>
+Good! <wait:15>Wait,<wait:15> no! <wait:20>I mean...<wait:20><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+Bad!<wait:10> Bad <wait:5>bad <wait:5>bad!<p>
+
+<name:NAME_PHOENIX>
+Larry,<wait:15> you're innocent!<b>
+The case is closed.<p>
+
+<name:NAME_BUTZ><speed:8>
+...<speed:SPD_NORMAL><p>
+
+<character:LARRY_NERVOUS_B_>
+But...<wait:15> but my Cindy-<wait:8>windy's<b>
+gone,<wait:8> man!<wait:15> Gone forever!<character:LARRY_NERVOUS_A_><p>
+
+<speed:SPD_NORMAL><character:LARRY_NERVOUS_A_><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Larry,<wait:10> she was a...<wait:15><b>
+Nah...<wait:15> Never mind.)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<speed:SPD_NORMAL><hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:MIA_NORMAL_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:MIA_SMILING><wait:110><music:MUS_VICTORY><hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Congratulations,<wait:8> Harry!<p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<!--person_fade:in,spd_normal--><character:LARRY_NERVOUS_A_><wait:16>
+<character:LARRY_NERVOUS_B_><hidetextbox><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_BUTZ><bip:BIP_MALE>
+H-<wait:8>Harry...?<character:LARRY_NERVOUS_A_><p>
+
+<character:LARRY_NERVOUS_B_><hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<!--person_fade:in,spd_normal--><character:MIA_NORMAL_A_><wait:16>
+<character:MIA_NORMAL_B_><hidetextbox>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Yes,<wait:10> you! <wait:15>I can practically<b>
+see the headlines now:<wait:20><b>
+"Harry Butz,<wait:5> Innocent!"<character:MIA_NORMAL_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:LARRY_HELLO_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:LARRY_HELLO_B_><hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_BUTZ><bip:BIP_MALE>
+Heh...<wait:15> um...<wait:15> thanks!<wait:15><b>
+I really owe you one.<character:LARRY_HELLO_A_><p>
+
+<character:LARRY_THUMPS_UP_B_><shake:0,30><!--sound:SFX_OBJECTION--><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+I won't forget this,<wait:15> ever!<wait:25><b>
+Let's celebrate! <wait:15>Dinner?<b>
+Movie? <wait:20>My treat!<character:LARRY_THUMBS_UP_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:MIA_GRINNING_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:MIA_GRINNING_B_><hidetextbox>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Oh,<wait:10> no,<wait:10> I couldn't.<character:MIA_GRINNING_A_><p>
+
+<character:MIA_GRINNING_B_><hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<!--person_fade:in,spd_normal--><character:LARRY_HELLO_A_><wait:16>
+<hidetextbox><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+(Hey,<wait:10> I was the one who<b>
+got you off the hook!)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<speed:SPD_NORMAL><character:LARRY_HELLO_B_><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_BUTZ>
+Oh,<wait:10> hey!<character:LARRY_HELLO_A_><p>
+
+<photo:PHT_EVIDENCE_THINKER><character:LARRY_THUMPS_UP_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:10>
+H-<wait:8>here,<wait:10> take this!<wait:15><speed:SPD_NORMAL><b>
+It's a present!<character:LARRY_THUMBS_UP_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:MIA_OHMY_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:MIA_OHMY_B_><hidetextbox><speed:10>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+A present? <wait:20>For me?<speed:SPD_NORMAL><character:MIA_OHMY_A_><p>
+
+<character:MIA_OHMY_B_><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+Wait...<wait:15><b>
+Wasn't this the evidence<b>
+that... <character:MIA_OHMY_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:LARRY_HELLO_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:LARRY_HELLO_B_><hidetextbox>
+
+<name:NAME_BUTZ><bip:BIP_MALE>
+Actually,<wait:15> I made this<b>
+clock for her!<character:LARRY_HELLO_A_><p>
+
+<character:LARRY_HELLO_B_>
+I made one for her<b>
+and one for me.<character:LARRY_HELLO_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:MIA_OHMY_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:MIA_OHMY_B_><hidetextbox><speed:12>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+R-<wait:8>really? <wait:15>You? <wait:15><b>
+You made this?<speed:SPD_NORMAL><character:MIA_OHMY_A_><p>
+
+<character:MIA_OHMY_B_>
+...<character:MIA_OHMY_A_><p>
+
+<character:MIA_GRINNING_B_>
+
+<name:NAME_MIA>
+Well,<wait:15> thank you.<b>
+I'll keep it as a memento.<character:MIA_GRINNING_A_><p>
+
+<character:MIA_GRINNING_B_><hidetextbox><photo:PHT_EVIDENCE_THINKER><!--person_fade:out,spd_normal--><wait:16>
+<character:LARRY_NORMAL_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:LARRY_NORMAL_B_><hidetextbox><speed:9>
+
+<name:NAME_BUTZ><bip:BIP_MALE>
+Yo,<wait:15> Nick...<character:LARRY_NORMAL_A_><p>
+
+<character:LARRY_NORMAL_B_><speed:16>
+Can you believe it?<wait:15><b>
+I was so into that chick...<character:LARRY_NORMAL_A_><p>
+
+<character:LARRY_NORMAL_B_><speed:12>
+And...<speed:16><wait:15> and she was just<b>
+playing me for a fool!<speed:SPD_NORMAL><character:LARRY_NORMAL_A_><p>
+
+<character:LARRY_NERVOUS_B_><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+Don't that make you<b>
+wanna just cry? <wait:8>*sob*<character:LARRY_NERVOUS_A_><p>
+
+<character:LARRY_NERVOUS_B_><speed:SPD_NORMAL><character:LARRY_NERVOUS_A_><speed:10>
+
+<name:NAME_PHOENIX>
+Larry...<speed:SPD_NORMAL><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<!--person_fade:in,spd_normal--><character:MIA_NORMAL_A_><wait:16>
+<hidetextbox><speed:9>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+...<speed:SPD_NORMAL><p>
+
+<character:MIA_GRINNING_B_><speed:12>
+
+<name:NAME_MIA>
+Are you so sure?<speed:SPD_NORMAL><character:MIA_GRINNING_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:LARRY_NORMAL_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:LARRY_NORMAL_B_><hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_BUTZ><bip:BIP_MALE>
+Ex-<wait:10>squeeze me?<character:LARRY_NORMAL_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:MIA_NORMAL_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:MIA_NORMAL_B_><hidetextbox>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+I think she thought quite a<b>
+lot of you,<wait:15> in her own way.<character:MIA_NORMAL_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:LARRY_NORMAL_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:LARRY_NORMAL_B_><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_BUTZ><bip:BIP_MALE>
+Nah,<wait:15> you don't gotta<b>
+sympathize with me,<wait:10> 'sokay.<character:LARRY_NORMAL_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<character:MIA_NORMAL_A_><!--person_fade:in,spd_normal--><wait:16>
+<character:MIA_NORMAL_B_><hidetextbox>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Oh,<wait:15> I'm not just<b>
+sympathizing,<wait:10> really.<character:MIA_NORMAL_A_><p>
+
+<character:MIA_GRINNING_B_>
+Isn't that right,<wait:15> Wright?<b>
+Don't you have something<b>
+to show your friend?<character:MIA_GRINNING_A_><p>
+
+<character:MIA_GRINNING_B_><speed:12>
+Something that proves how<b>
+she felt about him?<speed:SPD_NORMAL><character:MIA_GRINNING_A_><p>
+
+<character:MIA_GRINNING_A_><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30><speed:12>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+H-<wait:8>huh?<wait:16><b>
+Oh,<wait:20> yeah,<wait:20> right!<speed:SPD_NORMAL><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+
+<!--
+--------------------------
+| SCENE 109
+--------------------------
+-->
+<label:label_1_109>
+
+<!--person_fade:in,spd_normal--><character:LARRY_NORMAL_A_><wait:16>
+<hidetextbox><speed:12><color:COL_BLUE>
+
+(What the heck is<b>
+she talking about?)<color:COL_WHITE><speed:SPD_NORMAL>
+
+<event:EVT_CRI,EVI_INDEX_THINKER><event:EVT_CR><event:EVT_CRF>
+<event:EVT_CR><jump:label_1_111,1,0,EVI_FLAG_OKOBJ>
+
+<!--
+--------------------------
+| SCENE 110
+--------------------------
+-->
+<label:label_1_110>
+
+<fp><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+Here you go,<wait:12> Larry.<wait:18><b>
+Proof.<p>
+
+<speed:8>
+
+<name:NAME_BUTZ>
+...<speed:SPD_NORMAL><p>
+
+<character:LARRY_HELLO_B_><speed:10>
+Eh...<wait:20> heh heh?<wait:10><speed:12><b>
+It's okay,<wait:15> Nick.<b>
+Don't worry about me.<speed:SPD_NORMAL><character:LARRY_HELLO_A_><p>
+
+<character:LARRY_HELLO_B_><speed:12>
+I'll forget about<b>
+her soon enough.<speed:SPD_NORMAL><character:LARRY_HELLO_A_><p>
+
+<character:LARRY_HELLO_B_>
+Look,<wait:15> I'm gonna head<b>
+home.<wait:15> Thanks a ton, eh?<character:LARRY_HELLO_A_><p>
+
+<hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<hidetextbox><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Guess that wasn't the<b>
+right thing to show him...)<color:COL_WHITE><p>
+
+<speed:SPD_NORMAL><hidetextbox><fade:4,100><wait:100>
+<!--fademusic:0,60--><music:MUS_VICTORY><jump:label_1_112>
+
+<!--
+--------------------------
+| SCENE 111
+--------------------------
+-->
+<label:label_1_111><fp>
+
+<photo:PHT_EVIDENCE_THINKER><speed:12>
+
+Check this out,<wait:15> Larry.<speed:SPD_NORMAL><b>
+Proof Positive you weren't<b>
+just some chump to her.<p>
+
+<speed:10>
+
+<name:NAME_BUTZ>
+Huh...?<wait:20><speed:SPD_NORMAL><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+Where'd you get that clock?<character:LARRY_NORMAL_A_><p>
+
+<name:NAME_PHOENIX>
+This is the clock you<b>
+made for her,<wait:10> Larry!<p>
+
+She took it with her<b>
+when she traveled.<p>
+
+<character:LARRY_HELLO_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>
+
+<name:NAME_BUTZ>
+Hmm,<wait:15> she probably just<b>
+needed a clock,<wait:15> that's all.<character:LARRY_HELLO_A_><p>
+
+<speed:12>
+
+<name:NAME_PHOENIX>
+You think so? <wait:20>It's a pretty<b>
+heavy clock to take<b>
+traveling.<speed:SPD_NORMAL><p>
+
+<speed:8>
+
+<name:NAME_BUTZ>
+...<speed:SPD_NORMAL><p>
+
+<photo:PHT_EVIDENCE_THINKER>
+
+<name:NAME_PHOENIX>
+Well,<wait:15> make of it<b>
+what you will.<p>
+
+<name:NAME_BUTZ>
+...<p>
+
+<character:LARRY_NORMAL_B_>
+Hey,<wait:10> Nick.<character:LARRY_NORMAL_A_><p>
+
+<character:LARRY_THUMPS_UP_B_><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:12>
+I'm glad I asked you<b>
+to be my lawyer.<speed:SPD_NORMAL><character:LARRY_THUMBS_UP_A_><p>
+
+<character:LARRY_NERVOUS_B_>
+Really,<wait:15> I am.<wait:25><b>
+Thanks.<character:LARRY_NERVOUS_A_><p>
+
+<speed:SPD_NORMAL><hidetextbox><!--person_fade:out,spd_normal--><wait:16>
+<speed:16><hidetextbox><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Hope that made him feel<b>
+a little better...)<speed:SPD_NORMAL><color:COL_WHITE><p>
+
+<speed:SPD_NORMAL><hidetextbox><wait:40>
+<!--fademusic:0,150--><music:MUS_VICTORY><fade:4,100><wait:100>
+
+<!--
+--------------------------
+| SCENE 112
+--------------------------
+-->
+<label:label_1_112>
+
+<background:BKG_EMPTY><fade:0,7><wait:7><hidetextbox>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright?<p>
+
+<speed:12>
+I hope you see the<b>
+importance of evidence now.<speed:SPD_NORMAL><p>
+
+Also,<wait:15> hopefully you realize,<wait:15><speed:12><b>
+things change depending on<b>
+how you look at them.<speed:SPD_NORMAL><p>
+
+<speed:12>
+People,<wait:15> too.<speed:SPD_NORMAL><p>
+
+We never really know if<b>
+our clients are guilty<b>
+or innocent.<p>
+
+All we can do is<wait:10><speed:12><b>
+believe in them.<speed:SPD_NORMAL><p>
+
+And in order to believe in<b>
+them,<wait:15> <speed:12>you have to believe<b>
+in yourself.<speed:SPD_NORMAL><p>
+
+<wait:8><speed:10>
+Wright...<p>
+
+<speed:12>
+Listen.<wait:10> Learn.<wait:10> Grow strong.<speed:SPD_NORMAL><p>
+
+<speed:12>
+Never let go of what<b>
+you believe in. Never.<speed:SPD_NORMAL><p>
+
+<wait:90><music:MUS_VICTORY><hidetextbox><fade:4,7><wait:7>
+<character:MIA_NORMAL_A_><background:BKG_COURTROOM_LOBBY><fade:0,45><wait:45><wait:5>
+<character:MIA_NORMAL_B_><hidetextbox>
+
+Well,<wait:15> I think our work here<b>
+is done!<wait:15> Shall we be off?<character:MIA_NORMAL_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Yeah,<wait:15> I guess so!<p>
+
+<character:MIA_SMILING>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Say,<wait:10> how about dinner.<b>
+On me?<p>
+
+<character:MIA_GRINNING_B_>
+We'll drink a toast<b>
+to innocent Butz!<character:MIA_GRINNING_A_><p>
+
+<speed:SPD_NORMAL><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Yeah!<p>
+
+<character:MIA_OHMY_B_><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Oh,<wait:10> speaking of Harry...<character:MIA_OHMY_A_><p>
+
+<character:MIA_OHMY_B_><speed:SPD_NORMAL><character:MIA_NORMAL_B_>
+You were saying part of why<b>
+you became a lawyer was<b>
+because of him.<character:MIA_NORMAL_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+Er,<wait:15> <shake:0,30>yeah.<wait:20> Part,<wait:10> at least.<p>
+
+<speed:SPD_NORMAL><character:MIA_GRINNING_B_>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+You'll have to tell me<b>
+more about it sometime!<wait:20><speed:12><b>
+Maybe...<wait:20> over drinks?<speed:SPD_NORMAL><character:MIA_GRINNING_A_><p>
+
+<speed:SPD_NORMAL><hidetextbox><wait:10><fade:4,100><wait:100>
+<character:MIA_GRINNING_A_><background:BKG_EMPTY><fade:0,7><wait:7><hidetextbox><speed:10>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+And so,<wait:8> my first<b>
+trial came to a close.<speed:SPD_NORMAL><p>
+
+Larry slapped me on the back<b>
+and said, "Gee, Nick,<wait:10> it's<b>
+good to have friends!"<p>
+
+But I'm pretty sure he's not<b>
+going to pay me.<wait:15> Unless you<b>
+count the clock he gave Mia.<p>
+
+<!--fademusic:0,160--><music:MUS_VICTORY><speed:8>
+...<speed:SPD_NORMAL><p>
+
+<speed:12>I didn't know it then...<p>
+
+<speed:12>
+but that clock was soon<b>
+going to be at the center<b>
+of another incident.<p>
+
+<speed:12>
+And my promise to tell the<b>
+chief about me and Larry...<p>
+
+<speed:12>
+would be one promise that<wait:15><speed:8><b>
+I wouldn't be able to keep.<speed:SPD_NORMAL><p>
+
+<speed:SPD_NORMAL><hidetextbox><fade:4,100><wait:100>
+<hidetextbox><speed:SPD_NORMAL><b>
+                     THE END
+<fade:0,100><wait:100><wait:80><wait:80>
+<fade:4,100><wait:120>
+<!--savegame-->

@@ -1,0 +1,531 @@
+<!--
+--------------------------
+| SCENE 16
+--------------------------
+-->
+
+<label:chapter_1_4>
+
+<hidetextbox><character:LARRY_STYLISH_A_><background:BKG_COURTROOM_MIDDLE>
+<!--<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>-->
+<fade:0,100><wait:100><wait:40><music:MUS_TRIAL><hidetextbox>
+<!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30><character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox><speed:10>
+
+<name:NAME_PAYNE><bip:BIP_MALE>
+Ahem.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_><speed:SPD_NORMAL>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_MIDDLE>
+Mr. Butz.<wait:15> Is it not true<b>
+that the victim had<b>
+recently dumped you?<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><character:PAYNE_NORMAL_A_><!--event:EVT_SA,SCROLL_DIR_LEFT,24--><wait:30>
+<character:LARRY_MAD_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:64>
+
+<name:NAME_BUTZ>
+Hey,<wait:15> watch it buddy!<character:LARRY_SWEATING><p>
+
+<character:LARRY_MAD_B_><sound:SFX_DAMAGE2><shake:2,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+We were great together!<wait:15><shake:1,30><b>
+We were Romeo and Juliet,<wait:10><shake:1,30><b>
+Cleopatra and Mark Anthony!<speed:SPD_NORMAL><character:LARRY_SWEATING><p>
+
+<character:PHOENIX_OHSHIT><background:BKG_COURTROOM_LEFT><hidetextbox><speed:12><sound:SFX_WHOOPS><shake:1,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:20>
+<hidetextbox><speed:10><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Um...<wait:42><shake:0,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+ didn't they all die?)<color:COL_WHITE><speed:SPD_NORMAL><character:PHOENIX_SWEATING_A_><p>
+
+<speed:SPD_NORMAL><character:LARRY_STYLISH_B_><background:BKG_COURTROOM_MIDDLE>
+
+<name:NAME_BUTZ>
+I wasn't dumped! <wait:15>She just<b>
+wasn't taking my phone<b>
+calls.<wait:10> Or seeing me...<wait:10> Ever.<character:LARRY_STYLISH_A_><p>
+
+<character:LARRY_MAD_B_><shake:1,30><sound:SFX_SUPERSHOCK><speed:64>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>
+WHAT'S IT TO YOU, ANYWAY!?<wait:20><character:LARRY_SWEATING><p>
+<speed:SPD_NORMAL><hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox>
+
+<name:NAME_PAYNE>
+Mr. Butz, what you describe<b>
+is generally what we mean<b>
+by "dumped."<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+In fact,<wait:10> she had completely<b>
+abandoned you...<wait:15> and was<b>
+seeing other men!<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+She had just returned from<b>
+overseas with one of them<b>
+the day before the murder!<wait:15><character:PAYNE_NORMAL_A_><p>
+
+<character:LARRY_MAD_B_><background:BKG_COURTROOM_MIDDLE><shake:1,30><sound:SFX_SUPERSHOCK><speed:32>
+
+<name:NAME_BUTZ>
+Whaddya mean,<b>
+<wait:10>"one of them"!?<wait:15><character:LARRY_SWEATING><p>
+
+<character:LARRY_MAD_B_><shake:1,30><sound:SFX_SUPERSHOCK><speed:32>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>
+Lies!<wait:15> <speed:32>All of it,<wait:8> lies!<wait:20><b>
+I don't believe a word of<b>
+it!<speed:SPD_NORMAL><character:LARRY_SWEATING><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox><photo:PHT_EVIDENCE_PASSPORT>
+
+<name:NAME_PAYNE>
+Your Honor,<wait:15> the<b>
+victim's passport.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+According to this,<wait:15> she was<b>
+in Paris until the day<b>
+before she died.<character:PAYNE_NORMAL_A_><p>
+
+<photo:PHT_EVIDENCE_PASSPORT><speed:12><color:COL_BLUE>
+<event:EVT_CRN,EVI_INDEX_PASSPORT,evi_passport><event:EVT_CRS,EVI_INDEX_PASSPORT>
+<!-- TODO: open cr -->
+
+<name:NAME_PAYNE><bip:BIP_MALE>
+Passport added to<b>
+the Court Record.<color:COL_WHITE><p>
+
+<speed:SPD_NORMAL><character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE><speed:12>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+Hmm...<wait:20> Indeed,<wait:15> she appears<b>
+to have returned the day<b>
+before the murder.<character:JUDGE_WARNING_A_><p>
+
+<character:LARRY_SWEATING><background:BKG_COURTROOM_MIDDLE><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:10>
+
+<name:NAME_BUTZ>
+Dude...<wait:10> no way... <speed:SPD_NORMAL><p>
+
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+The victim was a model,<wait:15> but<b>
+did not have a large income.<character:PAYNE_NORMAL_A_><p>
+The victim was a model,<wait:15> but<b>
+did not have a large income.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_MIDDLE>
+It appears that she had<b>
+several <wait:15><speed:10>"Sugar Daddies."<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_LEFT,24--><wait:30><character:LARRY_SWEATING><background:BKG_COURTROOM_MIDDLE><hidetextbox><speed:12>
+
+<name:NAME_BUTZ>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>
+Daddies?<wait:30><b>
+Sugar?<p>
+
+<speed:SPD_NORMAL><hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30><character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox>
+
+<name:NAME_PAYNE>
+Yes.<wait:15> Older men,<wait:5> who gave<b>
+her money and gifts.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+She took their money and<b>
+used it to support<b>
+her lifestyle.<character:PAYNE_NORMAL_A_><p>
+
+<character:LARRY_SWEATING><background:BKG_COURTROOM_MIDDLE><speed:32>
+
+<name:NAME_BUTZ>
+Duuude!<speed:SPD_NORMAL><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+We can clearly see what kind<b>
+of woman this Ms. Stone was.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+Tell me,<wait:15> Mr. Butz,<wait:15> <speed:12><color:COL_RED>what do<b>
+you think of her now?<color:COL_WHITE><character:PAYNE_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><character:MIA_BENCH_STERN_B_><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright...<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+I don't think you want<b>
+him to answer that question.<character:MIA_BENCH_STERN_A_><p>
+
+<character:LARRY_SWEATING><background:BKG_COURTROOM_MIDDLE><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+(Yeah... Larry has a way of<b>
+running his mouth in all<b>
+the wrong directions.)<p>
+
+<speed:12>
+(Should I...?)<speed:SPD_NORMAL><color:COL_WHITE>
+
+<act><jump:label_1_18,0,1>TODO1<b>
+<jump:label_1_17,0,0>TODO2<b>
+
+<!--
+--------------------------
+| SCENE 17
+--------------------------
+-->
+<label:label_1_17>
+
+<character:PHOENIX_DESKSLAM><background:BKG_COURTROOM_LEFT><hidetextbox><wait:70><hidetextbox><character:PHOENIX_HANDSONDESK_B_><speed:21>
+
+My client had no idea the<b>
+victim was seeing other men!<character:PHOENIX_HANDSONDESK_A_><p>
+
+<character:PHOENIX_POINTING_B_>
+<event:EVT_SL2,BKG_COURTROOM_SCROLL,BKG_COURTROOM_RIGHT>
+That question is<b>
+irrelevant to this case!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:PAYNE_SWEATING_A_><background:BKG_COURTROOM_RIGHT><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:32>
+
+<name:NAME_PAYNE>
+Oof! <speed:SPD_NORMAL><wait:20>*wince*<p>
+
+<character:LARRY_MAD_B_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:32>
+
+<name:NAME_BUTZ>
+Dude! <wait:10>Nick!<wait:10><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+Whaddya mean, <wait:15>"irrelevant"!?<character:LARRY_SWEATING><p>
+
+<character:LARRY_STYLISH_B_>
+That cheatin' she-<wait:20>dog!<speed:SPD_NORMAL><p>
+
+<jump:label_1_19>
+
+<!--
+--------------------------
+| SCENE 18
+--------------------------
+-->
+<label:label_1_18>
+
+<character:PHOENIX_THINKING_A_><background:BKG_COURTROOM_LEFT><color:COL_BLUE>
+
+(Might be better not to<b>
+get involved in this one...)<color:COL_WHITE><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_MIDDLE>
+Well, Mr. Butz?<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_LEFT,24-->
+<character:LARRY_MAD_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30>
+
+<name:NAME_BUTZ>
+Dude,<wait:10> no way!<wait:20><wait:15><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
+That cheatin' she-<wait:20>dog!<character:LARRY_SWEATING><p>
+
+<character:LARRY_MAD_B_>
+
+<!--
+--------------------------
+| SCENE 19
+--------------------------
+-->
+<label:label_1_19>
+
+<character:LARRY_MAD_B_><shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:21>
+
+I'm gonna die.<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:20><b>
+I'm just gonna drop dead!<wait:10><speed:SPD_NORMAL><character:LARRY_SWEATING><p>
+
+<character:CR_PHOENIX_MIA_PAYNE_LARRY_STUNPUBLIC><background:BKG_COURTROOM_ALL>
+<bip:BIP_MALE><music:MUS_TRIAL><!-- TODO: fade music --><wait:20><shake:2,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_DRAMAPOUND><speed:32>
+Yeah,<wait:10> and when <speed:12><b>
+I meet her in<b>
+the afterlife.<wait:10>.<wait:10>.<wait:20><fp>
+
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+I'm going to get to<b>
+the bottom of this!<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:100><speed:SPD_NORMAL><fp>
+
+<hidetextbox><sound:SFX_GAVEL><character:GAVEL_1><wait:40><character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+Let's continue with<b>
+the trial, shall we?<character:JUDGE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+I believe the accused's<b>
+motive is clear to everyone.<character:PAYNE_NORMAL_A_><p>
+
+<character:JUDGE_NODDING><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Yes, quite.<wait:50><character:JUDGE_NORMAL_A_><p>
+
+<character:PHOENIX_SWEATING_A_><background:BKG_COURTROOM_LEFT><shake:0,30><speed:12><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Oh boy.<wait:10> This is so not<b>
+looking good.)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<music:MUS_TRIAL><speed:SPD_NORMAL>
+
+<!--
+--------------------------
+| SCENE 20
+--------------------------
+-->
+<label:label_1_20>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+Next question!<wait:10><character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+You went to the victim's <b>
+apartment on the day of<b>
+the murder,<wait:15> did you not?<character:PAYNE_NORMAL_A_><p>
+
+<character:LARRY_SWEATING><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><shake:1,30>
+
+<name:NAME_BUTZ>
+Gulp!<wait:30><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_MIDDLE>
+Well,<wait:10> did you,<b>
+or did you not?<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_><hidetextbox><!--event:EVT_SA,SCROLL_DIR_LEFT,24--><wait:30>
+<character:LARRY_STYLISH_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30><speed:12>
+
+<name:NAME_BUTZ>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_LEFT,BKG_COURTROOM_LEFT>
+Heh?<wait:5> Heh heh.<wait:5> Well,<wait:5> maybe<b>
+I did,<wait:10> and maybe I didn't!<character:LARRY_STYLISH_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_LEFT,24--><wait:30>
+<character:PHOENIX_SWEATING_A_><background:BKG_COURTROOM_LEFT><hidetextbox><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(Uh oh. He went.)<wait:12><p>
+
+(What do I do?)<color:COL_WHITE><speed:SPD_NORMAL>
+
+<act><jump:label_1_21,0,1>TODO1<b>
+<jump:label_1_22,0,0>TODO2<b>
+<b>
+
+<!--
+--------------------------
+| SCENE 21
+--------------------------
+-->
+<label:label_1_21><fp>
+
+<character:PHOENIX_NORMAL_A_><color:COL_BLUE>
+
+(I know!<wait:15> I'll send him <b>
+a signal...)<color:COL_WHITE><p>
+
+<hidetextbox><character:PHOENIX_DESKSLAM><wait:70><hidetextbox><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_LEFT,BKG_COURTROOM_MIDDLE>
+<b>
+      (TELL <color:COL_BLUE><wait:40><character:PHOENIX_THINKING_A_>THE <wait:40><character:PHOENIX_POINTING_A_>TRUTH)<color:COL_WHITE><p>
+
+<speed:SPD_NORMAL><hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:LARRY_STYLISH_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_BUTZ>
+Er...<wait:20> Yeah! <wait:15>Yeah!<b>
+I was there!<wait:15> <shake:0,30>I went!<character:LARRY_STYLISH_A_><p>
+
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><!--<sound:SFX_PUBLIC>--><wait:120>
+<sound:SFX_GAVEL><character:GAVEL_1><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
+
+<name:NAME_JUDGE>
+Order!<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Well,<wait:10> Mr. Butz?<character:JUDGE_WARNING_A_><p>
+
+<character:LARRY_STYLISH_B_><background:BKG_COURTROOM_MIDDLE><speed:21>
+
+<name:NAME_BUTZ>
+Dude,<wait:15><shake:0,30> chill!<speed:SPD_NORMAL><character:LARRY_STYLISH_A_><p>
+
+<character:LARRY_STYLISH_B_><wait:20>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>
+She wasn't home, man... <wait:15><b>
+So, <wait:10>like,<wait:10> I didn't see her.<character:LARRY_STYLISH_A_><p>
+
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:LARRY_STYLISH_A_><background:BKG_EXCLAMATION_OBJ><!--<sound:SFX_OBJ_PAYNE>--><wait:60>
+<!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30><hidetextbox><character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+Your Honor,<wait:16> the defendant<b>
+is lying.<character:PAYNE_NORMAL_A_><p>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Lying?<character:JUDGE_SURPRISED><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><wait:30><music:MUS_TRIAL><!-- TODO: fade music --><sound:SFX_REALIZATION><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_PAYNE>
+The prosecution would like<b>
+to call a <color:COL_RED>witness<color:COL_WHITE><wait:10> who can<b>
+prove Mr. Butz is lying.<character:PAYNE_NORMAL_A_><p>
+
+<jump:label_1_23>
+
+<!--
+--------------------------
+| SCENE 22
+--------------------------
+-->
+<label:label_1_22><fp>
+
+<character:PHOENIX_NORMAL_A_><color:COL_BLUE>
+
+(I'll send him a signal...)<color:COL_WHITE><p>
+
+<character:PHOENIX_DOCUMENT_A_><wait:40><character:PHOENIX_THINKING_A_><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_LEFT,BKG_COURTROOM_MIDDLE>
+<b>
+      (LIE <speed:12><wait:30><character:PHOENIX_HANDSONDESK_A_>LIKE <wait:40>A DOG)<color:COL_WHITE><p>
+
+<speed:SPD_NORMAL><hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:LARRY_STYLISH_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox>
+
+<name:NAME_BUTZ>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>
+Um,<wait:10> <shake:0,30>well,<wait:10> see,<wait:10><b>
+it's like this:<wait:20><b>
+I don't remember.<character:LARRY_STYLISH_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox>
+
+<name:NAME_PAYNE>
+You "don't remember"?<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_><wait:12>
+Well then,<wait:15> we'll just<b>
+have to remind you!<character:PAYNE_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><character:PHOENIX_NORMAL_A_><background:BKG_COURTROOM_LEFT><color:COL_BLUE>
+
+<name:NAME_PHOENIX>
+(I got a bad feeling<b>
+about this...)<color:COL_WHITE><p>
+
+<wait:30><music:MUS_TRIAL><!-- TODO: fade music --><character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+We have <wait:5><sound:SFX_REALIZATION>a <color:COL_RED>witness<color:COL_WHITE> that can<b>
+prove he DID go to the<b>
+victim's apartment that day!<character:PAYNE_NORMAL_A_><p>
+
+<!--
+--------------------------
+| SCENE 23
+--------------------------
+-->
+<label:label_1_23>
+
+<character:JUDGE_SURPRISED_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Well,<wait:15> that<b>
+simplifies matters.<wait:15><b>
+Who is your witness?<character:JUDGE_SURPRISED><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+The man who found<b>
+the victim's body.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_>
+<event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_MIDDLE>
+Just before making the<b>
+gruesome discovery...<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_LEFT,24--><wait:30>
+<character:LARRY_SWEATING><background:BKG_COURTROOM_MIDDLE><hidetextbox><sound:SFX_DRAMAPOUND><shake:2,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+
+<name:NAME_PAYNE>
+He saw the defendant <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>fleeing<b>
+the scene of the <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>crime!<p>
+
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><!--<sound:SFX_PUBLIC>--><wait:120>
+<character:GAVEL_1><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_JUDGE>
+Order!<wait:15> Order in the court!<wait:15><character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Mr. Payne,<wait:20><speed:12> the prosecution<b>
+may call its witness.<speed:16><character:JUDGE_WARNING_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_PAYNE>
+<event:EVT_SL2,BKG_COURTROOM_SCROLL,BKG_COURTROOM_LEFT>
+Yes, Your Honor.<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_LEFT,24--><wait:30>
+<character:PHOENIX_SWEATING_A_><background:BKG_COURTROOM_LEFT><hidetextbox><music:MUS_TRIAL><color:COL_BLUE><speed:12>
+
+<name:NAME_PHOENIX>
+<event:EVT_SL2,BKG_COURTROOM_SCROLL,BKG_COURTROOM_RIGHT>
+(This is <shake:0,30>bad...)<color:COL_WHITE><speed:SPD_NORMAL><p>
+
+<hidetextbox><!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30>
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox>
+
+<name:NAME_PAYNE>
+On the day of the murder,<character:PAYNE_NORMAL_A_><p><!--<wait:16>-->
+
+<character:PAYNE_NORMAL_B_>
+my witness was selling<b>
+newspapers at the<b>
+victim's building.<character:PAYNE_NORMAL_A_><p>
+
+<event:EVT_CRN,EVI_INDEX_SAHWIT,evi_sahwit><event:EVT_CRS,EVI_INDEX_SAHWIT>
+
+<character:PAYNE_NORMAL_B_><speed:SPD_NORMAL>
+Please bring<b>
+Mr. Frank Sahwit<b>
+to the stand!<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><wait:30><fade:4,45><wait:45>
+

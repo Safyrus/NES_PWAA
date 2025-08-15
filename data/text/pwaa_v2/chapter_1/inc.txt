@@ -4,6 +4,16 @@
 ==========================
 -->
 
+
+
+
+Sound <sound:SFX_WHOOPS><p>
+Sound <sound:DPCM_PHOENIX_OBJECTION_PITCH_15_><p>
+
+
+
+
+
 <!--
 <background:1>
 Jumping<p>
@@ -11,5 +21,30 @@ Jumping<p>
 <jump:chapter_1_2>
 -->
 
+<!--
+<event:EVT_CRN,EVI_INDEX_BADGE,evi_badge><event:EVT_CRS,EVI_INDEX_BADGE>
+<event:EVT_CRN,EVI_INDEX_AUTOPSY_CINDY,evi_autopsy_cindy><event:EVT_CRS,EVI_INDEX_AUTOPSY_CINDY>
+<event:EVT_CRN,EVI_INDEX_MIA,evi_mia><event:EVT_CRS,EVI_INDEX_MIA>
+<event:EVT_CRN,EVI_INDEX_LARRY,evi_larry><event:EVT_CRS,EVI_INDEX_LARRY>
+<event:EVT_CRN,EVI_INDEX_CINDY,evi_cindy><event:EVT_CRS,EVI_INDEX_CINDY>
+<background:1>
+Jumping<p>
+<hidetextbox><fade:4,10><wait:10>
+<jump:chapter_1_4>
+-->
+
+
 <include:intro.txt>
 <include:lobby.txt>
+<include:trial_start.txt>
+<include:larry.txt>
+<include:sahwit_1.txt>
+<include:sahwit_2.txt>
+<include:sahwit_3.txt>
+<include:win.txt>
+
+<jump:end>
+
+<include:game_over.txt>
+
+<include:evi.txt>

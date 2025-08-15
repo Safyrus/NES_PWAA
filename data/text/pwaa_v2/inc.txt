@@ -9,4 +9,13 @@
 <!-- #### Main text #### -->
 <include:chapter_1/inc.txt>
 
+
+<label:obj_sawhit_1_wrong>
+<label:obj_sawhit_2_wrong>
+<label:obj_sawhit_3_wrong>
+TODO<p>
+<return>
+
+<!--include:wrong.txt-->
+
 <label:end><p><jump:end>

@@ -1,0 +1,51 @@
+
+<!--
+--------------------------
+| SCENE 113
+--------------------------
+-->
+<label:c1_game_over>
+<wait:30><event:EVT_HPT><p>
+
+<hidetextbox><character:GAVEL_1><wait:40>
+<character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:21>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+That's enough!<speed:0><character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_><!--fademusic:0,30--><music:0><music:0>
+This court sees no reason to<b>
+further prolong the trial.<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_>
+The defense has failed to<b>
+give the court sufficient<b>
+reason<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_NORMAL_B_>
+to doubt the prosecution's<b>
+claim.<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_>
+This court finds the<b>
+defendant,<wait:20><speed:9> Mr. Larry Butz...<character:JUDGE_WARNING_A_><p>
+
+<hidetextbox><wait:60>
+<!--guilty:1--><wait:120><wait:70>
+<hidetextbox><character:JUDGE_WARNING_B_>
+The accused will<b>
+surrender to the court<b>
+immediately,<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+to be held pending trial at<b>
+a higher court within a<b>
+month from today's date.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_NORMAL_B_>
+That is all.<wait:25><b>
+This court is adjourned!<character:JUDGE_NORMAL_A_><p>
+
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><!--sound:SFX_PUBLIC--><wait:120>
+<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<!--reset-->

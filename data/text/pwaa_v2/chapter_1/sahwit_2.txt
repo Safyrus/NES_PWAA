@@ -1,0 +1,639 @@
+<!--
+--------------------------
+| SCENE 60
+--------------------------
+-->
+<label:label_1_60>
+
+<background:BKG_COURTROOM_MIDDLE><fade:0,7><wait:7>
+<character:WITNESS_TESTIMONY><wait:20><speed:32><hidetextbox><color:COL_RED>
+
+<name:NAME_JUDGE><bip:BIP_MALE><!--remove name-->
+<b>
+-- The Time of Discovery --<color:COL_WHITE><wait:100><character:SAHWIT_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><wait:30><music:MUS_QUESTIONING_MODERATO><photo:PHT_TESTIMONY_PHOTO><!-- TODO : blink photo -->
+
+<!--
+--------------------------
+| SCENE 61
+--------------------------
+-->
+<label:label_1_61>
+
+<character:SAHWIT_NORMAL_B_>
+
+<name:NAME_SAHWIT><bip:BIP_MALE>
+You see,<wait:16> when I found the<b>
+body, <wait:15>I heard the time.<character:SAHWIT_NORMAL_A_><p>
+
+<character:SAHWIT_NORMAL_A_><background:BKG_CS_SAHWIT_1>
+
+<name:NAME_SAHWIT>
+There was a voice saying the<speed:10><b>
+time...<wait:26><speed:16> It was probably<b>
+coming from the television.<p>
+
+<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:21>
+Oh,<wait:16> but it was three hours<b>
+off,<wait:12> wasn't it?<p>
+
+<speed:16>
+I guess the victim must<b>
+have been watching <wait:10>a video<b>
+of a taped program!<p>
+
+<character:SAHWIT_NORMAL_B_><background:BKG_COURTROOM_MIDDLE><speed:21>
+
+<name:NAME_SAHWIT>
+That's why I thought<b>
+it was 1:00 PM!<character:SAHWIT_NORMAL_A_><p>
+
+<character:SAHWIT_NORMAL_B_><speed:12>
+Terribly sorry about<b>
+the misunderstanding... <character:SAHWIT_NORMAL_A_><p>
+
+<hidetextbox><photo:PHT_TESTIMONY_PHOTO><!-- TODO unblink photo --><!--fademusic:0,60--><fade:4,100><wait:60><music:MUS_QUESTIONING_MODERATO><wait:40>
+<character:JUDGE_THINKING><background:BKG_COURTROOM_JUDGE><wait:25><fade:0,45><wait:45><wait:20><hidetextbox><speed:8>
+
+<name:NAME_JUDGE>
+Hmm... <wait:25><speed:16>I see.<wait:21><character:JUDGE_WARNING_B_><speed:21><b>
+You heard a voice saying<b>
+the time on a taped program.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Mr. Wright,<wait:15> you may cross-<b>
+examine the witness.<speed:SPD_NORMAL><character:JUDGE_WARNING_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:MIA_BENCH_STERN_B_><background:BKG_COURTROOM_DEFENSE><fade:0,7><wait:7><hidetextbox>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright!<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+You know what to do!<character:MIA_BENCH_STERN_A_><p>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+I've got this one.<p>
+
+<hidetextbox><fade:4,45><wait:45>
+
+<!--
+--------------------------
+| SCENE 62
+--------------------------
+-->
+<label:label_1_62>
+
+<background:BKG_COURTROOM_MIDDLE><wait:30><fade:0,7><wait:7>
+<character:CROSS_EXAMINATION><wait:20><speed:32><hidetextbox><color:COL_RED>
+
+<name:NAME_PHOENIX><bip:BIP_MALE><!--remove name-->
+<b>
+
+-- The Time of Discovery --<color:COL_WHITE><wait:100><character:SAHWIT_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><wait:30><music:MUS_QUESTIONING_MODERATO>
+
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT><bip:BIP_MALE>
+
+<!--
+--------------------------
+| SCENE 63
+--------------------------
+-->
+<label:label_1_63>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_70,1>
+<character:SAHWIT_NORMAL_B_><color:COL_GREEN>
+
+You see, when I found the<b>
+body, I heard the time.<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
+
+<save><jump:obj_sawhit_2_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 64
+--------------------------
+-->
+<label:label_1_64>
+
+<event:EVT_CRI,EVI_INDEX_PERMISSION><event:EVT_CRH,label_1_71,0>
+<character:SAHWIT_NORMAL_B_><color:COL_GREEN>
+
+There was a voice saying the<b>
+time... It was probably<b>
+coming from the television.<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
+
+<jump:obj_64,1,0,EVI_FLAG_OBJ>
+<jump:next_64>
+<label:obj_64>
+<jump:label_1_76,1,0,EVI_FLAG_OKOBJ>
+<save><jump:obj_sawhit_1_wrong>
+<label:next_64>
+
+<!--
+--------------------------
+| SCENE 65
+--------------------------
+-->
+<label:label_1_65>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_72,0>
+<character:SAHWIT_NORMAL_B_><color:COL_GREEN>
+
+Oh, but it was three hours<b>
+off, wasn't it?<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
+
+<save><jump:obj_sawhit_2_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 66
+--------------------------
+-->
+<label:label_1_66>
+
+<event:EVT_CRI,EVI_INDEX_PERMISSION><event:EVT_CRH,label_1_73,0>
+<character:SAHWIT_NORMAL_B_><color:COL_GREEN>
+
+I guess the victim must<b>
+have been watching a video<b>
+of a taped program!<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
+
+<jump:obj_66,1,0,EVI_FLAG_OBJ>
+<jump:next_66>
+<label:obj_66>
+<jump:label_1_76,1,0,EVI_FLAG_OKOBJ>
+<save><jump:obj_sawhit_1_wrong>
+<label:next_66>
+
+<!--
+--------------------------
+| SCENE 67
+--------------------------
+-->
+<label:label_1_67>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_74,0>
+<character:SAHWIT_NORMAL_B_><color:COL_GREEN>
+
+That's why I thought<b>
+it was 1:00 PM!<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
+
+<save><jump:obj_sawhit_2_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 68
+--------------------------
+-->
+<label:label_1_68>
+
+<event:EVT_CRI,EVI_INDEX_NONE><event:EVT_CRH,label_1_75,0>
+<character:SAHWIT_NORMAL_B_><color:COL_GREEN>
+
+Terribly sorry about<b>
+the misunderstanding...<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
+
+<save><jump:obj_sawhit_2_wrong,1,0,EVI_FLAG_OBJ>
+
+<!--
+--------------------------
+| SCENE 69
+--------------------------
+-->
+<label:label_1_69>
+
+<event:EVT_CRO><event:EVT_HPT>
+<character:MIA_BENCH_STERN_B_><background:BKG_COURTROOM_DEFENSE><speed:12>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+<b>
+Notice anything suspicious?<speed:SPD_NORMAL><character:MIA_BENCH_STERN_A_><p>
+
+<hidetextbox><fade:4,45><wait:45>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<hidetextbox><name:NAME_SAHWIT><bip:BIP_MALE>
+
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_63>
+
+<!--
+--------------------------
+| SCENE 70
+--------------------------
+-->
+<label:label_1_70>
+
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT><speed:10>
+
+<name:NAME_PHOENIX><bip:BIP_MALE>
+You said "heard"...<wait:25><speed:SPD_NORMAL><b>
+Not "saw"?<color:COL_WHITE><character:PHOENIX_THINKING_A_><p>
+
+<character:PHOENIX_THINKING_B_><hidetextbox><!--swoosh:left_middle,right_dir,CHR_SAHWIT,SAHWIT_NORMAL_A_--><wait:30>
+<character:SAHWIT_NORMAL_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox>
+
+<name:NAME_SAHWIT>
+Yes, <wait:10>heard.<character:SAHWIT_NORMAL_A_><p>
+
+<character:SAHWIT_NORMAL_B_>
+All I saw was the body<b>
+lying there...<character:SAHWIT_NORMAL_A_><p>
+
+<character:SAHWIT_NORMAL_B_>
+I didn't think to look at<b>
+anything else,<wait:15> least of all<b>
+my watch.<character:SAHWIT_NORMAL_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,left_dir,CHR_PHOENIX,PHOENIX_THINKING_A_--><wait:30>
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT><hidetextbox>
+
+<name:NAME_PHOENIX>
+Hmm...<wait:20><b>
+Isn't that a little strange?<character:PHOENIX_THINKING_A_><p>
+
+<character:PHOENIX_NORMAL_B_>
+So you're saying you <b>
+"heard" something.<character:PHOENIX_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_>
+But <wait:5>if you were so shocked<b>
+by the body,<wait:15><speed:21> you wouldn't<b>
+hear anything at all!<character:PHOENIX_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
+<background:BKG_EXCLAMATION_OBJ><sound:DPCM_PAYNE_OBJECTION_PITCH_15_><wait:60>
+<hidetextbox><character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+The witness did say he<b>
+actually heard the time.<character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_>
+It's ludicrous to suggest<b>
+he "wouldn't hear anything"!<character:PAYNE_SWEATING_A_><p>
+
+<character:JUDGE_THINKING><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Hmm...<wait:20><character:JUDGE_WARNING_B_><b>
+I have to agree with<b>
+the prosecution.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:10>
+Witness,<wait:15><speed:SPD_NORMAL> continue<b>
+your testimony.<character:JUDGE_WARNING_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT>
+<jump:label_1_64>
+
+<!--
+--------------------------
+| SCENE 71
+--------------------------
+-->
+<label:label_1_71>
+
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Are you sure it was a<b>
+television <wait:5>and not...<wait:10><b>
+a radio?<character:PHOENIX_NORMAL_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,right_dir,CHR_SAHWIT,SAHWIT_NORMAL_A_--><wait:30>
+<character:SAHWIT_NORMAL_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox><shake:0,30>
+
+<name:NAME_SAHWIT>
+Well,<wait:15> no, I guess it<b>
+might have been a radio.<character:SAHWIT_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+Incidentally,<wait:15> there was<b>
+no radio on the premises.<character:PAYNE_NORMAL_A_><p>
+
+<character:PAYNE_NORMAL_A_><background:BKG_CS_SAHWIT_1>
+
+<name:NAME_PAYNE>
+There was only one<b>
+large television.<p>
+
+<character:MIA_BENCH_STERN_B_><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright!<wait:10><character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+I can't put my finger on it,<wait:15><b>
+but something about this<b>
+seems fishy.<character:MIA_BENCH_STERN_A_><p>
+
+<character:MIA_BENCH_STERN_B_>
+Something about <wait:10>"hearing"<b>
+the television...<character:MIA_BENCH_STERN_A_><p>
+
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE><bip:BIP_MALE>
+The witness has testified.<wait:30><b>
+He heard the time.<character:PAYNE_NORMAL_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT>
+<jump:label_1_65>
+
+<!--
+--------------------------
+| SCENE 72
+--------------------------
+-->
+<label:label_1_72>
+
+<event:EVT_CRO><event:EVT_HPT>
+<character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT><speed:21>
+
+<name:NAME_PHOENIX>
+How do you explain the gap!<speed:SPD_NORMAL><character:PHOENIX_POINTING_A_><p>
+
+<character:PHOENIX_POINTING_B_><character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Well,<wait:15> witness?<wait:20> <b>
+Can you explain this?<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><hidetextbox:1><fade:4,7><wait:7><character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT>
+<jump:label_1_66>
+
+<!--
+--------------------------
+| SCENE 73
+--------------------------
+-->
+<label:label_1_73>
+
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX>
+A...<wait:15> video?<speed:SPD_NORMAL><character:PHOENIX_THINKING_A_><p>
+
+<speed:SPD_NORMAL><character:SAHWIT_NORMAL_B_><background:BKG_COURTROOM_MIDDLE>
+
+<name:NAME_SAHWIT>
+Yes,<wait:6> that would explain<b>
+why the time was wrong!<character:SAHWIT_NORMAL_A_><p>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT><speed:12>
+
+<name:NAME_PHOENIX>
+True,<wait:10> true...<character:PHOENIX_NORMAL_A_><p>
+
+<speed:SPD_NORMAL><character:MIA_BENCH_GEEZ_B_><background:BKG_COURTROOM_DEFENSE>
+
+<name:NAME_MIA><bip:BIP_FEMALE>
+Wright!<character:MIA_BENCH_GEEZ_A_><p>
+
+<character:MIA_BENCH_GEEZ_B_>
+I think the problem lies<b>
+someplace else...<character:MIA_BENCH_GEEZ_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE><bip:BIP_MALE>
+We're agreed that you heard<b>
+the time at the scene, then.<character:JUDGE_WARNING_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT>
+<jump:label_1_67>
+
+<!--
+--------------------------
+| SCENE 74
+--------------------------
+-->
+<label:label_1_74>
+
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_NORMAL_B_><background:BKG_COURTROOM_LEFT>
+
+<name:NAME_PHOENIX>
+Are you sure the voice you<b>
+heard said it was 1:00 PM?<character:PHOENIX_NORMAL_A_><p>
+
+<hidetextbox><!--swoosh:left_middle,right_dir,CHR_SAHWIT,SAHWIT_NORMAL_A_--><wait:30>
+<character:SAHWIT_NORMAL_B_><background:BKG_COURTROOM_MIDDLE><hidetextbox>
+
+<name:NAME_SAHWIT>
+Yes,<wait:10> I can practically hear<b>
+it now.<wait:20> It was quite clear.<character:SAHWIT_NORMAL_A_><p>
+
+<character:SAHWIT_NORMAL_B_><character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Mr. Payne,<wait:15> has the<b>
+prosecution verified this<b>
+testimony?<character:JUDGE_WARNING_A_><p>
+
+<character:PAYNE_SWEATING_B_><background:BKG_COURTROOM_RIGHT>
+
+<name:NAME_PAYNE>
+My apologies,<wait:15> Your Honor.<character:PAYNE_SWEATING_A_><p>
+
+<character:PAYNE_SWEATING_B_>
+I, <wait:10>too,<wait:10> have only just<b>
+learned that the witness<b>
+"heard" the time.<character:PAYNE_SWEATING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_><background:BKG_COURTROOM_MIDDLE>
+
+<name:NAME_SAHWIT>
+Oh,<wait:10> I'm really sorry.<wait:20> I only<b>
+remembered it just now.<character:SAHWIT_TWITCHING_A_><p>
+
+<hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<event:EVT_CRO><event:EVT_HPT>
+<jump:label_1_68>
+
+<!--
+--------------------------
+| SCENE 75
+--------------------------
+-->
+<label:label_1_75>
+
+<event:EVT_CRO><event:EVT_HPT>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_HOLD_IT_PITCH_15_><background:BKG_EXCLAMATION_HOL><wait:60><hidetextbox>
+
+<character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_PHOENIX>
+Well,<wait:15> you just watch it!<character:PHOENIX_POINTING_A_><p>
+
+<character:PHOENIX_THINKING_A_><speed:12><color:COL_BLUE>
+(Hmm...<wait:15> Not much point<b>
+pressing him on that one,<wait:5><b>
+was there?)<color:COL_WHITE><p>
+
+<speed:SPD_NORMAL><hidetextbox><fade:4,7><wait:7>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+
+<event:EVT_CRO><event:EVT_HPT>
+<name:NAME_SAHWIT>
+<jump:label_1_68>
+
+<!--
+--------------------------
+| SCENE 76
+--------------------------
+-->
+<label:label_1_76>
+
+<event:EVT_CRO><event:EVT_HPT><music:MUS_QUESTIONING_MODERATO><!--fademusic:0,30-->
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:SAHWIT_NORMAL_A_>
+<sound:DPCM_PHOENIX_OBJECTION_PITCH_15_><background:BKG_EXCLAMATION_OBJ><wait:60><hidetextbox>
+
+<character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><speed:32>
+
+<name:NAME_PHOENIX>
+Hold it right there!<character:PHOENIX_POINTING_A_><p>
+
+<character:PHOENIX_POINTING_B_><speed:SPD_NORMAL>
+The prosecution has said<wait:8><b>
+there was a blackout <wait:8>at the<b>
+time of the discovery!<character:PHOENIX_POINTING_A_><p>
+
+<!--photo_on_right--><photo:PHT_EVIDENCE_PERMISSION><character:PHOENIX_DOCUMENT_B_><speed:12>
+And this record proves it!<character:PHOENIX_DOCUMENT_A_><p>
+
+<character:PHOENIX_DOCUMENT_B_><speed:SPD_NORMAL><character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE>
+<sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30>
+
+<name:NAME_SAHWIT>
+...!<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><p>
+
+<hidetextbox><!--swoosh:left_middle,left_dir,CHR_PHOENIX,PHOENIX_NORMAL_A_--><wait:30>
+<background:BKG_COURTROOM_LEFT><character:PHOENIX_DESKSLAM><wait:70>
+<hidetextbox><character:PHOENIX_POINTING_B_><speed:21>
+
+<name:NAME_PHOENIX>
+You couldn't have heard<b>
+a <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>television...<wait:12>
+ <music:MUS_OBJECTION_>or a <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>video!<character:PHOENIX_POINTING_A_><p>
+
+<speed:SPD_NORMAL><background:BKG_COURTROOM_MIDDLE><character:SAHWIT_DAMAGE>
+<shake:1,30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><wait:20>
+<character:SAHWIT_TWITCHING_A_><speed:32>
+
+<name:NAME_SAHWIT>
+Gah!!!<wait:10><p>
+
+<character:SAHWIT_TWITCHING_B_><shake:0,30><speed:9>
+I...<wait:10> well...<wait:10> urk!<speed:SPD_NORMAL><character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_><hidetextbox><character:JUDGE_NODDING><background:BKG_COURTROOM_JUDGE><wait:18><hidetextbox>
+
+<name:NAME_JUDGE>
+The defense has a point.<character:JUDGE_NORMAL_A_><p>
+
+<character:JUDGE_WARNING_B_>
+Do you have an explanation<b>
+for this,<wait:20> Mr. Sahwit?<character:JUDGE_WARNING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_><background:BKG_COURTROOM_MIDDLE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
+
+<name:NAME_SAHWIT>
+No, I<speed:12>...<wait:20> I find it quite<b>
+puzzling myself! <wait:20>Quite!<character:SAHWIT_TWITCHING_A_><p>
+
+...<p>
+
+<speed:SPD_NORMAL><character:SAHWIT_DAMAGE><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30>
+Aah!<wait:30><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><fp>
+
+<character:SAHWIT_TWITCHING_B_>
+W-<wait:12><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:1,30><speed:32>
+wait!<wait:20><speed:32><b>
+I remember now!<speed:SPD_NORMAL><character:SAHWIT_TWITCHING_A_><p>
+
+<character:JUDGE_WARNING_B_><background:BKG_COURTROOM_JUDGE><speed:16>
+
+<name:NAME_JUDGE>
+Mr. Sahwit?<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_WARNING_B_><speed:SPD_NORMAL>
+The court would prefer to<b>
+hear an accurate testimony<b>
+from the very beginning.<character:JUDGE_WARNING_A_><p>
+
+<character:JUDGE_HEADSHAKE>
+These constant corrections<b>
+are harming your<b>
+credibility.<character:JUDGE_NORMAL_A_><p>
+
+<character:SAHWIT_TWITCHING_A_><background:BKG_COURTROOM_MIDDLE><speed:12>
+
+<name:NAME_JUDGE>
+That, and you seem<b>
+rather...<wait:20> distraught.<p>
+
+<speed:SPD_NORMAL><character:SAHWIT_DAMAGE><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_STAB><shake:1,30><wait:20><character:SAHWIT_TWITCHING_A_>
+
+<name:NAME_SAHWIT>
+...!<p>
+
+<character:SAHWIT_TWITCHING_B_>
+M-<wait:8><shake:0,30>my apologies,<wait:12> Your Honor!<character:SAHWIT_TWITCHING_A_><p>
+
+<character:SAHWIT_TWITCHING_B_>
+It...<wait:15> er,<wait:10> it must have<b>
+been the shock of finding<b>
+the body!<character:SAHWIT_TWITCHING_A_><p>
+
+<character:JUDGE_THINKING><background:BKG_COURTROOM_JUDGE>
+
+<name:NAME_JUDGE>
+Very well,<wait:15> Mr. Sahwit.<p>
+
+<character:JUDGE_WARNING_B_>
+Let's hear your testimony<wait:15><b>
+once more please.<character:JUDGE_WARNING_A_><p>
+
+<wait:30><music:MUS_OBJECTION_><hidetextbox><fade:4,45><wait:45>
