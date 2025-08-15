@@ -159,8 +159,8 @@ void merge_sprites(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
         // skip if file is not a snif file
         if (!strendwith(filename, ".snif"))
         {
-            if (verbose)
-                printf("\033[2K\rSNIF Merge (%d): skip non SNIF file '%s'", img_type, filename);
+            // if (verbose)
+            //     printf("\033[2K\rSNIF Merge (%d): skip non SNIF file '%s'", img_type, filename);
             continue;
         }
         // read SNIF file
@@ -168,8 +168,8 @@ void merge_sprites(uint8_t *tile_cmp_matrix, struct Tile *tile_list, struct SNIF
         //
         if (snif->img_type != img_type)
         {
-            if (verbose)
-                printf("\033[2K\rSNIF Merge (%d): skip non wanted SNIF file '%s'", img_type, filename);
+            // if (verbose)
+            //     printf("\033[2K\rSNIF Merge (%d): skip non wanted SNIF file '%s'", img_type, filename);
             continue;
         }
         // print info
@@ -355,8 +355,8 @@ void merge_snif_tiles(const char *in_snif_folder, const char *in_chr_file, int n
         // skip if file is not a snif file
         if (!strendwith(filename, ".snif"))
         {
-            if (verbose)
-                printf("\033[2K\rSNIF Merge: skip non SNIF file '%s'", filename);
+            // if (verbose)
+            //     printf("\033[2K\rSNIF Merge: skip non SNIF file '%s'", filename);
             continue;
         }
         // read SNIF file
