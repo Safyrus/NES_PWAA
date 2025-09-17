@@ -65,6 +65,9 @@ def export_music(fs, fm_file, out_folder, music_idx, out_text_file):
 
 
 def sound_2_asm(fs, fm_file, out_folder, mus_text_file, sfx_text_file):
+    # create folders
+    os.makedirs(out_folder, exist_ok=True)
+
     # get music titles
     names, _ = export_all(fs, fm_file, out_folder)
     names = list(names)
