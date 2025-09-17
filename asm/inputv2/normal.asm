@@ -81,7 +81,7 @@ input_normal:
     ; and can go back to previous dialog
     LDA cr_hold_jmp+JMPADR_POS_NEXT
     AND #JMPADR_MASK_NEXT
-    BNE :++++
+    JMP :++++ ; BNE :++++ ; disable this feature for now, this will be refactor
         ; decrease dialog_stack_ptr
         DEC dialog_stack_ptr
         BPL :+
@@ -139,6 +139,7 @@ btn_open_cr:
     ;
     mov sav_photo, cur_photo
     mov new_photo, #$FF
-    ; display court record
-    ; return
-    JMP display_cr
+    ; find correct index
+    ; + display court record
+    ; + return
+    JMP find_ok_evi

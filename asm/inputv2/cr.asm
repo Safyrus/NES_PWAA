@@ -51,30 +51,61 @@ input_cr:
         JMP close_cr
     :
 
-    ; if LEFT
-    LDA buttons_1
-    AND #BTN_LEFT
-    BEQ :+
-        ; find the next evidence
-        next_evi
-        ; and display it
-        ; and return
-        JMP display_cr
-    :
-
     ; if RIGHT
     LDA buttons_1
     AND #BTN_RIGHT
-    BEQ :+
+    BEQ :++
+        ; find the next evidence
+        ; --------
+        ; while true
+        :
+            ; cr_idx++
+            INC cr_idx
+find_ok_evi:
+            ; clamp cr_idx to [0,127]
+            JSR check_cr_idx
+            ; if evidence_flags[cr_idx]
+                ; break
+            ; continue
+            BEQ :-
+        ; display it and return
+        JMP display_cr
+    :
+
+    ; if LEFT
+    LDA buttons_1
+    AND #BTN_LEFT
+    BEQ :++
         ; find the previous evidence
-        prev_evi
-        ; and display it
-        ; and return
+        ; --------
+        ; while true
+        :
+            ; cr_idx--
+            DEC cr_idx
+            ; clamp cr_idx to [0,127]
+            JSR check_cr_idx
+            ; if evidence_flags[cr_idx]
+                ; break
+            ; continue
+            BEQ :-
+        ; display it and return
         JMP display_cr
     :
 
     ; return
     RTS
+
+
+check_cr_idx:
+    ; clamp cr_idx to [0,127]
+    LDA cr_idx
+    BPL :+
+        ; cr_idx = 0
+        EOR #$80
+        STA cr_idx
+    :
+    ; return evidence_flags[cr_idx]
+    JMP get_evidence_flag
 
 
 close_cr:
