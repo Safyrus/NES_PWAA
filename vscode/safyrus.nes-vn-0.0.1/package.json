@@ -1,0 +1,30 @@
+{
+    "name": "nes-vn",
+    "author": {"name": "Safyrus"},
+    "displayName": "NES-VN Text Language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.91.1"
+    },
+    "categories": ["Other"],
+    "publisher": "Safyrus",
+    "contributes": {
+        "languages": [
+            {
+                "id": "nesvn",
+                "extensions": [
+                    ".nvt",
+                    ".txt"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "nesvn",
+                "scopeName": "text.nesvn",
+                "path": "./syntaxes/nesvn.tmLanguage.json"
+            }
+        ]
+    }
+}

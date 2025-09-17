@@ -1,0 +1,50 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "nesvn",
+    "scopeName": "text.nesvn",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "begin": "<!--",
+            "end": "-->",
+            "name": "comment.block.nesvn"
+        },
+        "keywords": {
+            "begin": "<",
+            "end": ">",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.anglebracket.open.nesvn"
+                }
+            },
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.anglebracket.close.nesvn"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "([^:>]*)(:)?([^>]*)?",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.nesvn"
+                        },
+                        "2": {
+                            "name": "punctuation.colon.nesvn"
+                        },
+                        "3": {
+                            "name": "constant.nesvn"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
