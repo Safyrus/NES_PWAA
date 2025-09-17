@@ -274,3 +274,13 @@ int rmdir_rec(const char *dirname, int silence)
     remove(dirname);
     return 0;
 }
+
+void correct_sep(char *path)
+{
+    char c = SEP == '/' ? '\\' : '/';
+    char *pos = strchr(path,c);
+    while (pos) {
+        *pos = SEP;
+        pos = strchr(pos,c);
+    }
+}

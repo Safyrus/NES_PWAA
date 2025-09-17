@@ -97,6 +97,18 @@ int main(int argc, char const *argv[])
 
     srand(time(NULL));
 
+    // create output folders
+    unsigned int l = strlen(argv[5])+1;
+    char path_ouchr[l];
+    strcpy_s(path_ouchr, l, argv[5]);
+    correct_sep(path_ouchr);
+    mkdir_rec(path_ouchr, 0);
+    l = strlen(argv[6])+1;
+    char path_asm[l];
+    strcpy_s(path_asm, l, argv[6]);
+    correct_sep(path_asm);
+    mkdir_rec(path_asm, 0);
+
     int n_res = atoi(argv[4]);
     int len = strlen(argv[1]);
     char path[len + 4];
