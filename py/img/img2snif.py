@@ -352,7 +352,7 @@ def img2snif(
     data = imgdata2snif(img_data, verbose=verbose, bkg_pal_offset=bkg_pal_offset, tile0_mask=tile0_mask, no_bkg=no_bkg)
 
     # metadata of file
-    metadata = f'{{"version":0,"mapper":5,"nbimg":1,"hashori":"{img_data["hash"]}"}}'
+    metadata = f'{{"version":0,"mapper":5,"nbimg":1,"hashori":"{img_data["hash"]}","havetile0mask":{1 if tile0_mask != None else 0}}}'
 
     # Write output file
     if verbose:

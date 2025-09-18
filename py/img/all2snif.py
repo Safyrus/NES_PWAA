@@ -285,7 +285,8 @@ if __name__ == "__main__":
                     pal = snif_data["imgs"][0]["pal"][0:2]
                     last_pal = snif_pre_data["imgs"][0]["pal"][0:2]
                     # if background paletted have changed
-                    if pal != last_pal:
+                    # and image has a change/tile0 mask (a.k.a rely on previous frame data)
+                    if pal != last_pal and ("havetile0mask" not in snif_data["meta"] or snif_data["meta"]["havetile0mask"]):
                         # re-encode with pal and no change_mask
                         img2snif_args.append(
                             (
