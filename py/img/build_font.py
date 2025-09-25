@@ -44,6 +44,7 @@ def get_names(name_folder):
 
 
 def output_names_asm(names, out_asm_path):
+    os.makedirs(os.path.dirname(out_asm_path), exist_ok=True)
     with open(out_asm_path, "w", encoding="utf-8") as f:
         f.write("; This file was generated\n\n")
 
