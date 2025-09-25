@@ -13,16 +13,19 @@ include ${CONFIG}
 
 # make the nes game from assembler files
 all:
+	make resource
+	make nes
+
+nes:
 	make clean_bin
 	make $(GAME_NAME).nes
 	make $(GAME_NAME)_ines1.nes
 
 resource:
 	make clean_data
-	make clean_tmp
-	make text
 	make img
-	make clean_tmp
+	make music
+	make text
 
 #--------------------------------
 
@@ -52,8 +55,6 @@ $(GAME_NAME)_ines1.nes:
 clean:
 	make clean_bin
 	make clean_data
-	make clean_tmp
-
 
 # clean object and binary files
 clean_bin:
@@ -66,19 +67,9 @@ clean_bin:
 clean_data:
 	-rm -f -r "$(ASM)/data"
 
-# clean temporary files
-clean_tmp:
-	-rm -f $(DATA)/EVI.chr
-	-rm -f $(DATA)/tmp.chr
-	-rm -f $(DATA)/FONT.chr
-	-rm -f $(C)/a
-	-rm -f $(C)/CHR.chr
-	-rm -f "$(ASM)/data/img/all.chr"
-	-rm -f "$(ASM)/data/img/r0.snif"
-	-rm -f "$(ASM)/data/img/r1.snif"
-	-rm -f "$(ASM)/data/img/r2.snif"
-	-rm -f "$(ASM)/data/img/r3.snif"
-	-rm -f "tmp.png"
+# clean snif files
+clean_snif:
+	-rm -f "$(ASM)/snif/*.snif"
 
 
 #--------------------------------
@@ -110,7 +101,7 @@ img:
 
 img_c:
 # merge all snif files & CHR into binary files
-	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/BASE.chr 33 ../PWAA.chr ../$(ASM)/data/img
+	cd $(C) && make && ./merge_snif ../$(DATA)/snif ../$(DATA)/FONT.chr ../$(DATA)/BASE.chr 33 ../PWAA.chr ../$(ASM)/data/img/
 #
 	$(PYTHON) $(PY)/img/img_name.py -i $(ASM)/data/img -o $(TEXT)
 
