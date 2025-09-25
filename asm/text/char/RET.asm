@@ -8,8 +8,8 @@ RET:
     LDA jmp_sav+2
     CMP lz_idx
     BEQ :+
+        STA lz_idx
         JSR lz_decode
     :
-    STA lz_idx
     ; return
     RTS

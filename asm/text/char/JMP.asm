@@ -49,6 +49,7 @@ text_jump:
         JSR lz_decode
     :
     ; return
+text_jump_ret:
     RTS
 
 
@@ -58,9 +59,7 @@ JMP_:
     ; if condition is false
     LDA jmp_buf_cond
         ; return
-        BEQ @ret
+        BEQ text_jump_ret
     ; jump
-    JSR text_jump
     ; return
-    @ret:
-    RTS
+    JMP text_jump
