@@ -46,6 +46,6 @@ month from today's date.<character:JUDGE_WARNING_A_><p>
 That is all.<wait:25><b>
 This court is adjourned!<character:JUDGE_NORMAL_A_><p>
 
-<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><!--sound:SFX_PUBLIC--><wait:120>
-<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><sound:SFX_PUBLIC><wait:120>
+<background:BKG_GAVEL><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
 <!--reset-->

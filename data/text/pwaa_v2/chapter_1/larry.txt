@@ -11,7 +11,7 @@
 <fade:0,100><wait:100><wait:40><music:MUS_TRIAL><hidetextbox>
 <!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30><character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><hidetextbox><speed:10>
 
-<name:NAME_PAYNE><bip:BIP_MALE>
+<name:NAME_PAYNE>
 Ahem.<character:PAYNE_NORMAL_A_><p>
 
 <character:PAYNE_NORMAL_B_><speed:SPD_NORMAL>
@@ -116,8 +116,6 @@ Dude...<wait:10> no way... <speed:SPD_NORMAL><p>
 <name:NAME_PAYNE>
 The victim was a model,<wait:15> but<b>
 did not have a large income.<character:PAYNE_NORMAL_A_><p>
-The victim was a model,<wait:15> but<b>
-did not have a large income.<character:PAYNE_NORMAL_A_><p>
 
 <character:PAYNE_NORMAL_B_>
 <event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_MIDDLE>
@@ -176,8 +174,8 @@ the wrong directions.)<p>
 <speed:12>
 (Should I...?)<speed:SPD_NORMAL><color:COL_WHITE>
 
-<act><jump:label_1_18,0,1>TODO1<b>
-<jump:label_1_17,0,0>TODO2<b>
+<act><jump:label_1_18,0,1>Wait and see what happens<b>
+<jump:label_1_17,0,0>Stop him from answering<b>
 
 <!--
 --------------------------
@@ -209,7 +207,7 @@ Dude! <wait:10>Nick!<wait:10><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shak
 Whaddya mean, <wait:15>"irrelevant"!?<character:LARRY_SWEATING><p>
 
 <character:LARRY_STYLISH_B_>
-That cheatin' she-<wait:20>dog!<speed:SPD_NORMAL><p>
+That cheatin' she-<wait:20>dog!<speed:SPD_NORMAL><character:LARRY_STYLISH_A_><p>
 
 <jump:label_1_19>
 
@@ -238,8 +236,6 @@ Well, Mr. Butz?<character:PAYNE_NORMAL_A_><p>
 Dude,<wait:10> no way!<wait:20><wait:15><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><b>
 That cheatin' she-<wait:20>dog!<character:LARRY_SWEATING><p>
 
-<character:LARRY_MAD_B_>
-
 <!--
 --------------------------
 | SCENE 19
@@ -262,7 +258,7 @@ the afterlife.<wait:10>.<wait:10>.<wait:20><fp>
 I'm going to get to<b>
 the bottom of this!<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><wait:100><speed:SPD_NORMAL><fp>
 
-<hidetextbox><sound:SFX_GAVEL><character:GAVEL_1><wait:40><character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
+<hidetextbox><background:BKG_GAVEL><sound:SFX_GAVEL><character:GAVEL_1><wait:40><character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAME_JUDGE><bip:BIP_MALE>
 Let's continue with<b>
@@ -332,8 +328,8 @@ I did,<wait:10> and maybe I didn't!<character:LARRY_STYLISH_A_><p>
 
 (What do I do?)<color:COL_WHITE><speed:SPD_NORMAL>
 
-<act><jump:label_1_21,0,1>TODO1<b>
-<jump:label_1_22,0,0>TODO2<b>
+<act><jump:label_1_21,0,1>Have him answer honestly<b>
+<jump:label_1_22,0,0>Stop him from answering<b>
 <b>
 
 <!--
@@ -362,8 +358,8 @@ a signal...)<color:COL_WHITE><p>
 Er...<wait:20> Yeah! <wait:15>Yeah!<b>
 I was there!<wait:15> <shake:0,30>I went!<character:LARRY_STYLISH_A_><p>
 
-<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><!--<sound:SFX_PUBLIC>--><wait:120>
-<sound:SFX_GAVEL><character:GAVEL_1><wait:40>
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><sound:SFX_PUBLIC><wait:120>
+<background:BKG_GAVEL><sound:SFX_GAVEL><character:GAVEL_1><wait:40>
 <character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAME_JUDGE>
@@ -382,7 +378,7 @@ Dude,<wait:15><shake:0,30> chill!<speed:SPD_NORMAL><character:LARRY_STYLISH_A_><
 She wasn't home, man... <wait:15><b>
 So, <wait:10>like,<wait:10> I didn't see her.<character:LARRY_STYLISH_A_><p>
 
-<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:LARRY_STYLISH_A_><background:BKG_EXCLAMATION_OBJ><!--<sound:SFX_OBJ_PAYNE>--><wait:60>
+<hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><character:LARRY_STYLISH_A_><background:BKG_EXCLAMATION_OBJ><sound:DPCM_PAYNE_OBJECTION_PITCH_15_><wait:60>
 <!--event:EVT_SA,SCROLL_DIR_RIGHT,24--><wait:30><hidetextbox><character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
 
 <name:NAME_PAYNE>
@@ -485,8 +481,8 @@ gruesome discovery...<character:PAYNE_NORMAL_A_><p>
 He saw the defendant <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>fleeing<b>
 the scene of the <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>crime!<p>
 
-<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><!--<sound:SFX_PUBLIC>--><wait:120>
-<character:GAVEL_1><wait:40>
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL><sound:SFX_PUBLIC><wait:120>
+<background:BKG_GAVEL><character:GAVEL_1><wait:120>
 <character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
 
 <name:NAME_JUDGE>

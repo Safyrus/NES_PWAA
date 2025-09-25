@@ -103,7 +103,7 @@ I owe him that much.<p>
 
 <wait:15><character:MIA_OHMY_A_><shake:1,30><music:MUS_COURTROOM_LOUNGE><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
 
-<name:NAME_QUESTION><bip:BIP_MALE>
+<name:NAME_QUESTION>
 <color:COL_GREEN>(It's over!)<p>
 
 <shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>
@@ -124,7 +124,7 @@ Yeah... <shake:0,30>that's him.<p>
 
 <shake:1,30><sound:SFX_SUPERSHOCK><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><color:COL_GREEN>
 
-<name:NAME_QUESTION><bip:BIP_MALE>
+<name:NAME_QUESTION>
 (Death! Despair! Ohhhh!)<p>
 
 <character:MIA_OHMY_A_>

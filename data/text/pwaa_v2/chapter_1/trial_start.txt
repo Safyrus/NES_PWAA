@@ -12,8 +12,8 @@
        <speed:6><bip:BIP_TYPEWRITER>District Court<bip:BIP_TYPEWRITER><speed:127>  <b>
       <speed:6><bip:BIP_TYPEWRITER>Courtroom No. 2<p>
 
-<color:COL_WHITE><speed:SPD_DEFAULT><hidetextbox><wait:30><background:BKG_COURTROOM_ALL><character:CR_PHOENIX_MIA_PAYNE><!--sound:SFX_PUBLIC--><wait:120><wait:60>
-<character:GAVEL_1><sound:SFX_GAVEL><wait:120><wait:40>
+<color:COL_WHITE><speed:SPD_DEFAULT><hidetextbox><wait:30><background:BKG_COURTROOM_ALL><character:CR_PHOENIX_MIA_PAYNE><sound:SFX_PUBLIC><wait:120><wait:60>
+<background:BKG_GAVEL><character:GAVEL_1><sound:SFX_GAVEL><wait:120><wait:40>
 <background:BKG_COURTROOM_JUDGE><character:JUDGE_NORMAL_B_><music:MUS_TRIAL><hidetextbox>
 
 <!-- Enable court record access -->
@@ -24,7 +24,8 @@ The court is now in session<b>
 for the trial of<b>
 Mr. Larry Butz.<character:JUDGE_NORMAL_A_><p>
 
-<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT><event:EVT_CRN,EVI_INDEX_PAYNE,evi_payne>
+<character:PAYNE_NORMAL_B_><background:BKG_COURTROOM_RIGHT>
+<event:EVT_CRN,EVI_INDEX_PAYNE,evi_payne><event:EVT_CRS,EVI_INDEX_PAYNE>
 
 <!-- prepare swoosh during this dialog -->
 <name:NAME_PAYNE><event:EVT_SL2,BKG_COURTROOM_SCROLL,BKG_COURTROOM_LEFT>
@@ -637,7 +638,7 @@ Record frequently.<speed:SPD_DEFAULT><character:MIA_BENCH_STERN_A_><p>
 <label:label_1_15>
 
 <wait:30><wait:20><music:MUS_TRIAL><!--TODO: fade music--><hidetextbox>
-<sound:SFX_GAVEL><character:GAVEL_1><wait:40><character:JUDGE_NORMAL_B_><hidetextbox><background:BKG_COURTROOM_JUDGE>
+<background:BKG_GAVEL><sound:SFX_GAVEL><character:GAVEL_1><wait:40><character:JUDGE_NORMAL_B_><hidetextbox><background:BKG_COURTROOM_JUDGE>
 
 <name:NAME_JUDGE><bip:BIP_MALE>
 Mr. Payne,<wait:15> the prosecution<b>

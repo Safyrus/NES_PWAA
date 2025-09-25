@@ -9,16 +9,19 @@ This file was generated
 <const:SFX_DESKSLAM,7>
 <const:SFX_DOG,8>
 <const:SFX_DRAMAPOUND,9>
-<const:SFX_GAVEL,10>
-<const:SFX_LIGHTBULB,11>
-<const:SFX_REALIZATION_MMC5,12>
-<const:SFX_REALIZATION,13>
-<const:SFX_SMACK,14>
-<const:SFX_STAB,15>
-<const:SFX_STAB2,16>
-<const:SFX_SUPERSHOCK,17>
-<const:SFX_THUD4,18>
-<const:SFX_WHOOPS,19>
+<const:SFX_BLOOP,10>
+<const:SFX_GAVEL,11>
+<const:SFX_PUBLIC,12>
+<const:SFX_PUBLIC_CHEER,13>
+<const:SFX_LIGHTBULB,14>
+<const:SFX_REALIZATION_MMC5,15>
+<const:SFX_REALIZATION,16>
+<const:SFX_SMACK,17>
+<const:SFX_STAB,18>
+<const:SFX_STAB2,19>
+<const:SFX_SUPERSHOCK,20>
+<const:SFX_THUD4,21>
+<const:SFX_WHOOPS,22>
 
 <!-- bip constants -->
 <const:BIP_FEMALE,1>

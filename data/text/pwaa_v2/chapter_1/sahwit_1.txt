@@ -6,7 +6,7 @@
 <label:label_1_24>
 
 <event:EVT_SL2,BKG_COURTROOM_SWOOSH_RIGHT,BKG_COURTROOM_RIGHT>
-<hidetextbox><character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,100><wait:100>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,100><wait:100>
 <wait:60><event:EVT_SA,SCROLL_DIR_RIGHT,24><wait:30>
 <character:PAYNE_NORMAL_B_><hidetextbox>
 
@@ -32,7 +32,7 @@ Please tell the court what<b>
 you saw on the day of the<b>
 murder.<character:JUDGE_WARNING_A_><p>
 
-<wait:90><music:MUS_TRIAL><!--<fademusic:0,90>-->
+<music:MUS_TRIAL><!--<fademusic:0,90>-->
 
 <!--
 --------------------------
@@ -41,12 +41,12 @@ murder.<character:JUDGE_WARNING_A_><p>
 -->
 <label:label_1_25>
 
-<hidetextbox><fade:4,45><wait:45><background:BKG_COURTROOM_MIDDLE>
-<fade:0,7><wait:7><hidetextbox><character:WITNESS_TESTIMONY><wait:20><speed:32><color:COL_RED>
+<hidetextbox><fade:4,45><wait:45><background:BKG_COURTROOM_MIDDLE><character:WITNESS_TESTIMONY>
+<fade:0,7><wait:7><hidetextbox><wait:20><speed:32><color:COL_RED><!--TODO: sfx "big text swoosh"-->
 
-<name:NAME_JUDGE><bip:BIP_MALE>
+<name:NAME_JUDGE>
 <b>
-  -- Witness's Account --<color:COL_WHITE><wait:100><character:SAHWIT_NORMAL_A_><p>
+  -- Witness's Account --<color:COL_WHITE><!--wait:100--><wait:120><wait:120><character:SAHWIT_NORMAL_A_><p>
 
 <speed:SPD_NORMAL><wait:30><photo:PHT_TESTIMONY_PHOTO><!-- TODO : blink photo -->
 
@@ -161,10 +161,10 @@ It was 1:00 PM.<character:SAHWIT_NORMAL_A_><p>
 -->
 <label:label_1_35>
 
-<speed:16>
+<speed:16><character:SAHWIT_NORMAL_B_>
 The man who ran was,<wait:16> with-<b>
 out a doubt,<wait:12> the defendant<b>
-sitting right over there.<p>
+sitting right over there.<character:SAHWIT_NORMAL_A_><p>
 
 <photo:PHT_TESTIMONY_PHOTO><!-- TODO unblink photo --><hidetextbox><fade:4,100><wait:60><music:MUS_QUESTIONING_MODERATO><wait:40>
 
@@ -222,7 +222,7 @@ However,<wait:10><b>
 some cordless phones<b>
 do not function normally.<character:PAYNE_NORMAL_A_><p>
 
-<character:PAYNE_NORMAL_B_><background:BKG_CS_SAHWIT_1>
+<character:PAYNE_NORMAL_A_><background:BKG_CS_SAHWIT_1>
 The phone that Mr. Sahwit<b>
 used was one of those.<p>
 
@@ -237,7 +237,7 @@ blackout,<wait:5> for your perusal.<character:PAYNE_NORMAL_A_><p>
 
 <photo:PHT_EVIDENCE_PERMISSION>
 <event:EVT_CRN,EVI_INDEX_PERMISSION,evi_blackout_record><event:EVT_CRS,EVI_INDEX_PERMISSION>
-<character:PAYNE_NORMAL_A_><speed:12><color:COL_BLUE>
+<speed:12><color:COL_BLUE>
 
 <name:NAME_PAYNE><bip:BIP_MALE>
 Blackout Record added<b>
@@ -307,7 +307,8 @@ guilty?<character:MIA_BENCH_STERN_A_><p>
 <speed:SPD_NORMAL><sound:SFX_LIGHTBULB><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:1,30><speed:32>
 
 <name:NAME_PHOENIX><bip:BIP_MALE>
-!!<flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>! <wait:45><shake:0,30>
+<!--flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME-->
+!!! <wait:45><shake:0,30>
 How do I prove he's not?<p>
 
 <speed:SPD_NORMAL><character:MIA_BENCH_STERN_B_>
@@ -359,11 +360,11 @@ in the testimony!<character:MIA_BENCH_STERN_A_><p>
 --------------------------
 -->
 <label:label_1_37>
-
-<background:BKG_COURTROOM_MIDDLE><fade:0,7><wait:7><character:CROSS_EXAMINATION><wait:20><speed:32><hidetextbox><color:COL_RED>
+<character:CROSS_EXAMINATION><background:BKG_COURTROOM_MIDDLE>
+<fade:0,7><wait:7><wait:20><speed:32><hidetextbox><color:COL_RED>
 
 <b>
-  -- Witness's Account --<color:COL_WHITE><wait:100><character:SAHWIT_NORMAL_A_><p>
+  -- Witness's Account --<color:COL_WHITE><!--wait:100--><wait:120><wait:120><character:SAHWIT_NORMAL_A_><p>
 
 <speed:SPD_NORMAL><wait:30><music:MUS_QUESTIONING_MODERATO>
 
@@ -542,7 +543,6 @@ sitting right over there.<color:COL_WHITE><character:SAHWIT_NORMAL_A_><p>
 <character:MIA_BENCH_STERN_B_><background:BKG_COURTROOM_DEFENSE>
 
 <name:NAME_MIA><bip:BIP_FEMALE>
-<b>
 That's all of it.<character:MIA_BENCH_STERN_A_><p>
 
 <character:MIA_BENCH_STERN_B_>
@@ -561,7 +561,7 @@ contradicts his testimony,<wait:16><b>
 and <color:COL_RED>present<color:COL_WHITE> it to him!<character:MIA_BENCH_STERN_A_><p>
 
 <hidetextbox><fade:4,45><wait:45>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT>
 <name:NAME_SAHWIT><bip:BIP_MALE>
@@ -582,7 +582,7 @@ and <color:COL_RED>present<color:COL_WHITE> it to him!<character:MIA_BENCH_STERN
 
 <character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 Isn't a man leaving an<b>
 apartment a common sight?<character:PHOENIX_THINKING_A_><p>
 
@@ -629,7 +629,7 @@ looked suspicious.<character:PAYNE_NORMAL_A_><p>
 <character:PAYNE_NORMAL_B_>
 So, <wait:10>what happened next?<character:PAYNE_NORMAL_A_><p>
 
-<hidetextbox><fade:4,7><wait:7><character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<hidetextbox><fade:4,7><wait:7><character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -649,7 +649,7 @@ So, <wait:10>what happened next?<character:PAYNE_NORMAL_A_><p>
 
 <character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT><speed:10>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 Half-open... <wait:20><speed:SPD_NORMAL>you say?<character:PHOENIX_THINKING_A_><p>
 
 <hidetextbox><!--swoosh:0,4096,26,224--><wait:30>
@@ -675,7 +675,7 @@ I see.<wait:20><b>
 And <wait:5>what happened next?<character:PAYNE_NORMAL_A_><p>
 
 <character:PAYNE_NORMAL_B_><hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -695,7 +695,7 @@ And <wait:5>what happened next?<character:PAYNE_NORMAL_A_><p>
 
 <character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 What gave you the<b>
 idea to do that?<character:PHOENIX_THINKING_A_><p>
 
@@ -736,7 +736,7 @@ apartment. <wait:20><b>
 What happened then?<character:PAYNE_NORMAL_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -757,7 +757,7 @@ What happened then?<character:PAYNE_NORMAL_A_><p>
 <background:BKG_COURTROOM_LEFT><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
 <hidetextbox><character:PHOENIX_HANDSONDESK_B_>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 Are you sure she was dead?<character:PHOENIX_HANDSONDESK_A_><p>
 
 <character:PHOENIX_HANDSONDESK_B_><hidetextbox><!--swoosh:0,4096,26,224--><wait:30>
@@ -783,7 +783,7 @@ Very well,<wait:15><b>
 what happened next?<character:PHOENIX_NORMAL_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -803,7 +803,7 @@ what happened next?<character:PHOENIX_NORMAL_A_><p>
 
 <character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 So, <wait:10>you didn't touch<wait:8><speed:10><b>
 ANYTHING<wait:12><speed:21> in the apartment?<character:PHOENIX_THINKING_A_><p>
 
@@ -822,7 +822,7 @@ Okay.<wait:15><b>
 What happened next?<character:PHOENIX_NORMAL_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -843,7 +843,7 @@ What happened next?<character:PHOENIX_NORMAL_A_><p>
 <background:BKG_COURTROOM_LEFT><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
 <hidetextbox><character:PHOENIX_HANDSONDESK_B_>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 You "thought" to call the<b>
 police? Does that mean you<b>
 didn't actually call them!?<character:PHOENIX_HANDSONDESK_A_><p>
@@ -861,7 +861,7 @@ police...<b>
 What happened next?<character:PAYNE_NORMAL_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -881,7 +881,7 @@ What happened next?<character:PAYNE_NORMAL_A_><p>
 
 <character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 The phone in her apartment<b>
 wasn't working?<character:PHOENIX_THINKING_A_><p>
 
@@ -923,7 +923,7 @@ working, correct?<character:PAYNE_NORMAL_A_><p>
 What happened next?<character:PAYNE_NORMAL_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
@@ -943,7 +943,7 @@ What happened next?<character:PAYNE_NORMAL_A_><p>
 
 <character:PHOENIX_THINKING_B_><background:BKG_COURTROOM_LEFT>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 Why use a public phone?<character:PHOENIX_THINKING_A_><p>
 
 <hidetextbox><!--swoosh:0,4096,26,224--><wait:30>
@@ -969,7 +969,9 @@ Ah, right... what time<b>
 did you call again?<character:PHOENIX_THINKING_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
+
+<event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
 <jump:label_1_46>
 
@@ -988,7 +990,7 @@ did you call again?<character:PHOENIX_THINKING_A_><p>
 <background:BKG_COURTROOM_LEFT><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
 <hidetextbox><character:PHOENIX_HANDSONDESK_B_><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 1:00 PM! <wait:25><speed:32><b>
 Are you certain?<character:PHOENIX_HANDSONDESK_A_><p>
 
@@ -1018,7 +1020,7 @@ Present some <color:COL_RED>evidence<color:COL_WHITE><b>
 to <color:COL_RED>contradict<color:COL_WHITE> him!<character:MIA_BENCH_STERN_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
 <event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT><bip:BIP_MALE>
 
@@ -1039,7 +1041,7 @@ to <color:COL_RED>contradict<color:COL_WHITE> him!<character:MIA_BENCH_STERN_A_>
 <background:BKG_COURTROOM_LEFT><hidetextbox><character:PHOENIX_DESKSLAM><wait:70>
 <hidetextbox><character:PHOENIX_HANDSONDESK_B_>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 Are you absolutely,<wait:15><b>
 100% positive?<character:PHOENIX_HANDSONDESK_A_><p>
 
@@ -1056,9 +1058,9 @@ The witness says<b>
 he's certain!<character:PAYNE_NORMAL_A_><p>
 
 <hidetextbox><fade:4,7><wait:7>
-<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15>
+<character:SAHWIT_NORMAL_A_><background:BKG_COURTROOM_MIDDLE><fade:0,15><wait:15><hidetextbox>
 
-<event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT><bip:BIP_MALE>
+<event:EVT_CRO><event:EVT_HPT><name:NAME_SAHWIT>
 
 <jump:label_1_47>
 
@@ -1079,7 +1081,7 @@ he's certain!<character:PAYNE_NORMAL_A_><p>
 
 <character:PHOENIX_POINTING_B_><background:BKG_COURTROOM_LEFT>
 
-<name:NAME_PHOENIX><bip:BIP_MALE>
+<name:NAME_PHOENIX>
 You found the body<b><wait:5>
 at 1:00 PM.<character:PHOENIX_POINTING_A_><wait:30><character:PHOENIX_NORMAL_B_><speed:16><b>
 You're sure?<character:PHOENIX_NORMAL_A_><p>

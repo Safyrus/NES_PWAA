@@ -653,8 +653,8 @@ triggered the clock's voice!<speed:SPD_NORMAL><p>
 That <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>was the sound<b>
 <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME>you heard!<speed:SPD_NORMAL><character:PHOENIX_ZOOM_A_><p>
 
-<character:CR_PHOENIX_MIA_PAYNE_SAHWIT><background:BKG_COURTROOM_ALL><hidetextbox><!--sound:SFX_PUBLIC--><wait:120>
-<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<character:CR_PHOENIX_MIA_PAYNE_SAHWIT><background:BKG_COURTROOM_ALL><hidetextbox><sound:SFX_PUBLIC><wait:120>
+<background:BKG_GAVEL><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
 <character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:21>
 
 <name:NAME_JUDGE>
@@ -765,8 +765,8 @@ H-<wait:8><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><sound:SFX_SMACK><shake:
 should burn!<speed:SPD_NORMAL> <wait:20>Burn!<wait:20><speed:32><b>
 Give him death!<character:SAHWIT_BALD_A_><p>
 
-<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_SAHWIT><background:BKG_COURTROOM_ALL><!--sound:SFX_PUBLIC--><wait:120>
-<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<hidetextbox><character:CR_PHOENIX_MIA_PAYNE_SAHWIT><background:BKG_COURTROOM_ALL><sound:SFX_PUBLIC><wait:120>
+<background:BKG_GAVEL><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
 <character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox><speed:12>
 
 <name:NAME_JUDGE>
@@ -1169,7 +1169,7 @@ you indict the witness.<character:JUDGE_NORMAL_A_><p>
 <character:JUDGE_HEADSHAKE><speed:9>
 Unfortunately...<wait:10><speed:SPD_NORMAL><character:JUDGE_NORMAL_A_><p>
 
-<speed:SPD_NORMAL><!--fademusic:0,40--><music:MUS_CORNERED_VARIATION><hidetextbox><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<speed:SPD_NORMAL><!--fademusic:0,40--><music:MUS_CORNERED_VARIATION><hidetextbox><background:BKG_GAVEL><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
 <character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAME_JUDGE>
@@ -1532,7 +1532,7 @@ I say...<wait:15><speed:21> Mr. Did It!<speed:SPD_NORMAL><character:PHOENIX_HAND
 Ngh!<character:SAHWIT_BREAK><wait:50><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><speed:12> .<shake:0,30>..!<wait:50><hidetextbox:1><wait:100>
 <flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30><wait:50><speed:SPD_NORMAL><fp>
 
-<wait:80><hidetextbox><character:CR_PHOENIX_MIA_PAYNE><background:BKG_COURTROOM_ALL><!--sound:SFX_PUBLIC--><wait:120>
+<wait:80><hidetextbox><character:CR_PHOENIX_MIA_PAYNE><background:BKG_COURTROOM_ALL><sound:SFX_PUBLIC><wait:120>
 <character:GAVEL_3><wait:40><background:BKG_COURTROOM_JUDGE><character:JUDGE_NORMAL_B_><hidetextbox><flash:FLASH_DEFAULT_FORCE,FLASH_DEFAULT_TIME><shake:0,30>
 
 <name:NAME_JUDGE>
@@ -1602,7 +1602,7 @@ defendant,<wait:20> <speed:12>Mr. Larry Butz...<speed:SPD_NORMAL><character:JUDG
 <!--fademusic:0,60--><music:MUS_TRIAL><character:JUDGE_WARNING_A_><hidetextbox><wait:60>
 <!--guilty:0-->
 <character:CR_PHOENIX_MIA_PAYNE_LARRY><background:BKG_COURTROOM_ALL>
-<character:GAVEL_1><sound:SFX_GAVEL><wait:40>
+<background:BKG_GAVEL><character:GAVEL_1><sound:SFX_GAVEL><wait:40>
 <character:JUDGE_NORMAL_B_><background:BKG_COURTROOM_JUDGE><hidetextbox>
 
 <name:NAME_JUDGE>

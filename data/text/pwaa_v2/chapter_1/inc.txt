@@ -4,34 +4,29 @@
 ==========================
 -->
 
-
-
-
-Sound <sound:SFX_WHOOPS><p>
-Sound <sound:DPCM_PHOENIX_OBJECTION_PITCH_15_><p>
-
-
-
-
-
-<!--
-<background:1>
-Jumping<p>
-<hidetextbox><music:MUS_OPENING><fade:4,10><wait:10>
-<jump:chapter_1_2>
--->
-
-<!--
+<!-- Give badge and autopsy report as evidence -->
 <event:EVT_CRN,EVI_INDEX_BADGE,evi_badge><event:EVT_CRS,EVI_INDEX_BADGE>
 <event:EVT_CRN,EVI_INDEX_AUTOPSY_CINDY,evi_autopsy_cindy><event:EVT_CRS,EVI_INDEX_AUTOPSY_CINDY>
+<!-- Give Mia, Larry & Cindy as profile -->
 <event:EVT_CRN,EVI_INDEX_MIA,evi_mia><event:EVT_CRS,EVI_INDEX_MIA>
 <event:EVT_CRN,EVI_INDEX_LARRY,evi_larry><event:EVT_CRS,EVI_INDEX_LARRY>
 <event:EVT_CRN,EVI_INDEX_CINDY,evi_cindy><event:EVT_CRS,EVI_INDEX_CINDY>
-<background:1>
-Jumping<p>
-<hidetextbox><fade:4,10><wait:10>
-<jump:chapter_1_4>
--->
+<!---->
+<event:EVT_CRN,EVI_INDEX_THINKER,evi_thinker><event:EVT_CRS,EVI_INDEX_THINKER>
+<event:EVT_CRN,EVI_INDEX_PASSPORT,evi_passport><event:EVT_CRS,EVI_INDEX_PASSPORT>
+<event:EVT_CRN,EVI_INDEX_SAHWIT,evi_sahwit><event:EVT_CRS,EVI_INDEX_SAHWIT>
+<event:EVT_CRN,EVI_INDEX_PAYNE,evi_payne><event:EVT_CRS,EVI_INDEX_PAYNE>
+<!-- Enable court record access -->
+<event:EVT_CR>
+<!-- Set HP -->
+<event:EVT_HPS,HP_NORMAL,5>
+<event:EVT_HPS,HP_DANGER,0>
+<event:EVT_HPS,HP_DAMAGE,0>
+<event:EVT_HPE,HP_NORMAL,0,c1_game_over>
+<!---->
+<fade:4,50><hidetextbox>
+<wait:50><music:MUS_TRIAL>
+<jump:label_1_24>
 
 
 <include:intro.txt>
