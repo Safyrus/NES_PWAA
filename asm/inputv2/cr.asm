@@ -135,5 +135,6 @@ close_cr:
     JSR remove_cr
     ;
     mov new_photo, sav_photo
+    mov bip, save_bip
     ; return
     RTS

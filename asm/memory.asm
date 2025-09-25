@@ -258,6 +258,11 @@ OAM:
         ; bip sound to play when text is draw
         bip: .res 1
 
+        ; Variable: save_bip
+        ;----------------
+        ; saved dialog bip when entering court record
+        save_bip: .res 1
+
         ; Variable: fs_dpcm_sfx_ptr
         ;----------------
         ; Pointer to the DPCM list of the SFX bank

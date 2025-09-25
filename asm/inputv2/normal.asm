@@ -137,8 +137,10 @@ btn_open_cr:
     mov saved_txt_ptr+1, txt_ptr+1
     mov saved_txt_bnk, lz_idx
     ;
+    mov save_bip, bip
     mov sav_photo, cur_photo
     mov new_photo, #$FF
+    STA bip
     ; find correct index
     ; + display court record
     ; + return
